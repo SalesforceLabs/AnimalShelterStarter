@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adoption_Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The current stage of the adoption</inlineHelpText>
+    <label>Adoption Stage</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial Review</fullName>
+                <default>true</default>
+                <label>Initial Review</label>
+            </value>
+            <value>
+                <fullName>Reserved</fullName>
+                <default>false</default>
+                <label>Reserved</label>
+            </value>
+            <value>
+                <fullName>Home Inspection</fullName>
+                <default>false</default>
+                <label>Home Inspection</label>
+            </value>
+            <value>
+                <fullName>Declined</fullName>
+                <default>false</default>
+                <label>Declined</label>
+            </value>
+            <value>
+                <fullName>Veterinary Check</fullName>
+                <default>false</default>
+                <label>Veterinary Check</label>
+            </value>
+            <value>
+                <fullName>Trial Period</fullName>
+                <default>false</default>
+                <label>Trial Period</label>
+            </value>
+            <value>
+                <fullName>Adopted</fullName>
+                <default>false</default>
+                <label>Adopted</label>
+            </value>
+            <value>
+                <fullName>Returned</fullName>
+                <default>false</default>
+                <label>Returned</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

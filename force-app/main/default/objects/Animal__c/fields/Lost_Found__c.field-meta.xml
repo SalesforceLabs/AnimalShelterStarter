@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_Found__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the Animal has come into the Shelter as a Lost/Found Animal</inlineHelpText>
+    <label>Lost/Found</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.13.2'
+project:
+    name: animal_shelter_starter
+    package:
+        name:  Animal Shelter Starter
+        namespace: animalshelter
+        api_version: '48.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/animal_shelter_starter/tests
+            options:
+                outputdir: robot/animal_shelter_starter/results
+
+    robot_testdoc:
+        options:
+            path: robot/animal_shelter_starter/tests
+            output: robot/animal_shelter_starter/doc/animal_shelter_starter_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
+orgs:
+    scratch:
+        dev:
+            namespaced: True

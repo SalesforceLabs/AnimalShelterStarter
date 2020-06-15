@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Method__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>How the Medicine is normally administered</inlineHelpText>
+    <label>Delivery Method</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Coated_Tablet</fullName>
+                <default>false</default>
+                <label>Coated - Tablet</label>
+            </value>
+            <value>
+                <fullName>Dissolvable - Tablet</fullName>
+                <default>false</default>
+                <label>Dissolvable - Tablet</label>
+            </value>
+            <value>
+                <fullName>Drops</fullName>
+                <default>false</default>
+                <label>Drops</label>
+            </value>
+            <value>
+                <fullName>Gel</fullName>
+                <default>false</default>
+                <label>Gel</label>
+            </value>
+            <value>
+                <fullName>Injected - Solution</fullName>
+                <default>false</default>
+                <label>Injected - Solution</label>
+            </value>
+            <value>
+                <fullName>Ointment_Cream</fullName>
+                <default>false</default>
+                <label>Ointment/Cream</label>
+            </value>
+            <value>
+                <fullName>Paste</fullName>
+                <default>false</default>
+                <label>Paste</label>
+            </value>
+            <value>
+                <fullName>Poultice</fullName>
+                <default>false</default>
+                <label>Poultice</label>
+            </value>
+            <value>
+                <fullName>Powder</fullName>
+                <default>false</default>
+                <label>Powder</label>
+            </value>
+            <value>
+                <fullName>Shampoo</fullName>
+                <default>false</default>
+                <label>Shampoo</label>
+            </value>
+            <value>
+                <fullName>Spray</fullName>
+                <default>false</default>
+                <label>Spray</label>
+            </value>
+            <value>
+                <fullName>Syrup</fullName>
+                <default>false</default>
+                <label>Syrup</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

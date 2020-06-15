@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Behaviours__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Behaviours</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anxious</fullName>
+                <default>false</default>
+                <label>Anxious</label>
+            </value>
+            <value>
+                <fullName>Bad Recall</fullName>
+                <default>false</default>
+                <label>Bad Recall</label>
+            </value>
+            <value>
+                <fullName>Good Recall</fullName>
+                <default>false</default>
+                <label>Good Recall</label>
+            </value>
+            <value>
+                <fullName>Good with Children</fullName>
+                <default>false</default>
+                <label>Good with Children</label>
+            </value>
+            <value>
+                <fullName>Good with other species</fullName>
+                <default>false</default>
+                <label>Good with other species</label>
+            </value>
+            <value>
+                <fullName>Good with same species</fullName>
+                <default>false</default>
+                <label>Good with same species</label>
+            </value>
+            <value>
+                <fullName>Lead Reactive</fullName>
+                <default>false</default>
+                <label>Lead Reactive</label>
+            </value>
+            <value>
+                <fullName>Pulls on Lead</fullName>
+                <default>false</default>
+                <label>Pulls on Lead</label>
+            </value>
+            <value>
+                <fullName>Reactive</fullName>
+                <default>false</default>
+                <label>Reactive</label>
+            </value>
+            <value>
+                <fullName>Resource Guarding</fullName>
+                <default>false</default>
+                <label>Resource Guarding</label>
+            </value>
+            <value>
+                <fullName>Separation Anxiety</fullName>
+                <default>false</default>
+                <label>Separation Anxiety</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Anxious</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Good with Children</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Good with other species</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Good with same species</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Reactive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Resource Guarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Separation Anxiety</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Bad Recall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Good Recall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Lead Reactive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Pulls on Lead</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

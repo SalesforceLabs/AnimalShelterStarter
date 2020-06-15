@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The reason the animal has been brought to the Animal Shelter</inlineHelpText>
+    <label>Entry Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+                <label>Abandoned</label>
+            </value>
+            <value>
+                <fullName>Abuse</fullName>
+                <default>false</default>
+                <label>Abuse</label>
+            </value>
+            <value>
+                <fullName>Allergies</fullName>
+                <default>false</default>
+                <label>Allergies</label>
+            </value>
+            <value>
+                <fullName>Behaviour Issue</fullName>
+                <default>false</default>
+                <label>Behaviour Issue</label>
+            </value>
+            <value>
+                <fullName>Boarding</fullName>
+                <default>false</default>
+                <label>Boarding</label>
+            </value>
+            <value>
+                <fullName>Household cannot afford</fullName>
+                <default>false</default>
+                <label>Household cannot afford</label>
+            </value>
+            <value>
+                <fullName>Household Unable to Cope</fullName>
+                <default>false</default>
+                <label>Household Unable to Cope</label>
+            </value>
+            <value>
+                <fullName>Housing Unsuitable</fullName>
+                <default>false</default>
+                <label>Housing Unsuitable</label>
+            </value>
+            <value>
+                <fullName>Relationship Issue</fullName>
+                <default>false</default>
+                <label>Relationship Issue</label>
+            </value>
+            <value>
+                <fullName>Sick/Injured</fullName>
+                <default>false</default>
+                <label>Sick/Injured</label>
+            </value>
+            <value>
+                <fullName>Stray</fullName>
+                <default>false</default>
+                <label>Stray</label>
+            </value>
+            <value>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+                <label>Transfer</label>
+            </value>
+            <value>
+                <fullName>Owner passed or moved out of home address</fullName>
+                <default>false</default>
+                <label>Owner passed or moved out of home address</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,91 @@
+<!--
+  @File Name          : AnimalActionRelatedList2.cmp
+  @Description        : Related List component that filters on Record Type
+  @Author             : Chris Rolfe (Salesforce.org)
+  @Group              : 
+  @Last Modified By   : Chris Rolfe (Salesforce.org)
+  @Last Modified On   : 07/05/2020, 10:30:00 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    07/05/2020   Chris Rolfe (Salesforce.org)     Initial Version
+-->
+
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AnimalActionRLClass2">
+    <aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mydataLength" type="String"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="recordTypeName" type="String" access="global"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    
+    <aura:handler name="init" value="{!this}" action="{! c.init }"/>
+    
+    <ltng:require styles="/resource/slds_resource/assets/styles/salesforce-lightning-design-system.css?v=1" />
+    
+    <lightning:card title="{!'Actions (' + v.mydataLength + ')'}" iconName="utility:connected_apps" class="slds-page-header noborderbottom" >
+  <!--  <div class="slds">
+      <div class="slds-page-header noborderbottom" role="banner"> 
+        <div class="slds-grid">
+          <div class="slds-col slds-has-flexi-truncate">
+            <div class="slds-grid">
+              <div class="slds-grid slds-type-focus slds-no-space">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-grid">
+          <div class="slds-col slds-align-bottom">
+            <p class="slds-text-body_small page-header__info">{!v.mydataLength} items</p>
+          </div>
+        </div>
+      </div>   
+    </div>      
+    <div class="slds">
+      <table class="slds-table slds-table-bordered slds-table-cell-buffer slds-table_boardered">
+        <thead>
+          <tr class="slds-text-title">
+              <th scope="col" class="slds-truncate" title="Description">
+                  <div>Description</div>
+              </th>
+              <th scope="col" class="slds-truncate" title="Date/Time of Action">
+                  <div>Date/Time of Action</div>
+              </th>
+              <th scope="col" class="slds-truncate" title="Completed">
+                  <div>Completed</div>
+              </th>
+              <th scope="col" class="slds-truncate" title="Name">
+                  <div>Name</div>
+              </th>              
+          </tr>
+        </thead>
+        <tbody>
+          <aura:iteration items="{! v.mydata}" var="data">     
+            <tr>
+              <td data-label="Description" title="Description">
+                  <div>{! data.animalshelter__Description__c}</div>
+              </td>
+              <td data-label="Date/Time of Action" title="Date/Time of Action">
+                   <div><lightning:formattedDateTime value="{! data.animalshelter__Date_Time_of_Action__c}" year="numeric" month="long" day="numeric" hour="2-digit" minute="2-digit" hour12="true"/></div>
+              </td>
+              <td data-label="Completed" title="Completed">
+                    <div><ui:outputCheckbox aura:id="output" value="{! data.animalshelter__Action_Completed__c}"/></div>
+              </td>
+              <td data-label="Name" title="Name">
+                  <div><a data-record="{!data.Id}" onclick="{!c.redirectToSobject}">{!data.Name}</a></div>
+              </td>
+            </tr>
+          </aura:iteration>
+        </tbody>
+      </table> 
+      </div>-->
+        
+        <lightning:datatable
+                keyField="id"
+                data="{! v.mydata }"
+                columns="{! v.mycolumns }"
+                hideCheckboxColumn="true"
+                columnWidthsMode="auto"/>
+        
+    </lightning:card>
+    
+</aura:component>

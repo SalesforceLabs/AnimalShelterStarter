@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The category of the medicine</inlineHelpText>
+    <label>Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anthelmintic</fullName>
+                <default>false</default>
+                <label>Anthelmintic</label>
+            </value>
+            <value>
+                <fullName>Anti-bacterial</fullName>
+                <default>false</default>
+                <label>Anti-bacterial</label>
+            </value>
+            <value>
+                <fullName>Antibiotic</fullName>
+                <default>false</default>
+                <label>Antibiotic</label>
+            </value>
+            <value>
+                <fullName>Antiemetic</fullName>
+                <default>false</default>
+                <label>Antiemetic</label>
+            </value>
+            <value>
+                <fullName>AntiInflammatory</fullName>
+                <default>false</default>
+                <label>AntiInflammatory</label>
+            </value>
+            <value>
+                <fullName>Antimicrobial</fullName>
+                <default>false</default>
+                <label>Antimicrobial</label>
+            </value>
+            <value>
+                <fullName>Antimicrobial/Anti Inflammatory</fullName>
+                <default>false</default>
+                <label>Antimicrobial/Anti Inflammatory</label>
+            </value>
+            <value>
+                <fullName>Antimicrobial/Anti Inflammatory; Antimycotic</fullName>
+                <default>false</default>
+                <label>Antimicrobial/Anti Inflammatory; Antimycotic</label>
+            </value>
+            <value>
+                <fullName>Antimicrobial/Antimycotic</fullName>
+                <default>false</default>
+                <label>Antimicrobial/Antimycotic</label>
+            </value>
+            <value>
+                <fullName>Antimicrobial intramammary</fullName>
+                <default>false</default>
+                <label>Antimicrobial intramammary</label>
+            </value>
+            <value>
+                <fullName>Antimicrobial intramammary/Anti Inflammatory</fullName>
+                <default>false</default>
+                <label>Antimicrobial intramammary/Anti Inflammatory</label>
+            </value>
+            <value>
+                <fullName>Antimycotic</fullName>
+                <default>false</default>
+                <label>Antimycotic</label>
+            </value>
+            <value>
+                <fullName>Anti-parasitic</fullName>
+                <default>false</default>
+                <label>Anti-parasitic</label>
+            </value>
+            <value>
+                <fullName>Antiprotozoal</fullName>
+                <default>false</default>
+                <label>Antiprotozoal</label>
+            </value>
+            <value>
+                <fullName>Antiprotozoal anticoccidial</fullName>
+                <default>false</default>
+                <label>Antiprotozoal anticoccidial</label>
+            </value>
+            <value>
+                <fullName>Antiprotozoal coccidiostat</fullName>
+                <default>false</default>
+                <label>Antiprotozoal coccidiostat</label>
+            </value>
+            <value>
+                <fullName>Anti-seizure</fullName>
+                <default>false</default>
+                <label>Anti-seizure</label>
+            </value>
+            <value>
+                <fullName>Antiseptic</fullName>
+                <default>false</default>
+                <label>Antiseptic</label>
+            </value>
+            <value>
+                <fullName>Antisera</fullName>
+                <default>false</default>
+                <label>Antisera</label>
+            </value>
+            <value>
+                <fullName>Cardio Vascular</fullName>
+                <default>false</default>
+                <label>Cardio Vascular</label>
+            </value>
+            <value>
+                <fullName>Cardio Vascular/Respiratory Agent</fullName>
+                <default>false</default>
+                <label>Cardio Vascular/Respiratory Agent</label>
+            </value>
+            <value>
+                <fullName>Cardio Vascular ACE inhibitor</fullName>
+                <default>false</default>
+                <label>Cardio Vascular ACE inhibitor</label>
+            </value>
+            <value>
+                <fullName>Cardio Vascular diuretic</fullName>
+                <default>false</default>
+                <label>Cardio Vascular diuretic</label>
+            </value>
+            <value>
+                <fullName>Cytokine</fullName>
+                <default>false</default>
+                <label>Cytokine</label>
+            </value>
+            <value>
+                <fullName>Decongestant</fullName>
+                <default>false</default>
+                <label>Decongestant</label>
+            </value>
+            <value>
+                <fullName>Diagnostic Preparation</fullName>
+                <default>false</default>
+                <label>Diagnostic Preparation</label>
+            </value>
+            <value>
+                <fullName>Diluent</fullName>
+                <default>false</default>
+                <label>Diluent</label>
+            </value>
+            <value>
+                <fullName>Ectoparasiticide</fullName>
+                <default>false</default>
+                <label>Ectoparasiticide</label>
+            </value>
+            <value>
+                <fullName>Emetic</fullName>
+                <default>false</default>
+                <label>Emetic</label>
+            </value>
+            <value>
+                <fullName>Endectocide</fullName>
+                <default>false</default>
+                <label>Endectocide</label>
+            </value>
+            <value>
+                <fullName>Euthanasia</fullName>
+                <default>false</default>
+                <label>Euthanasia</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal</fullName>
+                <default>false</default>
+                <label>Gastrointestinal</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal antibloat</fullName>
+                <default>false</default>
+                <label>Gastrointestinal antibloat</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal antidiarrhoeal</fullName>
+                <default>false</default>
+                <label>Gastrointestinal antidiarrhoeal</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal anti-emetic</fullName>
+                <default>false</default>
+                <label>Gastrointestinal anti-emetic</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal laxative</fullName>
+                <default>false</default>
+                <label>Gastrointestinal laxative</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal metabolic</fullName>
+                <default>false</default>
+                <label>Gastrointestinal metabolic</label>
+            </value>
+            <value>
+                <fullName>Herbal</fullName>
+                <default>false</default>
+                <label>Herbal</label>
+            </value>
+            <value>
+                <fullName>Hormone</fullName>
+                <default>false</default>
+                <label>Hormone</label>
+            </value>
+            <value>
+                <fullName>Hormone anabolic steroid</fullName>
+                <default>false</default>
+                <label>Hormone anabolic steroid</label>
+            </value>
+            <value>
+                <fullName>Hormone sex</fullName>
+                <default>false</default>
+                <label>Hormone sex</label>
+            </value>
+            <value>
+                <fullName>Immunomodulator</fullName>
+                <default>false</default>
+                <label>Immunomodulator</label>
+            </value>
+            <value>
+                <fullName>Inactivated Bacterial Vaccine</fullName>
+                <default>false</default>
+                <label>Inactivated Bacterial Vaccine</label>
+            </value>
+            <value>
+                <fullName>Inactivated Viral and Bacterial Vaccine</fullName>
+                <default>false</default>
+                <label>Inactivated Viral and Bacterial Vaccine</label>
+            </value>
+            <value>
+                <fullName>Inactivated Viral Vaccine</fullName>
+                <default>false</default>
+                <label>Inactivated Viral Vaccine</label>
+            </value>
+            <value>
+                <fullName>Lactoserum</fullName>
+                <default>false</default>
+                <label>Lactoserum</label>
+            </value>
+            <value>
+                <fullName>Live and Inactivated Viral Vaccine</fullName>
+                <default>false</default>
+                <label>Live and Inactivated Viral Vaccine</label>
+            </value>
+            <value>
+                <fullName>Live Bacterial and Viral Vaccine</fullName>
+                <default>false</default>
+                <label>Live Bacterial and Viral Vaccine</label>
+            </value>
+            <value>
+                <fullName>Live Bacterial Vaccine</fullName>
+                <default>false</default>
+                <label>Live Bacterial Vaccine</label>
+            </value>
+            <value>
+                <fullName>Live Fungal Vaccine</fullName>
+                <default>false</default>
+                <label>Live Fungal Vaccine</label>
+            </value>
+            <value>
+                <fullName>Live Parasitic Vaccine</fullName>
+                <default>false</default>
+                <label>Live Parasitic Vaccine</label>
+            </value>
+            <value>
+                <fullName>Live Viral and Inactivated Bacterial Vaccine</fullName>
+                <default>false</default>
+                <label>Live Viral and Inactivated Bacterial Vaccine</label>
+            </value>
+            <value>
+                <fullName>Live Viral and Inactivated Viral and Bacterial Vaccine</fullName>
+                <default>false</default>
+                <label>Live Viral and Inactivated Viral and Bacterial Vaccine</label>
+            </value>
+            <value>
+                <fullName>Live Viral Vaccine</fullName>
+                <default>false</default>
+                <label>Live Viral Vaccine</label>
+            </value>
+            <value>
+                <fullName>Lubricant</fullName>
+                <default>false</default>
+                <label>Lubricant</label>
+            </value>
+            <value>
+                <fullName>Mineral</fullName>
+                <default>false</default>
+                <label>Mineral</label>
+            </value>
+            <value>
+                <fullName>Mineral antianaemia</fullName>
+                <default>false</default>
+                <label>Mineral antianaemia</label>
+            </value>
+            <value>
+                <fullName>Mineral anti-toxic</fullName>
+                <default>false</default>
+                <label>Mineral anti-toxic</label>
+            </value>
+            <value>
+                <fullName>Mineral deficiency</fullName>
+                <default>false</default>
+                <label>Mineral deficiency</label>
+            </value>
+            <value>
+                <fullName>Musculoskeletal</fullName>
+                <default>false</default>
+                <label>Musculoskeletal</label>
+            </value>
+            <value>
+                <fullName>Neurological Agent</fullName>
+                <default>false</default>
+                <label>Neurological Agent</label>
+            </value>
+            <value>
+                <fullName>Pain Killer</fullName>
+                <default>false</default>
+                <label>Pain Killer</label>
+            </value>
+            <value>
+                <fullName>Probiotic</fullName>
+                <default>false</default>
+                <label>Probiotic</label>
+            </value>
+            <value>
+                <fullName>Prostaglandin</fullName>
+                <default>false</default>
+                <label>Prostaglandin</label>
+            </value>
+            <value>
+                <fullName>Replacement Agent</fullName>
+                <default>false</default>
+                <label>Replacement Agent</label>
+            </value>
+            <value>
+                <fullName>Respiratory expectorant</fullName>
+                <default>false</default>
+                <label>Respiratory expectorant</label>
+            </value>
+            <value>
+                <fullName>Respiratory mucolytic</fullName>
+                <default>false</default>
+                <label>Respiratory mucolytic</label>
+            </value>
+            <value>
+                <fullName>Sedative</fullName>
+                <default>false</default>
+                <label>Sedative</label>
+            </value>
+            <value>
+                <fullName>Serum</fullName>
+                <default>false</default>
+                <label>Serum</label>
+            </value>
+            <value>
+                <fullName>Tranquilizer</fullName>
+                <default>false</default>
+                <label>Tranquilizer</label>
+            </value>
+            <value>
+                <fullName>Vaccination</fullName>
+                <default>false</default>
+                <label>Vaccination</label>
+            </value>
+            <value>
+                <fullName>Vector Vaccine</fullName>
+                <default>false</default>
+                <label>Vector Vaccine</label>
+            </value>
+            <value>
+                <fullName>Vitamin</fullName>
+                <default>false</default>
+                <label>Vitamin</label>
+            </value>
+            <value>
+                <fullName>Vitamin/Mineral</fullName>
+                <default>false</default>
+                <label>Vitamin/Mineral</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

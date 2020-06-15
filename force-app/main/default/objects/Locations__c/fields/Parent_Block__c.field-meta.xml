@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Block__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Block this unit is contained within</description>
+    <externalId>false</externalId>
+    <label>Parent Block</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Locations__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Block</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Locations__c</referenceTo>
+    <relationshipLabel>Sub Locations</relationshipLabel>
+    <relationshipName>Locations</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

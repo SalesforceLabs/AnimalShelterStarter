@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deceased_Animals</fullName>
+    <columns>NAME</columns>
+    <columns>Animal_Name__c</columns>
+    <columns>Type__c</columns>
+    <columns>Breed__c</columns>
+    <columns>Age_Years__c</columns>
+    <columns>Calculated_Age__c</columns>
+    <columns>PTS_Reason__c</columns>
+    <columns>Deceased_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Animal_Status__c</field>
+        <operation>equals</operation>
+        <value>MedicalTreatment,Training</value>
+    </filters>
+    <label>Deceased Animals</label>
+</ListView>

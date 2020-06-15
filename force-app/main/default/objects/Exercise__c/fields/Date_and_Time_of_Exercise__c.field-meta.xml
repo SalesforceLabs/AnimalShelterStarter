@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_and_Time_of_Exercise__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Date and Time of Exercise</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

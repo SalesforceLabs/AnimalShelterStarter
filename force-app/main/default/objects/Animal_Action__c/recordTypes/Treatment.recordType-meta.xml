@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Treatment</fullName>
+    <active>true</active>
+    <label>Treatment</label>
+    <picklistValues>
+        <picklist>Action_Status__c</picklist>
+        <values>
+            <fullName>Given</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Given - See Comments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Given</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Treatment_Type__c</picklist>
+        <values>
+            <fullName>Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vaccination</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

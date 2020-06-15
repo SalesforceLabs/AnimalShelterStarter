@@ -1,0 +1,5 @@
+<design:component>
+    
+    <design:attribute name="recordTypeName" label="Record Type Name" required="true"/>
+	
+</design:component>

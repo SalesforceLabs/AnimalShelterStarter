@@ -1,0 +1,2475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Animal_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Animal_Record_Page1</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Default_Animal_View</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Default_Animal_View</fullName>
+        <fields>Animal_Name__c</fields>
+        <fields>Type__c</fields>
+        <fields>Breed__c</fields>
+        <fields>Gender__c</fields>
+        <fields>Age_Years__c</fields>
+        <fields>Calculated_Time_Known__c</fields>
+        <label>Default Animal View</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Animal Shelter Starter] The core object in the Animal Shelter Starter which stores the details about an animal.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>Animal_Details</fullName>
+        <description>General</description>
+        <displayedFields>
+            <field>Animal_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Breed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Colour__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Animal Details</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If the animal was transferred or came from an organisation then link them here.</inlineHelpText>
+        <label>Previous/Current Organisation</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Related Animals</relationshipLabel>
+        <relationshipName>Animals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Age_Years__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Date_of_Birth__c), 
+Estimated_Age__c, FLOOR((TODAY() - Date_of_Birth__c )/365)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated age of the animal based on the Date of Birth</inlineHelpText>
+        <label>Age (Years)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Animal_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the animal</inlineHelpText>
+        <label>Name</label>
+        <length>254</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Animal_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Animal Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>MedicalTreatment</fullName>
+                    <default>false</default>
+                    <label>Medical Treatment</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Boarding Only</fullName>
+                    <default>false</default>
+                    <label>Boarding Only</label>
+                </value>
+                <value>
+                    <fullName>Available for Adoption</fullName>
+                    <default>false</default>
+                    <label>Available for Adoption</label>
+                </value>
+                <value>
+                    <fullName>Deceased</fullName>
+                    <default>false</default>
+                    <label>Deceased</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Quarantine</fullName>
+                    <default>false</default>
+                    <label>Quarantine</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Behaviours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Behaviours</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Anxious</fullName>
+                    <default>false</default>
+                    <label>Anxious</label>
+                </value>
+                <value>
+                    <fullName>Bad Recall</fullName>
+                    <default>false</default>
+                    <label>Bad Recall</label>
+                </value>
+                <value>
+                    <fullName>Good Recall</fullName>
+                    <default>false</default>
+                    <label>Good Recall</label>
+                </value>
+                <value>
+                    <fullName>Good with Children</fullName>
+                    <default>false</default>
+                    <label>Good with Children</label>
+                </value>
+                <value>
+                    <fullName>Good with other species</fullName>
+                    <default>false</default>
+                    <label>Good with other species</label>
+                </value>
+                <value>
+                    <fullName>Good with same species</fullName>
+                    <default>false</default>
+                    <label>Good with same species</label>
+                </value>
+                <value>
+                    <fullName>Lead Reactive</fullName>
+                    <default>false</default>
+                    <label>Lead Reactive</label>
+                </value>
+                <value>
+                    <fullName>Pulls on Lead</fullName>
+                    <default>false</default>
+                    <label>Pulls on Lead</label>
+                </value>
+                <value>
+                    <fullName>Reactive</fullName>
+                    <default>false</default>
+                    <label>Reactive</label>
+                </value>
+                <value>
+                    <fullName>Resource Guarding</fullName>
+                    <default>false</default>
+                    <label>Resource Guarding</label>
+                </value>
+                <value>
+                    <fullName>Separation Anxiety</fullName>
+                    <default>false</default>
+                    <label>Separation Anxiety</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Bird</controllingFieldValue>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Anxious</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Bird</controllingFieldValue>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Good with Children</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Bird</controllingFieldValue>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Good with other species</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Bird</controllingFieldValue>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Good with same species</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Bird</controllingFieldValue>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Reactive</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Bird</controllingFieldValue>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Resource Guarding</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Bird</controllingFieldValue>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Separation Anxiety</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bad Recall</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Good Recall</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Lead Reactive</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Pulls on Lead</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Breed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Breed of Animal</inlineHelpText>
+        <label>Breed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>Breed</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Ferret</controllingFieldValue>
+                <valueName>Ferret</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Goat</controllingFieldValue>
+                <valueName>Goat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mouse</controllingFieldValue>
+                <valueName>Mouse</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pig</controllingFieldValue>
+                <valueName>Pig</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>American (Rabbit)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>American Fuzzy Lop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>American Sable</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Angora Rabbit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Belgian Hare</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Beveren</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Britannia Petite</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Bunny Rabbit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Californian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Champagne DArgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Checkered Giant</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Chinchilla</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Cinnamon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Creme DArgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Dutch</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Dwarf</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Dwarf Eared</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>English Lop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>English Spot</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Flemish Giant</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Florida White</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>French-Lop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Harlequin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Havana</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Himalayan (Rabbit)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Holland Lop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Hotot</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Jersey Wooly</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Lilac</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Lionhead</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Lop Eared</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Mini Rex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Mini-Lop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Netherland Dwarf</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>New Zealand</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Palomino</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Polish</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Rex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Rhinelander</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Satin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Silver</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Silver Fox</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Silver Marten</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rabbit</controllingFieldValue>
+                <valueName>Tan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pony</controllingFieldValue>
+                <valueName>Pony</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rat</controllingFieldValue>
+                <valueName>Prairie Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rat</controllingFieldValue>
+                <valueName>Rat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rat</controllingFieldValue>
+                <valueName>Skunk</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rat</controllingFieldValue>
+                <valueName>Sugar Glider</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Abyssinian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Aegean</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>American Bobtail</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>American Curl</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>American Shorthair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>American Wirehair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Aphrodite Giant</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Arabian Mau</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Asian cat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Asian Semi-longhair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Australian Mist</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Balinese</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Bambino</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Bengal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Birman</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Bombay</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Brazilian Shorthair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>British Longhair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>British Shorthair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Burmese</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Burmilla</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>California Spangled</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Chantilly-Tiffany</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Chartreux</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Chausie</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Colourpoint Shorthair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Cornish Rex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Cymric</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Manx Longhair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Longhaired Manx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Cyprus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Devon Rex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Donskoy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Don Sphynx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Dragon Li</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Chinese Li Hua</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Dwelf</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Egyptian Mau</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>European Shorthair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Exotic Shorthair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Foldex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>German Rex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Havana Brown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Highlander</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Himalayan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Colorpoint Persian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Japanese Bobtail</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Javanese</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Colorpoint Longhair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Khao Manee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Korat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Korean Bobtail</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Korn Ja</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Kurilian Bobtail or</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Kuril Islands Bobtail</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>LaPerm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Lykoi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Maine Coon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Manx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Mekong Bobtail</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Minskin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Napoleon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Munchkin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Nebelung</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Norwegian Forest Cat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Ocicat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Ojos Azules</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Oregon Rex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Oriental Bicolor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Oriental Longhair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Foreign Longhair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Mandarin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>British Angora</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Oriental Shorthair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Persian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Peterbald</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Pixie-bob</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Ragamuffin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Ragdoll</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Raas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Russian Blue</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Russian White, Black, and Tabby</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Sam sawet</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Savannah</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Scottish Fold</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Selkirk Rex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Serengeti</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Serrade Petit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Siamese</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Siberian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Siberian Forest Cat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Neva Masquerade</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Singapura</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Snowshoe</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Sokoke</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Somali</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Sphynx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Suphalak</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Thai</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Wichien Maat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Thai Lilac</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Tonkinese</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Toyger</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Turkish Angora</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Turkish Van</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Ukrainian Levkoy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>Wila Krungthep</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cat</controllingFieldValue>
+                <valueName>York Chocolate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Affenpinscher</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Afghan Hound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Airdale Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Akita</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Alaskan Malamute</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>American Eskimo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>American Foxhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>American Staffordshire Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>American Water Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Anatolian Sheepdog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Australian Cattle Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Australian Shepherd</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Australian Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Basenji</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Basset Hound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Beagle</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bearded Collie</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Beauceron</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bedlington Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Belgian Malinois</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Belgian Sheepdog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Belgian Tervuren</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bernese Mountain Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bichon Frise</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Black And Tan Coonhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Black Russian Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bloodhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Border Collie</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Border Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Borzoi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Boston Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bouvier Des Flandres</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Boxer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Briard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Brittany</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Brussels Griffon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bull Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bullmastiff</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Bull Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Cairn Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Canaan Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Cardigan Welsh Corgi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Cavalier King Charles Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Chesapeake Bay Retriever</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Chihuahua</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Chinese Crested</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Chinese Shar Pei</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Chow Chow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Clumber Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Cocker Spaniel-American</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Cocker Spaniel-English</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Collie (Rough) &amp; (Smooth)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Coton de Tulear</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Curly Coated Retriever</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Dachshund</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Dalmatian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Dandie Dinmont Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Doberman Pinscher</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>English Foxhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>English Setter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>English Springer Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>English Toy Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Field Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Finnish Spitz</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Flat Coated Retriever</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Fox Terrier – Smooth</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Fox Terrier – Wirehair</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>French Bulldog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>German Pinscher</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>German Shepherd Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>German Shorthaired Pointer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>German Wirehaired Pointer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Giant Schnauzer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Glen Imaal Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Golden Retriever</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Gordon Setter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Great Dane</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Great Pyrenees</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Great Swiss Mountain Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Greyhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Harrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Ibizan Hound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Irish Setter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Irish Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Irish Water Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Irish Wolfhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Italian Greyhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Japanese Chin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Keeshond</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Kerry Blue Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Komondor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Kuvasz</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Labrador Retriever</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Lakeland Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Maltese</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Manchester Terrier (Standard)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Manchester Terrier (Toy)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Mastiff</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Neopolitan Mastiff</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Newfoundland</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Norwegian Elkhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Nova Scotia Duck Tolling Retriever</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Old English Sheepdog (Bobtail)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Otter Hound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Papillon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Petit Basset Griffon Vendeen</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Pharaoh Hound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Plott Hound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Pointer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Polish Lowland Sheepdog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Pomeranian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Poodle Miniature</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Poodle Standard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Poodle Toy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Portuguese Water Dog</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Pug</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Puli</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Redbone Coonhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Rhodesian Ridgeback</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Rottweiler</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Saint Bernard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Saluki</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Samoyed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Schipperke</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Scottish Deerhound</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Scottish Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Sealyham Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Shetland Sheepdog (Sheltie)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Shiba Inu</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Shih Tzu</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Siberian Husky</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Silky Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Skye Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Soft-Coated Wheaten Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Spinone Italiano</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Staffordshire Bull Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Standard Schnauzer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Sussex Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Tibetan Mastiff</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Tibetan Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Tibetan Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Toy Fox Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Vizsla</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Weimaraner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Welsh Springer Spaniel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Welsh Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>West Highland White Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Whippet</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Wirehaired Pointing Griffon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dog</controllingFieldValue>
+                <valueName>Yorkshire Terrier</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Donkey</controllingFieldValue>
+                <valueName>Donkey/Mule</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Appaloosa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Arabian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Clydesdale</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Draft</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Gaited</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Grade</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Missouri Foxtrotter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Morgan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Mustang</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Paint/Pinto</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Palomino (Horse)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Paso Fino</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Percheron</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Peruvian Paso</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Saddlebred</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Standardbred</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Tennessee Walker</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Thoroughbred</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horse</controllingFieldValue>
+                <valueName>Warmblood</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Guinea Pig</controllingFieldValue>
+                <valueName>Guinea Pig</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hamster</controllingFieldValue>
+                <valueName>Hamster</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hedgehog</controllingFieldValue>
+                <valueName>Hedgehog</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Calculated_Age__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(FLOOR((TODAY() - Date_of_Birth__c )/365)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp; 
+TEXT(FLOOR(MOD((TODAY() - Date_of_Birth__c),365)/30)) &amp;&apos; MONTHS&apos; &amp; &apos; &apos; &amp; 
+TEXT(MOD(MOD((TODAY() - Date_of_Birth__c),365),30)) &amp;&apos; DAYS&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Calculated Age</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Calculated_Time_Known__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(FLOOR((TODAY() - DATEVALUE(Date_of_Arrival__c ))/365)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp;
+TEXT(FLOOR(MOD((TODAY() - DATEVALUE(Date_of_Arrival__c)),365)/30)) &amp;&apos; MONTHS&apos; &amp; &apos; &apos; &amp;
+TEXT(MOD(MOD((TODAY() - DATEVALUE(Date_of_Arrival__c)),365),30)) &amp;&apos; DAYS&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Calculated Time Known</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Coat_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Coat Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hairless</fullName>
+                    <default>false</default>
+                    <label>Hairless</label>
+                </value>
+                <value>
+                    <fullName>Long</fullName>
+                    <default>false</default>
+                    <label>Long</label>
+                </value>
+                <value>
+                    <fullName>Short</fullName>
+                    <default>false</default>
+                    <label>Short</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Colour__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>General Colour of the animal</inlineHelpText>
+        <label>Primary Colour</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Crossbreed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this is the animal is a crossbreed or mixed breed.</inlineHelpText>
+        <label>Crossbreed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Current_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The current weight of the animal in kg. This field is tracked and changes will be logged in the Field History.</inlineHelpText>
+        <label>Current Weight (KG)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_of_Arrival__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and time which the animal arrived at the shelter</inlineHelpText>
+        <label>Date of Arrival</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Birth__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the animal was born, if known.</inlineHelpText>
+        <label>Date of Birth</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deceased_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deceased Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Any additional comments or items which should be noted about the animal and the reasons around why it was brought in.</inlineHelpText>
+        <label>Entry Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Entry_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The reason the animal has been brought to the Animal Shelter</inlineHelpText>
+        <label>Entry Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <default>false</default>
+                    <label>Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Abuse</fullName>
+                    <default>false</default>
+                    <label>Abuse</label>
+                </value>
+                <value>
+                    <fullName>Allergies</fullName>
+                    <default>false</default>
+                    <label>Allergies</label>
+                </value>
+                <value>
+                    <fullName>Behaviour Issue</fullName>
+                    <default>false</default>
+                    <label>Behaviour Issue</label>
+                </value>
+                <value>
+                    <fullName>Boarding</fullName>
+                    <default>false</default>
+                    <label>Boarding</label>
+                </value>
+                <value>
+                    <fullName>Household cannot afford</fullName>
+                    <default>false</default>
+                    <label>Household cannot afford</label>
+                </value>
+                <value>
+                    <fullName>Household Unable to Cope</fullName>
+                    <default>false</default>
+                    <label>Household Unable to Cope</label>
+                </value>
+                <value>
+                    <fullName>Housing Unsuitable</fullName>
+                    <default>false</default>
+                    <label>Housing Unsuitable</label>
+                </value>
+                <value>
+                    <fullName>Relationship Issue</fullName>
+                    <default>false</default>
+                    <label>Relationship Issue</label>
+                </value>
+                <value>
+                    <fullName>Sick/Injured</fullName>
+                    <default>false</default>
+                    <label>Sick/Injured</label>
+                </value>
+                <value>
+                    <fullName>Stray</fullName>
+                    <default>false</default>
+                    <label>Stray</label>
+                </value>
+                <value>
+                    <fullName>Transfer</fullName>
+                    <default>false</default>
+                    <label>Transfer</label>
+                </value>
+                <value>
+                    <fullName>Owner passed or moved out of home address</fullName>
+                    <default>false</default>
+                    <label>Owner passed or moved out of home address</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Estimated_Age__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The estimated age of the dog upon arrival if the date of birth is not known.</inlineHelpText>
+        <label>Estimated Age</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                    <label>Male</label>
+                </value>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>false</default>
+                    <label>Female</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hold_Until_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hold Until Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Lost_Found__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if the Animal has come into the Shelter as a Lost/Found Animal</inlineHelpText>
+        <label>Lost/Found</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Microchip__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <inlineHelpText>The microchip number or tag number/ID for the animal.</inlineHelpText>
+        <label>Microchip Number or Tag</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Neutered_Spayed_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When was the animal Neutered/Spayed</inlineHelpText>
+        <label>Neutered/Spayed Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Neutered_Spayed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Has the animal been Neutered/Spayed? Check this box if the answer is yes</inlineHelpText>
+        <label>Neutered/Spayed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PTS_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Put To Sleep (PTS) Reason.</inlineHelpText>
+        <label>PTS Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aggression to other animals</fullName>
+                    <default>false</default>
+                    <label>Aggression to other animals</label>
+                </value>
+                <value>
+                    <fullName>Aggression to people</fullName>
+                    <default>false</default>
+                    <label>Aggression to people</label>
+                </value>
+                <value>
+                    <fullName>Behavioural</fullName>
+                    <default>false</default>
+                    <label>Behavioural</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Stress or Anxiety</fullName>
+                    <default>false</default>
+                    <label>Stress or Anxiety</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Previous_Current_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If boarding then this is the current owner otherwise set this to the previous owner of the animal.</inlineHelpText>
+        <label>Previous/Current Owner</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Related Animals</relationshipLabel>
+        <relationshipName>Animals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rehoming_Requirements__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Rehoming Requirements</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cannot be left for long periods</fullName>
+                    <default>false</default>
+                    <label>Cannot be left for long periods</label>
+                </value>
+                <value>
+                    <fullName>Dietary</fullName>
+                    <default>false</default>
+                    <label>Dietary</label>
+                </value>
+                <value>
+                    <fullName>Experienced Owner</fullName>
+                    <default>false</default>
+                    <label>Experienced Owner</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>No Animals of different species</fullName>
+                    <default>false</default>
+                    <label>No Animals of different species</label>
+                </value>
+                <value>
+                    <fullName>No Animals of same species</fullName>
+                    <default>false</default>
+                    <label>No Animals of same species</label>
+                </value>
+                <value>
+                    <fullName>No Children</fullName>
+                    <default>false</default>
+                    <label>No Children</label>
+                </value>
+                <value>
+                    <fullName>Rural Area</fullName>
+                    <default>false</default>
+                    <label>Rural Area</label>
+                </value>
+                <value>
+                    <fullName>Secure Garden</fullName>
+                    <default>false</default>
+                    <label>Secure Garden</label>
+                </value>
+                <value>
+                    <fullName>Specialist Equipment</fullName>
+                    <default>false</default>
+                    <label>Specialist Equipment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_Schemes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related Schemes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Animal_Schemes</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Secondary_Colour__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Secondary Colour</label>
+        <length>254</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Size__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Size</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Large</fullName>
+                    <default>false</default>
+                    <label>Large</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Small</fullName>
+                    <default>false</default>
+                    <label>Small</label>
+                </value>
+                <value>
+                    <fullName>Very Large</fullName>
+                    <default>false</default>
+                    <label>Very Large</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Adoption_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total Adoption Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Away_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total Away Days</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Length_of_Stay_in_Shelter_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the cumulative stay length the animal has been in the shelter</inlineHelpText>
+        <label>Total Length of Stay in Shelter (Days)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of animal e.g. Dog</inlineHelpText>
+        <label>Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Animal_Type</valueSetName>
+        </valueSet>
+    </fields>
+    <label>Animal</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Animal_Name__c</columns>
+        <columns>Type__c</columns>
+        <columns>Breed__c</columns>
+        <columns>Age_Years__c</columns>
+        <columns>Calculated_Age__c</columns>
+        <columns>Animal_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Animal_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Deceased</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Animals_Marked_as_Lost_Found</fullName>
+        <columns>NAME</columns>
+        <columns>Animal_Name__c</columns>
+        <columns>Type__c</columns>
+        <columns>Breed__c</columns>
+        <columns>Age_Years__c</columns>
+        <columns>Calculated_Age__c</columns>
+        <columns>Animal_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Animal_Status__c</field>
+            <operation>equals</operation>
+            <value>New,On Hold,Quarantine</value>
+        </filters>
+        <filters>
+            <field>Lost_Found__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Animals Marked as Lost/Found</label>
+    </listViews>
+    <listViews>
+        <fullName>Animals_Ready_for_Adoption</fullName>
+        <columns>NAME</columns>
+        <columns>Animal_Name__c</columns>
+        <columns>Type__c</columns>
+        <columns>Breed__c</columns>
+        <columns>Age_Years__c</columns>
+        <columns>Calculated_Age__c</columns>
+        <columns>Behaviours__c</columns>
+        <columns>Rehoming_Requirements__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Animal_Status__c</field>
+            <operation>equals</operation>
+            <value>Available for Adoption</value>
+        </filters>
+        <label>Animals Ready for Adoption</label>
+    </listViews>
+    <listViews>
+        <fullName>Animals_Receiving_Treatment</fullName>
+        <columns>NAME</columns>
+        <columns>Animal_Name__c</columns>
+        <columns>Type__c</columns>
+        <columns>Breed__c</columns>
+        <columns>Age_Years__c</columns>
+        <columns>Calculated_Age__c</columns>
+        <columns>Animal_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Animal_Status__c</field>
+            <operation>equals</operation>
+            <value>MedicalTreatment,Training</value>
+        </filters>
+        <label>Animals Receiving Treatment</label>
+    </listViews>
+    <listViews>
+        <fullName>Deceased_Animals</fullName>
+        <columns>NAME</columns>
+        <columns>Animal_Name__c</columns>
+        <columns>Type__c</columns>
+        <columns>Breed__c</columns>
+        <columns>Age_Years__c</columns>
+        <columns>Calculated_Age__c</columns>
+        <columns>PTS_Reason__c</columns>
+        <columns>Deceased_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Animal_Status__c</field>
+            <operation>equals</operation>
+            <value>MedicalTreatment,Training</value>
+        </filters>
+        <label>Deceased Animals</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Animals</fullName>
+        <columns>NAME</columns>
+        <columns>Animal_Name__c</columns>
+        <columns>Type__c</columns>
+        <columns>Breed__c</columns>
+        <columns>Age_Years__c</columns>
+        <columns>Calculated_Age__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Animal_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>New Animals</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ANIMAL{00000}</displayFormat>
+        <label>Animal Reference</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Animals</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Animal_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Breed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Animal_Status__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Animal_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Breed__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Animal_Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Animal_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Breed__c</lookupPhoneDialogsAdditionalFields>
+        <massQuickActions>Start_Adoption</massQuickActions>
+        <massQuickActions>Add_Treatment</massQuickActions>
+        <massQuickActions>Add_Condition</massQuickActions>
+        <searchFilterFields>Animal_Name__c</searchFilterFields>
+        <searchFilterFields>Type__c</searchFilterFields>
+        <searchFilterFields>Breed__c</searchFilterFields>
+        <searchFilterFields>Animal_Status__c</searchFilterFields>
+        <searchResultsAdditionalFields>Animal_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Breed__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Animal_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Animal_Neutered_Spayed_Check</fullName>
+        <active>false</active>
+        <description>Checks that the Neutered/Spayed Date/Time has been completed if Neutered/Spayed has been checked.</description>
+        <errorConditionFormula>AND(Neutered_Spayed__c,NOT(ISBLANK( Neutered_Spayed_Date_Time__c )))</errorConditionFormula>
+        <errorMessage>Animal has been noted as being neutered/spayed although no date/time has been added. Please add the Date/Time the animal was neutered/spayed as well.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

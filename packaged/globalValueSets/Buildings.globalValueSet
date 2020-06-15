@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Block A</fullName>
+        <default>false</default>
+        <label>Block A</label>
+    </customValue>
+    <customValue>
+        <fullName>Block B</fullName>
+        <default>false</default>
+        <label>Block B</label>
+    </customValue>
+    <description>Buildings where animals are housed</description>
+    <masterLabel>Buildings</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Medicine_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Medicine_Compact_Layout</fullName>
+        <fields>Medicine_Name__c</fields>
+        <fields>Name</fields>
+        <fields>Active__c</fields>
+        <label>Medicine Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether the medicine can be used, i.e. In date</inlineHelpText>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Batch_No__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The batch number of the medicine</inlineHelpText>
+        <label>Batch No.</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The category of the medicine</inlineHelpText>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Anthelmintic</fullName>
+                    <default>false</default>
+                    <label>Anthelmintic</label>
+                </value>
+                <value>
+                    <fullName>Anti-bacterial</fullName>
+                    <default>false</default>
+                    <label>Anti-bacterial</label>
+                </value>
+                <value>
+                    <fullName>Antibiotic</fullName>
+                    <default>false</default>
+                    <label>Antibiotic</label>
+                </value>
+                <value>
+                    <fullName>Antiemetic</fullName>
+                    <default>false</default>
+                    <label>Antiemetic</label>
+                </value>
+                <value>
+                    <fullName>AntiInflammatory</fullName>
+                    <default>false</default>
+                    <label>AntiInflammatory</label>
+                </value>
+                <value>
+                    <fullName>Antimicrobial</fullName>
+                    <default>false</default>
+                    <label>Antimicrobial</label>
+                </value>
+                <value>
+                    <fullName>Antimicrobial/Anti Inflammatory</fullName>
+                    <default>false</default>
+                    <label>Antimicrobial/Anti Inflammatory</label>
+                </value>
+                <value>
+                    <fullName>Antimicrobial/Anti Inflammatory; Antimycotic</fullName>
+                    <default>false</default>
+                    <label>Antimicrobial/Anti Inflammatory; Antimycotic</label>
+                </value>
+                <value>
+                    <fullName>Antimicrobial/Antimycotic</fullName>
+                    <default>false</default>
+                    <label>Antimicrobial/Antimycotic</label>
+                </value>
+                <value>
+                    <fullName>Antimicrobial intramammary</fullName>
+                    <default>false</default>
+                    <label>Antimicrobial intramammary</label>
+                </value>
+                <value>
+                    <fullName>Antimicrobial intramammary/Anti Inflammatory</fullName>
+                    <default>false</default>
+                    <label>Antimicrobial intramammary/Anti Inflammatory</label>
+                </value>
+                <value>
+                    <fullName>Antimycotic</fullName>
+                    <default>false</default>
+                    <label>Antimycotic</label>
+                </value>
+                <value>
+                    <fullName>Anti-parasitic</fullName>
+                    <default>false</default>
+                    <label>Anti-parasitic</label>
+                </value>
+                <value>
+                    <fullName>Antiprotozoal</fullName>
+                    <default>false</default>
+                    <label>Antiprotozoal</label>
+                </value>
+                <value>
+                    <fullName>Antiprotozoal anticoccidial</fullName>
+                    <default>false</default>
+                    <label>Antiprotozoal anticoccidial</label>
+                </value>
+                <value>
+                    <fullName>Antiprotozoal coccidiostat</fullName>
+                    <default>false</default>
+                    <label>Antiprotozoal coccidiostat</label>
+                </value>
+                <value>
+                    <fullName>Anti-seizure</fullName>
+                    <default>false</default>
+                    <label>Anti-seizure</label>
+                </value>
+                <value>
+                    <fullName>Antiseptic</fullName>
+                    <default>false</default>
+                    <label>Antiseptic</label>
+                </value>
+                <value>
+                    <fullName>Antisera</fullName>
+                    <default>false</default>
+                    <label>Antisera</label>
+                </value>
+                <value>
+                    <fullName>Cardio Vascular</fullName>
+                    <default>false</default>
+                    <label>Cardio Vascular</label>
+                </value>
+                <value>
+                    <fullName>Cardio Vascular/Respiratory Agent</fullName>
+                    <default>false</default>
+                    <label>Cardio Vascular/Respiratory Agent</label>
+                </value>
+                <value>
+                    <fullName>Cardio Vascular ACE inhibitor</fullName>
+                    <default>false</default>
+                    <label>Cardio Vascular ACE inhibitor</label>
+                </value>
+                <value>
+                    <fullName>Cardio Vascular diuretic</fullName>
+                    <default>false</default>
+                    <label>Cardio Vascular diuretic</label>
+                </value>
+                <value>
+                    <fullName>Cytokine</fullName>
+                    <default>false</default>
+                    <label>Cytokine</label>
+                </value>
+                <value>
+                    <fullName>Decongestant</fullName>
+                    <default>false</default>
+                    <label>Decongestant</label>
+                </value>
+                <value>
+                    <fullName>Diagnostic Preparation</fullName>
+                    <default>false</default>
+                    <label>Diagnostic Preparation</label>
+                </value>
+                <value>
+                    <fullName>Diluent</fullName>
+                    <default>false</default>
+                    <label>Diluent</label>
+                </value>
+                <value>
+                    <fullName>Ectoparasiticide</fullName>
+                    <default>false</default>
+                    <label>Ectoparasiticide</label>
+                </value>
+                <value>
+                    <fullName>Emetic</fullName>
+                    <default>false</default>
+                    <label>Emetic</label>
+                </value>
+                <value>
+                    <fullName>Endectocide</fullName>
+                    <default>false</default>
+                    <label>Endectocide</label>
+                </value>
+                <value>
+                    <fullName>Euthanasia</fullName>
+                    <default>false</default>
+                    <label>Euthanasia</label>
+                </value>
+                <value>
+                    <fullName>Gastrointestinal</fullName>
+                    <default>false</default>
+                    <label>Gastrointestinal</label>
+                </value>
+                <value>
+                    <fullName>Gastrointestinal antibloat</fullName>
+                    <default>false</default>
+                    <label>Gastrointestinal antibloat</label>
+                </value>
+                <value>
+                    <fullName>Gastrointestinal antidiarrhoeal</fullName>
+                    <default>false</default>
+                    <label>Gastrointestinal antidiarrhoeal</label>
+                </value>
+                <value>
+                    <fullName>Gastrointestinal anti-emetic</fullName>
+                    <default>false</default>
+                    <label>Gastrointestinal anti-emetic</label>
+                </value>
+                <value>
+                    <fullName>Gastrointestinal laxative</fullName>
+                    <default>false</default>
+                    <label>Gastrointestinal laxative</label>
+                </value>
+                <value>
+                    <fullName>Gastrointestinal metabolic</fullName>
+                    <default>false</default>
+                    <label>Gastrointestinal metabolic</label>
+                </value>
+                <value>
+                    <fullName>Herbal</fullName>
+                    <default>false</default>
+                    <label>Herbal</label>
+                </value>
+                <value>
+                    <fullName>Hormone</fullName>
+                    <default>false</default>
+                    <label>Hormone</label>
+                </value>
+                <value>
+                    <fullName>Hormone anabolic steroid</fullName>
+                    <default>false</default>
+                    <label>Hormone anabolic steroid</label>
+                </value>
+                <value>
+                    <fullName>Hormone sex</fullName>
+                    <default>false</default>
+                    <label>Hormone sex</label>
+                </value>
+                <value>
+                    <fullName>Immunomodulator</fullName>
+                    <default>false</default>
+                    <label>Immunomodulator</label>
+                </value>
+                <value>
+                    <fullName>Inactivated Bacterial Vaccine</fullName>
+                    <default>false</default>
+                    <label>Inactivated Bacterial Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Inactivated Viral and Bacterial Vaccine</fullName>
+                    <default>false</default>
+                    <label>Inactivated Viral and Bacterial Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Inactivated Viral Vaccine</fullName>
+                    <default>false</default>
+                    <label>Inactivated Viral Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Lactoserum</fullName>
+                    <default>false</default>
+                    <label>Lactoserum</label>
+                </value>
+                <value>
+                    <fullName>Live and Inactivated Viral Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live and Inactivated Viral Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Live Bacterial and Viral Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live Bacterial and Viral Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Live Bacterial Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live Bacterial Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Live Fungal Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live Fungal Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Live Parasitic Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live Parasitic Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Live Viral and Inactivated Bacterial Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live Viral and Inactivated Bacterial Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Live Viral and Inactivated Viral and Bacterial Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live Viral and Inactivated Viral and Bacterial Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Live Viral Vaccine</fullName>
+                    <default>false</default>
+                    <label>Live Viral Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Lubricant</fullName>
+                    <default>false</default>
+                    <label>Lubricant</label>
+                </value>
+                <value>
+                    <fullName>Mineral</fullName>
+                    <default>false</default>
+                    <label>Mineral</label>
+                </value>
+                <value>
+                    <fullName>Mineral antianaemia</fullName>
+                    <default>false</default>
+                    <label>Mineral antianaemia</label>
+                </value>
+                <value>
+                    <fullName>Mineral anti-toxic</fullName>
+                    <default>false</default>
+                    <label>Mineral anti-toxic</label>
+                </value>
+                <value>
+                    <fullName>Mineral deficiency</fullName>
+                    <default>false</default>
+                    <label>Mineral deficiency</label>
+                </value>
+                <value>
+                    <fullName>Musculoskeletal</fullName>
+                    <default>false</default>
+                    <label>Musculoskeletal</label>
+                </value>
+                <value>
+                    <fullName>Neurological Agent</fullName>
+                    <default>false</default>
+                    <label>Neurological Agent</label>
+                </value>
+                <value>
+                    <fullName>Pain Killer</fullName>
+                    <default>false</default>
+                    <label>Pain Killer</label>
+                </value>
+                <value>
+                    <fullName>Probiotic</fullName>
+                    <default>false</default>
+                    <label>Probiotic</label>
+                </value>
+                <value>
+                    <fullName>Prostaglandin</fullName>
+                    <default>false</default>
+                    <label>Prostaglandin</label>
+                </value>
+                <value>
+                    <fullName>Replacement Agent</fullName>
+                    <default>false</default>
+                    <label>Replacement Agent</label>
+                </value>
+                <value>
+                    <fullName>Respiratory expectorant</fullName>
+                    <default>false</default>
+                    <label>Respiratory expectorant</label>
+                </value>
+                <value>
+                    <fullName>Respiratory mucolytic</fullName>
+                    <default>false</default>
+                    <label>Respiratory mucolytic</label>
+                </value>
+                <value>
+                    <fullName>Sedative</fullName>
+                    <default>false</default>
+                    <label>Sedative</label>
+                </value>
+                <value>
+                    <fullName>Serum</fullName>
+                    <default>false</default>
+                    <label>Serum</label>
+                </value>
+                <value>
+                    <fullName>Tranquilizer</fullName>
+                    <default>false</default>
+                    <label>Tranquilizer</label>
+                </value>
+                <value>
+                    <fullName>Vaccination</fullName>
+                    <default>false</default>
+                    <label>Vaccination</label>
+                </value>
+                <value>
+                    <fullName>Vector Vaccine</fullName>
+                    <default>false</default>
+                    <label>Vector Vaccine</label>
+                </value>
+                <value>
+                    <fullName>Vitamin</fullName>
+                    <default>false</default>
+                    <label>Vitamin</label>
+                </value>
+                <value>
+                    <fullName>Vitamin/Mineral</fullName>
+                    <default>false</default>
+                    <label>Vitamin/Mineral</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Any comments related to the medicine or its use</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Delivery_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How the Medicine is normally administered</inlineHelpText>
+        <label>Delivery Method</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Coated_Tablet</fullName>
+                    <default>false</default>
+                    <label>Coated - Tablet</label>
+                </value>
+                <value>
+                    <fullName>Dissolvable - Tablet</fullName>
+                    <default>false</default>
+                    <label>Dissolvable - Tablet</label>
+                </value>
+                <value>
+                    <fullName>Drops</fullName>
+                    <default>false</default>
+                    <label>Drops</label>
+                </value>
+                <value>
+                    <fullName>Gel</fullName>
+                    <default>false</default>
+                    <label>Gel</label>
+                </value>
+                <value>
+                    <fullName>Injected - Solution</fullName>
+                    <default>false</default>
+                    <label>Injected - Solution</label>
+                </value>
+                <value>
+                    <fullName>Ointment_Cream</fullName>
+                    <default>false</default>
+                    <label>Ointment/Cream</label>
+                </value>
+                <value>
+                    <fullName>Paste</fullName>
+                    <default>false</default>
+                    <label>Paste</label>
+                </value>
+                <value>
+                    <fullName>Poultice</fullName>
+                    <default>false</default>
+                    <label>Poultice</label>
+                </value>
+                <value>
+                    <fullName>Powder</fullName>
+                    <default>false</default>
+                    <label>Powder</label>
+                </value>
+                <value>
+                    <fullName>Shampoo</fullName>
+                    <default>false</default>
+                    <label>Shampoo</label>
+                </value>
+                <value>
+                    <fullName>Spray</fullName>
+                    <default>false</default>
+                    <label>Spray</label>
+                </value>
+                <value>
+                    <fullName>Syrup</fullName>
+                    <default>false</default>
+                    <label>Syrup</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Manufacturer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Manufacturer/Brand or Supplier of the medicine</inlineHelpText>
+        <label>Manufacturer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.Medicine_Manufacturer__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Related Medicines</relationshipLabel>
+        <relationshipName>Medicines</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Medicine_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the medicine</inlineHelpText>
+        <label>Medicine Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Medicine</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>MEDCN{00000}</displayFormat>
+        <label>Medicine Reference</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medicines</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Medicine_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Medicine_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Batch_No__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

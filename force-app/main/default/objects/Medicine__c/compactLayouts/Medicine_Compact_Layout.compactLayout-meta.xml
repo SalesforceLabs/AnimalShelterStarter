@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medicine_Compact_Layout</fullName>
+    <fields>Medicine_Name__c</fields>
+    <fields>Name</fields>
+    <fields>Active__c</fields>
+    <label>Medicine Compact Layout</label>
+</CompactLayout>

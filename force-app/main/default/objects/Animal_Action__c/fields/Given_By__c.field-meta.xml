@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Given_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Action was given by?</inlineHelpText>
+    <label>Given By</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Animal Actions</relationshipLabel>
+    <relationshipName>Animal_Actions</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

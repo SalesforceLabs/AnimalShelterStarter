@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exercise_Action__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The related exercise action</inlineHelpText>
+    <label>Exercise Action</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Animal_Action__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Exercise</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Animal_Action__c</referenceTo>
+    <relationshipLabel>Exercises</relationshipLabel>
+    <relationshipName>Exercises</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

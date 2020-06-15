@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Animal_Organisation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Used by Animal Shelter</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this to indicate the Organisation is an Animal Establishment</inlineHelpText>
+    <label>Animal Organisation</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

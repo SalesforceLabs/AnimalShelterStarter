@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Animal_View</fullName>
+    <fields>Animal_Name__c</fields>
+    <fields>Type__c</fields>
+    <fields>Breed__c</fields>
+    <fields>Gender__c</fields>
+    <fields>Age_Years__c</fields>
+    <fields>Calculated_Time_Known__c</fields>
+    <label>Default Animal View</label>
+</CompactLayout>

@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Affenpinscher</fullName>
+        <default>false</default>
+        <label>Affenpinscher</label>
+    </customValue>
+    <customValue>
+        <fullName>Afghan Hound</fullName>
+        <default>false</default>
+        <label>Afghan Hound</label>
+    </customValue>
+    <customValue>
+        <fullName>Airdale Terrier</fullName>
+        <default>false</default>
+        <label>Airdale Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Akita</fullName>
+        <default>false</default>
+        <label>Akita</label>
+    </customValue>
+    <customValue>
+        <fullName>Alaskan Malamute</fullName>
+        <default>false</default>
+        <label>Alaskan Malamute</label>
+    </customValue>
+    <customValue>
+        <fullName>American Eskimo</fullName>
+        <default>false</default>
+        <label>American Eskimo</label>
+    </customValue>
+    <customValue>
+        <fullName>American Foxhound</fullName>
+        <default>false</default>
+        <label>American Foxhound</label>
+    </customValue>
+    <customValue>
+        <fullName>American Staffordshire Terrier</fullName>
+        <default>false</default>
+        <label>American Staffordshire Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>American Water Spaniel</fullName>
+        <default>false</default>
+        <label>American Water Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Anatolian Sheepdog</fullName>
+        <default>false</default>
+        <label>Anatolian Sheepdog</label>
+    </customValue>
+    <customValue>
+        <fullName>Australian Cattle Dog</fullName>
+        <default>false</default>
+        <label>Australian Cattle Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>Australian Shepherd</fullName>
+        <default>false</default>
+        <label>Australian Shepherd</label>
+    </customValue>
+    <customValue>
+        <fullName>Australian Terrier</fullName>
+        <default>false</default>
+        <label>Australian Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Basenji</fullName>
+        <default>false</default>
+        <label>Basenji</label>
+    </customValue>
+    <customValue>
+        <fullName>Basset Hound</fullName>
+        <default>false</default>
+        <label>Basset Hound</label>
+    </customValue>
+    <customValue>
+        <fullName>Beagle</fullName>
+        <default>false</default>
+        <label>Beagle</label>
+    </customValue>
+    <customValue>
+        <fullName>Bearded Collie</fullName>
+        <default>false</default>
+        <label>Bearded Collie</label>
+    </customValue>
+    <customValue>
+        <fullName>Beauceron</fullName>
+        <default>false</default>
+        <label>Beauceron</label>
+    </customValue>
+    <customValue>
+        <fullName>Bedlington Terrier</fullName>
+        <default>false</default>
+        <label>Bedlington Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgian Malinois</fullName>
+        <default>false</default>
+        <label>Belgian Malinois</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgian Sheepdog</fullName>
+        <default>false</default>
+        <label>Belgian Sheepdog</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgian Tervuren</fullName>
+        <default>false</default>
+        <label>Belgian Tervuren</label>
+    </customValue>
+    <customValue>
+        <fullName>Bernese Mountain Dog</fullName>
+        <default>false</default>
+        <label>Bernese Mountain Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>Bichon Frise</fullName>
+        <default>false</default>
+        <label>Bichon Frise</label>
+    </customValue>
+    <customValue>
+        <fullName>Black And Tan Coonhound</fullName>
+        <default>false</default>
+        <label>Black And Tan Coonhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Black Russian Terrier</fullName>
+        <default>false</default>
+        <label>Black Russian Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Bloodhound</fullName>
+        <default>false</default>
+        <label>Bloodhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Border Collie</fullName>
+        <default>false</default>
+        <label>Border Collie</label>
+    </customValue>
+    <customValue>
+        <fullName>Border Terrier</fullName>
+        <default>false</default>
+        <label>Border Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Borzoi</fullName>
+        <default>false</default>
+        <label>Borzoi</label>
+    </customValue>
+    <customValue>
+        <fullName>Boston Terrier</fullName>
+        <default>false</default>
+        <label>Boston Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Bouvier Des Flandres</fullName>
+        <default>false</default>
+        <label>Bouvier Des Flandres</label>
+    </customValue>
+    <customValue>
+        <fullName>Boxer</fullName>
+        <default>false</default>
+        <label>Boxer</label>
+    </customValue>
+    <customValue>
+        <fullName>Briard</fullName>
+        <default>false</default>
+        <label>Briard</label>
+    </customValue>
+    <customValue>
+        <fullName>Brittany</fullName>
+        <default>false</default>
+        <label>Brittany</label>
+    </customValue>
+    <customValue>
+        <fullName>Brussels Griffon</fullName>
+        <default>false</default>
+        <label>Brussels Griffon</label>
+    </customValue>
+    <customValue>
+        <fullName>Bull Dog</fullName>
+        <default>false</default>
+        <label>Bull Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>Bullmastiff</fullName>
+        <default>false</default>
+        <label>Bullmastiff</label>
+    </customValue>
+    <customValue>
+        <fullName>Bull Terrier</fullName>
+        <default>false</default>
+        <label>Bull Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Cairn Terrier</fullName>
+        <default>false</default>
+        <label>Cairn Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Canaan Dog</fullName>
+        <default>false</default>
+        <label>Canaan Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>Cardigan Welsh Corgi</fullName>
+        <default>false</default>
+        <label>Cardigan Welsh Corgi</label>
+    </customValue>
+    <customValue>
+        <fullName>Cavalier King Charles Spaniel</fullName>
+        <default>false</default>
+        <label>Cavalier King Charles Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Chesapeake Bay Retriever</fullName>
+        <default>false</default>
+        <label>Chesapeake Bay Retriever</label>
+    </customValue>
+    <customValue>
+        <fullName>Chihuahua</fullName>
+        <default>false</default>
+        <label>Chihuahua</label>
+    </customValue>
+    <customValue>
+        <fullName>Chinese Crested</fullName>
+        <default>false</default>
+        <label>Chinese Crested</label>
+    </customValue>
+    <customValue>
+        <fullName>Chinese Shar Pei</fullName>
+        <default>false</default>
+        <label>Chinese Shar Pei</label>
+    </customValue>
+    <customValue>
+        <fullName>Chow Chow</fullName>
+        <default>false</default>
+        <label>Chow Chow</label>
+    </customValue>
+    <customValue>
+        <fullName>Clumber Spaniel</fullName>
+        <default>false</default>
+        <label>Clumber Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Cocker Spaniel-American</fullName>
+        <default>false</default>
+        <label>Cocker Spaniel-American</label>
+    </customValue>
+    <customValue>
+        <fullName>Cocker Spaniel-English</fullName>
+        <default>false</default>
+        <label>Cocker Spaniel-English</label>
+    </customValue>
+    <customValue>
+        <fullName>Collie (Rough) &amp; (Smooth)</fullName>
+        <default>false</default>
+        <label>Collie (Rough) &amp; (Smooth)</label>
+    </customValue>
+    <customValue>
+        <fullName>Coton de Tulear</fullName>
+        <default>false</default>
+        <label>Coton de Tulear</label>
+    </customValue>
+    <customValue>
+        <fullName>Curly Coated Retriever</fullName>
+        <default>false</default>
+        <label>Curly Coated Retriever</label>
+    </customValue>
+    <customValue>
+        <fullName>Dachshund</fullName>
+        <default>false</default>
+        <label>Dachshund</label>
+    </customValue>
+    <customValue>
+        <fullName>Dalmatian</fullName>
+        <default>false</default>
+        <label>Dalmatian</label>
+    </customValue>
+    <customValue>
+        <fullName>Dandie Dinmont Terrier</fullName>
+        <default>false</default>
+        <label>Dandie Dinmont Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Doberman Pinscher</fullName>
+        <default>false</default>
+        <label>Doberman Pinscher</label>
+    </customValue>
+    <customValue>
+        <fullName>English Foxhound</fullName>
+        <default>false</default>
+        <label>English Foxhound</label>
+    </customValue>
+    <customValue>
+        <fullName>English Setter</fullName>
+        <default>false</default>
+        <label>English Setter</label>
+    </customValue>
+    <customValue>
+        <fullName>English Springer Spaniel</fullName>
+        <default>false</default>
+        <label>English Springer Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>English Toy Spaniel</fullName>
+        <default>false</default>
+        <label>English Toy Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Field Spaniel</fullName>
+        <default>false</default>
+        <label>Field Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Finnish Spitz</fullName>
+        <default>false</default>
+        <label>Finnish Spitz</label>
+    </customValue>
+    <customValue>
+        <fullName>Flat Coated Retriever</fullName>
+        <default>false</default>
+        <label>Flat Coated Retriever</label>
+    </customValue>
+    <customValue>
+        <fullName>Fox Terrier – Smooth</fullName>
+        <default>false</default>
+        <label>Fox Terrier – Smooth</label>
+    </customValue>
+    <customValue>
+        <fullName>Fox Terrier – Wirehair</fullName>
+        <default>false</default>
+        <label>Fox Terrier – Wirehair</label>
+    </customValue>
+    <customValue>
+        <fullName>French Bulldog</fullName>
+        <default>false</default>
+        <label>French Bulldog</label>
+    </customValue>
+    <customValue>
+        <fullName>German Pinscher</fullName>
+        <default>false</default>
+        <label>German Pinscher</label>
+    </customValue>
+    <customValue>
+        <fullName>German Shepherd Dog</fullName>
+        <default>false</default>
+        <label>German Shepherd Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>German Shorthaired Pointer</fullName>
+        <default>false</default>
+        <label>German Shorthaired Pointer</label>
+    </customValue>
+    <customValue>
+        <fullName>German Wirehaired Pointer</fullName>
+        <default>false</default>
+        <label>German Wirehaired Pointer</label>
+    </customValue>
+    <customValue>
+        <fullName>Giant Schnauzer</fullName>
+        <default>false</default>
+        <label>Giant Schnauzer</label>
+    </customValue>
+    <customValue>
+        <fullName>Glen Imaal Terrier</fullName>
+        <default>false</default>
+        <label>Glen Imaal Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Golden Retriever</fullName>
+        <default>false</default>
+        <label>Golden Retriever</label>
+    </customValue>
+    <customValue>
+        <fullName>Gordon Setter</fullName>
+        <default>false</default>
+        <label>Gordon Setter</label>
+    </customValue>
+    <customValue>
+        <fullName>Great Dane</fullName>
+        <default>false</default>
+        <label>Great Dane</label>
+    </customValue>
+    <customValue>
+        <fullName>Great Pyrenees</fullName>
+        <default>false</default>
+        <label>Great Pyrenees</label>
+    </customValue>
+    <customValue>
+        <fullName>Great Swiss Mountain Dog</fullName>
+        <default>false</default>
+        <label>Great Swiss Mountain Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>Greyhound</fullName>
+        <default>false</default>
+        <label>Greyhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Harrier</fullName>
+        <default>false</default>
+        <label>Harrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Ibizan Hound</fullName>
+        <default>false</default>
+        <label>Ibizan Hound</label>
+    </customValue>
+    <customValue>
+        <fullName>Irish Setter</fullName>
+        <default>false</default>
+        <label>Irish Setter</label>
+    </customValue>
+    <customValue>
+        <fullName>Irish Terrier</fullName>
+        <default>false</default>
+        <label>Irish Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Irish Water Spaniel</fullName>
+        <default>false</default>
+        <label>Irish Water Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Irish Wolfhound</fullName>
+        <default>false</default>
+        <label>Irish Wolfhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Italian Greyhound</fullName>
+        <default>false</default>
+        <label>Italian Greyhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Japanese Chin</fullName>
+        <default>false</default>
+        <label>Japanese Chin</label>
+    </customValue>
+    <customValue>
+        <fullName>Keeshond</fullName>
+        <default>false</default>
+        <label>Keeshond</label>
+    </customValue>
+    <customValue>
+        <fullName>Kerry Blue Terrier</fullName>
+        <default>false</default>
+        <label>Kerry Blue Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Komondor</fullName>
+        <default>false</default>
+        <label>Komondor</label>
+    </customValue>
+    <customValue>
+        <fullName>Kuvasz</fullName>
+        <default>false</default>
+        <label>Kuvasz</label>
+    </customValue>
+    <customValue>
+        <fullName>Labrador Retriever</fullName>
+        <default>false</default>
+        <label>Labrador Retriever</label>
+    </customValue>
+    <customValue>
+        <fullName>Lakeland Terrier</fullName>
+        <default>false</default>
+        <label>Lakeland Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Maltese</fullName>
+        <default>false</default>
+        <label>Maltese</label>
+    </customValue>
+    <customValue>
+        <fullName>Manchester Terrier (Standard)</fullName>
+        <default>false</default>
+        <label>Manchester Terrier (Standard)</label>
+    </customValue>
+    <customValue>
+        <fullName>Manchester Terrier (Toy)</fullName>
+        <default>false</default>
+        <label>Manchester Terrier (Toy)</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastiff</fullName>
+        <default>false</default>
+        <label>Mastiff</label>
+    </customValue>
+    <customValue>
+        <fullName>Neopolitan Mastiff</fullName>
+        <default>false</default>
+        <label>Neopolitan Mastiff</label>
+    </customValue>
+    <customValue>
+        <fullName>Newfoundland</fullName>
+        <default>false</default>
+        <label>Newfoundland</label>
+    </customValue>
+    <customValue>
+        <fullName>Norwegian Elkhound</fullName>
+        <default>false</default>
+        <label>Norwegian Elkhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Nova Scotia Duck Tolling Retriever</fullName>
+        <default>false</default>
+        <label>Nova Scotia Duck Tolling Retriever</label>
+    </customValue>
+    <customValue>
+        <fullName>Old English Sheepdog (Bobtail)</fullName>
+        <default>false</default>
+        <label>Old English Sheepdog (Bobtail)</label>
+    </customValue>
+    <customValue>
+        <fullName>Otter Hound</fullName>
+        <default>false</default>
+        <label>Otter Hound</label>
+    </customValue>
+    <customValue>
+        <fullName>Papillon</fullName>
+        <default>false</default>
+        <label>Papillon</label>
+    </customValue>
+    <customValue>
+        <fullName>Petit Basset Griffon Vendeen</fullName>
+        <default>false</default>
+        <label>Petit Basset Griffon Vendeen</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharaoh Hound</fullName>
+        <default>false</default>
+        <label>Pharaoh Hound</label>
+    </customValue>
+    <customValue>
+        <fullName>Plott Hound</fullName>
+        <default>false</default>
+        <label>Plott Hound</label>
+    </customValue>
+    <customValue>
+        <fullName>Pointer</fullName>
+        <default>false</default>
+        <label>Pointer</label>
+    </customValue>
+    <customValue>
+        <fullName>Polish Lowland Sheepdog</fullName>
+        <default>false</default>
+        <label>Polish Lowland Sheepdog</label>
+    </customValue>
+    <customValue>
+        <fullName>Pomeranian</fullName>
+        <default>false</default>
+        <label>Pomeranian</label>
+    </customValue>
+    <customValue>
+        <fullName>Poodle Miniature</fullName>
+        <default>false</default>
+        <label>Poodle Miniature</label>
+    </customValue>
+    <customValue>
+        <fullName>Poodle Standard</fullName>
+        <default>false</default>
+        <label>Poodle Standard</label>
+    </customValue>
+    <customValue>
+        <fullName>Poodle Toy</fullName>
+        <default>false</default>
+        <label>Poodle Toy</label>
+    </customValue>
+    <customValue>
+        <fullName>Portuguese Water Dog</fullName>
+        <default>false</default>
+        <label>Portuguese Water Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>Pug</fullName>
+        <default>false</default>
+        <label>Pug</label>
+    </customValue>
+    <customValue>
+        <fullName>Puli</fullName>
+        <default>false</default>
+        <label>Puli</label>
+    </customValue>
+    <customValue>
+        <fullName>Redbone Coonhound</fullName>
+        <default>false</default>
+        <label>Redbone Coonhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Rhodesian Ridgeback</fullName>
+        <default>false</default>
+        <label>Rhodesian Ridgeback</label>
+    </customValue>
+    <customValue>
+        <fullName>Rottweiler</fullName>
+        <default>false</default>
+        <label>Rottweiler</label>
+    </customValue>
+    <customValue>
+        <fullName>Saint Bernard</fullName>
+        <default>false</default>
+        <label>Saint Bernard</label>
+    </customValue>
+    <customValue>
+        <fullName>Saluki</fullName>
+        <default>false</default>
+        <label>Saluki</label>
+    </customValue>
+    <customValue>
+        <fullName>Samoyed</fullName>
+        <default>false</default>
+        <label>Samoyed</label>
+    </customValue>
+    <customValue>
+        <fullName>Schipperke</fullName>
+        <default>false</default>
+        <label>Schipperke</label>
+    </customValue>
+    <customValue>
+        <fullName>Scottish Deerhound</fullName>
+        <default>false</default>
+        <label>Scottish Deerhound</label>
+    </customValue>
+    <customValue>
+        <fullName>Scottish Terrier</fullName>
+        <default>false</default>
+        <label>Scottish Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Sealyham Terrier</fullName>
+        <default>false</default>
+        <label>Sealyham Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Shetland Sheepdog (Sheltie)</fullName>
+        <default>false</default>
+        <label>Shetland Sheepdog (Sheltie)</label>
+    </customValue>
+    <customValue>
+        <fullName>Shiba Inu</fullName>
+        <default>false</default>
+        <label>Shiba Inu</label>
+    </customValue>
+    <customValue>
+        <fullName>Shih Tzu</fullName>
+        <default>false</default>
+        <label>Shih Tzu</label>
+    </customValue>
+    <customValue>
+        <fullName>Siberian Husky</fullName>
+        <default>false</default>
+        <label>Siberian Husky</label>
+    </customValue>
+    <customValue>
+        <fullName>Silky Terrier</fullName>
+        <default>false</default>
+        <label>Silky Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Skye Terrier</fullName>
+        <default>false</default>
+        <label>Skye Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Soft-Coated Wheaten Terrier</fullName>
+        <default>false</default>
+        <label>Soft-Coated Wheaten Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Spinone Italiano</fullName>
+        <default>false</default>
+        <label>Spinone Italiano</label>
+    </customValue>
+    <customValue>
+        <fullName>Staffordshire Bull Terrier</fullName>
+        <default>false</default>
+        <label>Staffordshire Bull Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Standard Schnauzer</fullName>
+        <default>false</default>
+        <label>Standard Schnauzer</label>
+    </customValue>
+    <customValue>
+        <fullName>Sussex Spaniel</fullName>
+        <default>false</default>
+        <label>Sussex Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Tibetan Mastiff</fullName>
+        <default>false</default>
+        <label>Tibetan Mastiff</label>
+    </customValue>
+    <customValue>
+        <fullName>Tibetan Spaniel</fullName>
+        <default>false</default>
+        <label>Tibetan Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Tibetan Terrier</fullName>
+        <default>false</default>
+        <label>Tibetan Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Toy Fox Terrier</fullName>
+        <default>false</default>
+        <label>Toy Fox Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Vizsla</fullName>
+        <default>false</default>
+        <label>Vizsla</label>
+    </customValue>
+    <customValue>
+        <fullName>Weimaraner</fullName>
+        <default>false</default>
+        <label>Weimaraner</label>
+    </customValue>
+    <customValue>
+        <fullName>Welsh Springer Spaniel</fullName>
+        <default>false</default>
+        <label>Welsh Springer Spaniel</label>
+    </customValue>
+    <customValue>
+        <fullName>Welsh Terrier</fullName>
+        <default>false</default>
+        <label>Welsh Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>West Highland White Terrier</fullName>
+        <default>false</default>
+        <label>West Highland White Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Whippet</fullName>
+        <default>false</default>
+        <label>Whippet</label>
+    </customValue>
+    <customValue>
+        <fullName>Wirehaired Pointing Griffon</fullName>
+        <default>false</default>
+        <label>Wirehaired Pointing Griffon</label>
+    </customValue>
+    <customValue>
+        <fullName>Yorkshire Terrier</fullName>
+        <default>false</default>
+        <label>Yorkshire Terrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Abyssinian</fullName>
+        <default>false</default>
+        <label>Abyssinian</label>
+    </customValue>
+    <customValue>
+        <fullName>Aegean</fullName>
+        <default>false</default>
+        <label>Aegean</label>
+    </customValue>
+    <customValue>
+        <fullName>American Bobtail</fullName>
+        <default>false</default>
+        <label>American Bobtail</label>
+    </customValue>
+    <customValue>
+        <fullName>American Curl</fullName>
+        <default>false</default>
+        <label>American Curl</label>
+    </customValue>
+    <customValue>
+        <fullName>American Shorthair</fullName>
+        <default>false</default>
+        <label>American Shorthair</label>
+    </customValue>
+    <customValue>
+        <fullName>American Wirehair</fullName>
+        <default>false</default>
+        <label>American Wirehair</label>
+    </customValue>
+    <customValue>
+        <fullName>Aphrodite Giant</fullName>
+        <default>false</default>
+        <label>Aphrodite Giant</label>
+    </customValue>
+    <customValue>
+        <fullName>Arabian Mau</fullName>
+        <default>false</default>
+        <label>Arabian Mau</label>
+    </customValue>
+    <customValue>
+        <fullName>Asian cat</fullName>
+        <default>false</default>
+        <label>Asian cat</label>
+    </customValue>
+    <customValue>
+        <fullName>Asian Semi-longhair</fullName>
+        <default>false</default>
+        <label>Asian Semi-longhair</label>
+    </customValue>
+    <customValue>
+        <fullName>Australian Mist</fullName>
+        <default>false</default>
+        <label>Australian Mist</label>
+    </customValue>
+    <customValue>
+        <fullName>Balinese</fullName>
+        <default>false</default>
+        <label>Balinese</label>
+    </customValue>
+    <customValue>
+        <fullName>Bambino</fullName>
+        <default>false</default>
+        <label>Bambino</label>
+    </customValue>
+    <customValue>
+        <fullName>Bengal</fullName>
+        <default>false</default>
+        <label>Bengal</label>
+    </customValue>
+    <customValue>
+        <fullName>Birman</fullName>
+        <default>false</default>
+        <label>Birman</label>
+    </customValue>
+    <customValue>
+        <fullName>Bombay</fullName>
+        <default>false</default>
+        <label>Bombay</label>
+    </customValue>
+    <customValue>
+        <fullName>Brazilian Shorthair</fullName>
+        <default>false</default>
+        <label>Brazilian Shorthair</label>
+    </customValue>
+    <customValue>
+        <fullName>British Longhair</fullName>
+        <default>false</default>
+        <label>British Longhair</label>
+    </customValue>
+    <customValue>
+        <fullName>British Shorthair</fullName>
+        <default>false</default>
+        <label>British Shorthair</label>
+    </customValue>
+    <customValue>
+        <fullName>Burmese</fullName>
+        <default>false</default>
+        <label>Burmese</label>
+    </customValue>
+    <customValue>
+        <fullName>Burmilla</fullName>
+        <default>false</default>
+        <label>Burmilla</label>
+    </customValue>
+    <customValue>
+        <fullName>California Spangled</fullName>
+        <default>false</default>
+        <label>California Spangled</label>
+    </customValue>
+    <customValue>
+        <fullName>Chantilly-Tiffany</fullName>
+        <default>false</default>
+        <label>Chantilly-Tiffany</label>
+    </customValue>
+    <customValue>
+        <fullName>Chartreux</fullName>
+        <default>false</default>
+        <label>Chartreux</label>
+    </customValue>
+    <customValue>
+        <fullName>Chausie</fullName>
+        <default>false</default>
+        <label>Chausie</label>
+    </customValue>
+    <customValue>
+        <fullName>Colourpoint Shorthair</fullName>
+        <default>false</default>
+        <label>Colourpoint Shorthair</label>
+    </customValue>
+    <customValue>
+        <fullName>Cornish Rex</fullName>
+        <default>false</default>
+        <label>Cornish Rex</label>
+    </customValue>
+    <customValue>
+        <fullName>Cymric</fullName>
+        <default>false</default>
+        <label>Cymric</label>
+    </customValue>
+    <customValue>
+        <fullName>Manx Longhair</fullName>
+        <default>false</default>
+        <label>Manx Longhair</label>
+    </customValue>
+    <customValue>
+        <fullName>Longhaired Manx</fullName>
+        <default>false</default>
+        <label>Longhaired Manx</label>
+    </customValue>
+    <customValue>
+        <fullName>Cyprus</fullName>
+        <default>false</default>
+        <label>Cyprus</label>
+    </customValue>
+    <customValue>
+        <fullName>Devon Rex</fullName>
+        <default>false</default>
+        <label>Devon Rex</label>
+    </customValue>
+    <customValue>
+        <fullName>Donskoy</fullName>
+        <default>false</default>
+        <label>Donskoy</label>
+    </customValue>
+    <customValue>
+        <fullName>Don Sphynx</fullName>
+        <default>false</default>
+        <label>Don Sphynx</label>
+    </customValue>
+    <customValue>
+        <fullName>Dragon Li</fullName>
+        <default>false</default>
+        <label>Dragon Li</label>
+    </customValue>
+    <customValue>
+        <fullName>Chinese Li Hua</fullName>
+        <default>false</default>
+        <label>Chinese Li Hua</label>
+    </customValue>
+    <customValue>
+        <fullName>Dwelf</fullName>
+        <default>false</default>
+        <label>Dwelf</label>
+    </customValue>
+    <customValue>
+        <fullName>Egyptian Mau</fullName>
+        <default>false</default>
+        <label>Egyptian Mau</label>
+    </customValue>
+    <customValue>
+        <fullName>European Shorthair</fullName>
+        <default>false</default>
+        <label>European Shorthair</label>
+    </customValue>
+    <customValue>
+        <fullName>Exotic Shorthair</fullName>
+        <default>false</default>
+        <label>Exotic Shorthair</label>
+    </customValue>
+    <customValue>
+        <fullName>Foldex</fullName>
+        <default>false</default>
+        <label>Foldex</label>
+    </customValue>
+    <customValue>
+        <fullName>German Rex</fullName>
+        <default>false</default>
+        <label>German Rex</label>
+    </customValue>
+    <customValue>
+        <fullName>Havana Brown</fullName>
+        <default>false</default>
+        <label>Havana Brown</label>
+    </customValue>
+    <customValue>
+        <fullName>Highlander</fullName>
+        <default>false</default>
+        <label>Highlander</label>
+    </customValue>
+    <customValue>
+        <fullName>Himalayan</fullName>
+        <default>false</default>
+        <label>Himalayan</label>
+    </customValue>
+    <customValue>
+        <fullName>Colorpoint Persian</fullName>
+        <default>false</default>
+        <label>Colorpoint Persian</label>
+    </customValue>
+    <customValue>
+        <fullName>Japanese Bobtail</fullName>
+        <default>false</default>
+        <label>Japanese Bobtail</label>
+    </customValue>
+    <customValue>
+        <fullName>Javanese</fullName>
+        <default>false</default>
+        <label>Javanese</label>
+    </customValue>
+    <customValue>
+        <fullName>Colorpoint Longhair</fullName>
+        <default>false</default>
+        <label>Colorpoint Longhair</label>
+    </customValue>
+    <customValue>
+        <fullName>Khao Manee</fullName>
+        <default>false</default>
+        <label>Khao Manee</label>
+    </customValue>
+    <customValue>
+        <fullName>Korat</fullName>
+        <default>false</default>
+        <label>Korat</label>
+    </customValue>
+    <customValue>
+        <fullName>Korean Bobtail</fullName>
+        <default>false</default>
+        <label>Korean Bobtail</label>
+    </customValue>
+    <customValue>
+        <fullName>Korn Ja</fullName>
+        <default>false</default>
+        <label>Korn Ja</label>
+    </customValue>
+    <customValue>
+        <fullName>Kurilian Bobtail or</fullName>
+        <default>false</default>
+        <label>Kurilian Bobtail or</label>
+    </customValue>
+    <customValue>
+        <fullName>Kuril Islands Bobtail</fullName>
+        <default>false</default>
+        <label>Kuril Islands Bobtail</label>
+    </customValue>
+    <customValue>
+        <fullName>LaPerm</fullName>
+        <default>false</default>
+        <label>LaPerm</label>
+    </customValue>
+    <customValue>
+        <fullName>Lykoi</fullName>
+        <default>false</default>
+        <label>Lykoi</label>
+    </customValue>
+    <customValue>
+        <fullName>Maine Coon</fullName>
+        <default>false</default>
+        <label>Maine Coon</label>
+    </customValue>
+    <customValue>
+        <fullName>Manx</fullName>
+        <default>false</default>
+        <label>Manx</label>
+    </customValue>
+    <customValue>
+        <fullName>Mekong Bobtail</fullName>
+        <default>false</default>
+        <label>Mekong Bobtail</label>
+    </customValue>
+    <customValue>
+        <fullName>Minskin</fullName>
+        <default>false</default>
+        <label>Minskin</label>
+    </customValue>
+    <customValue>
+        <fullName>Napoleon</fullName>
+        <default>false</default>
+        <label>Napoleon</label>
+    </customValue>
+    <customValue>
+        <fullName>Munchkin</fullName>
+        <default>false</default>
+        <label>Munchkin</label>
+    </customValue>
+    <customValue>
+        <fullName>Nebelung</fullName>
+        <default>false</default>
+        <label>Nebelung</label>
+    </customValue>
+    <customValue>
+        <fullName>Norwegian Forest Cat</fullName>
+        <default>false</default>
+        <label>Norwegian Forest Cat</label>
+    </customValue>
+    <customValue>
+        <fullName>Ocicat</fullName>
+        <default>false</default>
+        <label>Ocicat</label>
+    </customValue>
+    <customValue>
+        <fullName>Ojos Azules</fullName>
+        <default>false</default>
+        <label>Ojos Azules</label>
+    </customValue>
+    <customValue>
+        <fullName>Oregon Rex</fullName>
+        <default>false</default>
+        <label>Oregon Rex</label>
+    </customValue>
+    <customValue>
+        <fullName>Oriental Bicolor</fullName>
+        <default>false</default>
+        <label>Oriental Bicolor</label>
+    </customValue>
+    <customValue>
+        <fullName>Oriental Longhair</fullName>
+        <default>false</default>
+        <label>Oriental Longhair</label>
+    </customValue>
+    <customValue>
+        <fullName>Foreign Longhair</fullName>
+        <default>false</default>
+        <label>Foreign Longhair</label>
+    </customValue>
+    <customValue>
+        <fullName>Mandarin</fullName>
+        <default>false</default>
+        <label>Mandarin</label>
+    </customValue>
+    <customValue>
+        <fullName>British Angora</fullName>
+        <default>false</default>
+        <label>British Angora</label>
+    </customValue>
+    <customValue>
+        <fullName>Oriental Shorthair</fullName>
+        <default>false</default>
+        <label>Oriental Shorthair</label>
+    </customValue>
+    <customValue>
+        <fullName>Persian</fullName>
+        <default>false</default>
+        <label>Persian</label>
+    </customValue>
+    <customValue>
+        <fullName>Peterbald</fullName>
+        <default>false</default>
+        <label>Peterbald</label>
+    </customValue>
+    <customValue>
+        <fullName>Pixie-bob</fullName>
+        <default>false</default>
+        <label>Pixie-bob</label>
+    </customValue>
+    <customValue>
+        <fullName>Ragamuffin</fullName>
+        <default>false</default>
+        <label>Ragamuffin</label>
+    </customValue>
+    <customValue>
+        <fullName>Ragdoll</fullName>
+        <default>false</default>
+        <label>Ragdoll</label>
+    </customValue>
+    <customValue>
+        <fullName>Raas</fullName>
+        <default>false</default>
+        <label>Raas</label>
+    </customValue>
+    <customValue>
+        <fullName>Russian Blue</fullName>
+        <default>false</default>
+        <label>Russian Blue</label>
+    </customValue>
+    <customValue>
+        <fullName>Russian White, Black, and Tabby</fullName>
+        <default>false</default>
+        <label>Russian White, Black, and Tabby</label>
+    </customValue>
+    <customValue>
+        <fullName>Sam sawet</fullName>
+        <default>false</default>
+        <label>Sam sawet</label>
+    </customValue>
+    <customValue>
+        <fullName>Savannah</fullName>
+        <default>false</default>
+        <label>Savannah</label>
+    </customValue>
+    <customValue>
+        <fullName>Scottish Fold</fullName>
+        <default>false</default>
+        <label>Scottish Fold</label>
+    </customValue>
+    <customValue>
+        <fullName>Selkirk Rex</fullName>
+        <default>false</default>
+        <label>Selkirk Rex</label>
+    </customValue>
+    <customValue>
+        <fullName>Serengeti</fullName>
+        <default>false</default>
+        <label>Serengeti</label>
+    </customValue>
+    <customValue>
+        <fullName>Serrade Petit</fullName>
+        <default>false</default>
+        <label>Serrade Petit</label>
+    </customValue>
+    <customValue>
+        <fullName>Siamese</fullName>
+        <default>false</default>
+        <label>Siamese</label>
+    </customValue>
+    <customValue>
+        <fullName>Siberian</fullName>
+        <default>false</default>
+        <label>Siberian</label>
+    </customValue>
+    <customValue>
+        <fullName>Siberian Forest Cat</fullName>
+        <default>false</default>
+        <label>Siberian Forest Cat</label>
+    </customValue>
+    <customValue>
+        <fullName>Neva Masquerade</fullName>
+        <default>false</default>
+        <label>Neva Masquerade</label>
+    </customValue>
+    <customValue>
+        <fullName>Singapura</fullName>
+        <default>false</default>
+        <label>Singapura</label>
+    </customValue>
+    <customValue>
+        <fullName>Snowshoe</fullName>
+        <default>false</default>
+        <label>Snowshoe</label>
+    </customValue>
+    <customValue>
+        <fullName>Sokoke</fullName>
+        <default>false</default>
+        <label>Sokoke</label>
+    </customValue>
+    <customValue>
+        <fullName>Somali</fullName>
+        <default>false</default>
+        <label>Somali</label>
+    </customValue>
+    <customValue>
+        <fullName>Sphynx</fullName>
+        <default>false</default>
+        <label>Sphynx</label>
+    </customValue>
+    <customValue>
+        <fullName>Suphalak</fullName>
+        <default>false</default>
+        <label>Suphalak</label>
+    </customValue>
+    <customValue>
+        <fullName>Thai</fullName>
+        <default>false</default>
+        <label>Thai</label>
+    </customValue>
+    <customValue>
+        <fullName>Wichien Maat</fullName>
+        <default>false</default>
+        <label>Wichien Maat</label>
+    </customValue>
+    <customValue>
+        <fullName>Thai Lilac</fullName>
+        <default>false</default>
+        <label>Thai Lilac</label>
+    </customValue>
+    <customValue>
+        <fullName>Tonkinese</fullName>
+        <default>false</default>
+        <label>Tonkinese</label>
+    </customValue>
+    <customValue>
+        <fullName>Toyger</fullName>
+        <default>false</default>
+        <label>Toyger</label>
+    </customValue>
+    <customValue>
+        <fullName>Turkish Angora</fullName>
+        <default>false</default>
+        <label>Turkish Angora</label>
+    </customValue>
+    <customValue>
+        <fullName>Turkish Van</fullName>
+        <default>false</default>
+        <label>Turkish Van</label>
+    </customValue>
+    <customValue>
+        <fullName>Ukrainian Levkoy</fullName>
+        <default>false</default>
+        <label>Ukrainian Levkoy</label>
+    </customValue>
+    <customValue>
+        <fullName>Wila Krungthep</fullName>
+        <default>false</default>
+        <label>Wila Krungthep</label>
+    </customValue>
+    <customValue>
+        <fullName>York Chocolate</fullName>
+        <default>false</default>
+        <label>York Chocolate</label>
+    </customValue>
+    <customValue>
+        <fullName>Donkey/Mule</fullName>
+        <default>false</default>
+        <label>Donkey/Mule</label>
+    </customValue>
+    <customValue>
+        <fullName>Ferret</fullName>
+        <default>false</default>
+        <label>Ferret</label>
+    </customValue>
+    <customValue>
+        <fullName>Goat</fullName>
+        <default>false</default>
+        <label>Goat</label>
+    </customValue>
+    <customValue>
+        <fullName>Guinea Pig</fullName>
+        <default>false</default>
+        <label>Guinea Pig</label>
+    </customValue>
+    <customValue>
+        <fullName>Hamster</fullName>
+        <default>false</default>
+        <label>Hamster</label>
+    </customValue>
+    <customValue>
+        <fullName>Hedgehog</fullName>
+        <default>false</default>
+        <label>Hedgehog</label>
+    </customValue>
+    <customValue>
+        <fullName>Appaloosa</fullName>
+        <default>false</default>
+        <label>Appaloosa</label>
+    </customValue>
+    <customValue>
+        <fullName>Arabian</fullName>
+        <default>false</default>
+        <label>Arabian</label>
+    </customValue>
+    <customValue>
+        <fullName>Clydesdale</fullName>
+        <default>false</default>
+        <label>Clydesdale</label>
+    </customValue>
+    <customValue>
+        <fullName>Draft</fullName>
+        <default>false</default>
+        <label>Draft</label>
+    </customValue>
+    <customValue>
+        <fullName>Gaited</fullName>
+        <default>false</default>
+        <label>Gaited</label>
+    </customValue>
+    <customValue>
+        <fullName>Grade</fullName>
+        <default>false</default>
+        <label>Grade</label>
+    </customValue>
+    <customValue>
+        <fullName>Missouri Foxtrotter</fullName>
+        <default>false</default>
+        <label>Missouri Foxtrotter</label>
+    </customValue>
+    <customValue>
+        <fullName>Morgan</fullName>
+        <default>false</default>
+        <label>Morgan</label>
+    </customValue>
+    <customValue>
+        <fullName>Mustang</fullName>
+        <default>false</default>
+        <label>Mustang</label>
+    </customValue>
+    <customValue>
+        <fullName>Paint/Pinto</fullName>
+        <default>false</default>
+        <label>Paint/Pinto</label>
+    </customValue>
+    <customValue>
+        <fullName>Palomino (Horse)</fullName>
+        <default>false</default>
+        <label>Palomino (Horse)</label>
+    </customValue>
+    <customValue>
+        <fullName>Paso Fino</fullName>
+        <default>false</default>
+        <label>Paso Fino</label>
+    </customValue>
+    <customValue>
+        <fullName>Percheron</fullName>
+        <default>false</default>
+        <label>Percheron</label>
+    </customValue>
+    <customValue>
+        <fullName>Peruvian Paso</fullName>
+        <default>false</default>
+        <label>Peruvian Paso</label>
+    </customValue>
+    <customValue>
+        <fullName>Saddlebred</fullName>
+        <default>false</default>
+        <label>Saddlebred</label>
+    </customValue>
+    <customValue>
+        <fullName>Standardbred</fullName>
+        <default>false</default>
+        <label>Standardbred</label>
+    </customValue>
+    <customValue>
+        <fullName>Tennessee Walker</fullName>
+        <default>false</default>
+        <label>Tennessee Walker</label>
+    </customValue>
+    <customValue>
+        <fullName>Thoroughbred</fullName>
+        <default>false</default>
+        <label>Thoroughbred</label>
+    </customValue>
+    <customValue>
+        <fullName>Warmblood</fullName>
+        <default>false</default>
+        <label>Warmblood</label>
+    </customValue>
+    <customValue>
+        <fullName>Mouse</fullName>
+        <default>false</default>
+        <label>Mouse</label>
+    </customValue>
+    <customValue>
+        <fullName>Pig</fullName>
+        <default>false</default>
+        <label>Pig</label>
+    </customValue>
+    <customValue>
+        <fullName>Pony</fullName>
+        <default>false</default>
+        <label>Pony</label>
+    </customValue>
+    <customValue>
+        <fullName>American (Rabbit)</fullName>
+        <default>false</default>
+        <label>American (Rabbit)</label>
+    </customValue>
+    <customValue>
+        <fullName>American Fuzzy Lop</fullName>
+        <default>false</default>
+        <label>American Fuzzy Lop</label>
+    </customValue>
+    <customValue>
+        <fullName>American Sable</fullName>
+        <default>false</default>
+        <label>American Sable</label>
+    </customValue>
+    <customValue>
+        <fullName>Angora Rabbit</fullName>
+        <default>false</default>
+        <label>Angora Rabbit</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgian Hare</fullName>
+        <default>false</default>
+        <label>Belgian Hare</label>
+    </customValue>
+    <customValue>
+        <fullName>Beveren</fullName>
+        <default>false</default>
+        <label>Beveren</label>
+    </customValue>
+    <customValue>
+        <fullName>Britannia Petite</fullName>
+        <default>false</default>
+        <label>Britannia Petite</label>
+    </customValue>
+    <customValue>
+        <fullName>Bunny Rabbit</fullName>
+        <default>false</default>
+        <label>Bunny Rabbit</label>
+    </customValue>
+    <customValue>
+        <fullName>Californian</fullName>
+        <default>false</default>
+        <label>Californian</label>
+    </customValue>
+    <customValue>
+        <fullName>Champagne DArgent</fullName>
+        <default>false</default>
+        <label>Champagne DArgent</label>
+    </customValue>
+    <customValue>
+        <fullName>Checkered Giant</fullName>
+        <default>false</default>
+        <label>Checkered Giant</label>
+    </customValue>
+    <customValue>
+        <fullName>Chinchilla</fullName>
+        <default>false</default>
+        <label>Chinchilla</label>
+    </customValue>
+    <customValue>
+        <fullName>Cinnamon</fullName>
+        <default>false</default>
+        <label>Cinnamon</label>
+    </customValue>
+    <customValue>
+        <fullName>Creme DArgent</fullName>
+        <default>false</default>
+        <label>Creme DArgent</label>
+    </customValue>
+    <customValue>
+        <fullName>Dutch</fullName>
+        <default>false</default>
+        <label>Dutch</label>
+    </customValue>
+    <customValue>
+        <fullName>Dwarf</fullName>
+        <default>false</default>
+        <label>Dwarf</label>
+    </customValue>
+    <customValue>
+        <fullName>Dwarf Eared</fullName>
+        <default>false</default>
+        <label>Dwarf Eared</label>
+    </customValue>
+    <customValue>
+        <fullName>English Lop</fullName>
+        <default>false</default>
+        <label>English Lop</label>
+    </customValue>
+    <customValue>
+        <fullName>English Spot</fullName>
+        <default>false</default>
+        <label>English Spot</label>
+    </customValue>
+    <customValue>
+        <fullName>Flemish Giant</fullName>
+        <default>false</default>
+        <label>Flemish Giant</label>
+    </customValue>
+    <customValue>
+        <fullName>Florida White</fullName>
+        <default>false</default>
+        <label>Florida White</label>
+    </customValue>
+    <customValue>
+        <fullName>French-Lop</fullName>
+        <default>false</default>
+        <label>French-Lop</label>
+    </customValue>
+    <customValue>
+        <fullName>Harlequin</fullName>
+        <default>false</default>
+        <label>Harlequin</label>
+    </customValue>
+    <customValue>
+        <fullName>Havana</fullName>
+        <default>false</default>
+        <label>Havana</label>
+    </customValue>
+    <customValue>
+        <fullName>Himalayan (Rabbit)</fullName>
+        <default>false</default>
+        <label>Himalayan (Rabbit)</label>
+    </customValue>
+    <customValue>
+        <fullName>Holland Lop</fullName>
+        <default>false</default>
+        <label>Holland Lop</label>
+    </customValue>
+    <customValue>
+        <fullName>Hotot</fullName>
+        <default>false</default>
+        <label>Hotot</label>
+    </customValue>
+    <customValue>
+        <fullName>Jersey Wooly</fullName>
+        <default>false</default>
+        <label>Jersey Wooly</label>
+    </customValue>
+    <customValue>
+        <fullName>Lilac</fullName>
+        <default>false</default>
+        <label>Lilac</label>
+    </customValue>
+    <customValue>
+        <fullName>Lionhead</fullName>
+        <default>false</default>
+        <label>Lionhead</label>
+    </customValue>
+    <customValue>
+        <fullName>Lop Eared</fullName>
+        <default>false</default>
+        <label>Lop Eared</label>
+    </customValue>
+    <customValue>
+        <fullName>Mini Rex</fullName>
+        <default>false</default>
+        <label>Mini Rex</label>
+    </customValue>
+    <customValue>
+        <fullName>Mini-Lop</fullName>
+        <default>false</default>
+        <label>Mini-Lop</label>
+    </customValue>
+    <customValue>
+        <fullName>Netherland Dwarf</fullName>
+        <default>false</default>
+        <label>Netherland Dwarf</label>
+    </customValue>
+    <customValue>
+        <fullName>New Zealand</fullName>
+        <default>false</default>
+        <label>New Zealand</label>
+    </customValue>
+    <customValue>
+        <fullName>Palomino</fullName>
+        <default>false</default>
+        <label>Palomino</label>
+    </customValue>
+    <customValue>
+        <fullName>Polish</fullName>
+        <default>false</default>
+        <label>Polish</label>
+    </customValue>
+    <customValue>
+        <fullName>Rex</fullName>
+        <default>false</default>
+        <label>Rex</label>
+    </customValue>
+    <customValue>
+        <fullName>Rhinelander</fullName>
+        <default>false</default>
+        <label>Rhinelander</label>
+    </customValue>
+    <customValue>
+        <fullName>Satin</fullName>
+        <default>false</default>
+        <label>Satin</label>
+    </customValue>
+    <customValue>
+        <fullName>Silver</fullName>
+        <default>false</default>
+        <label>Silver</label>
+    </customValue>
+    <customValue>
+        <fullName>Silver Fox</fullName>
+        <default>false</default>
+        <label>Silver Fox</label>
+    </customValue>
+    <customValue>
+        <fullName>Silver Marten</fullName>
+        <default>false</default>
+        <label>Silver Marten</label>
+    </customValue>
+    <customValue>
+        <fullName>Tan</fullName>
+        <default>false</default>
+        <label>Tan</label>
+    </customValue>
+    <customValue>
+        <fullName>Prairie Dog</fullName>
+        <default>false</default>
+        <label>Prairie Dog</label>
+    </customValue>
+    <customValue>
+        <fullName>Rat</fullName>
+        <default>false</default>
+        <label>Rat</label>
+    </customValue>
+    <customValue>
+        <fullName>Skunk</fullName>
+        <default>false</default>
+        <label>Skunk</label>
+    </customValue>
+    <customValue>
+        <fullName>Sugar Glider</fullName>
+        <default>false</default>
+        <label>Sugar Glider</label>
+    </customValue>
+    <description>Breed of Animal which should be used with the Animal Type field when added to records.</description>
+    <masterLabel>Breed</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

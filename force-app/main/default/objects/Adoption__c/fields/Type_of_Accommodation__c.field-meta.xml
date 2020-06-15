@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Accommodation__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Type of Accommodation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Farm</fullName>
+                <default>false</default>
+                <label>Farm</label>
+            </value>
+            <value>
+                <fullName>Flat/Apartment</fullName>
+                <default>false</default>
+                <label>Flat/Apartment</label>
+            </value>
+            <value>
+                <fullName>House - Detached - Rural</fullName>
+                <default>false</default>
+                <label>House - Detached - Rural</label>
+            </value>
+            <value>
+                <fullName>House - Detached - Urban</fullName>
+                <default>false</default>
+                <label>House - Detached - Urban</label>
+            </value>
+            <value>
+                <fullName>House - Semi-Detached - Rural</fullName>
+                <default>false</default>
+                <label>House - Semi-Detached - Rural</label>
+            </value>
+            <value>
+                <fullName>House - Semi-Detached - Urban</fullName>
+                <default>false</default>
+                <label>House - Semi-Detached - Urban</label>
+            </value>
+            <value>
+                <fullName>Temporary Accommodation</fullName>
+                <default>false</default>
+                <label>Temporary Accommodation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

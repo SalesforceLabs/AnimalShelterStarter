@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qty_Measure__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The measure of the quantity used</inlineHelpText>
+    <label>Qty Measure</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>millilitres</fullName>
+                <default>false</default>
+                <label>millilitres</label>
+            </value>
+            <value>
+                <fullName>No Of Tablets</fullName>
+                <default>false</default>
+                <label>No Of Tablets</label>
+            </value>
+            <value>
+                <fullName>grams</fullName>
+                <default>false</default>
+                <label>grams</label>
+            </value>
+            <value>
+                <fullName>centilitres</fullName>
+                <default>false</default>
+                <label>centilitres</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

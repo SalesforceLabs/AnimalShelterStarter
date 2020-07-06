@@ -26,3 +26,14 @@ orgs:
     scratch:
         dev:
             namespaced: True
+        qa:
+            namespaced: True
+flows:
+    config_qa:
+        steps:
+            3:
+                task: load_dataset
+    config_dev:
+        steps:
+            3:
+                task: load_dataset

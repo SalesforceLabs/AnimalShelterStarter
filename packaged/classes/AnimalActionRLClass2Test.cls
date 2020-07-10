@@ -17,7 +17,7 @@ public class AnimalActionRLClass2Test {
         
         Test.startTest();
         
-        List<animalshelter__Animal_Action__c> TestingList = AnimalActionRLClass2.getAnimalActions('a0B3z000027v664EAA','Treatment');
+        List<Animal_Action__c> TestingList = AnimalActionRLClass2.getAnimalActions('a0B3z000027v664EAA','Treatment');
             
         Test.stopTest();
         

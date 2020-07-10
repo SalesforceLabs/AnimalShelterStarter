@@ -62,13 +62,13 @@
           <aura:iteration items="{! v.mydata}" var="data">     
             <tr>
               <td data-label="Description" title="Description">
-                  <div>{! data.animalshelter__Description__c}</div>
+                  <div>{! data.Description__c}</div>
               </td>
               <td data-label="Date/Time of Action" title="Date/Time of Action">
-                   <div><lightning:formattedDateTime value="{! data.animalshelter__Date_Time_of_Action__c}" year="numeric" month="long" day="numeric" hour="2-digit" minute="2-digit" hour12="true"/></div>
+                   <div><lightning:formattedDateTime value="{! data.Date_Time_of_Action__c}" year="numeric" month="long" day="numeric" hour="2-digit" minute="2-digit" hour12="true"/></div>
               </td>
               <td data-label="Completed" title="Completed">
-                    <div><ui:outputCheckbox aura:id="output" value="{! data.animalshelter__Action_Completed__c}"/></div>
+                    <div><ui:outputCheckbox aura:id="output" value="{! data.Action_Completed__c}"/></div>
               </td>
               <td data-label="Name" title="Name">
                   <div><a data-record="{!data.Id}" onclick="{!c.redirectToSobject}">{!data.Name}</a></div>

@@ -68,7 +68,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>animalshelter__Condition__c.Generate_Alert</actionName>
+            <actionName>Condition__c.Generate_Alert</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>

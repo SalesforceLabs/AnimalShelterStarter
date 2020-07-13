@@ -22,12 +22,20 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
-orgs:
-    scratch:
-        dev:
-            namespaced: True
-        qa:
-            namespaced: True
+
+    update_admin_profile:
+        options:
+            record_types:
+                - record_type: "{managed}Animal_Action__c.{managed}Exercise"
+                - record_type: "{managed}Animal_Action__c.{managed}Nutrition"
+                - record_type: "{managed}Animal_Action__c.{managed}Treatment"
+                  default: True
+                - record_type: "{managed}Locations__c.{managed}Block"
+                  default: True
+                - record_type: "{managed}Locations__c.{managed}Foster"
+                - record_type: "{managed}Locations__c.{managed}Organisation"
+                - record_type: "{managed}Locations__c.{managed}Unit"
+
 flows:
     config_qa:
         steps:

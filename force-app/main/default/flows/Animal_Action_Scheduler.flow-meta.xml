@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <assignments>
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
@@ -720,7 +721,7 @@
         </fields>
         <fields>
             <name>ActionType</name>
-            <extensionName>animalshelter:lightningVisualPicker</extensionName>
+            <extensionName>c:lightningVisualPicker</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>show</name>

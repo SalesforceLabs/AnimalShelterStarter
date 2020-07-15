@@ -4,10 +4,11 @@
  * @Author             : Chris Rolfe (Salesforce.org)
  * @Group              : 
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
- * @Last Modified On   : 4/30/2020, 5:18:43 PM
+ * @Last Modified On   : 15/7/2020, 9:47:43 PM
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
- * 1.0    4/30/2020   Chris Rolfe (Salesforce.org)     Initial Version
+ * 1.0    30/4/2020   Chris Rolfe (Salesforce.org)     Initial Version
+ * 1.1    15/7/2020   Chris Rolfe                      removed namepsace reference
 **/
 public with sharing class AnimalActionRLClass2 {
 

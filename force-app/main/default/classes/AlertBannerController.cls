@@ -3,11 +3,12 @@
  * @Description        : Controller for use with Animal Alert Lightning Component
  * @Author             : Stewart Anderson
  * @Group              : Salesforce.org
- * @Last Modified By   : Stewart Anderson (Salesforce.org)
- * @Last Modified On   : 4/7/2020, 8:50:48 AM
+ * @Last Modified By   : Chris Rolfe (Salesforce.org)
+ * @Last Modified On   : 15/7/2020, 9:46:48 AM
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    4/6/2020   Stewart Anderson     Initial Version
+ * 1.1    15/7/2020  Chris Rolfe          removed namespace reference
 **/
 public with sharing class AlertBannerController {
    

@@ -100,43 +100,6 @@ Insert Animal__c:
       table: Account
     Previous_Current_Owner__c:
       table: Contact
-Insert Case:
-  sf_object: Case
-  table: Case
-  fields:
-    Id: sf_id
-    IsEscalated: IsEscalated
-    EngineeringReqNumber__c: EngineeringReqNumber__c
-    PotentialLiability__c: PotentialLiability__c
-    Product__c: Product__c
-    SLAViolation__c: SLAViolation__c
-  lookups:
-    AccountId:
-      table: Account
-    ContactId:
-      table: Contact
-    ParentId:
-      table: Case
-      after: Insert Case
-Insert Opportunity:
-  sf_object: Opportunity
-  table: Opportunity
-  fields:
-    Id: sf_id
-    Name: Name
-    CloseDate: CloseDate
-    IsPrivate: IsPrivate
-    StageName: StageName
-    CurrentGenerators__c: CurrentGenerators__c
-    DeliveryInstallationStatus__c: DeliveryInstallationStatus__c
-    MainCompetitors__c: MainCompetitors__c
-    OrderNumber__c: OrderNumber__c
-    TrackingNumber__c: TrackingNumber__c
-  lookups:
-    AccountId:
-      table: Account
-    ContactId:
-      table: Contact
 Insert Condition__c:
   sf_object: Condition__c
   table: Condition__c
@@ -144,19 +107,6 @@ Insert Condition__c:
     Id: sf_id
     Condition_Description__c: Condition_Description__c
     End_Date_Time__c: End_Date_Time__c
-    Start_Date__c: Start_Date__c
-  lookups:
-    Animal__c:
-      table: Animal__c
-Insert Housing__c:
-  sf_object: Housing__c
-  table: Housing__c
-  fields:
-    Id: sf_id
-    Active__c: Active__c
-    Building__c: Building__c
-    End_Date_Time__c: End_Date_Time__c
-    Pen_Cage_Reference__c: Pen_Cage_Reference__c
     Start_Date__c: Start_Date__c
   lookups:
     Animal__c:
@@ -214,23 +164,6 @@ Insert Movement__c:
       table: Animal__c
     Location__c:
       table: Locations__c
-Insert Treatment__c:
-  sf_object: Treatment__c
-  table: Treatment__c
-  fields:
-    Id: sf_id
-    Date_Time_of_Treatment__c: Date_Time_of_Treatment__c
-    Description__c: Description__c
-    Treatment_Comments__c: Treatment_Comments__c
-    Treatment_Status__c: Treatment_Status__c
-    Treatment_Type__c: Treatment_Type__c
-  lookups:
-    Animal__c:
-      table: Animal__c
-    Condition__c:
-      table: Condition__c
-    Treatment_Given_By__c:
-      table: Contact
 Insert Animal_Action__c:
   sf_object: Animal_Action__c
   table: Animal_Action__c
@@ -252,19 +185,6 @@ Insert Animal_Action__c:
       table: Condition__c
     Given_By__c:
       table: Contact
-Insert Exercise__c:
-  sf_object: Exercise__c
-  table: Exercise__c
-  fields:
-    Id: sf_id
-    Comments__c: Comments__c
-    Date_and_Time_of_Exercise__c: Date_and_Time_of_Exercise__c
-    Duration_Hours__c: Duration_Hours__c
-  lookups:
-    Animal__c:
-      table: Animal__c
-    Exercise_Action__c:
-      table: Animal_Action__c
 Insert Medicine_Used__c:
   sf_object: Medicine_Used__c
   table: Medicine_Used__c

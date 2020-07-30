@@ -606,7 +606,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>animalshelter__Animal_Action__c</stringValue>
+                <stringValue>Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -719,37 +719,6 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>ActionType</name>
-            <extensionName>animalshelter:lightningVisualPicker</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>show</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>header</name>
-                <value>
-                    <stringValue>Action Type</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>options</name>
-                <value>
-                    <stringValue>[{label: &apos;Account&apos;, icon: &apos;standard:account&apos;, value: &apos;account&apos;  }, {label: &apos;Contact&apos;,icon: &apos;standard:contact&apos;,value: &apos;contact&apos; }, {label: &apos;Opportunity&apos;,icon: &apos;standard:opportunity&apos;,value: &apos;opportunity&apos; }]</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>size</name>
-                <value>
-                    <stringValue>Medium</stringValue>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Action_Description</name>
             <fieldText>Action Description</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -761,7 +730,7 @@
             <defaultValue>
                 <booleanValue>true</booleanValue>
             </defaultValue>
-            <fieldText>Generate Tasks and Treatment Records</fieldText>
+            <fieldText>Generate Tasks</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -815,13 +784,13 @@
             <inputParameters>
                 <name>objectApiName</name>
                 <value>
-                    <stringValue>animalshelter__Animal_Action__c</stringValue>
+                    <stringValue>Animal_Action__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>fieldApiName</name>
                 <value>
-                    <stringValue>animalshelter__Condition__c</stringValue>
+                    <stringValue>Condition__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -846,7 +815,7 @@
             <targetReference>Schedule_Details</targetReference>
         </connector>
     </start>
-    <status>InvalidDraft</status>
+    <status>Active</status>
     <variables>
         <name>AnimalActionDate</name>
         <dataType>DateTime</dataType>

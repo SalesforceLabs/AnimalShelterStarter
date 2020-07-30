@@ -128,7 +128,7 @@
             <sortOrder>8</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>animalshelter__Locations__c.Set_Assessment_Date</actionName>
+            <actionName>Locations__c.Set_Assessment_Date</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>9</sortOrder>
         </platformActionListItems>

@@ -71,11 +71,11 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>lookupFieldName</name>
-                <value>animalshelter__Animal__c</value>
+                <value>Animal__c</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>updateQuickActionName</name>
-                <value>animalshelter__Animal__c.animalshelter__Update_Animal</value>
+                <value>Animal__c.Update_Animal</value>
             </componentInstanceProperties>
             <componentName>console:relatedRecord</componentName>
         </componentInstances>

@@ -44,15 +44,15 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>createQuickActionName</name>
-                <value>animalshelter__NewAccount</value>
+                <value>NewAccount</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>lookupFieldName</name>
-                <value>animalshelter__Organisation__c</value>
+                <value>Organisation__c</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>updateQuickActionName</name>
-                <value>Account.animalshelter__Update_Organisation</value>
+                <value>Account.Update_Organisation</value>
             </componentInstanceProperties>
             <componentName>console:relatedRecord</componentName>
             <visibilityRule>
@@ -66,11 +66,11 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>createQuickActionName</name>
-                <value>animalshelter__NewContact</value>
+                <value>NewContact</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>lookupFieldName</name>
-                <value>animalshelter__Foster_Contact__c</value>
+                <value>Foster_Contact__c</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>titleFieldName</name>

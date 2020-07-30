@@ -21,3 +21,5 @@ robot/animal_shelter_starter/results/
 
 # Misc
 .DS_Store
+
+test_results.*

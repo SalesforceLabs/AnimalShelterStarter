@@ -15,12 +15,12 @@
         
         cmp.set('v.mycolumns', [
             {label: 'Action Link', fieldName: 'linkName', type: 'url', typeAttributes: {label: { fieldName: 'Name' }, target: '_blank'}, sortable: true},
-            {label: 'Description', fieldName: 'animalshelter__Description__c', type: 'text'},
-            {label: 'Date/Time of Action', fieldName: 'animalshelter__Date_Time_of_Action__c', type: 'date'},
-            //{label: 'Completed', fieldName: 'animalshelter__Action_Completed__c', type: 'boolean'},  
+            {label: 'Description', fieldName: 'Description__c', type: 'text'},
+            {label: 'Date/Time of Action', fieldName: 'Date_Time_of_Action__c', type: 'date'},
+            //{label: 'Completed', fieldName: 'Action_Completed__c', type: 'boolean'},  
             {
                 "label": "Completed",
-                "fieldName": "animalshelter__Action_Completed__c",
+                "fieldName": "Action_Completed__c",
                 "cellAttributes": {
                     "class": {
                         "fieldName": "showClass"

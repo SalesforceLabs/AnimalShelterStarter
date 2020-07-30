@@ -1,7 +1,7 @@
 @isTest
 public class ProfilePictureControllerTest {
     static testMethod void testMethod1 () {
-        animalshelter__Animal__c TestAnimal = new animalshelter__Animal__c (animalshelter__Animal_Name__c='rex', animalshelter__Date_of_Arrival__c = date.today(), animalshelter__Type__c = 'Dog');
+        Animal__c TestAnimal = new Animal__c (Animal_Name__c='rex', Date_of_Arrival__c = date.today(), Type__c = 'Dog');
         insert TestAnimal;
 
         //Attachment TempAttachement = new Attachment();

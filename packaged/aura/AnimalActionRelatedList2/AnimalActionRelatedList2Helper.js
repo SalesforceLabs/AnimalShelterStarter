@@ -12,12 +12,12 @@
                 var records =response.getReturnValue();
                 records.forEach(function(record){
                     record.linkName = '/'+record.Id;
-                    if(record.animalshelter__Action_Completed__c){
-                            record.showClass = (record.animalshelter__Action_Completed__c === true ? 'redcolor' : 'blackcolor');
+                    if(record.Action_Completed__c){
+                            record.showClass = (record.Action_Completed__c === true ? 'redcolor' : 'blackcolor');
                             record.displayIconName = 'utility:check';  
                         }
                         else{
-                            record.showClass = (record.animalshelter__Action_Completed__c === false ? 'blackcolor' : 'redcolor');
+                            record.showClass = (record.Action_Completed__c === false ? 'blackcolor' : 'redcolor');
                             record.displayIconName = 'utility:close';     
                         }
                 });

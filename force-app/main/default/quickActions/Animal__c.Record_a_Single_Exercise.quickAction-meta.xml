@@ -6,7 +6,7 @@
     </fieldOverrides>
     <fieldOverrides>
         <field>Animal__c</field>
-        <formula>animalshelter__Animal__c.Id</formula>
+        <formula>Animal__c.Id</formula>
     </fieldOverrides>
     <fieldOverrides>
         <field>Date_Time_of_Action__c</field>

@@ -8,7 +8,7 @@
         <field>Date_Time_of_Action__c</field>
         <formula>NOW()</formula>
     </fieldOverrides>
-    <label>Add Exercise Action</label>
+    <label>New Exercise Action</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>

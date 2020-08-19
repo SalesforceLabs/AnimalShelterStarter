@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldOverrides>
-        <field>Animal__c</field>
-        <formula>Animal__c.Id</formula>
-    </fieldOverrides>
-    <fieldOverrides>
         <field>Date_Time_of_Treatment__c</field>
         <formula>NOW()</formula>
     </fieldOverrides>
-    <label>Add Treatment</label>
+    <label>DEPRECATED Add Treatment</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>

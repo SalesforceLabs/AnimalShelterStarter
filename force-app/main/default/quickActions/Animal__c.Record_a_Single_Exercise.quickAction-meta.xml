@@ -5,14 +5,10 @@
         <formula>True</formula>
     </fieldOverrides>
     <fieldOverrides>
-        <field>Animal__c</field>
-        <formula>Animal__c.Id</formula>
-    </fieldOverrides>
-    <fieldOverrides>
         <field>Date_Time_of_Action__c</field>
         <formula>NOW()</formula>
     </fieldOverrides>
-    <label>Record a Single Exercise</label>
+    <label>DEPRECATED Record a Single Exercise</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>

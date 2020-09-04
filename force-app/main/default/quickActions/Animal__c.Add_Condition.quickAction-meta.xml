@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldOverrides>
-        <field>Animal__c</field>
-        <formula>Animal__c.Id</formula>
-    </fieldOverrides>
-    <fieldOverrides>
         <field>Start_Date__c</field>
         <formula>NOW()</formula>
     </fieldOverrides>
-    <label>Add Condition</label>
+    <label>New Condition</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>

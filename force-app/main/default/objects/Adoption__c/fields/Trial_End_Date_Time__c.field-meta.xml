@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Trial_End_Date_Time__c</fullName>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If this is a trial adoption, then set this to the end date when the trial period is due to end.</inlineHelpText>
     <label>Trial End Date Time</label>

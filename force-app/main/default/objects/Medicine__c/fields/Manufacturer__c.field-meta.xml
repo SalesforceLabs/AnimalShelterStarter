@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Manufacturer__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>The Manufacturer/Brand or Supplier of the medicine</inlineHelpText>
     <label>Manufacturer</label>

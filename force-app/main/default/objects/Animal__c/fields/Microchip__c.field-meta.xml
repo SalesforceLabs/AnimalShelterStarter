@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Microchip__c</fullName>
     <caseSensitive>false</caseSensitive>
-    <deprecated>false</deprecated>
     <externalId>true</externalId>
     <inlineHelpText>The microchip number or tag number/ID for the animal.</inlineHelpText>
     <label>Microchip Number or Tag</label>

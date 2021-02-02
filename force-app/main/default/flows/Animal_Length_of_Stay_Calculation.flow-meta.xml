@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
     <assignments>
         <name>Count_Total_of_Days</name>
         <label>Count Total of Days</label>
@@ -94,6 +95,7 @@
         <connector>
             <targetReference>No_Records_Found</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Animal__c</field>
             <operator>EqualTo</operator>
@@ -121,6 +123,7 @@
         <label>Set Stay Field to Zero</label>
         <locationX>504</locationX>
         <locationY>294</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -141,6 +144,7 @@
         <label>Set Stay Field</label>
         <locationX>755</locationX>
         <locationY>299</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>

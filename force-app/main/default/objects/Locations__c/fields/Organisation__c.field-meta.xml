@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Organisation__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <deprecated>false</deprecated>
     <description>An Organisation location that an Animal can be transferred to (Account)</description>
     <externalId>false</externalId>
     <label>Organisation</label>

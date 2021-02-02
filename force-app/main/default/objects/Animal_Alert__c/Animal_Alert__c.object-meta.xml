@@ -149,7 +149,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>[Animal Shelter Starter] Records alerts or warnings against an Animal</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>

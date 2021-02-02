@@ -1,73 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>collapsed</name>
-                <value>false</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>hideChatterActions</name>
-                <value>false</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>numVisibleActions</name>
-                <value>3</value>
-            </componentInstanceProperties>
-            <componentName>force:highlightsPanel</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>collapsed</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideChatterActions</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>numVisibleActions</name>
+                    <value>3</value>
+                </componentInstanceProperties>
+                <componentName>force:highlightsPanel</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>relatedListComponentOverride</name>
-                <value>NONE</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>rowsToDisplay</name>
-                <value>10</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>showActionBar</name>
-                <value>true</value>
-            </componentInstanceProperties>
-            <componentName>force:relatedListContainer</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListContainer</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-2e99aa46-8731-43f5-836c-b462ef4edac7</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>active</name>
-                <value>true</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>body</name>
-                <value>Facet-2e99aa46-8731-43f5-836c-b462ef4edac7</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>Standard.Tab.relatedLists</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-2e99aa46-8731-43f5-836c-b462ef4edac7</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.relatedLists</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-fbe0f6c5-c798-4497-b9b7-ef6b702e581c</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>force:detailPanel</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>tabs</name>
-                <value>Facet-fbe0f6c5-c798-4497-b9b7-ef6b702e581c</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tabset</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>force:detailPanel</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>tabs</name>
+                    <value>Facet-fbe0f6c5-c798-4497-b9b7-ef6b702e581c</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tabset</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>

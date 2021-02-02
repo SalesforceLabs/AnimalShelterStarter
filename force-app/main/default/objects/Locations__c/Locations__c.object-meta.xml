@@ -149,7 +149,6 @@
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>Default_Location_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>[Animal Shelter Starter] Stores the various locations an animal can be housed within</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>

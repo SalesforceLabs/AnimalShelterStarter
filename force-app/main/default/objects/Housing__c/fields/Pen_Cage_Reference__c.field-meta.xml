@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Pen_Cage_Reference__c</fullName>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>The reference number/name where the animal is housed within the building.</inlineHelpText>
     <label>Pen/Cage Reference</label>

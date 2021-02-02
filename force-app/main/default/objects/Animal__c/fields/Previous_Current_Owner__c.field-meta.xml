@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Previous_Current_Owner__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If boarding then this is the current owner otherwise set this to the previous owner of the animal.</inlineHelpText>
     <label>Previous/Current Owner</label>

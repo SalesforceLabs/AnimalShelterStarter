@@ -238,6 +238,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Animal__c.Add_Condition</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Animal__c.Add_Treatment_Action</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
@@ -331,11 +336,6 @@
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>19</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Animal__c.Add_Condition</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Clone</actionName>
@@ -456,13 +456,22 @@
         <sortField>Date_Time_of_Action__c</sortField>
         <sortOrder>Desc</sortOrder>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Related_Animal__c</fields>
+        <fields>Related_Animal_Name__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>Animal_Relationship__c.Animal__c</relatedList>
+        <sortField>Status__c</sortField>
+        <sortOrder>Asc</sortOrder>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h2D000000xzVY</masterLabel>
+        <masterLabel>00hJ00000036Z7o</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

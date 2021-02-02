@@ -3,8 +3,8 @@
     <fullName>Current_Weight__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <inlineHelpText>The current weight of the animal in kg. This field is tracked and changes will be logged in the Field History.</inlineHelpText>
-    <label>Current Weight (KG)</label>
+    <inlineHelpText>The current weight of the animal. This field is tracked and changes will be logged in the Field History.</inlineHelpText>
+    <label>Current Weight</label>
     <precision>5</precision>
     <required>false</required>
     <scale>2</scale>

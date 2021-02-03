@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
     <description>Flow which allows users to move an animal from one location to another.</description>
     <interviewLabel>Animal - Moving housing location {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Moving housing location</label>
@@ -34,5 +35,5 @@
             <targetReference>testt</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
 </Flow>

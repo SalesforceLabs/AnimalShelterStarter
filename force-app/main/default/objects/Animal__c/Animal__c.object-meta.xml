@@ -149,7 +149,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>Default_Animal_View</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>[Animal Shelter Starter] The core object in the Animal Shelter Starter which stores the details about an animal.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -173,8 +172,8 @@
         <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Breed__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Animal_Status__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Animal_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Breed__c</lookupDialogsAdditionalFields>

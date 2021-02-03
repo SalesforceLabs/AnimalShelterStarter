@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Date_Time_Used__c</fullName>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>The Date and Time the Medicine was used</inlineHelpText>
     <label>Date/Time Used</label>

@@ -143,7 +143,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>Medicine_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>

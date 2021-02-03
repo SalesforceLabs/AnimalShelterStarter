@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
     <description>This flow allows an end user to create an Animal Alert from a condition record.</description>
     <interviewLabel>Condition - Generate Alert from Condition {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Condition - Generate Alert from Condition</label>
@@ -63,6 +64,7 @@
         <faultConnector>
             <targetReference>ErrorScreen</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>

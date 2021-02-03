@@ -3,7 +3,7 @@ project:
     name: animal_shelter_starter
     package:
         name:  Animal Shelter Starter
-        namespace: animalshelter
+        namespace: animalshelters
         api_version: '50.0'
     source_format: sfdx
 

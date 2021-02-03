@@ -1,4 +1,0 @@
-<design:component label="ProfilePicture">
-    <design:attribute name="message" label="Message" />
-    <design:attribute name="ImageClass" label="ImageStyle" datasource="Square_Image,Round_Image" default="Round_Image" />
-</design:component>

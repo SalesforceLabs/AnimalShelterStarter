@@ -146,7 +146,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>[Animal Shelter Starter] This object tracks information related to an adoption, related to an animal. Including inspections and contacts.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>

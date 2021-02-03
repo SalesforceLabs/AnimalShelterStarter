@@ -149,7 +149,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>Animal_Action_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>[Animal Shelter Starter] Used to capture scheduled actions against an animal</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>

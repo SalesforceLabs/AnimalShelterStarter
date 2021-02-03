@@ -143,7 +143,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>Tracks the movement of animals. Junction between Animal and Location</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>

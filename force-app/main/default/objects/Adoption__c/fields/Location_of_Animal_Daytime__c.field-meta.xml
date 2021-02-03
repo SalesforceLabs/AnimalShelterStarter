@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Location_of_Animal_Daytime__c</fullName>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Where will the animal be kept during the day? Is this area suitable for the animal?</inlineHelpText>
     <label>Location of Animal (Daytime)</label>

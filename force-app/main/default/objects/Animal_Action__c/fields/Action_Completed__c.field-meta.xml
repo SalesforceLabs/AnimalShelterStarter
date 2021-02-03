@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Action_Completed__c</fullName>
     <defaultValue>false</defaultValue>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Action Completed</label>
     <trackTrending>false</trackTrending>

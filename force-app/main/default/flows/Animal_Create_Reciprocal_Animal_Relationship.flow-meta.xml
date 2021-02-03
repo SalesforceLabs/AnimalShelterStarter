@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
     <description>[Animal Shelter] Creates a Reciprocal Relationship for an Animal Relationship when a new record is created.</description>
     <interviewLabel>Animal - Create Reciprocal Animal Relationship {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Create Reciprocal Animal Relationship</label>
@@ -63,6 +64,7 @@
         <connector>
             <targetReference>Create_Reciprocal_Relationship</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -84,6 +86,7 @@
         <connector>
             <targetReference>Update_Origin</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Record_Created__c</field>
             <operator>EqualTo</operator>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
     <assignments>
         <name>Get_Selected_Choice</name>
         <label>Get Selected Choice</label>
@@ -123,6 +124,7 @@
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
@@ -146,6 +148,7 @@
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
@@ -176,6 +179,7 @@
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -197,6 +201,7 @@
         <connector>
             <targetReference>Completed</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -223,6 +228,7 @@
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
@@ -249,6 +255,7 @@
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Parent_Block__c</field>
             <operator>EqualTo</operator>

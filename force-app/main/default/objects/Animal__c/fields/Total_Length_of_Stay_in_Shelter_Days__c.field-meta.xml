@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Total_Length_of_Stay_in_Shelter_Days__c</fullName>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>This is the cumulative stay length the animal has been in the shelter</inlineHelpText>
     <label>Total Length of Stay in Shelter (Days)</label>

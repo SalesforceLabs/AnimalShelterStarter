@@ -81,16 +81,16 @@
         <label>Rat</label>
     </customValue>
     <customValue>
-        <fullName>Reptile</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Reptile</label>
-    </customValue>
-    <customValue>
         <fullName>Fish</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>Fish</label>
+    </customValue>
+    <customValue>
+        <fullName>Reptile</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Reptile</label>
     </customValue>
     <description>Types of Animals</description>
     <masterLabel>Animal Type</masterLabel>

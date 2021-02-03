@@ -149,7 +149,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>Condition_Default_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>[Animal Shelter Starter] Medical conditions related to an animal. Also linked with Treatments.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>

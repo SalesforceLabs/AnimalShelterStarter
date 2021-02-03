@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Breed__c</fullName>
-    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Breed of Animal</inlineHelpText>
     <label>Breed</label>
@@ -12,10 +11,6 @@
         <controllingField>Type__c</controllingField>
         <restricted>true</restricted>
         <valueSetName>Breed</valueSetName>
-        <valueSettings>
-            <controllingFieldValue>Ferret</controllingFieldValue>
-            <valueName>Ferret</valueName>
-        </valueSettings>
         <valueSettings>
             <controllingFieldValue>Goat</controllingFieldValue>
             <valueName>Goat</valueName>
@@ -1347,6 +1342,10 @@
         <valueSettings>
             <controllingFieldValue>Hedgehog</controllingFieldValue>
             <valueName>Hedgehog</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ferret</controllingFieldValue>
+            <valueName>Ferret</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

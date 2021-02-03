@@ -829,7 +829,7 @@
             <targetReference>Schedule_Details</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>AnimalActionDate</name>
         <dataType>DateTime</dataType>

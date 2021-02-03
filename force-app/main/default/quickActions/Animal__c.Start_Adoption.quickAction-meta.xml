@@ -4,10 +4,6 @@
         <field>Adoption_Stage__c</field>
         <literalValue>Initial Review</literalValue>
     </fieldOverrides>
-    <fieldOverrides>
-        <field>Animal__c</field>
-        <formula>Animal__c.Id</formula>
-    </fieldOverrides>
     <label>Start Adoption</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>

@@ -1,0 +1,30 @@
+<!--
+   @Filename          : AnimalCloneDisplayFlowScreen.cmp
+   @Description       : Flow component using datatable to display Cloned animal records for update
+   @Author            : Chris Rolfe (Salesforce.org)
+   @Group             :
+   @Last Modified By  : Chris Rolfe (Salesforce.org)
+   @Last Modified On  : 4/20/2020, 11:22:04 AM
+   @Modifcation Log   :
+   Ver      Date             Author             Modification
+   1.0    4/20/2020     Chris Rolfe (Salesforce.org)      Initial Version
+-->
+<aura:component access="global" implements="lightning:availableForFlowScreens" >
+    
+    <aura:attribute name="animals" type="Animal__c[]" access="global"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedAnimals" type="Animal__c[]" access="global"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <h1>Selected Rows: {! v.selectedRowsCount }</h1>
+    
+    <lightning:datatable data="{!v.animals}"
+                       	columns="{!v.columns}"
+                       	keyField="Id"
+                       	editable = "true"
+                       	onrowselection="{!c.updateSelectedAnimals}"
+                       	draftValues="{! v.selectedAnimals }"
+                		onsave="{! c.handleSaveEdition }"/>
+	
+</aura:component>

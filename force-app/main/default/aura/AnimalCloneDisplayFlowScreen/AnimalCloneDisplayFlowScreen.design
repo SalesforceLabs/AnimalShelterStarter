@@ -1,0 +1,6 @@
+<design:component>
+    
+    <design:attribute name="animals" label="Animals"/>
+    <design:attribute name="selectedAnimals" label="Selected Animals"/>    
+	
+</design:component>

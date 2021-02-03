@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Animal_Action__c</entityName>
+    <fieldName>Action_Status__c</fieldName>
+    <masterLabel>Treatment Action Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Date_Time_of_Action__c</fieldNames>
+        <fieldNames>Given_By__c</fieldNames>
+        <fieldNames>Comments__c</fieldNames>
+        <picklistValueName>Given</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Date_Time_of_Action__c</fieldNames>
+        <fieldNames>Given_By__c</fieldNames>
+        <fieldNames>Description__c</fieldNames>
+        <fieldNames>Comments__c</fieldNames>
+        <picklistValueName>Given - See Comments</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Comments__c</fieldNames>
+        <picklistValueName>Not Given</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Date_Time_of_Action__c</fieldNames>
+        <picklistValueName>Scheduled</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Treatment</recordTypeName>
+</PathAssistant>

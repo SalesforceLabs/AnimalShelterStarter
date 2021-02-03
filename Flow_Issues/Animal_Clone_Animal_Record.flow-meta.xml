@@ -3,8 +3,8 @@
     <assignments>
         <name>Add_Clone_to_Collection</name>
         <label>Add Clone to Collection</label>
-        <locationX>837</locationX>
-        <locationY>46</locationY>
+        <locationX>1259</locationX>
+        <locationY>32</locationY>
         <assignmentItems>
             <assignToReference>CloneAnimalRecords</assignToReference>
             <operator>Add</operator>
@@ -19,8 +19,8 @@
     <assignments>
         <name>Create_Clone_Record</name>
         <label>Create Clone Record</label>
-        <locationX>837</locationX>
-        <locationY>262</locationY>
+        <locationX>1070</locationX>
+        <locationY>111</locationY>
         <assignmentItems>
             <assignToReference>CloneAnimalRecord.Id</assignToReference>
             <operator>Assign</operator>
@@ -168,8 +168,8 @@
     <assignments>
         <name>Increase_Counter</name>
         <label>Increase Counter</label>
-        <locationX>597</locationX>
-        <locationY>46</locationY>
+        <locationX>867</locationX>
+        <locationY>23</locationY>
         <assignmentItems>
             <assignToReference>Counter</assignToReference>
             <operator>Add</operator>
@@ -184,8 +184,8 @@
     <decisions>
         <name>Have_we_Created_all_the_Clones</name>
         <label>Have we Created all the Clones?</label>
-        <locationX>590</locationX>
-        <locationY>266</locationY>
+        <locationX>582</locationX>
+        <locationY>216</locationY>
         <defaultConnector>
             <targetReference>Create_Clone_Record</targetReference>
         </defaultConnector>
@@ -201,7 +201,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_Clone_Records</targetReference>
+                <targetReference>Cloned_Display_Screen</targetReference>
             </connector>
             <label>Yes - Clones Created</label>
         </rules>
@@ -230,8 +230,8 @@
     <recordCreates>
         <name>Create_Clone_Records</name>
         <label>Create Clone Records</label>
-        <locationX>885</locationX>
-        <locationY>508</locationY>
+        <locationX>922</locationX>
+        <locationY>551</locationY>
         <connector>
             <targetReference>Completion_Screen</targetReference>
         </connector>
@@ -243,11 +243,11 @@
     <recordLookups>
         <name>Get_Current_Animal_Record</name>
         <label>Get Current Animal Record</label>
-        <locationX>382</locationX>
-        <locationY>271</locationY>
+        <locationX>294</locationX>
+        <locationY>216</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Have_we_Created_all_the_Clones</targetReference>
+            <targetReference>Ask_for_Number_of_Clones_Screen</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
@@ -285,31 +285,67 @@
     <screens>
         <name>Ask_for_Number_of_Clones_Screen</name>
         <label>Ask for Number of Clones Screen</label>
-        <locationX>406</locationX>
-        <locationY>74</locationY>
+        <locationX>424</locationX>
+        <locationY>215</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
-            <targetReference>Get_Current_Animal_Record</targetReference>
+            <targetReference>Have_we_Created_all_the_Clones</targetReference>
         </connector>
         <fields>
-            <name>Ask_for_Number_of_Clones_Title</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;How many Clones?&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <name>Ask_for_Number_of_Clones_Text</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Record Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Name: {!CurrentAnimalRecord.Animal_Name__c}&lt;/p&gt;&lt;p&gt;Breed: {!CurrentAnimalRecord.Breed__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Ask_for_Number_of_Clones_Text</name>
-            <fieldText>&lt;p&gt;How many additional animal records do you want to create?&lt;/p&gt;</fieldText>
+            <name>Ask_for_Number_of_Clones_Title</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Number of Cloned Records&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>NoOfClonesRequired</name>
             <dataType>Number</dataType>
-            <fieldText>Clones</fieldText>
+            <fieldText>Enter Number</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
             <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Cloned_Display_Screen</name>
+        <label>Cloned Display Screen</label>
+        <locationX>854</locationX>
+        <locationY>319</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Create_Clone_Records</targetReference>
+        </connector>
+        <fields>
+            <name>ClonedRecs</name>
+            <extensionName>c:AnimalCloneDisplayFlowScreen</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>mydata</name>
+                <value>
+                    <elementReference>CloneAnimalRecords</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectedRecs</name>
+                <value>
+                    <elementReference>UpdatedCloneRecords</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>UpdatedCloneRecords</assignToReference>
+                <name>selectedRecs</name>
+            </outputParameters>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -349,13 +385,13 @@
     <screens>
         <name>Start_Screen</name>
         <label>Start Screen</label>
-        <locationX>280</locationX>
-        <locationY>74</locationY>
+        <locationX>61</locationX>
+        <locationY>216</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Ask_for_Number_of_Clones_Screen</targetReference>
+            <targetReference>Get_Current_Animal_Record</targetReference>
         </connector>
         <fields>
             <name>Start_Screen_Title</name>
@@ -371,13 +407,13 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>42</locationX>
-        <locationY>273</locationY>
+        <locationX>15</locationX>
+        <locationY>41</locationY>
         <connector>
             <targetReference>Start_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>AnimalID</name>
         <dataType>String</dataType>
@@ -397,8 +433,8 @@
         <name>CloneAnimalRecords</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
         <objectType>Animal__c</objectType>
     </variables>
     <variables>
@@ -424,8 +460,8 @@
         <name>UpdatedCloneRecords</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
         <objectType>Animal__c</objectType>
     </variables>
 </Flow>

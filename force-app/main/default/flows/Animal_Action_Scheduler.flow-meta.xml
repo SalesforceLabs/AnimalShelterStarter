@@ -20,8 +20,8 @@
     <assignments>
         <name>Add_to_Collection_Initial</name>
         <label>Add to Collection</label>
-        <locationX>712</locationX>
-        <locationY>364</locationY>
+        <locationX>722</locationX>
+        <locationY>421</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecords</assignToReference>
             <operator>Add</operator>
@@ -68,8 +68,8 @@
     <assignments>
         <name>Assign_Variables</name>
         <label>Assign Variables</label>
-        <locationX>441</locationX>
-        <locationY>361</locationY>
+        <locationX>452</locationX>
+        <locationY>421</locationY>
         <assignmentItems>
             <assignToReference>NumberOfTimeFrames</assignToReference>
             <operator>Assign</operator>
@@ -91,8 +91,8 @@
     <assignments>
         <name>Calculate_Next_Action_Date</name>
         <label>Calculate Next Action Date</label>
-        <locationX>855</locationX>
-        <locationY>733</locationY>
+        <locationX>878</locationX>
+        <locationY>737</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionDate</assignToReference>
             <operator>Assign</operator>
@@ -175,7 +175,7 @@
         <name>Generate_Initial_Action</name>
         <label>Generate Initial Action</label>
         <locationX>577</locationX>
-        <locationY>362</locationY>
+        <locationY>421</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
@@ -225,8 +225,8 @@
     <assignments>
         <name>Generate_Initial_Task</name>
         <label>Generate Initial Task</label>
-        <locationX>702</locationX>
-        <locationY>21</locationY>
+        <locationX>721</locationX>
+        <locationY>25</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionTask.Status</assignToReference>
             <operator>Assign</operator>
@@ -376,8 +376,8 @@
     <decisions>
         <name>Calculate_Additional_Action</name>
         <label>Calculate Additional Action?</label>
-        <locationX>932</locationX>
-        <locationY>357</locationY>
+        <locationX>933</locationX>
+        <locationY>231</locationY>
         <defaultConnector>
             <targetReference>Calculate_Next_Action_Date</targetReference>
         </defaultConnector>
@@ -426,8 +426,8 @@
     <decisions>
         <name>Generate_Tasks</name>
         <label>Generate Tasks?</label>
-        <locationX>704</locationX>
-        <locationY>184</locationY>
+        <locationX>714</locationX>
+        <locationY>227</locationY>
         <defaultConnector>
             <targetReference>Calculate_Additional_Action</targetReference>
         </defaultConnector>
@@ -476,8 +476,8 @@
     <decisions>
         <name>Is_this_a_Treatment_Action</name>
         <label>Is this a Treatment Action?</label>
-        <locationX>269</locationX>
-        <locationY>612</locationY>
+        <locationX>235</locationX>
+        <locationY>672</locationY>
         <defaultConnector>
             <targetReference>Assign_Variables</targetReference>
         </defaultConnector>
@@ -593,8 +593,8 @@
     <recordLookups>
         <name>Get_Animal_Action_RecordType_ID</name>
         <label>Get Animal Action RecordType ID</label>
-        <locationX>124</locationX>
-        <locationY>614</locationY>
+        <locationX>160</locationX>
+        <locationY>425</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_this_a_Treatment_Action</targetReference>
@@ -649,7 +649,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Final_Screen_text</name>
-            <fieldText>&lt;p&gt;{!Action_Selection} Records Generated! Click FINISH to save the records.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/b&gt;{!Action_Selection} Records Generated! &lt;b&gt;Click FINISH to save the records.&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -658,8 +658,8 @@
     <screens>
         <name>Schedule_Details</name>
         <label>Schedule Details</label>
-        <locationX>93</locationX>
-        <locationY>492</locationY>
+        <locationX>160</locationX>
+        <locationY>241</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -668,7 +668,7 @@
         </connector>
         <fields>
             <name>Schedule_Header_Text</name>
-            <fieldText>&lt;p&gt;Calculate scheduled treatment dates by completing the form below. &lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Calculate and add scheduled actions for this animal by completing the form below. &lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -742,7 +742,7 @@
             <name>Generate_Tasks_and_Treatment_Records</name>
             <dataType>Boolean</dataType>
             <defaultValue>
-                <booleanValue>true</booleanValue>
+                <booleanValue>false</booleanValue>
             </defaultValue>
             <fieldText>Yes, generate Tasks as well</fieldText>
             <fieldType>InputField</fieldType>
@@ -823,13 +823,13 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>18</locationX>
-        <locationY>359</locationY>
+        <locationX>34</locationX>
+        <locationY>68</locationY>
         <connector>
             <targetReference>Schedule_Details</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>AnimalActionDate</name>
         <dataType>DateTime</dataType>

@@ -22,14 +22,14 @@ public with sharing class AnimalActionRLClass2 {
        
        
        boolean blnFirstTimeRound = false;
-       for(RecordType rec : [SELECT Id FROM RecordType WHERE sObjectType = 'Animal_Action__c' and Name =:rTypeName])
+       for(RecordType rec : [SELECT Id FROM RecordType WHERE sObjectType = '%%%NAMESPACED_ORG%%%Animal_Action__c' and Name =:rTypeName])
        {
            if (!blnFirstTimeRound){
-               List<Animal_Action__c> y = [SELECT Id, Name, Action_Completed__c
-                                                      ,Date_Time_of_Action__c
-                                                      ,Description__c
-                                           FROM 	Animal_Action__c
-                                           WHERE 	Animal__c= :recId and RecordTypeId= :rec.Id];
+               List<Animal_Action__c> y = [SELECT Id, Name, %%%NAMESPACED_ORG%%%Action_Completed__c
+                                                      ,%%%NAMESPACED_ORG%%%Date_Time_of_Action__c
+                                                      ,%%%NAMESPACED_ORG%%%Description__c
+                                           FROM 	%%%NAMESPACED_ORG%%%Animal_Action__c
+                                           WHERE 	%%%NAMESPACED_ORG%%%Animal__c= :recId and RecordTypeId= :rec.Id];
        for(Animal_Action__c z : y)
            {
            animalActions.add(z);

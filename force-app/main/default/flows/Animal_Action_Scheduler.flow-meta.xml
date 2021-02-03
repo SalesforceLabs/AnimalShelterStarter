@@ -552,6 +552,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -587,8 +593,8 @@
     <recordLookups>
         <name>Get_Animal_Action_RecordType_ID</name>
         <label>Get Animal Action RecordType ID</label>
-        <locationX>125</locationX>
-        <locationY>609</locationY>
+        <locationX>124</locationX>
+        <locationY>614</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_this_a_Treatment_Action</targetReference>
@@ -608,7 +614,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Animal_Action__c</stringValue>
+                <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -652,8 +658,8 @@
     <screens>
         <name>Schedule_Details</name>
         <label>Schedule Details</label>
-        <locationX>145</locationX>
-        <locationY>358</locationY>
+        <locationX>93</locationX>
+        <locationY>492</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -671,6 +677,17 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
+            <name>From_Date</name>
+            <dataType>DateTime</dataType>
+            <defaultValue>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </defaultValue>
+            <fieldText>When is the first date and time of the action?</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;Date of first treatment&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
             <name>Schedule_Picklist</name>
             <choiceReferences>Day_Choice</choiceReferences>
             <choiceReferences>Week_Choice</choiceReferences>
@@ -678,19 +695,8 @@
             <choiceReferences>Years_Choice</choiceReferences>
             <dataType>String</dataType>
             <defaultSelectedChoiceReference>Day_Choice</defaultSelectedChoiceReference>
-            <fieldText>Time Frame...</fieldText>
+            <fieldText>How often will this action need to be completed?</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>From_Date</name>
-            <dataType>DateTime</dataType>
-            <defaultValue>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </defaultValue>
-            <fieldText>From...</fieldText>
-            <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;Date of first treatment&lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -699,9 +705,9 @@
             <defaultValue>
                 <numberValue>1.0</numberValue>
             </defaultValue>
-            <fieldText>For...</fieldText>
+            <fieldText>For how long?</fieldText>
             <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;Total number of treatments&lt;/p&gt;</helpText>
+            <helpText>&lt;p&gt;Once you have set the recurrence (e.g. to Daily), how many days will the schedule run for (e.g. 6 would be 6 days)? &lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
             <scale>0</scale>
         </fields>
@@ -716,15 +722,21 @@
             <choiceReferences>Exercise</choiceReferences>
             <choiceReferences>Nutrition</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Action_Selection</fieldText>
+            <fieldText>Select the type of action for the animal:</fieldText>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Action_Description</name>
-            <fieldText>Action Description</fieldText>
+            <fieldText>Provide a description for this action:</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Generate_Tasks_Text</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Would you also like to generate tasks within Salesforce?&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Generate_Tasks_and_Treatment_Records</name>
@@ -732,7 +744,7 @@
             <defaultValue>
                 <booleanValue>true</booleanValue>
             </defaultValue>
-            <fieldText>Generate Tasks</fieldText>
+            <fieldText>Yes, generate Tasks as well</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -742,8 +754,8 @@
     <screens>
         <name>Treatment_Info</name>
         <label>Treatment Info</label>
-        <locationX>262</locationX>
-        <locationY>351</locationY>
+        <locationX>375</locationX>
+        <locationY>192</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -786,13 +798,13 @@
             <inputParameters>
                 <name>objectApiName</name>
                 <value>
-                    <stringValue>Animal_Action__c</stringValue>
+                    <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>fieldApiName</name>
                 <value>
-                    <stringValue>Condition__c</stringValue>
+                    <stringValue>%%%NAMESPACED_ORG%%%Condition__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>

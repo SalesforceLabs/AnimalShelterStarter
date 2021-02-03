@@ -21,7 +21,7 @@ public with sharing class AlertBannerController {
     @AuraEnabled
     public static List<Animal_Alert__c> getRelatedAlertRecords(Id parentId) {
         if(parentId != null){
-            List<Animal_Alert__c> AlertList = [SELECT Id, Alert_Message__c,Start_Date_Time__c,End_Date_Time__c FROM Animal_Alert__c WHERE Animal__c = :parentId AND Start_Date_Time__c <= TODAY AND (End_Date_Time__c >= TODAY OR End_Date_Time__c = NULL) LIMIT 20];
+            List<Animal_Alert__c> AlertList = [SELECT Id, %%%NAMESPACED_ORG%%%Alert_Message__c,%%%NAMESPACED_ORG%%%Start_Date_Time__c,%%%NAMESPACED_ORG%%%End_Date_Time__c FROM %%%NAMESPACED_ORG%%%Animal_Alert__c WHERE %%%NAMESPACED_ORG%%%Animal__c = :parentId AND %%%NAMESPACED_ORG%%%Start_Date_Time__c <= TODAY AND (%%%NAMESPACED_ORG%%%End_Date_Time__c >= TODAY OR %%%NAMESPACED_ORG%%%End_Date_Time__c = NULL) LIMIT 20];
             return AlertList;
         } else {
             return null;

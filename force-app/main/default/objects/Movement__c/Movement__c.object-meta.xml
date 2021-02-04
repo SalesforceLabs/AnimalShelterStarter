@@ -149,7 +149,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Tracks the movement of animals. Junction between Animal and Location</description>
+    <description>[Animal Shelter Starter] Tracks the movement of animals. Junction between Animal and Location</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>

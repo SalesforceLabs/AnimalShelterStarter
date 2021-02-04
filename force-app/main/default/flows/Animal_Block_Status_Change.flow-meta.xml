@@ -106,6 +106,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -281,7 +287,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Completed_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Congratulations!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units have been updated with the new status&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Records Updated!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in {!BlockName} have been updated to {!SelectedChoice}. Click Finish to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -292,12 +298,12 @@
         <label>Error Screen</label>
         <locationX>1604</locationX>
         <locationY>135</locationY>
-        <allowBack>false</allowBack>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;&lt;i&gt;OOPS!&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;It seems I have encountered an error.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;i&gt;{!$Flow.FaultMessage}&lt;/i&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;&lt;i&gt;OOPS!&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There has been an error when the wizard attempted to update the status for this block. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and click the Previous button below to go back and try again, although if the problem persists, send a note of the fault message below to your Salesforce administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Fault Message:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -313,7 +319,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Has_Allocated_Units_Text</name>
-            <fieldText>&lt;p&gt;The Block &lt;b&gt;&lt;i&gt;{!BlockName}&lt;/i&gt;&lt;/b&gt; has at least 1 unit that is housing an animal, and is allocated.  Please make arrangements to move the animals out of any units in this block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Process will exit here&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Block &lt;b&gt;&lt;i&gt;{!BlockName}&lt;/i&gt;&lt;/b&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;b&gt;Finish&lt;/b&gt; to Exit&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -322,8 +328,8 @@
     <screens>
         <name>Start_Screen</name>
         <label>Start Screen</label>
-        <locationX>239</locationX>
-        <locationY>586</locationY>
+        <locationX>182</locationX>
+        <locationY>418</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -344,6 +350,7 @@
             <fieldType>RadioButtons</fieldType>
             <isRequired>false</isRequired>
         </fields>
+        <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if the block needs to be closed for maintenance, you can use this to update the whole block to unavailable.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>

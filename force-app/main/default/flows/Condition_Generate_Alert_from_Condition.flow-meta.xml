@@ -11,6 +11,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -20,8 +26,8 @@
     <recordCreates>
         <name>CreateAlert</name>
         <label>CreateAlert</label>
-        <locationX>507</locationX>
-        <locationY>407</locationY>
+        <locationX>1255</locationX>
+        <locationY>248</locationY>
         <assignRecordIdToReference>AlertID</assignRecordIdToReference>
         <faultConnector>
             <targetReference>ErrorScreen</targetReference>
@@ -55,8 +61,8 @@
     <recordLookups>
         <name>GetConditionDetails</name>
         <label>GetConditionDetails</label>
-        <locationX>205</locationX>
-        <locationY>168</locationY>
+        <locationX>601</locationX>
+        <locationY>234</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CheckDetails</targetReference>
@@ -79,14 +85,19 @@
     <screens>
         <name>CheckDetails</name>
         <label>CheckDetails</label>
-        <locationX>346</locationX>
-        <locationY>282</locationY>
+        <locationX>909</locationX>
+        <locationY>69</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>CreateAlert</targetReference>
         </connector>
+        <fields>
+            <name>Screen_AlertDesc_Info</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Create a new Alert&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Use the form below to create a new animal alert for the following condition:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!GetConditionDetails.Condition_Description__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Alert_Description</name>
             <dataType>String</dataType>
@@ -95,6 +106,7 @@
             </defaultValue>
             <fieldText>Alert Description</fieldText>
             <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;Update this description (if needed) to define the alert message which other users will see.&lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -105,6 +117,7 @@
             </defaultValue>
             <fieldText>Start Date/Time</fieldText>
             <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;When should this alert be shown from?&lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -115,6 +128,7 @@
             </defaultValue>
             <fieldText>End Date/Time</fieldText>
             <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;When should we stop showing the alert? Note that you can leave this blank and it will show the alert on the animal record until an end date is added on the record.&lt;/p&gt;</helpText>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -123,18 +137,18 @@
     <screens>
         <name>ErrorScreen</name>
         <label>ErrorScreen</label>
-        <locationX>680</locationX>
-        <locationY>161</locationY>
+        <locationX>907</locationX>
+        <locationY>442</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>ErrorScreenText</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(211, 12, 12);&quot;&gt;ERROR&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There has been an error while we are getting or updating data. Please check the details on the previous screen and if the problem continues, contact your Salesforce administrator.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Error Message Detail: {!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an error!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and use the previous button below to go back a step and try again. If the problem persists please take a note of the fault message below and send it to your Salesforce Administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>50</locationX>

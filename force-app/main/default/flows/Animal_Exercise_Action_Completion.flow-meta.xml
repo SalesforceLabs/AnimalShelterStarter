@@ -59,6 +59,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -68,8 +74,8 @@
     <recordLookups>
         <name>Get_Animal_Action_Exercise_RecordTypeID</name>
         <label>Get Animal Action Exercise RecordTypeID</label>
-        <locationX>68</locationX>
-        <locationY>533</locationY>
+        <locationX>546</locationX>
+        <locationY>490</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Exercise_Details_Screen</targetReference>
@@ -101,8 +107,8 @@
     <recordUpdates>
         <name>Update_Animal_Action_Exercise_Record</name>
         <label>Update Animal Action Exercise Record</label>
-        <locationX>576</locationX>
-        <locationY>541</locationY>
+        <locationX>1302</locationX>
+        <locationY>506</locationY>
         <connector>
             <targetReference>End_Screen</targetReference>
         </connector>
@@ -126,7 +132,7 @@
         <inputAssignments>
             <field>Comments__c</field>
             <value>
-                <elementReference>Exercise_Comments</elementReference>
+                <elementReference>Exercise_Comments_Long</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -152,30 +158,30 @@
     <screens>
         <name>End_Screen</name>
         <label>End_Screen</label>
-        <locationX>786</locationX>
-        <locationY>541</locationY>
+        <locationX>1670</locationX>
+        <locationY>380</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>End_Screen_Text</name>
-            <fieldText>&lt;p&gt;Exercise has been logged&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;The exercise has been logged in Salesforce. Please click Finish to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>61</locationX>
-        <locationY>838</locationY>
+        <locationX>912</locationX>
+        <locationY>856</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Error Encountered&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an error!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and use the previous button below to go back a step and try again. If the problem persists please take a note of the fault message below and send it to your Salesforce Administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -184,8 +190,8 @@
     <screens>
         <name>Exercise_Details_Screen</name>
         <label>Exercise Details Screen</label>
-        <locationX>262</locationX>
-        <locationY>533</locationY>
+        <locationX>913</locationX>
+        <locationY>380</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -194,7 +200,7 @@
         </connector>
         <fields>
             <name>Exercise_Details_Text</name>
-            <fieldText>&lt;p&gt;Enter the details of the completed Exercise&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Use the form below to enter the details of the completed Exercise&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -206,7 +212,7 @@
             <name>Exercise_Action_Choice</name>
             <choiceReferences>AnimalActionExerciseRecordChoice</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Exercise Action Choice</fieldText>
+            <fieldText>Select the Scheduled Exercise Action</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -218,15 +224,14 @@
             </defaultValue>
             <fieldText>Exercise Duration (Hours)</fieldText>
             <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;Total number of treatments&lt;/p&gt;</helpText>
+            <helpText>&lt;p&gt;What was the duration in hours at the end of the scheduled action?&lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
             <scale>0</scale>
         </fields>
         <fields>
-            <name>Exercise_Comments</name>
-            <dataType>String</dataType>
-            <fieldText>Comments</fieldText>
-            <fieldType>InputField</fieldType>
+            <name>Exercise_Comments_Long</name>
+            <fieldText>Comments/Notes</fieldText>
+            <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
         </fields>
         <fields>
@@ -243,7 +248,7 @@
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>68</locationX>

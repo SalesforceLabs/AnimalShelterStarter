@@ -13,10 +13,13 @@
                             <value>Animal__c.Complete_Exercise_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Start_Adoption</value>
+                            <value>Animal__c.Add_Treatment_Action</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Animal__c.Add_Condition</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.Start_Adoption</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Animal__c.New_Alert</value>
@@ -79,7 +82,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>
-                    <value>4</value>
+                    <value>5</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
             </componentInstance>
@@ -1031,6 +1034,32 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Note: To add actions, use the &lt;/span&gt;&lt;b style=&quot;font-size: 11px;&quot;&gt;Add Scheduled Actions&lt;/b&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt; button above and follow the steps to add Treatments, Exercise Schedules and Nutrition/Diet Plans.&lt;/span&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>accordionSections</name>
+                    <value>Facet-93cec713-b625-4672-b108-b5c3c908c4f3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>defaultSectionName</name>
+                    <value>accordionSection1</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordion</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>Animal__c.Id</value>
                 </componentInstanceProperties>
@@ -1051,15 +1080,6 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>accordionSections</name>
-                    <value>Facet-93cec713-b625-4672-b108-b5c3c908c4f3</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:accordion</componentName>
             </componentInstance>
         </itemInstances>
         <name>Facet-8caff930-736d-417d-9500-dc8658d5ea73</name>

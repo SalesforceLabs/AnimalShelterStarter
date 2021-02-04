@@ -27,6 +27,7 @@
     <tabs>Animal_Action__c</tabs>
     <tabs>Locations__c</tabs>
     <tabs>Medicine__c</tabs>
+    <tabs>standard-Task</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>
@@ -49,6 +50,9 @@
         </mappings>
         <mappings>
             <tab>standard-Dashboard</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Task</tab>
         </mappings>
         <mappings>
             <tab>standard-home</tab>

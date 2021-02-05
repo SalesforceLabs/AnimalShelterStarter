@@ -102,7 +102,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Locations__c</stringValue>
+            <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>

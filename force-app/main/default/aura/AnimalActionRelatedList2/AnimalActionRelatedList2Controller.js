@@ -14,13 +14,12 @@
         helper.getData(cmp);
         
         cmp.set('v.mycolumns', [
-            {label: 'Action Link', fieldName: 'linkName', type: 'url', typeAttributes: {label: { fieldName: 'Name' }, target: '_blank'}, sortable: true},
+            {label: 'Action Link', fieldName: 'linkName', type: 'url', typeAttributes: {label: { fieldName: 'Name' }, target: '_self'}, sortable: true},
             {label: 'Description', fieldName: 'Description__c', type: 'text'},
             {label: 'Date/Time of Action', fieldName: 'Date_Time_of_Action__c', type: 'date'},
-            //{label: 'Completed', fieldName: 'Action_Completed__c', type: 'boolean'},  
             {
                 "label": "Completed",
-                "fieldName": "Action_Completed__c",
+                "fieldName": "%%%NAMESPACED_ORG%%%Action_Completed__c",
                 "cellAttributes": {
                     "class": {
                         "fieldName": "showClass"
@@ -39,7 +38,7 @@
         if ((typeof sforce != 'undefined') && sforce && (!!sforce.one))
             sforce.one.navigateToSObject(IdP);
         else{
-            location.href = '/'+ IdP;
+            location.href = '/lightning/r/%%%NAMESPACED_ORG%%%Animal_Action__c/'+ IdP +'/view';
         }
     }
 })

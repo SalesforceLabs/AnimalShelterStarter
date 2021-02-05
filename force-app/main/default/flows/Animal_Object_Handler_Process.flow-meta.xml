@@ -179,7 +179,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Animal__c</stringValue>
+            <stringValue>%%%NAMESPACED_ORG%%%Animal__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -258,7 +258,7 @@
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue>Animal__c</stringValue>
+                    <stringValue>%%%NAMESPACED_ORG%%%Animal__c</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>

@@ -6,7 +6,7 @@
     <aura:attribute name="recordLoadError" type="String"/>
     <force:recordData aura:id="recordLoader"
     recordId="{!v.recordId}"
-    fields="%%%NAMESPACED_ORG%%%Animal_Name__c"
+    fields="Animal_Name__c"
     targetFields="{!v.animalRecord}"
     targetError="{!v.recordLoadError}"
     />
@@ -23,7 +23,7 @@
     <div class="slds-text-align_center" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
         <article class="slds-card">
             <div class="slds-card__header">
-                <h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" title="{!v.animalRecord.Animal_Name__c}">{!v.animalRecord.%%%NAMESPACED_ORG%%%Animal_Name__c}</h1>
+                <h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" title="{!v.animalRecord.Animal_Name__c}">{!v.animalRecord.Animal_Name__c}</h1>
             </div>
             <div class="slds-card__body slds-card__body_inner">
         		<img src="{!v.pictureSrc}" class="{!v.ImageClass}"/>

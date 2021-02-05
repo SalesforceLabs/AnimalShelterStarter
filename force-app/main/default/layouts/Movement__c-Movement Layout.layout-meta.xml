@@ -27,6 +27,10 @@
                 <behavior>Readonly</behavior>
                 <field>Total_Time_Days__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Location_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

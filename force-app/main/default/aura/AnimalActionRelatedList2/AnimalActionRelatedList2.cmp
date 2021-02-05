@@ -19,66 +19,8 @@
     <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
     
     <aura:handler name="init" value="{!this}" action="{! c.init }"/>
-    
-    <ltng:require styles="/resource/slds_resource/assets/styles/salesforce-lightning-design-system.css?v=1" />
-    
+   
     <lightning:card title="{!'Actions (' + v.mydataLength + ')'}" iconName="utility:connected_apps" class="slds-page-header noborderbottom" >
-  <!--  <div class="slds">
-      <div class="slds-page-header noborderbottom" role="banner"> 
-        <div class="slds-grid">
-          <div class="slds-col slds-has-flexi-truncate">
-            <div class="slds-grid">
-              <div class="slds-grid slds-type-focus slds-no-space">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slds-grid">
-          <div class="slds-col slds-align-bottom">
-            <p class="slds-text-body_small page-header__info">{!v.mydataLength} items</p>
-          </div>
-        </div>
-      </div>   
-    </div>      
-    <div class="slds">
-      <table class="slds-table slds-table-bordered slds-table-cell-buffer slds-table_boardered">
-        <thead>
-          <tr class="slds-text-title">
-              <th scope="col" class="slds-truncate" title="Description">
-                  <div>Description</div>
-              </th>
-              <th scope="col" class="slds-truncate" title="Date/Time of Action">
-                  <div>Date/Time of Action</div>
-              </th>
-              <th scope="col" class="slds-truncate" title="Completed">
-                  <div>Completed</div>
-              </th>
-              <th scope="col" class="slds-truncate" title="Name">
-                  <div>Name</div>
-              </th>              
-          </tr>
-        </thead>
-        <tbody>
-          <aura:iteration items="{! v.mydata}" var="data">     
-            <tr>
-              <td data-label="Description" title="Description">
-                  <div>{! data.Description__c}</div>
-              </td>
-              <td data-label="Date/Time of Action" title="Date/Time of Action">
-                   <div><lightning:formattedDateTime value="{! data.Date_Time_of_Action__c}" year="numeric" month="long" day="numeric" hour="2-digit" minute="2-digit" hour12="true"/></div>
-              </td>
-              <td data-label="Completed" title="Completed">
-                    <div><ui:outputCheckbox aura:id="output" value="{! data.Action_Completed__c}"/></div>
-              </td>
-              <td data-label="Name" title="Name">
-                  <div><a data-record="{!data.Id}" onclick="{!c.redirectToSobject}">{!data.Name}</a></div>
-              </td>
-            </tr>
-          </aura:iteration>
-        </tbody>
-      </table> 
-      </div>-->
-        
         <lightning:datatable
                 keyField="id"
                 data="{! v.mydata }"

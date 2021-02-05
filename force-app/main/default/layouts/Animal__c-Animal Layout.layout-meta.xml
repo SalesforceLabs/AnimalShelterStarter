@@ -235,6 +235,35 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <miniLayout>
+        <fields>Animal_Name__c</fields>
+        <fields>Type__c</fields>
+        <fields>Breed__c</fields>
+        <fields>Gender__c</fields>
+        <fields>Animal_Status__c</fields>
+        <fields>Date_of_Arrival__c</fields>
+        <relatedLists>
+            <fields>TASK.SUBJECT</fields>
+            <fields>ACTIVITY.TASK</fields>
+            <fields>TASK.DUE_DATE</fields>
+            <fields>TASK.STATUS</fields>
+            <fields>CORE.USERS.FULL_NAME</fields>
+            <relatedList>RelatedActivityList</relatedList>
+        </relatedLists>
+        <relatedLists>
+            <fields>NAME</fields>
+            <fields>Alert_Message__c</fields>
+            <fields>Start_Date_Time__c</fields>
+            <relatedList>Animal_Alert__c.Animal__c</relatedList>
+        </relatedLists>
+        <relatedLists>
+            <fields>Description__c</fields>
+            <fields>Action_Status__c</fields>
+            <fields>Action_Type__c</fields>
+            <fields>Given_By__c</fields>
+            <relatedList>Animal_Action__c.Animal__c</relatedList>
+        </relatedLists>
+    </miniLayout>
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
@@ -343,13 +372,13 @@
             <quickActionName>Animal__c.Add_Condition</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>Animal__c.Add_Treatment_Action</quickActionName>
+            <quickActionName>Animal__c.Start_Adoption</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>Animal__c.Add_Exercise_Action</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>Animal__c.Start_Adoption</quickActionName>
+            <quickActionName>Animal__c.Add_Treatment_Action</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>FeedItem.TextPost</quickActionName>
@@ -455,13 +484,15 @@
         <sortField>Status__c</sortField>
         <sortOrder>Asc</sortOrder>
     </relatedLists>
+    <relatedObjects>Previous_Current_Owner__c</relatedObjects>
+    <relatedObjects>Account__c</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hJ00000036Z7o</masterLabel>
+        <masterLabel>00h11000002vuwt</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

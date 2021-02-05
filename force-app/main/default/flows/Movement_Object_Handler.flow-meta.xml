@@ -102,7 +102,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Movement__c</stringValue>
+            <stringValue>%%%NAMESPACED_ORG%%%Movement__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>

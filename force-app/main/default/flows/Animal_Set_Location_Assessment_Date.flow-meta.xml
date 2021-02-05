@@ -4,8 +4,8 @@
     <assignments>
         <name>Calculate_Next_Assessment_Date</name>
         <label>Calculate Next Assessment Date</label>
-        <locationX>455</locationX>
-        <locationY>312</locationY>
+        <locationX>1137</locationX>
+        <locationY>70</locationY>
         <assignmentItems>
             <assignToReference>locationRecord.Assessment_Due__c</assignToReference>
             <operator>Assign</operator>
@@ -52,6 +52,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -61,8 +67,8 @@
     <recordLookups>
         <name>Get_Location_Record</name>
         <label>Get Location Record</label>
-        <locationX>259</locationX>
-        <locationY>164</locationY>
+        <locationX>652</locationX>
+        <locationY>329</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Calculate_Next_Assessment_Date</targetReference>
@@ -85,8 +91,8 @@
     <recordUpdates>
         <name>Update_Location_Record</name>
         <label>Update Location Record</label>
-        <locationX>557</locationX>
-        <locationY>573</locationY>
+        <locationX>1637</locationX>
+        <locationY>319</locationY>
         <connector>
             <targetReference>Success_Screen</targetReference>
         </connector>
@@ -98,14 +104,14 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>175</locationX>
-        <locationY>591</locationY>
+        <locationX>1151</locationX>
+        <locationY>648</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;There has been a fault.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an error!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please take a note of the fault message below and send it to your Salesforce Administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -114,14 +120,14 @@
     <screens>
         <name>Success_Screen</name>
         <label>Success Screen</label>
-        <locationX>898</locationX>
-        <locationY>589</locationY>
+        <locationX>2031</locationX>
+        <locationY>66</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Success_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;&lt;i&gt;The Last Assessment and Assessment Due dates have been set!&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;&lt;i&gt;The Last Assessment and Assessment Due dates have been set!&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The next assessment date will be {!newAssessmentDate}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;b&gt;Finish&lt;/b&gt; to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

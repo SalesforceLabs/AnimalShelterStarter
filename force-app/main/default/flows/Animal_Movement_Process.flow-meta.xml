@@ -1073,7 +1073,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Locations__c</stringValue>
+                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1106,7 +1106,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Locations__c</stringValue>
+                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1166,7 +1166,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Locations__c</stringValue>
+                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>

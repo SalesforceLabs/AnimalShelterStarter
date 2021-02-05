@@ -45,3 +45,7 @@ flows:
         steps:
             3:
                 task: load_dataset
+    release_beta:
+        steps:
+            4:
+                task: None

@@ -1,0 +1,8 @@
+<design:component>
+    
+    <design:attribute name="mydataAnimal" label="Animals - Input Collection"/>
+    <design:attribute name="selectedRowsAnimal" label="Animals - Output Collection"/> 
+    
+    <design:attribute name="keyField" label="Key Field" default="Id"/>
+    
+</design:component>

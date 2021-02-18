@@ -1,0 +1,32 @@
+<aura:component implements="lightning:availableForFlowScreens">
+
+    <!-- attributes -->    
+    <aura:attribute name="mydata" type="SObject[]" />
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="saveMydata" type="SObject[]" />
+    <aura:attribute name="selectedRows" type="SObject[]" />
+    <aura:attribute name="preSelection" type="SObject[]" />
+    <aura:attribute name="preSelectedIds" type="List" />
+
+    <aura:attribute name="mydataAnimal" type="Animal__c[]"/>
+    <aura:attribute name="selectedRowsAnimal" type="Animal__c[]"/>
+    <aura:attribute name="keyField" type="String" default="Id"/>
+
+    <!-- handlers -->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <lightning:card title="Animal Record Clone" iconName="custom:custom47">
+        <div class="slds-var-m-around_medium">
+            <lightning:datatable aura:id="ASDatatable"
+                data="{! v.mydata }" 
+                columns="{! v.mycolumns }" 
+                keyField="{! v.keyField }"
+                hideCheckboxColumn="false"
+                selectedRows="{! v.preSelectedIds }"                 
+                onrowselection="{! c.getSelectedName }"
+                onsave="{! c.handleSave }"
+                oncancel="{! c.cancelChanges }"
+                oncellchange="{! c.handleSave }"/>
+        </div>
+    </lightning:card>
+</aura:component>

@@ -1,6 +1,8 @@
 {
   "orgName": "Animal Shelter Starter - Dev Org",
   "edition": "Developer",
+  "country": "GB",
+  "instance": "cs121",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true

@@ -28,8 +28,8 @@
     <assignments>
         <name>Add_Animal_to_Collection</name>
         <label>Add Animal to Collection</label>
-        <locationX>976</locationX>
-        <locationY>94</locationY>
+        <locationX>931</locationX>
+        <locationY>87</locationY>
         <assignmentItems>
             <assignToReference>clonedAnimalRecords</assignToReference>
             <operator>Add</operator>
@@ -44,8 +44,8 @@
     <assignments>
         <name>Add_Id_to_List</name>
         <label>Add Id to List</label>
-        <locationX>778</locationX>
-        <locationY>92</locationY>
+        <locationX>747</locationX>
+        <locationY>87</locationY>
         <assignmentItems>
             <assignToReference>listOfIds</assignToReference>
             <operator>Add</operator>
@@ -227,7 +227,7 @@
     <assignments>
         <name>Set_Counter_to_0</name>
         <label>Set Counter to 0</label>
-        <locationX>438</locationX>
+        <locationX>439</locationX>
         <locationY>210</locationY>
         <assignmentItems>
             <assignToReference>clonesCounter</assignToReference>
@@ -422,8 +422,8 @@
     <screens>
         <name>Fault_Screen</name>
         <label>Fault Screen</label>
-        <locationX>123</locationX>
-        <locationY>546</locationY>
+        <locationX>176</locationX>
+        <locationY>483</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -438,8 +438,8 @@
     <screens>
         <name>Number_of_Clones</name>
         <label>Number of Clones</label>
-        <locationX>299</locationX>
-        <locationY>210</locationY>
+        <locationX>301</locationX>
+        <locationY>211</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -509,7 +509,7 @@
             <targetReference>Get_Animal_To_Be_Cloned</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>animalToBeCloned</name>
         <dataType>SObject</dataType>

@@ -41,6 +41,21 @@
                 <default>false</default>
                 <label>Stress or Anxiety</label>
             </value>
+            <value>
+                <fullName>Old Age</fullName>
+                <default>false</default>
+                <label>Old Age</label>
+            </value>
+            <value>
+                <fullName>Illness - Terminal</fullName>
+                <default>false</default>
+                <label>Illness - Terminal</label>
+            </value>
+            <value>
+                <fullName>Illness</fullName>
+                <default>false</default>
+                <label>Illness</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

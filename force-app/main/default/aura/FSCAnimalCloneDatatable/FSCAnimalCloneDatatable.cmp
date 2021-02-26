@@ -2,15 +2,16 @@
 
     <!-- attributes -->    
     <aura:attribute name="mydata" type="SObject[]" />
-    <aura:attribute name="mycolumns" type="List"/>
-    <aura:attribute name="saveMydata" type="SObject[]" />
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="saveData" type="SObject[]" />
     <aura:attribute name="selectedRows" type="SObject[]" />
     <aura:attribute name="preSelection" type="SObject[]" />
     <aura:attribute name="preSelectedIds" type="List" />
+    <aura:attribute name="listSelectedIds" type="String[]" />
 
     <aura:attribute name="mydataAnimal" type="Animal__c[]"/>
     <aura:attribute name="selectedRowsAnimal" type="Animal__c[]"/>
-    <aura:attribute name="keyField" type="String" default="Id"/>
+    <aura:attribute name="keyField" type="String" default="Clone_ID__c"/>
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
@@ -19,14 +20,13 @@
         <div class="slds-var-m-around_medium">
             <lightning:datatable aura:id="ASDatatable"
                 data="{! v.mydata }" 
-                columns="{! v.mycolumns }" 
+                columns="{! v.columns }" 
                 keyField="{! v.keyField }"
                 hideCheckboxColumn="false"
-                selectedRows="{! v.preSelectedIds }"                 
+                selectedRows="{! v.listSelectedIds }"                 
                 onrowselection="{! c.getSelectedName }"
                 onsave="{! c.handleSave }"
-                oncancel="{! c.cancelChanges }"
-                oncellchange="{! c.handleSave }"/>
+                oncancel="{! c.cancelChanges }"/>
         </div>
     </lightning:card>
 </aura:component>

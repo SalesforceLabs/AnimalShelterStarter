@@ -13,15 +13,15 @@
 ({
     init: function (cmp, event, helper) {
         cmp.set('v.columns', [
-            {label: 'Animal Name', fieldName: 'Animal_Name__c', type: 'text', editable: true},
-            {label: 'Type', fieldName: 'Type__c', type: 'text', editable: false },
-            {label: 'Breed', fieldName: 'Breed__c', type: 'text', editable: false },
-            {label: 'Primary Colour', fieldName: 'Colour__c', type: 'text', editable: true },
-            {label: 'Secondary Colour', fieldName: 'Secondary_Colour__c', type: 'text', editable: true },
-            {label: 'Gender', fieldName: 'Gender__c', type: 'text', editable: true},
-            {label: 'Weight', fieldName: 'Current_Weight__c', type: 'number', editable: true },
-            {label: 'Estimated Age', fieldName: 'Estimated_Age__c', type: 'number', editable: true },
-            {label: 'Microchip', fieldName: 'Microchip__c', type: 'text', editable: true},
+            {label: 'Animal Name', fieldName: '%%%NAMESPACED_ORG%%%Animal_Name__c', type: 'text', editable: true},
+            {label: 'Type', fieldName: '%%%NAMESPACED_ORG%%%Type__c', type: 'text', editable: false },
+            {label: 'Breed', fieldName: '%%%NAMESPACED_ORG%%%Breed__c', type: 'text', editable: false },
+            {label: 'Primary Colour', fieldName: '%%%NAMESPACED_ORG%%%Colour__c', type: 'text', editable: true },
+            {label: 'Secondary Colour', fieldName: '%%%NAMESPACED_ORG%%%Secondary_Colour__c', type: 'text', editable: true },
+            {label: 'Gender', fieldName: '%%%NAMESPACED_ORG%%%Gender__c', type: 'text', editable: true},
+            {label: 'Weight', fieldName: '%%%NAMESPACED_ORG%%%Current_Weight__c', type: 'number', editable: true },
+            {label: 'Estimated Age', fieldName: '%%%NAMESPACED_ORG%%%Estimated_Age__c', type: 'number', editable: true },
+            {label: 'Microchip', fieldName: '%%%NAMESPACED_ORG%%%Microchip__c', type: 'text', editable: true},
         ]);
 
     // Object Selection
@@ -31,7 +31,7 @@
 
 // Return Selected Table Rows
 getSelectedName: function (cmp, event) {
-    //save the selected rows into a flow-accessible attribute
+ 
     var selectedRows = event.getParam('selectedRows');
     
     var lstSelectedIDs = [];

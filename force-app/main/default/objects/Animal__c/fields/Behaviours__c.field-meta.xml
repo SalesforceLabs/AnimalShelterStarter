@@ -67,9 +67,9 @@
                 <label>Separation Anxiety</label>
             </value>
             <value>
-                <fullName>Agressive</fullName>
+                <fullName>Aggressive</fullName>
                 <default>false</default>
-                <label>Agressive</label>
+                <label>Aggressive</label>
             </value>
             <value>
                 <fullName>Cannot be held</fullName>
@@ -175,7 +175,7 @@
             <controllingFieldValue>Hedgehog</controllingFieldValue>
             <controllingFieldValue>Ferret</controllingFieldValue>
             <controllingFieldValue>Gerbil</controllingFieldValue>
-            <valueName>Agressive</valueName>
+            <valueName>Aggressive</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Mouse</controllingFieldValue>

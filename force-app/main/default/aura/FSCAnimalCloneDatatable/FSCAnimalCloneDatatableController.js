@@ -1,10 +1,22 @@
+/**
+ * @File Name          : FSCAnimalCloneDatatableController.js
+ * @Description        : 
+ * @Author             : Chris Rolfe (Salesforce.org)
+ * @Group              : 
+ * @Last Modified By   : Chris Rolfe (Salesforce.org)
+ * @Last Modified On   : 26/02/2021, 10:00:00 AM
+ * @Modification Log   : 
+ * Ver       Date            Author      		    Modification
+ * 1.0    26/02/2020   Chris Rolfe (Salesforce.org)     Initial Version
+**/
+
 ({
     init: function (cmp, event, helper) {
         cmp.set('v.columns', [
             {label: 'Animal Name', fieldName: 'Animal_Name__c', type: 'text', editable: true},
-            {label: 'Type', fieldName: 'Type__c', type: 'text' },
-            {label: 'Breed', fieldName: 'Breed__c', type: 'text' },
-            {label: 'Colour', fieldName: 'Colour__c', type: 'text', editable: true },
+            {label: 'Type', fieldName: 'Type__c', type: 'text', editable: false },
+            {label: 'Breed', fieldName: 'Breed__c', type: 'text', editable: false },
+            {label: 'Primary Colour', fieldName: 'Colour__c', type: 'text', editable: true },
             {label: 'Secondary Colour', fieldName: 'Secondary_Colour__c', type: 'text', editable: true },
             {label: 'Gender', fieldName: 'Gender__c', type: 'text', editable: true},
             {label: 'Weight', fieldName: 'Current_Weight__c', type: 'number', editable: true },
@@ -15,26 +27,12 @@
     // Object Selection
     cmp.set('v.mydata', cmp.get('v.mydataAnimal'));
     cmp.set('v.saveData', cmp.get('v.mydata'));
-//    cmp.set('v.preSelection', cmp.get('v.selectedRowsAnimal'));
-//    console.log(cmp.get('v.mydata'));
-     
-    // Pre-selected Rows
-//    var rows = cmp.get('v.preSelection');
-//    var list = [];
-//    for (var i=0, len = rows.length; i < len; i++) {
-//        list.push(rows[i].Id);
-//    }
-//    cmp.set('v.preSelectedIds', list);
-
-    // Save pre-edit data
-//    cmp.set('v.saveData', cmp.get('v.mydata'));
 },
 
 // Return Selected Table Rows
 getSelectedName: function (cmp, event) {
     //save the selected rows into a flow-accessible attribute
     var selectedRows = event.getParam('selectedRows');
-//    cmp.set("v.selectedRowsAnimal", selectedRows);
     
     var lstSelectedIDs = [];
         for(var i = 0; i < selectedRows.length; i++)

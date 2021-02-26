@@ -1,3 +1,14 @@
+/**
+ * @File Name          : FSCAnimalCloneDatatableHelper.js
+ * @Description        : 
+ * @Author             : Chris Rolfe (Salesforce.org)
+ * @Group              : 
+ * @Last Modified By   : Chris Rolfe (Salesforce.org)
+ * @Last Modified On   : 26/02/2021, 10:00:00 AM
+ * @Modification Log   : 
+ * Ver       Date            Author      		    Modification
+ * 1.0    26/02/2020   Chris Rolfe (Salesforce.org)     Initial Version
+**/
 ({
     updateEditedValues: function(cmp, event) {
         var keyField = cmp.get("v.keyField");

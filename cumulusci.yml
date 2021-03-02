@@ -53,12 +53,3 @@ flows:
                     api_names: 'Animal_Shelter_Starter'
             4:
                 task: load_dataset
-
-    release_beta:
-        steps:
-            3:
-                task: assign_permission_sets
-                options:
-                    api_names: 'Animal_Shelter_Starter'
-            4:
-                task: load_dataset

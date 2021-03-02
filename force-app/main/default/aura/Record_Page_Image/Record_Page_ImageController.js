@@ -7,10 +7,8 @@
         });
         action.setCallback(this, function(a) {
             var attachment = a.getReturnValue();
-            console.log(attachment);
             if (attachment && attachment.Id) {
-                component.set('v.pictureSrc', '/servlet/servlet.FileDownload?file='
-                                                  + attachment.Id);
+                component.set('v.pictureSrc', '/servlet/servlet.FileDownload?file=' + attachment.Id);
             }
         });
         $A.enqueueAction(action); 

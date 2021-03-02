@@ -82,11 +82,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>Animal__c</value>
+                    <value>%%%NAMESPACED_ORG%%%nimal__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>
-                    <value>Animal__c.Update_Animal</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal__c.Update_Animal</value>
                 </componentInstanceProperties>
                 <componentName>console:relatedRecord</componentName>
             </componentInstance>

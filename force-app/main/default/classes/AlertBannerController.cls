@@ -20,8 +20,8 @@ public with sharing class AlertBannerController {
     **/
     @AuraEnabled
     public static List<%%%NAMESPACED_ORG%%%Animal_Alert__c> getRelatedAlertRecords(Id parentId) {
-        if(parentId != null){
-            List<%%%NAMESPACED_ORG%%%Animal_Alert__c> AlertList = [SELECT Id, %%%NAMESPACED_ORG%%%Alert_Message__c,%%%NAMESPACED_ORG%%%Start_Date_Time__c,%%%NAMESPACED_ORG%%%End_Date_Time__c FROM %%%NAMESPACED_ORG%%%Animal_Alert__c WHERE %%%NAMESPACED_ORG%%%Animal__c = :parentId AND %%%NAMESPACED_ORG%%%Start_Date_Time__c <= TODAY AND (%%%NAMESPACED_ORG%%%End_Date_Time__c >= TODAY OR %%%NAMESPACED_ORG%%%End_Date_Time__c = NULL) LIMIT 20];
+        if(parentId != null && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Alert__c.fields.%%%NAMESPACED_ORG%%%Alert_Message__c.isAccessible() && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Alert__c.fields.%%%NAMESPACED_ORG%%%Start_Date_Time__c.isAccessible()){
+            List<%%%NAMESPACED_ORG%%%Animal_Alert__c> AlertList = [SELECT Id, %%%NAMESPACED_ORG%%%Alert_Message__c,%%%NAMESPACED_ORG%%%Start_Date_Time__c FROM %%%NAMESPACED_ORG%%%Animal_Alert__c WHERE %%%NAMESPACED_ORG%%%Animal__c = :parentId AND %%%NAMESPACED_ORG%%%Start_Date_Time__c <= TODAY AND (%%%NAMESPACED_ORG%%%End_Date_Time__c >= TODAY OR %%%NAMESPACED_ORG%%%End_Date_Time__c = NULL) LIMIT 20];
             return AlertList;
         } else {
             return null;

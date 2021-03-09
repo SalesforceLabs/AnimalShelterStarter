@@ -382,7 +382,7 @@
         <name>Display_Records_for_Editing</name>
         <label>Display Records for Editing</label>
         <locationX>590</locationX>
-        <locationY>432</locationY>
+        <locationY>433</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -440,15 +440,15 @@
         <label>Number of Clones</label>
         <locationX>301</locationX>
         <locationY>211</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Set_Counter_to_0</targetReference>
         </connector>
         <fields>
             <name>Number_of_Clones_Text</name>
-            <fieldText>&lt;p&gt;You are about to clone the animal record for &lt;b&gt;{!animalToBeCloned.Animal_Name__c} &lt;/b&gt;You will be able to make some changes to the new cloned animal records prior to saving.  How many clone animal records do you wish to make?&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;i style=&quot;font-size: 14px;&quot;&gt;You are about to clone the animal record for &lt;/i&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;{!animalToBeCloned.Animal_Name__c} &lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Some data like Type, Breed, etc will be automatically copied to the cloned records, however, you will be able to make some changes to the new cloned animal records prior to saving.  How many clone animal records do you wish to make?&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -468,36 +468,6 @@
 {!No_of_Clones} &lt;= 10
 )</formulaExpression>
             </validationRule>
-        </fields>
-        <fields>
-            <name>Number_of_Clones_Related_Text</name>
-            <fieldText>&lt;p&gt;Do these animals have a relationship to the original animal, or a relationship between themselves, i.e. Is this a litter from the Parent animal or siblings with each other?&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>RelatedAnimals</name>
-            <extensionName>flowruntime:toggle</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Related?</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleActive</name>
-                <value>
-                    <stringValue>Yes they&apos;re Related</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleInactive</name>
-                <value>
-                    <stringValue>No they&apos;re Not</stringValue>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

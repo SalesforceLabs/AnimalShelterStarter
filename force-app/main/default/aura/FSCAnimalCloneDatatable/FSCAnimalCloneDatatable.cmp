@@ -28,7 +28,7 @@
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
 
     <lightning:card title="Animal Record Clone" iconName="custom:custom47">
-        <div class="slds-var-m-around_medium">
+        <div class="slds-m-around_medium">
             <lightning:datatable aura:id="ASDatatable"
                 data="{! v.mydata }" 
                 columns="{! v.columns }" 

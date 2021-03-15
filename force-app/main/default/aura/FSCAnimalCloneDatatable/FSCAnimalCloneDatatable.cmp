@@ -20,9 +20,9 @@
     <aura:attribute name="listSelectedIds" type="String[]" />
     
     <!-- attributes - Outputs -->
-    <aura:attribute name="mydataAnimal" type="Animal__c[]"/>
-    <aura:attribute name="selectedRowsAnimal" type="Animal__c[]"/>
-    <aura:attribute name="keyField" type="String" default="Clone_ID__c"/>
+    <aura:attribute name="mydataAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]"/>
+    <aura:attribute name="selectedRowsAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]"/>
+    <aura:attribute name="keyField" type="String" default="%%%NAMESPACED_ORG%%%Clone_ID__c"/>
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>

@@ -619,6 +619,63 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldItem>Record.Geolocation__c</fieldItem>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-71edb8b9-8182-4e2e-931a-3882cd76f4d1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Display_on_Map__c</fieldItem>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-985b92f0-cde0-4f67-8384-6add4f00ffed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-71edb8b9-8182-4e2e-931a-3882cd76f4d1</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-985b92f0-cde0-4f67-8384-6add4f00ffed</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2b002289-d916-4f50-9704-fb0e6eff97c4</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-2b002289-d916-4f50-9704-fb0e6eff97c4</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Section</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-f1371855-2b49-48d2-80ad-c5327fc3d166</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>readonly</value>
@@ -730,6 +787,23 @@
                 <componentInstanceProperties>
                     <name>name</name>
                     <value>accordionSection2</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordionSection</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f1371855-2b49-48d2-80ad-c5327fc3d166</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Location Information</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>name</name>
+                    <value>accordionSection--lwa44kr0k2j</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
             </componentInstance>

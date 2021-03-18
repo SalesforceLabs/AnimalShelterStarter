@@ -147,7 +147,7 @@ CREATE TABLE "Animal__c" (
 );
 INSERT INTO "Animal__c" VALUES('a003z00000roJxDAAU','Molly','Deceased','','Dutch','Short','Black','false','','2016-04-01T11:00:00.000Z','2013-02-04','2020-04-20T00:00:00.000Z','','','','Female','','false','','','true','','','','White','Small','','','12.0','Rabbit','','',NULL);
 INSERT INTO "Animal__c" VALUES('a003z00000tFPgtAAG','Tommy','New','','English Spot','Short','White','false','','2020-04-23T10:39:08.000Z','','','','','5.0','Male','','false','','','false','','','','Brown','Large','','','0.0','Rabbit','','',NULL);
-INSERT INTO "Animal__c" VALUES('a003z00000rlhSbAAI','Elsa','Available for Adoption','Bad Recall;Good with Children;Good with other species;Good with same species;Pulls on Lead','Labrador Retriever','Short','Blond','false','26.7','2020-03-25T12:00:00.000Z','2014-08-15','','','Boarding','5.5','Female','','false','911246546456','2020-04-01T11:00:00.000Z','true','','Cannot be left for long periods;Dietary;Secure Garden','Home for Life','','Large','','','49.0','Dog','','',NULL);
+INSERT INTO "Animal__c" VALUES('a003z00000rlhSbAAI','Elsa','Available for Adoption','Bad Recall;Good with Children;Good with other species;Good with same species;Pulls on Lead','Labrador Retriever','Short','Blond','false','26.7','2020-03-25T12:00:00.000Z','2014-08-15','','','Boarding','5.5','Female','','false','','2020-04-01T11:00:00.000Z','true','','Cannot be left for long periods;Dietary;Secure Garden','Home for Life','','Large','','','49.0','Dog','','',NULL);
 CREATE TABLE "Condition__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"Condition_Description__c" VARCHAR(255), 

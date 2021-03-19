@@ -1,6 +1,6 @@
 ({
-    getLocation : function(component,event){
-        if (navigator.geolocation){
+    getLocation : function(component, event){
+        if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(success);
             function success(position){
                 var currLat = position.coords.latitude;

@@ -11,13 +11,13 @@
 -->
 <aura:component implements="lightning:availableForFlowScreens" access="global">
     <!-- attributes -->
-    <aura:attribute name="latitude" type="Double" access="global"/>
-    <aura:attribute name="longitude" type="Double" access="global"/>
+    <aura:attribute name="latitude" type="Decimal" access="global"/>
+    <aura:attribute name="longitude" type="Decimal" access="global"/>
 
     <!-- handler -->
     <aura:handler name="init" value="{! this}" action="{! c.init}"/>
 
     <lightning:card iconName="standard:address" title="Get Location Details">
-        <lightning:formattedLocation latitude={!latitude} longitude={!longitude}/>
+        <lightning:formattedLocation latitude="{! v.latitude}" longitude="{! v.longitude}"/>
     </lightning:card>
-</aura:component>	
+</aura:component>

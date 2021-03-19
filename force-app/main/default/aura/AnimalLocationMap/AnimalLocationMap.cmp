@@ -1,0 +1,39 @@
+<!--
+  @File Name          : AnimalLocationMap.cmp
+  @Description        : Map Component to display Animal Locations
+  @Author             : Chris Rolfe (Salesforce.org)
+  @Group              : 
+  @Last Modified By   : Chris Rolfe (Salesforce.org)
+  @Last Modified On   : 19/03/2021, 09:30:00 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    19/03/2021   Chris Rolfe (Salesforce.org)     Initial Version
+-->
+
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="AnimalLocation">
+
+    <!-- attributes -->
+    <aura:attribute name="mapMarkers" type="Object" />
+    <aura:attribute name="zoomLevel" type="Integer" default="16" />
+    <aura:attribute name="markersTitle" type="String" />
+    <aura:attribute name="showFooter" type="Boolean" default="true" />
+    <aura:attribute name="title" type="String" default="Google Maps" />
+
+    <!-- handlers -->
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+
+    <lightning:card iconName="action:map" title="Google Map">
+        <!-- The Map Component -->
+        <aura:if isTrue="{! v.mapMarkers.length > 0}" >
+            <lightning:map
+                        mapMarkers="{! v.mapMarkers}"
+                        zoomLevel="{! v.zoomLevel}"
+                        markersTitle="{! v.markersTitle}"
+                        showFooter="{! v.showFooter}" >
+            </lightning:map>
+
+        </aura:if>
+
+    </lightning:card>
+
+</aura:component>

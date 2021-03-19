@@ -17,40 +17,10 @@
             <stringValue>New</stringValue>
         </value>
     </choices>
-    <choices>
-        <name>choiceNo</name>
-        <choiceText>No</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <elementReference>conNo</elementReference>
-        </value>
-    </choices>
-    <choices>
-        <name>choiceYes</name>
-        <choiceText>Yes</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <elementReference>conYes</elementReference>
-        </value>
-    </choices>
-    <constants>
-        <name>conNo</name>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>No</stringValue>
-        </value>
-    </constants>
-    <constants>
-        <name>conYes</name>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Yes</stringValue>
-        </value>
-    </constants>
     <decisions>
         <name>Exit_Flow</name>
         <label>Exit Flow</label>
-        <locationX>380</locationX>
+        <locationX>710</locationX>
         <locationY>278</locationY>
         <defaultConnector>
             <targetReference>Process_Exited</targetReference>
@@ -75,7 +45,7 @@
     <decisions>
         <name>New_or_Existing_Animal</name>
         <label>New or Existing Animal?</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>638</locationY>
         <defaultConnector>
             <targetReference>Animal_Details</targetReference>
@@ -151,8 +121,11 @@
     <recordCreates>
         <name>Create_New_Animal_with_Location</name>
         <label>Create New Animal with Location</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>878</locationY>
+        <faultConnector>
+            <targetReference>Animal_Create_Error</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Animal_Name__c</field>
             <value>
@@ -227,6 +200,9 @@
         <label>Update Existing Animal with Location</label>
         <locationX>50</locationX>
         <locationY>878</locationY>
+        <faultConnector>
+            <targetReference>Animal_Update_Error</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -256,9 +232,25 @@
         <object>Animal__c</object>
     </recordUpdates>
     <screens>
+        <name>Animal_Create_Error</name>
+        <label>Animal Create Error</label>
+        <locationX>842</locationX>
+        <locationY>998</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Animal_Create_Error_Text</name>
+            <fieldText>&lt;p&gt;There has been an error&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Animal_Details</name>
         <label>Animal Details</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -350,9 +342,25 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Animal_Update_Error</name>
+        <label>Animal Update Error</label>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Animal_Update_Error_Text</name>
+            <fieldText>&lt;p&gt;There has been an error&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Capture_Current_Location</name>
         <label>Capture Current Location</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -395,7 +403,7 @@
     <screens>
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
-        <locationX>380</locationX>
+        <locationX>710</locationX>
         <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -471,7 +479,7 @@
     <screens>
         <name>New_or_Existing</name>
         <label>New or Existing</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>518</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -499,7 +507,7 @@
     <screens>
         <name>Process_Exited</name>
         <label>Process Exited</label>
-        <locationX>578</locationX>
+        <locationX>1106</locationX>
         <locationY>398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -513,7 +521,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>254</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Initial_Screen</targetReference>

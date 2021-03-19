@@ -1,0 +1,23 @@
+<!--
+  @File Name          : FSCGeolocation.cmp
+  @Description        : FlowScreen Component to get coordinates from devices
+  @Author             : Chris Rolfe (Salesforce.org)
+  @Group              : 
+  @Last Modified By   : Chris Rolfe (Salesforce.org)
+  @Last Modified On   : 19/03/2021, 09:30:00 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    19/03/2021   Chris Rolfe (Salesforce.org)     Initial Version
+-->
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <!-- attributes -->
+    <aura:attribute name="latitude" type="Double" access="global"/>
+    <aura:attribute name="longitude" type="Double" access="global"/>
+
+    <!-- handler -->
+    <aura:handler name="init" value="{! this}" action="{! c.init}"/>
+
+    <lightning:card iconName="standard:address" title="Get Location Details">
+        <lightning:formattedLocation latitude={!latitude} longitude={!longitude}/>
+    </lightning:card>
+</aura:component>	

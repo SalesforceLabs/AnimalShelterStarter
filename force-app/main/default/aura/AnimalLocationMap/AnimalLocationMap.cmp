@@ -17,7 +17,7 @@
     <aura:attribute name="zoomLevel" type="Integer" default="16" />
     <aura:attribute name="markersTitle" type="String" />
     <aura:attribute name="showFooter" type="Boolean" default="true" />
-    <aura:attribute name="title" type="String" default="Google Maps" />
+    <aura:attribute name="title" type="String" default="Animal Locations" />
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }" />

@@ -40,6 +40,11 @@
                 <componentName>home:eventContainer</componentName>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>AnimalLocationMap</componentName>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>bottomLeft</name>
         <type>Region</type>
@@ -48,6 +53,11 @@
         <itemInstances>
             <componentInstance>
                 <componentName>runtime_sales_activities:todayTaskContainer</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>ReleaseLocationMap</componentName>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

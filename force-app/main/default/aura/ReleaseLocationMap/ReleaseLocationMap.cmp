@@ -17,12 +17,12 @@
     <aura:attribute name="zoomLevel" type="Integer" default="16" />
     <aura:attribute name="markersTitle" type="String" />
     <aura:attribute name="showFooter" type="Boolean" default="true" />
-    <aura:attribute name="title" type="String" default="Animal Locations" />
+    <aura:attribute name="title" type="String" default="Release Locations" />
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
 
-    <lightning:card iconName="action:map" title="Google Map">
+    <lightning:card iconName="action:map" title="Release Locations">
         <!-- The Map Component -->
         <aura:if isTrue="{! v.mapMarkers.length > 0}" >
             <lightning:map

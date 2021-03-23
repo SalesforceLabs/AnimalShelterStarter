@@ -14,7 +14,7 @@ public with sharing class AnimalLocation {
     @AuraEnabled
 
     public static List<Location>getAnimalLocation(){
-        if(Schema.sObjectType.Animal__c.isAccessible()){
+       if(Schema.sObjectType.Animal__c.isAccessible()){ 
             List<Animal__c> animals = [SELECT Id, Animal_Name__c, Geolocation__latitude__s, Geolocation__longitude__s, Type__c, Breed__c
                                         FROM Animal__c
                                         WHERE Display_on_Map__c = True];

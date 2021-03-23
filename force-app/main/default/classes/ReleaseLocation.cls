@@ -27,7 +27,7 @@ public with sharing class ReleaseLocation {
                 Location locDetail = new Location();
                 locDetail.icon = 'utility:animal_and_nature';
                 locDetail.title = rellocs.Animal_Name__c;
-                locDetail.description = String.ValueofGmt(rellocs.End_Date__c);
+                locDetail.description = 'Release Date:' + ' ' +String.Valueof(rellocs.End_Date__c);
                 locDetail.location = geoInfo;
 
                 loc.add(locDetail);

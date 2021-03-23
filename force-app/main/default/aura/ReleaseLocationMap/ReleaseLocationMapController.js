@@ -8,7 +8,7 @@
             if (state == 'SUCCESS'){
                 var obj = response.getReturnValue();
                 console.log(obj);
-                component.set('v.markers', obj);
+                component.set('v.mapMarkers', obj);
                 component.set('v.zoomLevel', 16);
                 component.set('v.markersTitle', 'Release Locations');
                 component.set('v.showFooter', true);

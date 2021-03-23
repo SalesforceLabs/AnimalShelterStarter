@@ -34,7 +34,7 @@
         </connector>
     </assignments>
     <choices>
-        <name>AdoptedMovement</name>
+        <name>adoptedMovement</name>
         <choiceText>Animal has been adopted</choiceText>
         <dataType>String</dataType>
         <value>
@@ -42,7 +42,7 @@
         </value>
     </choices>
     <choices>
-        <name>BoardingMovement</name>
+        <name>boardingMovement</name>
         <choiceText>Animal is Boarding</choiceText>
         <dataType>String</dataType>
         <value>
@@ -50,7 +50,7 @@
         </value>
     </choices>
     <choices>
-        <name>DeceasedMovement</name>
+        <name>deceasedMovement</name>
         <choiceText>Mark Animal as deceased and clear location</choiceText>
         <dataType>String</dataType>
         <value>
@@ -58,7 +58,7 @@
         </value>
     </choices>
     <choices>
-        <name>FosterMovement</name>
+        <name>fosterMovement</name>
         <choiceText>Move to a Foster</choiceText>
         <dataType>String</dataType>
         <value>
@@ -66,7 +66,7 @@
         </value>
     </choices>
     <choices>
-        <name>HousedMovement</name>
+        <name>housedMovement</name>
         <choiceText>House Internally</choiceText>
         <dataType>String</dataType>
         <value>
@@ -82,7 +82,15 @@
         </value>
     </choices>
     <choices>
-        <name>TransferredMovement</name>
+        <name>releaseMovement</name>
+        <choiceText>Animal to be Released</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>conRelease</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <name>transferredMovement</name>
         <choiceText>Transferred to another Organisation</choiceText>
         <dataType>String</dataType>
         <value>
@@ -130,6 +138,13 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Housed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>conRelease</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Release</stringValue>
         </value>
     </constants>
     <constants>
@@ -390,7 +405,7 @@
                 <leftValueReference>Choose_a_Movement</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>HousedMovement</elementReference>
+                    <elementReference>housedMovement</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -405,7 +420,7 @@
                 <leftValueReference>Choose_a_Movement</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>TransferredMovement</elementReference>
+                    <elementReference>transferredMovement</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -420,7 +435,7 @@
                 <leftValueReference>Choose_a_Movement</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>FosterMovement</elementReference>
+                    <elementReference>fosterMovement</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -435,7 +450,7 @@
                 <leftValueReference>Choose_a_Movement</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>BoardingMovement</elementReference>
+                    <elementReference>boardingMovement</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -450,13 +465,28 @@
                 <leftValueReference>Choose_a_Movement</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>AdoptedMovement</elementReference>
+                    <elementReference>adoptedMovement</elementReference>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Create_new_Adoption_Movement_Record</targetReference>
             </connector>
             <label>Adopted</label>
+        </rules>
+        <rules>
+            <name>Release</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Choose_a_Movement</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>releaseMovement</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_new_Release_Movement_Record</targetReference>
+            </connector>
+            <label>Release</label>
         </rules>
     </decisions>
     <description>Flow to move animals between locations. Creates Movement records and updates various statuses</description>
@@ -562,7 +592,7 @@
     <formulas>
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
-        <expression>CASE({!Choose_a_Movement}, {!AdoptedMovement}, &quot;Prepare animal for new Owners&quot;, {!BoardingMovement}, &quot;Move animal to Boarding Unit&quot; , {!FosterMovement}, &quot;Move animal to Foster&quot;, {!HousedMovement}, &quot;Move animal to internal location&quot;, {!TransferredMovement}, &quot;Move animal to Organisation&quot;, &quot;None&quot;)</expression>
+        <expression>CASE({!Choose_a_Movement}, {!adoptedMovement}, &quot;Prepare animal for new Owners&quot;, {!boardingMovement}, &quot;Move animal to Boarding Unit&quot; , {!fosterMovement}, &quot;Move animal to Foster&quot;, {!housedMovement}, &quot;Move animal to internal location&quot;, {!transferredMovement}, &quot;Move animal to Organisation&quot;, {!releaseMovement}, &quot;Prepare Animal for Release&quot;, &quot;None&quot;)</expression>
     </formulas>
     <interviewLabel>Animal - Movement Process {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Movement Process</label>
@@ -694,7 +724,7 @@
         <locationX>4289</locationX>
         <locationY>1690</locationY>
         <connector>
-            <targetReference>Need_to_Generate_Tasks</targetReference>
+            <targetReference>Update_Animal_Location_Status_to_Null_on_Deceased</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen_2</targetReference>
@@ -739,7 +769,7 @@
         <locationY>1175</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
-            <targetReference>Need_to_Generate_Tasks</targetReference>
+            <targetReference>Update_Animal_Location_Status_to_Fostered</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen_2</targetReference>
@@ -779,11 +809,11 @@
     <recordCreates>
         <name>Create_new_Housing_Movement_Record</name>
         <label>Create new Housing Movement Record</label>
-        <locationX>4069</locationX>
-        <locationY>348</locationY>
+        <locationX>4052</locationX>
+        <locationY>488</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
-            <targetReference>Update_Location_Status</targetReference>
+            <targetReference>Update_Animal_Location_Status_to_Housed</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen_2</targetReference>
@@ -827,7 +857,7 @@
         <locationY>937</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
-            <targetReference>Need_to_Generate_Tasks</targetReference>
+            <targetReference>Update_Animal_Location_Status_to_Transferred</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen_2</targetReference>
@@ -866,6 +896,41 @@
             <field>Type__c</field>
             <value>
                 <elementReference>conTransferred</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Movement__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_new_Release_Movement_Record</name>
+        <label>Create new Release Movement Record</label>
+        <locationX>3189</locationX>
+        <locationY>316</locationY>
+        <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Update_Animal_Location_Status_to_Release</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Animal__c</field>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Current__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Start_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <elementReference>conRelease</elementReference>
             </value>
         </inputAssignments>
         <object>Movement__c</object>
@@ -1073,7 +1138,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1106,7 +1171,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1166,7 +1231,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1231,6 +1296,126 @@
             <field>Deceased_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Animal_Location_Status_to_Fostered</name>
+        <label>Update Animal Location Status to Fostered</label>
+        <locationX>4989</locationX>
+        <locationY>1057</locationY>
+        <connector>
+            <targetReference>Need_to_Generate_Tasks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Location_Status__c</field>
+            <value>
+                <elementReference>conFostered</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Animal_Location_Status_to_Housed</name>
+        <label>Update Animal Location Status to Housed</label>
+        <locationX>4341</locationX>
+        <locationY>417</locationY>
+        <connector>
+            <targetReference>Update_Location_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Location_Status__c</field>
+            <value>
+                <elementReference>conHoused</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Animal_Location_Status_to_Null_on_Deceased</name>
+        <label>Update Animal Location Status to Null on Deceased</label>
+        <locationX>4476</locationX>
+        <locationY>1593</locationY>
+        <connector>
+            <targetReference>Need_to_Generate_Tasks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Location_Status__c</field>
+            <value>
+                <stringValue/>
+            </value>
+        </inputAssignments>
+        <object>Animal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Animal_Location_Status_to_Release</name>
+        <label>Update Animal Location Status to Release</label>
+        <locationX>5129</locationX>
+        <locationY>176</locationY>
+        <connector>
+            <targetReference>Release_Notification_Screen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Location_Status__c</field>
+            <value>
+                <elementReference>conRelease</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Animal_Location_Status_to_Transferred</name>
+        <label>Update Animal Location Status to Transferred</label>
+        <locationX>4662</locationX>
+        <locationY>766</locationY>
+        <connector>
+            <targetReference>Need_to_Generate_Tasks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Location_Status__c</field>
+            <value>
+                <elementReference>conTransferred</elementReference>
             </value>
         </inputAssignments>
         <object>Animal__c</object>
@@ -1418,8 +1603,8 @@
     <screens>
         <name>Deceased_Selection_Screen</name>
         <label>Deceased Selection Screen</label>
-        <locationX>3495</locationX>
-        <locationY>1653</locationY>
+        <locationX>3553</locationX>
+        <locationY>1590</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1548,12 +1733,13 @@
         </fields>
         <fields>
             <name>Choose_a_Movement</name>
-            <choiceReferences>HousedMovement</choiceReferences>
-            <choiceReferences>BoardingMovement</choiceReferences>
-            <choiceReferences>FosterMovement</choiceReferences>
-            <choiceReferences>TransferredMovement</choiceReferences>
-            <choiceReferences>AdoptedMovement</choiceReferences>
-            <choiceReferences>DeceasedMovement</choiceReferences>
+            <choiceReferences>housedMovement</choiceReferences>
+            <choiceReferences>boardingMovement</choiceReferences>
+            <choiceReferences>fosterMovement</choiceReferences>
+            <choiceReferences>transferredMovement</choiceReferences>
+            <choiceReferences>adoptedMovement</choiceReferences>
+            <choiceReferences>deceasedMovement</choiceReferences>
+            <choiceReferences>releaseMovement</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Choose a Movement</fieldText>
             <fieldType>DropdownBox</fieldType>
@@ -1569,7 +1755,7 @@
                     <leftValueReference>Choose_a_Movement</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
-                        <elementReference>DeceasedMovement</elementReference>
+                        <elementReference>deceasedMovement</elementReference>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -1651,10 +1837,29 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Release_Notification_Screen</name>
+        <label>Release Notification Screen</label>
+        <locationX>5658</locationX>
+        <locationY>322</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Queue_ID</targetReference>
+        </connector>
+        <fields>
+            <name>Release_Notification_Screen_Text</name>
+            <fieldText>&lt;p&gt;The Animal has been marked for release, and a task has been generated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Use the release process to capture the release location.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Unit_Selection_Screen</name>
         <label>Unit Selection Screen</label>
-        <locationX>3442</locationX>
-        <locationY>347</locationY>
+        <locationX>3467</locationX>
+        <locationY>535</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>

@@ -50,6 +50,11 @@
                 <default>false</default>
                 <label>Quarantine</label>
             </value>
+            <value>
+                <fullName>Released</fullName>
+                <default>false</default>
+                <label>Released</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

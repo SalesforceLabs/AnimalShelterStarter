@@ -527,7 +527,7 @@
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>existingAnimalId</name>
         <dataType>String</dataType>

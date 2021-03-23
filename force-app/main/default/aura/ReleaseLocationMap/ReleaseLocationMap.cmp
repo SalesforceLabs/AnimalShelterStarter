@@ -1,6 +1,6 @@
 <!--
-  @File Name          : AnimalLocationMap.cmp
-  @Description        : Map Component to display Animal Locations
+  @File Name          : ReleaseLocationMap.cmp
+  @Description        : Map Component to display Release Locations
   @Author             : Chris Rolfe (Salesforce.org)
   @Group              : 
   @Last Modified By   : Chris Rolfe (Salesforce.org)
@@ -10,19 +10,19 @@
   1.0    19/03/2021   Chris Rolfe (Salesforce.org)     Initial Version
 -->
 
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="AnimalLocation">
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="ReleaseLocation">
 
     <!-- attributes -->
     <aura:attribute name="mapMarkers" type="Object" />
     <aura:attribute name="zoomLevel" type="Integer" default="16" />
-    <aura:attribute name="markersTitle" type="String" default="Animal Locations" />
+    <aura:attribute name="markersTitle" type="String" />
     <aura:attribute name="showFooter" type="Boolean" default="true" />
     <aura:attribute name="title" type="String" default="Animal Locations" />
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
 
-    <lightning:card iconName="action:map" title="Animal Locations">
+    <lightning:card iconName="action:map" title="Google Map">
         <!-- The Map Component -->
         <aura:if isTrue="{! v.mapMarkers.length > 0}" >
             <lightning:map

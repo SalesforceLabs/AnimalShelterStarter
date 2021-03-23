@@ -5,7 +5,7 @@
         <name>Assign_Task_Subject</name>
         <label>Assign Task Subject</label>
         <locationX>6031</locationX>
-        <locationY>596</locationY>
+        <locationY>656</locationY>
         <assignmentItems>
             <assignToReference>taskSubject</assignToReference>
             <operator>Assign</operator>
@@ -21,7 +21,7 @@
         <name>Count_Movement_Records</name>
         <label>Count Movement Records</label>
         <locationX>584</locationX>
-        <locationY>116</locationY>
+        <locationY>176</locationY>
         <assignmentItems>
             <assignToReference>MovementCount</assignToReference>
             <operator>AssignCount</operator>
@@ -165,7 +165,7 @@
         <name>Animal_Deceased_Path</name>
         <label>Animal Deceased Path?</label>
         <locationX>2480</locationX>
-        <locationY>1472</locationY>
+        <locationY>1532</locationY>
         <defaultConnector>
             <targetReference>Get_Unit_RecordType</targetReference>
         </defaultConnector>
@@ -190,7 +190,7 @@
         <name>Any_Existing_Movement_records</name>
         <label>Any Existing Movement records?</label>
         <locationX>441</locationX>
-        <locationY>488</locationY>
+        <locationY>548</locationY>
         <defaultConnector>
             <targetReference>Get_Unit_RecordType</targetReference>
         </defaultConnector>
@@ -215,7 +215,7 @@
         <name>Continue_With_Flow</name>
         <label>Continue With Flow?</label>
         <locationX>1453</locationX>
-        <locationY>1719</locationY>
+        <locationY>1779</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Continue</name>
@@ -252,7 +252,7 @@
         <name>Is_the_Animal_Deceased_with_an_Active_Deceased_Movement_Record</name>
         <label>Is the Animal Deceased with an Active Deceased Movement Record</label>
         <locationX>1453</locationX>
-        <locationY>1101</locationY>
+        <locationY>1161</locationY>
         <defaultConnector>
             <targetReference>Animal_Has_Existing_Location_Screen</targetReference>
         </defaultConnector>
@@ -306,7 +306,7 @@
         <name>More_than_1_Current_Movement</name>
         <label>More than 1 Current Movement?</label>
         <locationX>855</locationX>
-        <locationY>776</locationY>
+        <locationY>836</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>More_than_1</name>
@@ -343,7 +343,7 @@
         <name>Need_to_Generate_Tasks</name>
         <label>Need to Generate Tasks?</label>
         <locationX>5525</locationX>
-        <locationY>844</locationY>
+        <locationY>904</locationY>
         <defaultConnector>
             <targetReference>Movement_Complete</targetReference>
         </defaultConnector>
@@ -368,7 +368,7 @@
         <name>Update_Deceased_Animal</name>
         <label>Update Deceased Animal</label>
         <locationX>1955</locationX>
-        <locationY>1307</locationY>
+        <locationY>1367</locationY>
         <defaultConnector>
             <targetReference>Check_Deceased_Animal</targetReference>
         </defaultConnector>
@@ -393,7 +393,7 @@
         <name>What_Type_of_Move</name>
         <label>What Type of Move?</label>
         <locationX>3178</locationX>
-        <locationY>982</locationY>
+        <locationY>1042</locationY>
         <defaultConnector>
             <targetReference>Deceased_Selection_Screen</targetReference>
         </defaultConnector>
@@ -600,7 +600,7 @@
         <name>Loop_Through_Movement_Records</name>
         <label>Loop Through Movement Records</label>
         <locationX>580</locationX>
-        <locationY>351</locationY>
+        <locationY>411</locationY>
         <assignNextValueToReference>MovementRecord</assignNextValueToReference>
         <collectionReference>MovementRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -634,7 +634,7 @@
         <name>Create_new_Adoption_Movement_Record</name>
         <label>Create new Adoption Movement Record</label>
         <locationX>3984</locationX>
-        <locationY>1518</locationY>
+        <locationY>1578</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
             <targetReference>Need_to_Generate_Tasks</targetReference>
@@ -678,7 +678,7 @@
         <name>Create_new_Boarder_Movement_Record</name>
         <label>Create new Boarder Movement Record</label>
         <locationX>4120</locationX>
-        <locationY>656</locationY>
+        <locationY>716</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Location_Status</targetReference>
@@ -721,8 +721,8 @@
     <recordCreates>
         <name>Create_new_Deceased_Movement_Record</name>
         <label>Create new Deceased Movement Record</label>
-        <locationX>4289</locationX>
-        <locationY>1690</locationY>
+        <locationX>4083</locationX>
+        <locationY>1829</locationY>
         <connector>
             <targetReference>Update_Animal_Location_Status_to_Null_on_Deceased</targetReference>
         </connector>
@@ -766,7 +766,7 @@
         <name>Create_new_Foster_Movement_Record</name>
         <label>Create new Foster Movement Record</label>
         <locationX>4712</locationX>
-        <locationY>1175</locationY>
+        <locationY>1235</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Animal_Location_Status_to_Fostered</targetReference>
@@ -810,7 +810,7 @@
         <name>Create_new_Housing_Movement_Record</name>
         <label>Create new Housing Movement Record</label>
         <locationX>4052</locationX>
-        <locationY>488</locationY>
+        <locationY>548</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Animal_Location_Status_to_Housed</targetReference>
@@ -854,7 +854,7 @@
         <name>Create_new_Organisation_Movement_Record</name>
         <label>Create new Organisation Movement Record</label>
         <locationX>4520</locationX>
-        <locationY>937</locationY>
+        <locationY>997</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Animal_Location_Status_to_Transferred</targetReference>
@@ -904,11 +904,14 @@
         <name>Create_new_Release_Movement_Record</name>
         <label>Create new Release Movement Record</label>
         <locationX>3189</locationX>
-        <locationY>316</locationY>
+        <locationY>376</locationY>
         <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Animal_Location_Status_to_Release</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Release_Error_Screen</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Animal__c</field>
             <value>
@@ -939,10 +942,13 @@
         <name>Create_Tasks</name>
         <label>Create Tasks</label>
         <locationX>6445</locationX>
-        <locationY>729</locationY>
+        <locationY>789</locationY>
         <connector>
             <targetReference>Movement_Complete</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Tasks_Error_Screen</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>ActivityDate</field>
             <value>
@@ -986,7 +992,7 @@
         <name>Get_Animal_Status</name>
         <label>Get Animal Status</label>
         <locationX>1463</locationX>
-        <locationY>910</locationY>
+        <locationY>970</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_the_Animal_Deceased_with_an_Active_Deceased_Movement_Record</targetReference>
@@ -1009,7 +1015,7 @@
         <name>Get_Any_Current_Movement_Records</name>
         <label>Get Any Current Movement Records</label>
         <locationX>218</locationX>
-        <locationY>486</locationY>
+        <locationY>546</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Any_Existing_Movement_records</targetReference>
@@ -1040,7 +1046,7 @@
         <name>Get_Current_Location_Record</name>
         <label>Get Current Location Record</label>
         <locationX>1312</locationX>
-        <locationY>780</locationY>
+        <locationY>840</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Animal_Status</targetReference>
@@ -1070,7 +1076,7 @@
         <name>Get_Current_Movement_and_Location_Record_ID</name>
         <label>Get Current Movement  and Location Record ID</label>
         <locationX>1151</locationX>
-        <locationY>780</locationY>
+        <locationY>840</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Current_Location_Record</targetReference>
@@ -1111,7 +1117,7 @@
         <name>Get_Foster_RecordType</name>
         <label>Get Foster RecordType</label>
         <locationX>3917</locationX>
-        <locationY>1183</locationY>
+        <locationY>1243</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Foster_Selection_Screen</targetReference>
@@ -1151,7 +1157,7 @@
         <name>Get_Organisation_RecordType</name>
         <label>Get Organisation RecordType</label>
         <locationX>3927</locationX>
-        <locationY>885</locationY>
+        <locationY>945</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Organisation_Selection_Screen</targetReference>
@@ -1184,11 +1190,14 @@
         <name>Get_Queue_ID</name>
         <label>Get Queue ID</label>
         <locationX>5846</locationX>
-        <locationY>599</locationY>
+        <locationY>659</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Task_Subject</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Tasks_Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
@@ -1214,7 +1223,7 @@
         <name>Get_Unit_RecordType</name>
         <label>Get Unit RecordType</label>
         <locationX>2498</locationX>
-        <locationY>605</locationY>
+        <locationY>665</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>What_Type_of_Move</targetReference>
@@ -1243,8 +1252,8 @@
     <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
-        <locationX>2481</locationX>
-        <locationY>1728</locationY>
+        <locationX>2472</locationX>
+        <locationY>1740</locationY>
         <connector>
             <targetReference>Animal_Deceased_Path</targetReference>
         </connector>
@@ -1271,7 +1280,7 @@
         <name>Update_Animal_Deceased_Date_and_Status</name>
         <label>Update Animal Deceased Date and Status</label>
         <locationX>3838</locationX>
-        <locationY>1674</locationY>
+        <locationY>1734</locationY>
         <connector>
             <targetReference>Create_new_Deceased_Movement_Record</targetReference>
         </connector>
@@ -1304,7 +1313,7 @@
         <name>Update_Animal_Location_Status_to_Fostered</name>
         <label>Update Animal Location Status to Fostered</label>
         <locationX>4989</locationX>
-        <locationY>1057</locationY>
+        <locationY>1117</locationY>
         <connector>
             <targetReference>Need_to_Generate_Tasks</targetReference>
         </connector>
@@ -1328,7 +1337,7 @@
         <name>Update_Animal_Location_Status_to_Housed</name>
         <label>Update Animal Location Status to Housed</label>
         <locationX>4341</locationX>
-        <locationY>417</locationY>
+        <locationY>477</locationY>
         <connector>
             <targetReference>Update_Location_Status</targetReference>
         </connector>
@@ -1351,11 +1360,14 @@
     <recordUpdates>
         <name>Update_Animal_Location_Status_to_Null_on_Deceased</name>
         <label>Update Animal Location Status to Null on Deceased</label>
-        <locationX>4476</locationX>
-        <locationY>1593</locationY>
+        <locationX>4388</locationX>
+        <locationY>1780</locationY>
         <connector>
             <targetReference>Need_to_Generate_Tasks</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_Screen_2</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1376,10 +1388,13 @@
         <name>Update_Animal_Location_Status_to_Release</name>
         <label>Update Animal Location Status to Release</label>
         <locationX>5129</locationX>
-        <locationY>176</locationY>
+        <locationY>236</locationY>
         <connector>
             <targetReference>Release_Notification_Screen</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Release_Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1400,7 +1415,7 @@
         <name>Update_Animal_Location_Status_to_Transferred</name>
         <label>Update Animal Location Status to Transferred</label>
         <locationX>4662</locationX>
-        <locationY>766</locationY>
+        <locationY>826</locationY>
         <connector>
             <targetReference>Need_to_Generate_Tasks</targetReference>
         </connector>
@@ -1423,8 +1438,8 @@
     <recordUpdates>
         <name>Update_Current_Movement_Record</name>
         <label>Update Current Movement Record</label>
-        <locationX>2250</locationX>
-        <locationY>1726</locationY>
+        <locationX>2240</locationX>
+        <locationY>1732</locationY>
         <connector>
             <targetReference>Reset_Location_Status</targetReference>
         </connector>
@@ -1457,7 +1472,7 @@
         <name>Update_Location_Status</name>
         <label>Update Location Status</label>
         <locationX>5197</locationX>
-        <locationY>477</locationY>
+        <locationY>537</locationY>
         <connector>
             <targetReference>Need_to_Generate_Tasks</targetReference>
         </connector>
@@ -1484,7 +1499,7 @@
         <name>Animal_Already_Deceased</name>
         <label>Animal Already Deceased</label>
         <locationX>1735</locationX>
-        <locationY>1305</locationY>
+        <locationY>1365</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1517,7 +1532,7 @@
         <name>Animal_Already_Deceased_With_Correct_Movement_Record</name>
         <label>Animal Already Deceased With Correct Movement Record</label>
         <locationX>1738</locationX>
-        <locationY>959</locationY>
+        <locationY>1019</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1533,7 +1548,7 @@
         <name>Animal_Has_Existing_Location_Screen</name>
         <label>Animal Has Existing Location Screen</label>
         <locationX>1460</locationX>
-        <locationY>1442</locationY>
+        <locationY>1502</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1561,7 +1576,7 @@
         <name>Boarder_Selection_Screen</name>
         <label>Boarder Selection Screen</label>
         <locationX>3849</locationX>
-        <locationY>656</locationY>
+        <locationY>716</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1588,7 +1603,7 @@
         <name>Check_Deceased_Animal</name>
         <label>Check Deceased Animal</label>
         <locationX>1966</locationX>
-        <locationY>1546</locationY>
+        <locationY>1606</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1604,7 +1619,7 @@
         <name>Deceased_Selection_Screen</name>
         <label>Deceased Selection Screen</label>
         <locationX>3553</locationX>
-        <locationY>1590</locationY>
+        <locationY>1650</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1623,7 +1638,7 @@
         <name>Error_Movement_Records_Screen</name>
         <label>Error Movement Records Screen</label>
         <locationX>607</locationX>
-        <locationY>905</locationY>
+        <locationY>965</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1639,7 +1654,7 @@
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>840</locationX>
-        <locationY>2106</locationY>
+        <locationY>2166</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1655,7 +1670,7 @@
         <name>Error_Screen_2</name>
         <label>Error Screen 2</label>
         <locationX>5297</locationX>
-        <locationY>2141</locationY>
+        <locationY>2201</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1671,7 +1686,7 @@
         <name>Finish</name>
         <label>Finish</label>
         <locationX>1136</locationX>
-        <locationY>1715</locationY>
+        <locationY>1775</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1687,7 +1702,7 @@
         <name>Foster_Selection_Screen</name>
         <label>Foster Selection Screen</label>
         <locationX>4235</locationX>
-        <locationY>1176</locationY>
+        <locationY>1236</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1714,7 +1729,7 @@
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
         <locationX>218</locationX>
-        <locationY>306</locationY>
+        <locationY>366</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1797,7 +1812,7 @@
         <name>Movement_Complete</name>
         <label>Movement Complete</label>
         <locationX>6035</locationX>
-        <locationY>1145</locationY>
+        <locationY>1205</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1813,7 +1828,7 @@
         <name>Organisation_Selection_Screen</name>
         <label>Organisation Selection Screen</label>
         <locationX>4224</locationX>
-        <locationY>940</locationY>
+        <locationY>1000</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1837,10 +1852,26 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Release_Error_Screen</name>
+        <label>Release Error Screen</label>
+        <locationX>4293</locationX>
+        <locationY>50</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Release_Error_Screen_Text</name>
+            <fieldText>&lt;p&gt;There has been an error creating the Release records&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Release_Notification_Screen</name>
         <label>Release Notification Screen</label>
         <locationX>5658</locationX>
-        <locationY>322</locationY>
+        <locationY>382</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1856,10 +1887,26 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Tasks_Error_Screen</name>
+        <label>Tasks Error Screen</label>
+        <locationX>6194</locationX>
+        <locationY>306</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Task_Error_Screen_Text</name>
+            <fieldText>&lt;p&gt;There has been an error creating the Task records&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Unit_Selection_Screen</name>
         <label>Unit Selection Screen</label>
         <locationX>3467</locationX>
-        <locationY>535</locationY>
+        <locationY>595</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1884,7 +1931,7 @@
     </screens>
     <start>
         <locationX>92</locationX>
-        <locationY>123</locationY>
+        <locationY>183</locationY>
         <connector>
             <targetReference>Initial_Screen</targetReference>
         </connector>

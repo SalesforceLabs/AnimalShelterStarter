@@ -73,6 +73,9 @@
         <label>Continue the Flow?</label>
         <locationX>578</locationX>
         <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>Process_Exit_Screen</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Finish</defaultConnectorLabel>
         <rules>
             <name>Yes_Continue</name>
@@ -357,7 +360,7 @@
         </connector>
         <fields>
             <name>Initial_Screen_Text</name>
-            <fieldText>&lt;p&gt;This process will allow you to select an animal for release, and capture you current location to set as the animal release location.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;This process will allow you to select an animal for release, and capture &lt;b&gt;&lt;i&gt;your&lt;/i&gt;&lt;/b&gt; current location which is set as the animals release location.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -388,6 +391,22 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>Process_Exit_Screen</name>
+        <label>Process Exit Screen</label>
+        <locationX>1106</locationX>
+        <locationY>398</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Process_Exit_Screen_Text</name>
+            <fieldText>&lt;p&gt;Thank you&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
         <locationX>452</locationX>
         <locationY>0</locationY>
@@ -395,7 +414,7 @@
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>varAnimalToBeReleased</name>
         <dataType>SObject</dataType>

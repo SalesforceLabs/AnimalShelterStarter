@@ -1,6 +1,6 @@
 /**
- * @File Name          : AnimalLocation.apxc
- * @Description        : Gets animals that are to be displayed on Animal Location Map
+ * @File Name          : ReleaseLocation.apxc
+ * @Description        : Gets movements records that are to be displayed on Release Location Map
  * @Author             : Chris Rolfe (Salesforce.org)
  * @Group              : 
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
@@ -10,24 +10,24 @@
  * 1.0    19/03/2021   Chris Rolfe (Salesforce.org)     Initial Version
 **/
 
-public with sharing class AnimalLocation {
+public with sharing class ReleaseLocation {
     @AuraEnabled
 
-    public static List<Location>getAnimalLocation(){
-        if(Schema.sObjectType.Animal__c.isAccessible()){
-            List<Animal__c> animals = [SELECT Id, Animal_Name__c, Geolocation__latitude__s, Geolocation__longitude__s, Type__c, Breed__c
-                                        FROM Animal__c
+    public static List<Location>getReleaseLocation(){
+        if(Schema.sObjectType.Movement__c.isAccessible()){
+            List<Movement__c> movements = [SELECT Id, Animal_Name__c, Release_Location__latitude__s, Release_Location__longitude__s, End_Date__c
+                                        FROM Movement__c
                                         WHERE Display_on_Map__c = True];
 
             List<Location> loc = new List<Location>();
-            for(Animal__c anilocs :animals){
+            for(Movement__c rellocs :movements){
                 GeoLocation geoInfo = new GeoLocation();
-                geoInfo.Latitude = String.ValueOf(anilocs.Geolocation__latitude__s);
-                geoInfo.Longitude = String.ValueOf(anilocs.Geolocation__longitude__s);
+                geoInfo.Latitude = String.ValueOf(rellocs.Release_Location__latitude__s);
+                geoInfo.Longitude = String.ValueOf(rellocs.Release_Location__longitude__s);
                 Location locDetail = new Location();
                 locDetail.icon = 'utility:animal_and_nature';
-                locDetail.title = anilocs.Animal_Name__c;
-                locDetail.description = anilocs.Type__c + ' ' + anilocs.Breed__c;
+                locDetail.title = rellocs.Animal_Name__c;
+                locDetail.description = String.ValueofGmt(rellocs.End_Date__c);
                 locDetail.location = geoInfo;
 
                 loc.add(locDetail);

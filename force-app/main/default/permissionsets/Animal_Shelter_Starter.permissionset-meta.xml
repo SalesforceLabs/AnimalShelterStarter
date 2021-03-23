@@ -13,7 +13,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AnimalLocation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProfilePictureController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReleaseLocation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <description>General Permission set for the Animal Shelter Starter package.</description>

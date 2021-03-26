@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Task_Subject</name>
         <label>Assign Task Subject</label>
-        <locationX>6031</locationX>
-        <locationY>656</locationY>
+        <locationX>6153</locationX>
+        <locationY>661</locationY>
         <assignmentItems>
             <assignToReference>taskSubject</assignToReference>
             <operator>Assign</operator>
@@ -592,7 +592,7 @@
     <formulas>
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
-        <expression>CASE({!Choose_a_Movement}, {!adoptedMovement}, &quot;Prepare animal for new Owners&quot;, {!boardingMovement}, &quot;Move animal to Boarding Unit&quot; , {!fosterMovement}, &quot;Move animal to Foster&quot;, {!housedMovement}, &quot;Move animal to internal location&quot;, {!transferredMovement}, &quot;Move animal to Organisation&quot;, {!releaseMovement}, &quot;Prepare Animal for Release&quot;, &quot;None&quot;)</expression>
+        <expression>CASE({!Choose_a_Movement}, {!adoptedMovement}, (&quot;Prepare &quot; + {!AnimalName} + &quot; for new Owners&quot;), {!boardingMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to Boarding Unit &quot; + {!newLocationName}) , {!fosterMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to Foster &quot; + {!newLocationName}), {!housedMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to &quot; + {!newLocationName}), {!transferredMovement}, (&quot;Move &quot; + {!AnimalName} + &quot;  to Organisation &quot; + {!newLocationName}), {!releaseMovement}, (&quot;Prepare &quot; + {!AnimalName} + &quot; for Release&quot;), &quot;None&quot;)</expression>
     </formulas>
     <interviewLabel>Animal - Movement Process {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Movement Process</label>
@@ -1007,6 +1007,10 @@
         </filters>
         <object>Animal__c</object>
         <outputAssignments>
+            <assignToReference>AnimalName</assignToReference>
+            <field>Animal_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>AnimalStatus</assignToReference>
             <field>Animal_Status__c</field>
         </outputAssignments>
@@ -1154,6 +1158,32 @@
         </outputAssignments>
     </recordLookups>
     <recordLookups>
+        <name>Get_Internal_Location_Name</name>
+        <label>Get Internal Location Name</label>
+        <locationX>5998</locationX>
+        <locationY>659</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Task_Subject</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Tasks_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>newMovementId</elementReference>
+            </value>
+        </filters>
+        <object>Movement__c</object>
+        <outputAssignments>
+            <assignToReference>newLocationName</assignToReference>
+            <field>Location_Name__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Organisation_RecordType</name>
         <label>Get Organisation RecordType</label>
         <locationX>3927</locationX>
@@ -1193,7 +1223,7 @@
         <locationY>659</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Task_Subject</targetReference>
+            <targetReference>Get_Internal_Location_Name</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Tasks_Error_Screen</targetReference>
@@ -1945,6 +1975,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>AnimalName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>AnimalStatus</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2026,6 +2063,13 @@
     </variables>
     <variables>
         <name>MovementType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>newLocationName</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

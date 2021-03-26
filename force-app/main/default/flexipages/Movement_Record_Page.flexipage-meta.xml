@@ -87,16 +87,7 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Location_Name__c</fieldItem>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Start_Date__c</fieldItem>
+                <fieldItem>Record.Animal_Name__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -105,7 +96,7 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Total_Time_Days__c</fieldItem>
+                <fieldItem>Record.Location_Name__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -117,6 +108,15 @@
                 <fieldItem>Record.Current__c</fieldItem>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Total_Time_Days__c</fieldItem>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-400ba8ed-d34a-4edc-9892-e306423d174c</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -125,9 +125,9 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Animal_Name__c</fieldItem>
+                <fieldItem>Record.Start_Date__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

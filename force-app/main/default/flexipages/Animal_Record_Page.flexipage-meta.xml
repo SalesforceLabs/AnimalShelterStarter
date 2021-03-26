@@ -400,7 +400,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Related_Schemes__c</fieldItem>
+                <fieldItem>Record.Account__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <name>Facet-c7d1106e-c69c-4abd-ab5c-4eb4b0b825e4</name>
@@ -440,7 +440,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Account__c</fieldItem>
+                <fieldItem>Record.Related_Schemes__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d91fdf21-cd4c-4e7c-a46d-ca29a89c9302</name>

@@ -4,30 +4,33 @@
  * @Author             : Chris Rolfe (Salesforce.org)
  * @Group              : 
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
- * @Last Modified On   : 19/03/2021, 9:30:43 PM
+ * @Last Modified On   : 31/03/2021, 3:53:43 PM
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    19/03/2021   Chris Rolfe (Salesforce.org)     Initial Version
+ * 1.1    31/03/2021   Chris Rolfe (Salesforce.org)     Limit on SQOL Query set to 100
 **/
 
 public with sharing class ReleaseLocation {
     @AuraEnabled
 
     public static List<Location>getReleaseLocation(){
-        if(Schema.sObjectType.%%%NAMESPACED_ORG%%%Movement__c.isAccessible()){
-            List<%%%NAMESPACED_ORG%%%Movement__c> movements = [SELECT Id, %%%NAMESPACED_ORG%%%Animal_Name__c, %%%NAMESPACED_ORG%%%Release_Location__latitude__s, %%%NAMESPACED_ORG%%%Release_Location__longitude__s, %%%NAMESPACED_ORG%%%End_Date__c
-                                        FROM %%%NAMESPACED_ORG%%%Movement__c
-                                        WHERE %%%NAMESPACED_ORG%%%Display_on_Map__c = True];
+        if(Schema.sObjectType.Movement__c.isAccessible()){
+            List<Movement__c> movements = [SELECT Id, Animal_Name__c, Release_Location__latitude__s, Release_Location__longitude__s, End_Date__c
+                                        FROM Movement__c
+                                        WHERE Display_on_Map__c = True
+                                        ORDER BY CreatedDate DESC
+                                        LIMIT 100];
 
             List<Location> loc = new List<Location>();
-            for(%%%NAMESPACED_ORG%%%Movement__c rellocs :movements){
+            for(Movement__c rellocs :movements){
                 GeoLocation geoInfo = new GeoLocation();
-                geoInfo.Latitude = String.ValueOf(rellocs.%%%NAMESPACED_ORG%%%Release_Location__latitude__s);
-                geoInfo.Longitude = String.ValueOf(rellocs.%%%NAMESPACED_ORG%%%Release_Location__longitude__s);
+                geoInfo.Latitude = String.ValueOf(rellocs.Release_Location__latitude__s);
+                geoInfo.Longitude = String.ValueOf(rellocs.Release_Location__longitude__s);
                 Location locDetail = new Location();
                 locDetail.icon = 'utility:animal_and_nature';
-                locDetail.title = rellocs.%%%NAMESPACED_ORG%%%Animal_Name__c;
-                locDetail.description = 'Release Date:' + ' ' +String.Valueof(rellocs.%%%NAMESPACED_ORG%%%End_Date__c);
+                locDetail.title = rellocs.Animal_Name__c;
+                locDetail.description = 'Release Date:' + ' ' +String.Valueof(rellocs.End_Date__c);
                 locDetail.location = geoInfo;
 
                 loc.add(locDetail);

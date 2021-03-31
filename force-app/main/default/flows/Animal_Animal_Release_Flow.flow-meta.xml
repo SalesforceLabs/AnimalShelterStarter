@@ -4,8 +4,8 @@
     <assignments>
         <name>Update_Animal_Data</name>
         <label>Update Animal Data</label>
-        <locationX>50</locationX>
-        <locationY>998</locationY>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
         <assignmentItems>
             <assignToReference>varAnimalToBeReleased.Animal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -27,15 +27,8 @@
     <assignments>
         <name>Update_Movement_Data</name>
         <label>Update Movement Data</label>
-        <locationX>50</locationX>
-        <locationY>758</locationY>
-        <assignmentItems>
-            <assignToReference>varMovementRecord.Display_on_Map__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>DisplayOnMapToggle.value</elementReference>
-            </value>
-        </assignmentItems>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varMovementRecord.End_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -64,35 +57,17 @@
                 <stringValue>Animal Released</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varMovementRecord.Display_on_Map__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Check_to_display_location_on_the_Map</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Movement_Record</targetReference>
         </connector>
     </assignments>
-    <decisions>
-        <name>Continue_the_Flow</name>
-        <label>Continue the Flow?</label>
-        <locationX>578</locationX>
-        <locationY>278</locationY>
-        <defaultConnector>
-            <targetReference>Process_Exit_Screen</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Finish</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Continue</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>ContinueWithFlow.value</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Choose_an_Animal</targetReference>
-            </connector>
-            <label>Yes Continue</label>
-        </rules>
-    </decisions>
     <description>Release an Animal and capture location</description>
     <dynamicChoiceSets>
         <name>choiceAnimalsToBeReleased</name>
@@ -165,8 +140,8 @@
     <recordLookups>
         <name>Get_Movement_Record</name>
         <label>Get Movement Record</label>
-        <locationX>50</locationX>
-        <locationY>518</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Capture_Location</targetReference>
@@ -201,8 +176,8 @@
     <recordUpdates>
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
-        <locationX>50</locationX>
-        <locationY>1118</locationY>
+        <locationX>176</locationX>
+        <locationY>878</locationY>
         <faultConnector>
             <targetReference>Error_Updating_Animal</targetReference>
         </faultConnector>
@@ -211,8 +186,8 @@
     <recordUpdates>
         <name>Update_Movement_Record</name>
         <label>Update Movement Record</label>
-        <locationX>50</locationX>
-        <locationY>878</locationY>
+        <locationX>176</locationX>
+        <locationY>638</locationY>
         <connector>
             <targetReference>Update_Animal_Data</targetReference>
         </connector>
@@ -224,8 +199,8 @@
     <screens>
         <name>Capture_Location</name>
         <label>Capture Location</label>
-        <locationX>50</locationX>
-        <locationY>638</locationY>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -245,14 +220,19 @@
     <screens>
         <name>Choose_an_Animal</name>
         <label>Choose an Animal</label>
-        <locationX>50</locationX>
-        <locationY>398</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Get_Movement_Record</targetReference>
         </connector>
+        <fields>
+            <name>Choose_an_animal_Text</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;This process will allow you to select an animal for release, and capture &lt;/span&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;&lt;i&gt;your&lt;/i&gt;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt; current location which is set as the animals release location.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Choose_an_Animal_to_Release</name>
             <choiceReferences>choiceAnimalsToBeReleased</choiceReferences>
@@ -262,34 +242,11 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Display_On_Map_Text</name>
-            <fieldText>&lt;p&gt;If you wish to display this animal on the release map select Yes below&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>DisplayOnMapToggle</name>
-            <extensionName>flowruntime:toggle</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Display On Release Map?</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleActive</name>
-                <value>
-                    <stringValue>Yes</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleInactive</name>
-                <value>
-                    <stringValue>No</stringValue>
-                </value>
-            </inputParameters>
+            <name>Check_to_display_location_on_the_Map</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Check to display location on the Map</fieldText>
+            <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -297,8 +254,8 @@
     <screens>
         <name>Error_Getting_Movement_Record</name>
         <label>Error Getting Movement Record</label>
-        <locationX>842</locationX>
-        <locationY>638</locationY>
+        <locationX>968</locationX>
+        <locationY>398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -313,8 +270,8 @@
     <screens>
         <name>Error_Updating_Animal</name>
         <label>Error Updating Animal</label>
-        <locationX>314</locationX>
-        <locationY>1238</locationY>
+        <locationX>440</locationX>
+        <locationY>998</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -329,8 +286,8 @@
     <screens>
         <name>Error_Updating_Movement</name>
         <label>Error Updating Movement</label>
-        <locationX>578</locationX>
-        <locationY>998</locationY>
+        <locationX>704</locationX>
+        <locationY>758</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -342,71 +299,11 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <screens>
-        <name>Initial_Screen</name>
-        <label>Initial Screen</label>
-        <locationX>578</locationX>
-        <locationY>158</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Continue_the_Flow</targetReference>
-        </connector>
-        <fields>
-            <name>Initial_Screen_Text</name>
-            <fieldText>&lt;p&gt;This process will allow you to select an animal for release, and capture &lt;b&gt;&lt;i&gt;your&lt;/i&gt;&lt;/b&gt; current location which is set as the animals release location.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>ContinueWithFlow</name>
-            <extensionName>flowruntime:toggle</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>messageToggleActive</name>
-                <value>
-                    <stringValue>Yes</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Do you wish to continue</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleInactive</name>
-                <value>
-                    <stringValue>No</stringValue>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <name>Process_Exit_Screen</name>
-        <label>Process Exit Screen</label>
-        <locationX>1106</locationX>
-        <locationY>398</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Process_Exit_Screen_Text</name>
-            <fieldText>&lt;p&gt;Thank you&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
     <start>
-        <locationX>452</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Initial_Screen</targetReference>
+            <targetReference>Choose_an_Animal</targetReference>
         </connector>
     </start>
     <status>Active</status>

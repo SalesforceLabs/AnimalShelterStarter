@@ -15,22 +15,22 @@ public with sharing class AnimalLocation {
     @AuraEnabled
 
     public static List<Location>getAnimalLocation(){
-       if(Schema.sObjectType.Animal__c.isAccessible()){ 
-            List<Animal__c> animals = [SELECT Id, Animal_Name__c, Geolocation__latitude__s, Geolocation__longitude__s, Type__c, Breed__c
-                                        FROM Animal__c
-                                        WHERE Display_on_Map__c = True
+       if(Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal__c.isAccessible()){ 
+            List<%%%NAMESPACED_ORG%%%Animal__c> animals = [SELECT Id, %%%NAMESPACED_ORG%%%Animal_Name__c, %%%NAMESPACED_ORG%%%Geolocation__latitude__s, %%%NAMESPACED_ORG%%%Geolocation__longitude__s, %%%NAMESPACED_ORG%%%Type__c, %%%NAMESPACED_ORG%%%Breed__c
+                                        FROM %%%NAMESPACED_ORG%%%Animal__c
+                                        WHERE %%%NAMESPACED_ORG%%%Display_on_Map__c = True
                                         ORDER BY CreatedDate DESC
                                         LIMIT 100];
 
             List<Location> loc = new List<Location>();
-            for(Animal__c anilocs :animals){
+            for(%%%NAMESPACED_ORG%%%Animal__c anilocs :animals){
                 GeoLocation geoInfo = new GeoLocation();
-                geoInfo.Latitude = String.ValueOf(anilocs.Geolocation__latitude__s);
-                geoInfo.Longitude = String.ValueOf(anilocs.Geolocation__longitude__s);
+                geoInfo.Latitude = String.ValueOf(anilocs.%%%NAMESPACED_ORG%%%Geolocation__latitude__s);
+                geoInfo.Longitude = String.ValueOf(anilocs.%%%NAMESPACED_ORG%%%Geolocation__longitude__s);
                 Location locDetail = new Location();
                 locDetail.icon = 'utility:animal_and_nature';
-                locDetail.title = anilocs.Animal_Name__c;
-                locDetail.description = anilocs.Type__c + ' ' + anilocs.Breed__c;
+                locDetail.title = anilocs.%%%NAMESPACED_ORG%%%Animal_Name__c;
+                locDetail.description = anilocs.%%%NAMESPACED_ORG%%%Type__c + ' ' + anilocs.%%%NAMESPACED_ORG%%%Breed__c;
                 locDetail.location = geoInfo;
 
                 loc.add(locDetail);

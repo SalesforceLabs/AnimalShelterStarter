@@ -25,6 +25,9 @@
                             <value>Animal__c.New_Alert</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Animal__c.Update_Animal_Location</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>FeedItem.TextPost</value>
                         </valueListItems>
                         <valueListItems>

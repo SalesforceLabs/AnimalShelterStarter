@@ -28,6 +28,7 @@
     <tabs>Locations__c</tabs>
     <tabs>Medicine__c</tabs>
     <tabs>standard-Task</tabs>
+    <tabs>Capture_Release</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>
@@ -41,6 +42,9 @@
         </mappings>
         <mappings>
             <tab>Animal__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Capture_Release</tab>
         </mappings>
         <mappings>
             <tab>Locations__c</tab>

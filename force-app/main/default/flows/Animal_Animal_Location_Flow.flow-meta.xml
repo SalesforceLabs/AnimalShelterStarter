@@ -133,6 +133,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Animal_Status__c</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Breed__c</field>
             <value>
                 <elementReference>TypeAndBreed.middleValue</elementReference>
@@ -527,7 +533,7 @@
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>existingAnimalId</name>
         <dataType>String</dataType>

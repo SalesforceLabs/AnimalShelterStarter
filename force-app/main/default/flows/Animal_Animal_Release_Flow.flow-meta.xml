@@ -126,18 +126,6 @@
             <field>Animal_Status__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>varAnimalToBeReleased.Display_on_Map__c</assignToReference>
-            <field>Display_on_Map__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>varAnimalToBeReleased.Geolocation__Latitude__s</assignToReference>
-            <field>Geolocation__Latitude__s</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>varAnimalToBeReleased.Geolocation__Longitude__s</assignToReference>
-            <field>Geolocation__Longitude__s</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>varAnimalToBeReleased.Id</assignToReference>
             <field>Id</field>
         </outputAssignments>
@@ -192,6 +180,13 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varAnimalToBeReleased.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Release</stringValue>
             </value>
         </filters>
         <object>Movement__c</object>

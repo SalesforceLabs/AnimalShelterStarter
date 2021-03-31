@@ -463,6 +463,7 @@
         <fields>Start_Date__c</fields>
         <fields>End_Date__c</fields>
         <fields>Current__c</fields>
+        <fields>Location_Name__c</fields>
         <fields>NAME</fields>
         <fields>Location__c</fields>
         <relatedList>Movement__c.Animal__c</relatedList>

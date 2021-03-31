@@ -66,14 +66,145 @@
                 <default>false</default>
                 <label>Separation Anxiety</label>
             </value>
+            <value>
+                <fullName>Aggressive</fullName>
+                <default>false</default>
+                <label>Aggressive</label>
+            </value>
+            <value>
+                <fullName>Cannot be held</fullName>
+                <default>false</default>
+                <label>Cannot be held</label>
+            </value>
+            <value>
+                <fullName>Happy being handled</fullName>
+                <default>false</default>
+                <label>Happy being handled</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
+            <controllingFieldValue>Goat</controllingFieldValue>
+            <controllingFieldValue>Mouse</controllingFieldValue>
+            <controllingFieldValue>Pig</controllingFieldValue>
+            <controllingFieldValue>Rabbit</controllingFieldValue>
+            <controllingFieldValue>Pony</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
             <controllingFieldValue>Bird</controllingFieldValue>
             <controllingFieldValue>Cat</controllingFieldValue>
             <controllingFieldValue>Dog</controllingFieldValue>
+            <controllingFieldValue>Donkey</controllingFieldValue>
+            <controllingFieldValue>Horse</controllingFieldValue>
+            <controllingFieldValue>Guinea Pig</controllingFieldValue>
+            <controllingFieldValue>Hamster</controllingFieldValue>
+            <controllingFieldValue>Hedgehog</controllingFieldValue>
+            <controllingFieldValue>Ferret</controllingFieldValue>
+            <controllingFieldValue>Gerbil</controllingFieldValue>
             <valueName>Anxious</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>Goat</controllingFieldValue>
+            <controllingFieldValue>Mouse</controllingFieldValue>
+            <controllingFieldValue>Pig</controllingFieldValue>
+            <controllingFieldValue>Rabbit</controllingFieldValue>
+            <controllingFieldValue>Pony</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <controllingFieldValue>Donkey</controllingFieldValue>
+            <controllingFieldValue>Horse</controllingFieldValue>
+            <controllingFieldValue>Guinea Pig</controllingFieldValue>
+            <controllingFieldValue>Hamster</controllingFieldValue>
+            <controllingFieldValue>Hedgehog</controllingFieldValue>
+            <controllingFieldValue>Ferret</controllingFieldValue>
+            <controllingFieldValue>Gerbil</controllingFieldValue>
+            <valueName>Good with other species</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goat</controllingFieldValue>
+            <controllingFieldValue>Mouse</controllingFieldValue>
+            <controllingFieldValue>Pig</controllingFieldValue>
+            <controllingFieldValue>Rabbit</controllingFieldValue>
+            <controllingFieldValue>Pony</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <controllingFieldValue>Donkey</controllingFieldValue>
+            <controllingFieldValue>Horse</controllingFieldValue>
+            <controllingFieldValue>Guinea Pig</controllingFieldValue>
+            <controllingFieldValue>Hamster</controllingFieldValue>
+            <controllingFieldValue>Hedgehog</controllingFieldValue>
+            <controllingFieldValue>Ferret</controllingFieldValue>
+            <controllingFieldValue>Gerbil</controllingFieldValue>
+            <valueName>Good with same species</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goat</controllingFieldValue>
+            <controllingFieldValue>Pig</controllingFieldValue>
+            <controllingFieldValue>Rabbit</controllingFieldValue>
+            <controllingFieldValue>Pony</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <valueName>Resource Guarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goat</controllingFieldValue>
+            <controllingFieldValue>Pony</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
+            <controllingFieldValue>Bird</controllingFieldValue>
+            <controllingFieldValue>Cat</controllingFieldValue>
+            <controllingFieldValue>Dog</controllingFieldValue>
+            <controllingFieldValue>Donkey</controllingFieldValue>
+            <controllingFieldValue>Horse</controllingFieldValue>
+            <valueName>Separation Anxiety</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goat</controllingFieldValue>
+            <controllingFieldValue>Mouse</controllingFieldValue>
+            <controllingFieldValue>Pig</controllingFieldValue>
+            <controllingFieldValue>Rabbit</controllingFieldValue>
+            <controllingFieldValue>Pony</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
+            <controllingFieldValue>Donkey</controllingFieldValue>
+            <controllingFieldValue>Horse</controllingFieldValue>
+            <controllingFieldValue>Guinea Pig</controllingFieldValue>
+            <controllingFieldValue>Hamster</controllingFieldValue>
+            <controllingFieldValue>Hedgehog</controllingFieldValue>
+            <controllingFieldValue>Ferret</controllingFieldValue>
+            <controllingFieldValue>Gerbil</controllingFieldValue>
+            <valueName>Aggressive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mouse</controllingFieldValue>
+            <controllingFieldValue>Pig</controllingFieldValue>
+            <controllingFieldValue>Rabbit</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
+            <controllingFieldValue>Donkey</controllingFieldValue>
+            <controllingFieldValue>Guinea Pig</controllingFieldValue>
+            <controllingFieldValue>Hamster</controllingFieldValue>
+            <controllingFieldValue>Hedgehog</controllingFieldValue>
+            <controllingFieldValue>Ferret</controllingFieldValue>
+            <controllingFieldValue>Gerbil</controllingFieldValue>
+            <valueName>Cannot be held</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mouse</controllingFieldValue>
+            <controllingFieldValue>Pig</controllingFieldValue>
+            <controllingFieldValue>Rabbit</controllingFieldValue>
+            <controllingFieldValue>Rat</controllingFieldValue>
+            <controllingFieldValue>Donkey</controllingFieldValue>
+            <controllingFieldValue>Guinea Pig</controllingFieldValue>
+            <controllingFieldValue>Hamster</controllingFieldValue>
+            <controllingFieldValue>Hedgehog</controllingFieldValue>
+            <controllingFieldValue>Ferret</controllingFieldValue>
+            <controllingFieldValue>Gerbil</controllingFieldValue>
+            <valueName>Happy being handled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pony</controllingFieldValue>
             <controllingFieldValue>Bird</controllingFieldValue>
             <controllingFieldValue>Cat</controllingFieldValue>
             <controllingFieldValue>Dog</controllingFieldValue>
@@ -83,31 +214,7 @@
             <controllingFieldValue>Bird</controllingFieldValue>
             <controllingFieldValue>Cat</controllingFieldValue>
             <controllingFieldValue>Dog</controllingFieldValue>
-            <valueName>Good with other species</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Bird</controllingFieldValue>
-            <controllingFieldValue>Cat</controllingFieldValue>
-            <controllingFieldValue>Dog</controllingFieldValue>
-            <valueName>Good with same species</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Bird</controllingFieldValue>
-            <controllingFieldValue>Cat</controllingFieldValue>
-            <controllingFieldValue>Dog</controllingFieldValue>
             <valueName>Reactive</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Bird</controllingFieldValue>
-            <controllingFieldValue>Cat</controllingFieldValue>
-            <controllingFieldValue>Dog</controllingFieldValue>
-            <valueName>Resource Guarding</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Bird</controllingFieldValue>
-            <controllingFieldValue>Cat</controllingFieldValue>
-            <controllingFieldValue>Dog</controllingFieldValue>
-            <valueName>Separation Anxiety</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Dog</controllingFieldValue>

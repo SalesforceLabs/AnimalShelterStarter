@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PTS_Required_Fields</fullName>
+    <active>false</active>
+    <description>When active, this makes the PTS Reason field and Deceased Date required when the animal is marked as deceased.</description>
+    <errorConditionFormula>AND(TEXT(Animal_Status__c) = &quot;Deceased&quot;,  ISBLANK(TEXT(PTS_Reason__c)), ISBLANK( Deceased_Date__c ))</errorConditionFormula>
+    <errorMessage>You have indicated this animal has been PTS. Please provide a reason using the PTS Reason field and enter a date using the deceased date field.</errorMessage>
+</ValidationRule>

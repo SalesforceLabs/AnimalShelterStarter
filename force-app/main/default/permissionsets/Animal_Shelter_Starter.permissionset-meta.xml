@@ -750,6 +750,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Capture_Release</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Condition__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

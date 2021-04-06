@@ -178,6 +178,9 @@
         <label>Update Animal Record</label>
         <locationX>176</locationX>
         <locationY>878</locationY>
+        <connector>
+            <targetReference>Flow_Completion_Screen</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Error_Updating_Animal</targetReference>
         </faultConnector>
@@ -203,7 +206,7 @@
         <locationY>398</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Update_Movement_Data</targetReference>
         </connector>
@@ -230,7 +233,7 @@
         </connector>
         <fields>
             <name>Choose_an_animal_Text</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;This process will allow you to select an animal for release, and capture &lt;/span&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;&lt;i&gt;your&lt;/i&gt;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt; current location which is set as the animals release location.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Select an animal that is marked ready for release.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;The current location of &lt;/span&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; browser/device will be captured.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;You may be asked for permission to access your location.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -244,7 +247,7 @@
         <fields>
             <name>Check_to_display_location_on_the_Map</name>
             <dataType>Boolean</dataType>
-            <fieldText>Check to display location on the Map</fieldText>
+            <fieldText>Check to display on Release Locations map</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -261,7 +264,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Getting_Movement_Record_Text</name>
-            <fieldText>&lt;p&gt;There has been an error&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;There has been an error getting the Movement records&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -277,7 +280,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Updating_Animal_Text</name>
-            <fieldText>&lt;p&gt;There has been an error &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;There has been an error updating the Animal record&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -293,7 +296,23 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Updating_Movement_Text</name>
-            <fieldText>&lt;p&gt;There has been an error &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;There has been an error updating the Movement record&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Flow_Completion_Screen</name>
+        <label>Flow Completion Screen</label>
+        <locationX>176</locationX>
+        <locationY>998</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Flow_Completion_Screen_Text</name>
+            <fieldText>&lt;p&gt;DONE: Animal/Movement records updated&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

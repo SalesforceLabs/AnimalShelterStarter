@@ -274,7 +274,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Completion_Screen_Text</name>
-            <fieldText>&lt;p&gt;DONE: Animal Created/Updated&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;DONE: Animal Created/Updated with location&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -317,9 +317,9 @@
         <label>Existing Animal Selection</label>
         <locationX>578</locationX>
         <locationY>638</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Capture_Location</targetReference>
         </connector>
@@ -347,13 +347,13 @@
         </connector>
         <fields>
             <name>Initial_Screen_Text</name>
-            <fieldText>&lt;p&gt;Remember, this process will capture the current location of &lt;b&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt; device/browser.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You may be prompted to allow access to get you location!&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Remember, this process will capture the current location of &lt;b&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt; device/browser.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;i style=&quot;color: rgb(0, 0, 0);&quot;&gt;You may be prompted to grant permission to access your location!&lt;/i&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Check_to_display_on_the_Map</name>
             <dataType>Boolean</dataType>
-            <fieldText>Check to display on the Map</fieldText>
+            <fieldText>Check to display on the Animals Location map</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -483,7 +483,7 @@
         </connector>
         <fields>
             <name>New_or_Existing_Text</name>
-            <fieldText>&lt;p&gt;&lt;i&gt;No Animal ID was specified, so do you wish to create a new animal with location, or update an existing animal with a location?&lt;/i&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;i&gt;No Animal ID was specified. Choose to either create a new animal, or update an existing animal.&lt;/i&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -505,7 +505,7 @@
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

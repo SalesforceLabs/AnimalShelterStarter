@@ -248,7 +248,7 @@
         <label>Capture Location</label>
         <locationX>578</locationX>
         <locationY>1334</locationY>
-        <allowBack>false</allowBack>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
@@ -505,7 +505,7 @@
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

@@ -11,7 +11,7 @@
                 component.set('v.mapMarkers', obj);
                 component.set('v.zoomLevel', 16);
                 component.set('v.markersTitle', 'Animal Locations');
-                component.set('v.showFooter', true);
+                component.set('v.showFooter', false);
             }
         });
         $A.enqueueAction(action);

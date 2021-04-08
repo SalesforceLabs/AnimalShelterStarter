@@ -347,7 +347,7 @@
         </connector>
         <fields>
             <name>Initial_Screen_Text</name>
-            <fieldText>&lt;p&gt;Remember, this process will capture the current location of &lt;b&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt; device/browser.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;i style=&quot;color: rgb(0, 0, 0);&quot;&gt;You may be prompted to grant permission to access your location!&lt;/i&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;This process will capture the current location of &lt;b&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt; device/browser.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -356,6 +356,11 @@
             <fieldText>Check to display on the Animals Location map</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Initial_Screen_Text_Alert</name>
+            <fieldText>&lt;p&gt;⚠️&lt;i style=&quot;font-size: 10px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;You may be prompted to grant permission to access your location!&lt;/i&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

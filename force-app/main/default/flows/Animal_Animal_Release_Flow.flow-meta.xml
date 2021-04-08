@@ -233,7 +233,7 @@
         </connector>
         <fields>
             <name>Choose_an_animal_Text</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Select an animal that is marked ready for release.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;The current location of &lt;/span&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; browser/device will be captured.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;You may be asked for permission to access your location.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Select an animal that is marked ready for release.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;The current location of &lt;/span&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; browser/device will be captured.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -250,6 +250,11 @@
             <fieldText>Check to display on Release Locations map</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Choose_an_animal_Text_Alert</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;⚠️&lt;/span&gt;&lt;i style=&quot;font-size: 10px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;You may be prompted to grant permission to access your location!&lt;/i&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

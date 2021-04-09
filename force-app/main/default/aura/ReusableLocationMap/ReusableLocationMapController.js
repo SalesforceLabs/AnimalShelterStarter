@@ -6,7 +6,6 @@
             varLat: component.get("v.latField"),
             varLong: component.get("v.longField"),
             varName: component.get("v.nameField"),
-            varSelect: component.get("v.selectField"),
             varDescText: component.get("v.descTextField"),
             varDescDate: component.get("v.descDateField")
         });

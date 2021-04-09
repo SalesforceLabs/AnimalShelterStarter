@@ -630,28 +630,10 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Display_on_Map__c</fieldItem>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-985b92f0-cde0-4f67-8384-6add4f00ffed</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-71edb8b9-8182-4e2e-931a-3882cd76f4d1</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-985b92f0-cde0-4f67-8384-6add4f00ffed</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
             </componentInstance>

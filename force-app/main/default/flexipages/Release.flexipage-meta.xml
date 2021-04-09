@@ -45,10 +45,6 @@
                     <name>obj</name>
                     <value>Movement__c</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>selectField</name>
-                    <value>Display_on_Map__c</value>
-                </componentInstanceProperties>
                 <componentName>ReusableLocationMap</componentName>
             </componentInstance>
         </itemInstances>

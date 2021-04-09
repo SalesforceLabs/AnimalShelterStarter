@@ -179,11 +179,6 @@
                 <fieldItem>Record.Release_Location__c</fieldItem>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Display_on_Map__c</fieldItem>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-1587d8f0-1ca0-4bc2-b6bd-a5df997440ff</name>
         <type>Facet</type>
     </flexiPageRegions>

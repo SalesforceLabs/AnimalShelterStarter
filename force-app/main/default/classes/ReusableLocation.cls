@@ -4,27 +4,25 @@
  * @Author             : Chris Rolfe (Salesforce.org)
  * @Group              : 
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
- * @Last Modified On   : 09/04/2021, 12:50
- * @Modification Log   : 
+ * @Last Modified On   : 09/04/2021, 17:38
+ * @Modification Log   : Removed need for WHERE, LIMITS to 100 records
  * Ver       Date            Author      		    Modification
  * 1.0    09/04/2021   Chris Rolfe (Salesforce.org)     Initial Version
+ * 1.1    09/04/2021   Chris Rolfe (Salesforce.org)     Updated SOQL
 **/
 
 public with sharing class ReusableLocation {
 
     @AuraEnabled
 
-    public static List<Location>getLocation(String varObj, String varLat, String varLong, String varName, String varSelect, String varDescText, String varDescDate){
+    public static List<Location>getLocation(String varObj, String varLat, String varLong, String varName, String varDescText, String varDescDate){
 
         String listOfFields = 'Id, ' + varName + ', ' + varLat + ', ' + varLong + ', ' + varDescText + ', ' + varDescDate;
         System.debug(listOfFields);
 
         if(Schema.describeSObjects(new List<String>{varObj})[0].isAccessible()){
 
-            String whereClause = varSelect + ' = True';
-            System.debug(whereClause);
-
-            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause;
+            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100';
             System.debug(queryString);
             List<sObject> myData = Database.query(String.escapeSingleQuotes(queryString));
             System.debug(myData);

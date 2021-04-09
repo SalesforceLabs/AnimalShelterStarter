@@ -224,12 +224,6 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Display_on_Map__c</field>
-            <value>
-                <elementReference>Check_to_display_on_the_Map</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Geolocation__Latitude__s</field>
             <value>
                 <elementReference>Capture_Geo.latitude</elementReference>
@@ -349,13 +343,6 @@
             <name>Initial_Screen_Text</name>
             <fieldText>&lt;p&gt;This process will capture the current location of &lt;b&gt;&lt;i&gt;YOUR&lt;/i&gt;&lt;/b&gt; device/browser.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Check_to_display_on_the_Map</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Check to display on the Animals Location map</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Initial_Screen_Text_Alert</name>

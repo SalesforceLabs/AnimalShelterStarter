@@ -57,13 +57,6 @@
                 <stringValue>Animal Released</stringValue>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varMovementRecord.Display_on_Map__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Check_to_display_location_on_the_Map</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
             <targetReference>Update_Movement_Record</targetReference>
         </connector>
@@ -167,7 +160,6 @@
         <object>Movement__c</object>
         <outputReference>varMovementRecord</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Display_on_Map__c</queriedFields>
         <queriedFields>Release_Location__Latitude__s</queriedFields>
         <queriedFields>Release_Location__Longitude__s</queriedFields>
         <queriedFields>Type__c</queriedFields>
@@ -242,13 +234,6 @@
             <dataType>String</dataType>
             <fieldText>Choose an Animal to Release</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Check_to_display_location_on_the_Map</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Check to display on Release Locations map</fieldText>
-            <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>

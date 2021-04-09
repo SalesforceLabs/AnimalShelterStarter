@@ -17,7 +17,6 @@
     <aura:attribute name="latField" type="String" />
     <aura:attribute name="longField" type="String" />
     <aura:attribute name="nameField" type="String" />
-    <aura:attribute name="selectField" type="String" />
     <aura:attribute name="descTextField" type="String" />
     <aura:attribute name="descDateField" type="String" />
     <aura:attribute name="mapMarkers" type="Object" />
@@ -25,6 +24,7 @@
     <aura:attribute name="markersTitle" type="String" default="Animal Locations" />
     <aura:attribute name="showFooter" type="Boolean" default="true" />
     <aura:attribute name="mapTitle" type="String" default="Animal Locations" />
+    <aura:attribute name="listview" type="String" default="hidden" />
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
@@ -36,7 +36,8 @@
                         mapMarkers="{! v.mapMarkers}"
                         zoomLevel="{! v.zoomLevel}"
                         markersTitle="{! v.markersTitle}"
-                        showFooter="{! v.showFooter}" >
+                        showFooter="{! v.showFooter}" 
+                        listView="{! v.listView}">
             </lightning:map>
 
         </aura:if>

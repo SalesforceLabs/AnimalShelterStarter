@@ -746,6 +746,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Capture</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Capture_Release</tab>
         <visibility>Visible</visibility>
     </tabSettings>

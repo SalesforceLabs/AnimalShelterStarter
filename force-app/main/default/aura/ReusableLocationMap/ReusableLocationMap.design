@@ -1,4 +1,4 @@
-<design:component >
+<design:component label="Reusable Location Map" >
 
     <design:attribute name="obj" label="Object" description="The Object that has Location information" />
     <design:attribute name="latField" label="Latitude Field" description="Format: fieldname__latitude__s" />

@@ -1,8 +1,8 @@
 <design:component >
 
     <design:attribute name="obj" label="Object" description="The Object that has Location information" />
-    <design:attribute name="latField" label="Latitude Field" description="Format fieldname__latitude__s" />
-    <design:attribute name="longField" label="Longitude Field" description="Format fieldname__longitude__s" />
+    <design:attribute name="latField" label="Latitude Field" description="Format: fieldname__latitude__s" />
+    <design:attribute name="longField" label="Longitude Field" description="Format: fieldname__longitude__s" />
     <design:attribute name="nameField" label="Name Field" />
     <design:attribute name="selectField" label="Selection Field" description="The field that determines if the record is displayed" />
     <design:attribute name="descTextField" label="Description Field (Text)" />

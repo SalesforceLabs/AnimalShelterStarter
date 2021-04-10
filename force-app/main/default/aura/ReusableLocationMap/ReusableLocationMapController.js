@@ -23,5 +23,15 @@
             }
         });
         $A.enqueueAction(action);
+    },
+    handleToggleChange : function(component, event, helper){
+        var checked = component.get("v.checked");
+        console.log(checked);
+        if(checked){
+            var selection = "visible";
+        }else{
+            var selection = "hidden";
+        }
+        component.set("v.listView", selection);
     }
 })

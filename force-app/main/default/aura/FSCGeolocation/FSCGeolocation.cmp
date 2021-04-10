@@ -16,6 +16,8 @@
     <aura:attribute name="mapMarkersData" type="Object" />
     <aura:attribute name="zoomLevel" type="Integer" default="16"/>
     <aura:attribute name="showFooter" type="Boolean" default="false"/>
+    <aura:attribute name="listView" type="String" default="hidden"/>
+    
 
     <!-- handler -->
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
@@ -28,7 +30,7 @@
                            mapMarkers="{! v.mapMarkersData}"
                            zoomLevel="{! v.zoomLevel}"
                            showFooter="{! v.showFooter}"
-                           listview="hidden" />
+                           listview="{! v.listView}"/>
         </aura:if>
     </lightning:card>
 </aura:component>

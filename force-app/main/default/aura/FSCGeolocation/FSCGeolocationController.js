@@ -14,6 +14,7 @@
                 var marker = '[{"location": { "Latitude": "' + currLat + '","Longitude": "' + currLong + '"}}]';
                 console.log("Marker Data: " + marker);
                 component.set("v.mapMarkersData", JSON.parse(marker));
+               
             }
         } else {
             error('Geolocation Not available, check device settings');

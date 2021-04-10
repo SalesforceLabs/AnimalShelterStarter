@@ -22,7 +22,10 @@ public with sharing class ReusableLocation {
 
         if(Schema.describeSObjects(new List<String>{varObj})[0].isAccessible()){
 
-            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100';
+            String whereClause = varLat + ' != null';
+            System.debug(whereClause);
+
+            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100';
             System.debug(queryString);
             List<sObject> myData = Database.query(String.escapeSingleQuotes(queryString));
             System.debug(myData);

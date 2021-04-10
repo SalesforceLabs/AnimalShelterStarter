@@ -4,10 +4,11 @@
   @Author             : Chris Rolfe (Salesforce.org)
   @Group              : 
   @Last Modified By   : Chris Rolfe (Salesforce.org)
-  @Last Modified On   : 09/04/2021, 12:40
+  @Last Modified On   : 10/04/2021, 14:55
   @Modification Log   : 
   Ver       Date            Author      		    Modification
   1.0    09/04/2021   Chris Rolfe (Salesforce.org)     Initial Version
+  1.1    10/04/2021   Chris Rolfe (Salesforce.org) Added List view Toggle
 -->
 
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="ReusableLocation">
@@ -24,12 +25,20 @@
     <aura:attribute name="markersTitle" type="String" default="Animal Locations" />
     <aura:attribute name="showFooter" type="Boolean" default="true" />
     <aura:attribute name="mapTitle" type="String" default="Animal Locations" />
-    <aura:attribute name="listview" type="String" default="hidden" />
+    <aura:attribute name="listView" type="String" default="hidden" />
+    <aura:attribute name="checked" type="Boolean" default="false" />
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
 
     <lightning:card iconName="action:map" title="{! v.mapTitle}">
+        <lightning:input
+                    type="toggle"
+                    label="Enable/Disable List view"
+                    name="lvToggle"
+                    checked="{! v.checked}"
+                    onchange="{! c.handleToggleChange}">
+        </lightning:input>
         <!-- The Map Component -->
         <aura:if isTrue="{! v.mapMarkers.length > 0}" >
             <lightning:map

@@ -1,7 +1,7 @@
 @isTest
 public class ReusableLocationTest {
 
-    static testMethod void testMethod1() {
+    @isTest static void testLocation() {
 
         String tstObj = 'Animal__c';
         String tstName = 'Animal_Name__c';
@@ -19,12 +19,9 @@ public class ReusableLocationTest {
         ani.Entry_Date__c = Datetime.newInstance(2021, 4, 9, 0, 0, 0);
 
         Insert ani;
-
-        Test.startTest();
         
-            List<Location> testingLocation = ReusableLocation.getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate);
-            
-        Test.stopTest();
+        List<Location> testingLocation = ReusableLocation.getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate);
+
 
         
 

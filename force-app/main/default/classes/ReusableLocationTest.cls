@@ -23,7 +23,6 @@ public class ReusableLocationTest {
         System.assertEquals(true,animal.size()>0,'Read Animal Record Failed');
         ReusableLocation tstLoc = new ReusableLocation();
         tstLoc.List<Location>getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate);
-        System.debug(tstLoc);
 
     }
 

@@ -21,8 +21,8 @@ public class ReusableLocationTest {
 
         List<Animal__c> animal = [SELECT Animal_Name__c, Geolocation__latitude__s, Geolocation__longitude__s, Type__c, Date_of_Arrival__c FROM Animal__c];
         System.assertEquals(true,animal.size()>0,'Read Animal Record Failed');
-        ReusableLocation tstLoc = new ReusableLocation();
-        tstLoc.List<Location>getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate);
+       /**  ReusableLocation tstLoc = new ReusableLocation();
+        tstLoc.List<Location>getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate); */
 
     }
 

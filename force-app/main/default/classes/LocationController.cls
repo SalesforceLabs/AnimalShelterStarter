@@ -14,28 +14,29 @@
 public with sharing class LocationController {
 
     @AuraEnabled
-
     public static List<Location>getLocation(String varObj, String varLat, String varLong, String varName, String varDescText, String varDescDate){
 
+        //Build SOQL String
         String listOfFields = 'Id, ' + varName + ', ' + varLat + ', ' + varLong + ', ' + varDescText + ', ' + varDescDate;
         System.debug(listOfFields);
-
+        String whereClause = varLat + ' != null';
+        System.debug(whereClause);
+        
+        //Get 100 records
         if(Schema.describeSObjects(new List<String>{varObj})[0].isAccessible()){
-
-            String whereClause = varLat + ' != null';
-            System.debug(whereClause);
-
             String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100';
             System.debug(queryString);
             List<sObject> myData = Database.query(String.escapeSingleQuotes(queryString));
             System.debug(myData);
-
+            
+            //Get Field Label of varDescDate field
             List<Schema.DescribeSObjectResult> dsr = Schema.describeSObjects(new List<String> {varObj});
             String objectLabel = dsr[0].getLabel();
             Map<String, Schema.SObjectField> allFields = dsr[0].fields.getMap();
             String fieldLabel = allFields.get(varDescDate).getDescribe().getLabel();
             System.debug(objectLabel + ' ' + fieldLabel);
 
+            //Build Location records
             List<Location> loc = new List<Location>();
             for(sObject locs :myData){
                 GeoLocation geoInfo = new GeoLocation();

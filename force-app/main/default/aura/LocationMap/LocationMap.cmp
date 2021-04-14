@@ -48,9 +48,6 @@
                         showFooter="{! v.showFooter}" 
                         listView="{! v.listView}">
             </lightning:map>
-
         </aura:if>
-
     </lightning:card>
-
 </aura:component>

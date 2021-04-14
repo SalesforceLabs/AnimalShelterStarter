@@ -19,14 +19,9 @@ public class LocationControllerTest {
         List<Animal__c> animal = [SELECT Animal_Name__c, Geolocation__latitude__s, Geolocation__longitude__s, Type__c, Date_of_Arrival__c FROM Animal__c];
         System.assertEquals(true,animal.size()>0,'Read Animal Record Failed');
         
-     
-        
         List<LocationController.Location> tstLoc = new List<LocationController.Location>();
         tstLoc = LocationController.getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate); 
-        System.assertEquals(true,tstLoc.size()>0,'Read Animal Record Failed');
-
-     
-   /**     LocationController.foo(); */
+        System.assertEquals(true,String.ValueOf(tstLoc).contains('title=Tandy'),'Location Data Incorrrect');
         
     }
 }

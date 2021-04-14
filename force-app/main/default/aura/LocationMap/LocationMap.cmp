@@ -11,7 +11,7 @@
   1.1    10/04/2021   Chris Rolfe (Salesforce.org) Added List view Toggle
 -->
 
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="ReusableLocation">
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="LocationController">
 
     <!-- attributes -->
     <aura:attribute name="obj" type="String" />

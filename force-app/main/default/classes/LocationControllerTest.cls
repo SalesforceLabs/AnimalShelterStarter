@@ -1,5 +1,5 @@
 @isTest
-public class ReusableLocationTest {
+public class LocationControllerTest {
 
     @TestSetup
     static void setupTestData(){

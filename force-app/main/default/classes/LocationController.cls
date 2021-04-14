@@ -1,5 +1,5 @@
 /**
- * @File Name          : ReuableLocation.apxc
+ * @File Name          : LocationController.apxc
  * @Description        : Gets records that are to be displayed on Location Map
  * @Author             : Chris Rolfe (Salesforce.org)
  * @Group              : 
@@ -11,7 +11,7 @@
  * 1.1    09/04/2021   Chris Rolfe (Salesforce.org)     Updated SOQL
 **/
 
-public with sharing class ReusableLocation {
+public with sharing class LocationController {
 
     @AuraEnabled
 

@@ -14,10 +14,10 @@
 public with sharing class LocationController {
 
     @AuraEnabled
-    public static List<Location>getLocation(String varObj, String varLat, String varLong, String varName, String varDescText, String varDescDate){
+    public static List<Location> getLocation(String varObj, String varLat, String varLong, String varName, String varDescText, String varDescDate){
 
         //Build SOQL String
-        String listOfFields = 'Id, ' + varName + ', ' + varLat + ', ' + varLong + ', ' + varDescText + ', ' + varDescDate;
+        String listOfFields = varName + ', ' + varLat + ', ' + varLong + ', ' + varDescText + ', ' + varDescDate;
         System.debug(listOfFields);
         String whereClause = varLat + ' != null';
         System.debug(whereClause);
@@ -56,6 +56,8 @@ public with sharing class LocationController {
         System.debug('User does not have access to this object');
         return null;
     }
+    
+        
     public class Location{
         @AuraEnabled
         public String icon{get;set;}

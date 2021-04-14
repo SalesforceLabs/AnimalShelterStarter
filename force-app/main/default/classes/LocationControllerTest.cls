@@ -3,12 +3,9 @@ public class LocationControllerTest {
 
     @TestSetup
     static void setupTestData(){
-
-        test.startTest();        
+        
         Animal__c testAnimal = new Animal__c(Animal_Name__c = 'Tandy', Geolocation__latitude__s = 50.826425, Geolocation__longitude__s = -0.403983, Type__c = 'Rabbit', Date_of_Arrival__c = Date.today());
         Insert testAnimal;
-        test.stopTest();
-        
     }
     static testMethod void testLocation() {
 
@@ -21,13 +18,15 @@ public class LocationControllerTest {
 
         List<Animal__c> animal = [SELECT Animal_Name__c, Geolocation__latitude__s, Geolocation__longitude__s, Type__c, Date_of_Arrival__c FROM Animal__c];
         System.assertEquals(true,animal.size()>0,'Read Animal Record Failed');
-       /**  ReusableLocation tstLoc = new ReusableLocation();
-        tstLoc.List<Location>getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate); */
+        
+     
+        
+        List<LocationController.Location> tstLoc = new List<LocationController.Location>();
+        tstLoc = LocationController.getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate); 
+        System.assertEquals(true,tstLoc.size()>0,'Read Animal Record Failed');
 
+     
+   /**     LocationController.foo(); */
+        
     }
-
- 
-    
-
-
 }

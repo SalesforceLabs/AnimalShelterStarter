@@ -21,7 +21,7 @@ public class LocationControllerTest {
         
         List<LocationController.Location> tstLoc = new List<LocationController.Location>();
         tstLoc = LocationController.getLocation(tstObj, tstLat, tstLong, tstName, tstText, tstDate); 
-        System.assertEquals(true,String.ValueOf(tstLoc).contains('title=Tandy'),'Location Data Incorrrect');
+        System.assertEquals(true,String.ValueOf(tstLoc).contains('title=Tandy'),'Location Data Incorrect');
         
     }
 }

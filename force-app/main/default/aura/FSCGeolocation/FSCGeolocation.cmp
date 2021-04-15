@@ -30,7 +30,7 @@
                            mapMarkers="{! v.mapMarkersData}"
                            zoomLevel="{! v.zoomLevel}"
                            showFooter="{! v.showFooter}"
-                           listview="{! v.listView}"/>
+                           listView="{! v.listView}"/>
         </aura:if>
     </lightning:card>
 </aura:component>

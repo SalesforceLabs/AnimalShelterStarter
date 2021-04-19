@@ -166,6 +166,38 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Get_new_Movement_Record_Id</name>
+        <label>Get new Movement Record Id</label>
+        <locationX>3961</locationX>
+        <locationY>535</locationY>
+        <assignmentItems>
+            <assignToReference>newMovementId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varNewMovementRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Newly_Created_Movement_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Get_new_Movement_Record_Id_0</name>
+        <label>Get new Movement Record Id</label>
+        <locationX>4641</locationX>
+        <locationY>1100</locationY>
+        <assignmentItems>
+            <assignToReference>newMovementId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varNewMovementRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Animal_Location_Status_for_Transferred_and_Fostered</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>House_Movement_Record</name>
         <label>House Movement Record</label>
         <locationX>3606</locationX>
@@ -858,10 +890,10 @@
     <recordCreates>
         <name>Create_Movement_Record</name>
         <label>Create Movement Record</label>
-        <locationX>3878</locationX>
-        <locationY>538</locationY>
+        <locationX>3814</locationX>
+        <locationY>539</locationY>
         <connector>
-            <targetReference>Get_Newly_Created_Movement_Record</targetReference>
+            <targetReference>Get_new_Movement_Record_Id</targetReference>
         </connector>
         <inputReference>varNewMovementRecord</inputReference>
     </recordCreates>
@@ -871,17 +903,17 @@
         <locationX>4398</locationX>
         <locationY>1094</locationY>
         <connector>
-            <targetReference>Update_Animal_Location_Status_for_Transferred_and_Fostered</targetReference>
+            <targetReference>Get_new_Movement_Record_Id_0</targetReference>
         </connector>
         <inputReference>varNewMovementRecord</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_new_Deceased_Movement_Record</name>
         <label>Create new Deceased Movement Record</label>
-        <locationX>4741</locationX>
-        <locationY>1747</locationY>
+        <locationX>4831</locationX>
+        <locationY>1757</locationY>
         <connector>
-            <targetReference>Need_to_Generate_Tasks</targetReference>
+            <targetReference>Movement_Complete</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen_2</targetReference>
@@ -1205,8 +1237,8 @@
     <recordLookups>
         <name>Get_Newly_Created_Movement_Record</name>
         <label>Get Newly Created Movement Record</label>
-        <locationX>4108</locationX>
-        <locationY>538</locationY>
+        <locationX>4099</locationX>
+        <locationY>535</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Animal_Location_Status_to_Housed</targetReference>
@@ -1216,7 +1248,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varNewMovementRecord.Id</elementReference>
+                <elementReference>newMovementId</elementReference>
             </value>
         </filters>
         <object>Movement__c</object>

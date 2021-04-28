@@ -9,12 +9,12 @@ public class LocationControllerTest {
     }
     static testMethod void testLocation() {
 
-        String tstObj = 'Animal__c';
-        String tstName = 'Animal_Name__c';
-        String tstLat = 'Geolocation__latitude__s';
-        String tstLong = 'Geolocation__longitude__s';
-        String tstText = 'Type__c';
-        String tstDate = 'Date_of_Arrival__c';
+        String tstObj = '%%%NAMESPACED_ORG%%%Animal__c';
+        String tstName = '%%%NAMESPACED_ORG%%%Animal_Name__c';
+        String tstLat = '%%%NAMESPACED_ORG%%%Geolocation__latitude__s';
+        String tstLong = '%%%NAMESPACED_ORG%%%Geolocation__longitude__s';
+        String tstText = '%%%NAMESPACED_ORG%%%Type__c';
+        String tstDate = '%%%NAMESPACED_ORG%%%Date_of_Arrival__c';
 
         List<%%%NAMESPACED_ORG%%%Animal__c> animal = [SELECT %%%NAMESPACED_ORG%%%Animal_Name__c, %%%NAMESPACED_ORG%%%Geolocation__latitude__s, %%%NAMESPACED_ORG%%%Geolocation__longitude__s, %%%NAMESPACED_ORG%%%Type__c, %%%NAMESPACED_ORG%%%Date_of_Arrival__c FROM %%%NAMESPACED_ORG%%%Animal__c];
         System.assertEquals(true,animal.size()>0,'Read Animal Record Failed');

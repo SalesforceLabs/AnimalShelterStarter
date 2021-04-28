@@ -377,19 +377,19 @@
             <inputParameters>
                 <name>dependencyWrapperApiName</name>
                 <value>
-                    <stringValue>Animal__c</stringValue>
+                    <stringValue>%%%NAMESPACED_ORG%%%Animal__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>topPicklistApiName</name>
                 <value>
-                    <stringValue>Type__c</stringValue>
+                    <stringValue>%%%NAMESPACED_ORG%%%Type__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>middlePicklistApiName</name>
                 <value>
-                    <stringValue>Breed__c</stringValue>
+                    <stringValue>%%%NAMESPACED_ORG%%%Breed__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>

@@ -1,0 +1,7 @@
+<design:component>
+    
+    <design:attribute name="mydataAnimal" label="Animals - Input Collection"/>
+    <design:attribute name="listSelectedIds" label="PreSelected Records - Input String"/>
+    <design:attribute name="selectedRowsAnimal" label="Animals - Output Collection"/> 
+
+</design:component>

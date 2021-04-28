@@ -19,31 +19,31 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>descDateField</name>
-                    <value>End_Date__c</value>
+                    <value>%%%NAMESPACED_ORG%%%End_Date__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>descTextField</name>
-                    <value>Name</value>
+                    <value>%%%NAMESPACED_ORG%%%Name</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>latField</name>
-                    <value>Release_Location__latitude__s</value>
+                    <value>%%%NAMESPACED_ORG%%%Release_Location__latitude__s</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>longField</name>
-                    <value>Release_Location__longitude__s</value>
+                    <value>%%%NAMESPACED_ORG%%%Release_Location__longitude__s</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>mapTitle</name>
-                    <value>Release Locations</value>
+                    <value>%%%NAMESPACED_ORG%%%Release Locations</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>nameField</name>
-                    <value>Animal_Name__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal_Name__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>obj</name>
-                    <value>Movement__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Movement__c</value>
                 </componentInstanceProperties>
                 <componentName>LocationMap</componentName>
             </componentInstance>

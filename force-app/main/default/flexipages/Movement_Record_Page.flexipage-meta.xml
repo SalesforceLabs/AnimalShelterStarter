@@ -87,16 +87,7 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Location_Name__c</fieldItem>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Start_Date__c</fieldItem>
+                <fieldItem>Record.Animal_Name__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -105,7 +96,7 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Total_Time_Days__c</fieldItem>
+                <fieldItem>Record.Location_Name__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -117,6 +108,15 @@
                 <fieldItem>Record.Current__c</fieldItem>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Total_Time_Days__c</fieldItem>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-400ba8ed-d34a-4edc-9892-e306423d174c</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -125,9 +125,9 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Animal_Name__c</fieldItem>
+                <fieldItem>Record.Start_Date__c</fieldItem>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -171,6 +171,28 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-05a88ad2-e7ad-4ef7-9008-409641d671c8</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Release_Location__c</fieldItem>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-1587d8f0-1ca0-4bc2-b6bd-a5df997440ff</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-1587d8f0-1ca0-4bc2-b6bd-a5df997440ff</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-c7ebf97a-97f8-4402-a71b-9ac053fcbdb1</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -231,6 +253,19 @@
                 <componentInstanceProperties>
                     <name>label</name>
                     <value>Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-c7ebf97a-97f8-4402-a71b-9ac053fcbdb1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Release Location</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
             </componentInstance>

@@ -13,16 +13,16 @@
 <aura:component implements="lightning:availableForFlowScreens" access="global">
 
     <!-- attributes - Inputs -->    
-    <aura:attribute name="mydata" type="SObject[]" />
-    <aura:attribute name="columns" type="List"/>
-    <aura:attribute name="saveData" type="SObject[]" />
-    <aura:attribute name="selectedRows" type="SObject[]" />
-    <aura:attribute name="listSelectedIds" type="String[]" />
+    <aura:attribute name="mydata" type="SObject[]" access="global"/>
+    <aura:attribute name="columns" type="List" access="global"/>
+    <aura:attribute name="saveData" type="SObject[]" access="global"/>
+    <aura:attribute name="selectedRows" type="SObject[]" access="global"/>
+    <aura:attribute name="listSelectedIds" type="String[]" access="global"/>
     
     <!-- attributes - Outputs -->
-    <aura:attribute name="mydataAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]"/>
-    <aura:attribute name="selectedRowsAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]"/>
-    <aura:attribute name="keyField" type="String" default="%%%NAMESPACED_ORG%%%Clone_ID__c"/>
+    <aura:attribute name="mydataAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]" access="global"/>
+    <aura:attribute name="selectedRowsAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]" access="global"/>
+    <aura:attribute name="keyField" type="String" default="%%%NAMESPACED_ORG%%%Clone_ID__c" access="global"/>
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>

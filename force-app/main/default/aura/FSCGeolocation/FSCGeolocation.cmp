@@ -13,7 +13,7 @@
     <!-- attributes -->
     <aura:attribute name="latitude" type="Decimal" access="global"/>
     <aura:attribute name="longitude" type="Decimal" access="global"/>
-    <aura:attribute name="mapMarkersData" type="Object" />
+    <aura:attribute name="mapMarkersData" type="Object" access="global"/>
     <aura:attribute name="zoomLevel" type="Integer" default="16"/>
     <aura:attribute name="showFooter" type="Boolean" default="false"/>
     <aura:attribute name="listView" type="String" default="hidden"/>

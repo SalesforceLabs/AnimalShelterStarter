@@ -10,7 +10,7 @@
   1.0    26/02/2021   Chris Rolfe (Salesforce.org)     Initial Version
 -->
 
-<aura:component implements="lightning:availableForFlowScreens">
+<aura:component implements="lightning:availableForFlowScreens" access="global">
 
     <!-- attributes - Inputs -->    
     <aura:attribute name="mydata" type="SObject[]" />

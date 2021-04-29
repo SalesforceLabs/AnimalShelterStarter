@@ -35,7 +35,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>mapTitle</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal Locations</value>
+                    <value>Animal Locations</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>nameField</name>

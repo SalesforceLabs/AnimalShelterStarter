@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Location --></value>
+    </caseValues>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Location Block Layout</layout>
+        <sections>
+            <label><!-- Assessment Dates --></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Foster Layout</layout>
+        <sections>
+            <label><!-- Assessment Dates --></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Organisation Layout</layout>
+        <sections>
+            <label><!-- Assessment Dates --></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Unit Layout</layout>
+        <sections>
+            <label><!-- Assessment Dates --></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Location Reference --></nameFieldLabel>
+    <quickActions>
+        <label><!-- Set Assessment Date --></label>
+        <name>Set_Assessment_Date</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- A block, i.e. Kennel Block, contains units, i.e. Cages --></description>
+        <label><!-- Block --></label>
+        <name>Block</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- A foster location an animal can be housed at --></description>
+        <label><!-- Foster --></label>
+        <name>Foster</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- An Organisation is a 3rd Party an Animal can be transferred to --></description>
+        <label><!-- Organisation --></label>
+        <name>Organisation</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- A unit is a sub location of a Block, i.e. Cage, Pen, etc --></description>
+        <label><!-- Unit --></label>
+        <name>Unit</name>
+    </recordTypes>
+</CustomObjectTranslation>

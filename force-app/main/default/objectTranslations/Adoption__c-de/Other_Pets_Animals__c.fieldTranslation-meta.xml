@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Are there other pets/animals at the location where the animal will be located? Anything we need to record about them? Would this animal be suitable to house with the other animals/pets at the location? --></help>
+    <label>Sonstige Tiere</label>
+    <name>Other_Pets_Animals__c</name>
+</CustomFieldTranslation>

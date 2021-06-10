@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Animal Status --></label>
+    <name>Animal_Status__c</name>
+    <picklistValues>
+        <masterLabel>Available for Adoption</masterLabel>
+        <translation><!-- Available for Adoption --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boarding Only</masterLabel>
+        <translation><!-- Boarding Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deceased</masterLabel>
+        <translation><!-- Deceased --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Treatment</masterLabel>
+        <translation><!-- Medical Treatment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New</masterLabel>
+        <translation><!-- New --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On Hold</masterLabel>
+        <translation><!-- On Hold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quarantine</masterLabel>
+        <translation><!-- Quarantine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Released</masterLabel>
+        <translation><!-- Released --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Training</masterLabel>
+        <translation><!-- Training --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

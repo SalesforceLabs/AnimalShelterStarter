@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Type d&apos;hébergement</label>
+    <name>Type_of_Accommodation__c</name>
+    <picklistValues>
+        <masterLabel>Farm</masterLabel>
+        <translation><!-- Farm --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flat/Apartment</masterLabel>
+        <translation><!-- Flat/Apartment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>House - Detached - Rural</masterLabel>
+        <translation><!-- House - Detached - Rural --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>House - Detached - Urban</masterLabel>
+        <translation><!-- House - Detached - Urban --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>House - Semi-Detached - Rural</masterLabel>
+        <translation><!-- House - Semi-Detached - Rural --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>House - Semi-Detached - Urban</masterLabel>
+        <translation><!-- House - Semi-Detached - Urban --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Temporary Accommodation</masterLabel>
+        <translation><!-- Temporary Accommodation --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

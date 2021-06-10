@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The reason the animal has been brought to the Animal Shelter --></help>
+    <label>Aufnahmegrund</label>
+    <name>Entry_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Abandoned</masterLabel>
+        <translation><!-- Abandoned --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Abuse</masterLabel>
+        <translation><!-- Abuse --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Allergies</masterLabel>
+        <translation><!-- Allergies --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Behaviour Issue</masterLabel>
+        <translation><!-- Behaviour Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boarding</masterLabel>
+        <translation><!-- Boarding --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Household Unable to Cope</masterLabel>
+        <translation><!-- Household Unable to Cope --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Household cannot afford</masterLabel>
+        <translation><!-- Household cannot afford --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Housing Unsuitable</masterLabel>
+        <translation><!-- Housing Unsuitable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner passed or moved out of home address</masterLabel>
+        <translation><!-- Owner passed or moved out of home address --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Relationship Issue</masterLabel>
+        <translation><!-- Relationship Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sick/Injured</masterLabel>
+        <translation><!-- Sick/Injured --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stray</masterLabel>
+        <translation><!-- Stray --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transfer</masterLabel>
+        <translation><!-- Transfer --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

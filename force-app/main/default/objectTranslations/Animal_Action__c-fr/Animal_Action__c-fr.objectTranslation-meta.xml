@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Animal Action --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Animal Action --></value>
+    </caseValues>
+    <gender><!-- Masculine --></gender>
+    <layouts>
+        <layout>Animal Action Layout</layout>
+        <sections>
+            <label><!-- Action Description --></label>
+            <section>Action Description</section>
+        </sections>
+        <sections>
+            <label><!-- Action Details --></label>
+            <section>Action Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dates --></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Records --></label>
+            <section>Related Records</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Exercise Action Layout</layout>
+        <sections>
+            <label><!-- Action Description --></label>
+            <section>Action Description</section>
+        </sections>
+        <sections>
+            <label><!-- Action Details --></label>
+            <section>Action Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dates --></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Records --></label>
+            <section>Related Records</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Treatment Action Layout</layout>
+        <sections>
+            <label><!-- Action Description --></label>
+            <section>Action Description</section>
+        </sections>
+        <sections>
+            <label><!-- Action Details --></label>
+            <section>Action Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dates --></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Records --></label>
+            <section>Related Records</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Animal Action Reference --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Exercise --></label>
+        <name>Exercise</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Nutrition --></label>
+        <name>Nutrition</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Treatment --></label>
+        <name>Treatment</name>
+    </recordTypes>
+    <startsWith><!-- Consonant --></startsWith>
+</CustomObjectTranslation>

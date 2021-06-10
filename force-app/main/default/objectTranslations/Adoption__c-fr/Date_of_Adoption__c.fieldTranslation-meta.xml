@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Date which adoption was agreed --></help>
+    <label>Date d&apos;adoption</label>
+    <name>Date_of_Adoption__c</name>
+</CustomFieldTranslation>

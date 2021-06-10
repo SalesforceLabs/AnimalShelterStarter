@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Animal --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Animal Details --></label>
+        <name>Animal_Details</name>
+    </fieldSets>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Animal Layout</layout>
+        <sections>
+            <label><!-- Age --></label>
+            <section>Age</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deceased Information --></label>
+            <section>Deceased Information</section>
+        </sections>
+        <sections>
+            <label><!-- Entry --></label>
+            <section>Entry</section>
+        </sections>
+        <sections>
+            <label><!-- Location Information --></label>
+            <section>Location Information</section>
+        </sections>
+        <sections>
+            <label><!-- Requirements --></label>
+            <section>Requirements</section>
+        </sections>
+        <sections>
+            <label><!-- Tracking --></label>
+            <section>Tracking</section>
+        </sections>
+        <sections>
+            <label><!-- Type Information --></label>
+            <section>Type Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Animal Reference --></nameFieldLabel>
+    <quickActions>
+        <label><!-- New Condition --></label>
+        <name>Add_Condition</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Exercise Action --></label>
+        <name>Add_Exercise_Action</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Add Scheduled Actions --></label>
+        <name>Add_Scheduled_Action</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Add Treatment --></label>
+        <name>Add_Treatment_Action</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Complete Exercise Action --></label>
+        <name>Complete_Exercise_Action</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Multi Animal Clone --></label>
+        <name>Multi_Animal_Clone</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Alert --></label>
+        <name>New_Alert</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Start Adoption --></label>
+        <name>Start_Adoption</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Animal --></label>
+        <name>Update_Animal</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Animal Location --></label>
+        <name>Update_Animal_Location</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Animal has been noted as being neutered/spayed although no date/time has been added. Please add the Date/Time the animal was neutered/spayed as well. --></errorMessage>
+        <name>Animal_Neutered_Spayed_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have indicated this animal has been PTS. Please provide a reason using the PTS Reason field and enter a date using the deceased date field. --></errorMessage>
+        <name>PTS_Required_Fields</name>
+    </validationRules>
+</CustomObjectTranslation>

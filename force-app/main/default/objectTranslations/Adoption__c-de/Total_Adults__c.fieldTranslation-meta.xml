@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total number of adults living at the location where the animal where be housed --></help>
+    <label>Anzahl Erwachsene</label>
+    <name>Total_Adults__c</name>
+</CustomFieldTranslation>

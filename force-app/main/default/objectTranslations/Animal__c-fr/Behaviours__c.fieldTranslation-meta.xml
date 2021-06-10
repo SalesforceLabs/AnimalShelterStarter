@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Comportements</label>
+    <name>Behaviours__c</name>
+    <picklistValues>
+        <masterLabel>Aggressive</masterLabel>
+        <translation><!-- Aggressive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anxious</masterLabel>
+        <translation><!-- Anxious --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bad Recall</masterLabel>
+        <translation><!-- Bad Recall --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cannot be held</masterLabel>
+        <translation><!-- Cannot be held --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good Recall</masterLabel>
+        <translation><!-- Good Recall --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with Children</masterLabel>
+        <translation><!-- Good with Children --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with other species</masterLabel>
+        <translation><!-- Good with other species --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with same species</masterLabel>
+        <translation><!-- Good with same species --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Happy being handled</masterLabel>
+        <translation><!-- Happy being handled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lead Reactive</masterLabel>
+        <translation><!-- Lead Reactive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulls on Lead</masterLabel>
+        <translation><!-- Pulls on Lead --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reactive</masterLabel>
+        <translation><!-- Reactive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resource Guarding</masterLabel>
+        <translation><!-- Resource Guarding --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Separation Anxiety</masterLabel>
+        <translation><!-- Separation Anxiety --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -4,14 +4,14 @@
     <name>Coat_Type__c</name>
     <picklistValues>
         <masterLabel>Hairless</masterLabel>
-        <translation><!-- Hairless --></translation>
+        <translation>Unbehaart</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Long</masterLabel>
-        <translation><!-- Long --></translation>
+        <translation>Langes Haare</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Short</masterLabel>
-        <translation><!-- Short --></translation>
+        <translation>Kurze Haare</translation>
     </picklistValues>
 </CustomFieldTranslation>

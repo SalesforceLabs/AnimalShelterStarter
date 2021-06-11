@@ -3,54 +3,50 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value>Tierische Verwandtschaft</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Tierische Beziehungen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value>Tierische Verwandtschaft</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Tierische Beziehungen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value>Tierische Verwandtschaft</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Tierische Beziehungen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value>Tierische Verwandtschaft</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Tierische Beziehungen</value>
     </caseValues>
-    <gender>Masculine</gender>
+    <gender>Neuter</gender>
     <layouts>
-        <layout>Condition Layout</layout>
+        <layout>Animal Relationship Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel>Bedingung Identifikation</nameFieldLabel>
-    <quickActions>
-        <label><!-- Generate Alert --></label>
-        <name>Generate_Alert</name>
-    </quickActions>
+    <nameFieldLabel>Identifizierung von Tierverwandtschaften</nameFieldLabel>
 </CustomObjectTranslation>

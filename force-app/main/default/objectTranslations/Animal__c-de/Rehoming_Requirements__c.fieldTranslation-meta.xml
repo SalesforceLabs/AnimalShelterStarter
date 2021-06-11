@@ -4,42 +4,42 @@
     <name>Rehoming_Requirements__c</name>
     <picklistValues>
         <masterLabel>Cannot be left for long periods</masterLabel>
-        <translation><!-- Cannot be left for long periods --></translation>
+        <translation>Darf nicht länger alleingelassen werden</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Dietary</masterLabel>
-        <translation><!-- Dietary --></translation>
+        <translation>Dietätisch</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Experienced Owner</masterLabel>
-        <translation><!-- Experienced Owner --></translation>
+        <translation>Erfahrener Besitzer</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Medical</masterLabel>
-        <translation><!-- Medical --></translation>
+        <translation>Medizinisch</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>No Animals of different species</masterLabel>
-        <translation><!-- No Animals of different species --></translation>
+        <translation>Keine andere Tierarten</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>No Animals of same species</masterLabel>
-        <translation><!-- No Animals of same species --></translation>
+        <translation>Keine Tiere der gleichen Art</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>No Children</masterLabel>
-        <translation><!-- No Children --></translation>
+        <translation>Keine Kinder</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Rural Area</masterLabel>
-        <translation><!-- Rural Area --></translation>
+        <translation>Ländlicher Gegend</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Secure Garden</masterLabel>
-        <translation><!-- Secure Garden --></translation>
+        <translation>Gesichertes Garten</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Specialist Equipment</masterLabel>
-        <translation><!-- Specialist Equipment --></translation>
+        <translation>Spezialausrüstung</translation>
     </picklistValues>
 </CustomFieldTranslation>

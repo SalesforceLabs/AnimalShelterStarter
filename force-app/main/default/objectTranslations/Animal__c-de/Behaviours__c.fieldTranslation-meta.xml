@@ -4,58 +4,58 @@
     <name>Behaviours__c</name>
     <picklistValues>
         <masterLabel>Aggressive</masterLabel>
-        <translation><!-- Aggressive --></translation>
+        <translation>Agressiv</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Anxious</masterLabel>
-        <translation><!-- Anxious --></translation>
+        <translation>Ängstlich</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Bad Recall</masterLabel>
-        <translation><!-- Bad Recall --></translation>
+        <translation>Schlechtes Gedächtnis</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Cannot be held</masterLabel>
-        <translation><!-- Cannot be held --></translation>
+        <translation>Kann nicht gehalten werden</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good Recall</masterLabel>
-        <translation><!-- Good Recall --></translation>
+        <translation>GutesoGedächtnis</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good with Children</masterLabel>
-        <translation><!-- Good with Children --></translation>
+        <translation>Gut mit Kinder</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good with other species</masterLabel>
-        <translation><!-- Good with other species --></translation>
+        <translation>Gut mir andere Tiere</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good with same species</masterLabel>
-        <translation><!-- Good with same species --></translation>
+        <translation>Gut mit eigene Tierart</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Happy being handled</masterLabel>
-        <translation><!-- Happy being handled --></translation>
+        <translation>Glücklich in der Handhabung</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Lead Reactive</masterLabel>
-        <translation><!-- Lead Reactive --></translation>
+        <translation>Reagiert auf Leine</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Pulls on Lead</masterLabel>
-        <translation><!-- Pulls on Lead --></translation>
+        <translation>Zieht an Leine</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Reactive</masterLabel>
-        <translation><!-- Reactive --></translation>
+        <translation>Reagiert</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Resource Guarding</masterLabel>
-        <translation><!-- Resource Guarding --></translation>
+        <translation>Besitzergreifend</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Separation Anxiety</masterLabel>
-        <translation><!-- Separation Anxiety --></translation>
+        <translation>Trennungsängste</translation>
     </picklistValues>
 </CustomFieldTranslation>

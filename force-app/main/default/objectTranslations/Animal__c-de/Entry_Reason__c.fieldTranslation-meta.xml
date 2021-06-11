@@ -5,54 +5,54 @@
     <name>Entry_Reason__c</name>
     <picklistValues>
         <masterLabel>Abandoned</masterLabel>
-        <translation><!-- Abandoned --></translation>
+        <translation>Verlassen</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Abuse</masterLabel>
-        <translation><!-- Abuse --></translation>
+        <translation>Misshandelt</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Allergies</masterLabel>
-        <translation><!-- Allergies --></translation>
+        <translation>Allergien</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Behaviour Issue</masterLabel>
-        <translation><!-- Behaviour Issue --></translation>
+        <translation>Verhaltensauffällig</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Boarding</masterLabel>
-        <translation><!-- Boarding --></translation>
+        <translation>Pension</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Household Unable to Cope</masterLabel>
-        <translation><!-- Household Unable to Cope --></translation>
+        <translation>Huashalt überfordert</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Household cannot afford</masterLabel>
-        <translation><!-- Household cannot afford --></translation>
+        <translation>Haushalt kann nicht leisten</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Housing Unsuitable</masterLabel>
-        <translation><!-- Housing Unsuitable --></translation>
+        <translation>Behausung ungeeignet</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Owner passed or moved out of home address</masterLabel>
-        <translation><!-- Owner passed or moved out of home address --></translation>
+        <translation>Eigentümer verstorben oder ausgezogen</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Relationship Issue</masterLabel>
-        <translation><!-- Relationship Issue --></translation>
+        <translation>Beziehungsproblem</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Sick/Injured</masterLabel>
-        <translation><!-- Sick/Injured --></translation>
+        <translation>Krank/Verletzt</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Stray</masterLabel>
-        <translation><!-- Stray --></translation>
+        <translation>Verirrt</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Transfer</masterLabel>
-        <translation><!-- Transfer --></translation>
+        <translation>Transfer</translation>
     </picklistValues>
 </CustomFieldTranslation>

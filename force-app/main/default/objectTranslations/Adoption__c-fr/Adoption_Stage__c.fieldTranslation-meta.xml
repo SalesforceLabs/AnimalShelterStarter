@@ -5,34 +5,34 @@
     <name>Adoption_Stage__c</name>
     <picklistValues>
         <masterLabel>Adopted</masterLabel>
-        <translation><!-- Adopted --></translation>
+        <translation>Adopté</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Declined</masterLabel>
-        <translation><!-- Declined --></translation>
+        <translation>Diminué</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Home Inspection</masterLabel>
-        <translation><!-- Home Inspection --></translation>
+        <translation>Inspection à domicile</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Initial Review</masterLabel>
-        <translation><!-- Initial Review --></translation>
+        <translation>Evaluation initiale</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Reserved</masterLabel>
-        <translation><!-- Reserved --></translation>
+        <translation>Réservé</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Returned</masterLabel>
-        <translation><!-- Returned --></translation>
+        <translation>Revenu</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Trial Period</masterLabel>
-        <translation><!-- Trial Period --></translation>
+        <translation>Période de probation</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Veterinary Check</masterLabel>
-        <translation><!-- Veterinary Check --></translation>
+        <translation>Examen vétérinaire</translation>
     </picklistValues>
 </CustomFieldTranslation>

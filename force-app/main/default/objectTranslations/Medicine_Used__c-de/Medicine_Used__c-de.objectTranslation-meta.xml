@@ -3,54 +3,54 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine Used --></value>
     </caseValues>
-    <gender>Masculine</gender>
+    <gender><!-- Neuter --></gender>
     <layouts>
-        <layout>Condition Layout</layout>
+        <layout>Medicine Used Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
+        <sections>
+            <label><!-- Quantity --></label>
+            <section>Quantity</section>
+        </sections>
     </layouts>
-    <nameFieldLabel>Bedingung Identifikation</nameFieldLabel>
-    <quickActions>
-        <label><!-- Generate Alert --></label>
-        <name>Generate_Alert</name>
-    </quickActions>
+    <nameFieldLabel><!-- Medicines Used Reference --></nameFieldLabel>
 </CustomObjectTranslation>

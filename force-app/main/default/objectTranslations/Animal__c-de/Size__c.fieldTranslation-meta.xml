@@ -4,18 +4,18 @@
     <name>Size__c</name>
     <picklistValues>
         <masterLabel>Large</masterLabel>
-        <translation><!-- Large --></translation>
+        <translation>Sehr gross</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Medium</masterLabel>
-        <translation><!-- Medium --></translation>
+        <translation>Gross</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Small</masterLabel>
-        <translation><!-- Small --></translation>
+        <translation>Mittel</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Very Large</masterLabel>
-        <translation><!-- Very Large --></translation>
+        <translation>Sehr klein</translation>
     </picklistValues>
 </CustomFieldTranslation>

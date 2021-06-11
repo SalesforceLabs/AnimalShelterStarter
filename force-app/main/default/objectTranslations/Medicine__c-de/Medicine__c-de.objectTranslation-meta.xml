@@ -3,54 +3,58 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine --></value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine --></value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine --></value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine --></value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine --></value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine --></value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value>Zustand</value>
+        <value><!-- Medicine --></value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value><!-- Medicine --></value>
     </caseValues>
-    <gender>Masculine</gender>
+    <gender><!-- Neuter --></gender>
     <layouts>
-        <layout>Condition Layout</layout>
+        <layout>Medicine Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
+        <sections>
+            <label><!-- Manufacturer Details --></label>
+            <section>Manufacturer Details</section>
+        </sections>
     </layouts>
-    <nameFieldLabel>Bedingung Identifikation</nameFieldLabel>
-    <quickActions>
-        <label><!-- Generate Alert --></label>
-        <name>Generate_Alert</name>
-    </quickActions>
+    <nameFieldLabel><!-- Medicine Reference --></nameFieldLabel>
 </CustomObjectTranslation>

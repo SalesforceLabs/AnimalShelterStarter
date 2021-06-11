@@ -4,38 +4,38 @@
     <name>Animal_Status__c</name>
     <picklistValues>
         <masterLabel>Available for Adoption</masterLabel>
-        <translation><!-- Available for Adoption --></translation>
+        <translation>Verfügbar für Adoption</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Boarding Only</masterLabel>
-        <translation><!-- Boarding Only --></translation>
+        <translation>Nur Unterbringung</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Deceased</masterLabel>
-        <translation><!-- Deceased --></translation>
+        <translation>Verstorben</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Medical Treatment</masterLabel>
-        <translation><!-- Medical Treatment --></translation>
+        <translation>Medizinische Behandlung</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>New</masterLabel>
-        <translation><!-- New --></translation>
+        <translation>Neu</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>On Hold</masterLabel>
-        <translation><!-- On Hold --></translation>
+        <translation>Wartestellung</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Quarantine</masterLabel>
-        <translation><!-- Quarantine --></translation>
+        <translation>Quarantäne</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Released</masterLabel>
-        <translation><!-- Released --></translation>
+        <translation>Freigegeben</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Training</masterLabel>
-        <translation><!-- Training --></translation>
+        <translation>Training</translation>
     </picklistValues>
 </CustomFieldTranslation>

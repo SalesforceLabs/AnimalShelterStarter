@@ -5,38 +5,38 @@
     <name>PTS_Reason__c</name>
     <picklistValues>
         <masterLabel>Aggression to other animals</masterLabel>
-        <translation><!-- Aggression to other animals --></translation>
+        <translation>Aggression gegenüber anderen Tieren</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Aggression to people</masterLabel>
-        <translation><!-- Aggression to people --></translation>
+        <translation>Aggression gegen Menschen</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Behavioural</masterLabel>
-        <translation><!-- Behavioural --></translation>
+        <translation>Verhaltensweisen</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Illness</masterLabel>
-        <translation><!-- Illness --></translation>
+        <translation>Krankheit</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Illness - Terminal</masterLabel>
-        <translation><!-- Illness - Terminal --></translation>
+        <translation>Krankheit im Endstadium</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Medical</masterLabel>
-        <translation><!-- Medical --></translation>
+        <translation>Medizinisch</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Old Age</masterLabel>
-        <translation><!-- Old Age --></translation>
+        <translation>Alter</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Other</masterLabel>
-        <translation><!-- Other --></translation>
+        <translation>Andere</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Stress or Anxiety</masterLabel>
-        <translation><!-- Stress or Anxiety --></translation>
+        <translation>Stress oder Ängste</translation>
     </picklistValues>
 </CustomFieldTranslation>

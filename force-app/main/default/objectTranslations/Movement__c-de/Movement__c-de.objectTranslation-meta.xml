@@ -3,44 +3,44 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegung</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegungen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegung</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegungen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegung</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegungen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegung</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Movement --></value>
+        <value>Bewegungen</value>
     </caseValues>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
     <layouts>
         <layout>Movement Layout</layout>
         <sections>
@@ -52,5 +52,5 @@
             <section>Location Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Movement Reference --></nameFieldLabel>
+    <nameFieldLabel>Bewegungsreferenz</nameFieldLabel>
 </CustomObjectTranslation>

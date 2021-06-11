@@ -8,7 +8,7 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Zustände</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
@@ -18,7 +18,7 @@
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Zustände</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
@@ -28,7 +28,7 @@
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Zustände</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
@@ -38,7 +38,7 @@
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value>Bedingungen</value>
+        <value>Zustände</value>
     </caseValues>
     <gender>Masculine</gender>
     <layouts>
@@ -48,7 +48,7 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel>Bedingung Identifikation</nameFieldLabel>
+    <nameFieldLabel>Zustand Referenz</nameFieldLabel>
     <quickActions>
         <label><!-- Generate Alert --></label>
         <name>Generate_Alert</name>

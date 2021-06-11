@@ -3,44 +3,44 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Medicine --></value>
+        <value>Arzneimittel</value>
     </caseValues>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
     <layouts>
         <layout>Medicine Layout</layout>
         <sections>
@@ -56,5 +56,5 @@
             <section>Manufacturer Details</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Medicine Reference --></nameFieldLabel>
+    <nameFieldLabel>Medizin Referenz</nameFieldLabel>
 </CustomObjectTranslation>

@@ -3,44 +3,44 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tier Aktion</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tierische Aktionen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tier Aktion</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tierische Aktionen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tier Aktion</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tierische Aktionen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tier Aktion</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Animal Action --></value>
+        <value>Tierische Aktionen</value>
     </caseValues>
-    <gender><!-- Neuter --></gender>
+    <gender>Neuter</gender>
     <layouts>
         <layout>Animal Action Layout</layout>
         <sections>
@@ -110,7 +110,7 @@
             <section>Related Records</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Animal Action Reference --></nameFieldLabel>
+    <nameFieldLabel>Tier Aktion Referenz</nameFieldLabel>
     <recordTypes>
         <label><!-- Exercise --></label>
         <name>Exercise</name>

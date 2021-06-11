@@ -596,12 +596,6 @@
         <fullName>Movement_Object_Handler</fullName>
     </flowDefinitions>
     <prompts>
-        <name>SalesCloudCoreChatterTab</name>
-        <promptVersions>
-            <name>Sales Cloud Core Chatter Tab</name>
-        </promptVersions>
-    </prompts>
-    <prompts>
         <name>SalesCloudTrialHomePage</name>
         <promptVersions>
             <name>Sales Cloud Trial Home Page</name>

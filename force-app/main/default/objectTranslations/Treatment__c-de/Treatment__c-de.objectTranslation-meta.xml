@@ -3,54 +3,62 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlung</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlungen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlung</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlungen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlung</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlungen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlung</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value>Verwendete Arzneimittel</value>
+        <value>Behandlungen</value>
     </caseValues>
-    <gender>Neuter</gender>
+    <gender>Feminine</gender>
     <layouts>
-        <layout>Medicine Used Layout</layout>
+        <layout>Treatment Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Quantity --></label>
-            <section>Quantity</section>
+            <label><!-- Related Records --></label>
+            <section>Related Records</section>
+        </sections>
+        <sections>
+            <label><!-- Treatment Description --></label>
+            <section>Treatment Description</section>
+        </sections>
+        <sections>
+            <label><!-- Treatment Details --></label>
+            <section>Treatment Details</section>
         </sections>
     </layouts>
-    <nameFieldLabel>Verwendete Medikamente Referenz</nameFieldLabel>
+    <nameFieldLabel>Behandlung Referenz</nameFieldLabel>
 </CustomObjectTranslation>

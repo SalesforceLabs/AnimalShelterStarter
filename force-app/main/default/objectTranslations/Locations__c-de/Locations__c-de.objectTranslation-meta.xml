@@ -3,44 +3,44 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandort</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandorte</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandort</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandorte</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandort</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandorte</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandort</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Location --></value>
+        <value>Tierstandorte</value>
     </caseValues>
-    <gender><!-- Neuter --></gender>
+    <gender>Neuter</gender>
     <layouts>
         <layout>Location Block Layout</layout>
         <sections>
@@ -85,7 +85,7 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Location Reference --></nameFieldLabel>
+    <nameFieldLabel>Tierstandort Referenz</nameFieldLabel>
     <quickActions>
         <label><!-- Set Assessment Date --></label>
         <name>Set_Assessment_Date</name>

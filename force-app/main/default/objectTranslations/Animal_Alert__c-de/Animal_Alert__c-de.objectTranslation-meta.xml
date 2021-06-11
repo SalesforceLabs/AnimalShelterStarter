@@ -3,44 +3,44 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnung</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnungen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnung</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnungen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnung</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnungen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnung</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Animal Alert --></value>
+        <value>Tierwarnungen</value>
     </caseValues>
-    <gender><!-- Neuter --></gender>
+    <gender>Neuter</gender>
     <layouts>
         <layout>Animal Alert Layout</layout>
         <sections>
@@ -48,7 +48,7 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Animal Alert ID --></nameFieldLabel>
+    <nameFieldLabel>Tierwarnhinweis</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- The End Date cannot be less than the start date. Please check the dates you have entered and try again. --></errorMessage>
         <name>Animal_Alert_Date_Check</name>

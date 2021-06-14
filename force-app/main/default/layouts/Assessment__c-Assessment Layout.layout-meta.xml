@@ -197,6 +197,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Assessment__c.New_Condition</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
@@ -297,11 +302,6 @@
             <sortOrder>20</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Assessment__c.New_Condition</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>ChangeRecordType</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>21</sortOrder>
@@ -336,6 +336,8 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Short_Description__c</fields>
+        <fields>Start_Date__c</fields>
         <relatedList>Condition__c.Assessment__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

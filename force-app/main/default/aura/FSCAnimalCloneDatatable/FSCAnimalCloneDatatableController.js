@@ -11,7 +11,9 @@
 **/
 
 ({
-    init: function (cmp, event, helper) {
+	init: function(cmp, event, helper) {
+        helper.getData(cmp);
+
         cmp.set('v.columns', [
             {label: 'Animal Name', fieldName: '%%%NAMESPACED_ORG%%%Animal_Name__c', type: 'text', editable: true, initialWidth: 150},
             {label: 'Primary Colour', fieldName: '%%%NAMESPACED_ORG%%%Colour__c', type: 'text', editable: true, initialWidth: 150 },
@@ -22,8 +24,6 @@
             {label: 'Microchip', fieldName: '%%%NAMESPACED_ORG%%%Microchip__c', type: 'text', editable: true, initialWidth: 150},
         ]);
 
-    // Object Selection
-    cmp.set('v.mydata', cmp.get('v.mydataAnimal'));
     cmp.set('v.saveData', cmp.get('v.mydata'));
 },
 

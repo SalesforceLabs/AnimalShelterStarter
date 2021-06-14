@@ -10,19 +10,14 @@
   1.0    26/02/2021   Chris Rolfe (Salesforce.org)     Initial Version
 -->
 
-<aura:component implements="lightning:availableForFlowScreens" access="global">
+<aura:component implements="lightning:availableForFlowScreens" access="global" controller="FSCAnimalCloneDatatableController">
 
     <!-- attributes - Inputs -->    
-    <aura:attribute name="mydata" type="SObject[]" access="global"/>
+    <aura:attribute name="mydata" type="Object" access="global"/>
     <aura:attribute name="columns" type="List" access="global"/>
-    <aura:attribute name="saveData" type="SObject[]" access="global"/>
-    <aura:attribute name="selectedRows" type="SObject[]" access="global"/>
-    <aura:attribute name="listSelectedIds" type="String[]" access="global"/>
-    
-    <!-- attributes - Outputs -->
-    <aura:attribute name="mydataAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]" access="global"/>
-    <aura:attribute name="selectedRowsAnimal" type="%%%NAMESPACED_ORG%%%Animal__c[]" access="global"/>
-    <aura:attribute name="keyField" type="String" default="%%%NAMESPACED_ORG%%%Clone_ID__c" access="global"/>
+    <aura:attribute name="errors" type="Object" default="[]" access="global"/>
+    <aura:attribute name="draftValues" type="Object" default="[]" access="global"/>
+    <aura:attribute name="keyField" type="String" default="Id" access="global"/>
 
     <!-- handlers -->
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
@@ -33,9 +28,8 @@
                 data="{! v.mydata }" 
                 columns="{! v.columns }" 
                 keyField="{! v.keyField }"
+                draftValues="{! v.draftValues }"
                 hideCheckboxColumn="true"
-                selectedRows="{! v.listSelectedIds }"                 
-                onrowselection="{! c.getSelectedName }"
                 onsave="{! c.handleSave }"
                 oncancel="{! c.cancelChanges }"/>
         </div>

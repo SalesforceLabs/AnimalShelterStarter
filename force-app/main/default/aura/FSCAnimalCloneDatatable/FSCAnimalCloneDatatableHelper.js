@@ -9,7 +9,25 @@
  * Ver       Date            Author      		    Modification
  * 1.0    26/02/2020   Chris Rolfe (Salesforce.org)     Initial Version
 **/
+
 ({
+	getData : function(cmp) {
+        var action = cmp.get('c.getClonedActions');
+        action.setCallback(this, $A.getCallback(function (response){
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                var records =response.getReturnValue();
+                cmp.set("v.mydata", records);
+                cmp.set("v.mydataLength", response.getReturnValue().length);
+            } else if (state === "ERROR") {
+                var errors = response.getError();
+                console.error(errors);
+            }
+        }));
+        $A.enqueueAction(action);
+		
+	},
+
     updateEditedValues: function(cmp, event) {
         var keyField = cmp.get("v.keyField");
         var data = cmp.get("v.mydata");

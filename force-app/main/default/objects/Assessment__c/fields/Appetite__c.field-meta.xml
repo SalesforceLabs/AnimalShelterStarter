@@ -4,10 +4,29 @@
     <externalId>false</externalId>
     <inlineHelpText>What is the animals appetite</inlineHelpText>
     <label>Appetite</label>
-    <length>255</length>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Healthy</fullName>
+                <default>false</default>
+                <label>Healthy</label>
+            </value>
+            <value>
+                <fullName>Trying to Eat</fullName>
+                <default>false</default>
+                <label>Trying to Eat</label>
+            </value>
+            <value>
+                <fullName>Not Eating</fullName>
+                <default>false</default>
+                <label>Not Eating</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>

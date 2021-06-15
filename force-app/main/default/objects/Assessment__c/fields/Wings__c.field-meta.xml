@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Wings__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>Condition of the wings</inlineHelpText>
+    <inlineHelpText>What is the condition of the wings</inlineHelpText>
     <label>Wings</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
@@ -10,13 +10,6 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>N/A</fullName>
-                <default>false</default>
-                <label>N/A</label>
-            </value>
-        </valueSetDefinition>
+        <valueSetName>Assessment_Conditions</valueSetName>
     </valueSet>
 </CustomField>

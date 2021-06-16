@@ -154,15 +154,6 @@
                 <fieldItem>Record.Sight_Eyes__c</fieldItem>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.General_Comments__c</fieldItem>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-272a261f-cb6d-46a1-96c8-a91aba99925c</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -253,6 +244,32 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-1661efcc-27c6-42e1-8a04-76e88612a54a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.General_Comments__c</fieldItem>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-9f6f8f1d-3a61-42c1-82d4-2633da5a0fa9</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-9f6f8f1d-3a61-42c1-82d4-2633da5a0fa9</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-843f443e-34c7-4754-92dd-fab1351d9fe2</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -488,12 +505,38 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;Complete the assessment and use &lt;b&gt;General Comments&lt;/b&gt; to add additional detail&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-1661efcc-27c6-42e1-8a04-76e88612a54a</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
                     <value>Health Overview</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-843f443e-34c7-4754-92dd-fab1351d9fe2</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>General Assessment Comments</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
             </componentInstance>

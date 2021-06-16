@@ -27,13 +27,13 @@
 
     showToast : function( strType, strMessage) {
 
-        var toastEvent = $A.get( "e.force:showToast" );
+        var toastEvent = $A.get("e.force:showToast");
         toastEvent.setParams({
-
-            message : strMessage,
-            type : strType,
-            mode : 'sticky'
+            type: strType,
+            message: strMessage,
+            mode:'sticky'
         });
+        toastEvent.fire();
     }
 
 })

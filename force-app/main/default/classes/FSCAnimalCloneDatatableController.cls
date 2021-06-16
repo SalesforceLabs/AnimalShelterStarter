@@ -33,7 +33,7 @@ public with sharing class FSCAnimalCloneDatatableController {
         try {
             update updatedAnimalList;
         } catch(Exception e) {
-            system.debug('******'+e.getMessage);
+            system.debug('******'+e.getMessage());
         }
         return updatedAnimalList;
     }

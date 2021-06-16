@@ -1,13 +1,13 @@
 <!--
   @File Name          : FSCAnimalCloneDatatable.cmp
-  @Description        : Flow Screen Component to display Datatable based on Flow Collections
+  @Description        : Flow Screen Component to display Datatable
   @Author             : Chris Rolfe (Salesforce.org)
   @Group              : 
   @Last Modified By   : Chris Rolfe (Salesforce.org)
-  @Last Modified On   : 26/02/2021, 10:00:00 AM
+  @Last Modified On   : 16/06/2021, 10:00:00 AM
   @Modification Log   : 
   Ver       Date            Author      		    Modification
-  1.0    26/02/2021   Chris Rolfe (Salesforce.org)     Initial Version
+  1.0    16/06/2021   Chris Rolfe (Salesforce.org)     Initial Version
 -->
 
 <aura:component implements="lightning:availableForFlowScreens" access="global" controller="FSCAnimalCloneDatatableController">
@@ -15,8 +15,6 @@
     <!-- attributes - Inputs -->    
     <aura:attribute name="mydata" type="Object" access="global"/>
     <aura:attribute name="columns" type="List" access="global"/>
-    <aura:attribute name="errors" type="Object" default="[]" access="global"/>
-    <aura:attribute name="draftValues" type="Object" default="[]" access="global"/>
     <aura:attribute name="keyField" type="String" default="Id" access="global"/>
 
     <!-- handlers -->
@@ -28,10 +26,8 @@
                 data="{! v.mydata }" 
                 columns="{! v.columns }" 
                 keyField="{! v.keyField }"
-                draftValues="{! v.draftValues }"
                 hideCheckboxColumn="true"
-                onsave="{! c.handleSave }"
-                oncancel="{! c.cancelChanges }"/>
+                onsave="{! c.handleSave }"/>
         </div>
     </lightning:card>
 </aura:component>

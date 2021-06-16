@@ -13,31 +13,29 @@
 public with sharing class FSCAnimalCloneDatatableController {
 
     @AuraEnabled
-    public static List<Animal__c> getClonedAnimals() {
+    public static List<%%%NAMESPACED_ORG%%%Animal__c> getClonedAnimals() {
 
-        if(Schema.SObjectType.Animal__c.isAccessible()){
+        if(Schema.SObjectType.%%%NAMESPACED_ORG%%%Animal__c.isAccessible()){
 
-            List<Animal__c> clonedAnimals = new List<Animal__c>();
+            List<%%%NAMESPACED_ORG%%%Animal__c> clonedAnimals = new List<%%%NAMESPACED_ORG%%%Animal__c>();
+            clonedAnimals = [SELECT Id, %%%NAMESPACED_ORG%%%Animal_Name__c, %%%NAMESPACED_ORG%%%Colour__c, %%%NAMESPACED_ORG%%%Secondary_Colour__c, %%%NAMESPACED_ORG%%%Gender__c, %%%NAMESPACED_ORG%%%Current_Weight__c, %%%NAMESPACED_ORG%%%Estimated_Age__c, %%%NAMESPACED_ORG%%%Microchip__c
+                                    FROM %%%NAMESPACED_ORG%%%Animal__c
+                                    WHERE %%%NAMESPACED_ORG%%%IsCloned__c = True];
 
-            clonedAnimals = [SELECT Id, Animal_Name__c, Colour__c, Secondary_Colour__c, Gender__c, Current_Weight__c, Estimated_Age__c, Microchip__c
-                                    FROM Animal__c
-                                    WHERE IsCloned__c = True];
+        return clonedAnimals;                           
         }
-        return clonedAnimals;
+    return null;  
     }
-    return null;
 
     @AuraEnabled
-    public static boolean updateRecords( List < Animal__c > updatedAnimalList ){
-
+    public static List<%%%NAMESPACED_ORG%%%Animal__c> updateClonedRecords(List<%%%NAMESPACED_ORG%%%Animal__c> updatedAnimalList ){
+        system.debug('****'+updatedAnimalList);
         try {
             update updatedAnimalList;
-            return true;
         } catch(Exception e) {
-            return false;
+            system.debug('******'+e.getMessage);
         }
-        
+        return updatedAnimalList;
     }
-
 }
 

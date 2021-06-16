@@ -2,12 +2,26 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Movement_Condition__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>Condition of the animal&apos;s movement, i.e. steady, etc</inlineHelpText>
+    <inlineHelpText>Condition of the animal&apos;s movement</inlineHelpText>
     <label>Movement Condition</label>
-    <length>255</length>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Normal</fullName>
+                <default>false</default>
+                <label>Normal</label>
+            </value>
+            <value>
+                <fullName>Unsteady</fullName>
+                <default>false</default>
+                <label>Unsteady</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>

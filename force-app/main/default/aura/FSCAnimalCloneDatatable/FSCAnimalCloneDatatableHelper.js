@@ -28,23 +28,15 @@
 		
 	},
 
-    updateEditedValues: function(cmp, event) {
-        var keyField = cmp.get("v.keyField");
-        var data = cmp.get("v.mydata");
-        var drafts = event.getParam('draftValues');
+    toastMsg : function( strType, strMessage) {
 
-        // apply drafts to mydata
-        data = data.map(item => {
-            let draft = drafts.find(d => d[keyField] == item[keyField]);
+        var showToast = $A.get( "e.force.showToast" );
+        showToast.setParams({
 
-            if (draft != undefined) {
-                let fieldNames = Object.keys(draft);
-                fieldNames.forEach(el => item[el] = draft[el]);
-            }
-
-            return item;
+            message : strMessage,
+            type : strType,
+            mode : 'sticky'
         });
-
-        cmp.set("v.mydata", data);
     }
+
 })

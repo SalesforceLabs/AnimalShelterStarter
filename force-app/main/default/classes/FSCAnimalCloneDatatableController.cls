@@ -26,5 +26,18 @@ public with sharing class FSCAnimalCloneDatatableController {
         return clonedAnimals;
     }
     return null;
+
+    @AuraEnabled
+    public static boolean updateRecords( List < Animal__c > updatedAnimalList ){
+
+        try {
+            update updatedAnimalList;
+            return true;
+        } catch(Exception e) {
+            return false;
+        }
+        
+    }
+
 }
 

@@ -12,7 +12,6 @@
 
 ({
 	init: function(cmp, event, helper) {
-        helper.getData(cmp);
 
         cmp.set('v.columns', [
             {label: 'Animal Name', fieldName: '%%%NAMESPACED_ORG%%%Animal_Name__c', type: 'text', editable: true, initialWidth: 150},
@@ -23,45 +22,38 @@
             {label: 'Est. Age', fieldName: '%%%NAMESPACED_ORG%%%Estimated_Age__c', type: 'number', editable: true, initialWidth: 100 },
             {label: 'Microchip', fieldName: '%%%NAMESPACED_ORG%%%Microchip__c', type: 'text', editable: true, initialWidth: 150},
         ]);
+        helper.getData(cmp);
 
-    cmp.set('v.saveData', cmp.get('v.mydata'));
-},
-
-// Return Selected Table Rows
-getSelectedName: function (cmp, event) {
- 
-    var selectedRows = event.getParam('selectedRows');
-    
-    var lstSelectedIDs = [];
-        for(var i = 0; i < selectedRows.length; i++)
-        {
-            lstSelectedIDs.push(selectedRows[i].id);
-        }
-        cmp.set('v.firstSelectedId', null);
-        if (lstSelectedIDs.length > 0)
-        {
-            cmp.set('v.firstSelectedId', lstSelectedIDs[0]);
-        }
-        
-        cmp.set('v.lstSelectedIds', lstSelectedIDs);
-        
-        cmp.set('v.selectedRowsCount', selectedRows.length); 
 },
 
 
 handleSave: function(cmp, event, helper) {
-    helper.updateEditedValues(cmp, event);
-        // Clear Buttons from the Table
-        cmp.find('ASDatatable').set('v.draftValues', null);
-        // Save current table data values
-        cmp.set('v.selectedRowsAnimal', cmp.get('v.mydata'));
-},
 
-cancelChanges: function (cmp, event, helper) {
-    // Clear Buttons from the Table
-    cmp.find('ASDatatable').set('v.draftValues', null);
-    // Replace current table data values with the saved values
-    cmp.set('v.mydata', cmp.get('v.saveData'));
-},    
+    var updatedRecords = cmp.find( "ASDatatable" ).get( "v.draftValues" );
+    var action = cmp.get( "c.updateRecords" );
+    action.setParams({
+
+        'updatedAnimalList' : updatedRecords
+    });
+    action.setCallback( this, function( response ){
+
+        var state = response.getState();
+        if ( state === "SUCCESS" ) {
+            if ( response.getReturnValue() === true) {
+                helper.toastMsg( 'success', 'Records Saved Successfully' );
+                cmp.find( " ASDatatable" ).set( "v.draftValues",null );
+
+            } else {
+                helper.toastMsg( 'error', 'Something went wrong. Contact your system administrator.' );
+
+            }
+        } else {
+            helper.toastMsg( 'error', 'Something went wrong. Contact your system administrator.' );
+        }
+    });
+    $A.enqueueAction( action );
+
+
+}
 
 })

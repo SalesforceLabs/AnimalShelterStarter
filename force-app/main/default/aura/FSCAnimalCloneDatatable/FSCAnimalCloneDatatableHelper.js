@@ -30,8 +30,7 @@
         var toastEvent = $A.get("e.force:showToast");
         toastEvent.setParams({
             type: strType,
-            message: strMessage,
-            mode:'dismissible'
+            message: strMessage
         });
         toastEvent.fire();
     }

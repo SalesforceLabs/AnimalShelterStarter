@@ -8,23 +8,25 @@ public class FSCAnimalCloneDatatableControllerTest {
         Insert testAnimal;
     }   
     
-    static testMethod void testReadRecord(){
-
-        List<Animal__c> animal = [SELECT Animal_Name__c, Type__c, Date_of_Arrival__c FROM Animal__c WHERE IsCloned__c = True];
-        System.assertEquals(true,animal.size()>0,'Read Animal Record Failed');
+    @isTest static void testReadRecord(){
         
 	    List<Animal__c> tstRecord = new List<Animal__c>();
         tstRecord = FSCAnimalCloneDatatableController.getClonedAnimals();
-        System.assert(!tstRecord.isEmpty(), 'List should not be empty'); 
+        System.assertEquals(true,tstRecord.size()>0,'Read Animal Record Failed');
         
     }
     
-    static testMethod void testUpdateRecord(){
+    @isTest static  void testUpdateRecord(){
         
-		List<Animal__c> updateAnimal = [SELECT Animal_Name__c, Type__c, Date_of_Arrival__c FROM Animal__c WHERE IsCloned__c = True];
-        
-		//updateAnimal.IsCloned__c = False;
-       // update updateAnimal;
-        
+		List<Animal__c> tstUpdate = new List<Animal__c>();
+        List<Animal__c> updateAnimal = [SELECT Animal_Name__c, Type__c, Date_of_Arrival__c FROM Animal__c WHERE IsCloned__c = True];
+        List<SObject> aniUp = new List<SObject>();
+        for(Animal__c a : updateAnimal){
+            a.Animal_Name__c = 'Tommy';
+            aniUp.add(a);
+        }
+        tstUpdate = FSCAnimalCloneDatatableController.updateClonedRecords(updateAnimal);
+        System.assertEquals(tstUpdate.get(0).Animal_Name__c, 'Tommy','Animal name !="Tommy"');
+    
     }
 }

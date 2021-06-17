@@ -31,7 +31,7 @@
         toastEvent.setParams({
             type: strType,
             message: strMessage,
-            mode:'sticky'
+            mode:'dismissible'
         });
         toastEvent.fire();
     }

@@ -14,13 +14,13 @@
 	init: function(cmp, event, helper) {
 
         cmp.set('v.columns', [
-            {label: 'Animal Name', fieldName: 'Animal_Name__c', type: 'text', editable: true, initialWidth: 150},
-            {label: 'Primary Colour', fieldName: 'Colour__c', type: 'text', editable: true, initialWidth: 150 },
-            {label: 'Sec. Colour', fieldName: 'Secondary_Colour__c', type: 'text', editable: true, initialWidth: 150 },
-            {label: 'Gender', fieldName: 'Gender__c', type: 'text', editable: true, initialWidth: 100},
-            {label: 'Weight', fieldName: 'Current_Weight__c', type: 'number', editable: true, initialWidth: 100 },
-            {label: 'Est. Age', fieldName: 'Estimated_Age__c', type: 'number', editable: true, initialWidth: 100 },
-            {label: 'Microchip', fieldName: 'Microchip__c', type: 'text', editable: true, initialWidth: 150},
+            {label: 'Animal Name', fieldName: '%%%NAMESPACED_ORG%%%Animal_Name__c', type: 'text', editable: true, initialWidth: 150},
+            {label: 'Primary Colour', fieldName: '%%%NAMESPACED_ORG%%%Colour__c', type: 'text', editable: true, initialWidth: 150 },
+            {label: 'Sec. Colour', fieldName: '%%%NAMESPACED_ORG%%%Secondary_Colour__c', type: 'text', editable: true, initialWidth: 150 },
+            {label: 'Gender', fieldName: '%%%NAMESPACED_ORG%%%Gender__c', type: 'text', editable: true, initialWidth: 100},
+            {label: 'Weight', fieldName: '%%%NAMESPACED_ORG%%%Current_Weight__c', type: 'number', editable: true, initialWidth: 100 },
+            {label: 'Est. Age', fieldName: '%%%NAMESPACED_ORG%%%Estimated_Age__c', type: 'number', editable: true, initialWidth: 100 },
+            {label: 'Microchip', fieldName: '%%%NAMESPACED_ORG%%%Microchip__c', type: 'text', editable: true, initialWidth: 150},
         ]);
         helper.getData(cmp);
 

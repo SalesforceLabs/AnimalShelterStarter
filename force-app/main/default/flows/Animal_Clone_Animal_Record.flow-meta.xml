@@ -1,56 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <name>Generate_ID</name>
-        <label>Generate ID</label>
-        <locationX>940</locationX>
-        <locationY>350</locationY>
-        <actionName>GetRandomNumber</actionName>
-        <actionType>apex</actionType>
-        <connector>
-            <targetReference>Create_Clone_Record</targetReference>
-        </connector>
-        <inputParameters>
-            <name>endNumber</name>
-            <value>
-                <numberValue>999999.0</numberValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>startNumber</name>
-            <value>
-                <numberValue>100000.0</numberValue>
-            </value>
-        </inputParameters>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </actionCalls>
     <apiVersion>51.0</apiVersion>
     <assignments>
         <name>Add_Animal_to_Collection</name>
         <label>Add Animal to Collection</label>
-        <locationX>931</locationX>
-        <locationY>87</locationY>
+        <locationX>878</locationX>
+        <locationY>36</locationY>
         <assignmentItems>
             <assignToReference>clonedAnimalRecords</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>cloneAnimalRecord</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Add_Id_to_List</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Add_Id_to_List</name>
-        <label>Add Id to List</label>
-        <locationX>747</locationX>
-        <locationY>87</locationY>
-        <assignmentItems>
-            <assignToReference>listOfIds</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>tempId</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -60,8 +20,8 @@
     <assignments>
         <name>Build_List_of_ID_s</name>
         <label>Build List of ID&apos;s</label>
-        <locationX>972</locationX>
-        <locationY>475</locationY>
+        <locationX>649</locationX>
+        <locationY>736</locationY>
         <assignmentItems>
             <assignToReference>createdRecordIds</assignToReference>
             <operator>Add</operator>
@@ -76,8 +36,8 @@
     <assignments>
         <name>Create_Clone_Record</name>
         <label>Create Clone Record</label>
-        <locationX>1131</locationX>
-        <locationY>270</locationY>
+        <locationX>1081</locationX>
+        <locationY>147</locationY>
         <assignmentItems>
             <assignToReference>cloneAnimalRecord.Account__c</assignToReference>
             <operator>Assign</operator>
@@ -104,13 +64,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>animalToBeCloned.Breed__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Clone_ID__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>tempId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -204,15 +157,38 @@
                 <elementReference>animalToBeCloned.Type__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>cloneAnimalRecord.IsCloned__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_Animal_to_Collection</targetReference>
         </connector>
     </assignments>
     <assignments>
+        <name>Create_Collection_to_Reset</name>
+        <label>Create Collection to Reset</label>
+        <locationX>1085</locationX>
+        <locationY>690</locationY>
+        <assignmentItems>
+            <assignToReference>clonedAnimalsCompletedRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>clonedAnimalCompletedRecord</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Created_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Increase_Counter_by_1</name>
         <label>Increase Counter by 1</label>
-        <locationX>758</locationX>
-        <locationY>320</locationY>
+        <locationX>885</locationX>
+        <locationY>263</locationY>
         <assignmentItems>
             <assignToReference>clonesCounter</assignToReference>
             <operator>Add</operator>
@@ -221,7 +197,30 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Generate_ID</targetReference>
+            <targetReference>Create_Clone_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Reset_IsCloned_Flag</name>
+        <label>Reset IsCloned Flag</label>
+        <locationX>948</locationX>
+        <locationY>690</locationY>
+        <assignmentItems>
+            <assignToReference>clonedAnimalCompletedRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Created_Records</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clonedAnimalCompletedRecord.IsCloned__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Collection_to_Reset</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -243,8 +242,8 @@
     <decisions>
         <name>Have_we_created_all_the_Clones</name>
         <label>Have we created all the Clones?</label>
-        <locationX>583</locationX>
-        <locationY>212</locationY>
+        <locationX>584</locationX>
+        <locationY>143</locationY>
         <defaultConnector>
             <targetReference>Increase_Counter_by_1</targetReference>
         </defaultConnector>
@@ -260,31 +259,40 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Display_Records_for_Editing</targetReference>
+                <targetReference>Create_Cloned_Records</targetReference>
             </connector>
             <label>Yes All Done</label>
         </rules>
     </decisions>
     <description>Clones an Animal Record a number of times determined by the User, and displays for Editing.</description>
-    <formulas>
-        <name>tempId</name>
-        <dataType>String</dataType>
-        <expression>TEXT({!Generate_ID.randomNumber})</expression>
-    </formulas>
     <interviewLabel>Animal - Clone Animal Record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Clone Animal Record</label>
     <loops>
         <name>Capture_IDs_of_Created_Records</name>
         <label>Capture IDs of Created Records</label>
-        <locationX>869</locationX>
-        <locationY>588</locationY>
-        <collectionReference>updatedAnimalRecords</collectionReference>
+        <locationX>650</locationX>
+        <locationY>521</locationY>
+        <collectionReference>clonedAnimalRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Build_List_of_ID_s</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Completion_Screen</targetReference>
+            <targetReference>Display_Records_for_Editing</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Through_Created_Records</name>
+        <label>Loop Through Created Records</label>
+        <locationX>1011</locationX>
+        <locationY>445</locationY>
+        <collectionReference>createdRecordIds</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Reset_IsCloned_Flag</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_IsCloned_Flag</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -309,22 +317,22 @@
     <recordCreates>
         <name>Create_Cloned_Records</name>
         <label>Create Cloned Records</label>
-        <locationX>732</locationX>
-        <locationY>597</locationY>
+        <locationX>408</locationX>
+        <locationY>522</locationY>
         <connector>
             <targetReference>Capture_IDs_of_Created_Records</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Fault_Screen</targetReference>
         </faultConnector>
-        <inputReference>updatedAnimalRecords</inputReference>
+        <inputReference>clonedAnimalRecords</inputReference>
     </recordCreates>
     <recordLookups>
         <description>Get the details of the animal record to be cloned</description>
         <name>Get_Animal_To_Be_Cloned</name>
         <label>Get Animal To Be Cloned</label>
         <locationX>176</locationX>
-        <locationY>211</locationY>
+        <locationY>248</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Number_of_Clones</targetReference>
@@ -347,7 +355,6 @@
         <queriedFields>Account__c</queriedFields>
         <queriedFields>Animal_Status__c</queriedFields>
         <queriedFields>Breed__c</queriedFields>
-        <queriedFields>Clone_ID__c</queriedFields>
         <queriedFields>Colour__c</queriedFields>
         <queriedFields>Current_Weight__c</queriedFields>
         <queriedFields>Date_of_Arrival__c</queriedFields>
@@ -361,12 +368,26 @@
         <queriedFields>Size__c</queriedFields>
         <queriedFields>Type__c</queriedFields>
         <queriedFields>Crossbreed__c</queriedFields>
+        <queriedFields>IsCloned__c</queriedFields>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_IsCloned_Flag</name>
+        <label>Update IsCloned Flag</label>
+        <locationX>1279</locationX>
+        <locationY>367</locationY>
+        <connector>
+            <targetReference>Completion_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_Screen</targetReference>
+        </faultConnector>
+        <inputReference>clonedAnimalsCompletedRecords</inputReference>
+    </recordUpdates>
     <screens>
         <name>Completion_Screen</name>
         <label>Completion Screen</label>
-        <locationX>1211</locationX>
-        <locationY>586</locationY>
+        <locationX>1279</locationX>
+        <locationY>598</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -381,13 +402,13 @@
     <screens>
         <name>Display_Records_for_Editing</name>
         <label>Display Records for Editing</label>
-        <locationX>590</locationX>
-        <locationY>433</locationY>
+        <locationX>846</locationX>
+        <locationY>517</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Cloned_Records</targetReference>
+            <targetReference>Loop_Through_Created_Records</targetReference>
         </connector>
         <fields>
             <name>Display_Records_for_Editing_Text</name>
@@ -395,26 +416,11 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>AnimalDatatable</name>
+            <name>FSCCloneDatatableScreen</name>
             <extensionName>c:FSCAnimalCloneDatatable</extensionName>
             <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>mydataAnimal</name>
-                <value>
-                    <elementReference>clonedAnimalRecords</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>listSelectedIds</name>
-                <value>
-                    <elementReference>listOfIds</elementReference>
-                </value>
-            </inputParameters>
             <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>updatedAnimalRecords</assignToReference>
-                <name>selectedRowsAnimal</name>
-            </outputParameters>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -422,8 +428,8 @@
     <screens>
         <name>Fault_Screen</name>
         <label>Fault Screen</label>
-        <locationX>176</locationX>
-        <locationY>483</locationY>
+        <locationX>177</locationX>
+        <locationY>519</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -447,27 +453,54 @@
             <targetReference>Set_Counter_to_0</targetReference>
         </connector>
         <fields>
-            <name>Number_of_Clones_Text</name>
-            <fieldText>&lt;p&gt;&lt;i style=&quot;font-size: 14px;&quot;&gt;You are about to clone the animal record for &lt;/i&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;{!animalToBeCloned.Animal_Name__c} &lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Some data like Type, Breed, etc will be automatically copied to the cloned records, however, you will be able to make some changes to the new cloned animal records prior to saving.  How many clone animal records do you wish to make?&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>No_of_Clones</name>
-            <dataType>Number</dataType>
-            <defaultValue>
-                <numberValue>1.0</numberValue>
-            </defaultValue>
-            <fieldText>No. of Clones</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
-            <scale>0</scale>
-            <validationRule>
-                <errorMessage>&lt;p&gt;The number of clones needs to be between 1 and 10.&lt;/p&gt;</errorMessage>
-                <formulaExpression>AND(
+            <name>Number_of_Clones_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Number_of_Clones_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Number_of_Clones_Text</name>
+                    <fieldText>&lt;p&gt;&lt;i style=&quot;font-size: 14px;&quot;&gt;You are about to clone the animal record for &lt;/i&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;{!animalToBeCloned.Animal_Name__c} &lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Some data like Type, Breed, etc will be automatically copied to the cloned records, however, you will be able to make some changes to the new cloned animal records prior to saving.  How many clone animal records do you wish to make?&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>9</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Number_of_Clones_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>No_of_Clones</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <numberValue>1.0</numberValue>
+                    </defaultValue>
+                    <fieldText>No. of Clones</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;The number of clones needs to be between 1 and 10.&lt;/p&gt;</errorMessage>
+                        <formulaExpression>AND(
 {!No_of_Clones} &gt;= 1 ,
 {!No_of_Clones} &lt;= 10
 )</formulaExpression>
-            </validationRule>
+                    </validationRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -497,7 +530,23 @@
         <objectType>Animal__c</objectType>
     </variables>
     <variables>
+        <name>clonedAnimalCompletedRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
+    </variables>
+    <variables>
         <name>clonedAnimalRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
+    </variables>
+    <variables>
+        <name>clonedAnimalsCompletedRecords</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
@@ -527,25 +576,10 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>listOfIds</name>
-        <dataType>String</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
         <name>recordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>updatedAnimalRecords</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
     </variables>
 </Flow>

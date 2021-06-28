@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Appetite__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the animals appetite?</inlineHelpText>
+    <label>Appetite</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Healthy</fullName>
+                <default>false</default>
+                <label>Healthy</label>
+            </value>
+            <value>
+                <fullName>Trying to Eat</fullName>
+                <default>false</default>
+                <label>Trying to Eat</label>
+            </value>
+            <value>
+                <fullName>Not Eating</fullName>
+                <default>false</default>
+                <label>Not Eating</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

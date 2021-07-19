@@ -513,6 +513,13 @@
         <sortField>Status__c</sortField>
         <sortOrder>Asc</sortOrder>
     </relatedLists>
+    <relatedLists>
+        <fields>Animal_Name__c</fields>
+        <fields>Assessment_Type__c</fields>
+        <fields>Assessment_Date_Time__c</fields>
+        <fields>NAME</fields>
+        <relatedList>Assessment__c.Animal__c</relatedList>
+    </relatedLists>
     <relatedObjects>Previous_Current_Owner__c</relatedObjects>
     <relatedObjects>Account__c</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -521,7 +528,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h3G000000N7iz</masterLabel>
+        <masterLabel>00h3G000000NsDO</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

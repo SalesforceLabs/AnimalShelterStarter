@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>N/A</fullName>
+        <default>false</default>
+        <label>N/A</label>
+    </customValue>
+    <customValue>
+        <fullName>Normal</fullName>
+        <default>false</default>
+        <label>Normal</label>
+    </customValue>
+    <customValue>
+        <fullName>Needs treatment</fullName>
+        <default>false</default>
+        <label>Needs treatment</label>
+    </customValue>
+    <customValue>
+        <fullName>Critical</fullName>
+        <default>false</default>
+        <label>Critical</label>
+    </customValue>
+    <masterLabel>Assessment Conditions</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

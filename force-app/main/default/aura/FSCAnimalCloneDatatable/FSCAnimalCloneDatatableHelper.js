@@ -4,29 +4,35 @@
  * @Author             : Chris Rolfe (Salesforce.org)
  * @Group              : 
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
- * @Last Modified On   : 26/02/2021, 10:00:00 AM
+ * @Last Modified On   : 16/06/2021, 10:00:00 AM
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
- * 1.0    26/02/2020   Chris Rolfe (Salesforce.org)     Initial Version
+ * 1.0    16/06/2020   Chris Rolfe (Salesforce.org)     Initial Version
 **/
+
 ({
-    updateEditedValues: function(cmp, event) {
-        var keyField = cmp.get("v.keyField");
-        var data = cmp.get("v.mydata");
-        var drafts = event.getParam('draftValues');
+	getData : function(cmp) {
 
-        // apply drafts to mydata
-        data = data.map(item => {
-            let draft = drafts.find(d => d[keyField] == item[keyField]);
+        var action = cmp.get('c.getClonedAnimals');
+        action.setCallback(this, function ( response ){
 
-            if (draft != undefined) {
-                let fieldNames = Object.keys(draft);
-                fieldNames.forEach(el => item[el] = draft[el]);
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                cmp.set("v.mydata", response.getReturnValue());
             }
-
-            return item;
         });
+        $A.enqueueAction(action);
+		
+	},
 
-        cmp.set("v.mydata", data);
+    showToast : function( strType, strMessage) {
+
+        var toastEvent = $A.get("e.force:showToast");
+        toastEvent.setParams({
+            type: strType,
+            message: strMessage
+        });
+        toastEvent.fire();
     }
+
 })

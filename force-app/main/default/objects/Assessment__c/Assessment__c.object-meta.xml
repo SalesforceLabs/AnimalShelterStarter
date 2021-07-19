@@ -129,7 +129,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Condition_Desktop_Record_Page</content>
+        <content>Assessment_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -137,7 +137,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Condition_Mobile_Record_Page</content>
+        <content>Assessment_Record_Page</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -146,35 +146,30 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>Condition_Default_Layout</compactLayoutAssignment>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>Default_Assessment_View</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>[Animal Shelter Starter] Medical conditions related to an animal. Also linked with Treatments.</description>
+    <description>[Animal Shelter Starter] used to capture the health assessment of an animal at entry and at regular intervals</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-    <label>Condition</label>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Assessment</label>
     <nameField>
-        <displayFormat>COND{000000}</displayFormat>
-        <label>Condition ID</label>
+        <displayFormat>ASSESS{000000}</displayFormat>
+        <label>Assessment Ref</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Conditions</pluralLabel>
-    <searchLayouts>
-        <lookupDialogsAdditionalFields>Short_Description__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Short_Description__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Start_Date__c</lookupPhoneDialogsAdditionalFields>
-        <searchResultsAdditionalFields>Short_Description__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <pluralLabel>Assessments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
 </CustomObject>

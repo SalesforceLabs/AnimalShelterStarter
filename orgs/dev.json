@@ -10,6 +10,9 @@
     "chatterSettings": {
       "enableChatter": true
     },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
+    },
     "userManagementSettings": {
       "enableNewProfileUI": true
     },

@@ -14,7 +14,7 @@
         helper.getData(cmp);
         
         cmp.set('v.mycolumns', [
-            {label: 'Action Link', fieldName: 'linkName', type: 'url', typeAttributes: {label: { fieldName: '%%%NAMESPACED_ORG%%%Name' }, target: '_self'}, sortable: true},
+            {label: 'Action Link', fieldName: 'linkName', type: 'url', typeAttributes: {label: { fieldName: 'Name' }, target: '_self'}, sortable: true},
             {label: 'Description', fieldName: '%%%NAMESPACED_ORG%%%Description__c', type: 'text'},
             {label: 'Date/Time of Action', fieldName: '%%%NAMESPACED_ORG%%%Date_Time_of_Action__c', type: 'date'},
             {

@@ -13,7 +13,7 @@ public with sharing class ProfilePictureController {
      
     @AuraEnabled
     public static Id saveAttachment(Id parentId, String fileName, String base64Data, String contentType) { 
-         if (Schema.sObjectType.Attachment.isCreateable()) {
+         if (Schema.sObjectType.Attachment.isCreateable() && Schema.sObjectType.Attachment.fields.parentId.isAccessible() && Schema.sObjectType.Attachment.fields.name.isAccessible() && Schema.sObjectType.Attachment.fields.contentType.isAccessible()) {
             Attachment attachment = new Attachment();
             attachment.parentId = parentId;
             attachment.body = EncodingUtil.base64Decode(base64Data);

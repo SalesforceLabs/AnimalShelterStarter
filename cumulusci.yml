@@ -1,4 +1,3 @@
-minimum_cumulusci_version: '3.13.2'
 project:
     name: animal_shelter_starter
     package:

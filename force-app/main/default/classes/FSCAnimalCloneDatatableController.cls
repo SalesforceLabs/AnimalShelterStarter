@@ -20,7 +20,7 @@ public with sharing class FSCAnimalCloneDatatableController {
             List<%%%NAMESPACED_ORG%%%Animal__c> clonedAnimals = new List<%%%NAMESPACED_ORG%%%Animal__c>();
             clonedAnimals = [SELECT Id, %%%NAMESPACED_ORG%%%Animal_Name__c, %%%NAMESPACED_ORG%%%Colour__c, %%%NAMESPACED_ORG%%%Secondary_Colour__c, %%%NAMESPACED_ORG%%%Gender__c, %%%NAMESPACED_ORG%%%Current_Weight__c, %%%NAMESPACED_ORG%%%Estimated_Age__c, %%%NAMESPACED_ORG%%%Microchip__c
                                     FROM %%%NAMESPACED_ORG%%%Animal__c
-                                    WHERE %%%NAMESPACED_ORG%%%IsCloned__c = True];
+                                    WHERE %%%NAMESPACED_ORG%%%IsCloned__c = True WITH SECURITY_ENFORCED ];
 
         return clonedAnimals;                           
         }

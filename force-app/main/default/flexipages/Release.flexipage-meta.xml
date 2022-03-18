@@ -13,25 +13,26 @@
                     <value>Animal_Animal_Release_Flow</value>
                 </componentInstanceProperties>
                 <componentName>flowruntime:interview</componentName>
+                <identifier>flowruntime_interview</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>descDateField</name>
-                    <value>%%%NAMESPACED_ORG%%%End_Date__c</value>
+                    <value>End_Date__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>descTextField</name>
-                    <value>%%%NAMESPACED_ORG%%%Name</value>
+                    <value>Name</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>latField</name>
-                    <value>%%%NAMESPACED_ORG%%%Release_Location__latitude__s</value>
+                    <value>Release_Location__latitude__s</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>longField</name>
-                    <value>%%%NAMESPACED_ORG%%%Release_Location__longitude__s</value>
+                    <value>Release_Location__longitude__s</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>mapTitle</name>
@@ -39,13 +40,14 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>nameField</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal_Name__c</value>
+                    <value>Animal_Name__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>obj</name>
-                    <value>%%%NAMESPACED_ORG%%%Movement__c</value>
+                    <value>Movement__c</value>
                 </componentInstanceProperties>
                 <componentName>LocationMap</componentName>
+                <identifier>LocationMap</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

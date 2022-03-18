@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>51.0</apiVersion>
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>Set_Animal_Name</name>
+        <label>Set Animal Name</label>
+        <locationX>1106</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>Animal_Name_Selection</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Animal_Details.Animal_Name__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Capture_Location</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Animal_Name_0</name>
+        <label>Set Animal Name</label>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>Animal_Name_Selection</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Animal_Name</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Capture_Location</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Animal_Name_0_0</name>
+        <label>Set Animal Name</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>Animal_Name_Selection</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No Name Provided</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Capture_Location</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Animal_Name_existing</name>
+        <label>Set Animal Name</label>
+        <locationX>842</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>Animal_Name_Selection</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectAnimal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Capture_Location</targetReference>
+        </connector>
+    </assignments>
     <choices>
         <name>choiceExisting</name>
-        <choiceText>Update existing</choiceText>
+        <choiceText>Update an existing animal record</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>Existing</stringValue>
@@ -11,19 +75,44 @@
     </choices>
     <choices>
         <name>choiceNew</name>
-        <choiceText>Create new</choiceText>
+        <choiceText>Create a new animal record</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>New</stringValue>
         </value>
     </choices>
     <decisions>
+        <name>Animal_Name_Given</name>
+        <label>Animal Name Given?</label>
+        <locationX>182</locationX>
+        <locationY>878</locationY>
+        <defaultConnector>
+            <targetReference>Set_Animal_Name_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>NoNameGiven</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Animal_Name</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Animal_Name_0_0</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_if_Animal_ID_has_been_passed</name>
         <label>Check if Animal ID has been passed</label>
-        <locationX>578</locationX>
+        <locationX>809</locationX>
         <locationY>278</locationY>
         <defaultConnector>
-            <targetReference>Capture_Location</targetReference>
+            <targetReference>Get_Animal_Details</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Animal ID</defaultConnectorLabel>
         <rules>
@@ -45,7 +134,7 @@
     <decisions>
         <name>New_or_Existing_Animal</name>
         <label>New or Existing Animal?</label>
-        <locationX>314</locationX>
+        <locationX>512</locationX>
         <locationY>518</locationY>
         <defaultConnector>
             <targetReference>Existing_Animal_Selection</targetReference>
@@ -121,11 +210,11 @@
     <recordCreates>
         <name>Create_New_Animal_Record</name>
         <label>Create New Animal Record</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>758</locationY>
         <assignRecordIdToReference>recordId</assignRecordIdToReference>
         <connector>
-            <targetReference>Capture_Location</targetReference>
+            <targetReference>Animal_Name_Given</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Creating_New_Animal</targetReference>
@@ -204,11 +293,32 @@
         </inputAssignments>
         <object>Animal__c</object>
     </recordCreates>
+    <recordLookups>
+        <name>Get_Animal_Details</name>
+        <label>Get Animal Details</label>
+        <locationX>1106</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_Animal_Name</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Animal__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Animal_with_Location</name>
         <label>Update Animal with Location</label>
-        <locationX>578</locationX>
-        <locationY>1454</locationY>
+        <locationX>809</locationX>
+        <locationY>1526</locationY>
         <connector>
             <targetReference>Completion_Screen</targetReference>
         </connector>
@@ -240,8 +350,8 @@
     <screens>
         <name>Capture_Location</name>
         <label>Capture Location</label>
-        <locationX>578</locationX>
-        <locationY>1334</locationY>
+        <locationX>809</locationX>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -249,9 +359,15 @@
             <targetReference>Update_Animal_with_Location</targetReference>
         </connector>
         <fields>
+            <name>help_text_locationscreen</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Animal Location&lt;/b&gt;&lt;/p&gt;&lt;p&gt;This step will look for your current location, which will be saved against the relevant animal record.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Animal Name: {!Animal_Name_Selection}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
             <name>Capture_Geo</name>
             <extensionName>c:FSCGeolocation</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -261,14 +377,14 @@
     <screens>
         <name>Completion_Screen</name>
         <label>Completion Screen</label>
-        <locationX>578</locationX>
-        <locationY>1574</locationY>
+        <locationX>809</locationX>
+        <locationY>1646</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Completion_Screen_Text</name>
-            <fieldText>&lt;p&gt;DONE: Animal Created/Updated with location&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Record Update Complete!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The animal record for ({!Animal_Name_Selection}) has been updated with the new location check in!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Keep up the great work!&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -277,7 +393,7 @@
     <screens>
         <name>Error_Creating_New_Animal</name>
         <label>Error Creating New Animal</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>878</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -293,8 +409,8 @@
     <screens>
         <name>Error_Updating_Animal_Record</name>
         <label>Error Updating Animal Record</label>
-        <locationX>1018</locationX>
-        <locationY>1574</locationY>
+        <locationX>1370</locationX>
+        <locationY>1646</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -309,19 +425,24 @@
     <screens>
         <name>Existing_Animal_Selection</name>
         <label>Existing Animal Selection</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>638</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Capture_Location</targetReference>
+            <targetReference>Set_Animal_Name_existing</targetReference>
         </connector>
+        <fields>
+            <name>help_animalnameselection</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Animal Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please use the pick list below to select the name of the animal.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>SelectAnimal</name>
             <choiceReferences>existingAnimals</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>SelectAnimal</fieldText>
+            <fieldText>Select Animal Name:</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -331,7 +452,7 @@
     <screens>
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
-        <locationX>578</locationX>
+        <locationX>809</locationX>
         <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -355,7 +476,7 @@
     <screens>
         <name>New_Animal_Details</name>
         <label>New Animal Details</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>638</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -377,19 +498,19 @@
             <inputParameters>
                 <name>dependencyWrapperApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Animal__c</stringValue>
+                    <stringValue>Animal__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>topPicklistApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Type__c</stringValue>
+                    <stringValue>Type__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>middlePicklistApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Breed__c</stringValue>
+                    <stringValue>Breed__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -404,6 +525,7 @@
                     <stringValue>Breed</stringValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -465,7 +587,7 @@
     <screens>
         <name>New_or_Existing</name>
         <label>New or Existing</label>
-        <locationX>314</locationX>
+        <locationX>512</locationX>
         <locationY>398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -475,7 +597,7 @@
         </connector>
         <fields>
             <name>New_or_Existing_Text</name>
-            <fieldText>&lt;p&gt;&lt;i&gt;No Animal ID was specified. Choose to either create a new animal, or update an existing animal.&lt;/i&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Animal Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;For the animal you have just captured. Do we know the animal already (update existing) or should we create a new record for them (create new)?&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -483,7 +605,8 @@
             <choiceReferences>choiceNew</choiceReferences>
             <choiceReferences>choiceExisting</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>New or Existing</fieldText>
+            <defaultSelectedChoiceReference>choiceNew</defaultSelectedChoiceReference>
+            <fieldText>New or Existing Animal</fieldText>
             <fieldType>RadioButtons</fieldType>
             <isRequired>false</isRequired>
         </fields>
@@ -491,13 +614,20 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>452</locationX>
+        <locationX>683</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>Animal_Name_Selection</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

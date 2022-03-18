@@ -20,7 +20,7 @@
         <columns>
             <field>Animal__c.Animal_Status__c</field>
         </columns>
-        <format>Tabular</format>
+        <format>Summary</format>
         <name>Animal</name>
         <params>
             <name>co</name>
@@ -55,7 +55,7 @@
         <columns>
             <field>Adoption__c.Date_Returned__c</field>
         </columns>
-        <format>Tabular</format>
+        <format>Summary</format>
         <name>Adoptions</name>
         <params>
             <name>co</name>
@@ -95,7 +95,7 @@
         <columns>
             <field>Animal_Action__c.Given_By__c</field>
         </columns>
-        <format>Tabular</format>
+        <format>Summary</format>
         <name>Actions</name>
         <params>
             <name>co</name>
@@ -127,7 +127,7 @@
         <columns>
             <field>Animal_Action__c.Date_Time_of_Action__c</field>
         </columns>
-        <format>Tabular</format>
+        <format>Summary</format>
         <name>Medical Treatment History</name>
         <params>
             <name>co</name>
@@ -163,7 +163,7 @@
         <columns>
             <field>FK_$Locations__c.Block_Unit__c</field>
         </columns>
-        <format>Tabular</format>
+        <format>Summary</format>
         <name>Movements</name>
         <params>
             <name>co</name>
@@ -187,6 +187,10 @@
     <description>A complete report showing a summary for each animal.</description>
     <format>MultiBlock</format>
     <name>Animal - Full Report</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
     <reportType>CustomEntity$Animal__c</reportType>
     <showDetails>true</showDetails>
 </Report>

@@ -3,8 +3,11 @@ project:
     package:
         name:  Animal Shelter Starter
         namespace: animalshelters
-        api_version: '50.0'
+        api_version: '53.0'
     source_format: sfdx
+    git:
+        default_branch: 'master'
+        repo_url: https://github.com/SalesforceLabs/AnimalShelterStarter
 
 tasks:
     robot:

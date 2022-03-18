@@ -10,27 +10,39 @@
   1.0    19/03/2021   Chris Rolfe (Salesforce.org)     Initial Version
 -->
 <aura:component implements="lightning:availableForFlowScreens" access="global">
-    <!-- attributes -->
-    <aura:attribute name="latitude" type="Decimal" access="global"/>
-    <aura:attribute name="longitude" type="Decimal" access="global"/>
-    <aura:attribute name="mapMarkersData" type="Object" access="global"/>
-    <aura:attribute name="zoomLevel" type="Integer" default="16"/>
-    <aura:attribute name="showFooter" type="Boolean" default="false"/>
-    <aura:attribute name="listView" type="String" default="hidden"/>
-    
+  <!-- attributes -->
+  <aura:attribute name="latitude" type="Decimal" access="global" />
+  <aura:attribute name="longitude" type="Decimal" access="global" />
+  <aura:attribute name="mapMarkersData" type="Object" access="global" />
+  <aura:attribute name="zoomLevel" type="Integer" default="16" />
+  <aura:attribute name="showFooter" type="Boolean" default="false" />
+  <aura:attribute name="listView" type="String" default="hidden" />
 
-    <!-- handler -->
-    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
 
-    <lightning:card iconName="standard:address" title="Get Location Details">
-        <lightning:formattedLocation latitude="{! v.latitude}" longitude="{! v.longitude}"/>
-        
-        <aura:if isTrue="{!v.mapMarkersData.length > 0}" >
-        	<lightning:map
-                           mapMarkers="{! v.mapMarkersData}"
-                           zoomLevel="{! v.zoomLevel}"
-                           showFooter="{! v.showFooter}"
-                           listView="{! v.listView}"/>
-        </aura:if>
-    </lightning:card>
+  <!-- handler -->
+  <aura:handler name="init" value="{!this}" action="{!c.init}" />
+  <div style="height:400px">
+    <!-- Map Card -->
+    <aura:if isTrue="{!v.mapMarkersData.length > 0}">
+      <lightning:card title="Find Current Location" iconName="standard:address">
+        <div class="slds-card__body slds-card__body_inner">
+          <p> Exact GPS:
+            <lightning:formattedLocation latitude="{! v.latitude}" longitude="{! v.longitude}"></lightning:formattedLocation>
+          </p>
+          <lightning:map mapMarkers="{! v.mapMarkersData}" zoomLevel="{! v.zoomLevel}" showFooter="{! v.showFooter}" listView="{! v.listView}" />
+        </div>
+
+      </lightning:card>
+    </aura:if>
+
+    <!-- Help Card -->
+    <aura:if isTrue="{!v.mapMarkersData.length == 0}">
+      <lightning:card iconName="standard:address" title="Cannot find current location!">
+        <div class="slds-card__body slds-card__body_inner">
+          <p>There has been an issue finding your location. Please check your device settings to ensure that location sharing is turned on.</p>
+        </div>
+      </lightning:card>
+    </aura:if>
+  </div>
+
 </aura:component>

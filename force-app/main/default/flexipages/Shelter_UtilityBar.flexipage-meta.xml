@@ -4,6 +4,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>notes:utilityBarNoteList</componentName>
+                <identifier>notes_utilityBarNoteList</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -43,6 +44,7 @@
                     <value>340</value>
                 </componentInstanceProperties>
                 <componentName>forceChatter:exposedFeed</componentName>
+                <identifier>forceChatter_exposedFeed</identifier>
             </componentInstance>
         </itemInstances>
         <name>utilityItems</name>

@@ -168,7 +168,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Movements</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

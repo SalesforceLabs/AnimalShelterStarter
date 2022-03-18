@@ -20,6 +20,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -29,6 +30,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-bc6ef913-f9fe-434a-955b-753d3e1b2b6f</name>
@@ -58,6 +60,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-2b06fadc-3b16-4fca-bd40-c2a4551288bb</name>
@@ -79,6 +82,7 @@
                     <value>Standard.Tab.activity</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>activityTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -92,6 +96,7 @@
                     <value>Related Actions</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f9e0073d-21c8-4c18-b9b3-502df604cefd</name>
@@ -105,6 +110,7 @@
                     <value>Facet-f9e0073d-21c8-4c18-b9b3-502df604cefd</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!$Client.formFactor}</leftValue>
@@ -121,6 +127,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.Short_Description__c</fieldItem>
+                <identifier>RecordShort_Description__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -130,6 +137,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Condition_Description__c</fieldItem>
+                <identifier>RecordCondition_Description__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -139,6 +147,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Start_Date__c</fieldItem>
+                <identifier>RecordStart_Date__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -148,6 +157,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.End_Date_Time__c</fieldItem>
+                <identifier>RecordEnd_Date_Time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -157,6 +167,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Animal__c</fieldItem>
+                <identifier>RecordAnimal__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4c5a0987-2949-4f04-bd61-2a752918f3f3</name>
@@ -170,6 +181,7 @@
                     <value>Facet-4c5a0987-2949-4f04-bd61-2a752918f3f3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-a125e0af-0b2f-402a-9eda-68244000c7d0</name>
@@ -187,6 +199,7 @@
                     <value>Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-96c13bcf-d244-40e3-824f-99bcd42e281e</name>
@@ -200,6 +213,7 @@
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -209,6 +223,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
+                <identifier>RecordOwnerIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -218,6 +233,7 @@
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -227,6 +243,7 @@
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-0eb31748-8d77-4bc3-9b0e-e2946309be4a</name>
@@ -240,6 +257,7 @@
                     <value>Facet-0eb31748-8d77-4bc3-9b0e-e2946309be4a</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-574adc46-820c-47d1-a0cb-48c9b1be8465</name>
@@ -257,6 +275,7 @@
                     <value>System Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-548e5610-4d6c-41ec-a847-94b023a4281b</name>
@@ -278,6 +297,7 @@
                     <value>accordionSection1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>detailSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -295,6 +315,7 @@
                     <value>accordionSection2</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>additionalFieldsSection</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-cabe7cc2-35dd-4a37-94a3-69f26434e984</name>
@@ -312,6 +333,7 @@
                     <value>accordionSection1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!$Client.formFactor}</leftValue>
@@ -324,6 +346,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:recordDetailPanelMobile</componentName>
+                <identifier>force_recordDetailPanelMobile</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!$Client.formFactor}</leftValue>
@@ -348,6 +371,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
+                <identifier>force_relatedListContainer</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!$Client.formFactor}</leftValue>

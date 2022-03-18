@@ -32,6 +32,7 @@
             <operator>equals</operator>
             <value>Locations__c.Block,Locations__c.Unit</value>
         </criteriaItems>
+        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Locations - All Available Locations</name>

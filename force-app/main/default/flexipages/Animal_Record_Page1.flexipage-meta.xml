@@ -4,6 +4,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>AlertBanner</componentName>
+                <identifier>AlertBanner</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -18,6 +19,7 @@
                     <value>Treatment</value>
                 </componentInstanceProperties>
                 <componentName>AnimalActionRelatedList2</componentName>
+                <identifier>AnimalActionRelatedList2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -43,6 +45,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fd66c01e-5c18-4790-9486-5a9ab4cc7de9</name>
@@ -56,6 +59,7 @@
                     <value>Exercise</value>
                 </componentInstanceProperties>
                 <componentName>AnimalActionRelatedList2</componentName>
+                <identifier>AnimalActionRelatedList22</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-dc8dd562-135d-48f7-ad88-3a405295f538</name>
@@ -69,6 +73,7 @@
                     <value>Nutrition</value>
                 </componentInstanceProperties>
                 <componentName>AnimalActionRelatedList2</componentName>
+                <identifier>AnimalActionRelatedList23</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-6623fb7c-e5e1-4d16-9a42-e27a63fd5ef8</name>
@@ -90,6 +95,7 @@
                     <value>accordionSection1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>customSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -107,6 +113,7 @@
                     <value>accordionSection2</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>customSection2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -124,6 +131,7 @@
                     <value>accordionSection--s4gsu8o7p8</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>customSection3</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-93cec713-b625-4672-b108-b5c3c908c4f3</name>
@@ -137,6 +145,7 @@
                     <value>Facet-93cec713-b625-4672-b108-b5c3c908c4f3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-8caff930-736d-417d-9500-dc8658d5ea73</name>
@@ -166,6 +175,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-58c1fa3c-2fbf-4cc7-bf07-bf455acb4e81</name>
@@ -187,6 +197,7 @@
                     <value>Animal_Movement_Process</value>
                 </componentInstanceProperties>
                 <componentName>flowruntime:interview</componentName>
+                <identifier>flowruntime_interview</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-5914efb3-6024-4bc6-a22e-4b985e0b9fa0</name>
@@ -216,6 +227,7 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer3</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-173030f3-3b4b-4d91-9afa-940b9bdf0142</name>
@@ -237,6 +249,7 @@
                     <value>accordionSection1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>customSection4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -254,6 +267,7 @@
                     <value>accordionSection2</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>customSection5</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-9de594c0-50de-4fc3-ac7c-9bb4bde9c20b</name>
@@ -271,6 +285,7 @@
                     <value>accordionSection1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-5ec4c2b9-ad75-4ceb-b025-17e6bbd594ed</name>
@@ -292,6 +307,7 @@
                     <value>GRID</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-eda573af-6ccf-4b72-9653-df05f98afc0b</name>
@@ -321,6 +337,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer5</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fa189647-491d-4492-85af-8b4517e6a97e</name>
@@ -338,6 +355,7 @@
                     <value>Actions</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -351,6 +369,7 @@
                     <value>Adoption</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -364,6 +383,7 @@
                     <value>Movements</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -377,6 +397,7 @@
                     <value>Alerts</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -390,6 +411,7 @@
                     <value>Attachments</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab5</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f421f272-c351-4481-8a82-63cfcca7afc8</name>
@@ -399,6 +421,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:detailPanel</componentName>
+                <identifier>force_detailPanel</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -408,6 +431,7 @@
                     <value>Facet-f421f272-c351-4481-8a82-63cfcca7afc8</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -426,6 +450,7 @@
                     <value>Drag and Drop Image Here</value>
                 </componentInstanceProperties>
                 <componentName>Record_Page_Image</componentName>
+                <identifier>Record_Page_Image</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

@@ -16,6 +16,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -33,6 +34,7 @@
                     <value>Animal_Block_Status_Change</value>
                 </componentInstanceProperties>
                 <componentName>flowruntime:interview</componentName>
+                <identifier>flowruntime_interview</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
@@ -45,6 +47,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:detailPanel</componentName>
+                <identifier>force_detailPanel</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -62,6 +65,7 @@
                     <value>Account.Update_Organisation</value>
                 </componentInstanceProperties>
                 <componentName>console:relatedRecord</componentName>
+                <identifier>console_relatedRecord</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
@@ -90,6 +94,7 @@
                     <value>Contact._LightningRelatedContact</value>
                 </componentInstanceProperties>
                 <componentName>console:relatedRecord</componentName>
+                <identifier>console_relatedRecord2</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
@@ -114,6 +119,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
+                <identifier>force_relatedListContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>

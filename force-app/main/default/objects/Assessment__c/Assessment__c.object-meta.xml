@@ -168,7 +168,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Assessments</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>

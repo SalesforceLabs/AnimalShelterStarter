@@ -95,7 +95,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
+                <stringValue>Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>

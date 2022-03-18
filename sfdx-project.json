@@ -1,1 +1,10 @@
-{"packageDirectories": [{"path": "force-app", "default": true}], "namespace": "animalshelters", "sourceApiVersion": "50.0"}
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "namespace": "animalshelters",
+  "sourceApiVersion": "53.0"
+}

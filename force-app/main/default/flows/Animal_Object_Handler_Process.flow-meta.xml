@@ -19,6 +19,7 @@
         <locationY>200</locationY>
         <actionName>Animal_Length_of_Stay_Calculation</actionName>
         <actionType>flow</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <processMetadataValues>
                 <name>dataType</name>
@@ -47,7 +48,7 @@
             <processMetadataValues>
                 <name>objectType</name>
                 <value>
-                    <stringValue/>
+                    <stringValue></stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -179,7 +180,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>%%%NAMESPACED_ORG%%%Animal__c</stringValue>
+            <stringValue>Animal__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -258,7 +259,7 @@
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Animal__c</stringValue>
+                    <stringValue>Animal__c</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -294,7 +295,7 @@
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue/>
+                    <stringValue></stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -330,7 +331,7 @@
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue/>
+                    <stringValue></stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>

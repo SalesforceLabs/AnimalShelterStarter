@@ -19,6 +19,7 @@
         <locationY>200</locationY>
         <actionName>Animal_Length_of_Stay_Calculation</actionName>
         <actionType>flow</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <processMetadataValues>
                 <name>dataType</name>
@@ -47,7 +48,7 @@
             <processMetadataValues>
                 <name>objectType</name>
                 <value>
-                    <stringValue/>
+                    <stringValue></stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -102,7 +103,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>%%%NAMESPACED_ORG%%%Movement__c</stringValue>
+            <stringValue>Movement__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>

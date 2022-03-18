@@ -9,12 +9,12 @@
   Ver       Date            Author      		    Modification
   1.0    4/7/2020   Stewart Anderson (Salesforce.org)     Initial Version
 -->
-<aura:component controller="AlertBannerController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" >
-	
+<aura:component controller="AlertBannerController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+
     <aura:attribute name="recordId" type="Id" />
     <aura:attribute name="lstAnimalAlerts" type="%%%NAMESPACED_ORG%%%Animal_Alert__c[]" />
-    
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:handler event="force:refreshView" action="{!c.doInit}" />
 
     <div class="slds-hide" aura:id="AlertBox">
@@ -22,10 +22,12 @@
             <div class="slds-text-align_center">CURRENT ANIMAL ALERTS</div>
             <ul class="slds-list_dotted">
                 <aura:iteration items="{!v.lstAnimalAlerts}" var="AnimalAlert">
-                    <li><lightning:formattedDateTime value="{!AnimalAlert.%%%NAMESPACED_ORG%%%Start_Date_Time__c}" year="numeric" month="long" day="numeric" hour="2-digit" minute="2-digit" hour12="true"/> : {!AnimalAlert.%%%NAMESPACED_ORG%%%Alert_Message__c}</li>
+                    <li>
+                        <lightning:formattedDateTime value="{!AnimalAlert.%%%NAMESPACED_ORG%%%Start_Date_Time__c}" year="numeric" month="long" day="numeric" hour="2-digit" minute="2-digit" hour12="true" /> : {!AnimalAlert.%%%NAMESPACED_ORG%%%Alert_Message__c}
+                    </li>
                 </aura:iteration>
             </ul>
         </div>
-    </div>   
+    </div>
 
 </aura:component>

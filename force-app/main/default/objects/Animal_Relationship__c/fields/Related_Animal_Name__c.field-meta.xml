@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Related_Animal_Name__c</fullName>
     <externalId>false</externalId>
-    <formula>Related_Animal__r.Animal_Name__c</formula>
+    <formula>%%%NAMESPACED_ORG%%%Related_Animal__r.%%%NAMESPACED_ORG%%%Animal_Name__c</formula>
     <label>Related Animal Name</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

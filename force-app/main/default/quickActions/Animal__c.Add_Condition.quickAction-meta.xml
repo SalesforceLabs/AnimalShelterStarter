@@ -24,6 +24,6 @@
     </quickActionLayout>
     <successMessage>New Condition added.</successMessage>
     <targetObject>Condition__c</targetObject>
-    <targetParentField>Animal__c</targetParentField>
+    <targetParentField>%%%NAMESPACED_ORG%%%Animal__c</targetParentField>
     <type>Create</type>
 </QuickAction>

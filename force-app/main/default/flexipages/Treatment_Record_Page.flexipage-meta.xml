@@ -87,7 +87,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>nimal__c</value>
+                    <value>Animal__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>

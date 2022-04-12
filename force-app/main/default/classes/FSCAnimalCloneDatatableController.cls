@@ -13,7 +13,7 @@
 public with sharing class FSCAnimalCloneDatatableController {
 
     @AuraEnabled
-    public static List<Animal__c> getClonedAnimals() {
+    public static List<%%%NAMESPACED_ORG%%%Animal__c> getClonedAnimals() {
 
         if(Schema.SObjectType.%%%NAMESPACED_ORG%%%Animal__c.isAccessible()){
 

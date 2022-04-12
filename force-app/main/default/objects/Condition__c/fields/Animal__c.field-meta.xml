@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Animal__c</fullName>
+    <fullName>%%%NAMESPACED_ORG%%%Animal__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Animal</label>
     <lookupFilter>
         <active>true</active>
         <filterItems>
-            <field>Animal__c.Animal_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c.Animal_Status__c</field>
             <operation>notEqual</operation>
             <value>Deceased</value>
         </filterItems>
         <isOptional>true</isOptional>
     </lookupFilter>
-    <referenceTo>Animal__c</referenceTo>
+    <referenceTo>%%%NAMESPACED_ORG%%%Animal__c</referenceTo>
     <relationshipLabel>Conditions</relationshipLabel>
     <relationshipName>Conditions</relationshipName>
     <required>false</required>

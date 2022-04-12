@@ -3,6 +3,6 @@
     <fullName>Animal_Neutered_Spayed_Check</fullName>
     <active>false</active>
     <description>Checks that the Neutered/Spayed Date/Time has been completed if Neutered/Spayed has been checked.</description>
-    <errorConditionFormula>AND(Neutered_Spayed__c,NOT(ISBLANK( Neutered_Spayed_Date_Time__c )))</errorConditionFormula>
+    <errorConditionFormula>AND(%%%NAMESPACED_ORG%%%Neutered_Spayed__c,NOT(ISBLANK( %%%NAMESPACED_ORG%%%Neutered_Spayed_Date_Time__c )))</errorConditionFormula>
     <errorMessage>Animal has been noted as being neutered/spayed although no date/time has been added. Please add the Date/Time the animal was neutered/spayed as well.</errorMessage>
 </ValidationRule>

@@ -2,9 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Calculated_Time_Known__c</fullName>
     <externalId>false</externalId>
-    <formula>TEXT(FLOOR((TODAY() - DATEVALUE(Date_of_Arrival__c ))/365)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp;
-TEXT(FLOOR(MOD((TODAY() - DATEVALUE(Date_of_Arrival__c)),365)/30)) &amp;&apos; MONTHS&apos; &amp; &apos; &apos; &amp;
-TEXT(MOD(MOD((TODAY() - DATEVALUE(Date_of_Arrival__c)),365),30)) &amp;&apos; DAYS&apos;</formula>
+    <formula>TEXT(FLOOR((TODAY() - DATEVALUE(%%%NAMESPACED_ORG%%%Date_of_Arrival__c ))/365)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp;
+TEXT(FLOOR(MOD((TODAY() - DATEVALUE(%%%NAMESPACED_ORG%%%Date_of_Arrival__c)),365)/30)) &amp;&apos; MONTHS&apos; &amp; &apos; &apos; &amp;
+TEXT(MOD(MOD((TODAY() - DATEVALUE(%%%NAMESPACED_ORG%%%Date_of_Arrival__c)),365),30)) &amp;&apos; DAYS&apos;</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Calculated Time Known</label>
     <required>false</required>

@@ -132,13 +132,13 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Parent_Block__c</field>
+            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <outputReference>AllRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -156,20 +156,20 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Parent_Block__c</field>
+            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Unit_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Allocated</stringValue>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <outputReference>AllocatedRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -193,10 +193,10 @@
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <outputAssignments>
             <assignToReference>BlockName</assignToReference>
-            <field>Name__c</field>
+            <field>%%%NAMESPACED_ORG%%%Name__c</field>
         </outputAssignments>
     </recordLookups>
     <recordUpdates>
@@ -216,12 +216,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Block_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Block_Status__c</field>
             <value>
                 <elementReference>SelectedChoice</elementReference>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Unit_Status_to_Available</name>
@@ -236,19 +236,19 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Parent_Block__c</field>
+            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
         <inputAssignments>
-            <field>Unit_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Unit_Status_to_Unavailable</name>
@@ -263,19 +263,19 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Parent_Block__c</field>
+            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
         <inputAssignments>
-            <field>Unit_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
             <value>
                 <stringValue>Unavailable</stringValue>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <screens>
         <name>Completed</name>
@@ -368,7 +368,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
     </variables>
     <variables>
         <name>AllRecords</name>
@@ -376,7 +376,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
     </variables>
     <variables>
         <name>BlockName</name>

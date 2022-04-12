@@ -4,10 +4,10 @@
     <dynamicChoiceSets>
         <name>AnimalActionExerciseRecordChoice</name>
         <dataType>String</dataType>
-        <displayField>Action_Lookup_Name__c</displayField>
+        <displayField>%%%NAMESPACED_ORG%%%Action_Lookup_Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId</elementReference>
@@ -20,16 +20,16 @@
                 <elementReference>AnimalActionRecordTypeId</elementReference>
             </value>
         </filters>
-        <object>Animal_Action__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
         <outputAssignments>
             <assignToReference>AnimalActionStartDateTime</assignToReference>
-            <field>Date_Time_of_Action__c</field>
+            <field>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>AnimalActionId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>Date_Time_of_Action__c</sortField>
+        <sortField>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
@@ -95,7 +95,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Animal_Action__c</stringValue>
+                <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -124,36 +124,36 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Action_Completed__c</field>
+            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Comments__c</field>
+            <field>%%%NAMESPACED_ORG%%%Comments__c</field>
             <value>
                 <elementReference>Exercise_Comments_Long</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Date_Time_Action_Completed__c</field>
+            <field>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</field>
             <value>
                 <elementReference>CalculateEndDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Exercise_Duration__c</field>
+            <field>%%%NAMESPACED_ORG%%%Exercise_Duration__c</field>
             <value>
                 <elementReference>Exercise_Duration</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Given_By__c</field>
+            <field>%%%NAMESPACED_ORG%%%Given_By__c</field>
             <value>
                 <elementReference>contactId</elementReference>
             </value>
         </inputAssignments>
-        <object>Animal_Action__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
     </recordUpdates>
     <screens>
         <name>End_Screen</name>
@@ -271,7 +271,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal_Action__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>AnimalActionRecords</name>
@@ -279,7 +279,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal_Action__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>AnimalActionRecordTypeId</name>

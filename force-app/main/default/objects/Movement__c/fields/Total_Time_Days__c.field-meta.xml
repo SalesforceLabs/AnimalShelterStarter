@@ -2,10 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Total_Time_Days__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(ISBLANK(End_Date__c),  
-TODAY() -  Start_Date__c, 
-IF(OR(End_Date__c = Start_Date__c, Start_Date__c = TODAY()), 1, 
-End_Date__c -  Start_Date__c ))</formula>
+    <formula>IF(ISBLANK(%%%NAMESPACED_ORG%%%End_Date__c),  
+TODAY() -  %%%NAMESPACED_ORG%%%Start_Date__c, 
+IF(OR(%%%NAMESPACED_ORG%%%End_Date__c = %%%NAMESPACED_ORG%%%Start_Date__c, %%%NAMESPACED_ORG%%%Start_Date__c = TODAY()), 1, 
+%%%NAMESPACED_ORG%%%End_Date__c -  %%%NAMESPACED_ORG%%%Start_Date__c ))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Total Time (Days)</label>
     <precision>18</precision>

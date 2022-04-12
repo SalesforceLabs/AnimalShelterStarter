@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldOverrides>
-        <field>Adoption_Stage__c</field>
+        <field>%%%NAMESPACED_ORG%%%Adoption_Stage__c</field>
         <literalValue>Initial Review</literalValue>
     </fieldOverrides>
     <label>Start Adoption</label>
@@ -11,14 +11,14 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Primary_Contact__c</field>
+                <field>%%%NAMESPACED_ORG%%%Primary_Contact__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
         <quickActionLayoutColumns/>
     </quickActionLayout>
     <successMessage>New potential adoption started.</successMessage>
-    <targetObject>Adoption__c</targetObject>
-    <targetParentField>Animal__c</targetParentField>
+    <targetObject>%%%NAMESPACED_ORG%%%Adoption__c</targetObject>
+    <targetParentField>%%%NAMESPACED_ORG%%%Animal__c</targetParentField>
     <type>Create</type>
 </QuickAction>

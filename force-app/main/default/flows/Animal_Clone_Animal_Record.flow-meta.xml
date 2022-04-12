@@ -39,80 +39,80 @@
         <locationX>1081</locationX>
         <locationY>147</locationY>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Account__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Account__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>animalToBeCloned.Account__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Animal_Name__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Animal_Name__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Animal_Name__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Animal_Name__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Animal_Status__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Animal_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>New</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Breed__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Breed__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Breed__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Breed__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Colour__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Colour__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Colour__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Colour__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Crossbreed__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Crossbreed__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Crossbreed__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Crossbreed__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Date_of_Arrival__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Date_of_Arrival__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Current_Weight__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Current_Weight__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Current_Weight__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Current_Weight__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Estimated_Age__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Estimated_Age__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Estimated_Age__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Estimated_Age__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Entry_Reason__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Entry_Reason__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Entry_Reason__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Entry_Reason__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Gender__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Gender__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Gender__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Gender__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -123,42 +123,42 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Lost_Found__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Lost_Found__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Lost_Found__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Lost_Found__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Microchip__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Microchip__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue></stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Previous_Current_Owner__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Previous_Current_Owner__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Previous_Current_Owner__r.Id</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Previous_Current_Owner__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Secondary_Colour__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Secondary_Colour__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Secondary_Colour__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Secondary_Colour__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.Type__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Type__c</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Type__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>cloneAnimalRecord.IsCloned__c</assignToReference>
+            <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%IsCloned__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -213,7 +213,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>clonedAnimalCompletedRecord.IsCloned__c</assignToReference>
+            <assignToReference>clonedAnimalCompletedRecord.%%%NAMESPACED_ORG%%%IsCloned__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>false</booleanValue>
@@ -348,27 +348,27 @@
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <outputReference>animalToBeCloned</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Animal_Name__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Animal_Name__c</queriedFields>
         <queriedFields>Account__c</queriedFields>
-        <queriedFields>Animal_Status__c</queriedFields>
-        <queriedFields>Breed__c</queriedFields>
-        <queriedFields>Colour__c</queriedFields>
-        <queriedFields>Current_Weight__c</queriedFields>
-        <queriedFields>Date_of_Arrival__c</queriedFields>
-        <queriedFields>Entry_Reason__c</queriedFields>
-        <queriedFields>Estimated_Age__c</queriedFields>
-        <queriedFields>Gender__c</queriedFields>
-        <queriedFields>Lost_Found__c</queriedFields>
-        <queriedFields>Microchip__c</queriedFields>
-        <queriedFields>Previous_Current_Owner__c</queriedFields>
-        <queriedFields>Secondary_Colour__c</queriedFields>
-        <queriedFields>Size__c</queriedFields>
-        <queriedFields>Type__c</queriedFields>
-        <queriedFields>Crossbreed__c</queriedFields>
-        <queriedFields>IsCloned__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Animal_Status__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Breed__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Colour__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Current_Weight__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Date_of_Arrival__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Entry_Reason__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Estimated_Age__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Gender__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Lost_Found__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Microchip__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Previous_Current_Owner__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Secondary_Colour__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Size__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Type__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Crossbreed__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%IsCloned__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_IsCloned_Flag</name>
@@ -519,7 +519,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>cloneAnimalRecord</name>
@@ -527,7 +527,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>clonedAnimalCompletedRecord</name>
@@ -535,7 +535,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>clonedAnimalRecords</name>
@@ -543,7 +543,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>clonedAnimalsCompletedRecords</name>
@@ -551,7 +551,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>cloneRecordId</name>

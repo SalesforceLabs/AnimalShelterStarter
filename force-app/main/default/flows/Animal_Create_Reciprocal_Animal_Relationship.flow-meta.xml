@@ -30,30 +30,30 @@
         <locationX>176</locationX>
         <locationY>373</locationY>
         <inputAssignments>
-            <field>Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <value>
                 <elementReference>$Record.Related_Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Record_Created__c</field>
+            <field>%%%NAMESPACED_ORG%%%Record_Created__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Related_Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Related_Animal__c</field>
             <value>
                 <elementReference>$Record.Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Status__c</field>
             <value>
                 <stringValue>Current</stringValue>
             </value>
         </inputAssignments>
-        <object>Animal_Relationship__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Relationship__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordUpdates>
@@ -73,12 +73,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Record_Created__c</field>
+            <field>%%%NAMESPACED_ORG%%%Record_Created__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
-        <object>Animal_Relationship__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Relationship__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -88,13 +88,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Record_Created__c</field>
+            <field>%%%NAMESPACED_ORG%%%Record_Created__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>Animal_Relationship__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Relationship__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

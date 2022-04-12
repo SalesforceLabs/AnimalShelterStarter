@@ -53,7 +53,7 @@
     <formulas>
         <name>DaysCalculation</name>
         <dataType>Number</dataType>
-        <expression>IF({!varMovement.End_Date__c} = {!varMovement.Start_Date__c},1,({!varMovement.End_Date__c} - {!varMovement.Start_Date__c}))</expression>
+        <expression>IF({!varMovement.%%%NAMESPACED_ORG%%%End_Date__c} = {!varMovement.%%%NAMESPACED_ORG%%%Start_Date__c},1,({!varMovement.%%%NAMESPACED_ORG%%%End_Date__c} - {!varMovement.%%%NAMESPACED_ORG%%%Start_Date__c}))</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Length of Stay Calculation {!$Flow.CurrentDateTime}</interviewLabel>
@@ -97,25 +97,25 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varAnimalId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Type__c</field>
+            <field>%%%NAMESPACED_ORG%%%Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>conHoused</elementReference>
             </value>
         </filters>
-        <object>Movement__c</object>
+        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
         <outputReference>varMovements</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Start_Date__c</queriedFields>
-        <queriedFields>End_Date__c</queriedFields>
-        <sortField>Start_Date__c</sortField>
+        <queriedFields>%%%NAMESPACED_ORG%%%Start_Date__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%End_Date__c</queriedFields>
+        <sortField>%%%NAMESPACED_ORG%%%Start_Date__c</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
     <recordUpdates>
@@ -132,12 +132,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Total_Length_of_Stay_in_Shelter_Days__c</field>
+            <field>%%%NAMESPACED_ORG%%%Total_Length_of_Stay_in_Shelter_Days__c</field>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Set_Stay_Field_to_Zero_0</name>
@@ -153,12 +153,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Total_Length_of_Stay_in_Shelter_Days__c</field>
+            <field>%%%NAMESPACED_ORG%%%Total_Length_of_Stay_in_Shelter_Days__c</field>
             <value>
                 <elementReference>varTotalDays</elementReference>
             </value>
         </inputAssignments>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -181,7 +181,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Movement__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
     </variables>
     <variables>
         <name>varMovements</name>
@@ -189,7 +189,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Movement__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
     </variables>
     <variables>
         <name>varTotalDays</name>

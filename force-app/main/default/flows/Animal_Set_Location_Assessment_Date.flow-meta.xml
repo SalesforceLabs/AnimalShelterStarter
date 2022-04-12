@@ -7,14 +7,14 @@
         <locationX>1137</locationX>
         <locationY>70</locationY>
         <assignmentItems>
-            <assignToReference>locationRecord.Assessment_Due__c</assignToReference>
+            <assignToReference>locationRecord.%%%NAMESPACED_ORG%%%Assessment_Due__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>assessmentDatePlusPeriod</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>locationRecord.Last_Assessment_Date__c</assignToReference>
+            <assignToReference>locationRecord.%%%NAMESPACED_ORG%%%Last_Assessment_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>todaysDate</elementReference>
@@ -84,7 +84,7 @@
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <outputReference>locationRecord</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -168,7 +168,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
     </variables>
     <variables>
         <name>newAssessmentDate</name>

@@ -7,14 +7,14 @@
         <locationX>176</locationX>
         <locationY>758</locationY>
         <assignmentItems>
-            <assignToReference>varAnimalToBeReleased.Animal_Status__c</assignToReference>
+            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Animal_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Released</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varAnimalToBeReleased.Location_Status__c</assignToReference>
+            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Location_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Released</stringValue>
@@ -30,7 +30,7 @@
         <locationX>176</locationX>
         <locationY>518</locationY>
         <assignmentItems>
-            <assignToReference>varMovementRecord.End_Date__c</assignToReference>
+            <assignToReference>varMovementRecord.%%%NAMESPACED_ORG%%%End_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
@@ -51,7 +51,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varMovementRecord.Type__c</assignToReference>
+            <assignToReference>varMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Animal Released</stringValue>
@@ -65,49 +65,49 @@
     <dynamicChoiceSets>
         <name>choiceAnimalsToBeReleased</name>
         <dataType>String</dataType>
-        <displayField>Animal_Name__c</displayField>
+        <displayField>%%%NAMESPACED_ORG%%%Animal_Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Deceased</stringValue>
             </value>
         </filters>
         <filters>
-            <field>Animal_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Released</stringValue>
             </value>
         </filters>
         <filters>
-            <field>Location_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Release</stringValue>
             </value>
         </filters>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <outputAssignments>
-            <assignToReference>varAnimalToBeReleased.Animal_Status__c</assignToReference>
-            <field>Animal_Status__c</field>
+            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Animal_Status__c</assignToReference>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>varAnimalToBeReleased.Id</assignToReference>
             <field>Id</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>varAnimalToBeReleased.Location_Status__c</assignToReference>
-            <field>Location_Status__c</field>
+            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Location_Status__c</assignToReference>
+            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>varAnimalToBeReleased.Name</assignToReference>
             <field>Name</field>
         </outputAssignments>
-        <sortField>Animal_Name__c</sortField>
+        <sortField>%%%NAMESPACED_ORG%%%Animal_Name__c</sortField>
         <sortOrder>Asc</sortOrder>
-        <valueField>Animal_Name__c</valueField>
+        <valueField>%%%NAMESPACED_ORG%%%Animal_Name__c</valueField>
     </dynamicChoiceSets>
     <interviewLabel>Animal - Animal Release Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Animal Release Flow</label>
@@ -144,26 +144,26 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varAnimalToBeReleased.Id</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Type__c</field>
+            <field>%%%NAMESPACED_ORG%%%Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Release</stringValue>
             </value>
         </filters>
-        <object>Movement__c</object>
+        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
         <outputReference>varMovementRecord</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Release_Location__Latitude__s</queriedFields>
         <queriedFields>Release_Location__Longitude__s</queriedFields>
-        <queriedFields>Type__c</queriedFields>
-        <queriedFields>End_Date__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Type__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%End_Date__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Animal_Record</name>
@@ -322,7 +322,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>varMovementRecord</name>
@@ -330,6 +330,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Movement__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
     </variables>
 </Flow>

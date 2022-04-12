@@ -12,12 +12,12 @@
                 var records =response.getReturnValue();
                 records.forEach(function(record){
                     record.linkName = '/'+record.Id;
-                    if(record.Action_Completed__c){
-                            record.showClass = (record.Action_Completed__c === true ? 'redcolor' : 'blackcolor');
+                    if(record.%%%NAMESPACED_ORG%%%Action_Completed__c){
+                            record.showClass = (record.%%%NAMESPACED_ORG%%%Action_Completed__c === true ? 'redcolor' : 'blackcolor');
                             record.displayIconName = 'utility:check';  
                         }
                         else{
-                            record.showClass = (record.Action_Completed__c === false ? 'blackcolor' : 'redcolor');
+                            record.showClass = (record.%%%NAMESPACED_ORG%%%Action_Completed__c === false ? 'blackcolor' : 'redcolor');
                             record.displayIconName = 'utility:close';     
                         }
                 });

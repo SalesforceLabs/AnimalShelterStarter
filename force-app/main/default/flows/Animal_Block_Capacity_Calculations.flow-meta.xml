@@ -124,20 +124,20 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Parent_Block__c</field>
+            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varLocationId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Unit_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <outputReference>varLocationChildRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -153,13 +153,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Parent_Block__c</field>
+            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varLocationId</elementReference>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <outputReference>varLocationChildRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -177,12 +177,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Available_Capacity__c</field>
+            <field>%%%NAMESPACED_ORG%%%Available_Capacity__c</field>
             <value>
                 <elementReference>conZero</elementReference>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Update the Available Capacity value on the current Location</description>
@@ -199,12 +199,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Available_Capacity__c</field>
+            <field>%%%NAMESPACED_ORG%%%Available_Capacity__c</field>
             <value>
                 <elementReference>varAvailableCount</elementReference>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Update the Total Capacity value on the current Location</description>
@@ -224,12 +224,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Total_Capacity__c</field>
+            <field>%%%NAMESPACED_ORG%%%Total_Capacity__c</field>
             <value>
                 <elementReference>varTotalCount</elementReference>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -253,7 +253,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
     </variables>
     <variables>
         <name>varLocationChildRecords</name>
@@ -261,7 +261,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
     </variables>
     <variables>
         <name>varLocationId</name>

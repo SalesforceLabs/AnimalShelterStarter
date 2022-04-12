@@ -7,24 +7,24 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Animal__c</field>
+                <field>%%%NAMESPACED_ORG%%%Animal__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Assessment_Date_Time__c</field>
+                <field>%%%NAMESPACED_ORG%%%Assessment_Date_Time__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Assessment_Type__c</field>
+                <field>%%%NAMESPACED_ORG%%%Assessment_Type__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
-    <targetObject>Assessment__c</targetObject>
-    <targetParentField>Animal__c</targetParentField>
+    <targetObject>%%%NAMESPACED_ORG%%%Assessment__c</targetObject>
+    <targetParentField>%%%NAMESPACED_ORG%%%Animal__c</targetParentField>
     <type>Create</type>
 </QuickAction>

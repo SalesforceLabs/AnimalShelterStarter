@@ -16,7 +16,7 @@
     </pathAssistantSteps>
     <pathAssistantSteps>
         <fieldNames>Primary_Contact__c</fieldNames>
-        <fieldNames>Animal__c</fieldNames>
+        <fieldNames>%%%NAMESPACED_ORG%%%Animal__c</fieldNames>
         <picklistValueName>Initial Review</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>

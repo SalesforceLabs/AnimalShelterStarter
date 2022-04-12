@@ -3,22 +3,22 @@
     <fullName>Animal_Details</fullName>
     <description>General</description>
     <displayedFields>
-        <field>Animal_Name__c</field>
+        <field>%%%NAMESPACED_ORG%%%Animal_Name__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Type__c</field>
+        <field>%%%NAMESPACED_ORG%%%Type__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Breed__c</field>
+        <field>%%%NAMESPACED_ORG%%%Breed__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Colour__c</field>
+        <field>%%%NAMESPACED_ORG%%%Colour__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

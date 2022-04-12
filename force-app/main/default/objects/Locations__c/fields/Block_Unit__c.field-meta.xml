@@ -3,7 +3,7 @@
     <fullName>Block_Unit__c</fullName>
     <description>Displays the full path of the block and Unit</description>
     <externalId>false</externalId>
-    <formula>If ( RecordType.Name = &quot;Unit&quot; ,  Parent_Block__r.Name__c &amp; &quot; / &quot; &amp;  Name__c ,  Name__c )</formula>
+    <formula>If ( RecordType.Name = &quot;Unit&quot; ,  %%%NAMESPACED_ORG%%%Parent_Block__r.%%%NAMESPACED_ORG%%%Name__c &amp; &quot; / &quot; &amp;  %%%NAMESPACED_ORG%%%Name__c ,  %%%NAMESPACED_ORG%%%Name__c )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Block/Unit</label>
     <required>false</required>

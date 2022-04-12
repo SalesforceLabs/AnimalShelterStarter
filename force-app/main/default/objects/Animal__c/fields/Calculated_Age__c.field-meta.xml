@@ -2,9 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Calculated_Age__c</fullName>
     <externalId>false</externalId>
-    <formula>TEXT(FLOOR((TODAY() - Date_of_Birth__c )/365)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp; 
-TEXT(FLOOR(MOD((TODAY() - Date_of_Birth__c),365)/30)) &amp;&apos; MONTHS&apos; &amp; &apos; &apos; &amp; 
-TEXT(MOD(MOD((TODAY() - Date_of_Birth__c),365),30)) &amp;&apos; DAYS&apos;</formula>
+    <formula>TEXT(FLOOR((TODAY() - %%%NAMESPACED_ORG%%%Date_of_Birth__c )/365)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp; 
+TEXT(FLOOR(MOD((TODAY() - %%%NAMESPACED_ORG%%%Date_of_Birth__c),365)/30)) &amp;&apos; MONTHS&apos; &amp; &apos; &apos; &amp; 
+TEXT(MOD(MOD((TODAY() - %%%NAMESPACED_ORG%%%Date_of_Birth__c),365),30)) &amp;&apos; DAYS&apos;</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Calculated Age</label>
     <required>false</required>

@@ -22,11 +22,11 @@
     <label>Animal Shelter</label>
     <navType>Console</navType>
     <tabs>standard-home</tabs>
-    <tabs>Animal__c</tabs>
-    <tabs>Adoption__c</tabs>
-    <tabs>Animal_Action__c</tabs>
-    <tabs>Locations__c</tabs>
-    <tabs>Medicine__c</tabs>
+    <tabs>%%%NAMESPACED_ORG%%%Animal__c</tabs>
+    <tabs>%%%NAMESPACED_ORG%%%Adoption__c</tabs>
+    <tabs>%%%NAMESPACED_ORG%%%Animal_Action__c</tabs>
+    <tabs>%%%NAMESPACED_ORG%%%Locations__c</tabs>
+    <tabs>%%%NAMESPACED_ORG%%%Medicine__c</tabs>
     <tabs>standard-Task</tabs>
     <tabs>Capture</tabs>
     <tabs>Capture_Release</tabs>
@@ -36,13 +36,13 @@
     <utilityBar>Shelter_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
-            <tab>Adoption__c</tab>
+            <tab>%%%NAMESPACED_ORG%%%Adoption__c</tab>
         </mappings>
         <mappings>
-            <tab>Animal_Action__c</tab>
+            <tab>%%%NAMESPACED_ORG%%%Animal_Action__c</tab>
         </mappings>
         <mappings>
-            <tab>Animal__c</tab>
+            <tab>%%%NAMESPACED_ORG%%%Animal__c</tab>
         </mappings>
         <mappings>
             <tab>Capture</tab>
@@ -51,10 +51,10 @@
             <tab>Capture_Release</tab>
         </mappings>
         <mappings>
-            <tab>Locations__c</tab>
+            <tab>%%%NAMESPACED_ORG%%%Locations__c</tab>
         </mappings>
         <mappings>
-            <tab>Medicine__c</tab>
+            <tab>%%%NAMESPACED_ORG%%%Medicine__c</tab>
         </mappings>
         <mappings>
             <tab>standard-Dashboard</tab>

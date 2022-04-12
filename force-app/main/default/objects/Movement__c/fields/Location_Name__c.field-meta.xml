@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Location_Name__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( Location__r.RecordType.DeveloperName = &quot;Unit&quot;, Location__r.Block_Unit__c, Location__r.Name__c )</formula>
+    <formula>IF( %%%NAMESPACED_ORG%%%Location__r.RecordType.DeveloperName = &quot;Unit&quot;, %%%NAMESPACED_ORG%%%Location__r.%%%NAMESPACED_ORG%%%Block_Unit__c, %%%NAMESPACED_ORG%%%Location__r.%%%NAMESPACED_ORG%%%Name__c )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Location Name</label>
     <required>false</required>

@@ -1,12 +1,17 @@
 {
   "orgName": "Animal Shelter Starter - Beta Test Org",
   "edition": "Developer",
+  "country": "GB",
+  "instance": "cs121",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
     "chatterSettings": {
       "enableChatter": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
     },
     "userManagementSettings": {
       "enableNewProfileUI": true
@@ -16,5 +21,9 @@
       "sessionSettings": {
         "forceRelogin": false
       }
-    }  }
+    },
+    "languageSettings": {
+      "enableTranslationWorkbench": true
+    }
+  }
 }

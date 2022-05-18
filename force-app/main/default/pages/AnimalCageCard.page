@@ -1,64 +1,64 @@
-<apex:page standardController="Animal__c" showHeader="false" sidebar="false">
-    <style type="text/css">
-    	@page{
-    		size:A4 portrait;
-    		border: 2px solid black;
-    	}
-    	.headerTitle{
-    		font-family: arial, sans-serif;
-    		font-size: 20px;
-    		font-weight: 600;
-    		color: #fff!important;
-    		text-align: left;
-    		text-transform: uppercase;
-    		background: #4e75a3;
-    		display: block;
-    		padding: 10px;
-    		margin: 0;
-    	}
-    	.details{
-        	font-family: arial, sans-serif;
-    		font-size: 20px;
-    		font-weight: 600;
-        }
-        .actionBtnWrapper{
-        	float: right;
-        	margin-top: 10px;
-        	margin-left: 10px;
-        }
-        .actionBtnWrapper .btn{
-        	font-family: arial, sans-serif;
-    		font-size: 13px;
-    		font-weight: 600;
-    		color: #fff;
-    		text-align: center;
-    		background: #0b51a3;
-    		display: block;
-    		padding: 5px 10px;
-        	text-decoration: none;
-       		border: none;
-        	border-radius: 0;
-        	transition: 0.5s ease-in-out;
-        	cursor: pointer;
-        }
-        .actionBtnWrapper .btn:hover{
-        	color: #fff;
-        	text-decoration: none;
-        	background: #074894;
-        }
-	</style>
-    <h2 class="headerTitle">Animal Name: <apex:outputField value="{! Animal__c.Animal_Name__c }"/><br/></h2>
-    <apex:form >
-    	<apex:pageBlock >
-        	<apex:pageBlockSection columns="2">
-                <apex:outputText styleClass="details" value="{! Animal__c.Type__c }"/><br/>
-                <apex:outputText styleClass="details" value="{! Animal__c.Breed__c }"/><br/>
-                <apex:outputText value="{! Animal__c.Record_QR_Code__c }" escape="false"/><br/>
-                <apex:outputText styleClass="details" value="{! NOW() }"/>
-    	<div class="actionBtnWrapper">
-            <apex:commandButton styleClass="btn" value="Print" onclick="window.print();"/>
-        </div>
-            </apex:pageBlockSection>
-        </apex:pageBlock>
-    </apex:form>
+<apex:page standardController="Animal__c" showHeader="false" sidebar="false" renderAs="pdf" applyBodyTag="false" applyHtmlTag="false">
+	<html>
+        <head>
+            <style type="text/css">
+                @page {
+                	size: A4 landscape;
+                	margin: 10mm;
+                	border: 2px solid black;
+                	@bottom-center {
+                		content: element(footer-section);
+                	}
+                }
+                .title {
+                	font-family: Arial Unicode MS;
+    				font-size: 20px;
+    				font-weight: 600;
+    				color: #fff!important;
+    				text-align: center;
+    				text-transform: uppercase;
+    				background: #4e75a3;
+    				display: block;
+    				padding: 10px;
+    				margin: 0;
+    			}
+    			.details {
+        			font-family: Arial Unicode MS;
+    				font-size: 16px;
+    				font-weight: 600;
+  			   	}
+                .footer-section {
+                	font-family: Arial Unicode MS;
+    				font-size: 10px;
+    				font-weight: 600;
+    				display: block;
+    				padding: 10px;
+    				position: running(footer-section);
+                }
+                
+			</style>
+        </head>
+        <body>
+            <h1 class="title">Animal Name: <apex:outputField value="{! Animal__c.Animal_Name__c }"/><br/></h1>
+            
+            <apex:form >
+                <apex:pageBlock >
+                    <apex:pageBlockSection columns="2">
+                        <apex:outputText styleClass="details" value="{! Animal__c.Type__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Breed__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Colour__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Secondary_Colour__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Animal_Status__c }"/><br/>
+                        <apex:outputText value="{! Animal__c.Record_QR_Code__c }" escape="false"/><br/>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:outputText styleClass="details" value="{! NOW()}"/>
+            </apex:form>
+            <div class="footer-section">
+                <div>
+                    Animal Shelter Starter Pack
+                </div>
+            </div>
+        </body>
+    </html>
 </apex:page>

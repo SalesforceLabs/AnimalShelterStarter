@@ -1,3 +1,10 @@
+<!-- Visualforce Page: AnimalCageCard
+    Displays a subset of fields from current Animal Record to be printed
+    Date: 26th May 2022
+    Author: Chris Rolfe
+-->
+
+
 <apex:page standardController="Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
 	<html>
         <head>

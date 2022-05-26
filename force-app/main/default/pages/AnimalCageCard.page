@@ -1,10 +1,10 @@
-<apex:page standardController="Animal__c" showHeader="false" sidebar="false" renderAs="pdf" applyBodyTag="false" applyHtmlTag="false">
+<apex:page standardController="Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
 	<html>
         <head>
             <style type="text/css">
                 @page {
-                	size: A4 landscape;
-                	margin: 10mm;
+                	size: A5 landscape;
+                	margin: 5mm;
                 	border: 2px solid black;
                 	@bottom-center {
                 		content: element(footer-section);
@@ -31,6 +31,7 @@
                 	font-family: Arial Unicode MS;
     				font-size: 10px;
     				font-weight: 600;
+                	text-align: center;
     				display: block;
     				padding: 10px;
     				position: running(footer-section);
@@ -39,10 +40,13 @@
 			</style>
         </head>
         <body>
-            <h1 class="title">Animal Name: <apex:outputField value="{! Animal__c.Animal_Name__c }"/><br/></h1>
+            <h1 class="title">
+                <apex:outputText value="Animal Name: {! Animal__c.Animal_Name__c }"/><br/>
+            </h1>
             
             <apex:form >
-                <apex:pageBlock >
+                <apex:commandButton value="Print" onclick="window.print();"/>         
+                <apex:pageBlock > 
                     <apex:pageBlockSection columns="2">
                         <apex:outputText styleClass="details" value="{! Animal__c.Type__c }"/><br/>
                         <apex:outputText styleClass="details" value="{! Animal__c.Breed__c }"/><br/>
@@ -52,7 +56,7 @@
                         <apex:outputText value="{! Animal__c.Record_QR_Code__c }" escape="false"/><br/>
                     </apex:pageBlockSection>
                 </apex:pageBlock>
-                <apex:outputText styleClass="details" value="{! NOW()}"/>
+                <apex:outputText styleClass="details" value="Printed on {! NOW()}"/>
             </apex:form>
             <div class="footer-section">
                 <div>

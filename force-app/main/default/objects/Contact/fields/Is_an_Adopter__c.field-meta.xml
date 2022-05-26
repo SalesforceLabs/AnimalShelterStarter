@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_an_Adopter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used by Animal Shelter Starter Pack to indicate that the Contact has successfully adopted an Animal</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Contact is an Animal Adopter</inlineHelpText>
+    <label>Is an Adopter</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,75 @@
+<!-- Visualforce Page: AnimalCageCard
+    Displays a subset of fields from current Animal Record to be printed
+    Date: 26th May 2022
+    Author: Chris Rolfe
+-->
+
+
+<apex:page standardController="Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+	<html>
+        <head>
+            <style type="text/css">
+                @page {
+                	size: A5 landscape;
+                	margin: 5mm;
+                	border: 2px solid black;
+                	@bottom-center {
+                		content: element(footer-section);
+                	}
+                }
+                .title {
+                	font-family: Arial Unicode MS;
+    				font-size: 20px;
+    				font-weight: 600;
+    				color: #fff!important;
+    				text-align: center;
+    				text-transform: uppercase;
+    				background: #4e75a3;
+    				display: block;
+    				padding: 10px;
+    				margin: 0;
+    			}
+    			.details {
+        			font-family: Arial Unicode MS;
+    				font-size: 16px;
+    				font-weight: 600;
+  			   	}
+                .footer-section {
+                	font-family: Arial Unicode MS;
+    				font-size: 10px;
+    				font-weight: 600;
+                	text-align: center;
+    				display: block;
+    				padding: 10px;
+    				position: running(footer-section);
+                }
+                
+			</style>
+        </head>
+        <body>
+            <h1 class="title">
+                <apex:outputText value="Animal Name: {! Animal__c.Animal_Name__c }"/><br/>
+            </h1>
+            
+            <apex:form >
+                <apex:commandButton value="Print" onclick="window.print();"/>         
+                <apex:pageBlock > 
+                    <apex:pageBlockSection columns="2">
+                        <apex:outputText styleClass="details" value="{! Animal__c.Type__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Breed__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Colour__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Secondary_Colour__c }"/><br/>
+                        <apex:outputText styleClass="details" value="{! Animal__c.Animal_Status__c }"/><br/>
+                        <apex:outputText value="{! Animal__c.Record_QR_Code__c }" escape="false"/><br/>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:outputText styleClass="details" value="Printed on {! NOW()}"/>
+            </apex:form>
+            <div class="footer-section">
+                <div>
+                    Animal Shelter Starter Pack
+                </div>
+            </div>
+        </body>
+    </html>
+</apex:page>

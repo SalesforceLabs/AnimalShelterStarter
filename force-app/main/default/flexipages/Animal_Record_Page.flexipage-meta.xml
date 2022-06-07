@@ -690,6 +690,20 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Site__c</fieldItem>
+                <identifier>RecordSite_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-98195362-64d2-471a-a0a6-9315fc9ee637</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -697,6 +711,16 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-98195362-64d2-471a-a0a6-9315fc9ee637</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column1</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-2b002289-d916-4f50-9704-fb0e6eff97c4</name>

@@ -3,9 +3,10 @@
     <fullName>Block_Unit__c</fullName>
     <description>Displays the full path of the block and Unit</description>
     <externalId>false</externalId>
-    <formula>If ( RecordType.Name = &quot;Unit&quot; , Parent_Block__r.Parent_Block__r.Name__c &amp; &quot; / &quot; &amp;  Parent_Block__r.Name__c &amp; &quot; / &quot; &amp; Name__c,
-If ( RecordType.Name = &quot;Block&quot;, Parent_Block__r.Name__c &amp; &quot; / &quot; &amp; Name__c,
-If ( RecordType.Name = &quot;Site&quot;, Name__c, NULL)))</formula>
+    <formula>CASE(  RecordType.Name,
+&apos;Block&apos;, IF(ISBLANK( Sitename__c), Name__c,  Parent_Block__r.Name__c &amp; &apos; / &apos; &amp; Name__c),
+&apos;Unit&apos;, IF(ISBLANK( Sitename__c), Parent_Block__r.Name__c &amp; &apos; / &apos; &amp; Name__c,  Parent_Block__r.Parent_Block__r.Name__c &amp; &apos; / &apos; &amp; Parent_Block__r.Name__c &amp; &apos; / &apos; &amp; Name__c),
+&apos;Site&apos;, Name__c, NULL)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Block/Unit</label>
     <required>false</required>

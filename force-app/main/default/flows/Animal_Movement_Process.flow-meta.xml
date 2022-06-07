@@ -23,35 +23,35 @@
         <locationX>3602</locationX>
         <locationY>606</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Start_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conBoarding</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Location__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>LocationId</elementReference>
@@ -83,35 +83,35 @@
         <locationX>3762</locationX>
         <locationY>1159</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Start_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conFostered</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Location__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>FosterId</elementReference>
@@ -127,35 +127,35 @@
         <locationX>3320</locationX>
         <locationY>1414</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Start_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Adopted, See Adoption Record</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%End_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.End_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
@@ -200,38 +200,38 @@
     <assignments>
         <name>House_Movement_Record</name>
         <label>House Movement Record</label>
-        <locationX>3606</locationX>
-        <locationY>476</locationY>
+        <locationX>3581</locationX>
+        <locationY>403</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Start_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conHoused</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Location__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>LocationId</elementReference>
@@ -247,35 +247,35 @@
         <locationX>3741</locationX>
         <locationY>987</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Start_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conTransferred</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Location__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>OrganisationId</elementReference>
@@ -745,10 +745,10 @@
     <dynamicChoiceSets>
         <name>BoarderLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Block_Unit__c</displayField>
+        <displayField>Block_Unit__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Available_for_Boarding__c</field>
+            <field>Available_for_Boarding__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -761,18 +761,18 @@
                 <elementReference>UnitRecordType</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Block_Unit__c</sortField>
+        <sortField>Block_Unit__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>FosterLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Name__c</displayField>
+        <displayField>Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
@@ -781,18 +781,18 @@
                 <elementReference>FosterRecordType</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>FosterId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Name__c</sortField>
+        <sortField>Name__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>OrganisationLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Name__c</displayField>
+        <displayField>Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
@@ -801,18 +801,18 @@
                 <elementReference>OrganisationRecordType</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>OrganisationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Name__c</sortField>
+        <sortField>Name__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>UnitLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Block_Unit__c</displayField>
+        <displayField>Block_Unit__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
@@ -822,18 +822,18 @@
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Block_Unit__c</sortField>
+        <sortField>Block_Unit__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <formulas>
@@ -919,36 +919,36 @@
             <targetReference>Error_Screen_2</targetReference>
         </faultConnector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%End_Date__c</field>
+            <field>End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Start_Date__c</field>
+            <field>Start_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
             <value>
                 <elementReference>conDeceased</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
@@ -964,30 +964,30 @@
             <targetReference>Release_Error_Screen</targetReference>
         </faultConnector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Start_Date__c</field>
+            <field>Start_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
             <value>
                 <elementReference>conRelease</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
     </recordCreates>
     <recordCreates>
         <name>Create_Tasks</name>
@@ -1056,14 +1056,14 @@
                 <elementReference>AnimalId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <outputAssignments>
             <assignToReference>AnimalName</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Animal_Name__c</field>
+            <field>Animal_Name__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>AnimalStatus</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <field>Animal_Status__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -1080,20 +1080,20 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <outputReference>MovementRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -1117,14 +1117,14 @@
                 <elementReference>ExistingLocationId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>BlockUnitName</assignToReference>
             <field>Block_Unit__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>LocationName</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Name__c</field>
+            <field>Name__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -1141,31 +1141,31 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <outputAssignments>
             <assignToReference>MovementId</assignToReference>
             <field>Id</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>ExistingLocationId</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Location__c</field>
+            <field>Location__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>MovementType</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -1199,7 +1199,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1228,10 +1228,10 @@
                 <elementReference>newMovementId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <outputAssignments>
             <assignToReference>newLocationName</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Location_Name__c</field>
+            <field>Location_Name__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -1251,14 +1251,18 @@
                 <elementReference>newMovementId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <outputAssignments>
             <assignToReference>varNewLocationName</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Location_Name__c</field>
+            <field>Location_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varNewSiteName</assignToReference>
+            <field>Sitename__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>varNewMovementType</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -1285,7 +1289,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1348,7 +1352,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1377,12 +1381,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Deceased_Date_and_Status</name>
@@ -1404,24 +1408,24 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <field>Animal_Status__c</field>
             <value>
                 <stringValue>Deceased</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Deceased_Date__c</field>
+            <field>Deceased_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <value>
                 <stringValue></stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Location_Status_for_Transferred_and_Fostered</name>
@@ -1440,12 +1444,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <value>
-                <elementReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Type__c</elementReference>
+                <elementReference>varNewMovementRecord.Type__c</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <inputAssignments>
+            <field>Site__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Location_Status_to_Housed</name>
@@ -1464,12 +1474,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <value>
                 <elementReference>fmlLocationName</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <inputAssignments>
+            <field>Site__c</field>
+            <value>
+                <elementReference>varNewSiteName</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Location_Status_to_Release</name>
@@ -1491,12 +1507,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <value>
                 <elementReference>conRelease</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Current_Movement_Record</name>
@@ -1518,18 +1534,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%End_Date__c</field>
+            <field>End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Location_Status</name>
@@ -1551,12 +1567,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Allocated</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <screens>
         <name>Animal_Already_Deceased</name>
@@ -1865,6 +1881,7 @@
                     <stringValue>Select to Generate Tasks</stringValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1968,8 +1985,8 @@
     <screens>
         <name>Unit_Selection_Screen</name>
         <label>Unit Selection Screen</label>
-        <locationX>3238</locationX>
-        <locationY>473</locationY>
+        <locationX>3236</locationX>
+        <locationY>403</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2084,7 +2101,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
     <variables>
         <name>MovementType</name>
@@ -2148,7 +2165,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
     <variables>
         <name>varNewLocationName</name>
@@ -2163,10 +2180,17 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
     <variables>
         <name>varNewMovementType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varNewSiteName</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

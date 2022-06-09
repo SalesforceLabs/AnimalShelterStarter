@@ -189,6 +189,12 @@
         <locationX>176</locationX>
         <locationY>1175</locationY>
         <inputAssignments>
+            <field>Date_Collected__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Date_of_Adoption__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
@@ -216,6 +222,12 @@
             <field>Animal_Status__c</field>
             <value>
                 <stringValue>Adopted</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location_Status__c</field>
+            <value>
+                <stringValue>Adopted - See Adoption Record</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

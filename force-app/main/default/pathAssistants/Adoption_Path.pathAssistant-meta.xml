@@ -7,7 +7,7 @@
     <pathAssistantSteps>
         <fieldNames>Date_of_Adoption__c</fieldNames>
         <fieldNames>Date_Collected__c</fieldNames>
-        <info>&lt;p&gt;Please remember to update the Animal&amp;#39;s Location&lt;/p&gt;</info>
+        <info>&lt;p&gt;A new Movement record will automatically be created.&lt;/p&gt;</info>
         <picklistValueName>Adopted</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
@@ -16,7 +16,7 @@
     </pathAssistantSteps>
     <pathAssistantSteps>
         <fieldNames>Primary_Contact__c</fieldNames>
-        <fieldNames>%%%NAMESPACED_ORG%%%Animal__c</fieldNames>
+        <fieldNames>Animal__c</fieldNames>
         <picklistValueName>Initial Review</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>

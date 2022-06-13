@@ -55,6 +55,11 @@
                 <default>false</default>
                 <label>Released</label>
             </value>
+            <value>
+                <fullName>Adopted</fullName>
+                <default>false</default>
+                <label>Adopted</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

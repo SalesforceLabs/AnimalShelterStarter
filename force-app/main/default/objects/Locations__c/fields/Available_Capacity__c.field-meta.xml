@@ -3,7 +3,7 @@
     <fullName>Available_Capacity__c</fullName>
     <description>The available capacity of the block, i.e. number of available units.  Populated by a flow</description>
     <externalId>false</externalId>
-    <label>Available Capacity</label>
+    <label>Block Available Capacity</label>
     <precision>2</precision>
     <required>false</required>
     <scale>0</scale>

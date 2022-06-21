@@ -620,10 +620,10 @@
             </value>
         </filters>
         <filters>
-            <field>Unit_Status__c</field>
-            <operator>EqualTo</operator>
+            <field>Availability__c</field>
+            <operator>NotEqualTo</operator>
             <value>
-                <stringValue>Available</stringValue>
+                <numberValue>0.0</numberValue>
             </value>
         </filters>
         <object>Locations__c</object>
@@ -1536,7 +1536,7 @@
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>CreateMovementRecord</name>
         <label>CreateMovementRecord</label>

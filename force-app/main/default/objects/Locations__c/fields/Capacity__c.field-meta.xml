@@ -3,7 +3,7 @@
     <fullName>Capacity__c</fullName>
     <defaultValue>1</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>The capacity of the Unit/Foster/Organisation.  I.e. for a single animal capacity = 1.  If you do not wish to track capacity set to 0</inlineHelpText>
+    <inlineHelpText>The capacity of the Unit/Foster/Organisation, if Location Capacity is set to Multiple Animals</inlineHelpText>
     <label>Capacity</label>
     <precision>2</precision>
     <required>false</required>

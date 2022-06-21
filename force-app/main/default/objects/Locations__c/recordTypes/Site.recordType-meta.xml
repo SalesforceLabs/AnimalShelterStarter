@@ -72,6 +72,21 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Location_Capacity__c</picklist>
+        <values>
+            <fullName>Multiple Animals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Animal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Untracked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Unit_Status__c</picklist>
         <values>
             <fullName>Allocated</fullName>

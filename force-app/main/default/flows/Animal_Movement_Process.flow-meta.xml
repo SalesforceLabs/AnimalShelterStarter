@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Task_Subject</name>
         <label>Assign Task Subject</label>
-        <locationX>6153</locationX>
+        <locationX>6461</locationX>
         <locationY>841</locationY>
         <assignmentItems>
             <assignToReference>taskSubject</assignToReference>
@@ -20,52 +20,24 @@
     <assignments>
         <name>Boarded_Movement_Record</name>
         <label>Boarded Movement Record</label>
-        <locationX>3602</locationX>
-        <locationY>606</locationY>
+        <locationX>3791</locationX>
+        <locationY>657</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
+            <assignToReference>newMovementType</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conBoarding</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>LocationId</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
-            <targetReference>Create_Movement_Record</targetReference>
+            <targetReference>CreateMovementRecord</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Count_Movement_Records</name>
         <label>Count Movement Records</label>
-        <locationX>584</locationX>
-        <locationY>356</locationY>
+        <locationX>1177</locationX>
+        <locationY>388</locationY>
         <assignmentItems>
             <assignToReference>MovementCount</assignToReference>
             <operator>AssignCount</operator>
@@ -80,219 +52,67 @@
     <assignments>
         <name>Foster_Movement_Record</name>
         <label>Foster Movement Record</label>
-        <locationX>3762</locationX>
+        <locationX>4070</locationX>
         <locationY>1159</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
+            <assignToReference>newMovementType</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conFostered</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>FosterId</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
-            <targetReference>Create_Movement_Record_2nd_Path</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Foster_Movement_Record_0</name>
-        <label>Foster Movement Record</label>
-        <locationX>3320</locationX>
-        <locationY>1414</locationY>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Adopted, See Adoption Record</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.End_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Create_Movement_Record_2nd_Path</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Get_new_Movement_Record_Id</name>
-        <label>Get new Movement Record Id</label>
-        <locationX>3961</locationX>
-        <locationY>535</locationY>
-        <assignmentItems>
-            <assignToReference>newMovementId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>varNewMovementRecord.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_Newly_Created_Movement_Record</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Get_new_Movement_Record_Id_0</name>
-        <label>Get new Movement Record Id</label>
-        <locationX>4641</locationX>
-        <locationY>1100</locationY>
-        <assignmentItems>
-            <assignToReference>newMovementId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>varNewMovementRecord.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Animal_Location_Status_for_Transferred_and_Fostered</targetReference>
+            <targetReference>CreateMovementRecord</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>House_Movement_Record</name>
         <label>House Movement Record</label>
-        <locationX>3581</locationX>
-        <locationY>403</locationY>
+        <locationX>3795</locationX>
+        <locationY>448</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
+            <assignToReference>newMovementType</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conHoused</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>CreateMovementRecord</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Release_Movement_Record</name>
+        <label>Release Movement Record</label>
+        <locationX>3430</locationX>
+        <locationY>267</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
+            <assignToReference>newMovementType</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>LocationId</elementReference>
+                <elementReference>conRelease</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_Movement_Record</targetReference>
+            <targetReference>CreateMovementRecord</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Transferred_Movement_Record</name>
         <label>Transferred Movement Record</label>
-        <locationX>3741</locationX>
-        <locationY>987</locationY>
+        <locationX>3988</locationX>
+        <locationY>833</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
+            <assignToReference>newMovementType</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>conTransferred</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OrganisationId</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
-            <targetReference>Create_Movement_Record_2nd_Path</targetReference>
+            <targetReference>CreateMovementRecord</targetReference>
         </connector>
     </assignments>
-    <choices>
-        <name>adoptedMovement</name>
-        <choiceText>Animal has been adopted</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <elementReference>conAdopted</elementReference>
-        </value>
-    </choices>
     <choices>
         <name>boardingMovement</name>
         <choiceText>Animal is Boarding</choiceText>
@@ -358,13 +178,6 @@
         </value>
     </choices>
     <constants>
-        <name>conAdopted</name>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Adopted</stringValue>
-        </value>
-    </constants>
-    <constants>
         <name>conBoarding</name>
         <dataType>String</dataType>
         <value>
@@ -416,8 +229,8 @@
     <decisions>
         <name>Animal_Deceased_Path</name>
         <label>Animal Deceased Path?</label>
-        <locationX>2480</locationX>
-        <locationY>1712</locationY>
+        <locationX>2773</locationX>
+        <locationY>1715</locationY>
         <defaultConnector>
             <targetReference>Get_Unit_RecordType</targetReference>
         </defaultConnector>
@@ -433,7 +246,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_new_Deceased_Movement_Record</targetReference>
+                <targetReference>Movement_Complete</targetReference>
             </connector>
             <label>Yes - Animal Deceased</label>
         </rules>
@@ -441,8 +254,8 @@
     <decisions>
         <name>Any_Existing_Movement_records</name>
         <label>Any Existing Movement records?</label>
-        <locationX>441</locationX>
-        <locationY>728</locationY>
+        <locationX>834</locationX>
+        <locationY>925</locationY>
         <defaultConnector>
             <targetReference>Get_Unit_RecordType</targetReference>
         </defaultConnector>
@@ -466,8 +279,8 @@
     <decisions>
         <name>Continue_With_Flow</name>
         <label>Continue With Flow?</label>
-        <locationX>1453</locationX>
-        <locationY>1959</locationY>
+        <locationX>1643</locationX>
+        <locationY>1802</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Continue</name>
@@ -503,8 +316,8 @@
     <decisions>
         <name>Is_the_Animal_Deceased_with_an_Active_Deceased_Movement_Record</name>
         <label>Is the Animal Deceased with an Active Deceased Movement Record</label>
-        <locationX>1453</locationX>
-        <locationY>1341</locationY>
+        <locationX>1296</locationX>
+        <locationY>1124</locationY>
         <defaultConnector>
             <targetReference>Animal_Has_Existing_Location_Screen</targetReference>
         </defaultConnector>
@@ -557,8 +370,8 @@
     <decisions>
         <name>More_than_1_Current_Movement</name>
         <label>More than 1 Current Movement?</label>
-        <locationX>855</locationX>
-        <locationY>1016</locationY>
+        <locationX>1300</locationX>
+        <locationY>590</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>More_than_1</name>
@@ -594,8 +407,8 @@
     <decisions>
         <name>Need_to_Generate_Tasks</name>
         <label>Need to Generate Tasks?</label>
-        <locationX>5525</locationX>
-        <locationY>1084</locationY>
+        <locationX>5581</locationX>
+        <locationY>719</locationY>
         <defaultConnector>
             <targetReference>Movement_Complete</targetReference>
         </defaultConnector>
@@ -619,8 +432,8 @@
     <decisions>
         <name>Update_Deceased_Animal</name>
         <label>Update Deceased Animal</label>
-        <locationX>1955</locationX>
-        <locationY>1547</locationY>
+        <locationX>2240</locationX>
+        <locationY>1438</locationY>
         <defaultConnector>
             <targetReference>Check_Deceased_Animal</targetReference>
         </defaultConnector>
@@ -644,7 +457,7 @@
     <decisions>
         <name>What_Type_of_Move</name>
         <label>What Type of Move?</label>
-        <locationX>3178</locationX>
+        <locationX>3486</locationX>
         <locationY>1222</locationY>
         <defaultConnector>
             <targetReference>Deceased_Selection_Screen</targetReference>
@@ -711,21 +524,6 @@
             <label>Boarding</label>
         </rules>
         <rules>
-            <name>Adopted</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Choose_a_Movement</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>adoptedMovement</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Foster_Movement_Record_0</targetReference>
-            </connector>
-            <label>Adopted</label>
-        </rules>
-        <rules>
             <name>Release</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
@@ -736,7 +534,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_new_Release_Movement_Record</targetReference>
+                <targetReference>Release_Movement_Record</targetReference>
             </connector>
             <label>Release</label>
         </rules>
@@ -783,7 +581,7 @@
         </filters>
         <object>Locations__c</object>
         <outputAssignments>
-            <assignToReference>FosterId</assignToReference>
+            <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
         <sortField>Name__c</sortField>
@@ -803,7 +601,7 @@
         </filters>
         <object>Locations__c</object>
         <outputAssignments>
-            <assignToReference>OrganisationId</assignToReference>
+            <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
         <sortField>Name__c</sortField>
@@ -849,15 +647,15 @@
     <formulas>
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
-        <expression>CASE({!Choose_a_Movement}, {!adoptedMovement}, (&quot;Prepare &quot; + {!AnimalName} + &quot; for new Owners&quot;), {!boardingMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to Boarding Unit &quot; + {!newLocationName}) , {!fosterMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to Foster &quot; + {!newLocationName}), {!housedMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to &quot; + {!newLocationName}), {!transferredMovement}, (&quot;Move &quot; + {!AnimalName} + &quot;  to Organisation &quot; + {!newLocationName}), {!releaseMovement}, (&quot;Prepare &quot; + {!AnimalName} + &quot; for Release&quot;), &quot;None&quot;)</expression>
+        <expression>CASE({!Choose_a_Movement}, {!boardingMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to Boarding Unit &quot; + {!newLocationName}) , {!fosterMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to Foster &quot; + {!newLocationName}), {!housedMovement}, (&quot;Move &quot; + {!AnimalName} + &quot; to &quot; + {!newLocationName}), {!transferredMovement}, (&quot;Move &quot; + {!AnimalName} + &quot;  to Organisation &quot; + {!newLocationName}), {!releaseMovement}, (&quot;Prepare &quot; + {!AnimalName} + &quot; for Release&quot;), &quot;None&quot;)</expression>
     </formulas>
     <interviewLabel>Animal - Movement Process {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Movement Process</label>
     <loops>
         <name>Loop_Through_Movement_Records</name>
         <label>Loop Through Movement Records</label>
-        <locationX>580</locationX>
-        <locationY>591</locationY>
+        <locationX>842</locationX>
+        <locationY>466</locationY>
         <assignNextValueToReference>varMovementRecord</assignNextValueToReference>
         <collectionReference>MovementRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -888,111 +686,9 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Create_Movement_Record</name>
-        <label>Create Movement Record</label>
-        <locationX>3814</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Get_new_Movement_Record_Id</targetReference>
-        </connector>
-        <inputReference>varNewMovementRecord</inputReference>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Movement_Record_2nd_Path</name>
-        <label>Create Movement Record 2nd Path</label>
-        <locationX>4398</locationX>
-        <locationY>1094</locationY>
-        <connector>
-            <targetReference>Get_new_Movement_Record_Id_0</targetReference>
-        </connector>
-        <inputReference>varNewMovementRecord</inputReference>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_new_Deceased_Movement_Record</name>
-        <label>Create new Deceased Movement Record</label>
-        <locationX>4831</locationX>
-        <locationY>1757</locationY>
-        <connector>
-            <targetReference>Movement_Complete</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Error_Screen_2</targetReference>
-        </faultConnector>
-        <inputAssignments>
-            <field>Animal__c</field>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Current__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>End_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Start_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Type__c</field>
-            <value>
-                <elementReference>conDeceased</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Movement__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_new_Release_Movement_Record</name>
-        <label>Create new Release Movement Record</label>
-        <locationX>2860</locationX>
-        <locationY>155</locationY>
-        <assignRecordIdToReference>newMovementId</assignRecordIdToReference>
-        <connector>
-            <targetReference>Update_Animal_Location_Status_to_Release</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Release_Error_Screen</targetReference>
-        </faultConnector>
-        <inputAssignments>
-            <field>Animal__c</field>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Current__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Start_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Type__c</field>
-            <value>
-                <elementReference>conRelease</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Movement__c</object>
-    </recordCreates>
-    <recordCreates>
         <name>Create_Tasks</name>
         <label>Create Tasks</label>
-        <locationX>6445</locationX>
+        <locationX>6753</locationX>
         <locationY>969</locationY>
         <connector>
             <targetReference>Movement_Complete</targetReference>
@@ -1042,8 +738,8 @@
     <recordLookups>
         <name>Get_Animal_Status</name>
         <label>Get Animal Status</label>
-        <locationX>1463</locationX>
-        <locationY>1150</locationY>
+        <locationX>1304</locationX>
+        <locationY>800</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_the_Animal_Deceased_with_an_Active_Deceased_Movement_Record</targetReference>
@@ -1069,8 +765,8 @@
     <recordLookups>
         <name>Get_Any_Current_Movement_Records</name>
         <label>Get Any Current Movement Records</label>
-        <locationX>218</locationX>
-        <locationY>726</locationY>
+        <locationX>654</locationX>
+        <locationY>922</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Any_Existing_Movement_records</targetReference>
@@ -1098,43 +794,13 @@
         <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordLookups>
-        <name>Get_Current_Location_Record</name>
-        <label>Get Current Location Record</label>
-        <locationX>1312</locationX>
-        <locationY>1020</locationY>
+        <name>Get_Current_Movement_and_Location_Record_ID</name>
+        <label>Get Current Movement  and Location Record ID</label>
+        <locationX>984</locationX>
+        <locationY>791</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Animal_Status</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>ExistingLocationId</elementReference>
-            </value>
-        </filters>
-        <object>Locations__c</object>
-        <outputAssignments>
-            <assignToReference>BlockUnitName</assignToReference>
-            <field>Block_Unit__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>LocationName</assignToReference>
-            <field>Name__c</field>
-        </outputAssignments>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Current_Movement_and_Location_Record_ID</name>
-        <label>Get Current Movement  and Location Record ID</label>
-        <locationX>1151</locationX>
-        <locationY>1020</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Current_Location_Record</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
@@ -1160,8 +826,16 @@
             <field>Id</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>FullLocationName</assignToReference>
+            <field>Location_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>ExistingLocationId</assignToReference>
             <field>Location__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SiteName</assignToReference>
+            <field>Sitename__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>MovementType</assignToReference>
@@ -1171,7 +845,7 @@
     <recordLookups>
         <name>Get_Foster_RecordType</name>
         <label>Get Foster RecordType</label>
-        <locationX>3438</locationX>
+        <locationX>3746</locationX>
         <locationY>1166</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1211,7 +885,7 @@
     <recordLookups>
         <name>Get_Internal_Location_Name</name>
         <label>Get Internal Location Name</label>
-        <locationX>5998</locationX>
+        <locationX>6306</locationX>
         <locationY>839</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1235,40 +909,9 @@
         </outputAssignments>
     </recordLookups>
     <recordLookups>
-        <name>Get_Newly_Created_Movement_Record</name>
-        <label>Get Newly Created Movement Record</label>
-        <locationX>4099</locationX>
-        <locationY>535</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Update_Animal_Location_Status_to_Housed</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>newMovementId</elementReference>
-            </value>
-        </filters>
-        <object>Movement__c</object>
-        <outputAssignments>
-            <assignToReference>varNewLocationName</assignToReference>
-            <field>Location_Name__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>varNewSiteName</assignToReference>
-            <field>Sitename__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>varNewMovementType</assignToReference>
-            <field>Type__c</field>
-        </outputAssignments>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Organisation_RecordType</name>
         <label>Get Organisation RecordType</label>
-        <locationX>3325</locationX>
+        <locationX>3633</locationX>
         <locationY>993</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1301,7 +944,7 @@
     <recordLookups>
         <name>Get_Queue_ID</name>
         <label>Get Queue ID</label>
-        <locationX>5846</locationX>
+        <locationX>6154</locationX>
         <locationY>839</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1334,7 +977,7 @@
     <recordLookups>
         <name>Get_Unit_RecordType</name>
         <label>Get Unit RecordType</label>
-        <locationX>2498</locationX>
+        <locationX>2806</locationX>
         <locationY>845</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1364,7 +1007,7 @@
     <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
-        <locationX>2472</locationX>
+        <locationX>2780</locationX>
         <locationY>1920</locationY>
         <connector>
             <targetReference>Animal_Deceased_Path</targetReference>
@@ -1391,10 +1034,10 @@
     <recordUpdates>
         <name>Update_Animal_Deceased_Date_and_Status</name>
         <label>Update Animal Deceased Date and Status</label>
-        <locationX>3838</locationX>
-        <locationY>1914</locationY>
+        <locationX>4004</locationX>
+        <locationY>1607</locationY>
         <connector>
-            <targetReference>Create_new_Deceased_Movement_Record</targetReference>
+            <targetReference>Movement_Complete</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen_2</targetReference>
@@ -1428,97 +1071,10 @@
         <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Animal_Location_Status_for_Transferred_and_Fostered</name>
-        <label>Update Animal Location Status for Transferred and Fostered</label>
-        <locationX>4932</locationX>
-        <locationY>1093</locationY>
-        <connector>
-            <targetReference>Need_to_Generate_Tasks</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Location_Status__c</field>
-            <value>
-                <elementReference>varNewMovementRecord.Type__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Site__c</field>
-            <value>
-                <stringValue></stringValue>
-            </value>
-        </inputAssignments>
-        <object>Animal__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Animal_Location_Status_to_Housed</name>
-        <label>Update Animal Location Status to Housed</label>
-        <locationX>4346</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Update_Location_Status</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Location_Status__c</field>
-            <value>
-                <elementReference>fmlLocationName</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Site__c</field>
-            <value>
-                <elementReference>varNewSiteName</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Animal__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Animal_Location_Status_to_Release</name>
-        <label>Update Animal Location Status to Release</label>
-        <locationX>5289</locationX>
-        <locationY>154</locationY>
-        <connector>
-            <targetReference>Release_Notification_Screen</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Release_Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Location_Status__c</field>
-            <value>
-                <elementReference>conRelease</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Animal__c</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Current_Movement_Record</name>
         <label>Update Current Movement Record</label>
-        <locationX>2240</locationX>
-        <locationY>1912</locationY>
+        <locationX>2538</locationX>
+        <locationY>1833</locationY>
         <connector>
             <targetReference>Reset_Location_Status</targetReference>
         </connector>
@@ -1547,38 +1103,11 @@
         </inputAssignments>
         <object>Movement__c</object>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Location_Status</name>
-        <label>Update Location Status</label>
-        <locationX>4641</locationX>
-        <locationY>540</locationY>
-        <connector>
-            <targetReference>Need_to_Generate_Tasks</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Error_Screen_2</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>LocationId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Unit_Status__c</field>
-            <value>
-                <stringValue>Allocated</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Locations__c</object>
-    </recordUpdates>
     <screens>
         <name>Animal_Already_Deceased</name>
         <label>Animal Already Deceased</label>
-        <locationX>1735</locationX>
-        <locationY>1545</locationY>
+        <locationX>1880</locationX>
+        <locationY>1121</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1610,8 +1139,8 @@
     <screens>
         <name>Animal_Already_Deceased_With_Correct_Movement_Record</name>
         <label>Animal Already Deceased With Correct Movement Record</label>
-        <locationX>1738</locationX>
-        <locationY>1199</locationY>
+        <locationX>1104</locationX>
+        <locationY>1315</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1626,8 +1155,8 @@
     <screens>
         <name>Animal_Has_Existing_Location_Screen</name>
         <label>Animal Has Existing Location Screen</label>
-        <locationX>1460</locationX>
-        <locationY>1682</locationY>
+        <locationX>1563</locationX>
+        <locationY>1552</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1636,7 +1165,7 @@
         </connector>
         <fields>
             <name>Animal_Has_Existing_Location_Screen_Text</name>
-            <fieldText>&lt;p&gt;Hmm! This animal already has a current location&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;{!LocationName}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Continuing will free up the current location and allow you to assign a new location.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;To leave the animal in its current location, exit here&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Hmm! This animal already has a current location&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;{!SiteName} {!FullLocationName}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Continuing will free up the current location and allow you to assign a new location.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;To leave the animal in its current location, exit here&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1654,7 +1183,7 @@
     <screens>
         <name>Boarder_Selection_Screen</name>
         <label>Boarder Selection Screen</label>
-        <locationX>3338</locationX>
+        <locationX>3646</locationX>
         <locationY>604</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1681,8 +1210,8 @@
     <screens>
         <name>Check_Deceased_Animal</name>
         <label>Check Deceased Animal</label>
-        <locationX>1966</locationX>
-        <locationY>1786</locationY>
+        <locationX>2112</locationX>
+        <locationY>1646</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1697,8 +1226,8 @@
     <screens>
         <name>Deceased_Selection_Screen</name>
         <label>Deceased Selection Screen</label>
-        <locationX>3553</locationX>
-        <locationY>1830</locationY>
+        <locationX>3490</locationX>
+        <locationY>1606</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1716,8 +1245,8 @@
     <screens>
         <name>Error_Movement_Records_Screen</name>
         <label>Error Movement Records Screen</label>
-        <locationX>607</locationX>
-        <locationY>1145</locationY>
+        <locationX>1686</locationX>
+        <locationY>590</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1732,7 +1261,7 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>840</locationX>
+        <locationX>1148</locationX>
         <locationY>2346</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1748,8 +1277,8 @@
     <screens>
         <name>Error_Screen_2</name>
         <label>Error Screen 2</label>
-        <locationX>5297</locationX>
-        <locationY>2381</locationY>
+        <locationX>4953</locationX>
+        <locationY>2096</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1764,8 +1293,8 @@
     <screens>
         <name>Finish</name>
         <label>Finish</label>
-        <locationX>1136</locationX>
-        <locationY>1955</locationY>
+        <locationX>1395</locationX>
+        <locationY>1909</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1780,7 +1309,7 @@
     <screens>
         <name>Foster_Selection_Screen</name>
         <label>Foster Selection Screen</label>
-        <locationX>3595</locationX>
+        <locationX>3903</locationX>
         <locationY>1159</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1807,8 +1336,8 @@
     <screens>
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
-        <locationX>218</locationX>
-        <locationY>546</locationY>
+        <locationX>459</locationX>
+        <locationY>922</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1816,74 +1345,100 @@
             <targetReference>Get_Any_Current_Movement_Records</targetReference>
         </connector>
         <fields>
-            <name>Initial_Text</name>
-            <fieldText>&lt;p&gt;Use this wizard to provide an update that the animal is being moved, adopted or has been unfortunately PTS.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Screen_TypeOfMovement_Info</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Type of Movement&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Select a type from the picklist below.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Choose_a_Movement</name>
-            <choiceReferences>housedMovement</choiceReferences>
-            <choiceReferences>boardingMovement</choiceReferences>
-            <choiceReferences>fosterMovement</choiceReferences>
-            <choiceReferences>transferredMovement</choiceReferences>
-            <choiceReferences>adoptedMovement</choiceReferences>
-            <choiceReferences>deceasedMovement</choiceReferences>
-            <choiceReferences>releaseMovement</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Choose a Movement</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Screen_Deceased_Information</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Note: If you select to Mark the animal as deceased, then the animal&apos;s status will be updated and today&apos;s date will be used for the deceased date.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Choose_a_Movement</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>deceasedMovement</elementReference>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Screen_Generate_Tasks_Information</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Generate Salesforce Tasks&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you would like to generate Salesforce Tasks for this schedule, please toggle the option below to on.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Generate_Tasks</name>
-            <extensionName>flowruntime:toggle</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>messageToggleActive</name>
-                <value>
-                    <elementReference>Yes</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleInactive</name>
-                <value>
-                    <elementReference>No</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Select to Generate Tasks</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <name>Initial_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Initial_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Screen_TypeOfMovement_Info</name>
+                    <fieldText>&lt;p&gt;&lt;b&gt;Type of Movement&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Select a type from the picklist below.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Choose_a_Movement</name>
+                    <choiceReferences>housedMovement</choiceReferences>
+                    <choiceReferences>boardingMovement</choiceReferences>
+                    <choiceReferences>fosterMovement</choiceReferences>
+                    <choiceReferences>transferredMovement</choiceReferences>
+                    <choiceReferences>deceasedMovement</choiceReferences>
+                    <choiceReferences>releaseMovement</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Choose a Movement</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Screen_Deceased_Information</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Note: If you select to Mark the animal as deceased, then the animal&apos;s status will be updated and today&apos;s date will be used for the deceased date.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Choose_a_Movement</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>deceasedMovement</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Initial_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Initial_Text</name>
+                    <fieldText>&lt;p&gt;Use this wizard to provide an update that the animal is being moved, transferred, or  has been PTS.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Screen_Generate_Tasks_Information</name>
+                    <fieldText>&lt;p&gt;&lt;b&gt;Generate Salesforce Tasks&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you would like to generate Salesforce Tasks for this schedule, please toggle the option below to on.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Generate_Tasks</name>
+                    <extensionName>flowruntime:toggle</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>messageToggleActive</name>
+                        <value>
+                            <elementReference>Yes</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>messageToggleInactive</name>
+                        <value>
+                            <elementReference>No</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Select to Generate Tasks</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1891,7 +1446,7 @@
     <screens>
         <name>Movement_Complete</name>
         <label>Movement Complete</label>
-        <locationX>7000</locationX>
+        <locationX>7308</locationX>
         <locationY>1075</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1907,7 +1462,7 @@
     <screens>
         <name>Organisation_Selection_Screen</name>
         <label>Organisation Selection Screen</label>
-        <locationX>3565</locationX>
+        <locationX>3873</locationX>
         <locationY>986</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1932,44 +1487,9 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Release_Error_Screen</name>
-        <label>Release Error Screen</label>
-        <locationX>4173</locationX>
-        <locationY>50</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Release_Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an error attempting to create the Release records!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If available, try and use the previous button below to go back a step and try again. If the problem persists please take a note of the fault message below and send it to your Salesforce Administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <name>Release_Notification_Screen</name>
-        <label>Release Notification Screen</label>
-        <locationX>5533</locationX>
-        <locationY>520</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Get_Queue_ID</targetReference>
-        </connector>
-        <fields>
-            <name>Release_Notification_Screen_Text</name>
-            <fieldText>&lt;p&gt;The Animal has been marked for release, and a task has been generated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Use the release process to capture the release location.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
         <name>Tasks_Error_Screen</name>
         <label>Tasks Error Screen</label>
-        <locationX>6444</locationX>
+        <locationX>6752</locationX>
         <locationY>319</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1985,7 +1505,7 @@
     <screens>
         <name>Unit_Selection_Screen</name>
         <label>Unit Selection Screen</label>
-        <locationX>3236</locationX>
+        <locationX>3544</locationX>
         <locationY>403</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2010,13 +1530,42 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>92</locationX>
-        <locationY>363</locationY>
+        <locationX>50</locationX>
+        <locationY>901</locationY>
         <connector>
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <subflows>
+        <name>CreateMovementRecord</name>
+        <label>CreateMovementRecord</label>
+        <locationX>4321</locationX>
+        <locationY>561</locationY>
+        <connector>
+            <targetReference>Need_to_Generate_Tasks</targetReference>
+        </connector>
+        <flowName>Animal_Movement_SubFlow</flowName>
+        <inputAssignments>
+            <name>AnimalId</name>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>LocationId</name>
+            <value>
+                <elementReference>LocationId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varNewMovementType</name>
+            <value>
+                <elementReference>newMovementType</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
     <variables>
         <name>AnimalId</name>
         <dataType>String</dataType>
@@ -2061,6 +1610,13 @@
     </variables>
     <variables>
         <name>FosterRecordType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FullLocationName</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2125,6 +1681,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>newMovementType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>OrganisationId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2140,6 +1703,13 @@
     </variables>
     <variables>
         <name>queueId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SiteName</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

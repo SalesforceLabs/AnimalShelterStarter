@@ -123,7 +123,7 @@
     </choices>
     <choices>
         <name>deceasedMovement</name>
-        <choiceText>Mark Animal as deceased and clear location</choiceText>
+        <choiceText>Mark Animal as deceased, clear location</choiceText>
         <dataType>String</dataType>
         <value>
             <elementReference>conDeceased</elementReference>
@@ -139,7 +139,7 @@
     </choices>
     <choices>
         <name>housedMovement</name>
-        <choiceText>House Internally</choiceText>
+        <choiceText>Housed in Shelter(s)</choiceText>
         <dataType>String</dataType>
         <value>
             <elementReference>conHoused</elementReference>
@@ -635,6 +635,12 @@
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <formulas>
+        <name>DecrementAllocationBy1</name>
+        <dataType>Number</dataType>
+        <expression>{!Get_Current_Location_Record.Allocation__c} - 1</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
         <name>fmlLocationName</name>
         <dataType>String</dataType>
         <expression>{!varNewMovementType} + &quot; - &quot; + {!varNewLocationName}</expression>
@@ -765,8 +771,8 @@
     <recordLookups>
         <name>Get_Any_Current_Movement_Records</name>
         <label>Get Any Current Movement Records</label>
-        <locationX>654</locationX>
-        <locationY>922</locationY>
+        <locationX>573</locationX>
+        <locationY>920</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Any_Existing_Movement_records</targetReference>
@@ -792,6 +798,41 @@
         <object>Movement__c</object>
         <outputReference>MovementRecords</outputReference>
         <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Current_Location_Record</name>
+        <label>Get Current Location Record</label>
+        <locationX>2608</locationX>
+        <locationY>1842</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Reset_Location_Status</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ExistingLocationId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Location_Capacity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Single Animal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Location_Capacity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Multiple Animals</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Locations__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Current_Movement_and_Location_Record_ID</name>
@@ -1007,8 +1048,8 @@
     <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
-        <locationX>2780</locationX>
-        <locationY>1920</locationY>
+        <locationX>2762</locationX>
+        <locationY>1850</locationY>
         <connector>
             <targetReference>Animal_Deceased_Path</targetReference>
         </connector>
@@ -1023,6 +1064,12 @@
                 <elementReference>ExistingLocationId</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Allocation__c</field>
+            <value>
+                <elementReference>DecrementAllocationBy1</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Unit_Status__c</field>
             <value>
@@ -1073,10 +1120,10 @@
     <recordUpdates>
         <name>Update_Current_Movement_Record</name>
         <label>Update Current Movement Record</label>
-        <locationX>2538</locationX>
-        <locationY>1833</locationY>
+        <locationX>2421</locationX>
+        <locationY>1843</locationY>
         <connector>
-            <targetReference>Reset_Location_Status</targetReference>
+            <targetReference>Get_Current_Location_Record</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
@@ -1156,7 +1203,7 @@
         <name>Animal_Has_Existing_Location_Screen</name>
         <label>Animal Has Existing Location Screen</label>
         <locationX>1563</locationX>
-        <locationY>1552</locationY>
+        <locationY>1553</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1336,8 +1383,8 @@
     <screens>
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
-        <locationX>459</locationX>
-        <locationY>922</locationY>
+        <locationX>414</locationX>
+        <locationY>920</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>

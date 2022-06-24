@@ -7,7 +7,7 @@
         <locationX>176</locationX>
         <locationY>398</locationY>
         <assignmentItems>
-            <assignToReference>newMovementId</assignToReference>
+            <assignToReference>newMovementRecordId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varNewMovementRecord.Id</elementReference>
@@ -115,7 +115,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>newMovementId</elementReference>
+                <elementReference>newMovementRecordId</elementReference>
             </value>
         </filters>
         <object>Movement__c</object>
@@ -182,11 +182,11 @@
         <isOutput>true</isOutput>
     </variables>
     <variables>
-        <name>newMovementId</name>
+        <name>newMovementRecordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
-        <isOutput>false</isOutput>
+        <isOutput>true</isOutput>
     </variables>
     <variables>
         <name>varNewLocationName</name>

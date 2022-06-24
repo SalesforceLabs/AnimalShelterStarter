@@ -2,22 +2,6 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>49.0</apiVersion>
     <assignments>
-        <name>Assign_Task_Subject</name>
-        <label>Assign Task Subject</label>
-        <locationX>6461</locationX>
-        <locationY>841</locationY>
-        <assignmentItems>
-            <assignToReference>taskSubject</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>taskSubjectFormula</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Create_Tasks</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Boarded_Movement_Record</name>
         <label>Boarded Movement Record</label>
         <locationX>3791</locationX>
@@ -229,10 +213,10 @@
     <decisions>
         <name>Animal_Deceased_Path</name>
         <label>Animal Deceased Path?</label>
-        <locationX>2773</locationX>
-        <locationY>1715</locationY>
+        <locationX>2767</locationX>
+        <locationY>1492</locationY>
         <defaultConnector>
-            <targetReference>Get_Unit_RecordType</targetReference>
+            <targetReference>Get_Unit_RecordType_ID</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -257,7 +241,7 @@
         <locationX>834</locationX>
         <locationY>925</locationY>
         <defaultConnector>
-            <targetReference>Get_Unit_RecordType</targetReference>
+            <targetReference>Get_Unit_RecordType_ID</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -293,7 +277,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Current_Movement_Record</targetReference>
+                <targetReference>Clear_Current_Movement_Record</targetReference>
             </connector>
             <label>Yes Continue</label>
         </rules>
@@ -424,7 +408,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Queue_ID</targetReference>
+                <targetReference>Create_Movement_Tasks</targetReference>
             </connector>
             <label>Yes Generate Tasks</label>
         </rules>
@@ -449,7 +433,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Current_Movement_Record</targetReference>
+                <targetReference>Clear_Current_Movement_Record</targetReference>
             </connector>
             <label>Yes Make Deceased Animal Updates</label>
         </rules>
@@ -556,7 +540,7 @@
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>UnitRecordType</elementReference>
+                <elementReference>Get_Unit_RecordType_ID.Id</elementReference>
             </value>
         </filters>
         <object>Locations__c</object>
@@ -616,7 +600,7 @@
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>UnitRecordType</elementReference>
+                <elementReference>Get_Unit_RecordType_ID.Id</elementReference>
             </value>
         </filters>
         <filters>
@@ -691,86 +675,10 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-    <recordCreates>
-        <name>Create_Tasks</name>
-        <label>Create Tasks</label>
-        <locationX>6753</locationX>
-        <locationY>969</locationY>
-        <connector>
-            <targetReference>Movement_Complete</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Tasks_Error_Screen</targetReference>
-        </faultConnector>
-        <inputAssignments>
-            <field>ActivityDate</field>
-            <value>
-                <elementReference>taskDueDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>queueId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Priority</field>
-            <value>
-                <stringValue>Normal</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Not Started</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Subject</field>
-            <value>
-                <elementReference>taskSubject</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>WhatId</field>
-            <value>
-                <elementReference>newMovementId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Task</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
     <recordLookups>
-        <name>Get_Animal_Status</name>
-        <label>Get Animal Status</label>
-        <locationX>1304</locationX>
-        <locationY>800</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Is_the_Animal_Deceased_with_an_Active_Deceased_Movement_Record</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>AnimalId</elementReference>
-            </value>
-        </filters>
-        <object>Animal__c</object>
-        <outputAssignments>
-            <assignToReference>AnimalName</assignToReference>
-            <field>Animal_Name__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>AnimalStatus</assignToReference>
-            <field>Animal_Status__c</field>
-        </outputAssignments>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Any_Current_Movement_Records</name>
-        <label>Get Any Current Movement Records</label>
+        <description>Gets all current movement records based on the animals Id</description>
+        <name>Get_All_Movement_Records_by_Animal_ID</name>
+        <label>Get All Movement Records by Animal ID</label>
         <locationX>573</locationX>
         <locationY>920</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
@@ -798,6 +706,33 @@
         <object>Movement__c</object>
         <outputReference>MovementRecords</outputReference>
         <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Animal_Status</name>
+        <label>Get Animal Status</label>
+        <locationX>1304</locationX>
+        <locationY>800</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_the_Animal_Deceased_with_an_Active_Deceased_Movement_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </filters>
+        <object>Animal__c</object>
+        <outputAssignments>
+            <assignToReference>AnimalName</assignToReference>
+            <field>Animal_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>AnimalStatus</assignToReference>
+            <field>Animal_Status__c</field>
+        </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>Get_Current_Location_Record</name>
@@ -924,32 +859,6 @@
         </outputAssignments>
     </recordLookups>
     <recordLookups>
-        <name>Get_Internal_Location_Name</name>
-        <label>Get Internal Location Name</label>
-        <locationX>6306</locationX>
-        <locationY>839</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Task_Subject</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Tasks_Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>newMovementId</elementReference>
-            </value>
-        </filters>
-        <object>Movement__c</object>
-        <outputAssignments>
-            <assignToReference>newLocationName</assignToReference>
-            <field>Location_Name__c</field>
-        </outputAssignments>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Organisation_RecordType</name>
         <label>Get Organisation RecordType</label>
         <locationX>3633</locationX>
@@ -983,55 +892,15 @@
         </outputAssignments>
     </recordLookups>
     <recordLookups>
-        <name>Get_Queue_ID</name>
-        <label>Get Queue ID</label>
-        <locationX>6154</locationX>
-        <locationY>839</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Internal_Location_Name</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Tasks_Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>DeveloperName</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>queueName</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Queue</stringValue>
-            </value>
-        </filters>
-        <object>Group</object>
-        <outputAssignments>
-            <assignToReference>queueId</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Unit_RecordType</name>
-        <label>Get Unit RecordType</label>
-        <locationX>2806</locationX>
-        <locationY>845</locationY>
+        <name>Get_Unit_RecordType_ID</name>
+        <label>Get Unit RecordType ID</label>
+        <locationX>2807</locationX>
+        <locationY>781</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>What_Type_of_Move</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
-        <filters>
-            <field>DeveloperName</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Unit</stringValue>
-            </value>
-        </filters>
         <filters>
             <field>SobjectType</field>
             <operator>EqualTo</operator>
@@ -1039,12 +908,51 @@
                 <stringValue>Locations__c</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Unit</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>RecordType</object>
-        <outputAssignments>
-            <assignToReference>UnitRecordType</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <description>Clears the current flag on current movement record and sets End Date to today</description>
+        <name>Clear_Current_Movement_Record</name>
+        <label>Clear Current Movement Record</label>
+        <locationX>2421</locationX>
+        <locationY>1845</locationY>
+        <connector>
+            <targetReference>Get_Current_Location_Record</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MovementId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Current__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Movement__c</object>
+    </recordUpdates>
     <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
@@ -1116,39 +1024,6 @@
             </value>
         </inputAssignments>
         <object>Animal__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Current_Movement_Record</name>
-        <label>Update Current Movement Record</label>
-        <locationX>2421</locationX>
-        <locationY>1843</locationY>
-        <connector>
-            <targetReference>Get_Current_Location_Record</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>MovementId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Current__c</field>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>End_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Movement__c</object>
     </recordUpdates>
     <screens>
         <name>Animal_Already_Deceased</name>
@@ -1389,7 +1264,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Get_Any_Current_Movement_Records</targetReference>
+            <targetReference>Get_All_Movement_Records_by_Animal_ID</targetReference>
         </connector>
         <fields>
             <name>Initial_Screen_Section1</name>
@@ -1534,22 +1409,6 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Tasks_Error_Screen</name>
-        <label>Tasks Error Screen</label>
-        <locationX>6752</locationX>
-        <locationY>319</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Task_Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;There has been an error creating the Task records&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
         <name>Unit_Selection_Screen</name>
         <label>Unit Selection Screen</label>
         <locationX>3544</locationX>
@@ -1583,7 +1442,41 @@
             <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <subflows>
+        <name>Create_Movement_Tasks</name>
+        <label>Create Movement Tasks</label>
+        <locationX>5925</locationX>
+        <locationY>598</locationY>
+        <connector>
+            <targetReference>Movement_Complete</targetReference>
+        </connector>
+        <flowName>Animal_Generate_Tasks_Subflow</flowName>
+        <inputAssignments>
+            <name>animalRecordId</name>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>movementRecordId</name>
+            <value>
+                <elementReference>CreateMovementRecord.newMovementRecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>taskObjectType</name>
+            <value>
+                <stringValue>Movement</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TaskQueueName</name>
+            <value>
+                <stringValue>Task_List</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
     <subflows>
         <name>CreateMovementRecord</name>
         <label>CreateMovementRecord</label>
@@ -1614,6 +1507,14 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <variables>
+        <name>allRecordTypesforLocations</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>RecordType</objectType>
+    </variables>
+    <variables>
         <name>AnimalId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1640,6 +1541,14 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_for_Unit_RecordType</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>RecordType</objectType>
     </variables>
     <variables>
         <name>ExistingLocationId</name>
@@ -1764,13 +1673,6 @@
     </variables>
     <variables>
         <name>taskSubject</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>UnitRecordType</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

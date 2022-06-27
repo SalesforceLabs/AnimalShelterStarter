@@ -569,12 +569,18 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldItem>Record.Deceased_Reason__c</fieldItem>
+                <identifier>RecordDeceased_Reason_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Deceased_Date__c</fieldItem>
-                <identifier>RecordDeceased_Date__cField</identifier>
+                <fieldItem>Record.PTS_Reason__c</fieldItem>
+                <identifier>RecordPTS_Reason__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b36806ab-18aa-4976-8ed4-be0f1c8f6a47</name>
@@ -587,8 +593,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.PTS_Reason__c</fieldItem>
-                <identifier>RecordPTS_Reason__cField</identifier>
+                <fieldItem>Record.Deceased_Date__c</fieldItem>
+                <identifier>RecordDeceased_Date__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a1ca0549-9798-4bed-b061-bf89bd15364b</name>

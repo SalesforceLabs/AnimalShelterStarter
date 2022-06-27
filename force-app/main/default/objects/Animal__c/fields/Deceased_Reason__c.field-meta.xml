@@ -11,14 +11,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Put To Sleep (PTS)</fullName>
-                <default>false</default>
-                <label>Put To Sleep (PTS)</label>
-            </value>
-            <value>
                 <fullName>Dead On Arrival</fullName>
                 <default>false</default>
                 <label>Dead On Arrival</label>
+            </value>
+            <value>
+                <fullName>Death during Treatment</fullName>
+                <default>false</default>
+                <label>Death during Treatment</label>
             </value>
             <value>
                 <fullName>Natural Causes</fullName>
@@ -26,9 +26,9 @@
                 <label>Natural Causes</label>
             </value>
             <value>
-                <fullName>Death during Treatment</fullName>
+                <fullName>Put To Sleep (PTS)</fullName>
                 <default>false</default>
-                <label>Death during Treatment</label>
+                <label>Put To Sleep (PTS)</label>
             </value>
         </valueSetDefinition>
     </valueSet>

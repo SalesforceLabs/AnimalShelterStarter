@@ -3,5 +3,6 @@
     <fullName>Default_Location_Compact_Layout</fullName>
     <fields>Name__c</fields>
     <fields>Assessment_Due__c</fields>
+    <fields>Block_Unit__c</fields>
     <label>Default Location Compact Layout</label>
 </CompactLayout>

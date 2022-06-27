@@ -4,6 +4,7 @@
     <columns>Block_Unit__c</columns>
     <columns>NAME</columns>
     <columns>Available_for_Boarding__c</columns>
+    <columns>Location_Capacity__c</columns>
     <columns>Block_Status__c</columns>
     <columns>Unit_Status__c</columns>
     <columns>Last_Assessment_Date__c</columns>

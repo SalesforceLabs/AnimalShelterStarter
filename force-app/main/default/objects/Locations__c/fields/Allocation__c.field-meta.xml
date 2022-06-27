@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Allocation__c</fullName>
+    <defaultValue>0</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>Number of animals allocated to the Unit/Foster/Organisation</inlineHelpText>
     <label>Allocation</label>

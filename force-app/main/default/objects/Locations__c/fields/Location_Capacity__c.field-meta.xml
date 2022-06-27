@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Select the type of capacity this Location has</inlineHelpText>
     <label>Location Capacity</label>
-    <required>true</required>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>

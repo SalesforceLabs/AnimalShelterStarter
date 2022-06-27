@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>49.0</apiVersion>
-    <assignments>
-        <name>Get_new_Movement_Record_Id</name>
-        <label>Get new Movement Record Id</label>
-        <locationX>176</locationX>
-        <locationY>398</locationY>
-        <assignmentItems>
-            <assignToReference>newMovementRecordId</assignToReference>
-            <operator>Assign</operator>
+    <actionCalls>
+        <name>Error_Email</name>
+        <label>Error Email</label>
+        <locationX>440</locationX>
+        <locationY>758</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
             <value>
-                <elementReference>varNewMovementRecord.Id</elementReference>
+                <elementReference>FlowErrorMessage</elementReference>
             </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_Newly_Created_Movement_Record</targetReference>
-        </connector>
-    </assignments>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Error occurred in Flow</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
     <assignments>
         <name>Movement_Record_Assignments</name>
         <label>Movement Record Assignments</label>
@@ -61,14 +72,34 @@
             <targetReference>Create_Movement_Record</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Set_Output_Variable</name>
+        <label>Set Output Variable</label>
+        <locationX>176</locationX>
+        <locationY>878</locationY>
+        <assignmentItems>
+            <assignToReference>newMovementRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varNewMovementRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
     <formulas>
         <name>fmlLocationName</name>
         <dataType>String</dataType>
         <expression>IF(
 {!varNewMovementType} = &quot;Housed&quot;, 
-{!varNewMovementType} + &quot; - &quot; + {!varNewLocationName},
+{!varNewMovementType} + &quot; - &quot; + {!Get_Newly_Created_Movement_Record.Location_Name__c},
 {!varNewMovementType}
 )</expression>
+    </formulas>
+    <formulas>
+        <name>IncrementAllocationBy1</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+ISPICKVAL({!Get_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Location_Record.Allocation__c} + 1, 0)</expression>
+        <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Movement SubFlow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Movement SubFlow</label>
@@ -97,46 +128,75 @@
         <locationX>176</locationX>
         <locationY>278</locationY>
         <connector>
-            <targetReference>Get_new_Movement_Record_Id</targetReference>
+            <targetReference>Get_Newly_Created_Movement_Record</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Email</targetReference>
+        </faultConnector>
         <inputReference>varNewMovementRecord</inputReference>
     </recordCreates>
     <recordLookups>
-        <name>Get_Newly_Created_Movement_Record</name>
-        <label>Get Newly Created Movement Record</label>
+        <name>Get_Location_Record</name>
+        <label>Get Location Record</label>
         <locationX>176</locationX>
-        <locationY>518</locationY>
+        <locationY>638</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Animal_Location_Status_to_Housed</targetReference>
+            <targetReference>Update_Location_Allocation</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_Email</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>newMovementRecordId</elementReference>
+                <elementReference>LocationId</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Locations__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Newly_Created_Movement_Record</name>
+        <label>Get Newly Created Movement Record</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Animal_Location_Status</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Email</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varNewMovementRecord.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Movement__c</object>
-        <outputAssignments>
-            <assignToReference>varNewLocationName</assignToReference>
-            <field>Location_Name__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>varNewSiteName</assignToReference>
-            <field>Sitename__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>varNewMovementType</assignToReference>
-            <field>Type__c</field>
-        </outputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Animal_Location_Status_to_Housed</name>
-        <label>Update Animal Location Status to Housed</label>
+        <name>Update_Animal_Location_Status</name>
+        <label>Update Animal Location Status</label>
         <locationX>176</locationX>
-        <locationY>638</locationY>
+        <locationY>518</locationY>
+        <connector>
+            <targetReference>Get_Location_Record</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Email</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -154,10 +214,34 @@
         <inputAssignments>
             <field>Site__c</field>
             <value>
-                <elementReference>varNewSiteName</elementReference>
+                <elementReference>Get_Newly_Created_Movement_Record.Sitename__c</elementReference>
             </value>
         </inputAssignments>
         <object>Animal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Location_Allocation</name>
+        <label>Update Location Allocation</label>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
+        <connector>
+            <targetReference>Set_Output_Variable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LocationId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Allocation__c</field>
+            <value>
+                <elementReference>IncrementAllocationBy1</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Locations__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -167,6 +251,11 @@
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>FlowErrorMessage</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There has been an error in Flow Animal - Movement SubFlow&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Error: {!$Flow.FaultMessage}&lt;/p&gt;&lt;p&gt;Current Record: {!$Flow.CurrentRecord}&lt;/p&gt;&lt;p&gt;Run by User: {!$User.Username}&lt;/p&gt;&lt;pre class=&quot;ql-syntax&quot; spellcheck=&quot;false&quot;&gt;&lt;/pre&gt;</text>
+    </textTemplates>
     <variables>
         <name>AnimalId</name>
         <dataType>String</dataType>
@@ -189,13 +278,6 @@
         <isOutput>true</isOutput>
     </variables>
     <variables>
-        <name>varNewLocationName</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
         <name>varNewMovementRecord</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
@@ -209,12 +291,5 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-    </variables>
-    <variables>
-        <name>varNewSiteName</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
     </variables>
 </Flow>

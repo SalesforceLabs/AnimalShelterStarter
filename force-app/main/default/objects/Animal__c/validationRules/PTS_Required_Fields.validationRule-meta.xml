@@ -2,7 +2,9 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PTS_Required_Fields</fullName>
     <active>false</active>
-    <description>When active, this makes the PTS Reason field and Deceased Date required when the animal is marked as deceased.</description>
-    <errorConditionFormula>AND(TEXT(%%%NAMESPACED_ORG%%%Animal_Status__c) = &quot;Deceased&quot;,  ISBLANK(TEXT(%%%NAMESPACED_ORG%%%PTS_Reason__c)), ISBLANK( %%%NAMESPACED_ORG%%%Deceased_Date__c ))</errorConditionFormula>
+    <description>When active, this makes the PTS Reason field required when the Deceased Reasaon field marked as PTS.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Deceased_Reason__c, &quot;Put To Sleep (PTS)&quot;), ISBLANK(TEXT(  PTS_Reason__c  ))
+)</errorConditionFormula>
     <errorMessage>You have indicated this animal has been PTS. Please provide a reason using the PTS Reason field and enter a date using the deceased date field.</errorMessage>
 </ValidationRule>

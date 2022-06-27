@@ -4,8 +4,8 @@
     <decisions>
         <name>Is_Animal_Already_Marked_as_Deceased</name>
         <label>Is Animal Already Marked as Deceased?</label>
-        <locationX>663</locationX>
-        <locationY>326</locationY>
+        <locationX>751</locationX>
+        <locationY>266</locationY>
         <defaultConnector>
             <targetReference>Initial_Screen</targetReference>
         </defaultConnector>
@@ -29,8 +29,11 @@
     <decisions>
         <name>Is_there_an_existing_Movement_Record</name>
         <label>Is there an existing Movement Record</label>
-        <locationX>773</locationX>
-        <locationY>741</locationY>
+        <locationX>1101</locationX>
+        <locationY>533</locationY>
+        <defaultConnector>
+            <targetReference>Update_Animal_Record</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No Movement Record</defaultConnectorLabel>
         <rules>
             <name>Yes_Movement_record_Exists</name>
@@ -68,8 +71,9 @@
     <formulas>
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
-        <expression>{!Get_Current_Location_Record.Allocation__c} - 1</expression>
-        <scale>2</scale>
+        <expression>IF(
+ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.Allocation__c} - 1, 0)</expression>
+        <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Deceased Animal Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -96,32 +100,18 @@
     <recordLookups>
         <name>Get_Current_Location_Record</name>
         <label>Get Current Location Record</label>
-        <locationX>301</locationX>
-        <locationY>934</locationY>
+        <locationX>1091</locationX>
+        <locationY>966</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Reset_Location_Status</targetReference>
         </connector>
-        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>Get_Current_Movement_Record.Location__r.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Location_Capacity__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Single Animal</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Location_Capacity__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Multiple Animals</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -131,8 +121,8 @@
     <recordLookups>
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
-        <locationX>1060</locationX>
-        <locationY>666</locationY>
+        <locationX>1337</locationX>
+        <locationY>264</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_there_an_existing_Movement_Record</targetReference>
@@ -163,8 +153,8 @@
         <description>Get the Animal Record based on ID</description>
         <name>GetAnimalRecord</name>
         <label>Get Animal Record</label>
-        <locationX>663</locationX>
-        <locationY>206</locationY>
+        <locationX>495</locationX>
+        <locationY>264</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_Animal_Already_Marked_as_Deceased</targetReference>
@@ -185,8 +175,8 @@
         <description>Clears the current flag on current movement record and sets End Date to today</description>
         <name>Clear_Current_Movement_Record</name>
         <label>Clear Current Movement Record</label>
-        <locationX>400</locationX>
-        <locationY>678</locationY>
+        <locationX>849</locationX>
+        <locationY>926</locationY>
         <connector>
             <targetReference>Get_Current_Location_Record</targetReference>
         </connector>
@@ -218,8 +208,8 @@
     <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
-        <locationX>531</locationX>
-        <locationY>1046</locationY>
+        <locationX>1413</locationX>
+        <locationY>966</locationY>
         <connector>
             <targetReference>Update_Animal_Record</targetReference>
         </connector>
@@ -251,8 +241,8 @@
     <recordUpdates>
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
-        <locationX>531</locationX>
-        <locationY>1166</locationY>
+        <locationX>1755</locationX>
+        <locationY>834</locationY>
         <connector>
             <targetReference>Completion_Screen</targetReference>
         </connector>
@@ -296,8 +286,8 @@
     <screens>
         <name>Animal_Already_Deceased_With_Correct_Movement_Record</name>
         <label>Animal Already Deceased With Correct Movement Record</label>
-        <locationX>267</locationX>
-        <locationY>446</locationY>
+        <locationX>760</locationX>
+        <locationY>50</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -312,8 +302,8 @@
     <screens>
         <name>Completion_Screen</name>
         <label>Completion Screen</label>
-        <locationX>531</locationX>
-        <locationY>1286</locationY>
+        <locationX>2001</locationX>
+        <locationY>836</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -328,8 +318,8 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>795</locationX>
-        <locationY>1286</locationY>
+        <locationX>1527</locationX>
+        <locationY>1435</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -344,8 +334,8 @@
     <screens>
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
-        <locationX>1059</locationX>
-        <locationY>446</locationY>
+        <locationX>1030</locationX>
+        <locationY>264</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -421,8 +411,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>537</locationX>
-        <locationY>48</locationY>
+        <locationX>50</locationX>
+        <locationY>245</locationY>
         <connector>
             <targetReference>GetAnimalRecord</targetReference>
         </connector>

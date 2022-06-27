@@ -90,7 +90,7 @@
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
-    <processType>Flow</processType>
+    <processType>AutoLaunchedFlow</processType>
     <recordCreates>
         <name>Create_Movement_Record</name>
         <label>Create Movement Record</label>

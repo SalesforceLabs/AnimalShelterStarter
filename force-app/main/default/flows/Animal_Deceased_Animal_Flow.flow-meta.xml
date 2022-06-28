@@ -276,6 +276,12 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Location_Status__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>PTS_Reason__c</field>
             <value>
                 <elementReference>PTS_Reason</elementReference>

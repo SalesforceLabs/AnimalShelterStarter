@@ -135,7 +135,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>AnimalId</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </filters>
         <filters>
@@ -153,7 +153,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
         <description>Get the Animal Record based on ID</description>
         <name>GetAnimalRecord</name>
         <label>Get Animal Record</label>
-        <locationX>495</locationX>
+        <locationX>494</locationX>
         <locationY>264</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -164,7 +164,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>AnimalId</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -254,7 +254,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>AnimalId</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -419,7 +419,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
     </start>
     <status>Active</status>
     <variables>
-        <name>AnimalId</name>
+        <name>recordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>

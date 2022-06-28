@@ -834,17 +834,44 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             <targetReference>Continue_With_Flow</targetReference>
         </connector>
         <fields>
-            <name>Animal_Has_Existing_Location_Screen_Text</name>
-            <fieldText>&lt;p&gt;Hmm!&lt;/p&gt;&lt;p&gt;{!Get_Animals_Details.Animal_Name__c}  already has a current location&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;{!Get_Current_Movement_and_Location_Record_ID.Sitename__c}{!Get_Current_Movement_and_Location_Record_ID.Location_Name__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Continuing will free up the current location and allow you to assign a new location.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;To leave the animal in its current location, exit here&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Do_you_wish_to_continue</name>
-            <choiceReferences>Yes</choiceReferences>
-            <choiceReferences>No</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Do you wish to continue?</fieldText>
-            <fieldType>RadioButtons</fieldType>
+            <name>Animal_Has_Existing_Location_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Animal_Has_Existing_Location_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Animal_Has_Existing_Location_Screen_Text</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;{!Get_Animals_Details.Animal_Name__c}&lt;/strong&gt;  already has a current location&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;{!Get_Current_Movement_and_Location_Record_ID.Location_Name__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;To leave the animal in its current location, exit here, or continue to assign a new location&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Animal_Has_Existing_Location_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Do_you_wish_to_continue</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Do you wish to continue?</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -1060,14 +1087,14 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
     <screens>
         <name>Movement_Complete</name>
         <label>Movement Complete</label>
-        <locationX>5219</locationX>
+        <locationX>5218</locationX>
         <locationY>1130</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Movement_Complete_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Records Updated!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Thank you for updating the animals location. Please click Finish to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Records Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The location for {!Get_Animals_Details.Animal_Name__c} has now been updated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please click Finish to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

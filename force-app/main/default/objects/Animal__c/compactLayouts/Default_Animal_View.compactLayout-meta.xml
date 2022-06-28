@@ -7,7 +7,6 @@
     <fields>Gender__c</fields>
     <fields>Age_Years__c</fields>
     <fields>Calculated_Time_Known__c</fields>
-    <fields>Animal_Status__c</fields>
     <fields>Location_Status__c</fields>
     <label>Default Animal View</label>
 </CompactLayout>

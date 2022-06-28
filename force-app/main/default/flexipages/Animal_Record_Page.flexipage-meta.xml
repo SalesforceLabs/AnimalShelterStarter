@@ -576,6 +576,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.PTS_Reason__c</fieldItem>
                 <identifier>RecordPTS_Reason__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Deceased_Reason__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Put To Sleep (PTS)</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b36806ab-18aa-4976-8ed4-be0f1c8f6a47</name>

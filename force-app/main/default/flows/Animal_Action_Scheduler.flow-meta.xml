@@ -827,7 +827,7 @@
             <targetReference>Schedule_Details</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Call_Tasks_Subflow</name>
         <label>Call Tasks Subflow</label>
@@ -838,6 +838,12 @@
         </connector>
         <flowName>Animal_Generate_Tasks_Subflow</flowName>
         <inputAssignments>
+            <name>ActionTasks</name>
+            <value>
+                <elementReference>AnimalActionTaskCollection</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <name>taskObjectType</name>
             <value>
                 <stringValue>Action</stringValue>
@@ -846,13 +852,7 @@
         <inputAssignments>
             <name>TaskQueueName</name>
             <value>
-                <stringValue>Task_List</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>ActionTasks</name>
-            <value>
-                <elementReference>AnimalActionTaskCollection</elementReference>
+                <stringValue>Animal_Tasks</stringValue>
             </value>
         </inputAssignments>
     </subflows>

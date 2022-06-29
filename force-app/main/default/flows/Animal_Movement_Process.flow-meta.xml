@@ -1192,7 +1192,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
         <inputAssignments>
             <name>TaskQueueName</name>
             <value>
-                <stringValue>Task_List</stringValue>
+                <stringValue>Animal_Tasks</stringValue>
             </value>
         </inputAssignments>
     </subflows>

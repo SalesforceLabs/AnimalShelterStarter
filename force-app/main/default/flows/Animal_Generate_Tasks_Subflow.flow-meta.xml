@@ -25,19 +25,77 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Build_List_of_Tasks</name>
+        <label>Build List of Tasks</label>
+        <locationX>1255</locationX>
+        <locationY>449</locationY>
+        <assignmentItems>
+            <assignToReference>updatedTasks</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SingleTask</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_OwnerID_for_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Update_Owner_ID</name>
         <label>Update Owner ID</label>
-        <locationX>1210</locationX>
-        <locationY>630</locationY>
+        <locationX>1296</locationX>
+        <locationY>624</locationY>
         <assignmentItems>
-            <assignToReference>Update_OwnerID_for_Collection.OwnerId</assignToReference>
+            <assignToReference>SingleTask.OwnerId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_Queue_ID.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTask.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Update_OwnerID_for_Collection.Status</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTask.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Update_OwnerID_for_Collection.ActivityDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTask.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Update_OwnerID_for_Collection.Priority</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTask.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Update_OwnerID_for_Collection.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTask.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Update_OwnerID_for_Collection.Description</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTask.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Update_OwnerID_for_Collection.Subject</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
-            <targetReference>Update_OwnerID_for_Collection</targetReference>
+            <targetReference>Build_List_of_Tasks</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -252,7 +310,7 @@
             <targetReference>Get_Queue_ID</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>actionRecordId</name>
         <dataType>String</dataType>
@@ -290,6 +348,14 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>SingleTask</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+    <variables>
         <description>Which Animal Shelter object is this task related to</description>
         <name>taskObjectType</name>
         <dataType>String</dataType>
@@ -317,5 +383,13 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>updatedTasks</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
     </variables>
 </Flow>

@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Task_Subject</name>
         <label>Assign Task Subject</label>
-        <locationX>50</locationX>
-        <locationY>638</locationY>
+        <locationX>417</locationX>
+        <locationY>686</locationY>
         <assignmentItems>
             <assignToReference>taskSubject</assignToReference>
             <operator>Assign</operator>
@@ -25,26 +25,26 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_Task_Subject_0</name>
-        <label>Assign Task Subject</label>
-        <locationX>314</locationX>
-        <locationY>638</locationY>
+        <name>Update_Owner_ID</name>
+        <label>Update Owner ID</label>
+        <locationX>1210</locationX>
+        <locationY>630</locationY>
         <assignmentItems>
-            <assignToReference>taskSubject</assignToReference>
+            <assignToReference>Update_OwnerID_for_Collection.OwnerId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>taskSubjectFormula</elementReference>
+                <elementReference>Get_Queue_ID.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_Tasks</targetReference>
+            <targetReference>Update_OwnerID_for_Collection</targetReference>
         </connector>
     </assignments>
     <decisions>
         <name>What_Type_of_Task_to_Create</name>
         <label>What Type of Task to Create</label>
-        <locationX>314</locationX>
-        <locationY>398</locationY>
+        <locationX>674</locationX>
+        <locationY>561</locationY>
         <defaultConnectorLabel>None</defaultConnectorLabel>
         <rules>
             <name>Movement</name>
@@ -72,7 +72,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Action_Record</targetReference>
+                <targetReference>Update_OwnerID_for_Collection</targetReference>
             </connector>
             <label>Animal Action</label>
         </rules>
@@ -91,6 +91,20 @@
     <interviewLabel>Animal - Generate Tasks Subflow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Generate Tasks Subflow</label>
+    <loops>
+        <name>Update_OwnerID_for_Collection</name>
+        <label>Update OwnerID for Collection</label>
+        <locationX>929</locationX>
+        <locationY>643</locationY>
+        <collectionReference>ActionTasks</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Update_Owner_ID</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Multiple_Action_tasks</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -100,7 +114,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -111,10 +125,17 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
+        <name>Create_Multiple_Action_tasks</name>
+        <label>Create Multiple Action tasks</label>
+        <locationX>942</locationX>
+        <locationY>850</locationY>
+        <inputReference>ActionTasks</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Tasks</name>
         <label>Create Tasks</label>
-        <locationX>314</locationX>
-        <locationY>854</locationY>
+        <locationX>429</locationX>
+        <locationY>935</locationY>
         <inputAssignments>
             <field>ActivityDate</field>
             <value>
@@ -155,31 +176,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Action_Record</name>
-        <label>Get Action Record</label>
-        <locationX>314</locationX>
-        <locationY>518</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Task_Subject_0</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>actionRecordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Animal_Action__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Animal_Details</name>
         <label>Get Animal Details</label>
-        <locationX>314</locationX>
-        <locationY>278</locationY>
+        <locationX>681</locationX>
+        <locationY>326</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>What_Type_of_Task_to_Create</targetReference>
@@ -199,8 +199,8 @@
     <recordLookups>
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
-        <locationX>50</locationX>
-        <locationY>518</locationY>
+        <locationX>334</locationX>
+        <locationY>434</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Task_Subject</targetReference>
@@ -220,8 +220,8 @@
     <recordLookups>
         <name>Get_Queue_ID</name>
         <label>Get Queue ID</label>
-        <locationX>314</locationX>
-        <locationY>158</locationY>
+        <locationX>681</locationX>
+        <locationY>206</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Animal_Details</targetReference>
@@ -246,8 +246,8 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>188</locationX>
-        <locationY>0</locationY>
+        <locationX>555</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Get_Queue_ID</targetReference>
         </connector>
@@ -259,6 +259,14 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ActionTasks</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
     </variables>
     <variables>
         <name>animalRecordId</name>

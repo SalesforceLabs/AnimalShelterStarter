@@ -187,7 +187,7 @@
         <label>Create Multiple Action tasks</label>
         <locationX>942</locationX>
         <locationY>850</locationY>
-        <inputReference>ActionTasks</inputReference>
+        <inputReference>updatedTasks</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_Tasks</name>
@@ -310,7 +310,7 @@
             <targetReference>Get_Queue_ID</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>actionRecordId</name>
         <dataType>String</dataType>

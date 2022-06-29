@@ -565,16 +565,6 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Create_Tasks_Records</name>
-        <label>Create Tasks</label>
-        <locationX>1799</locationX>
-        <locationY>237</locationY>
-        <faultConnector>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
-        <inputReference>AnimalActionTaskCollection</inputReference>
-    </recordCreates>
-    <recordCreates>
         <name>Generate_Action_Records</name>
         <label>Generate Action Records</label>
         <locationX>1400</locationX>
@@ -827,7 +817,7 @@
             <targetReference>Schedule_Details</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Call_Tasks_Subflow</name>
         <label>Call Tasks Subflow</label>

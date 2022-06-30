@@ -416,7 +416,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>NotEqualTo</operator>
+            <operator>LessThanOrEqualTo</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -443,7 +443,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>NotEqualTo</operator>
+            <operator>LessThanOrEqualTo</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -470,7 +470,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>NotEqualTo</operator>
+            <operator>LessThanOrEqualTo</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -497,7 +497,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>NotEqualTo</operator>
+            <operator>LessThanOrEqualTo</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -1161,7 +1161,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             <targetReference>Get_Animals_Details</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Create_Movement_Tasks</name>
         <label>Create Movement Tasks</label>

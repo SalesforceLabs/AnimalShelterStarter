@@ -7,6 +7,7 @@
     <columns>RECORDTYPE</columns>
     <columns>Last_Assessment_Date__c</columns>
     <columns>Assessment_Due__c</columns>
+    <columns>Sitename__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

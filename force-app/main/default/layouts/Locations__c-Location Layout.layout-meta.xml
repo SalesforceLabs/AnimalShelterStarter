@@ -58,6 +58,10 @@
                 <behavior>Edit</behavior>
                 <field>Unit_Status__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Sitename__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Record_QR_Code__c</fullName>
+    <description>Displays a QR Code to the Animal Record</description>
     <externalId>false</externalId>
     <formula>IMAGE(&quot;https://chart.googleapis.com/chart?chs=200x200&amp;cht=qr&amp;chl=&quot;&amp;LEFT($Api.Partner_server_URL_540, FIND(&apos;/services&apos;,$Api.Partner_server_URL_540))&amp;Id,&apos;Scan QR code to open record.&apos;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

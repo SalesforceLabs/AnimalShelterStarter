@@ -149,7 +149,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>[Animal Shelter Starter] Stores details about a treatment provided to an animal.</description>
+    <description>[Animal Shelter Starter] NO LONGER USED - This object has been deprecated and functionality is replaced by Animal Actions</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>

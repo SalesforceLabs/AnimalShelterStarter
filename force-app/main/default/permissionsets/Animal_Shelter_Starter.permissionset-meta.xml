@@ -731,6 +731,10 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <recordType>Locations__c.Site</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <recordType>Locations__c.Unit</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>

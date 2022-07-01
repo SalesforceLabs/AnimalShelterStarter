@@ -16,6 +16,16 @@
                             <value>Animal__c.Cage_Card</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Animal__c.Mark_as_Deceased</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Animal_Status__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Deceased</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Animal__c.Add_Treatment_Action</value>
                         </valueListItems>
                         <valueListItems>
@@ -37,9 +47,6 @@
                             <value>Animal__c.New_Assessment</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>FeedItem.TextPost</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>FeedItem.ContentPost</value>
                         </valueListItems>
                         <valueListItems>
@@ -58,15 +65,6 @@
                             <value>FeedItem.LinkPost</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>FeedItem.PollPost</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>FeedItem.QuestionPost</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>PrintableView</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
@@ -74,9 +72,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Edit</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Clone</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -569,12 +564,25 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldItem>Record.Deceased_Reason__c</fieldItem>
+                <identifier>RecordDeceased_Reason_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Deceased_Date__c</fieldItem>
-                <identifier>RecordDeceased_Date__cField</identifier>
+                <fieldItem>Record.PTS_Reason__c</fieldItem>
+                <identifier>RecordPTS_Reason__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Deceased_Reason__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Put To Sleep (PTS)</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b36806ab-18aa-4976-8ed4-be0f1c8f6a47</name>
@@ -587,8 +595,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.PTS_Reason__c</fieldItem>
-                <identifier>RecordPTS_Reason__cField</identifier>
+                <fieldItem>Record.Deceased_Date__c</fieldItem>
+                <identifier>RecordDeceased_Date__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a1ca0549-9798-4bed-b061-bf89bd15364b</name>
@@ -690,6 +698,20 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Site__c</fieldItem>
+                <identifier>RecordSite_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-98195362-64d2-471a-a0a6-9315fc9ee637</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -697,6 +719,16 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-98195362-64d2-471a-a0a6-9315fc9ee637</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column1</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-2b002289-d916-4f50-9704-fb0e6eff97c4</name>
@@ -1455,6 +1487,13 @@
                 </componentInstanceProperties>
                 <componentName>flowruntime:interview</componentName>
                 <identifier>flowruntime_interview</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Animal_Status__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Deceased</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>

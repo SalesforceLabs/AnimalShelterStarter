@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deceased_Required_Fields</fullName>
+    <active>false</active>
+    <description>When active, this makes the Deceased Reason field and Deceased Date required when the animal is marked as deceased.</description>
+    <errorConditionFormula>AND(TEXT(Animal_Status__c) = &quot;Deceased&quot;,  ISBLANK(TEXT( Deceased_Reason__c )), ISBLANK( Deceased_Date__c ))</errorConditionFormula>
+    <errorMessage>You have indicated this animal is Deceased. Please provide a reason using the Deceased Reason field and enter a date using the deceased date field.</errorMessage>
+</ValidationRule>

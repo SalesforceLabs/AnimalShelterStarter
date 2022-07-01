@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Available_Capacity__c</fullName>
-    <description>The available capacity of the block, i.e. number of available units.  Populated by a flow</description>
+    <fullName>Capacity__c</fullName>
+    <defaultValue>1</defaultValue>
     <externalId>false</externalId>
-    <label>Block Available Capacity</label>
+    <inlineHelpText>The capacity of the Unit/Foster/Organisation, if Location Capacity is set to Multiple Animals</inlineHelpText>
+    <label>Capacity</label>
     <precision>2</precision>
     <required>false</required>
     <scale>0</scale>

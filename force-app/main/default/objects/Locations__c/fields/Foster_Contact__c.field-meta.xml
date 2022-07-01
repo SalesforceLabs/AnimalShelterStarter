@@ -9,7 +9,7 @@
     <lookupFilter>
         <active>true</active>
         <filterItems>
-            <field>Contact.%%%NAMESPACED_ORG%%%Is_a_Foster__c</field>
+            <field>Contact.Is_a_Foster__c</field>
             <operation>equals</operation>
             <value>True</value>
         </filterItems>

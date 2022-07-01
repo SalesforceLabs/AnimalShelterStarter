@@ -6,45 +6,45 @@
 
 
 <apex:page standardController="Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
-	<html>
+    <html>
         <head>
             <style type="text/css">
                 @page {
-                	size: A5 landscape;
-                	margin: 5mm;
-                	border: 2px solid black;
-                	@bottom-center {
-                		content: element(footer-section);
-                	}
+                    size: A5 landscape;
+                    margin: 5mm;
+                    border: 2px solid black;
+                    @bottom-center {
+                        content: element(footer-section);
+                    }
                 }
                 .title {
-                	font-family: Arial Unicode MS;
-    				font-size: 20px;
-    				font-weight: 600;
-    				color: #fff!important;
-    				text-align: center;
-    				text-transform: uppercase;
-    				background: #4e75a3;
-    				display: block;
-    				padding: 10px;
-    				margin: 0;
-    			}
-    			.details {
-        			font-family: Arial Unicode MS;
-    				font-size: 16px;
-    				font-weight: 600;
-  			   	}
+                    font-family: Arial Unicode MS;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fff!important;
+                    text-align: center;
+                    text-transform: uppercase;
+                    background: #4e75a3;
+                    display: block;
+                    padding: 10px;
+                    margin: 0;
+                }
+                .details {
+                    font-family: Arial Unicode MS;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
                 .footer-section {
-                	font-family: Arial Unicode MS;
-    				font-size: 10px;
-    				font-weight: 600;
-                	text-align: center;
-    				display: block;
-    				padding: 10px;
-    				position: running(footer-section);
+                    font-family: Arial Unicode MS;
+                    font-size: 10px;
+                    font-weight: 600;
+                    text-align: center;
+                    display: block;
+                    padding: 10px;
+                    position: running(footer-section);
                 }
                 
-			</style>
+            </style>
         </head>
         <body>
             <h1 class="title">
@@ -55,6 +55,7 @@
                 <apex:commandButton value="Print" onclick="window.print();"/>         
                 <apex:pageBlock > 
                     <apex:pageBlockSection columns="2">
+                        <apex:outputText styleClass="details" value="{! Animal__c.Location_Status__c }"/><br/>
                         <apex:outputText styleClass="details" value="{! Animal__c.Type__c }"/><br/>
                         <apex:outputText styleClass="details" value="{! Animal__c.Breed__c }"/><br/>
                         <apex:outputText styleClass="details" value="{! Animal__c.Colour__c }"/><br/>

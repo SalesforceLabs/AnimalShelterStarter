@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sites</fullName>
+    <columns>NAME</columns>
+    <columns>Name__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Locations__c.Site</value>
+    </filters>
+    <label>Sites</label>
+</ListView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_Capacity__c</fullName>
+    <defaultValue>&quot;Single Animal&quot;</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the type of capacity this Location has</inlineHelpText>
+    <label>Location Capacity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Single Animal</fullName>
+                <default>false</default>
+                <label>Single Animal</label>
+            </value>
+            <value>
+                <fullName>Multiple Animals</fullName>
+                <default>false</default>
+                <label>Multiple Animals</label>
+            </value>
+            <value>
+                <fullName>Untracked</fullName>
+                <default>false</default>
+                <label>Untracked</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

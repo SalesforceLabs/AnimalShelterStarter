@@ -3,7 +3,7 @@
     <fullName>Total_Capacity__c</fullName>
     <description>The Total Capacity of the block, i.e. all sub locations. Populated by Flow</description>
     <externalId>false</externalId>
-    <label>Total Capacity</label>
+    <label>Block Total Capacity</label>
     <precision>2</precision>
     <required>false</required>
     <scale>0</scale>

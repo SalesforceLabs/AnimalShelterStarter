@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>49.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <name>Boarded_Movement_Record</name>
         <label>Boarded Movement Record</label>
@@ -416,7 +416,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>LessThanOrEqualTo</operator>
+            <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -443,7 +443,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>LessThanOrEqualTo</operator>
+            <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -470,7 +470,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>LessThanOrEqualTo</operator>
+            <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -497,7 +497,7 @@
         </filters>
         <filters>
             <field>Availability__c</field>
-            <operator>LessThanOrEqualTo</operator>
+            <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -1067,6 +1067,12 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
                             <stringValue>Select to Generate Tasks</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1161,7 +1167,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             <targetReference>Get_Animals_Details</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Create_Movement_Tasks</name>
         <label>Create Movement Tasks</label>

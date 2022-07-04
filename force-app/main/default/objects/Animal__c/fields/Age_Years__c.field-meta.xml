@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>%%%NAMESPACED_ORG%%%Age_Years__c</fullName>
+    <fullName>Age_Years__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(ISBLANK(%%%NAMESPACED_ORG%%%Date_of_Birth__c), 
-%%%NAMESPACED_ORG%%%Estimated_Age__c, FLOOR((TODAY() - %%%NAMESPACED_ORG%%%Date_of_Birth__c )/365)
+    <formula>IF(ISBLANK(Date_of_Birth__c), 
+Estimated_Age__c, FLOOR((TODAY() - Date_of_Birth__c )/365)
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>Calculated age of the animal based on the Date of Birth</inlineHelpText>

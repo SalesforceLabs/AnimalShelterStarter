@@ -14,7 +14,7 @@
             <name>Yes_Animal_Already_Marked_as_Deceased</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>GetAnimalRecord.Animal_Status__c</leftValueReference>
+                <leftValueReference>GetAnimalRecord.%%%NAMESPACED_ORG%%%Animal_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Deceased</stringValue>
@@ -55,24 +55,24 @@
     <dynamicChoiceSets>
         <name>AnimalDeceasedReason</name>
         <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
-        <picklistField>Deceased_Reason__c</picklistField>
-        <picklistObject>Animal__c</picklistObject>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>%%%NAMESPACED_ORG%%%Deceased_Reason__c</picklistField>
+        <picklistObject>%%%NAMESPACED_ORG%%%Animal__c</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>AnimalPTSReason</name>
         <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
-        <picklistField>PTS_Reason__c</picklistField>
-        <picklistObject>Animal__c</picklistObject>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>%%%NAMESPACED_ORG%%%PTS_Reason__c</picklistField>
+        <picklistObject>%%%NAMESPACED_ORG%%%Animal__c</picklistObject>
     </dynamicChoiceSets>
     <formulas>
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
         <expression>IF(
-ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.Allocation__c} - 1, 0)</expression>
+            ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Allocation__c} - 1, 0)        </expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Deceased Animal Flow {!$Flow.CurrentDateTime}</interviewLabel>
@@ -115,7 +115,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -132,21 +132,21 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Current__c</field>
+            <field>%%%NAMESPACED_ORG%%%Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Movement__c</object>
+        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -168,7 +168,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -192,18 +192,18 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             </value>
         </filters>
         <inputAssignments>
-            <field>Current__c</field>
+            <field>%%%NAMESPACED_ORG%%%Current__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>End_Date__c</field>
+            <field>%%%NAMESPACED_ORG%%%End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>Movement__c</object>
+        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Reset_Location_Status</name>
@@ -225,18 +225,18 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             </value>
         </filters>
         <inputAssignments>
-            <field>Allocation__c</field>
+            <field>%%%NAMESPACED_ORG%%%Allocation__c</field>
             <value>
                 <elementReference>DecrementAllocationBy1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Unit_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Record</name>
@@ -258,36 +258,36 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
             </value>
         </filters>
         <inputAssignments>
-            <field>Animal_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
             <value>
                 <stringValue>Deceased</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Deceased_Date__c</field>
+            <field>%%%NAMESPACED_ORG%%%Deceased_Date__c</field>
             <value>
                 <elementReference>Deceased_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Deceased_Reason__c</field>
+            <field>%%%NAMESPACED_ORG%%%Deceased_Reason__c</field>
             <value>
                 <elementReference>Deceased_Reason</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Location_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
             <value>
                 <stringValue></stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>PTS_Reason__c</field>
+            <field>%%%NAMESPACED_ORG%%%PTS_Reason__c</field>
             <value>
                 <elementReference>PTS_Reason</elementReference>
             </value>
         </inputAssignments>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
     </recordUpdates>
     <screens>
         <name>Animal_Already_Deceased_With_Correct_Movement_Record</name>
@@ -299,7 +299,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
         <allowPause>false</allowPause>
         <fields>
             <name>Animal_Already_Deceased_Text_0</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!GetAnimalRecord.Animal_Name__c} is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is an error, please review the animal record information and update it accordingly.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!GetAnimalRecord.%%%NAMESPACED_ORG%%%Animal_Name__c} is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is an error, please review the animal record information and update it accordingly.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -315,7 +315,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
         <allowPause>false</allowPause>
         <fields>
             <name>Completion_Screen_Text</name>
-            <fieldText>&lt;p&gt;{!GetAnimalRecord.Animal_Name__c} is now marked as deceased&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;{!GetAnimalRecord.%%%NAMESPACED_ORG%%%Animal_Name__c} is now marked as deceased&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -412,6 +412,7 @@ ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Anim
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

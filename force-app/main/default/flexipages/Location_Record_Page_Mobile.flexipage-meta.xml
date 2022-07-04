@@ -58,7 +58,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>Organisation__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Organisation__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>
@@ -83,7 +83,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>Foster_Contact__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Foster_Contact__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>titleFieldName</name>
@@ -130,7 +130,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Location Record Page Mobile</masterLabel>
-    <sobjectType>Locations__c</sobjectType>
+    <sobjectType>%%%NAMESPACED_ORG%%%Locations__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColTemplateDesktop</name>
     </template>

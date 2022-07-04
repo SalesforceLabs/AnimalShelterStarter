@@ -168,10 +168,10 @@
     </nameField>
     <pluralLabel>Animal Alerts</pluralLabel>
     <searchLayouts>
-        <searchResultsAdditionalFields>%%%NAMESPACED_ORG%%%Alert_Message__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>%%%NAMESPACED_ORG%%%Animal__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>%%%NAMESPACED_ORG%%%Start_Date_Time__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>%%%NAMESPACED_ORG%%%End_Date_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Alert_Message__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Animal__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date_Time__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <startsWith>Vowel</startsWith>

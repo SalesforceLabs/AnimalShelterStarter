@@ -175,7 +175,7 @@
         <searchResultsAdditionalFields>Action_Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Action_Completed__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Action_Type__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>%%%NAMESPACED_ORG%%%Animal__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Animal__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <startsWith>Vowel</startsWith>

@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Action_Lookup_Name__c</fullName>
     <externalId>false</externalId>
-    <formula>%%%NAMESPACED_ORG%%%Animal__r.%%%NAMESPACED_ORG%%%Animal_Name__c + &quot; - &quot; + %%%NAMESPACED_ORG%%%Action_Type__c + &quot; - &quot; + TEXT(DAY(DATEVALUE(%%%NAMESPACED_ORG%%%Date_Time_of_Action__c)))+&quot;/&quot;+ TEXT(MONTH(DATEVALUE(%%%NAMESPACED_ORG%%%Date_Time_of_Action__c)))+&quot;/&quot;+TEXT(YEAR(DATEVALUE(%%%NAMESPACED_ORG%%%Date_Time_of_Action__c)))</formula>
+    <formula>Animal__r.Animal_Name__c + &quot; - &quot; + Action_Type__c + &quot; - &quot; + TEXT(DAY(DATEVALUE(Date_Time_of_Action__c)))+&quot;/&quot;+ TEXT(MONTH(DATEVALUE(Date_Time_of_Action__c)))+&quot;/&quot;+TEXT(YEAR(DATEVALUE(Date_Time_of_Action__c)))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Action Lookup Name</label>
     <required>false</required>

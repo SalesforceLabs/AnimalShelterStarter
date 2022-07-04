@@ -42,11 +42,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>Locations__c.Id</value>
+                    <value>%%%NAMESPACED_ORG%%%Locations__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>Locations__r</value>
+                    <value>%%%NAMESPACED_ORG%%%Locations__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
@@ -68,7 +68,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>Locations__c.Id</value>
+                    <value>%%%NAMESPACED_ORG%%%Locations__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -185,7 +185,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>Organisation__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Organisation__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>
@@ -210,7 +210,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>Foster_Contact__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Foster_Contact__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>titleFieldName</name>
@@ -272,7 +272,7 @@
     </flexiPageRegions>
     <masterLabel>Location Record Page</masterLabel>
     <parentFlexiPage>flexipage__default_rec_L</parentFlexiPage>
-    <sobjectType>Locations__c</sobjectType>
+    <sobjectType>%%%NAMESPACED_ORG%%%Locations__c</sobjectType>
     <template>
         <name>flexipage:recordHomeTemplateDesktop</name>
     </template>

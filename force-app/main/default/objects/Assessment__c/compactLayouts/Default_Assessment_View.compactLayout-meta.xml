@@ -2,7 +2,7 @@
 <CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Default_Assessment_View</fullName>
     <fields>Animal_Name__c</fields>
-    <fields>%%%NAMESPACED_ORG%%%Animal__c</fields>
+    <fields>Animal__c</fields>
     <fields>Assessment_Date_Time__c</fields>
     <fields>Assessment_Type__c</fields>
     <label>Default Assessment View</label>

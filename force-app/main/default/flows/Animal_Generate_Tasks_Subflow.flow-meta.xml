@@ -144,7 +144,7 @@
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
         <expression>IF(
-{!Movement}, {!Get_Animal_Details.Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.Location_Name__c}, {!Get_Animal_Details.Animal_Name__c} + &quot;Action to be Completed&quot;)</expression>
+            {!Movement}, {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.%%%NAMESPACED_ORG%%%Location_Name__c}, {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c} + &quot;Action to be Completed&quot;)        </expression>
     </formulas>
     <interviewLabel>Animal - Generate Tasks Subflow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -251,7 +251,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -272,7 +272,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Movement__c</object>
+        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>

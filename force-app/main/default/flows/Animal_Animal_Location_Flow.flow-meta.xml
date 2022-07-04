@@ -160,8 +160,8 @@
     <dynamicChoiceSets>
         <name>choiceGender</name>
         <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
         <picklistField>%%%NAMESPACED_ORG%%%Gender__c</picklistField>
         <picklistObject>%%%NAMESPACED_ORG%%%Animal__c</picklistObject>
     </dynamicChoiceSets>
@@ -171,7 +171,7 @@
         <displayField>%%%NAMESPACED_ORG%%%Animal_Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Geolocation__Latitude__s</field>
+            <field>%%%NAMESPACED_ORG%%%Geolocation__Latitude__s</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>true</booleanValue>

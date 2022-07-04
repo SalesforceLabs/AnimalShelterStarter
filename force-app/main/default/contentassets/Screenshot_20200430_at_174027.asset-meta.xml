@@ -2,7 +2,7 @@
 <ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
     <isVisibleByExternalUsers>false</isVisibleByExternalUsers>
     <language>en_US</language>
-    <masterLabel>Screenshot_20200430_at_174027</masterLabel>
+    <masterLabel>Animal_Shelter_Starter_Logo</masterLabel>
     <relationships>
         <organization>
             <access>VIEWER</access>
@@ -11,7 +11,7 @@
     <versions>
         <version>
             <number>1</number>
-            <pathOnClient>Screenshot 2020-04-30 at 17.40.27.png</pathOnClient>
+            <pathOnClient>Animal Shelter Starter Logo.png</pathOnClient>
         </version>
     </versions>
 </ContentAsset>

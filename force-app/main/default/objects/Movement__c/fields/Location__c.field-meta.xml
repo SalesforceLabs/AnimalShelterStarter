@@ -5,7 +5,7 @@
     <description>The location the movement record is related to</description>
     <externalId>false</externalId>
     <label>Location</label>
-    <referenceTo>%%%NAMESPACED_ORG%%%Locations__c</referenceTo>
+    <referenceTo>Locations__c</referenceTo>
     <relationshipLabel>Movements</relationshipLabel>
     <relationshipName>Movements</relationshipName>
     <required>false</required>

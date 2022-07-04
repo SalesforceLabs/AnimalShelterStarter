@@ -167,7 +167,7 @@
     <searchLayouts>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <searchResultsAdditionalFields>Primary_Contact__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>%%%NAMESPACED_ORG%%%Animal__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Animal__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Adoption_Stage__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Date_of_Adoption__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Date_Collected__c</searchResultsAdditionalFields>

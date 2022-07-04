@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldOverrides>
-        <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
+        <field>Action_Status__c</field>
         <literalValue>Given</literalValue>
     </fieldOverrides>
     <fieldOverrides>
-        <field>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</field>
+        <field>Date_Time_of_Action__c</field>
         <formula>NOW()</formula>
     </fieldOverrides>
     <label>Add Treatment</label>
@@ -15,36 +15,36 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Treatment_Type__c</field>
+                <field>Treatment_Type__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</field>
+                <field>Date_Time_of_Action__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Description__c</field>
+                <field>Description__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Condition__c</field>
+                <field>Condition__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
+                <field>Action_Status__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
     <successMessage>New Treatment Added</successMessage>
-    <targetObject>%%%NAMESPACED_ORG%%%Animal_Action__c</targetObject>
-    <targetParentField>%%%NAMESPACED_ORG%%%Animal__c</targetParentField>
-    <targetRecordType>%%%NAMESPACED_ORG%%%Animal_Action__c.%%%NAMESPACED_ORG%%%Treatment</targetRecordType>
+    <targetObject>Animal_Action__c</targetObject>
+    <targetParentField>Animal__c</targetParentField>
+    <targetRecordType>Animal_Action__c.Treatment</targetRecordType>
     <type>Create</type>
 </QuickAction>

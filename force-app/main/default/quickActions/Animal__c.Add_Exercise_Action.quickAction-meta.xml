@@ -38,8 +38,8 @@
         </quickActionLayoutColumns>
     </quickActionLayout>
     <successMessage>New Exercise Action Added</successMessage>
-    <targetObject>%%%NAMESPACED_ORG%%%Animal_Action__c</targetObject>
-    <targetParentField>%%%NAMESPACED_ORG%%%Animal__c</targetParentField>
-    <targetRecordType>%%%NAMESPACED_ORG%%%Animal_Action__c.%%%NAMESPACED_ORG%%%Exercise</targetRecordType>
+    <targetObject>Animal_Action__c</targetObject>
+    <targetParentField>Animal__c</targetParentField>
+    <targetRecordType>Animal_Action__c.Exercise</targetRecordType>
     <type>Create</type>
 </QuickAction>

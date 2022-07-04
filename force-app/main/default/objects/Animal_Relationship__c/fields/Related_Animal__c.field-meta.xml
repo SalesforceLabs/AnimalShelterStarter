@@ -4,7 +4,7 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Related Animal</label>
-    <referenceTo>%%%NAMESPACED_ORG%%%Animal__c</referenceTo>
+    <referenceTo>Animal__c</referenceTo>
     <relationshipLabel>Animal Relationships (Related Animal)</relationshipLabel>
     <relationshipName>Animal_Relationships1</relationshipName>
     <required>false</required>

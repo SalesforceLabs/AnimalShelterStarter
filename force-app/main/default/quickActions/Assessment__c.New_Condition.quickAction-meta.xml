@@ -7,29 +7,29 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+                <field>Animal__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Short_Description__c</field>
+                <field>Short_Description__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Condition_Description__c</field>
+                <field>Condition_Description__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>%%%NAMESPACED_ORG%%%Start_Date__c</field>
+                <field>Start_Date__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
-    <targetObject>%%%NAMESPACED_ORG%%%Condition__c</targetObject>
-    <targetParentField>%%%NAMESPACED_ORG%%%Assessment__c</targetParentField>
+    <targetObject>Condition__c</targetObject>
+    <targetParentField>Assessment__c</targetParentField>
     <type>Create</type>
 </QuickAction>

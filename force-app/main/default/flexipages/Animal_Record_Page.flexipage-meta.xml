@@ -1124,11 +1124,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>Animal__c.Id</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>Animal_Actions__r</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1141,13 +1141,16 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Description__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Date_Time_of_Action__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Action_Completed__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>RECORDTYPE</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -1194,11 +1197,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>Animal__c.Id</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>Animal_Actions__r</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1211,13 +1214,16 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Description__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Date_Time_of_Action__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Action_Completed__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>RECORDTYPE</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -1264,11 +1270,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>Animal__c.Id</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>Animal_Actions__r</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1281,13 +1287,13 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Description__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Date_Time_Action_Completed__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Action_Completed__c</value>
+                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

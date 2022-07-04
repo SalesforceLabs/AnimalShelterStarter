@@ -32,7 +32,7 @@
         <inputAssignments>
             <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <value>
-                <elementReference>$Record.Related_Animal__r.Id</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Related_Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -44,7 +44,7 @@
         <inputAssignments>
             <field>%%%NAMESPACED_ORG%%%Related_Animal__c</field>
             <value>
-                <elementReference>$Record.Animal__r.Id</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

@@ -1,12 +1,12 @@
 project:
     name: animal_shelter_starter
     package:
-        name:  Animal Shelter Starter
+        name: Animal Shelter Starter
         namespace: animalshelters
-        api_version: '53.0'
+        api_version: "55.0"
     source_format: sfdx
     git:
-        default_branch: 'master'
+        default_branch: "master"
         repo_url: https://github.com/SalesforceLabs/AnimalShelterStarter
 
 tasks:
@@ -38,20 +38,32 @@ tasks:
                 - record_type: "{managed}Locations__c.{managed}Organisation"
                 - record_type: "{managed}Locations__c.{managed}Unit"
 
+    list_changes:
+        options:
+            ignore:
+                - "Profile: "
+
+    retrieve_changes:
+        options:
+            ignore:
+                - "Profile: "
+                - "FlexiPage: "
+
 flows:
+    post_config:
+        steps:
+            1:
+                task: assign_permission_sets
+                options:
+                    api_names: "Animal_Shelter_Starter"
+            2:
+                task: load_dataset
+
     config_qa:
         steps:
             3:
-                task: assign_permission_sets
-                options:
-                    api_names: 'Animal_Shelter_Starter'
-            4:
-                task: load_dataset
+                flow: post_config
     config_dev:
         steps:
             3:
-                task: assign_permission_sets
-                options:
-                    api_names: 'Animal_Shelter_Starter'
-            4:
-                task: load_dataset
+                flow: post_config

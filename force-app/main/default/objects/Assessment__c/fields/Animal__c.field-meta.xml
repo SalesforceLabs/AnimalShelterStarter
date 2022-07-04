@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>%%%NAMESPACED_ORG%%%Animal__c</fullName>
+    <fullName>Animal__c</fullName>
     <externalId>false</externalId>
     <label>Animal</label>
-    <referenceTo>%%%NAMESPACED_ORG%%%Animal__c</referenceTo>
+    <referenceTo>Animal__c</referenceTo>
     <relationshipLabel>Assessments</relationshipLabel>
     <relationshipName>Assessments</relationshipName>
     <relationshipOrder>0</relationshipOrder>

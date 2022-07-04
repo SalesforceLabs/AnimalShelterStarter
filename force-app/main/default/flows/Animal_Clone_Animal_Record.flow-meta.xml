@@ -42,7 +42,7 @@
             <assignToReference>cloneAnimalRecord.%%%NAMESPACED_ORG%%%Account__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalToBeCloned.Account__r.Id</elementReference>
+                <elementReference>animalToBeCloned.%%%NAMESPACED_ORG%%%Account__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -352,7 +352,7 @@
         <outputReference>animalToBeCloned</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>%%%NAMESPACED_ORG%%%Animal_Name__c</queriedFields>
-        <queriedFields>Account__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Account__c</queriedFields>
         <queriedFields>%%%NAMESPACED_ORG%%%Animal_Status__c</queriedFields>
         <queriedFields>%%%NAMESPACED_ORG%%%Breed__c</queriedFields>
         <queriedFields>%%%NAMESPACED_ORG%%%Colour__c</queriedFields>
@@ -460,7 +460,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Number_of_Clones_Text</name>
-                    <fieldText>&lt;p&gt;&lt;i style=&quot;font-size: 14px;&quot;&gt;You are about to clone the animal record for &lt;/i&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;{!animalToBeCloned.Animal_Name__c} &lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Some data like Type, Breed, etc will be automatically copied to the cloned records, however, you will be able to make some changes to the new cloned animal records prior to saving.  How many clone animal records do you wish to make?&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;i style=&quot;font-size: 14px;&quot;&gt;You are about to clone the animal record for &lt;/i&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;{!animalToBeCloned.%%%NAMESPACED_ORG%%%Animal_Name__c} &lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Some data like Type, Breed, etc will be automatically copied to the cloned records, however, you will be able to make some changes to the new cloned animal records prior to saving.  How many clone animal records do you wish to make?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -501,6 +501,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

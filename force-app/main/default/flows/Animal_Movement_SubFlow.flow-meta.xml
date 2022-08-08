@@ -216,7 +216,7 @@
         <inputAssignments>
             <field>%%%NAMESPACED_ORG%%%Site__c</field>
             <value>
-                <elementReference>%%%NAMESPACED_ORG%%%Get_Newly_Created_Movement_Record.Sitename__c</elementReference>
+                <elementReference>Get_Newly_Created_Movement_Record.%%%NAMESPACED_ORG%%%Sitename__c</elementReference>
             </value>
         </inputAssignments>
         <object>%%%NAMESPACED_ORG%%%Animal__c</object>

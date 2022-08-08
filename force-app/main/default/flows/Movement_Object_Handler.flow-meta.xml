@@ -59,7 +59,7 @@
             </processMetadataValues>
             <name>varAnimalId</name>
             <value>
-                <elementReference>myVariable_current.Animal__r.Id</elementReference>
+                <elementReference>myVariable_current.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
             </value>
         </inputParameters>
     </actionCalls>

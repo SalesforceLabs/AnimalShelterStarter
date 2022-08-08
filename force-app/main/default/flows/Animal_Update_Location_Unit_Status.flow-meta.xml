@@ -42,7 +42,7 @@
     <formulas>
         <name>NoMoreCapacity</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Record.Availability__c} = 0</expression>
+        <expression>{!$Record.%%%NAMESPACED_ORG%%%Availability__c} = 0</expression>
     </formulas>
     <interviewLabel>Animal - Update Location Unit Status</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -72,7 +72,7 @@
         <locationX>314</locationX>
         <locationY>455</locationY>
         <inputAssignments>
-            <field>Unit_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
@@ -85,7 +85,7 @@
         <locationX>50</locationX>
         <locationY>455</locationY>
         <inputAssignments>
-            <field>Unit_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
             <value>
                 <stringValue>Allocated</stringValue>
             </value>
@@ -100,20 +100,20 @@
         </connector>
         <filterLogic>or</filterLogic>
         <filters>
-            <field>Location_Capacity__c</field>
+            <field>%%%NAMESPACED_ORG%%%Location_Capacity__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Single Animal</stringValue>
             </value>
         </filters>
         <filters>
-            <field>Location_Capacity__c</field>
+            <field>%%%NAMESPACED_ORG%%%Location_Capacity__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Multiple Animals</stringValue>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

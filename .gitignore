@@ -4,6 +4,7 @@
 /src.orig
 /src
 .sf/
+.forceignore
 
 # Python
 *.pyc

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>53.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <assignments>
         <name>Set_Animal_Name</name>
         <label>Set Animal Name</label>
@@ -10,7 +10,7 @@
             <assignToReference>Animal_Name_Selection</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c</elementReference>
+                <elementReference>Get_Animal_Details.Animal_Name__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -160,33 +160,35 @@
     <dynamicChoiceSets>
         <name>choiceGender</name>
         <dataType>Picklist</dataType>
-        <displayField xsi:nil="true" />
-        <object xsi:nil="true" />
-        <picklistField>%%%NAMESPACED_ORG%%%Gender__c</picklistField>
-        <picklistObject>%%%NAMESPACED_ORG%%%Animal__c</picklistObject>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Gender__c</picklistField>
+        <picklistObject>Animal__c</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>existingAnimals</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Animal_Name__c</displayField>
+        <displayField>Animal_Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Geolocation__Latitude__s</field>
+            <field>Geolocation__Latitude__s</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <outputAssignments>
             <assignToReference>recordId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Animal_Name__c</sortField>
+        <sortField>Animal_Name__c</sortField>
         <sortOrder>Asc</sortOrder>
-        <valueField>%%%NAMESPACED_ORG%%%Animal_Name__c</valueField>
+        <valueField>Animal_Name__c</valueField>
     </dynamicChoiceSets>
-    <interviewLabel>Animal - Animal Location Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <environments>Default</environments>
+    <interviewLabel>Animal - Animal Location Flow</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Animal Location Flow</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -220,78 +222,78 @@
             <targetReference>Error_Creating_New_Animal</targetReference>
         </faultConnector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal_Name__c</field>
+            <field>Animal_Name__c</field>
             <value>
                 <elementReference>Animal_Name</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <field>Animal_Status__c</field>
             <value>
                 <stringValue>New</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Breed__c</field>
+            <field>Breed__c</field>
             <value>
                 <elementReference>TypeAndBreed.middleValue</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Colour__c</field>
+            <field>Colour__c</field>
             <value>
                 <elementReference>Primary_Colour</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Crossbreed__c</field>
+            <field>Crossbreed__c</field>
             <value>
                 <elementReference>Crossbreed</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current_Weight__c</field>
+            <field>Current_Weight__c</field>
             <value>
                 <elementReference>Estimated_Weight</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_of_Arrival__c</field>
+            <field>Date_of_Arrival__c</field>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Estimated_Age__c</field>
+            <field>Estimated_Age__c</field>
             <value>
                 <elementReference>Estimated_Age</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Gender__c</field>
+            <field>Gender__c</field>
             <value>
                 <elementReference>Gender</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Microchip__c</field>
+            <field>Microchip__c</field>
             <value>
                 <elementReference>MicroChip</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Secondary_Colour__c</field>
+            <field>Secondary_Colour__c</field>
             <value>
                 <elementReference>Secondary_Colour</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
             <value>
                 <elementReference>TypeAndBreed.topValue</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordCreates>
     <recordLookups>
         <name>Get_Animal_Details</name>
@@ -311,7 +313,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -345,7 +347,7 @@
                 <elementReference>Capture_Geo.longitude</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <screens>
         <name>Capture_Location</name>
@@ -498,19 +500,19 @@
             <inputParameters>
                 <name>dependencyWrapperApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Animal__c</stringValue>
+                    <stringValue>Animal__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>topPicklistApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Type__c</stringValue>
+                    <stringValue>Type__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>middlePicklistApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Breed__c</stringValue>
+                    <stringValue>Breed__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>

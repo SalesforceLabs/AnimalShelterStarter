@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>49.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <assignments>
         <name>Get_Selected_Choice</name>
         <label>Get Selected Choice</label>
@@ -96,7 +96,8 @@
         </rules>
     </decisions>
     <description>When Changing the status of a Block the Sub Locations are also updated</description>
-    <interviewLabel>Animal - Block Status Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <environments>Default</environments>
+    <interviewLabel>Animal - Block Status Change</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Block Status Change</label>
     <processMetadataValues>
@@ -132,13 +133,13 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
+            <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>AllRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -156,20 +157,20 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
+            <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Allocated</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>AllocatedRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -194,7 +195,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -214,12 +215,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Block_Status__c</field>
+            <field>Block_Status__c</field>
             <value>
                 <elementReference>SelectedChoice</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Unit_Status_to_Available</name>
@@ -234,19 +235,19 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
+            <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Unit_Status_to_Unavailable</name>
@@ -261,19 +262,19 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
+            <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>LocationId</elementReference>
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Unavailable</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <screens>
         <name>Completed</name>
@@ -285,7 +286,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Completed_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Records Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in {!Get_Block_Name.%%%NAMESPACED_ORG%%%Name__c} have been updated to {!SelectedChoice}. Click Finish to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Records Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in {!Get_Block_Name.Name__c} have been updated to {!SelectedChoice}. Click Finish to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -317,7 +318,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Has_Allocated_Units_Text</name>
-            <fieldText>&lt;p&gt;Block &lt;strong&gt;&lt;em&gt;{!Get_Block_Name.%%%NAMESPACED_ORG%%%Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Block &lt;strong&gt;&lt;em&gt;{!Get_Block_Name.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -366,7 +367,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>AllRecords</name>
@@ -374,7 +375,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>LocationId</name>

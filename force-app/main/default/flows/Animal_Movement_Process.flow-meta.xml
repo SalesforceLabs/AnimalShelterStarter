@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <assignments>
         <name>Boarded_Movement_Record</name>
         <label>Boarded Movement Record</label>
@@ -398,10 +398,10 @@
     <dynamicChoiceSets>
         <name>BoarderLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Block_Unit__c</displayField>
+        <displayField>Block_Unit__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Available_for_Boarding__c</field>
+            <field>Available_for_Boarding__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -415,24 +415,24 @@
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Availability__c</field>
+            <field>Availability__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Block_Unit__c</sortField>
+        <sortField>Block_Unit__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>FosterLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Name__c</displayField>
+        <displayField>Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
@@ -442,24 +442,24 @@
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Availability__c</field>
+            <field>Availability__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Name__c</sortField>
+        <sortField>Name__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>OrganisationLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Name__c</displayField>
+        <displayField>Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
@@ -469,24 +469,24 @@
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Availability__c</field>
+            <field>Availability__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Name__c</sortField>
+        <sortField>Name__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>UnitLocations</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Block_Unit__c</displayField>
+        <displayField>Block_Unit__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
@@ -496,28 +496,30 @@
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Availability__c</field>
+            <field>Availability__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Block_Unit__c</sortField>
+        <sortField>Block_Unit__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
         <expression>IF(
-            ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Allocation__c} - 1, 0)        </expression>
+            ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.Allocation__c} - 1, 0)</expression>
         <scale>0</scale>
     </formulas>
-    <interviewLabel>Animal - Movement Process {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>Animal - Movement Process</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Movement Process</label>
     <loops>
         <name>Loop_Through_Movement_Records</name>
@@ -568,20 +570,20 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <outputReference>MovementRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -603,7 +605,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -620,11 +622,11 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Current_Movement_and_Location_Record_ID.%%%NAMESPACED_ORG%%%Location__r.Id</elementReference>
+                <elementReference>Get_Current_Movement_and_Location_Record_ID.Location__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -641,21 +643,21 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -689,7 +691,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -720,7 +722,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -741,7 +743,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+                <stringValue>Locations__c</stringValue>
             </value>
         </filters>
         <filters>
@@ -776,7 +778,7 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
@@ -787,7 +789,7 @@
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Reset_Location_Status</name>
@@ -809,18 +811,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Allocation__c</field>
+            <field>Allocation__c</field>
             <value>
                 <elementReference>DecrementAllocationBy1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <screens>
         <name>Animal_Has_Existing_Location_Screen</name>
@@ -841,7 +843,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Animal_Has_Existing_Location_Screen_Text</name>
-                    <fieldText>&lt;p&gt;&lt;strong&gt;{!Get_Animals_Details.%%%NAMESPACED_ORG%%%Animal_Name__c}&lt;/strong&gt;  already has a current location&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;{!Get_Current_Movement_and_Location_Record_ID.%%%NAMESPACED_ORG%%%Location_Name__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;To leave the animal in its current location, exit here, or continue to assign a new location&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;{!Get_Animals_Details.Animal_Name__c}&lt;/strong&gt;  already has a current location&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;{!Get_Current_Movement_and_Location_Record_ID.Location_Name__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;To leave the animal in its current location, exit here, or continue to assign a new location&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1102,7 +1104,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Movement_Complete_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Records Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The location for {!Get_Animals_Details.%%%NAMESPACED_ORG%%%Animal_Name__c} has now been updated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please click Finish to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Records Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The location for {!Get_Animals_Details.Animal_Name__c} has now been updated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please click Finish to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1261,7 +1263,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
     <variables>
         <name>newMovementType</name>
@@ -1276,6 +1278,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
 </Flow>

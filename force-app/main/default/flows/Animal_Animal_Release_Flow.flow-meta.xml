@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>51.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <assignments>
         <name>Update_Animal_Data</name>
         <label>Update Animal Data</label>
@@ -109,7 +109,9 @@
         <sortOrder>Asc</sortOrder>
         <valueField>Animal_Name__c</valueField>
     </dynamicChoiceSets>
-    <interviewLabel>Animal - Animal Release Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <environments>Default</environments>
+    <interviewLabel>Animal - Animal Release Flow</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Animal Release Flow</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -206,6 +208,7 @@
             <name>CaptureCurrentLocation</name>
             <extensionName>c:FSCGeolocation</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>

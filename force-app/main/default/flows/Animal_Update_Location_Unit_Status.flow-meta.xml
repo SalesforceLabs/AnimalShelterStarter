@@ -38,12 +38,14 @@
             <label>Unit is Available</label>
         </rules>
     </decisions>
+    <environments>Default</environments>
     <formulas>
         <name>NoMoreCapacity</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Record.%%%NAMESPACED_ORG%%%Availability__c} = 0</expression>
+        <expression>{!$Record.Availability__c} = 0</expression>
     </formulas>
-    <interviewLabel>Animal - Update Location Unit Status {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>Animal - Update Location Unit Status</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Update Location Unit Status</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -70,7 +72,7 @@
         <locationX>314</locationX>
         <locationY>455</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
@@ -83,7 +85,7 @@
         <locationX>50</locationX>
         <locationY>455</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Allocated</stringValue>
             </value>
@@ -98,20 +100,20 @@
         </connector>
         <filterLogic>or</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Location_Capacity__c</field>
+            <field>Location_Capacity__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Single Animal</stringValue>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Location_Capacity__c</field>
+            <field>Location_Capacity__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Multiple Animals</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

@@ -10,17 +10,6 @@ project:
         repo_url: https://github.com/SalesforceLabs/AnimalShelterStarter
 
 tasks:
-    robot:
-        options:
-            suites: robot/animal_shelter_starter/tests
-            options:
-                outputdir: robot/animal_shelter_starter/results
-
-    robot_testdoc:
-        options:
-            path: robot/animal_shelter_starter/tests
-            output: robot/animal_shelter_starter/doc/animal_shelter_starter_tests.html
-
     run_tests:
         options:
             required_org_code_coverage_percent: 75

@@ -6,6 +6,16 @@
 
 
 <apex:page standardController="%%%NAMESPACED_ORG%%%Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Animal_Name__c}" rendered="false" />
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Location_Status__c}" rendered="false" />
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Type__c}" rendered="false" />
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Breed__c}" rendered="false" />
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Colour__c}" rendered="false" />
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Secondary_Colour__c}" rendered="false" />
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Animal_Status__c}" rendered="false" />
+    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Record_QR_Code__c}" rendered="false" />
+
     <html>
 
     <head>
@@ -73,7 +83,7 @@
                     <br/>
                     <apex:outputText styleClass="details" value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Animal_Status__c }" />
                     <br/>
-                    <apex:outputText value="{! %%%NAMESPACED_ORG%%%Animal__c.Record_QR_Code__c }" escape="false" />
+                    <apex:outputText value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Record_QR_Code__c }" escape="false" />
                     <br/>
                 </apex:pageBlockSection>
             </apex:pageBlock>

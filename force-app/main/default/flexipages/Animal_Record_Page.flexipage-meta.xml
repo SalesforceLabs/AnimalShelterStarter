@@ -208,6 +208,56 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldItem>Record.Breed_Lookup__c</fieldItem>
+                <identifier>RecordBreed_Lookup_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-423634a1-dfa2-44d2-ae85-15b6377ca8e6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.TypeFromBreeds__c</fieldItem>
+                <identifier>RecordTypeFromBreeds_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Species__c</fieldItem>
+                <identifier>RecordSpecies_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-1b295e62-c107-4b1a-843f-84b7887fd36a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-423634a1-dfa2-44d2-ae85-15b6377ca8e6</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column19</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-1b295e62-c107-4b1a-843f-84b7887fd36a</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column20</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-46b49e30-6d62-4b06-95ac-988eab13bf18</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>required</value>
@@ -330,6 +380,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-46b49e30-6d62-4b06-95ac-988eab13bf18</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Breed</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection11</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1124,11 +1188,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
+                    <value>Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
+                    <value>Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1141,13 +1205,13 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
+                            <value>Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</value>
+                            <value>Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                            <value>Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>RECORDTYPE</value>
@@ -1197,11 +1261,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
+                    <value>Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
+                    <value>Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1214,13 +1278,13 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
+                            <value>Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</value>
+                            <value>Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                            <value>Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>RECORDTYPE</value>
@@ -1270,11 +1334,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
+                    <value>Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
+                    <value>Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1287,13 +1351,13 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
+                            <value>Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</value>
+                            <value>Date_Time_Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                            <value>Action_Completed__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

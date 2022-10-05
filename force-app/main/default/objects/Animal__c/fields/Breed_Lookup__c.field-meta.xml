@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Breed_Lookup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>The animals breed - lookup to the Breeds object</inlineHelpText>
+    <label>Breed</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Breed__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Breed__c</referenceTo>
+    <relationshipLabel>Animals</relationshipLabel>
+    <relationshipName>Animals</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Has_Migration_Already_Been_Completed</name>
+        <label>Has Migration Already Been Completed?</label>
+        <locationX>226</locationX>
+        <locationY>158</locationY>
+        <defaultConnector>
+            <targetReference>Get_Animals_Records_for_Migration</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Migration Not Completed</defaultConnectorLabel>
+        <rules>
+            <name>Migration_Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BreedsMigrationComplete</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Migration_has_already_been_completed</targetReference>
+            </connector>
+            <label>Migration Completed</label>
+        </rules>
+    </decisions>
+    <description>Flow used to migrate Animal Type and Breeds from Picklist to Object Lookup</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>BreedsMigrationComplete</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Setup.Animal_Shelter_Settings__c.Breeds_Migration_Complete__c}</expression>
+    </formulas>
+    <interviewLabel>Animal - Breeds Migration Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Animal - Breeds Migration Flow</label>
+    <loops>
+        <name>Cycle_through_Animal_Records</name>
+        <label>Cycle through Animal Records</label>
+        <locationX>402</locationX>
+        <locationY>518</locationY>
+        <collectionReference>AnimalsToMigrate</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <noMoreValuesConnector>
+            <targetReference>Update</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Signifies that migration is complete</description>
+        <name>Update</name>
+        <label>Update Custom Setting to True</label>
+        <locationX>402</locationX>
+        <locationY>734</locationY>
+        <inputAssignments>
+            <field>Breeds_Migration_Complete__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Animal_Shelter_Settings__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>Gets all animal records with Is Migrated flag set to false</description>
+        <name>Get_Animals_Records_for_Migration</name>
+        <label>Get Animals Records for Migration</label>
+        <locationX>402</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Breeds_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SYSTEM_Breed_Migrated__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Animal__c</object>
+        <outputReference>AnimalsToMigrate</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Type__c</queriedFields>
+        <queriedFields>Breed__c</queriedFields>
+        <queriedFields>Breed_Lookup__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Breeds_Records</name>
+        <label>Get Breeds Records</label>
+        <locationX>402</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Cycle_through_Animal_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Breed__c</object>
+        <outputReference>ActiveBreedRecords</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Type__c</queriedFields>
+        <queriedFields>Species__c</queriedFields>
+    </recordLookups>
+    <screens>
+        <name>Migration_has_already_been_completed</name>
+        <label>Migration has already been completed</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>MigrationCompleted_Text</name>
+            <fieldText>&lt;p&gt;It looks like the migration of data has already been completed.  If this is not the case contact your Systems Administrator&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>100</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Has_Migration_Already_Been_Completed</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>ActiveBreedRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Breed__c</objectType>
+    </variables>
+    <variables>
+        <name>AnimalsToMigrate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
+    </variables>
+    <variables>
+        <description>Indicates that not all animal records can be matched to breeds</description>
+        <name>MigrationErrors</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

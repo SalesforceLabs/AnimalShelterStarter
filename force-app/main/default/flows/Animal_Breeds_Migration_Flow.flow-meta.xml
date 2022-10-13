@@ -1,10 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Build_List_to_Update</name>
+        <label>Build List to Update</label>
+        <locationX>1018</locationX>
+        <locationY>878</locationY>
+        <assignmentItems>
+            <assignToReference>AnimalsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SingleAnimalRecord</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cycle_through_Animal_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Get_Animal_and_Breed_IDs</name>
+        <label>Get Animal and Breed IDs</label>
+        <locationX>1018</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>SingleAnimalRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Cycle_through_Animal_Records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleAnimalRecord.Breed_Lookup__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MatchBreedRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleAnimalRecord.SYSTEM_Breed_Migrated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_List_to_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Error_Flag</name>
+        <label>Set Error Flag</label>
+        <locationX>754</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>MigrationErrors</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cycle_through_Animal_Records</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Has_Breed_Record_Been_Found</name>
+        <label>Has Breed Record Been Found?</label>
+        <locationX>886</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>Get_Animal_and_Breed_IDs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Breed Record Found</defaultConnectorLabel>
+        <rules>
+            <name>Breed_Record_Not_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MatchBreedRecord.Id</leftValueReference>
+                <operator>IsNull</operator>
+            </conditions>
+            <connector>
+                <targetReference>Set_Error_Flag</targetReference>
+            </connector>
+            <label>Breed Record Not Found</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Has_Migration_Already_Been_Completed</name>
         <label>Has Migration Already Been Completed?</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>158</locationY>
         <defaultConnector>
             <targetReference>Get_Animals_Records_for_Migration</targetReference>
@@ -26,6 +110,53 @@
             <label>Migration Completed</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Mark_Migration_as_Complete</name>
+        <label>Mark Migration as Complete?</label>
+        <locationX>864</locationX>
+        <locationY>1550</locationY>
+        <defaultConnectorLabel>Migration Not Complete</defaultConnectorLabel>
+        <rules>
+            <name>Migration_Complete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Confirm_to_mark_migration_as_complete</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Custom_Setting_to_True</targetReference>
+            </connector>
+            <label>Migration Complete</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Were_There_Errors_in_Matching</name>
+        <label>Were There Errors in Matching</label>
+        <locationX>666</locationX>
+        <locationY>1310</locationY>
+        <defaultConnector>
+            <targetReference>No_Match_Errors_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Match Errors Encountered</defaultConnectorLabel>
+        <rules>
+            <name>Match_Errors_Encountered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MigrationErrors</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Match_Errors_Screen</targetReference>
+            </connector>
+            <label>Match Errors Encountered</label>
+        </rules>
+    </decisions>
     <description>Flow used to migrate Animal Type and Breeds from Picklist to Object Lookup</description>
     <environments>Default</environments>
     <formulas>
@@ -38,12 +169,15 @@
     <loops>
         <name>Cycle_through_Animal_Records</name>
         <label>Cycle through Animal Records</label>
-        <locationX>402</locationX>
-        <locationY>518</locationY>
+        <locationX>666</locationX>
+        <locationY>398</locationY>
         <collectionReference>AnimalsToMigrate</collectionReference>
         <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_Breed_Record</targetReference>
+        </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update</targetReference>
+            <targetReference>Update_Animal_Records</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -67,10 +201,10 @@
     <processType>Flow</processType>
     <recordCreates>
         <description>Signifies that migration is complete</description>
-        <name>Update</name>
+        <name>Update_Custom_Setting_to_True</name>
         <label>Update Custom Setting to True</label>
-        <locationX>402</locationX>
-        <locationY>734</locationY>
+        <locationX>732</locationX>
+        <locationY>1670</locationY>
         <inputAssignments>
             <field>Breeds_Migration_Complete__c</field>
             <value>
@@ -84,11 +218,11 @@
         <description>Gets all animal records with Is Migrated flag set to false</description>
         <name>Get_Animals_Records_for_Migration</name>
         <label>Get Animals Records for Migration</label>
-        <locationX>402</locationX>
+        <locationX>666</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Breeds_Records</targetReference>
+            <targetReference>Cycle_through_Animal_Records</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -106,15 +240,30 @@
         <queriedFields>Breed_Lookup__c</queriedFields>
     </recordLookups>
     <recordLookups>
-        <name>Get_Breeds_Records</name>
-        <label>Get Breeds Records</label>
-        <locationX>402</locationX>
-        <locationY>398</locationY>
+        <description>Look in Breeds object for record that matches the Type and Breed Picklists</description>
+        <name>Get_Breed_Record</name>
+        <label>Get Breed Record</label>
+        <locationX>886</locationX>
+        <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Cycle_through_Animal_Records</targetReference>
+            <targetReference>Has_Breed_Record_Been_Found</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Cycle_through_Animal_Records.Type__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Species__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Cycle_through_Animal_Records.Breed__c</elementReference>
+            </value>
+        </filters>
         <filters>
             <field>Active__c</field>
             <operator>EqualTo</operator>
@@ -123,11 +272,54 @@
             </value>
         </filters>
         <object>Breed__c</object>
-        <outputReference>ActiveBreedRecords</outputReference>
+        <outputReference>MatchBreedRecord</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Type__c</queriedFields>
-        <queriedFields>Species__c</queriedFields>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Animal_Records</name>
+        <label>Update Animal Records</label>
+        <locationX>666</locationX>
+        <locationY>1190</locationY>
+        <connector>
+            <targetReference>Were_There_Errors_in_Matching</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_Updating_Animal_Records</targetReference>
+        </faultConnector>
+        <inputReference>AnimalsToUpdate</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Fault_Updating_Animal_Records</name>
+        <label>Fault Updating Animal Records</label>
+        <locationX>1172</locationX>
+        <locationY>1310</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Fault_Updating_Animal_Records_Text</name>
+            <fieldText>&lt;p&gt;Oops!  Looks like there has been an issue trying to update the Animal Records.  Please contact your System Admin with the following details.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Match_Errors_Screen</name>
+        <label>Match Errors Screen</label>
+        <locationX>468</locationX>
+        <locationY>1430</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Match_Errors_Screen_Text</name>
+            <fieldText>&lt;p&gt;During the migration process 1 or more Animal record Type and Breeds were unable to be matched with the Breeds data.  Run the following report to see which Animal records do not have the migrated flag set&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <screens>
         <name>Migration_has_already_been_completed</name>
         <label>Migration has already been completed</label>
@@ -144,8 +336,34 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>No_Match_Errors_Screen</name>
+        <label>No Match Errors Screen</label>
+        <locationX>864</locationX>
+        <locationY>1430</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Mark_Migration_as_Complete</targetReference>
+        </connector>
+        <fields>
+            <name>No_Match_Errors_Screen_Text</name>
+            <fieldText>&lt;p&gt;All Animal records have been successfully migrated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can now remove the old Type and Breed fields from any Page Layouts.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Marking the Migration as complete means that you will not be able to run this process again!&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Confirm_to_mark_migration_as_complete</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Confirm to mark migration as complete</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>100</locationX>
+        <locationX>232</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Has_Migration_Already_Been_Completed</targetReference>
@@ -153,20 +371,35 @@
     </start>
     <status>Draft</status>
     <variables>
-        <name>ActiveBreedRecords</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Breed__c</objectType>
-    </variables>
-    <variables>
         <name>AnimalsToMigrate</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Animal__c</objectType>
+    </variables>
+    <variables>
+        <name>AnimalsToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
+    </variables>
+    <variables>
+        <name>BreedPicklistValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>MatchBreedRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Breed__c</objectType>
     </variables>
     <variables>
         <description>Indicates that not all animal records can be matched to breeds</description>
@@ -178,5 +411,20 @@
         <value>
             <booleanValue>false</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>SingleAnimalRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
+    </variables>
+    <variables>
+        <name>TypePicklistValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>

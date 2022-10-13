@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SYSTEM_Breed_Migrated__c</fullName>
     <defaultValue>false</defaultValue>
-    <description>[Animal Shelter Starter] used to indicate that the animals record has migrated to the new breeds object.</description>
+    <description>[Animal Shelter Starter] used to indicate that the animals record has migrated to the new breeds object. Internal Use Only</description>
     <externalId>false</externalId>
     <label>SYSTEM Breed Migrated</label>
     <trackTrending>false</trackTrending>

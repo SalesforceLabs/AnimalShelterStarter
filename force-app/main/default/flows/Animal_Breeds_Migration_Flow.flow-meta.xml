@@ -484,7 +484,7 @@
             <targetReference>Has_Migration_Already_Been_Completed</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>AllActiveBreedRecords</name>
         <dataType>SObject</dataType>

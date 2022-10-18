@@ -4,8 +4,8 @@
     <assignments>
         <name>Build_List_of_Records_to_Update</name>
         <label>Build List of Records to Update</label>
-        <locationX>1018</locationX>
-        <locationY>1238</locationY>
+        <locationX>1194</locationX>
+        <locationY>1694</locationY>
         <assignmentItems>
             <assignToReference>AnimalsToUpdate</assignToReference>
             <operator>Add</operator>
@@ -21,20 +21,13 @@
         <description>Assigns Animal and Breed Record IDs, and sets the Migrated Flag to True</description>
         <name>Get_Animal_and_Breed_record_Ids</name>
         <label>Get Animal and Breed record Ids</label>
-        <locationX>1018</locationX>
-        <locationY>1118</locationY>
+        <locationX>1194</locationX>
+        <locationY>1574</locationY>
         <assignmentItems>
             <assignToReference>SingleAnimalRecord.Id</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Cycle_through_Animal_Records.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>SingleAnimalRecord.Breed_Lookup__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>currentItem_Search_Breeds_Collection.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -44,15 +37,54 @@
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleAnimalRecord.Breed_Lookup__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BreedRecordId</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Build_List_of_Records_to_Update</targetReference>
         </connector>
     </assignments>
     <assignments>
+        <name>Get_Single_Breed_Record_Id</name>
+        <label>Get Single Breed Record Id</label>
+        <locationX>1282</locationX>
+        <locationY>1358</locationY>
+        <assignmentItems>
+            <assignToReference>BreedRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Breed_Record_Id.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Breed_Record_Id</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Number_of_Breed_Records</name>
+        <label>Number of Breed Records</label>
+        <locationX>1018</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>BreedRecordCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Search_Breeds_Collection</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Has_Breed_Record_Been_Found</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Set_Error_Flag</name>
         <label>Set Error Flag</label>
-        <locationX>754</locationX>
-        <locationY>1118</locationY>
+        <locationX>842</locationX>
+        <locationY>1238</locationY>
         <assignmentItems>
             <assignToReference>MigrationErrors</assignToReference>
             <operator>Assign</operator>
@@ -69,34 +101,34 @@
         <name>Search_Breeds_Collection</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Search Breeds Collection</label>
-        <locationX>886</locationX>
+        <locationX>1018</locationX>
         <locationY>878</locationY>
-        <assignNextValueToReference>currentItem_Search_Breeds_Collection</assignNextValueToReference>
+        <assignNextValueToReference>CurrentItem_Search_Breeds_Collection</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>AllActiveBreedRecords</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Search_Breeds_Collection.Type__c</leftValueReference>
+            <leftValueReference>CurrentItem_Search_Breeds_Collection.Type__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <elementReference>Cycle_through_Animal_Records.Type__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Search_Breeds_Collection.Species__c</leftValueReference>
+            <leftValueReference>CurrentItem_Search_Breeds_Collection.Species__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <elementReference>Cycle_through_Animal_Records.Breed__c</elementReference>
             </rightValue>
         </conditions>
         <connector>
-            <targetReference>Has_Breed_Record_Been_Found</targetReference>
+            <targetReference>Number_of_Breed_Records</targetReference>
         </connector>
     </collectionProcessors>
     <decisions>
         <name>Continue_with_Migration</name>
         <label>Continue with Migration</label>
-        <locationX>1095</locationX>
+        <locationX>1183</locationX>
         <locationY>398</locationY>
         <defaultConnectorLabel>Migration No Go</defaultConnectorLabel>
         <rules>
@@ -118,20 +150,20 @@
     <decisions>
         <name>Has_Breed_Record_Been_Found</name>
         <label>Has Breed Record Been Found?</label>
-        <locationX>886</locationX>
-        <locationY>998</locationY>
+        <locationX>1018</locationX>
+        <locationY>1118</locationY>
         <defaultConnector>
-            <targetReference>Get_Animal_and_Breed_record_Ids</targetReference>
+            <targetReference>Get_Breed_Record_Id</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Breed Record Found</defaultConnectorLabel>
         <rules>
             <name>Breed_Record_Not_Found</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Search_Breeds_Collection</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>BreedRecordCount</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <numberValue>0.0</numberValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -143,7 +175,7 @@
     <decisions>
         <name>Has_Migration_Already_Been_Completed</name>
         <label>Has Migration Already Been Completed?</label>
-        <locationX>572</locationX>
+        <locationX>616</locationX>
         <locationY>158</locationY>
         <defaultConnector>
             <targetReference>Confirm_Migration_Screen</targetReference>
@@ -168,8 +200,8 @@
     <decisions>
         <name>Mark_Migration_as_Complete</name>
         <label>Mark Migration as Complete?</label>
-        <locationX>864</locationX>
-        <locationY>1910</locationY>
+        <locationX>952</locationX>
+        <locationY>2366</locationY>
         <defaultConnectorLabel>Migration Not Complete</defaultConnectorLabel>
         <rules>
             <name>Migration_Complete</name>
@@ -190,8 +222,8 @@
     <decisions>
         <name>Were_There_Errors_in_Matching</name>
         <label>Were There Errors in Matching</label>
-        <locationX>666</locationX>
-        <locationY>1670</locationY>
+        <locationX>754</locationX>
+        <locationY>2126</locationY>
         <defaultConnector>
             <targetReference>No_Match_Errors_Screen</targetReference>
         </defaultConnector>
@@ -225,7 +257,7 @@
     <loops>
         <name>Cycle_through_Animal_Records</name>
         <label>Cycle through Animal Records</label>
-        <locationX>666</locationX>
+        <locationX>754</locationX>
         <locationY>758</locationY>
         <collectionReference>AnimalsToMigrate</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -234,6 +266,20 @@
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Update_Animal_Records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Get_Breed_Record_Id</name>
+        <label>Get Breed Record Id</label>
+        <locationX>1194</locationX>
+        <locationY>1238</locationY>
+        <collectionReference>Search_Breeds_Collection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_Single_Breed_Record_Id</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Animal_and_Breed_record_Ids</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -259,8 +305,8 @@
         <description>Signifies that migration is complete</description>
         <name>Update_Custom_Setting_to_True</name>
         <label>Update Custom Setting to True</label>
-        <locationX>732</locationX>
-        <locationY>2030</locationY>
+        <locationX>820</locationX>
+        <locationY>2486</locationY>
         <inputAssignments>
             <field>Breeds_Migration_Complete__c</field>
             <value>
@@ -273,7 +319,7 @@
     <recordLookups>
         <name>Get_All_Active_Breed_Records</name>
         <label>Get All Active Breed Records</label>
-        <locationX>666</locationX>
+        <locationX>754</locationX>
         <locationY>638</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -297,7 +343,7 @@
         <description>Gets all animal records with Is Migrated flag set to false</description>
         <name>Get_Animals_Records_for_Migration</name>
         <label>Get Animals Records for Migration</label>
-        <locationX>666</locationX>
+        <locationX>754</locationX>
         <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -321,8 +367,8 @@
     <recordUpdates>
         <name>Update_Animal_Records</name>
         <label>Update Animal Records</label>
-        <locationX>666</locationX>
-        <locationY>1550</locationY>
+        <locationX>754</locationX>
+        <locationY>2006</locationY>
         <connector>
             <targetReference>Were_There_Errors_in_Matching</targetReference>
         </connector>
@@ -334,7 +380,7 @@
     <screens>
         <name>Confirm_Migration_Screen</name>
         <label>Confirm Migration Screen</label>
-        <locationX>1095</locationX>
+        <locationX>1183</locationX>
         <locationY>278</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -360,8 +406,8 @@
     <screens>
         <name>Fault_Updating_Animal_Records</name>
         <label>Fault Updating Animal Records</label>
-        <locationX>1260</locationX>
-        <locationY>1670</locationY>
+        <locationX>1348</locationX>
+        <locationY>2126</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -376,8 +422,8 @@
     <screens>
         <name>Match_Errors_Screen</name>
         <label>Match Errors Screen</label>
-        <locationX>468</locationX>
-        <locationY>1790</locationY>
+        <locationX>556</locationX>
+        <locationY>2246</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -408,8 +454,8 @@
     <screens>
         <name>No_Match_Errors_Screen</name>
         <label>No Match Errors Screen</label>
-        <locationX>864</locationX>
-        <locationY>1790</locationY>
+        <locationX>952</locationX>
+        <locationY>2246</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -432,7 +478,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>446</locationX>
+        <locationX>490</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Has_Migration_Already_Been_Completed</targetReference>
@@ -471,7 +517,22 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>currentItem_Search_Breeds_Collection</name>
+        <name>BreedRecordCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>BreedRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CurrentItem_Search_Breeds_Collection</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

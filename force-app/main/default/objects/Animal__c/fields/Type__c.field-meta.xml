@@ -3,7 +3,7 @@
     <fullName>Type__c</fullName>
     <externalId>false</externalId>
     <inlineHelpText>The type of animal e.g. Dog</inlineHelpText>
-    <label>Type</label>
+    <label>Type (legacy)</label>
     <required>true</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>

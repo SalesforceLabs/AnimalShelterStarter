@@ -2,11 +2,6 @@
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Animal_Cage_Card_Field_Set</fullName>
     <availableFields>
-        <field>Breed_Lookup__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>Species__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>

@@ -228,10 +228,6 @@
                 <identifier>RecordBreed_Lookup_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-423634a1-dfa2-44d2-ae85-15b6377ca8e6</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -242,6 +238,10 @@
                 <identifier>RecordTypeFromBreeds_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-423634a1-dfa2-44d2-ae85-15b6377ca8e6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -250,6 +250,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Species__c</fieldItem>
                 <identifier>RecordSpecies_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Crossbreed_Formula__c</fieldItem>
+                <identifier>RecordCrossbreed_Formula_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-1b295e62-c107-4b1a-843f-84b7887fd36a</name>
@@ -284,16 +294,6 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Type__c</fieldItem>
-                <identifier>RecordType__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Coat_Type__c</fieldItem>
@@ -324,26 +324,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Breed__c</fieldItem>
-                <identifier>RecordBreed__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Crossbreed__c</fieldItem>
-                <identifier>RecordCrossbreed__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>

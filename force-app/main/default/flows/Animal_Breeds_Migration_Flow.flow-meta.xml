@@ -253,6 +253,7 @@
         <expression>{!$Setup.Animal_Shelter_Settings__c.Breeds_Migration_Complete__c}</expression>
     </formulas>
     <interviewLabel>Animal - Breeds Migration Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Breeds Migration Flow</label>
     <loops>
         <name>Cycle_through_Animal_Records</name>
@@ -390,7 +391,7 @@
         </connector>
         <fields>
             <name>Confirm_Migration_Screen_Text</name>
-            <fieldText>&lt;p&gt;This process will update all Animal records to use the new Breeds object.  To avoid errors you should first populate the Breeds object with the records needed to match the Animal Types and Breeds that you are using.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;This process will update all Animal records to use the new Breeds object.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Before continuing ensure you&apos;ve populated the Breeds object with the records needed to match the Animal Types and Breeds that you are using.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;See our Animal Shelter Starter Trailblazer Group for an example set of Animal breeds that you can upload&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -445,7 +446,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Migration_Previously_Completed_Text</name>
-            <fieldText>&lt;p&gt;It looks like the migration process  has already been marked as completed.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is not the case contact your Systems Administrator&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Sorry, it looks like the migration process  has already been marked as completed.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is not the case contact your Systems Administrator&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -464,7 +465,7 @@
         </connector>
         <fields>
             <name>No_Match_Errors_Screen_Text</name>
-            <fieldText>&lt;p&gt;All Animal records have been successfully migrated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Remove the old Type and Breed fields from the Animal Page Layouts.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can now mark the Migration process as complete.  Checking the box below means that you will not be able to run this process again, without Admin intervention.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;All Animal records have been successfully migrated.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can now mark the Migration process as complete.  Checking the box below means that you will not be able to run this process again, without the intervention of the Systems Administrator.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>

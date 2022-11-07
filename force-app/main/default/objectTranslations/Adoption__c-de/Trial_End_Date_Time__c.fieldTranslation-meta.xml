@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- If this is a trial adoption, then set this to the end date when the trial period is due to end. --></help>
+    <label>Schlussdatum/Uhrzeit Probezeit</label>
+    <name>Trial_End_Date_Time__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The reason the animal has been brought to the Animal Shelter --></help>
+    <label>Aufnahmegrund</label>
+    <name>Entry_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Abandoned</masterLabel>
+        <translation>Verlassen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Abuse</masterLabel>
+        <translation>Misshandelt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Allergies</masterLabel>
+        <translation>Allergien</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Behaviour Issue</masterLabel>
+        <translation>Verhaltensauffällig</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boarding</masterLabel>
+        <translation>Pension</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Household Unable to Cope</masterLabel>
+        <translation>Huashalt überfordert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Household cannot afford</masterLabel>
+        <translation>Haushalt kann nicht leisten</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Housing Unsuitable</masterLabel>
+        <translation>Behausung ungeeignet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner passed or moved out of home address</masterLabel>
+        <translation>Eigentümer verstorben oder ausgezogen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Relationship Issue</masterLabel>
+        <translation>Beziehungsproblem</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sick/Injured</masterLabel>
+        <translation>Krank/Verletzt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stray</masterLabel>
+        <translation>Verirrt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transfer</masterLabel>
+        <translation>Transfer</translation>
+    </picklistValues>
+</CustomFieldTranslation>

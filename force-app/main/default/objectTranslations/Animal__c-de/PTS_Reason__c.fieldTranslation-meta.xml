@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Put To Sleep (PTS) Reason. --></help>
+    <label>Einschläfungsgrund</label>
+    <name>PTS_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Aggression to other animals</masterLabel>
+        <translation>Aggression gegenüber anderen Tieren</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aggression to people</masterLabel>
+        <translation>Aggression gegen Menschen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Behavioural</masterLabel>
+        <translation>Verhaltensweisen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Illness</masterLabel>
+        <translation>Krankheit</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Illness - Terminal</masterLabel>
+        <translation>Krankheit im Endstadium</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical</masterLabel>
+        <translation>Medizinisch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Old Age</masterLabel>
+        <translation>Alter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Andere</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stress or Anxiety</masterLabel>
+        <translation>Stress oder Ängste</translation>
+    </picklistValues>
+</CustomFieldTranslation>

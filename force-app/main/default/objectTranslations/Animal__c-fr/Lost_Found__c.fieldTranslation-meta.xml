@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check if the Animal has come into the Shelter as a Lost/Found Animal --></help>
+    <label>Perdu/trouvé</label>
+    <name>Lost_Found__c</name>
+</CustomFieldTranslation>

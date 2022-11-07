@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- If boarding then this is the current owner otherwise set this to the previous owner of the animal. --></help>
+    <label>Propriétaire précédent/actuel</label>
+    <name>Previous_Current_Owner__c</name>
+    <relationshipLabel><!-- Related Animals --></relationshipLabel>
+</CustomFieldTranslation>

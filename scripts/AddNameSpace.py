@@ -23,6 +23,7 @@ def replace_file_text(file_location, old_text, new_text):
         tmpFile.seek(0)
         fcontents = tmpFile.read()
 
+
     new_fcontents = fcontents.replace(f"{old_text}", f"{new_text}")
 
     with open(f"{file_location}", "w") as tmpFile:
@@ -61,14 +62,21 @@ def update_files():
       items_to_replace.extend(lookup_references)
       items_to_replace.extend(gps_references)
 
-    #replace_file_text(file, NAMESPACE_REPLACEMENT, "")
+    print(f"\n**Processing File**: {file}")
 
+    replace_file_text(file, NAMESPACE_REPLACEMENT, "")
+
+    # De-dupe List
+    original_count = len(items_to_replace)
     items_to_replace = list(dict.fromkeys(items_to_replace))
 
-    for item in items_to_replace:
-
-      #replace_file_text(file, item, f"{NAMESPACE_REPLACEMENT}{item}")
-      print(f"Updated {file} adding {NAMESPACE_REPLACEMENT} to {item}")
+    if len(items_to_replace) > 0:
+      print(f"    {len(items_to_replace)} Unique References Found ({original_count} Total References in file)")
+      for item in items_to_replace:
+        replace_file_text(file, item, f"{NAMESPACE_REPLACEMENT}{item}")
+        print(f"      Updated Reference: {item} to {NAMESPACE_REPLACEMENT}{item}")
+    else:
+      print(f"      Skipping File: {file} as no custom references were found.")
 
 
 update_files()

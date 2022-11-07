@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Fellart</label>
+    <name>Coat_Type__c</name>
+    <picklistValues>
+        <masterLabel>Hairless</masterLabel>
+        <translation>Unbehaart</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Long</masterLabel>
+        <translation>Langes Haare</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Short</masterLabel>
+        <translation>Kurze Haare</translation>
+    </picklistValues>
+</CustomFieldTranslation>

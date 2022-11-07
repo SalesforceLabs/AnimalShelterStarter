@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Treatment Status --></label>
+    <name>Treatment_Status__c</name>
+    <picklistValues>
+        <masterLabel>Given</masterLabel>
+        <translation><!-- Given --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Given - See Comment</masterLabel>
+        <translation><!-- Given - See Comment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Given</masterLabel>
+        <translation><!-- Not Given --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scheduled</masterLabel>
+        <translation><!-- Scheduled --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

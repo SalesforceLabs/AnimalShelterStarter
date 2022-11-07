@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The measure of the quantity used --></help>
+    <label>Messeinheit</label>
+    <name>Qty_Measure__c</name>
+    <picklistValues>
+        <masterLabel>No Of Tablets</masterLabel>
+        <translation><!-- No Of Tablets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>centilitres</masterLabel>
+        <translation><!-- centilitres --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>grams</masterLabel>
+        <translation><!-- grams --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>millilitres</masterLabel>
+        <translation><!-- millilitres --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

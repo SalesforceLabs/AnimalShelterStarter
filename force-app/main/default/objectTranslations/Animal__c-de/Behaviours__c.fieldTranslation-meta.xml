@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Verhalten</label>
+    <name>Behaviours__c</name>
+    <picklistValues>
+        <masterLabel>Aggressive</masterLabel>
+        <translation>Agressiv</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anxious</masterLabel>
+        <translation>Ängstlich</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bad Recall</masterLabel>
+        <translation>Schlechtes Gedächtnis</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cannot be held</masterLabel>
+        <translation>Kann nicht gehalten werden</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good Recall</masterLabel>
+        <translation>GutesoGedächtnis</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with Children</masterLabel>
+        <translation>Gut mit Kinder</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with other species</masterLabel>
+        <translation>Gut mir andere Tiere</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with same species</masterLabel>
+        <translation>Gut mit eigene Tierart</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Happy being handled</masterLabel>
+        <translation>Glücklich in der Handhabung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lead Reactive</masterLabel>
+        <translation>Reagiert auf Leine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulls on Lead</masterLabel>
+        <translation>Zieht an Leine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reactive</masterLabel>
+        <translation>Reagiert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resource Guarding</masterLabel>
+        <translation>Besitzergreifend</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Separation Anxiety</masterLabel>
+        <translation>Trennungsängste</translation>
+    </picklistValues>
+</CustomFieldTranslation>

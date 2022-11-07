@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is the cumulative stay length the animal has been in the shelter --></help>
+    <label>Aufenthaltsdauer</label>
+    <name>Total_Length_of_Stay_in_Shelter_Days__c</name>
+</CustomFieldTranslation>

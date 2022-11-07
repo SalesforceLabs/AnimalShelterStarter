@@ -2,5 +2,5 @@
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <label>Animal apparenté</label>
     <name>Related_Animal__c</name>
-    <relationshipLabel><!-- Animal Relationships (Related Animal) --></relationshipLabel>
+    <relationshipLabel></relationshipLabel>
 </CustomFieldTranslation>

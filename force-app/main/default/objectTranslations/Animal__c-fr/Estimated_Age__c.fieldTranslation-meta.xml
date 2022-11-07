@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- The estimated age of the dog upon arrival if the date of birth is not known. --></help>
+    <help></help>
     <label>Age estimé</label>
     <name>Estimated_Age__c</name>
 </CustomFieldTranslation>

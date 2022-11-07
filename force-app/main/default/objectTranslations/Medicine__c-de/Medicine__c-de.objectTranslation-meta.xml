@@ -44,15 +44,15 @@
     <layouts>
         <layout>Medicine Layout</layout>
         <sections>
-            <label><!-- Additional Details --></label>
+            <label></label>
             <section>Additional Details</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Manufacturer Details --></label>
+            <label></label>
             <section>Manufacturer Details</section>
         </sections>
     </layouts>

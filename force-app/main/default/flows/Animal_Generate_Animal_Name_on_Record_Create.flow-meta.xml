@@ -7,7 +7,7 @@
         <description>Generates the Animal Name</description>
         <name>GenerateAnimalName</name>
         <dataType>String</dataType>
-        <expression>IF(ISBLANK({!$Setup.Animal_Shelter_Settings__c.Default_Animal_Name_Prefix__c}), {!$Record.Name}, {!$Setup.Animal_Shelter_Settings__c.Default_Animal_Name_Prefix__c} + &apos;-&apos; + {!$Record.Name})</expression>
+        <expression>IF(ISBLANK({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name_Prefix__c}), {!$Record.Name}, {!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name_Prefix__c} + &apos;-&apos; + {!$Record.Name})</expression>
     </formulas>
     <interviewLabel>Animal - Generate Animal Name on Record Create {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -38,7 +38,7 @@
         <locationX>176</locationX>
         <locationY>335</locationY>
         <inputAssignments>
-            <field>Animal_Name__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Name__c</field>
             <value>
                 <elementReference>GenerateAnimalName</elementReference>
             </value>
@@ -51,8 +51,8 @@
         <connector>
             <targetReference>Set_Animal_Name</targetReference>
         </connector>
-        <filterFormula>{!$Setup.Animal_Shelter_Settings__c.Default_Animal_Name__c}</filterFormula>
-        <object>Animal__c</object>
+        <filterFormula>{!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name__c}</filterFormula>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

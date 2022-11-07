@@ -2,5 +2,5 @@
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <label>Tier</label>
     <name>Animal__c</name>
-    <relationshipLabel><!-- Movements --></relationshipLabel>
+    <relationshipLabel></relationshipLabel>
 </CustomFieldTranslation>

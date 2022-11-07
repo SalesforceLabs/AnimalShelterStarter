@@ -2,5 +2,5 @@
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <label>Unité d&apos;hébergement supérieure</label>
     <name>Parent_Block__c</name>
-    <relationshipLabel><!-- Sub Locations --></relationshipLabel>
+    <relationshipLabel></relationshipLabel>
 </CustomFieldTranslation>

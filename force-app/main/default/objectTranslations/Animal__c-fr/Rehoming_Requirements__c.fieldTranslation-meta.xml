@@ -4,42 +4,42 @@
     <name>Rehoming_Requirements__c</name>
     <picklistValues>
         <masterLabel>Cannot be left for long periods</masterLabel>
-        <translation><!-- Cannot be left for long periods --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Dietary</masterLabel>
-        <translation><!-- Dietary --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Experienced Owner</masterLabel>
-        <translation><!-- Experienced Owner --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Medical</masterLabel>
-        <translation><!-- Medical --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>No Animals of different species</masterLabel>
-        <translation><!-- No Animals of different species --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>No Animals of same species</masterLabel>
-        <translation><!-- No Animals of same species --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>No Children</masterLabel>
-        <translation><!-- No Children --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Rural Area</masterLabel>
-        <translation><!-- Rural Area --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Secure Garden</masterLabel>
-        <translation><!-- Secure Garden --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Specialist Equipment</masterLabel>
-        <translation><!-- Specialist Equipment --></translation>
+        <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>

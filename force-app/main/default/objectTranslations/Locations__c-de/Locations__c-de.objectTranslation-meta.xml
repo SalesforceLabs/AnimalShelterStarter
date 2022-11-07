@@ -44,70 +44,102 @@
     <layouts>
         <layout>Location Block Layout</layout>
         <sections>
-            <label><!-- Assessment Dates --></label>
+            <label></label>
             <section>Assessment Dates</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Location Foster Layout</layout>
         <sections>
-            <label><!-- Assessment Dates --></label>
+            <label></label>
             <section>Assessment Dates</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Location Organisation Layout</layout>
         <sections>
-            <label><!-- Assessment Dates --></label>
+            <label></label>
             <section>Assessment Dates</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Site Layout</layout>
+        <sections>
+            <label></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Location Unit Layout</layout>
         <sections>
-            <label><!-- Assessment Dates --></label>
+            <label></label>
             <section>Assessment Dates</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
     <nameFieldLabel>Tierstandort Referenz</nameFieldLabel>
     <quickActions>
-        <label><!-- Set Assessment Date --></label>
+        <label></label>
         <name>Set_Assessment_Date</name>
     </quickActions>
     <recordTypes>
-        <description><!-- A block, i.e. Kennel Block, contains units, i.e. Cages --></description>
-        <label><!-- Block --></label>
+        <description></description>
+        <label></label>
         <name>Block</name>
     </recordTypes>
     <recordTypes>
-        <description><!-- A foster location an animal can be housed at --></description>
-        <label><!-- Foster --></label>
+        <description></description>
+        <label></label>
         <name>Foster</name>
     </recordTypes>
     <recordTypes>
-        <description><!-- An Organisation is a 3rd Party an Animal can be transferred to --></description>
-        <label><!-- Organisation --></label>
+        <description></description>
+        <label></label>
         <name>Organisation</name>
     </recordTypes>
     <recordTypes>
-        <description><!-- A unit is a sub location of a Block, i.e. Cage, Pen, etc --></description>
-        <label><!-- Unit --></label>
+        <description></description>
+        <label></label>
+        <name>Site</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
         <name>Unit</name>
     </recordTypes>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Check_Capacity_is_Completed</name>
+    </validationRules>
 </CustomObjectTranslation>

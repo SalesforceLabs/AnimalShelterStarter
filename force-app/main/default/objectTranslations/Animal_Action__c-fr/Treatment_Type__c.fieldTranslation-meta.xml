@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- The type of Treatment --></help>
+    <help></help>
     <label>Type du traitement</label>
     <name>Treatment_Type__c</name>
     <picklistValues>
         <masterLabel>Medicine</masterLabel>
-        <translation><!-- Medicine --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Physio</masterLabel>
-        <translation><!-- Physio --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Surgery</masterLabel>
-        <translation><!-- Surgery --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Vaccination</masterLabel>
-        <translation><!-- Vaccination --></translation>
+        <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>

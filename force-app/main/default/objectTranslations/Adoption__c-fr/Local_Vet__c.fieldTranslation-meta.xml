@@ -2,5 +2,5 @@
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <label>Vétérinaire Local</label>
     <name>Local_Vet__c</name>
-    <relationshipLabel><!-- Adoptions (Local Vet) --></relationshipLabel>
+    <relationshipLabel></relationshipLabel>
 </CustomFieldTranslation>

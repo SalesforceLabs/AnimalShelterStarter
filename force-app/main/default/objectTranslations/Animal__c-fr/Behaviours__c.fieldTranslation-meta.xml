@@ -4,58 +4,58 @@
     <name>Behaviours__c</name>
     <picklistValues>
         <masterLabel>Aggressive</masterLabel>
-        <translation><!-- Aggressive --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Anxious</masterLabel>
-        <translation><!-- Anxious --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Bad Recall</masterLabel>
-        <translation><!-- Bad Recall --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Cannot be held</masterLabel>
-        <translation><!-- Cannot be held --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good Recall</masterLabel>
-        <translation><!-- Good Recall --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good with Children</masterLabel>
-        <translation><!-- Good with Children --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good with other species</masterLabel>
-        <translation><!-- Good with other species --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Good with same species</masterLabel>
-        <translation><!-- Good with same species --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Happy being handled</masterLabel>
-        <translation><!-- Happy being handled --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Lead Reactive</masterLabel>
-        <translation><!-- Lead Reactive --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Pulls on Lead</masterLabel>
-        <translation><!-- Pulls on Lead --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Reactive</masterLabel>
-        <translation><!-- Reactive --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Resource Guarding</masterLabel>
-        <translation><!-- Resource Guarding --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Separation Anxiety</masterLabel>
-        <translation><!-- Separation Anxiety --></translation>
+        <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>

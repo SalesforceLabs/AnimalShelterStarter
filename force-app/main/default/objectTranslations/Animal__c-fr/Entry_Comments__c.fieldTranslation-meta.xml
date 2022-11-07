@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- Any additional comments or items which should be noted about the animal and the reasons around why it was brought in. --></help>
+    <help></help>
     <label>Commentaire d&apos;entrée</label>
     <name>Entry_Comments__c</name>
 </CustomFieldTranslation>

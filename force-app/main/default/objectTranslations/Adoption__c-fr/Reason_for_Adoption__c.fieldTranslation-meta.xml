@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- Details of why this household wants to adopt and why they want to adopt this animal. --></help>
+    <help></help>
     <label>Raison de l&apos;adoption</label>
     <name>Reason_for_Adoption__c</name>
 </CustomFieldTranslation>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- The date of the next assessment of the location is due --></help>
+    <help></help>
     <label>Bewertungsdatum</label>
     <name>Assessment_Due__c</name>
 </CustomFieldTranslation>

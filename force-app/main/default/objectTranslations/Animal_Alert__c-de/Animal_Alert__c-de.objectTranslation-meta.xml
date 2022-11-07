@@ -44,13 +44,13 @@
     <layouts>
         <layout>Animal Alert Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
     <nameFieldLabel>Tierwarnhinweis</nameFieldLabel>
     <validationRules>
-        <errorMessage><!-- The End Date cannot be less than the start date. Please check the dates you have entered and try again. --></errorMessage>
+        <errorMessage></errorMessage>
         <name>Animal_Alert_Date_Check</name>
     </validationRules>
 </CustomObjectTranslation>

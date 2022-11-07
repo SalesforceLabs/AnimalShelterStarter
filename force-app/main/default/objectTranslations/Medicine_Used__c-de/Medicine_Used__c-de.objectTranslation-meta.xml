@@ -44,11 +44,11 @@
     <layouts>
         <layout>Medicine Used Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Quantity --></label>
+            <label></label>
             <section>Quantity</section>
         </sections>
     </layouts>

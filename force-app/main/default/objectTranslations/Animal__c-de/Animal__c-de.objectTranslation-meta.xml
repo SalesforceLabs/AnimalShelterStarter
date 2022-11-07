@@ -41,92 +41,112 @@
         <value>Tiere</value>
     </caseValues>
     <fieldSets>
-        <label><!-- Animal Details --></label>
+        <label></label>
+        <name>Animal_Cage_Card_Field_Set</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
         <name>Animal_Details</name>
     </fieldSets>
     <gender>Neuter</gender>
     <layouts>
         <layout>Animal Layout</layout>
         <sections>
-            <label><!-- Age --></label>
+            <label></label>
             <section>Age</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Deceased Information --></label>
+            <label></label>
             <section>Deceased Information</section>
         </sections>
         <sections>
-            <label><!-- Entry --></label>
+            <label></label>
             <section>Entry</section>
         </sections>
         <sections>
-            <label><!-- Location Information --></label>
+            <label></label>
             <section>Location Information</section>
         </sections>
         <sections>
-            <label><!-- Requirements --></label>
+            <label></label>
             <section>Requirements</section>
         </sections>
         <sections>
-            <label><!-- Tracking --></label>
+            <label></label>
             <section>Tracking</section>
         </sections>
         <sections>
-            <label><!-- Type Information --></label>
+            <label></label>
             <section>Type Information</section>
         </sections>
     </layouts>
     <nameFieldLabel>Tier-Referenz</nameFieldLabel>
     <quickActions>
-        <label><!-- New Condition --></label>
+        <label></label>
         <name>Add_Condition</name>
     </quickActions>
     <quickActions>
-        <label><!-- New Exercise Action --></label>
+        <label></label>
         <name>Add_Exercise_Action</name>
     </quickActions>
     <quickActions>
-        <label><!-- Add Scheduled Actions --></label>
+        <label></label>
         <name>Add_Scheduled_Action</name>
     </quickActions>
     <quickActions>
-        <label><!-- Add Treatment --></label>
+        <label></label>
         <name>Add_Treatment_Action</name>
     </quickActions>
     <quickActions>
-        <label><!-- Complete Exercise Action --></label>
+        <label></label>
+        <name>Cage_Card</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
         <name>Complete_Exercise_Action</name>
     </quickActions>
     <quickActions>
-        <label><!-- Multi Animal Clone --></label>
+        <label></label>
+        <name>Mark_as_Deceased</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
         <name>Multi_Animal_Clone</name>
     </quickActions>
     <quickActions>
-        <label><!-- New Alert --></label>
+        <label></label>
         <name>New_Alert</name>
     </quickActions>
     <quickActions>
-        <label><!-- Start Adoption --></label>
+        <label></label>
+        <name>New_Assessment</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
         <name>Start_Adoption</name>
     </quickActions>
     <quickActions>
-        <label><!-- Update Animal --></label>
+        <label></label>
         <name>Update_Animal</name>
     </quickActions>
     <quickActions>
-        <label><!-- Update Animal Location --></label>
+        <label></label>
         <name>Update_Animal_Location</name>
     </quickActions>
     <validationRules>
-        <errorMessage><!-- Animal has been noted as being neutered/spayed although no date/time has been added. Please add the Date/Time the animal was neutered/spayed as well. --></errorMessage>
+        <errorMessage></errorMessage>
         <name>Animal_Neutered_Spayed_Check</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- You have indicated this animal has been PTS. Please provide a reason using the PTS Reason field and enter a date using the deceased date field. --></errorMessage>
+        <errorMessage></errorMessage>
+        <name>Deceased_Required_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
         <name>PTS_Required_Fields</name>
     </validationRules>
 </CustomObjectTranslation>

@@ -44,19 +44,19 @@
     <layouts>
         <layout>Treatment Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Related Records --></label>
+            <label></label>
             <section>Related Records</section>
         </sections>
         <sections>
-            <label><!-- Treatment Description --></label>
+            <label></label>
             <section>Treatment Description</section>
         </sections>
         <sections>
-            <label><!-- Treatment Details --></label>
+            <label></label>
             <section>Treatment Details</section>
         </sections>
     </layouts>

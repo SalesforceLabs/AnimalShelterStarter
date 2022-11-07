@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- Has the animal been Neutered/Spayed? Check this box if the answer is yes --></help>
+    <help></help>
     <label>Castré/Stérilisé</label>
     <name>Neutered_Spayed__c</name>
 </CustomFieldTranslation>

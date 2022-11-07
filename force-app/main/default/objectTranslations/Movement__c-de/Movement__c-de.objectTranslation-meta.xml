@@ -44,11 +44,11 @@
     <layouts>
         <layout>Movement Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Location Information --></label>
+            <label></label>
             <section>Location Information</section>
         </sections>
     </layouts>

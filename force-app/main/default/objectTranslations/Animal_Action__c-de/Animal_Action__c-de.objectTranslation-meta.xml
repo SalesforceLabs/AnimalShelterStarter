@@ -44,83 +44,83 @@
     <layouts>
         <layout>Animal Action Layout</layout>
         <sections>
-            <label><!-- Action Description --></label>
+            <label></label>
             <section>Action Description</section>
         </sections>
         <sections>
-            <label><!-- Action Details --></label>
+            <label></label>
             <section>Action Details</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Dates --></label>
+            <label></label>
             <section>Dates</section>
         </sections>
         <sections>
-            <label><!-- Related Records --></label>
+            <label></label>
             <section>Related Records</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Exercise Action Layout</layout>
         <sections>
-            <label><!-- Action Description --></label>
+            <label></label>
             <section>Action Description</section>
         </sections>
         <sections>
-            <label><!-- Action Details --></label>
+            <label></label>
             <section>Action Details</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Dates --></label>
+            <label></label>
             <section>Dates</section>
         </sections>
         <sections>
-            <label><!-- Related Records --></label>
+            <label></label>
             <section>Related Records</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Treatment Action Layout</layout>
         <sections>
-            <label><!-- Action Description --></label>
+            <label></label>
             <section>Action Description</section>
         </sections>
         <sections>
-            <label><!-- Action Details --></label>
+            <label></label>
             <section>Action Details</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Dates --></label>
+            <label></label>
             <section>Dates</section>
         </sections>
         <sections>
-            <label><!-- Related Records --></label>
+            <label></label>
             <section>Related Records</section>
         </sections>
     </layouts>
     <nameFieldLabel>Tier Aktion Referenz</nameFieldLabel>
     <recordTypes>
-        <label><!-- Exercise --></label>
+        <label></label>
         <name>Exercise</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Nutrition --></label>
+        <label></label>
         <name>Nutrition</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Treatment --></label>
+        <label></label>
         <name>Treatment</name>
     </recordTypes>
 </CustomObjectTranslation>

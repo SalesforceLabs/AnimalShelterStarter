@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- How the Medicine is normally administered --></help>
+    <help></help>
     <label>Verabreichungsmetode</label>
     <name>Delivery_Method__c</name>
     <picklistValues>
         <masterLabel>Coated - Tablet</masterLabel>
-        <translation><!-- Coated - Tablet --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Dissolvable - Tablet</masterLabel>
-        <translation><!-- Dissolvable - Tablet --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Drops</masterLabel>
-        <translation><!-- Drops --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Gel</masterLabel>
-        <translation><!-- Gel --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Injected - Solution</masterLabel>
-        <translation><!-- Injected - Solution --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Ointment/Cream</masterLabel>
-        <translation><!-- Ointment/Cream --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Paste</masterLabel>
-        <translation><!-- Paste --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Poultice</masterLabel>
-        <translation><!-- Poultice --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Powder</masterLabel>
-        <translation><!-- Powder --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Shampoo</masterLabel>
-        <translation><!-- Shampoo --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Spray</masterLabel>
-        <translation><!-- Spray --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Syrup</masterLabel>
-        <translation><!-- Syrup --></translation>
+        <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>

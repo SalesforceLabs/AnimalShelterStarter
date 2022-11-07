@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- Whether the medicine can be used, i.e. In date --></help>
+    <help></help>
     <label>Aktiv</label>
     <name>Active__c</name>
 </CustomFieldTranslation>

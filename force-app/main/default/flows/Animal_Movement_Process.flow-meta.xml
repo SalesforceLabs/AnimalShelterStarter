@@ -401,7 +401,7 @@
         <displayField>%%%NAMESPACED_ORG%%%Block_Unit__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Available_for_Boarding__c</field>
+            <field>%%%NAMESPACED_ORG%%%Available_for_Boarding__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -453,7 +453,7 @@
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>Name__c</sortField>
+        <sortField>%%%NAMESPACED_ORG%%%Name__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>

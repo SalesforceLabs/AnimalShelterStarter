@@ -44,27 +44,27 @@
     <layouts>
         <layout>Adoption Layout</layout>
         <sections>
-            <label><!-- Adoption Details --></label>
+            <label></label>
             <section>Adoption Details</section>
         </sections>
         <sections>
-            <label><!-- Adoption Inspection --></label>
+            <label></label>
             <section>Adoption Inspection</section>
         </sections>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Declined Detail --></label>
+            <label></label>
             <section>Declined Detail</section>
         </sections>
         <sections>
-            <label><!-- Internal --></label>
+            <label></label>
             <section>Internal</section>
         </sections>
         <sections>
-            <label><!-- Returned --></label>
+            <label></label>
             <section>Returned</section>
         </sections>
     </layouts>

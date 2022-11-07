@@ -2,24 +2,24 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Movement --></value>
+        <value></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Movement --></value>
+        <value></value>
     </caseValues>
-    <gender><!-- Masculine --></gender>
+    <gender></gender>
     <layouts>
         <layout>Movement Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Location Information --></label>
+            <label></label>
             <section>Location Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Movement Reference --></nameFieldLabel>
-    <startsWith><!-- Consonant --></startsWith>
+    <nameFieldLabel></nameFieldLabel>
+    <startsWith></startsWith>
 </CustomObjectTranslation>

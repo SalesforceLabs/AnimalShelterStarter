@@ -41,7 +41,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <value>
                 <elementReference>GetConditionDetails.%%%NAMESPACED_ORG%%%Animal__c</elementReference>
             </value>

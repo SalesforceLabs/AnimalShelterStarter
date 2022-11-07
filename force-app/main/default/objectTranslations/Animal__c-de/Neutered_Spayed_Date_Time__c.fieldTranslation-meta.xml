@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- When was the animal Neutered/Spayed --></help>
+    <help></help>
     <label>Datum/Uhrzeit der Sterilisation</label>
     <name>Neutered_Spayed_Date_Time__c</name>
 </CustomFieldTranslation>

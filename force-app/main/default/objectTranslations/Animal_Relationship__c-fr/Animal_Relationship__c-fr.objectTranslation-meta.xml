@@ -2,20 +2,20 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Animal Relationship --></value>
+        <value></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Animal Relationship --></value>
+        <value></value>
     </caseValues>
-    <gender><!-- Masculine --></gender>
+    <gender></gender>
     <layouts>
         <layout>Animal Relationship Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Animal Relationship ID --></nameFieldLabel>
-    <startsWith><!-- Consonant --></startsWith>
+    <nameFieldLabel></nameFieldLabel>
+    <startsWith></startsWith>
 </CustomObjectTranslation>

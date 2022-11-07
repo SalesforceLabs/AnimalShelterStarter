@@ -2,24 +2,24 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Medicine Used --></value>
+        <value></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Medicine Used --></value>
+        <value></value>
     </caseValues>
-    <gender><!-- Masculine --></gender>
+    <gender></gender>
     <layouts>
         <layout>Medicine Used Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Quantity --></label>
+            <label></label>
             <section>Quantity</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Medicines Used Reference --></nameFieldLabel>
-    <startsWith><!-- Consonant --></startsWith>
+    <nameFieldLabel></nameFieldLabel>
+    <startsWith></startsWith>
 </CustomObjectTranslation>

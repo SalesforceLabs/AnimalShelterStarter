@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- Date and time which the animal arrived at the shelter --></help>
+    <help></help>
     <label>Date d&apos;arrivée</label>
     <name>Date_of_Arrival__c</name>
 </CustomFieldTranslation>

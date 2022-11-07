@@ -44,13 +44,13 @@
     <layouts>
         <layout>Condition Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
     <nameFieldLabel>Zustand Referenz</nameFieldLabel>
     <quickActions>
-        <label><!-- Generate Alert --></label>
+        <label></label>
         <name>Generate_Alert</name>
     </quickActions>
 </CustomObjectTranslation>

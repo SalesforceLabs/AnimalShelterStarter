@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- Total number of children located where the animal will be housed. --></help>
+    <help></help>
     <label>Anzahl Kinder</label>
     <name>Total_Children__c</name>
 </CustomFieldTranslation>

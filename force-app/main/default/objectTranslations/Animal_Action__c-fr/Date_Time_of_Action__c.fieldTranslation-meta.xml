@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- The date &amp; time of when the action happened or when it should take place --></help>
+    <help></help>
     <label>Date/Heure de l&apos;action</label>
     <name>Date_Time_of_Action__c</name>
 </CustomFieldTranslation>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label><!-- Animal Status --></label>
+    <label></label>
     <name>Animal_Status__c</name>
+    <picklistValues>
+        <masterLabel>Adopted</masterLabel>
+        <translation></translation>
+    </picklistValues>
     <picklistValues>
         <masterLabel>Available for Adoption</masterLabel>
         <translation>Verfügbar für Adoption</translation>

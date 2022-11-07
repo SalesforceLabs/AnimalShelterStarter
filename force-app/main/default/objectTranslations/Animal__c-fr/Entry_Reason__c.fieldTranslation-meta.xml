@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- The reason the animal has been brought to the Animal Shelter --></help>
+    <help></help>
     <label>Raison de l&apos;entrée</label>
     <name>Entry_Reason__c</name>
     <picklistValues>
         <masterLabel>Abandoned</masterLabel>
-        <translation><!-- Abandoned --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Abuse</masterLabel>
-        <translation><!-- Abuse --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Allergies</masterLabel>
-        <translation><!-- Allergies --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Behaviour Issue</masterLabel>
-        <translation><!-- Behaviour Issue --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Boarding</masterLabel>
-        <translation><!-- Boarding --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Household Unable to Cope</masterLabel>
-        <translation><!-- Household Unable to Cope --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Household cannot afford</masterLabel>
-        <translation><!-- Household cannot afford --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Housing Unsuitable</masterLabel>
-        <translation><!-- Housing Unsuitable --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Owner passed or moved out of home address</masterLabel>
-        <translation><!-- Owner passed or moved out of home address --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Relationship Issue</masterLabel>
-        <translation><!-- Relationship Issue --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Sick/Injured</masterLabel>
-        <translation><!-- Sick/Injured --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Stray</masterLabel>
-        <translation><!-- Stray --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Transfer</masterLabel>
-        <translation><!-- Transfer --></translation>
+        <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>

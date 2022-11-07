@@ -31,14 +31,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>SingleAnimalRecord.SYSTEM_Breed_Migrated__c</assignToReference>
+            <assignToReference>SingleAnimalRecord.%%%NAMESPACED_ORG%%%SYSTEM_Breed_Migrated__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>SingleAnimalRecord.Breed_Lookup__c</assignToReference>
+            <assignToReference>SingleAnimalRecord.%%%NAMESPACED_ORG%%%Breed_Lookup__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>BreedRecordId</elementReference>
@@ -108,17 +108,17 @@
         <collectionReference>AllActiveBreedRecords</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>CurrentItem_Search_Breeds_Collection.Type__c</leftValueReference>
+            <leftValueReference>CurrentItem_Search_Breeds_Collection.%%%NAMESPACED_ORG%%%Type__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>Cycle_through_Animal_Records.Type__c</elementReference>
+                <elementReference>Cycle_through_Animal_Records.%%%NAMESPACED_ORG%%%Type__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>CurrentItem_Search_Breeds_Collection.Species__c</leftValueReference>
+            <leftValueReference>CurrentItem_Search_Breeds_Collection.%%%NAMESPACED_ORG%%%Species__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>Cycle_through_Animal_Records.Breed__c</elementReference>
+                <elementReference>Cycle_through_Animal_Records.%%%NAMESPACED_ORG%%%Breed__c</elementReference>
             </rightValue>
         </conditions>
         <connector>
@@ -250,7 +250,7 @@
         <description>Matched to Custom Setting</description>
         <name>BreedsMigrationComplete</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Setup.Animal_Shelter_Settings__c.Breeds_Migration_Complete__c}</expression>
+        <expression>{!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c}</expression>
     </formulas>
     <interviewLabel>Animal - Breeds Migration Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -309,12 +309,12 @@
         <locationX>820</locationX>
         <locationY>2486</locationY>
         <inputAssignments>
-            <field>Breeds_Migration_Complete__c</field>
+            <field>%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
-        <object>Animal_Shelter_Settings__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
@@ -328,17 +328,17 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Active__c</field>
+            <field>%%%NAMESPACED_ORG%%%Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>Breed__c</object>
+        <object>%%%NAMESPACED_ORG%%%Breed__c</object>
         <outputReference>AllActiveBreedRecords</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Type__c</queriedFields>
-        <queriedFields>Species__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Type__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Species__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <description>Gets all animal records with Is Migrated flag set to false</description>
@@ -352,18 +352,18 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>SYSTEM_Breed_Migrated__c</field>
+            <field>%%%NAMESPACED_ORG%%%SYSTEM_Breed_Migrated__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <outputReference>AnimalsToMigrate</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Type__c</queriedFields>
-        <queriedFields>Breed__c</queriedFields>
-        <queriedFields>Breed_Lookup__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Type__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Breed__c</queriedFields>
+        <queriedFields>%%%NAMESPACED_ORG%%%Breed_Lookup__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Animal_Records</name>
@@ -492,7 +492,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Breed__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Breed__c</objectType>
     </variables>
     <variables>
         <name>AnimalsToMigrate</name>
@@ -500,7 +500,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>AnimalsToUpdate</name>
@@ -508,7 +508,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>BreedPicklistValue</name>
@@ -538,7 +538,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Breed__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Breed__c</objectType>
     </variables>
     <variables>
         <description>Indicates that not all animal records can be matched to breeds</description>
@@ -557,7 +557,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>TypePicklistValue</name>

@@ -531,7 +531,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>cloneAnimalRecord</name>

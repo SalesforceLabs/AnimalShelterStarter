@@ -3,12 +3,12 @@
     <actionOnInsert>Allow</actionOnInsert>
     <actionOnUpdate>Allow</actionOnUpdate>
     <alertText>Use one of these records?</alertText>
-    <description xsi:nil="true"/>
-    <duplicateRuleFilter xsi:nil="true"/>
+    <description xsi:nil="true" />
+    <duplicateRuleFilter xsi:nil="true" />
     <duplicateRuleMatchRules>
-        <matchRuleSObjectType>Breed__c</matchRuleSObjectType>
+        <matchRuleSObjectType>%%%NAMESPACED_ORG%%%Breed__c</matchRuleSObjectType>
         <matchingRule>Duplicate_Breeds_Matching_Rule</matchingRule>
-        <objectMapping xsi:nil="true"/>
+        <objectMapping xsi:nil="true" />
     </duplicateRuleMatchRules>
     <isActive>true</isActive>
     <masterLabel>Breed Duplicate Rule</masterLabel>

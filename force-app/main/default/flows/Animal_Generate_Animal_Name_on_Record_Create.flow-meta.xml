@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>[Animal Shelter] Generates the Animal Name on record creation</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Generates the Animal Name</description>
+        <name>GenerateAnimalName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Setup.Animal_Shelter_Settings__c.Default_Animal_Name_Prefix__c}), {!$Record.Name}, {!$Setup.Animal_Shelter_Settings__c.Default_Animal_Name_Prefix__c} + &apos;-&apos; + {!$Record.Name})</expression>
+    </formulas>
+    <interviewLabel>Animal - Generate Animal Name on Record Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Animal - Generate Animal Name on Record Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Sets the Animal Name equal to the Record Name plus prefix</description>
+        <name>Set_Animal_Name</name>
+        <label>Set Animal Name</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <inputAssignments>
+            <field>Animal_Name__c</field>
+            <value>
+                <elementReference>GenerateAnimalName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Animal_Name</targetReference>
+        </connector>
+        <filterFormula>{!$Setup.Animal_Shelter_Settings__c.Default_Animal_Name__c}</filterFormula>
+        <object>Animal__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

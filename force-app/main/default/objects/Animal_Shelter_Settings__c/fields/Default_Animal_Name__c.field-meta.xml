@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Animal_Name__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>[Animal Shelter] Set this option if you want create a Animal Name automatically based on the Record Name.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Set this option if you want create a Animal Name automatically based on the Record Name.</inlineHelpText>
+    <label>Default Animal Name</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

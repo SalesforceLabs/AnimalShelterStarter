@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrate Type/Breed Picklists to Breeds Object</description>
+    <flowDefinition>Animal_Breeds_Migration_Flow</flowDefinition>
+    <label>Migrate Breeds</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

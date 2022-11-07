@@ -2,19 +2,16 @@
     Displays a subset of fields from current Animal Record to be printed
     Date: 26th May 2022
     Author: Chris Rolfe
+	Updated: 20th Oct 2022 to include FieldSets for Breeds Migration
 -->
 
-
-<apex:page standardController="%%%NAMESPACED_ORG%%%Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
-
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Animal_Name__c}" rendered="false" />
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Location_Status__c}" rendered="false" />
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Type__c}" rendered="false" />
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Breed__c}" rendered="false" />
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Colour__c}" rendered="false" />
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Secondary_Colour__c}" rendered="false" />
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Animal_Status__c}" rendered="false" />
-    <apex:outputText value="{!%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Record_QR_Code__c}" rendered="false" />
+<apex:page standardController="Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+	
+    <apex:outputText value="Animal Name: {! Animal__c.Animal_Name__c }" rendered="false"/>
+    <apex:repeat value="{!$ObjectType.Animal__c.FieldSets.Animal_Cage_Card_Field_Set}" var="field">
+        <apex:outputText value="{!Animal__c[field]}" rendered="false" />
+    </apex:repeat>
+    <apex:outputText value="{!Animal__c.Record_QR_Code__c}" rendered="false" />
 
     <html>
 
@@ -62,29 +59,34 @@
 
     <body>
         <h1 class="title">
-            <apex:outputText value="Animal Name: {! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Animal_Name__c }" />
+            <apex:outputText value="Animal Name: {! Animal__c.Animal_Name__c }"/>
             <br/>
         </h1>
 
-        <apex:form>
+        <apex:form >
             <apex:commandButton value="Print" onclick="window.print();" />
-            <apex:pageBlock>
+            <apex:pageBlock >
+                
                 <apex:pageBlockSection columns="2">
-                    <apex:outputText styleClass="details" value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Location_Status__c }" />
-                    <br/>
-                    <apex:outputText styleClass="details" value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Type__c }" />
-                    <br/>
-                    <apex:outputText styleClass="details" value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Breed__c }" />
-                    <br/>
-                    <apex:outputText styleClass="details" value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Colour__c }" />
-                    <br/>
-                    <apex:outputText styleClass="details" value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Secondary_Colour__c }"
-                    />
-                    <br/>
-                    <apex:outputText styleClass="details" value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Animal_Status__c }" />
-                    <br/>
-                    <apex:outputText value="{! %%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Record_QR_Code__c }" escape="false" />
-                    <br/>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel >
+	                        <apex:repeat value="{!$ObjectType.Animal__c.FieldSets.Animal_Cage_Card_Field_Set}" var="field">
+    	                    	<apex:outputText styleClass="details" value="{!field.Label}" /><br/>
+					    	</apex:repeat>
+                    		<br/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel >
+                        	<apex:repeat value="{!$ObjectType.Animal__c.FieldSets.Animal_Cage_Card_Field_Set}" var="field">
+                        		<apex:outputText styleClass="details" value="{!Animal__c[field]}" /><br/>
+                            </apex:repeat>
+                    		<br/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                            
+                    	<apex:outputText value="{! Animal__c.Record_QR_Code__c }" escape="false" />
+                    	<br/>
                 </apex:pageBlockSection>
             </apex:pageBlock>
             <apex:outputText styleClass="details" value="Printed on {! NOW()}" />

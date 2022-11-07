@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Type__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>The type of animal e.g. Dog</inlineHelpText>
+    <inlineHelpText>The type of animal e.g. Dog, etc</inlineHelpText>
     <label>Type (legacy)</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

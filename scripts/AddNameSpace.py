@@ -48,6 +48,8 @@ def update_files():
 
   for file in all_files:
 
+    replace_file_text(file, NAMESPACE_REPLACEMENT, "")
+
     # Search for all references within file
     with open(file, "r") as temp_file:
       temp_file.seek(0)
@@ -63,8 +65,6 @@ def update_files():
       items_to_replace.extend(gps_references)
 
     print(f"\n**Processing File**: {file}")
-
-    replace_file_text(file, NAMESPACE_REPLACEMENT, "")
 
     # De-dupe List
     original_count = len(items_to_replace)

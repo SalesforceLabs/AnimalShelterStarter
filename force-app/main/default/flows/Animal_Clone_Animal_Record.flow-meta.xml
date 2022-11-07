@@ -220,7 +220,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>clonedAnimalCompletedRecord.IsCloned__c</assignToReference>
+            <assignToReference>clonedAnimalCompletedRecord.%%%NAMESPACED_ORG%%%IsCloned__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>false</booleanValue>

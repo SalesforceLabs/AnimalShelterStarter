@@ -3,7 +3,7 @@
     <fullName>Primary_Contact__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <inlineHelpText>The primary contact within a household for this adoption.</inlineHelpText>
+    <inlineHelpText>The primary contact for this adoption.</inlineHelpText>
     <label>Primary Contact</label>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>Adoptions</relationshipLabel>

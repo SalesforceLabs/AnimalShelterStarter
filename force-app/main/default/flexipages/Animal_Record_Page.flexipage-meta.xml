@@ -138,6 +138,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Estimated_Age__c</fieldItem>
                 <identifier>RecordEstimated_Age__cField</identifier>
             </fieldInstance>
@@ -168,12 +172,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Date_of_Birth__c</fieldItem>
                 <identifier>RecordDate_of_Birth__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Calculated_Age__c</fieldItem>
                 <identifier>RecordCalculated_Age__cField</identifier>
             </fieldInstance>
@@ -210,12 +222,74 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Type__c</fieldItem>
-                <identifier>RecordType__cField</identifier>
+                <fieldItem>Record.Breed_Lookup__c</fieldItem>
+                <identifier>RecordBreed_Lookup_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.TypeFromBreeds__c</fieldItem>
+                <identifier>RecordTypeFromBreeds_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-423634a1-dfa2-44d2-ae85-15b6377ca8e6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Species__c</fieldItem>
+                <identifier>RecordSpecies_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Crossbreed_Formula__c</fieldItem>
+                <identifier>RecordCrossbreed_Formula_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-1b295e62-c107-4b1a-843f-84b7887fd36a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-423634a1-dfa2-44d2-ae85-15b6377ca8e6</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column19</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-1b295e62-c107-4b1a-843f-84b7887fd36a</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column20</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-46b49e30-6d62-4b06-95ac-988eab13bf18</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -250,26 +324,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Breed__c</fieldItem>
-                <identifier>RecordBreed__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Crossbreed__c</fieldItem>
-                <identifier>RecordCrossbreed__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -330,6 +384,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-46b49e30-6d62-4b06-95ac-988eab13bf18</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Breed</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection11</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -564,6 +632,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Deceased_Reason__c</fieldItem>
                 <identifier>RecordDeceased_Reason_cField</identifier>
             </fieldInstance>
@@ -689,6 +761,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Geolocation__c</fieldItem>
                 <identifier>RecordGeolocation__cField</identifier>
             </fieldInstance>
@@ -795,6 +871,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
                 <identifier>RecordOwnerIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SYSTEM_Breed_Migrated__c</fieldItem>
+                <identifier>RecordSYSTEM_Breed_Migrated_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3deb3a6e-8bde-4290-98a9-715033197121</name>
@@ -939,12 +1025,20 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Behaviours__c</fieldItem>
                 <identifier>RecordBehaviours__cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Related_Schemes__c</fieldItem>
                 <identifier>RecordRelated_Schemes__cField2</identifier>
             </fieldInstance>
@@ -955,12 +1049,20 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Rehoming_Requirements__c</fieldItem>
                 <identifier>RecordRehoming_Requirements__cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Previous_Current_Owner__c</fieldItem>
                 <identifier>RecordPrevious_Current_Owner__cField2</identifier>
             </fieldInstance>
@@ -1039,18 +1141,30 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Neutered_Spayed__c</fieldItem>
                 <identifier>RecordNeutered_Spayed__cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Neutered_Spayed_Date_Time__c</fieldItem>
                 <identifier>RecordNeutered_Spayed_Date_Time__cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Current_Weight__c</fieldItem>
                 <identifier>RecordCurrent_Weight__cField2</identifier>
             </fieldInstance>
@@ -1061,18 +1175,30 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Date_of_Birth__c</fieldItem>
                 <identifier>RecordDate_of_Birth__cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Calculated_Age__c</fieldItem>
                 <identifier>RecordCalculated_Age__cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Estimated_Age__c</fieldItem>
                 <identifier>RecordEstimated_Age__cField2</identifier>
             </fieldInstance>
@@ -1124,11 +1250,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
+                    <value>Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
+                    <value>Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1141,13 +1267,13 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
+                            <value>Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</value>
+                            <value>Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                            <value>Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>RECORDTYPE</value>
@@ -1197,11 +1323,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
+                    <value>Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
+                    <value>Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1214,13 +1340,13 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
+                            <value>Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</value>
+                            <value>Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                            <value>Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>RECORDTYPE</value>
@@ -1270,11 +1396,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal__c.Id</value>
+                    <value>Animal__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>%%%NAMESPACED_ORG%%%Animal_Actions__r</value>
+                    <value>Animal_Actions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -1287,13 +1413,13 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Description__c</value>
+                            <value>Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</value>
+                            <value>Date_Time_Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>%%%NAMESPACED_ORG%%%Action_Completed__c</value>
+                            <value>Action_Completed__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

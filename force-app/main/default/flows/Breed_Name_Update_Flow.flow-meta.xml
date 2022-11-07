@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Animal Shelter Starter - Updates the Breed name based on Type and Species</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Breed_Name_Formula</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Type__c} + &quot; - &quot; + {!$Record.Species__c}</expression>
+    </formulas>
+    <interviewLabel>Breed - Name Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Breed - Name Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Breed_Name</name>
+        <label>Update Breed Name</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Breed_Name_Formula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Breed_Name</targetReference>
+        </connector>
+        <object>Breed__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

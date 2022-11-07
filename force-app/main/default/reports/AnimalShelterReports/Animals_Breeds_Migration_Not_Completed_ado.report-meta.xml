@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Animal__c.Animal_Name__c</field>
+    </columns>
+    <columns>
+        <field>Animal__c.Breed_Lookup__c</field>
+    </columns>
+    <columns>
+        <field>Animal__c.TypeFromBreeds__c</field>
+    </columns>
+    <columns>
+        <field>Animal__c.Breed__c</field>
+    </columns>
+    <columns>
+        <field>Animal__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>Animal__c.Animal_Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Animal__c.SYSTEM_Breed_Migrated__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <description>Report show which Animals have not been migrated to use Breeds Object.</description>
+    <filter>
+        <criteriaItems>
+            <column>Animal__c.SYSTEM_Breed_Migrated__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Animals - Breeds Migration Not Completed</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Animal__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Animal__c.Breed_Lookup__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Animal__c.Date_of_Arrival__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

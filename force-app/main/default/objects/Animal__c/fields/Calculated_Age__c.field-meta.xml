@@ -2,10 +2,12 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Calculated_Age__c</fullName>
     <externalId>false</externalId>
-    <formula>TEXT(FLOOR((TODAY() - Date_of_Birth__c )/365)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp; 
+    <formula>IF(ISBLANK(Date_of_Birth__c), &apos;ESTIMATED: &apos; &amp; TEXT(Estimated_Age__c) &amp; &apos; YEARS&apos; ,
+TEXT(FLOOR((TODAY()-Date_of_Birth__c +1)/365.2425)) &amp;&apos; YEARS&apos; &amp; &apos; &apos; &amp; 
 TEXT(FLOOR(MOD((TODAY() - Date_of_Birth__c),365)/30)) &amp;&apos; MONTHS&apos; &amp; &apos; &apos; &amp; 
-TEXT(MOD(MOD((TODAY() - Date_of_Birth__c),365),30)) &amp;&apos; DAYS&apos;</formula>
+TEXT(MOD(MOD((TODAY() - Date_of_Birth__c),365),30)) &amp;&apos; DAYS&apos;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculated as the amount of time between today and the birthdate of the animal. If no birthdate is entered, then estimated date it used.</inlineHelpText>
     <label>Calculated Age</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

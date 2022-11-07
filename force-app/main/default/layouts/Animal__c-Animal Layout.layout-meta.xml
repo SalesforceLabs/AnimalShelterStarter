@@ -23,6 +23,10 @@
                 <behavior>Readonly</behavior>
                 <field>Calculated_Time_Known__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SYSTEM_Breed_Migrated__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -43,8 +47,12 @@
         <label>Type Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Type__c</field>
+                <behavior>Edit</behavior>
+                <field>Breed_Lookup__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>TypeFromBreeds__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -61,12 +69,12 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Breed__c</field>
+                <behavior>Readonly</behavior>
+                <field>Species__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Crossbreed__c</field>
+                <behavior>Readonly</behavior>
+                <field>Crossbreed_Formula__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -266,8 +274,6 @@
     </layoutSections>
     <miniLayout>
         <fields>Animal_Name__c</fields>
-        <fields>Type__c</fields>
-        <fields>Breed__c</fields>
         <fields>Gender__c</fields>
         <fields>Animal_Status__c</fields>
         <fields>Date_of_Arrival__c</fields>
@@ -406,14 +412,14 @@
             <sortOrder>21</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Delete</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>23</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>22</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Delete</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>23</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -549,7 +555,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h3G000001AbSe</masterLabel>
+        <masterLabel>00h7g000002M2EG</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

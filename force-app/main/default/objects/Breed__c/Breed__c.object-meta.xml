@@ -129,15 +129,15 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Animal_Record_Page</content>
+        <content>Breed_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>Animal_Record_Page1</content>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Breed_Record_Page</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -147,10 +147,10 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>Default_Animal_View</compactLayoutAssignment>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>[Animal Shelter Starter] The core object in the Animal Shelter Starter which stores the details about an animal.</description>
-    <enableActivities>true</enableActivities>
+    <description>[Animal Shelter Starter] - Contains list of animal breeds</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -160,39 +160,19 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Animal</label>
+    <label>Breed</label>
     <nameField>
-        <displayFormat>ANIMAL{00000}</displayFormat>
-        <label>Animal Reference</label>
-        <type>AutoNumber</type>
+        <label>Breed Name</label>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>Animals</pluralLabel>
+    <pluralLabel>Breeds</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Animal_Name__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Breed__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Animal_Status__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>Animal_Name__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Breed__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Animal_Status__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Animal_Name__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Breed__c</lookupPhoneDialogsAdditionalFields>
-        <massQuickActions>Start_Adoption</massQuickActions>
-        <massQuickActions>Add_Condition</massQuickActions>
-        <searchFilterFields>Animal_Name__c</searchFilterFields>
-        <searchFilterFields>Type__c</searchFilterFields>
-        <searchFilterFields>Breed__c</searchFilterFields>
-        <searchFilterFields>Animal_Status__c</searchFilterFields>
-        <searchResultsAdditionalFields>Animal_Name__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>Import</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
         <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Breed__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Animal_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Species__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
-    <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
 </CustomObject>

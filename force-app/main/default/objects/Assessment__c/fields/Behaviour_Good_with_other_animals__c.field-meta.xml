@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Assessment_Type__c</fullName>
+    <fullName>Behaviour_Good_with_other_animals__c</fullName>
     <externalId>false</externalId>
-    <label>Assessment Type</label>
-    <required>true</required>
+    <label>Good with other animals</label>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
@@ -12,19 +12,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Entry</fullName>
+                <fullName>Yes - Same Species Only</fullName>
                 <default>false</default>
-                <label>Entry</label>
+                <label>Yes - Same Species Only</label>
             </value>
             <value>
-                <fullName>Follow Up</fullName>
+                <fullName>Yes - Any Species</fullName>
                 <default>false</default>
-                <label>Follow Up</label>
+                <label>Yes - Any Species</label>
             </value>
             <value>
-                <fullName>Exit</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
-                <label>Exit</label>
+                <label>No</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <label>Deceased Date</label>
     <required>false</required>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>DateTime</type>
 </CustomField>

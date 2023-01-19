@@ -5,6 +5,7 @@
     <inlineHelpText>The type of animal e.g. Dog, etc</inlineHelpText>
     <label>Type (legacy)</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>

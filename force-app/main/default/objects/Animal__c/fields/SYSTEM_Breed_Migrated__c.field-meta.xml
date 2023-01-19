@@ -5,6 +5,7 @@
     <description>[Animal Shelter Starter] used to indicate that the animals record has migrated to the new breeds object. Internal Use Only</description>
     <externalId>false</externalId>
     <label>SYSTEM Breed Migrated</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

@@ -3,7 +3,7 @@
     <fullName>Assessment_Type__c</fullName>
     <externalId>false</externalId>
     <label>Assessment Type</label>
-    <required>true</required>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>

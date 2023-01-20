@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Animal_Shelter_Adopter_Profile_CL</fullName>
+    <fields>Contact__c</fields>
+    <fields>Active__c</fields>
+    <fields>Profile_Start_Date__c</fields>
+    <fields>Type_of_Animal__c</fields>
+    <label>Animal Shelter Adopter Profile CL</label>
+</CompactLayout>

@@ -1,11 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>56.0</apiVersion>
+    <assignments>
+        <name>Assign_accommodation_details</name>
+        <label>Assign accommodation details</label>
+        <locationX>578</locationX>
+        <locationY>2030</locationY>
+        <assignmentItems>
+            <assignToReference>profile.Type_of_Accommodation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Type_of_Accommodation</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Permission_to_House_Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Permission_to_house_animal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Location_of_Animal_Daytime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Daytime_location_of_animal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Location_of_Animal_Night__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Night_time_location_of_animal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Safe_Outside_Area__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Safe_Outside_Area</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Stage_4</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_animal_details</name>
+        <label>Assign animal details</label>
+        <locationX>578</locationX>
+        <locationY>1670</locationY>
+        <assignmentItems>
+            <assignToReference>profile.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Other_Animals__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Other_Animals</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Other_Animals_of_same_Species__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Animals_of_same_Species</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Other_Animal_Details__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Other_animal_details</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Preferred_Maturity_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Preferred_Maturity_Level</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Type_of_Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Type_of_Animal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Stage_3</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_lifestyle_details</name>
+        <label>Assign lifestyle details</label>
+        <locationX>578</locationX>
+        <locationY>2390</locationY>
+        <assignmentItems>
+            <assignToReference>profile.Current_Daytime_Arrangements__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_daytime_arrangements</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Small_Children__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Small_children_in_household</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Stage_5</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_other_details</name>
+        <label>Assign other details</label>
+        <locationX>578</locationX>
+        <locationY>2750</locationY>
+        <assignmentItems>
+            <assignToReference>profile.Reason_for_wanting_to_Adopt__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Adoption_reason</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Local_Vet__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Has_Local_Vet</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Active__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Profile_Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>profile.Profile_Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Adopter_Profile</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_1</name>
+        <label>Stage 1</label>
+        <locationX>578</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Start</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Start_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_2</name>
+        <label>Stage 2</label>
+        <locationX>578</locationX>
+        <locationY>1430</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Animal_Details</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adopter_Profile_Animal_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_3</name>
+        <label>Stage 3</label>
+        <locationX>578</locationX>
+        <locationY>1790</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Accommodation_Details</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adopter_Profile_Accommodation_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_4</name>
+        <label>Stage 4</label>
+        <locationX>578</locationX>
+        <locationY>2150</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Lifestyle_Details</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adopter_Profile_Lifestyle_Details</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_5</name>
+        <label>Stage 5</label>
+        <locationX>578</locationX>
+        <locationY>2510</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Other_Details</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adopter_Profile_Other_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_6</name>
+        <label>Stage 6</label>
+        <locationX>578</locationX>
+        <locationY>2990</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Complete</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adopter_Profile_Created_Screen</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Create_New_Profile_Selected</name>
         <label>Create New Profile Selected</label>
-        <locationX>182</locationX>
-        <locationY>638</locationY>
+        <locationX>314</locationX>
+        <locationY>878</locationY>
         <defaultConnector>
             <targetReference>No_New_Profile_Screen</targetReference>
         </defaultConnector>
@@ -29,10 +287,10 @@
     <decisions>
         <name>Existing_Adopter_Profiles</name>
         <label>Existing Adopter Profiles?</label>
-        <locationX>380</locationX>
-        <locationY>398</locationY>
+        <locationX>578</locationX>
+        <locationY>638</locationY>
         <defaultConnector>
-            <targetReference>Adopter_Profile_Details_Screen</targetReference>
+            <targetReference>Stage_2</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No Active Profile</defaultConnectorLabel>
         <rules>
@@ -52,6 +310,41 @@
         </rules>
     </decisions>
     <description>[Animal Shelter] Creates a new Adopter Profile record and Contact is required</description>
+    <dynamicChoiceSets>
+        <name>localVetFromAccount</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <limit>1</limit>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>profile.Local_Vet_details__c</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>maturityLevel</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Preferred_Maturity_Level__c</picklistField>
+        <picklistObject>Adopter_Profile__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>typeOfAccommodation</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Type_of_Accommodation__c</picklistField>
+        <picklistObject>Adopter_Profile__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>typeOfAnimal</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Type_of_Animal__c</picklistField>
+        <picklistObject>Adopter_Profile__c</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Adopter Profile - Create new Adopter Profile {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Adopter Profile - Create new Adopter Profile</label>
@@ -74,15 +367,33 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Adopter_Profile</name>
+        <label>Create Adopter Profile</label>
+        <locationX>578</locationX>
+        <locationY>2870</locationY>
+        <connector>
+            <targetReference>Stage_6</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <inputReference>profile</inputReference>
+    </recordCreates>
     <recordLookups>
         <name>Get_Adopter_Profiles_for_this_Contact</name>
         <label>Get Adopter Profiles for this Contact</label>
-        <locationX>380</locationX>
-        <locationY>278</locationY>
+        <locationX>578</locationX>
+        <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Existing_Adopter_Profiles</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Active__c</field>
@@ -91,18 +402,53 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Contact__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Adopter_Profile__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Contact_Name</name>
+        <label>Get Contact Name</label>
+        <locationX>578</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Stage_1</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Update_Existing_Profile</name>
         <label>Update Existing Profile</label>
         <locationX>50</locationX>
-        <locationY>758</locationY>
+        <locationY>998</locationY>
         <connector>
-            <targetReference>Adopter_Profile_Details_Screen</targetReference>
+            <targetReference>Stage_2</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -128,8 +474,8 @@
     <screens>
         <name>Active_Profile_Screen</name>
         <label>Active Profile Screen</label>
-        <locationX>182</locationX>
-        <locationY>518</locationY>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -144,7 +490,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Active_Profile_Screen_Text</name>
-                    <fieldText>&lt;p&gt;An active Adopter Profile dated{!Get_Adopter_Profiles_for_this_Contact.Profile_Start_Date__c} already exists do you want to create a new one?  Select your option on the right.&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;An active Adopter Profile dated {!Get_Adopter_Profiles_for_this_Contact.Profile_Start_Date__c} already exists do you want to create a new one?  Select your option on the right.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -199,21 +545,444 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Adopter_Profile_Details_Screen</name>
-        <label>Adopter Profile Details Screen</label>
-        <locationX>380</locationX>
-        <locationY>1190</locationY>
+        <name>Adopter_Profile_Accommodation_Screen</name>
+        <label>Adopter Profile Accommodation Screen</label>
+        <locationX>578</locationX>
+        <locationY>1910</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_accommodation_details</targetReference>
+        </connector>
+        <fields>
+            <name>Adopter_Profile_Accommodation_Screen_Header</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Accommodation Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>IndAccommodationStage</name>
+            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Adopter_Profile_Accommodation_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Adopter_Profile_Accommodation_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Type_of_Accommodation</name>
+                    <choiceReferences>typeOfAccommodation</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Type of Accommodation</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Daytime_location_of_animal</name>
+                    <fieldText>Daytime location of animal</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Adopter_Profile_Accommodation_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Permission_to_house_animal</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Permission to house animal?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;If the adopter is in rented accommodation, do they have permission to house animals?&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Safe_Outside_Area</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Safe Outside Area</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Night_time_location_of_animal</name>
+                    <fieldText>Night-time location of animal</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Adopter_Profile_Animal_Screen</name>
+        <label>Adopter Profile Animal Screen</label>
+        <locationX>578</locationX>
+        <locationY>1550</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_animal_details</targetReference>
+        </connector>
+        <fields>
+            <name>Adopter_Profile_Animal_Screen_Header</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Animal Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>IndAnimalStage</name>
+            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Adopter_Profile_Animal_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Adopter_Profile_Animal_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Type_of_Animal</name>
+                    <choiceReferences>typeOfAnimal</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Type of Animal</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Other_Animals</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Other Animals?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Animals_of_same_Species</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Animals of same Species?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Other_animal_details</name>
+                    <fieldText>Other animal details</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Adopter_Profile_Animal_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Preferred_Maturity_Level</name>
+                    <choiceReferences>maturityLevel</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Preferred Maturity Level</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Special_care_adoption_considered</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Special care adoption considered?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Would the adopter be willing to adopt and animal that required special care, i.e. medical, behavioural, etc&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Adopter_Profile_Created_Screen</name>
+        <label>Adopter Profile Created Screen</label>
+        <locationX>578</locationX>
+        <locationY>3110</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>IndCompleteStage</name>
+            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Adopter_Profile_Created_Screen_Text</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Congratulations a new Adopter Profile has been created&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Adopter_Profile_Lifestyle_Details</name>
+        <label>Adopter Profile Lifestyle Details</label>
+        <locationX>578</locationX>
+        <locationY>2270</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_lifestyle_details</targetReference>
+        </connector>
+        <fields>
+            <name>Adopter_Profile_Lifestyle_Details_Header</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Lifestyle Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>IndLifestyleStage</name>
+            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Adopter_Profile_Lifestyle_Details_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Adopter_Profile_Lifestyle_Details_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Current_daytime_arrangements</name>
+                    <fieldText>Current daytime arrangements</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Adopter_Profile_Lifestyle_Details_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Small_children_in_household</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Are there small children in household?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Adopter_Profile_Other_Screen</name>
+        <label>Adopter Profile Other Screen</label>
+        <locationX>578</locationX>
+        <locationY>2630</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_other_details</targetReference>
+        </connector>
+        <fields>
+            <name>Adopter_Profile_Other_Screen_Header</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Other details&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>IndOtherStage</name>
+            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Adopter_Profile_Other_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Adopter_Profile_Other_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Adoption_reason</name>
+                    <fieldText>Adoption reason</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <helpText>&lt;p&gt;Why does the adopter want to adopt?&lt;/p&gt;</helpText>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Adopter_Profile_Other_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Has_Local_Vet</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Has Local Vet?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Local_Vet</name>
+                    <choiceReferences>localVetFromAccount</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Local Vet</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>1546</locationX>
+        <locationY>278</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
+        <fields>
+            <name>Error_Screen_Text</name>
+            <fieldText>&lt;p&gt;Oh dear! There seems to be a problem.  Please contact your Systems Administrator with the following information:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Error Message: {!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <screens>
         <name>No_New_Profile_Screen</name>
         <label>No New Profile Screen</label>
-        <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationX>578</locationX>
+        <locationY>998</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -228,8 +997,8 @@
     <screens>
         <name>Start_Screen</name>
         <label>Start Screen</label>
-        <locationX>380</locationX>
-        <locationY>158</locationY>
+        <locationX>578</locationX>
+        <locationY>398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -237,19 +1006,95 @@
             <targetReference>Get_Adopter_Profiles_for_this_Contact</targetReference>
         </connector>
         <fields>
+            <name>Start_Screen_Header</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Adopter Profile Creation Wizard&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>IndicatorStartStage</name>
+            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
             <name>Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;This wizard will create a new Adopter Profile for the given Contact&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This wizard will create a new Adopter Profile for {!Get_Contact_Name.FirstName} {!Get_Contact_Name.LastName}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <stages>
+        <name>Accommodation_Details</name>
+        <isActive>true</isActive>
+        <label>Accommodation Details</label>
+        <stageOrder>3</stageOrder>
+    </stages>
+    <stages>
+        <name>Animal_Details</name>
+        <isActive>true</isActive>
+        <label>Animal Details</label>
+        <stageOrder>2</stageOrder>
+    </stages>
+    <stages>
+        <name>Complete</name>
+        <isActive>true</isActive>
+        <label>Complete</label>
+        <stageOrder>6</stageOrder>
+    </stages>
+    <stages>
+        <name>Lifestyle_Details</name>
+        <isActive>true</isActive>
+        <label>Lifestyle Details</label>
+        <stageOrder>4</stageOrder>
+    </stages>
+    <stages>
+        <name>Other_Details</name>
+        <isActive>true</isActive>
+        <label>Other Details</label>
+        <stageOrder>5</stageOrder>
+    </stages>
+    <stages>
+        <name>Start</name>
+        <isActive>true</isActive>
+        <label>Start</label>
+        <stageOrder>1</stageOrder>
+    </stages>
     <start>
-        <locationX>254</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Start_Screen</targetReference>
+            <targetReference>Get_Contact_Name</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <variables>
+        <name>profile</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Adopter_Profile__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

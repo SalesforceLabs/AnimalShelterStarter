@@ -159,85 +159,11 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Aggressive__c</fieldItem>
-                <identifier>RecordBehaviour_Aggressive_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Anxious__c</fieldItem>
-                <identifier>RecordBehaviour_Anxious_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Pulls_on_Lead__c</fieldItem>
-                <identifier>RecordBehaviour_Pulls_on_Lead_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Resource_Guarding__c</fieldItem>
-                <identifier>RecordBehaviour_Resource_Guarding_cField</identifier>
+                <fieldItem>Record.Behaviour_s__c</fieldItem>
+                <identifier>RecordBehaviour_s_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-41dc33af-5cde-4a0e-91a1-d76a482303a0</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Good_with_Children__c</fieldItem>
-                <identifier>RecordBehaviour_Good_with_Children_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Good_with_other_animals__c</fieldItem>
-                <identifier>RecordBehaviour_Good_with_other_animals_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Recall_Level__c</fieldItem>
-                <identifier>RecordBehaviour_Recall_Level_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Behaviour_Separation_Anxiety__c</fieldItem>
-                <identifier>RecordBehaviour_Separation_Anxiety_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-a6a1194a-3b07-45fb-9e24-e5a4d6e10a6f</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -249,16 +175,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column12</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-a6a1194a-3b07-45fb-9e24-e5a4d6e10a6f</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column13</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-754d7025-299b-4b21-81e8-361508102ff7</name>
@@ -717,19 +633,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection7</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Category__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Behaviour</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Category__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Both</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -744,19 +647,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Category__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Health</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Category__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Both</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>

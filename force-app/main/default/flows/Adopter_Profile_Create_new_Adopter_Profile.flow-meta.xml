@@ -5,7 +5,7 @@
         <name>Assign_accommodation_details</name>
         <label>Assign accommodation details</label>
         <locationX>578</locationX>
-        <locationY>1910</locationY>
+        <locationY>1790</locationY>
         <assignmentItems>
             <assignToReference>profile.Type_of_Accommodation__c</assignToReference>
             <operator>Assign</operator>
@@ -56,14 +56,7 @@
         <name>Assign_animal_details</name>
         <label>Assign animal details</label>
         <locationX>578</locationX>
-        <locationY>1670</locationY>
-        <assignmentItems>
-            <assignToReference>profile.Contact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </assignmentItems>
+        <locationY>1550</locationY>
         <assignmentItems>
             <assignToReference>profile.Other_Animals__c</assignToReference>
             <operator>Assign</operator>
@@ -100,6 +93,13 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>profile.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -114,7 +114,7 @@
         <name>Assign_lifestyle_details</name>
         <label>Assign lifestyle details</label>
         <locationX>578</locationX>
-        <locationY>2150</locationY>
+        <locationY>2030</locationY>
         <assignmentItems>
             <assignToReference>profile.Current_Daytime_Arrangements__c</assignToReference>
             <operator>Assign</operator>
@@ -144,7 +144,7 @@
         <name>Assign_other_details</name>
         <label>Assign other details</label>
         <locationX>578</locationX>
-        <locationY>2390</locationY>
+        <locationY>2270</locationY>
         <assignmentItems>
             <assignToReference>profile.Reason_for_wanting_to_Adopt__c</assignToReference>
             <operator>Assign</operator>
@@ -188,7 +188,7 @@
         <name>Stage_1</name>
         <label>Stage 1</label>
         <locationX>578</locationX>
-        <locationY>278</locationY>
+        <locationY>158</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -204,7 +204,7 @@
         <name>Stage_2</name>
         <label>Stage 2</label>
         <locationX>578</locationX>
-        <locationY>1430</locationY>
+        <locationY>1310</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -220,7 +220,7 @@
         <name>Stage_6</name>
         <label>Stage 6</label>
         <locationX>578</locationX>
-        <locationY>2870</locationY>
+        <locationY>2750</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -243,7 +243,7 @@
         <name>Create_New_Profile_Selected</name>
         <label>Create New Profile Selected</label>
         <locationX>314</locationX>
-        <locationY>878</locationY>
+        <locationY>758</locationY>
         <defaultConnector>
             <targetReference>No_New_Profile_Screen</targetReference>
         </defaultConnector>
@@ -268,7 +268,7 @@
         <name>Existing_Adopter_Profiles</name>
         <label>Existing Adopter Profiles?</label>
         <locationX>578</locationX>
-        <locationY>638</locationY>
+        <locationY>518</locationY>
         <defaultConnector>
             <targetReference>Stage_2</targetReference>
         </defaultConnector>
@@ -355,7 +355,7 @@
         <name>Create_Adopter_Profile</name>
         <label>Create Adopter Profile</label>
         <locationX>578</locationX>
-        <locationY>2510</locationY>
+        <locationY>2390</locationY>
         <connector>
             <targetReference>Get_Queue_Id</targetReference>
         </connector>
@@ -369,7 +369,7 @@
         <name>Create_Adoption_Task</name>
         <label>Create Adoption Task</label>
         <locationX>578</locationX>
-        <locationY>2750</locationY>
+        <locationY>2630</locationY>
         <assignRecordIdToReference>taskId</assignRecordIdToReference>
         <connector>
             <targetReference>Stage_6</targetReference>
@@ -414,13 +414,12 @@
         <name>Get_Adopter_Profiles_for_this_Contact</name>
         <label>Get Adopter Profiles for this Contact</label>
         <locationX>578</locationX>
-        <locationY>518</locationY>
+        <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Existing_Adopter_Profiles</targetReference>
         </connector>
         <faultConnector>
-            <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
@@ -435,7 +434,7 @@
             <field>Contact__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -443,34 +442,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Contact_Name</name>
-        <label>Get Contact Name</label>
-        <locationX>578</locationX>
-        <locationY>158</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Stage_1</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Contact</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Queue_Id</name>
         <label>Get Queue Id</label>
         <locationX>578</locationX>
-        <locationY>2630</locationY>
+        <locationY>2510</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Adoption_Task</targetReference>
@@ -502,7 +477,7 @@
         <name>Update_Existing_Profile</name>
         <label>Update Existing Profile</label>
         <locationX>50</locationX>
-        <locationY>998</locationY>
+        <locationY>878</locationY>
         <connector>
             <targetReference>Stage_2</targetReference>
         </connector>
@@ -536,7 +511,7 @@
         <name>Active_Profile_Screen</name>
         <label>Active Profile Screen</label>
         <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationY>638</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -609,7 +584,7 @@
         <name>Adopter_Profile_Accommodation_Screen</name>
         <label>Adopter Profile Accommodation Screen</label>
         <locationX>578</locationX>
-        <locationY>1790</locationY>
+        <locationY>1670</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -642,7 +617,7 @@
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
-            <name>Screen_Accommod_BlankSpace</name>
+            <name>Accomd_Details_BlankSpace</name>
             <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -656,13 +631,13 @@
                     <name>Type_of_Accommodation</name>
                     <choiceReferences>typeOfAccommodation</choiceReferences>
                     <dataType>String</dataType>
-                    <fieldText>Your type of accommodation</fieldText>
+                    <fieldText>What type of accommodation do you live in?</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <isRequired>false</isRequired>
                 </fields>
                 <fields>
                     <name>Daytime_location_of_animal</name>
-                    <fieldText>What will the daytime location of the animal be?</fieldText>
+                    <fieldText>Where will the daytime location of the animal be?</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <isRequired>false</isRequired>
                 </fields>
@@ -682,20 +657,20 @@
                     <dataType>Boolean</dataType>
                     <fieldText>Do you have permission to house an animal?</fieldText>
                     <fieldType>InputField</fieldType>
-                    <helpText>&lt;p&gt;If the adopter is in rented accommodation, do they have permission from the landlord to house animals?&lt;/p&gt;</helpText>
+                    <helpText>&lt;p&gt;If the adopter is in rented accommodation, do they have permission to house animals?&lt;/p&gt;</helpText>
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
                     <name>Safe_Outside_Area</name>
                     <dataType>Boolean</dataType>
-                    <fieldText>Is your outside area safe?</fieldText>
+                    <fieldText>Is the outside area of your accommodation safe?</fieldText>
                     <fieldType>InputField</fieldType>
-                    <helpText>&lt;p&gt;Is your garden secure, and does not contain plants that maybe harmful to animals?&lt;/p&gt;</helpText>
+                    <helpText>&lt;p&gt;I.e, does the area have secure fencing, is the garden free of plants that maybe harmful to animals?&lt;/p&gt;</helpText>
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
                     <name>Night_time_location_of_animal</name>
-                    <fieldText>What will the night-time location of the animal be?</fieldText>
+                    <fieldText>Where will the night-time location of the animal be</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <isRequired>false</isRequired>
                 </fields>
@@ -717,7 +692,7 @@
         <name>Adopter_Profile_Animal_Screen</name>
         <label>Adopter Profile Animal Screen</label>
         <locationX>578</locationX>
-        <locationY>1550</locationY>
+        <locationY>1430</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -750,7 +725,7 @@
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
-            <name>Animal_Details_Screen_BlankSpace</name>
+            <name>Animal_Details_BlankSpace</name>
             <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -764,27 +739,27 @@
                     <name>Type_of_Animal</name>
                     <choiceReferences>typeOfAnimal</choiceReferences>
                     <dataType>String</dataType>
-                    <fieldText>Type of Animal</fieldText>
+                    <fieldText>What type of animal would you like to adopt?</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <isRequired>false</isRequired>
                 </fields>
                 <fields>
                     <name>Other_Animals</name>
                     <dataType>Boolean</dataType>
-                    <fieldText>Do you have other Animals?</fieldText>
+                    <fieldText>Do you have other animals?</fieldText>
                     <fieldType>InputField</fieldType>
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
                     <name>Animals_of_same_Species</name>
                     <dataType>Boolean</dataType>
-                    <fieldText>Are the animals you current own of the same Species?</fieldText>
+                    <fieldText>Are your current animals of the same species to the one you want to adopt?</fieldText>
                     <fieldType>InputField</fieldType>
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
                     <name>Other_animal_details</name>
-                    <fieldText>Other animal details</fieldText>
+                    <fieldText>Please provide details of the other animals</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <isRequired>false</isRequired>
                     <visibilityRule>
@@ -843,7 +818,7 @@
         <name>Adopter_Profile_Created_Screen</name>
         <label>Adopter Profile Created Screen</label>
         <locationX>578</locationX>
-        <locationY>2990</locationY>
+        <locationY>2870</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -879,7 +854,7 @@
         <name>Adopter_Profile_Lifestyle_Details</name>
         <label>Adopter Profile Lifestyle Details</label>
         <locationX>578</locationX>
-        <locationY>2030</locationY>
+        <locationY>1910</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -912,7 +887,7 @@
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
-            <name>Screen_Lifestyle_BlankSpace</name>
+            <name>LifestyleDetails_BlanksScreen</name>
             <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -924,9 +899,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Current_daytime_arrangements</name>
-                    <fieldText>What are your current daytime arrangements</fieldText>
+                    <fieldText>What are your current daytime arrangements?</fieldText>
                     <fieldType>LargeTextArea</fieldType>
-                    <helpText>&lt;p&gt;I.e. Working from Home, Working away, etc&lt;/p&gt;</helpText>
+                    <helpText>&lt;p&gt;i.e. I work from Home, away from home between these hours, etc&lt;/p&gt;</helpText>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -965,7 +940,7 @@
         <name>Adopter_Profile_Other_Screen</name>
         <label>Adopter Profile Other Screen</label>
         <locationX>578</locationX>
-        <locationY>2270</locationY>
+        <locationY>2150</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -998,7 +973,7 @@
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
-            <name>Screen_Other_BlankSpace</name>
+            <name>OtherDetails_BlankSpace</name>
             <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -1010,7 +985,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Adoption_reason</name>
-                    <fieldText>Adoption reason</fieldText>
+                    <fieldText>Why do you want to adopt?</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <helpText>&lt;p&gt;Why does the adopter want to adopt?&lt;/p&gt;</helpText>
                     <isRequired>false</isRequired>
@@ -1029,7 +1004,7 @@
                 <fields>
                     <name>Has_Local_Vet</name>
                     <dataType>Boolean</dataType>
-                    <fieldText>Has Local Vet?</fieldText>
+                    <fieldText>Do you have a local Vet?</fieldText>
                     <fieldType>InputField</fieldType>
                     <isRequired>true</isRequired>
                 </fields>
@@ -1037,7 +1012,7 @@
                     <name>Local_Vet</name>
                     <choiceReferences>localVetFromAccount</choiceReferences>
                     <dataType>String</dataType>
-                    <fieldText>Local Vet</fieldText>
+                    <fieldText>Local Vet Details</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <isRequired>false</isRequired>
                     <visibilityRule>
@@ -1068,13 +1043,13 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>2074</locationX>
-        <locationY>278</locationY>
+        <locationX>1810</locationX>
+        <locationY>518</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
-            <name>Error_Screen_Text</name>
+            <name>Copy_1_of_Error_Screen_Text</name>
             <fieldText>&lt;p&gt;Oh dear! There seems to be a problem.  Please contact your Systems Administrator with the following information:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Error Message: {!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -1085,7 +1060,7 @@
         <name>No_New_Profile_Screen</name>
         <label>No New Profile Screen</label>
         <locationX>578</locationX>
-        <locationY>998</locationY>
+        <locationY>878</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1101,7 +1076,7 @@
         <name>Start_Screen</name>
         <label>Start Screen</label>
         <locationX>578</locationX>
-        <locationY>398</locationY>
+        <locationY>278</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1135,7 +1110,7 @@
         </fields>
         <fields>
             <name>Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This wizard will create a new Adopter Profile for {!Get_Contact_Name.FirstName} {!Get_Contact_Name.LastName}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This wizard will create a new Adopter Profile for &lt;strong&gt;{!recordId.FirstName} {!recordId.LastName}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1181,7 +1156,7 @@
         <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Contact_Name</targetReference>
+            <targetReference>Stage_1</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -1195,10 +1170,11 @@
     </variables>
     <variables>
         <name>recordId</name>
-        <dataType>String</dataType>
+        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
     </variables>
     <variables>
         <name>taskId</name>

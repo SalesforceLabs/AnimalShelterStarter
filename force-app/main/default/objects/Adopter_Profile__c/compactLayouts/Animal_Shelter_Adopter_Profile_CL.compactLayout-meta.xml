@@ -5,5 +5,6 @@
     <fields>Active__c</fields>
     <fields>Profile_Start_Date__c</fields>
     <fields>Type_of_Animal__c</fields>
+    <fields>Profile_Approval_Status__c</fields>
     <label>Animal Shelter Adopter Profile CL</label>
 </CompactLayout>

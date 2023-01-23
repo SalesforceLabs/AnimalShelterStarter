@@ -253,6 +253,11 @@
             <sortOrder>16</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>CreateSurveyInvitation</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>17</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>SendSurveyInvitation</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>18</sortOrder>
@@ -311,11 +316,6 @@
             <actionName>EmailHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
             <sortOrder>29</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>CreateSurveyInvitation</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>17</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -376,6 +376,7 @@
         <fields>NAME</fields>
         <fields>Type_of_Animal__c</fields>
         <fields>Active__c</fields>
+        <fields>Profile_Approval_Status__c</fields>
         <fields>Profile_Start_Date__c</fields>
         <fields>Profile_End_Date__c</fields>
         <relatedList>Adopter_Profile__c.Contact__c</relatedList>
@@ -450,7 +451,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h6s000001IwMB</masterLabel>
+        <masterLabel>00h8N000001bkPp</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

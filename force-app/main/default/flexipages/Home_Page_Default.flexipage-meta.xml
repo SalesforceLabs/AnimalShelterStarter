@@ -38,12 +38,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>context</name>
-                    <value>BOOKMARKS</value>
-                </componentInstanceProperties>
-                <componentName>forceChatter:exposedFeed</componentName>
-                <identifier>forceChatter_exposedFeed</identifier>
+                <componentName>home:eventContainer</componentName>
+                <identifier>home_eventContainer</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -55,12 +51,6 @@
             <componentInstance>
                 <componentName>runtime_sales_activities:todayTaskContainer</componentName>
                 <identifier>runtime_sales_activities_todayTaskContainer</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>home:eventContainer</componentName>
-                <identifier>home_eventContainer</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

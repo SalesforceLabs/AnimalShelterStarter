@@ -217,10 +217,26 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Stage_6</name>
-        <label>Stage 6</label>
+        <name>Stage_6_File_Upload</name>
+        <label>Stage 6 - File Upload</label>
         <locationX>578</locationX>
-        <locationY>2750</locationY>
+        <locationY>2510</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>File_Upload</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>File_Upload_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_7_Complete</name>
+        <label>Stage 7 - Complete</label>
+        <locationX>578</locationX>
+        <locationY>2990</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -357,7 +373,7 @@
         <locationX>578</locationX>
         <locationY>2390</locationY>
         <connector>
-            <targetReference>Get_Queue_Id</targetReference>
+            <targetReference>Stage_6_File_Upload</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -369,10 +385,10 @@
         <name>Create_Adoption_Task</name>
         <label>Create Adoption Task</label>
         <locationX>578</locationX>
-        <locationY>2630</locationY>
+        <locationY>2870</locationY>
         <assignRecordIdToReference>taskId</assignRecordIdToReference>
         <connector>
-            <targetReference>Stage_6</targetReference>
+            <targetReference>Stage_7_Complete</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -445,7 +461,7 @@
         <name>Get_Queue_Id</name>
         <label>Get Queue Id</label>
         <locationX>578</locationX>
-        <locationY>2510</locationY>
+        <locationY>2750</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Adoption_Task</targetReference>
@@ -818,7 +834,7 @@
         <name>Adopter_Profile_Created_Screen</name>
         <label>Adopter Profile Created Screen</label>
         <locationX>578</locationX>
-        <locationY>2870</locationY>
+        <locationY>3110</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1057,6 +1073,82 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>File_Upload_Screen</name>
+        <label>File Upload Screen</label>
+        <locationX>578</locationX>
+        <locationY>2630</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Queue_Id</targetReference>
+        </connector>
+        <fields>
+            <name>FileUpload_StageInd</name>
+            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>FileUploadBlankSpace</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>File_Upload_Screen_Text</name>
+            <fieldText>&lt;p&gt;(Optional) If you would like to upload any files, images to support your adoption profile, please do so here (i.e. photos of outside area, etc)&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>AP_File_Upload</name>
+            <extensionName>forceContent:fileUpload</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Add Files</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>profile.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>multiple</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>accept</name>
+                <value>
+                    <stringValue>.jpg,.png,.pdf,.jpeg</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>No_New_Profile_Screen</name>
         <label>No New Profile Screen</label>
         <locationX>578</locationX>
@@ -1132,6 +1224,12 @@
         <name>Complete</name>
         <isActive>true</isActive>
         <label>Complete</label>
+        <stageOrder>7</stageOrder>
+    </stages>
+    <stages>
+        <name>File_Upload</name>
+        <isActive>true</isActive>
+        <label>File Upload</label>
         <stageOrder>6</stageOrder>
     </stages>
     <stages>
@@ -1159,7 +1257,7 @@
             <targetReference>Stage_1</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>profile</name>
         <dataType>SObject</dataType>

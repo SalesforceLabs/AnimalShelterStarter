@@ -34,7 +34,7 @@
                                       onuploadfinished="{!c.uploadFinished}" />  
         </div>  
         <br/> 
-        <div class="slds-form--compound">
+        <div class="slds-form-element_compound">
             <table class="slds-table slds-table--bordered">  
                 <!-- hide the table header if file is empty -->
                 <aura:if isTrue="{!not(empty(v.files))}">

@@ -1114,31 +1114,19 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>AP_File_Upload</name>
-            <extensionName>forceContent:fileUpload</extensionName>
+            <name>FileUploadPreview</name>
+            <extensionName>c:FSC_FileUploadPreview</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>label</name>
+                <name>acceptFileTypes</name>
                 <value>
-                    <stringValue>Add Files</stringValue>
+                    <stringValue>.pdf, .jpg, .png</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>recordId</name>
                 <value>
                     <elementReference>profile.Id</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>multiple</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>accept</name>
-                <value>
-                    <stringValue>.jpg,.png,.pdf,.jpeg</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1257,7 +1245,7 @@
             <targetReference>Stage_1</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>profile</name>
         <dataType>SObject</dataType>

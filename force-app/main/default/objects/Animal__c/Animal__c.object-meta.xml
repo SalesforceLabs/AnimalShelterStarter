@@ -182,7 +182,6 @@
         <lookupPhoneDialogsAdditionalFields>Animal_Name__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Breed__c</lookupPhoneDialogsAdditionalFields>
-        <massQuickActions>Start_Adoption</massQuickActions>
         <massQuickActions>Add_Condition</massQuickActions>
         <searchFilterFields>Animal_Name__c</searchFilterFields>
         <searchFilterFields>Type__c</searchFilterFields>

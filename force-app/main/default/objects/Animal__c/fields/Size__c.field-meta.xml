@@ -9,28 +9,6 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>Large</fullName>
-                <default>false</default>
-                <label>Large</label>
-            </value>
-            <value>
-                <fullName>Medium</fullName>
-                <default>false</default>
-                <label>Medium</label>
-            </value>
-            <value>
-                <fullName>Small</fullName>
-                <default>false</default>
-                <label>Small</label>
-            </value>
-            <value>
-                <fullName>Very Large</fullName>
-                <default>false</default>
-                <label>Very Large</label>
-            </value>
-        </valueSetDefinition>
+        <valueSetName>Animal_Size</valueSetName>
     </valueSet>
 </CustomField>

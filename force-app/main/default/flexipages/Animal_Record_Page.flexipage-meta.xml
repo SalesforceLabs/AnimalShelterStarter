@@ -42,9 +42,6 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Start_Adoption</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Animal__c.Multi_Animal_Clone</value>
                         </valueListItems>
                         <valueListItems>

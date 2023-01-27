@@ -1,97 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
     <assignments>
-        <name>Assign_accommodation_details</name>
-        <label>Assign accommodation details</label>
-        <locationX>578</locationX>
-        <locationY>1790</locationY>
-        <assignmentItems>
-            <assignToReference>profile.Type_of_Accommodation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Type_of_Accommodation</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Permission_to_House_Animal__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Permission_to_house_animal</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Location_of_Animal_Daytime__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Daytime_location_of_animal</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Location_of_Animal_Night__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Night_time_location_of_animal</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Safe_Outside_Area__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Safe_Outside_Area</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Lifestyle_Details</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Adopter_Profile_Lifestyle_Details</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_animal_details</name>
-        <label>Assign animal details</label>
+        <name>Assign_Contact_ID_Stage_3</name>
+        <label>Assign Contact ID &amp; Stage 3</label>
         <locationX>578</locationX>
         <locationY>1550</locationY>
-        <assignmentItems>
-            <assignToReference>profile.Other_Animals__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Other_Animals</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Other_Animals_of_same_Species__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Animals_of_same_Species</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Other_Animal_Details__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Other_animal_details</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Preferred_Maturity_Level__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Preferred_Maturity_Level</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Type_of_Animal__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Type_of_Animal</elementReference>
-            </value>
-        </assignmentItems>
         <assignmentItems>
             <assignToReference>profile.Contact__c</assignToReference>
             <operator>Assign</operator>
@@ -111,54 +25,10 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_lifestyle_details</name>
-        <label>Assign lifestyle details</label>
-        <locationX>578</locationX>
-        <locationY>2030</locationY>
-        <assignmentItems>
-            <assignToReference>profile.Current_Daytime_Arrangements__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Current_daytime_arrangements</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Small_Children__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Small_children_in_household</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Other_Details</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Adopter_Profile_Other_Screen</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_other_details</name>
         <label>Assign other details</label>
         <locationX>578</locationX>
         <locationY>2270</locationY>
-        <assignmentItems>
-            <assignToReference>profile.Reason_for_wanting_to_Adopt__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Adoption_reason</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>profile.Local_Vet__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Has_Local_Vet</elementReference>
-            </value>
-        </assignmentItems>
         <assignmentItems>
             <assignToReference>profile.Active__c</assignToReference>
             <operator>Assign</operator>
@@ -214,6 +84,38 @@
         </assignmentItems>
         <connector>
             <targetReference>Adopter_Profile_Animal_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_4</name>
+        <label>Stage 4</label>
+        <locationX>578</locationX>
+        <locationY>1790</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Lifestyle_Details</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adopter_Profile_Lifestyle_Details</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stage_5</name>
+        <label>Stage 5</label>
+        <locationX>578</locationX>
+        <locationY>2030</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Other_Details</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adopter_Profile_Other_Screen</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -315,30 +217,6 @@
             <assignToReference>profile.Local_Vet_details__c</assignToReference>
             <field>Id</field>
         </outputAssignments>
-    </dynamicChoiceSets>
-    <dynamicChoiceSets>
-        <name>maturityLevel</name>
-        <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
-        <picklistField>Preferred_Maturity_Level__c</picklistField>
-        <picklistObject>Adopter_Profile__c</picklistObject>
-    </dynamicChoiceSets>
-    <dynamicChoiceSets>
-        <name>typeOfAccommodation</name>
-        <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
-        <picklistField>Type_of_Accommodation__c</picklistField>
-        <picklistObject>Adopter_Profile__c</picklistObject>
-    </dynamicChoiceSets>
-    <dynamicChoiceSets>
-        <name>typeOfAnimal</name>
-        <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
-        <picklistField>Type_of_Animal__c</picklistField>
-        <picklistObject>Adopter_Profile__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
@@ -605,7 +483,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Assign_accommodation_details</targetReference>
+            <targetReference>Stage_4</targetReference>
         </connector>
         <fields>
             <name>Adopter_Profile_Accommodation_Screen_Header</name>
@@ -644,18 +522,14 @@
                 <name>Adopter_Profile_Accommodation_Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Type_of_Accommodation</name>
-                    <choiceReferences>typeOfAccommodation</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>What type of accommodation do you live in?</fieldText>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Type_of_Accommodation__c</objectFieldReference>
                 </fields>
                 <fields>
-                    <name>Daytime_location_of_animal</name>
-                    <fieldText>Where will the daytime location of the animal be?</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Location_of_Animal_Daytime__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -669,26 +543,19 @@
                 <name>Adopter_Profile_Accommodation_Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Permission_to_house_animal</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>Do you have permission to house an animal?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <helpText>&lt;p&gt;If the adopter is in rented accommodation, do they have permission to house animals?&lt;/p&gt;</helpText>
-                    <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>Safe_Outside_Area</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>Is the outside area of your accommodation safe?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <helpText>&lt;p&gt;I.e, does the area have secure fencing, is the garden free of plants that maybe harmful to animals?&lt;/p&gt;</helpText>
-                    <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>Night_time_location_of_animal</name>
-                    <fieldText>Where will the night-time location of the animal be</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Permission_to_House_Animal__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Safe_Outside_Area__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Location_of_Animal_Night__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -713,7 +580,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Assign_animal_details</targetReference>
+            <targetReference>Assign_Contact_ID_Stage_3</targetReference>
         </connector>
         <fields>
             <name>Adopter_Profile_Animal_Screen_Header</name>
@@ -752,36 +619,28 @@
                 <name>Adopter_Profile_Animal_Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Type_of_Animal</name>
-                    <choiceReferences>typeOfAnimal</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>What type of animal would you like to adopt?</fieldText>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Type_of_Animal__c</objectFieldReference>
                 </fields>
                 <fields>
-                    <name>Other_Animals</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>Do you have other animals?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>Animals_of_same_Species</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>Are your current animals of the same species to the one you want to adopt?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>Other_animal_details</name>
-                    <fieldText>Please provide details of the other animals</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Other_Animals__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Other_Animals_of_same_Species__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Other_Animal_Details__c</objectFieldReference>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>Other_Animals</leftValueReference>
+                            <leftValueReference>profile.Other_Animals__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
@@ -801,20 +660,19 @@
                 <name>Adopter_Profile_Animal_Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Preferred_Maturity_Level</name>
-                    <choiceReferences>maturityLevel</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>Preferred Maturity Level</fieldText>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Preferred_Maturity_Level__c</objectFieldReference>
                 </fields>
                 <fields>
-                    <name>Special_care_adoption_considered</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>Special care adoption considered?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <helpText>&lt;p&gt;Would the adopter be willing to adopt and animal that required special care, i.e. medical, behavioural, etc&lt;/p&gt;</helpText>
-                    <isRequired>true</isRequired>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Preferred_Animal_Size__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Special_Care_Adoption_Considered__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -875,7 +733,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Assign_lifestyle_details</targetReference>
+            <targetReference>Stage_5</targetReference>
         </connector>
         <fields>
             <name>Adopter_Profile_Lifestyle_Details_Header</name>
@@ -914,11 +772,9 @@
                 <name>Adopter_Profile_Lifestyle_Details_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Current_daytime_arrangements</name>
-                    <fieldText>What are your current daytime arrangements?</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <helpText>&lt;p&gt;i.e. I work from Home, away from home between these hours, etc&lt;/p&gt;</helpText>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Current_Daytime_Arrangements__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -932,11 +788,9 @@
                 <name>Adopter_Profile_Lifestyle_Details_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Small_children_in_household</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>Are there small children in household?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Small_Children__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1000,11 +854,9 @@
                 <name>Adopter_Profile_Other_Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Adoption_reason</name>
-                    <fieldText>Why do you want to adopt?</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <helpText>&lt;p&gt;Why does the adopter want to adopt?&lt;/p&gt;</helpText>
+                    <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Reason_for_wanting_to_Adopt__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1018,11 +870,9 @@
                 <name>Adopter_Profile_Other_Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Has_Local_Vet</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>Do you have a local Vet?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Local_Vet__c</objectFieldReference>
                 </fields>
                 <fields>
                     <name>Local_Vet</name>
@@ -1034,7 +884,7 @@
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>Has_Local_Vet</leftValueReference>
+                            <leftValueReference>profile.Local_Vet__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>

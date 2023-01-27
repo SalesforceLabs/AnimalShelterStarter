@@ -76,6 +76,48 @@
                 <elementReference>recordId.TypeFromBreeds__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdopterProfile.Local_Vet__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAdoptionRecord.Has_Local_Vet__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdopterProfile.Local_Vet_details__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAdoptionRecord.Local_Vet__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdopterProfile.Other_Animals__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAdoptionRecord.Other_Animals__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdopterProfile.Other_Animals_of_same_Species__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAdoptionRecord.Other_Animals_of_same_Species__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdopterProfile.Permission_to_House_Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAdoptionRecord.Permission_to_House_Animal__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdopterProfile.Safe_Outside_Area__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAdoptionRecord.Safe_Outside_Area__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_Adopter_Profile_Record</targetReference>
         </connector>
@@ -153,6 +195,34 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_Adopter_Profile_Record_for_Contact.Type_of_Accommodation__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Other_Animals__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Other_Animals__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Other_Animals_of_same_Species__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Other_Animals_of_same_Species__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Permission_to_House_Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Permission_to_House_Animal__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Safe_Outside_Area__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Safe_Outside_Area__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -307,6 +377,18 @@
         <sortField>LastName</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>localVetFromAccount</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>newAdoptionRecord.Local_Vet__c</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
         <name>childrenPresent</name>
@@ -430,7 +512,34 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
+                    <objectFieldReference>newAdoptionRecord.Other_Animals__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newAdoptionRecord.Other_Animals_of_same_Species__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
                     <objectFieldReference>newAdoptionRecord.Other_Pets_Animals__c</objectFieldReference>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>newAdoptionRecord.Other_Animals__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>newAdoptionRecord.Other_Animals_of_same_Species__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -441,6 +550,11 @@
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
                     <objectFieldReference>newAdoptionRecord.Type_of_Accommodation__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newAdoptionRecord.Permission_to_House_Animal__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -453,6 +567,11 @@
             <fields>
                 <name>Capture_Adoption_Information_Section1_Column2</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newAdoptionRecord.Safe_Outside_Area__c</objectFieldReference>
+                </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
@@ -477,6 +596,29 @@
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
                     <objectFieldReference>newAdoptionRecord.Total_Children__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newAdoptionRecord.Has_Local_Vet__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <name>Local_Vet_Details</name>
+                    <choiceReferences>localVetFromAccount</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Local Vet Details</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>newAdoptionRecord.Has_Local_Vet__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>

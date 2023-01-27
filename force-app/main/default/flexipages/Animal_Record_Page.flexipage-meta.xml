@@ -32,6 +32,16 @@
                             <value>Animal__c.Add_Condition</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Animal__c.Start_Adoption_Process</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Animal_Status__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Available for Adoption</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Animal__c.Start_Adoption</value>
                         </valueListItems>
                         <valueListItems>

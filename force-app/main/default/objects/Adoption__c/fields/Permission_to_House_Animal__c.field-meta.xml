@@ -3,9 +3,8 @@
     <fullName>Permission_to_House_Animal__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>If the accommodation is not owned by the adopter, do you/they have permission to house an animal, i.e. from Landlord, etc</inlineHelpText>
+    <inlineHelpText>If the adopter is cohabiting, renting, or does not own their accommodation, do they have permission to house an animal, ie from the Landlord?</inlineHelpText>
     <label>Permission to House Animal?</label>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

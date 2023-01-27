@@ -3,7 +3,7 @@
     <fullName>Other_Animals_of_same_Species__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>Is the other animal of the same species as the one you want to adopt?</inlineHelpText>
+    <inlineHelpText>Are the other animals of the same species as the one you want to adopt?</inlineHelpText>
     <label>Other Animals of same Species</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

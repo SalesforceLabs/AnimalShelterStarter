@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Small_Children__c</fullName>
+    <fullName>Other_Animals__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>Indicates that there are small children in the household</inlineHelpText>
-    <label>Small Children?</label>
-    <trackHistory>false</trackHistory>
+    <inlineHelpText>Does the Adopter have other animals?</inlineHelpText>
+    <label>Other Animals?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

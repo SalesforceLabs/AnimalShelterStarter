@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Current_Daytime_Arrangements__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>What are the daytime arrangements for housing an animal</inlineHelpText>
+    <inlineHelpText>What are your daytime arrangements, i.e. Work from Home, Work away, etc</inlineHelpText>
     <label>Current Daytime Arrangements</label>
     <length>32768</length>
     <trackHistory>false</trackHistory>

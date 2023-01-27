@@ -166,6 +166,16 @@
                 <identifier>RecordPreferred_Maturity_Level_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Preferred_Animal_Size__c</fieldItem>
+                <identifier>RecordPreferred_Animal_Size_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-80df5e0e-a075-42ef-a9f6-4a1f58fa356c</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Location_of_Animal_Daytime__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>What is the location of the animal during the day</inlineHelpText>
+    <inlineHelpText>Where will the animal be during the day, i.e. Home, Office, day care</inlineHelpText>
     <label>Location of Animal - Daytime</label>
     <length>32768</length>
     <trackHistory>false</trackHistory>

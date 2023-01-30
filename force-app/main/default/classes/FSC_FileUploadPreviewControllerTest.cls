@@ -50,8 +50,11 @@ public class FSC_FileUploadPreviewControllerTest {
             for(ContentDocument cd : cdList){
                 FSC_FileUploadPreviewController.deleteFile(String.valueOf(cd.Id));
             }
-            List<ContentDocument> tstDelFile = [SELECT Id FROM ContentDocument WHERE Title = 'ASS Test File' LIMIT 1];
-            Assert.isNotNull(tstDelFile, 'Delete Files Failed');
+            List<ContentDocument> tstDelFile = [SELECT Id, IsDeleted FROM ContentDocument WHERE Title = 'ASS Test File' LIMIT 1];
+            for(ContentDocument df : tstDelFile){
+                Assert.isTrue(df.IsDeleted, 'Delete File Failed');
+            }
+
         
         }
 

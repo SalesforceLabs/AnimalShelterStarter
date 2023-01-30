@@ -393,7 +393,7 @@
     <formulas>
         <name>childrenPresent</name>
         <dataType>Boolean</dataType>
-        <expression>{!newAdoptionRecord.Total_Children__c} &lt;&gt; 0</expression>
+        <expression>IF({!newAdoptionRecord.Total_Children__c} &lt;&gt; 0, TRUE, FALSE)</expression>
     </formulas>
     <interviewLabel>Adoption - Start Adoption Process {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>

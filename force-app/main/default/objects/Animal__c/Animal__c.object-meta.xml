@@ -173,8 +173,8 @@
         <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Breed__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Animal_Status__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Animal_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Breed__c</lookupDialogsAdditionalFields>
@@ -188,8 +188,8 @@
         <searchFilterFields>Breed__c</searchFilterFields>
         <searchFilterFields>Animal_Status__c</searchFilterFields>
         <searchResultsAdditionalFields>Animal_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Breed__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TypeFromBreeds__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Species__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Animal_Status__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>

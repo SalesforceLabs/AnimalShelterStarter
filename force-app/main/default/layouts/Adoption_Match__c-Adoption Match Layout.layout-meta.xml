@@ -25,7 +25,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Adopter_Id__c</field>
+                <field>Adopter_Profile_Contact_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Animal_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Adopter_Profile_Contact_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

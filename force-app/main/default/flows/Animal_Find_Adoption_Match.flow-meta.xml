@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
-    <description>[Animal Shelter] Trigger on Animal record to replace Process Builder</description>
+    <description>[Animal Shelter] - Calls flow to create Adoption Match records</description>
     <environments>Default</environments>
-    <interviewLabel>Animal - Animal Create/Update Trigger {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Animal - Animal Create/Update Trigger</label>
+    <interviewLabel>Animal - Find Adoption Match {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Animal - Find Adoption Match</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -28,23 +28,31 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Call_Length_of_Stay_Subflow</targetReference>
+            <targetReference>Call_Auto_Match_Subflow</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Animal_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Available for Adoption</stringValue>
+            </value>
+        </filters>
         <object>Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
     <subflows>
-        <name>Call_Length_of_Stay_Subflow</name>
-        <label>Call Length of Stay Subflow</label>
+        <name>Call_Auto_Match_Subflow</name>
+        <label>Call Auto Match Subflow</label>
         <locationX>176</locationX>
         <locationY>335</locationY>
-        <flowName>Animal_Length_of_Stay_Calculation</flowName>
+        <flowName>Adopter_Match_create_auto_match_records_Subflow</flowName>
         <inputAssignments>
-            <name>varAnimalId</name>
+            <name>animalRecord</name>
             <value>
-                <elementReference>$Record.Id</elementReference>
+                <elementReference>$Record</elementReference>
             </value>
         </inputAssignments>
     </subflows>

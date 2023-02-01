@@ -16,16 +16,6 @@
                             <value>Animal__c.Cage_Card</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.New_Assessment</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.Animal_Status__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Deceased</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Animal__c.Mark_as_Deceased</value>
                             <visibilityRule>
                                 <criteria>
@@ -1877,16 +1867,6 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>showLegacyActivityComposer</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>runtime_sales_activities:activityPanel</componentName>
-                <identifier>runtime_sales_activities_activityPanel</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>Facet-9051dd9c-7f13-4147-969e-a9c11e8979f7</name>
         <type>Facet</type>
     </flexiPageRegions>

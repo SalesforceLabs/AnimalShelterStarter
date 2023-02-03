@@ -5,6 +5,8 @@
     <columns>Contact__c</columns>
     <columns>Type_of_Animal__c</columns>
     <columns>Profile_Start_Date__c</columns>
+    <columns>Profile_Approval_Status__c</columns>
+    <columns>Active__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Active__c</field>

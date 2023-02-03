@@ -35,6 +35,10 @@
                 <behavior>Readonly</behavior>
                 <field>Adopter_Profile_Contact_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Successful_Adoption__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

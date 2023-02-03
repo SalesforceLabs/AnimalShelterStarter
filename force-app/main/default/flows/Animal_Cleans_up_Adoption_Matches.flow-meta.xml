@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
-    <description>[Animal Shelter] - Calls flow to create Adoption Match records</description>
+    <description>[Animal] - Removes Adoption Matches when the animal is either Adoption or no longer available for adoption</description>
     <environments>Default</environments>
-    <interviewLabel>Animal - Find Adoption Match {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Animal - Find Adoption Match</label>
+    <interviewLabel>Animal - Cleans up Adoption Matches {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Animal - Cleans up Adoption Matches</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -28,13 +28,13 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Call_Auto_Match_Subflow</targetReference>
+            <targetReference>Call_Clean_Up_Subflow</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Animal_Status__c</field>
-            <operator>EqualTo</operator>
+            <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Available for Adoption</stringValue>
             </value>
@@ -45,11 +45,11 @@
     </start>
     <status>Active</status>
     <subflows>
-        <name>Call_Auto_Match_Subflow</name>
-        <label>Call Auto Match Subflow</label>
+        <name>Call_Clean_Up_Subflow</name>
+        <label>Call Clean Up Subflow</label>
         <locationX>176</locationX>
         <locationY>335</locationY>
-        <flowName>Adopter_Match_create_auto_match_records_Subflow</flowName>
+        <flowName>Adopter_Match_clean_up_Subflow</flowName>
         <inputAssignments>
             <name>animalRecord</name>
             <value>

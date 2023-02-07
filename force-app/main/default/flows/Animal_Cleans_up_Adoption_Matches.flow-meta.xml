@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
-    <description>[Animal] - Removes Adoption Matches when the animal is either Adoption or no longer available for adoption</description>
+    <description>[Animal] - Removes Adoption Matches when the animal is either status changes from Available for Adoption</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Cleans up Adoption Matches {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal - Cleans up Adoption Matches</label>
@@ -30,7 +30,6 @@
         <connector>
             <targetReference>Call_Clean_Up_Subflow</targetReference>
         </connector>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Animal_Status__c</field>

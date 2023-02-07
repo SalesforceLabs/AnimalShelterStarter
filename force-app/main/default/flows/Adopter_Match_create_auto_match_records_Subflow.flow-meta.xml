@@ -4,7 +4,7 @@
         <description>Sends an email when both inputs are Null</description>
         <name>Send_Email_on_Error</name>
         <label>Send Email on Error</label>
-        <locationX>666</locationX>
+        <locationX>1194</locationX>
         <locationY>278</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
@@ -62,7 +62,7 @@
     <assignments>
         <name>Build_Animal_Match</name>
         <label>Build Animal Match</label>
-        <locationX>490</locationX>
+        <locationX>754</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>newAdopterMatchRecord.Adopter_Profile__c</assignToReference>
@@ -108,7 +108,7 @@
     <assignments>
         <name>Build_Matched_Animal_Records</name>
         <label>Build Matched Animal Records</label>
-        <locationX>490</locationX>
+        <locationX>754</locationX>
         <locationY>638</locationY>
         <assignmentItems>
             <assignToReference>newAdopterMatchRecords</assignToReference>
@@ -121,10 +121,24 @@
             <targetReference>Loop_Through_Animal_Records</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <description>Sets a variable that is available for output from the flow to signify record creation</description>
+        <name>Set_Output_Flag</name>
+        <label>Set Output Flag</label>
+        <locationX>622</locationX>
+        <locationY>1070</locationY>
+        <assignmentItems>
+            <assignToReference>adoptionMatchRecordsCreated</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <decisions>
         <name>Triggered_by_Which_Object</name>
         <label>Triggered by Which Object</label>
-        <locationX>358</locationX>
+        <locationX>622</locationX>
         <locationY>158</locationY>
         <defaultConnector>
             <targetReference>Send_Email_on_Error</targetReference>
@@ -179,7 +193,7 @@
     <environments>Default</environments>
     <interviewLabel>Adopter Match - create auto match records - Subflow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
-    <label>Adopter Match - create auto match records - Subflow</label>
+    <label>Adopter Match - Create Adoption Match Records - Subflow</label>
     <loops>
         <name>Loop_Through_Adopter_Profile_Records</name>
         <label>Loop Through Adopter Profile Records</label>
@@ -197,7 +211,7 @@
     <loops>
         <name>Loop_Through_Animal_Records</name>
         <label>Loop Through Animal Records</label>
-        <locationX>402</locationX>
+        <locationX>666</locationX>
         <locationY>398</locationY>
         <collectionReference>Get_Animals</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -230,8 +244,15 @@
     <recordCreates>
         <name>Create_Adoption_Match_Records</name>
         <label>Create Adoption Match Records</label>
-        <locationX>358</locationX>
+        <locationX>622</locationX>
         <locationY>950</locationY>
+        <connector>
+            <targetReference>Set_Output_Flag</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Send_Email_on_Error</targetReference>
+        </faultConnector>
         <inputReference>newAdopterMatchRecords</inputReference>
     </recordCreates>
     <recordLookups>
@@ -244,6 +265,10 @@
         <connector>
             <targetReference>Loop_Through_Adopter_Profile_Records</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Send_Email_on_Error</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Type_of_Animal__c</field>
@@ -273,12 +298,16 @@
     <recordLookups>
         <name>Get_Animals</name>
         <label>Get Animals</label>
-        <locationX>402</locationX>
+        <locationX>666</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Through_Animal_Records</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Send_Email_on_Error</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Animal_Status__c</field>
@@ -300,7 +329,7 @@
     </recordLookups>
     <runInMode>DefaultMode</runInMode>
     <start>
-        <locationX>232</locationX>
+        <locationX>496</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Triggered_by_Which_Object</targetReference>
@@ -310,7 +339,7 @@
     <textTemplates>
         <name>ErrorMessageOnNullValues</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Error: {!$Flow.FaultMessage} at &lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!$Flow.CurrentDateTime}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Expected inputs are Null!&lt;/p&gt;&lt;p&gt;Either an animal record or adopter profile should be passed to this subflow.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact your Systems Administrator&lt;/p&gt;</text>
+        <text>&lt;p&gt;Error: {!$Flow.FaultMessage} at &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!$Flow.CurrentDateTime}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Expected inputs are Null or a DML has failed &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact your Systems Administrator&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>adopterProfile</name>
@@ -319,6 +348,13 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Adopter_Profile__c</objectType>
+    </variables>
+    <variables>
+        <name>adoptionMatchRecordsCreated</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
     </variables>
     <variables>
         <name>animalRecord</name>

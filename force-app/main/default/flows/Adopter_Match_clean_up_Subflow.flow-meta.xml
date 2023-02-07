@@ -4,7 +4,7 @@
         <description>Sends an email when both inputs are Null</description>
         <name>Send_Email_on_Error</name>
         <label>Send Email on Error</label>
-        <locationX>1106</locationX>
+        <locationX>1546</locationX>
         <locationY>278</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
@@ -32,13 +32,13 @@
     <assignments>
         <name>Assign_AM_records_to_Delete_Not_Adopted_Path</name>
         <label>Assign AM records to Delete - Not Adopted Path</label>
-        <locationX>314</locationX>
-        <locationY>518</locationY>
+        <locationX>490</locationX>
+        <locationY>638</locationY>
         <assignmentItems>
             <assignToReference>adoptionMatchRecordstoDelete</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adoption_Match_records</elementReference>
+                <elementReference>Get_Adoption_Match_records_related_to_Animal</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -48,8 +48,8 @@
     <assignments>
         <name>Assign_to_AM_record_to_Update</name>
         <label>Assign to AM record to Update</label>
-        <locationX>138</locationX>
-        <locationY>758</locationY>
+        <locationX>314</locationX>
+        <locationY>878</locationY>
         <assignmentItems>
             <assignToReference>amRecordtoUpdate</assignToReference>
             <operator>Assign</operator>
@@ -64,8 +64,8 @@
     <assignments>
         <name>Build_AM_records_to_delete</name>
         <label>Build AM records to delete</label>
-        <locationX>402</locationX>
-        <locationY>758</locationY>
+        <locationX>578</locationX>
+        <locationY>878</locationY>
         <assignmentItems>
             <assignToReference>adoptionMatchRecordstoDelete</assignToReference>
             <operator>Add</operator>
@@ -80,8 +80,8 @@
     <assignments>
         <name>Update_Status_on_AM_record</name>
         <label>Update Status on AM record</label>
-        <locationX>50</locationX>
-        <locationY>1070</locationY>
+        <locationX>226</locationX>
+        <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>amRecordtoUpdate.Successful_Adoption__c</assignToReference>
             <operator>Assign</operator>
@@ -94,10 +94,32 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Any_Adoption_Match_records_to_delete</name>
+        <label>Any Adoption Match records to delete?</label>
+        <locationX>1150</locationX>
+        <locationY>398</locationY>
+        <defaultConnectorLabel>No records to Delete</defaultConnectorLabel>
+        <rules>
+            <name>Records_to_Delete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Adoption_Match_records_related_to_Adopter_Profile</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Adoption_Match_records</targetReference>
+            </connector>
+            <label>Records to Delete</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Does_the_Contact_on_the_Animal_match_the_Adopter_Profile</name>
         <label>Does the Contact on the Animal match the Adopter Profile</label>
-        <locationX>270</locationX>
-        <locationY>638</locationY>
+        <locationX>446</locationX>
+        <locationY>758</locationY>
         <defaultConnector>
             <targetReference>Build_AM_records_to_delete</targetReference>
         </defaultConnector>
@@ -119,9 +141,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Triggered_by_Which_Object</name>
-        <label>Triggered by Which Object</label>
-        <locationX>710</locationX>
+        <description>Determines which object this subflow was called from by looking at which records were passed.</description>
+        <name>Flow_triggered_by_which_object</name>
+        <label>Flow triggered by which object</label>
+        <locationX>798</locationX>
         <locationY>158</locationY>
         <defaultConnector>
             <targetReference>Send_Email_on_Error</targetReference>
@@ -145,7 +168,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Adoption_Match_records</targetReference>
+                <targetReference>Get_Adoption_Match_records_related_to_Animal</targetReference>
             </connector>
             <label>Animal</label>
         </rules>
@@ -167,16 +190,38 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Adoption_Matches_related_to_Adopter_Profile</targetReference>
+                <targetReference>Get_Adoption_Match_records_related_to_Adopter_Profile</targetReference>
             </connector>
             <label>Adopter Profile</label>
         </rules>
     </decisions>
     <decisions>
+        <name>No_AM_records_related_to_Animal</name>
+        <label>No AM records related to Animal</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>What_is_the_status_of_the_animal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Records to clean up</defaultConnectorLabel>
+        <rules>
+            <name>No_record_to_clean_up</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Adoption_Match_records_related_to_Animal</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>No record to clean up</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>What_is_the_status_of_the_animal</name>
         <label>What is the status of the animal?</label>
-        <locationX>314</locationX>
-        <locationY>398</locationY>
+        <locationX>490</locationX>
+        <locationY>518</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Adopted</name>
@@ -216,17 +261,17 @@
             <label>No longer Available for Adoption</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] runs a clean up of records in the Adoption Match object if certain changes happen to the Adopter Profile or Animal</description>
+    <description>[Animal Shelter] cleans up of records in the Adoption Match object if certain changes happen to the Adopter Profile or Animal</description>
     <environments>Default</environments>
     <interviewLabel>Adopter Match - clean up - Subflow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
-    <label>Adopter Match - clean up - Subflow</label>
+    <label>Adopter Match - Record Clean Up - Subflow</label>
     <loops>
         <name>Loop_Through_Adoption_Match_records</name>
         <label>Loop Through Adoption Match records</label>
-        <locationX>50</locationX>
-        <locationY>518</locationY>
-        <collectionReference>Get_Adoption_Match_records</collectionReference>
+        <locationX>226</locationX>
+        <locationY>638</locationY>
+        <collectionReference>Get_Adoption_Match_records_related_to_Animal</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Does_the_Contact_on_the_Animal_match_the_Adopter_Profile</targetReference>
@@ -257,48 +302,27 @@
     <recordDeletes>
         <name>Delete_Adoption_Match_records</name>
         <label>Delete Adoption Match records</label>
-        <locationX>842</locationX>
-        <locationY>398</locationY>
-        <inputReference>Get_Adoption_Matches_related_to_Adopter_Profile</inputReference>
+        <locationX>1018</locationX>
+        <locationY>518</locationY>
+        <inputReference>Get_Adoption_Match_records_related_to_Adopter_Profile</inputReference>
     </recordDeletes>
     <recordDeletes>
         <description>Delete Adoption Match records that are no longer valid</description>
         <name>Delete_Adoption_Matches</name>
         <label>Delete Adoption Matches</label>
-        <locationX>314</locationX>
-        <locationY>1406</locationY>
+        <locationX>490</locationX>
+        <locationY>1526</locationY>
         <inputReference>adoptionMatchRecordstoDelete</inputReference>
     </recordDeletes>
     <recordLookups>
-        <description>Get Adoption Match records that match the animal</description>
-        <name>Get_Adoption_Match_records</name>
-        <label>Get Adoption Match records</label>
-        <locationX>314</locationX>
+        <description>Returns the Adoption Match records related to the Adopter Profile Id</description>
+        <name>Get_Adoption_Match_records_related_to_Adopter_Profile</name>
+        <label>Get Adoption Match records related to Adopter Profile</label>
+        <locationX>1150</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>What_is_the_status_of_the_animal</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Animal__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>animalRecord.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Adoption_Match__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Adoption_Matches_related_to_Adopter_Profile</name>
-        <label>Get Adoption Matches related to Adopter Profile</label>
-        <locationX>842</locationX>
-        <locationY>278</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Delete_Adoption_Match_records</targetReference>
+            <targetReference>Any_Adoption_Match_records_to_delete</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -319,11 +343,33 @@
         <object>Adoption_Match__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <description>Returns the Adoption Match records that match the animal Id</description>
+        <name>Get_Adoption_Match_records_related_to_Animal</name>
+        <label>Get Adoption Match records related to Animal</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>No_AM_records_related_to_Animal</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Animal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>animalRecord.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Adoption_Match__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_AM_record_for_Adopter</name>
         <label>Update AM record for Adopter</label>
-        <locationX>50</locationX>
-        <locationY>1190</locationY>
+        <locationX>226</locationX>
+        <locationY>1310</locationY>
         <connector>
             <targetReference>Delete_Adoption_Matches</targetReference>
         </connector>
@@ -331,10 +377,10 @@
     </recordUpdates>
     <runInMode>DefaultMode</runInMode>
     <start>
-        <locationX>584</locationX>
+        <locationX>672</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Triggered_by_Which_Object</targetReference>
+            <targetReference>Flow_triggered_by_which_object</targetReference>
         </connector>
     </start>
     <status>Active</status>

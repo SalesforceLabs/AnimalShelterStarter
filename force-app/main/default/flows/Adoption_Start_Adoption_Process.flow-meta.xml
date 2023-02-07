@@ -118,6 +118,13 @@
                 <elementReference>newAdoptionRecord.Safe_Outside_Area__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdopterProfile.Gender__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Gender__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_Adopter_Profile_Record</targetReference>
         </connector>
@@ -360,7 +367,7 @@
             <label>Available for Adoption</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] - Starts the adoption process for an available animal</description>
+    <description>[Animal Shelter] - Starts the adoption process for an available animal.  If required allows for the creation of an Adopter Profile for the selected Contact</description>
     <dynamicChoiceSets>
         <name>contactRecords</name>
         <dataType>String</dataType>

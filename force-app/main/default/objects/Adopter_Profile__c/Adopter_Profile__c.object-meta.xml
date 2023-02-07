@@ -146,7 +146,7 @@
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>Animal_Shelter_Adopter_Profile_CL</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>[Animal Shelter] Stores details of a potential adopter so that they can be matched against available Animals.</description>
+    <description>[Animal Shelter] Stores details of a potential adopter so that they can be matched against animals that are available for adoption.  A contact should only have one active adopter profile</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>

@@ -207,7 +207,7 @@
             <label>Active Profile Exists</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] Creates a new Adopter Profile record and Contact is required</description>
+    <description>[Animal Shelter] Creates a new Adopter Profile record against a Contact.  Adopter Profiles are used to match a potential adopter to an animal that is available for adoption, and create the Adoption record once the process is started.</description>
     <dynamicChoiceSets>
         <name>localVetFromAccount</name>
         <dataType>String</dataType>
@@ -663,6 +663,11 @@
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Preferred_Maturity_Level__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>profile.Gender__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>

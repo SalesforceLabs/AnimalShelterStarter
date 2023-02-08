@@ -194,6 +194,16 @@
                 <identifier>RecordCalculated_Age__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Age_Category__c</fieldItem>
+                <identifier>RecordAge_Category_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-574bcfdb-8a2b-4b54-a06d-f0c027bca7e2</name>
         <type>Facet</type>
     </flexiPageRegions>

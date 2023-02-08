@@ -27,6 +27,10 @@
                 <behavior>Edit</behavior>
                 <field>SYSTEM_Breed_Migrated__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Age_Category__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

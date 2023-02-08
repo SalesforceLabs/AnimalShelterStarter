@@ -33,7 +33,7 @@
         <name>Build_Adopter_Match_Record</name>
         <label>Build Adopter Match Record</label>
         <locationX>138</locationX>
-        <locationY>518</locationY>
+        <locationY>638</locationY>
         <assignmentItems>
             <assignToReference>newAdopterMatchRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
@@ -63,7 +63,7 @@
         <name>Build_Animal_Match</name>
         <label>Build Animal Match</label>
         <locationX>754</locationX>
-        <locationY>518</locationY>
+        <locationY>638</locationY>
         <assignmentItems>
             <assignToReference>newAdopterMatchRecord.Adopter_Profile__c</assignToReference>
             <operator>Assign</operator>
@@ -93,7 +93,7 @@
         <name>Build_Match_Records</name>
         <label>Build Match Records</label>
         <locationX>138</locationX>
-        <locationY>638</locationY>
+        <locationY>758</locationY>
         <assignmentItems>
             <assignToReference>newAdopterMatchRecords</assignToReference>
             <operator>Add</operator>
@@ -109,7 +109,7 @@
         <name>Build_Matched_Animal_Records</name>
         <label>Build Matched Animal Records</label>
         <locationX>754</locationX>
-        <locationY>638</locationY>
+        <locationY>758</locationY>
         <assignmentItems>
             <assignToReference>newAdopterMatchRecords</assignToReference>
             <operator>Add</operator>
@@ -126,7 +126,7 @@
         <name>Set_Output_Flag</name>
         <label>Set Output Flag</label>
         <locationX>622</locationX>
-        <locationY>1070</locationY>
+        <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>adoptionMatchRecordsCreated</assignToReference>
             <operator>Assign</operator>
@@ -135,6 +135,83 @@
             </value>
         </assignmentItems>
     </assignments>
+    <collectionProcessors>
+        <name>Filter_Adopter_Profile_records_based_on_Match_Criteria</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Filter Adopter Profile records based on Match Criteria</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <assignNextValueToReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Get_Adopter_Profile_records_based_on_Type</collectionReference>
+        <conditionLogic>1 AND 2 AND (3 OR 4)</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Gender__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>animalRecord.Gender__c</elementReference>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Animal_Size__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>animalRecord.Size__c</elementReference>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Maturity_Level__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>animalRecord.Age_Category__c</elementReference>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Maturity_Level__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <stringValue>No preference</stringValue>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Loop_Through_Adopter_Profile_Records</targetReference>
+        </connector>
+    </collectionProcessors>
+    <collectionProcessors>
+        <name>Filter_Animal_records_based_on_Matching_Criteria</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Filter Animal records based on Matching Criteria</label>
+        <locationX>666</locationX>
+        <locationY>398</locationY>
+        <assignNextValueToReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Get_Animal_records_based_on_Type</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.Gender__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>adopterProfile.Gender__c</elementReference>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.Size__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>adopterProfile.Preferred_Animal_Size__c</elementReference>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.Age_Category__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>adopterProfile.Preferred_Maturity_Level__c</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Loop_Through_Animal_Records</targetReference>
+        </connector>
+    </collectionProcessors>
     <decisions>
         <name>Triggered_by_Which_Object</name>
         <label>Triggered by Which Object</label>
@@ -162,7 +239,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Adopter_Profile_Records</targetReference>
+                <targetReference>Get_Adopter_Profile_records_based_on_Type</targetReference>
             </connector>
             <label>Animal</label>
         </rules>
@@ -184,7 +261,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Animals</targetReference>
+                <targetReference>Get_Animal_records_based_on_Type</targetReference>
             </connector>
             <label>Adopter Profile</label>
         </rules>
@@ -198,8 +275,8 @@
         <name>Loop_Through_Adopter_Profile_Records</name>
         <label>Loop Through Adopter Profile Records</label>
         <locationX>50</locationX>
-        <locationY>398</locationY>
-        <collectionReference>Get_Adopter_Profile_Records</collectionReference>
+        <locationY>518</locationY>
+        <collectionReference>Filter_Adopter_Profile_records_based_on_Match_Criteria</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Build_Adopter_Match_Record</targetReference>
@@ -212,8 +289,8 @@
         <name>Loop_Through_Animal_Records</name>
         <label>Loop Through Animal Records</label>
         <locationX>666</locationX>
-        <locationY>398</locationY>
-        <collectionReference>Get_Animals</collectionReference>
+        <locationY>518</locationY>
+        <collectionReference>Get_Animal_records_based_on_Type</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Build_Animal_Match</targetReference>
@@ -245,7 +322,7 @@
         <name>Create_Adoption_Match_Records</name>
         <label>Create Adoption Match Records</label>
         <locationX>622</locationX>
-        <locationY>950</locationY>
+        <locationY>1070</locationY>
         <connector>
             <targetReference>Set_Output_Flag</targetReference>
         </connector>
@@ -256,14 +333,14 @@
         <inputReference>newAdopterMatchRecords</inputReference>
     </recordCreates>
     <recordLookups>
-        <description>That match the Animal Type</description>
-        <name>Get_Adopter_Profile_Records</name>
-        <label>Get Adopter Profile Records</label>
+        <description>Get adopter profile records that match the animal type</description>
+        <name>Get_Adopter_Profile_records_based_on_Type</name>
+        <label>Get Adopter Profile records based on Type</label>
         <locationX>50</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Loop_Through_Adopter_Profile_Records</targetReference>
+            <targetReference>Filter_Adopter_Profile_records_based_on_Match_Criteria</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -296,13 +373,14 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Animals</name>
-        <label>Get Animals</label>
+        <description>Get animal records that match the animal type on the adopter profile record</description>
+        <name>Get_Animal_records_based_on_Type</name>
+        <label>Get Animal records based on Type</label>
         <locationX>666</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Loop_Through_Animal_Records</targetReference>
+            <targetReference>Filter_Animal_records_based_on_Matching_Criteria</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -350,6 +428,14 @@
         <objectType>Adopter_Profile__c</objectType>
     </variables>
     <variables>
+        <name>adopterProfileRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Adopter_Profile__c</objectType>
+    </variables>
+    <variables>
         <name>adoptionMatchRecordsCreated</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -361,6 +447,22 @@
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Adopter_Profile__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Animal__c</objectType>
     </variables>

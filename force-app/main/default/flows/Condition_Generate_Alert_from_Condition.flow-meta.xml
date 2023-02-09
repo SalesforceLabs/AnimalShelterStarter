@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
-    <description>This flow allows an end user to create an Animal Alert from a condition record.</description>
+    <description>[Animal Shelter] This flow allows an end user to create an Animal Alert from a condition record.</description>
     <environments>Default</environments>
     <interviewLabel>Condition - Generate Alert from Condition</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -15,7 +15,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -28,67 +28,43 @@
     <recordCreates>
         <name>CreateAlert</name>
         <label>CreateAlert</label>
-        <locationX>1255</locationX>
-        <locationY>248</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <assignRecordIdToReference>AlertID</assignRecordIdToReference>
         <faultConnector>
             <targetReference>ErrorScreen</targetReference>
         </faultConnector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Alert_Message__c</field>
+            <field>Alert_Message__c</field>
             <value>
                 <elementReference>Alert_Description</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <value>
-                <elementReference>GetConditionDetails.%%%NAMESPACED_ORG%%%Animal__c</elementReference>
+                <elementReference>recordId.Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%End_Date_Time__c</field>
+            <field>End_Date_Time__c</field>
             <value>
                 <elementReference>End_Date_Time</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Start_Date_Time__c</field>
+            <field>Start_Date_Time__c</field>
             <value>
                 <elementReference>Start_Date_Time</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Alert__c</object>
+        <object>Animal_Alert__c</object>
     </recordCreates>
-    <recordLookups>
-        <name>GetConditionDetails</name>
-        <label>GetConditionDetails</label>
-        <locationX>601</locationX>
-        <locationY>234</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>CheckDetails</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>ErrorScreen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Condition__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <screens>
         <name>CheckDetails</name>
         <label>CheckDetails</label>
-        <locationX>909</locationX>
-        <locationY>69</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -97,14 +73,14 @@
         </connector>
         <fields>
             <name>Screen_AlertDesc_Info</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Create a new Alert&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Use the form below to create a new animal alert for the following condition:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!GetConditionDetails.%%%NAMESPACED_ORG%%%Condition_Description__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Create a new Alert&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Use the form below to create a new alert for {!recordId.Animal__r.Animal_Name__c} for the following condition:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Condition_Description__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Alert_Description</name>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>GetConditionDetails.%%%NAMESPACED_ORG%%%Condition_Description__c</elementReference>
+                <elementReference>recordId.Condition_Description__c</elementReference>
             </defaultValue>
             <fieldText>Alert Description</fieldText>
             <fieldType>InputField</fieldType>
@@ -112,26 +88,54 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Start_Date_Time</name>
-            <dataType>DateTime</dataType>
-            <defaultValue>
-                <elementReference>GetConditionDetails.%%%NAMESPACED_ORG%%%Start_Date__c</elementReference>
-            </defaultValue>
-            <fieldText>Start Date/Time</fieldText>
-            <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;When should this alert be shown from?&lt;/p&gt;</helpText>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>End_Date_Time</name>
-            <dataType>DateTime</dataType>
-            <defaultValue>
-                <elementReference>GetConditionDetails.%%%NAMESPACED_ORG%%%End_Date_Time__c</elementReference>
-            </defaultValue>
-            <fieldText>End Date/Time</fieldText>
-            <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;When should we stop showing the alert? Note that you can leave this blank and it will show the alert on the animal record until an end date is added on the record.&lt;/p&gt;</helpText>
+            <name>CheckDetails_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>CheckDetails_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Start_Date_Time</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Start_Date__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Start Date/Time</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;When should this alert be shown from?&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>CheckDetails_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>End_Date_Time</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.End_Date_Time__c</elementReference>
+                    </defaultValue>
+                    <fieldText>End Date/Time</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;When should we stop showing the alert? Note that you can leave this blank and it will show the alert on the animal record until an end date is added on the record.&lt;/p&gt;</helpText>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -139,8 +143,8 @@
     <screens>
         <name>ErrorScreen</name>
         <label>ErrorScreen</label>
-        <locationX>907</locationX>
-        <locationY>442</locationY>
+        <locationX>440</locationX>
+        <locationY>398</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -154,9 +158,9 @@
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>GetConditionDetails</targetReference>
+            <targetReference>CheckDetails</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -169,9 +173,10 @@
     </variables>
     <variables>
         <name>recordId</name>
-        <dataType>String</dataType>
+        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+        <objectType>Condition__c</objectType>
     </variables>
 </Flow>

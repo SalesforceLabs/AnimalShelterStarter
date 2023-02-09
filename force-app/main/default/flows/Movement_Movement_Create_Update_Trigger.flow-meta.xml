@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
+    <description>[Animal Shelter] - Movement trigger, calls Length of Stay Subflow</description>
     <environments>Default</environments>
     <interviewLabel>Movement - Movement Create/Update Trigger {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -25,6 +26,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <description>Gets the animals detail from the related Movement record Id</description>
         <name>Get_Animal_ID_from_Movement_Record</name>
         <label>Get Animal ID from Movement Record</label>
         <locationX>176</locationX>

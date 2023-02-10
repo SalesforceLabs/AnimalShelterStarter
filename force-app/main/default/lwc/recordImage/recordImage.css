@@ -1,0 +1,9 @@
+.image_container {
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}

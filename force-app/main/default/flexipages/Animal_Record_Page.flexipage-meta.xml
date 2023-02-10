@@ -1821,6 +1821,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>showLegacyActivityComposer</name>
+                    <value>false</value>
+                </componentInstanceProperties>
                 <componentName>runtime_sales_activities:activityPanel</componentName>
                 <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>
@@ -1931,20 +1935,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>ImageClass</name>
-                    <value>Round_Image</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>message</name>
-                    <value>Drag and Drop Image Here</value>
-                </componentInstanceProperties>
-                <componentName>Record_Page_Image</componentName>
-                <identifier>Record_Page_Image</identifier>
-            </componentInstance>
-        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

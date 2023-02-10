@@ -6,13 +6,22 @@
     <description>Shows an uploaded image which is linked to the record</description>
     <targets>
         <target>lightning__RecordPage</target>
-        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
             <objects>
                 <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+                <object>Contact</object>
             </objects>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="objectApiName"
+                type="String"
+                label="Object Name"
+                description="Automatically bind the page's object name to the component variable"
+                default="{!objectApiName}" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

@@ -2,19 +2,48 @@ import { LightningElement, wire, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getRecord, updateRecord } from 'lightning/uiRecordApi';
 import { refreshApex } from '@salesforce/apex';
-import ID_FIELD from '@salesforce/schema/%%%NAMESPACED_ORG%%%Animal__c.Id';
-import PHOTO_ID_FIELD from '@salesforce/schema/%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Photo_Id__c';
+
+// Animal Object References 
+import ANIMAL_ID_FIELD from '@salesforce/schema/%%%NAMESPACED_ORG%%%Animal__c.Id';
+import ANIMAL_PHOTO_ID_FIELD from '@salesforce/schema/%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Photo_Id__c';
+
+// Contact Object References
+import CONTACT_ID_FIELD from '@salesforce/schema/Contact.Id';
+import CONTACT_PHOTO_ID_FIELD from '@salesforce/schema/Contact.%%%NAMESPACED_ORG%%%Photo_Id__c';
+
+// Placeholder Image Static Resource
 import PLACEHOLDER from '@salesforce/resourceUrl/PlaceHolderImage';
 
 export default class recordImage extends LightningElement {
 
+    // Global Record Parameters
     @api recordId;
-    the_record;
+    @api objectApiName;
+    CurrentRecord;
+    IdField 
+    photoIdField
+    
+    // Photo Field and ID
     photoId;
     photoURL;
+
+    // Placeholder Image
     placeholderURL = PLACEHOLDER
 
-    @wire(getRecord, { recordId: '$recordId', fields: [PHOTO_ID_FIELD] })
+    // Configure Component based on Object on init
+    connectedCallback() {
+        if (this.objectApiName == 'Contact') {
+            this.IdField = CONTACT_ID_FIELD
+            this.photoIdField = CONTACT_PHOTO_ID_FIELD
+        }
+        if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
+            this.IdField = ANIMAL_ID_FIELD
+            this.photoIdField = ANIMAL_PHOTO_ID_FIELD
+        }        
+    }
+
+    // Wire Record and load Photo Id Field
+    @wire(getRecord, { recordId: '$recordId', fields: '$photoIdField' })
     wiredRecord({ error, data }) {
         if (error) {
             let message = 'Unknown error';
@@ -25,47 +54,61 @@ export default class recordImage extends LightningElement {
             }
             this.dispatchEvent(
                 new ShowToastEvent({
-                    title: 'Error loading information',
+                    title: 'Error Loading Record',
                     message,
                     variant: 'error',
                 }),
             );
         } else if (data) {
-            this.the_record = data;
-            if (this.the_record.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value) {
-                this.photoId = this.the_record.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value;
+            this.CurrentRecord = data;
+            if (this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value) {
+                this.photoId = this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value;
                 this.photoURL = '/sfc/servlet.shepherd/version/download/' + this.photoId;
             }
         }
     }
 
+    // Set Accepted Photo Formats
     get acceptedFormats() {
         return ['.png','.jpg','.jpeg'];
     }
 
+    // Handle a Completed Upload of the Photo
     handleUploadFinished(event) {
-        // Get the list of uploaded files
         const uploadedFiles = event.detail.files;
         this.photoId = uploadedFiles[0].contentVersionId;
         this.updateRecord(this.photoId);
         this.photoURL = '/sfc/servlet.shepherd/version/download/'  + this.photoId;
     }
 
+    // Update the PhotoId Field on the Record
     updateRecord(photoId) {
         const fields = {};
-        fields[ID_FIELD.fieldApiName] = this.recordId;
-        fields[PHOTO_ID_FIELD.fieldApiName] = photoId;
 
+        if (this.objectApiName == 'Contact') {
+            fields[CONTACT_ID_FIELD.fieldApiName] = this.recordId;
+            fields[CONTACT_PHOTO_ID_FIELD.fieldApiName] = photoId;
+        }
+        if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
+            fields[ANIMAL_ID_FIELD.fieldApiName] = this.recordId;
+            fields[ANIMAL_PHOTO_ID_FIELD.fieldApiName] = photoId;
+        }        
+      
         const recordInput = { fields };
         updateRecord(recordInput)
         .then(() => {
-            // Display fresh data in the form
-            return refreshApex(this.%%%NAMESPACED_ORG%%%Animal__c);
+            if (this.objectApiName == 'Contact') {
+                return refreshApex(this.Contact);
+            }
+            if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
+                return refreshApex(this.%%%NAMESPACED_ORG%%%Animal__c);
+            }  
+            
         })
         .catch(error => {
             this.dispatchEvent(
                 new ShowToastEvent({
-                    title: 'Error updating photo information to the record',
+                    title: 'Error Uploading Photo',
                     message: error.body.message,
                     variant: 'error'
                 })

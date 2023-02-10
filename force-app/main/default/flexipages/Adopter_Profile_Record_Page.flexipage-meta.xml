@@ -152,6 +152,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Gender__c</fieldItem>
+                <identifier>RecordGender_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Other_Animals__c</fieldItem>
                 <identifier>RecordOther_Animals_cField</identifier>
             </fieldInstance>

@@ -134,7 +134,6 @@
         <connector>
             <targetReference>Call_Auto_Match_Subflow</targetReference>
         </connector>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Animal_Status__c</field>

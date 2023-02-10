@@ -144,7 +144,7 @@
         <assignNextValueToReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>Get_Adopter_Profile_records_based_on_Type</collectionReference>
-        <conditionLogic>1 AND 2 AND (3 OR 4)</conditionLogic>
+        <conditionLogic>and</conditionLogic>
         <conditions>
             <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Gender__c</leftValueReference>
             <operator>EqualTo</operator>
@@ -164,13 +164,6 @@
             <operator>EqualTo</operator>
             <rightValue>
                 <elementReference>animalRecord.Age_Category__c</elementReference>
-            </rightValue>
-        </conditions>
-        <conditions>
-            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Maturity_Level__c</leftValueReference>
-            <operator>EqualTo</operator>
-            <rightValue>
-                <stringValue>No preference</stringValue>
             </rightValue>
         </conditions>
         <connector>

@@ -21,6 +21,16 @@
                 <default>false</default>
                 <label>Adopter Selected</label>
             </value>
+            <value>
+                <fullName>Auto Matched</fullName>
+                <default>false</default>
+                <label>Auto Matched</label>
+            </value>
+            <value>
+                <fullName>Manual Match</fullName>
+                <default>false</default>
+                <label>Manual Match</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

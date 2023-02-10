@@ -49,10 +49,10 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Auto_Matched__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <stringValue>Auto Matched</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -79,10 +79,10 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Auto_Matched__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <stringValue>Auto Matched</stringValue>
             </value>
         </assignmentItems>
         <connector>

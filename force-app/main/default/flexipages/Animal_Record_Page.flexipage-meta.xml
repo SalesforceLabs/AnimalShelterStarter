@@ -13,6 +13,18 @@
                             <value>Animal__c.Complete_Exercise_Action</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Animal__c.Add_Treatment_Action</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.Add_Condition</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.Start_Adoption</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.New_Alert</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Animal__c.Cage_Card</value>
                         </valueListItems>
                         <valueListItems>
@@ -26,19 +38,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Add_Treatment_Action</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Animal__c.Add_Condition</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Animal__c.Start_Adoption</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Animal__c.Multi_Animal_Clone</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Animal__c.New_Alert</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Animal__c.Update_Animal_Location</value>
@@ -89,16 +89,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>
-                    <value>5</value>
+                    <value>6</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
                 <identifier>force_highlightsPanel</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>AlertBanner</componentName>
-                <identifier>AlertBanner</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -871,16 +865,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
                 <identifier>RecordOwnerIdField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.SYSTEM_Breed_Migrated__c</fieldItem>
-                <identifier>RecordSYSTEM_Breed_Migrated_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3deb3a6e-8bde-4290-98a9-715033197121</name>
@@ -1935,6 +1919,12 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>recordAlerts</componentName>
+                <identifier>c_recordAlerts</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

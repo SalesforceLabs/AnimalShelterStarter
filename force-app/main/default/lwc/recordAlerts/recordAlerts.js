@@ -48,7 +48,7 @@ export default class RecordAlerts extends NavigationMixin(LightningElement) {
     event.preventDefault();
     event.stopPropagation();
     this[NavigationMixin.Navigate]({
-        type: '%%%NAMESPACED_ORG%%%standard__recordPage',
+        type: 'standard__recordPage',
         attributes: {
             actionName: "view",
             objectApiName: "%%%NAMESPACED_ORG%%%Animal_Alert__c",

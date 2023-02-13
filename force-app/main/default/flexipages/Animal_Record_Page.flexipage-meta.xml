@@ -1921,6 +1921,18 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>recordImage</componentName>
+                <identifier>c_recordImage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>microchipLookup</componentName>
+                <identifier>c_microchipLookup</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>recordAlerts</componentName>
                 <identifier>c_recordAlerts</identifier>
             </componentInstance>

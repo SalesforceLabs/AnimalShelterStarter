@@ -1,0 +1,75 @@
+<template>
+  <lightning-card>
+    <h3 slot="title">
+      <lightning-icon icon-name="custom:custom39" size="small"></lightning-icon>
+      &nbsp;Microchip Lookup
+    </h3>
+    <lightning-button label="Refresh Results" onclick={getResults} slot="actions"></lightning-button>
+    <lightning-spinner if:true={isLoading}></lightning-spinner>
+    <template lwc:if={resultsFound}>
+
+      <div class="slds-var-p-around_medium">
+
+        <h3 class="slds-text-heading_small">MicroChip Number</h3>
+        <p>{mc_num}</p>
+        <br />
+        <h3 class="slds-text-heading_small">Responses</h3>
+
+        <lightning-accordion>
+          <template for:each={resultObject.responses} for:item="response">
+            <lightning-accordion-section name={response.uid} label={response.database.name} key={response.uid}>
+              <div class="slds-media">
+                <div class="slds-media__figure">
+                  <span class="slds-avatar slds-avatar_large">
+                    <img
+                      alt="Person name"
+                      src={response.image}
+                      title="User avatar"
+                      height="100px"
+                      onclick={handleImgClick}
+                      data-imgsrc={response.image}
+                    />
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h3 class="slds-text-heading_small">Animal Information</h3>
+                  <p>Name: {response.name}</p>
+                  <p>Species: {response.species}</p>
+                  <p>Breed: {response.breed}</p>
+                  <p>Description: {response.breed}</p>
+                  <p>
+                    Date of Birth: {response.dob}
+                  </p>
+                  <br />
+                  <h3 class="slds-text-heading_small">Contact Information</h3>
+                  <p>Phone: {response.tel}</p>
+                  <p>Email: {response.email}</p>
+                </div>
+              </div>
+              <div slot="footer">Results provided by <a href="https://www.ChipNDoodle.com">Chip-N-Doodle</a></div>
+            </lightning-accordion-section>
+          </template>
+        </lightning-accordion>
+      </div>
+    </template>
+    <template lwc:else>
+      <div class="slds-var-p-around_medium">
+        <h3 class="slds-text-body_regular">Click <strong>Refresh Results</strong> to see the latest information.</h3>
+      </div>
+
+    </template>
+    <template if:true={isModalOpen}>
+      <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+          <lightning-modal-header label="Animal Image"></lightning-modal-header>
+          <lightning-modal-body><img src={content} style="max-width: 100%"></img></lightning-modal-body>
+          <lightning-modal-footer>
+            <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+          </lightning-modal-footer>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+  </lightning-card>
+
+</template>

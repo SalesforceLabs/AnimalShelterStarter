@@ -53,4 +53,4 @@ def update_files(RemoveOnlyMode: Optional[bool] = False):
           tmpFile.write(temp_file_string)
 
 # Run Task
-update_files(False)
+update_files()

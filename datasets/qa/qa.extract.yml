@@ -1,4 +1,0 @@
-
-extract:
-    OBJECTS(ALL):
-        fields: FIELDS(ALL)

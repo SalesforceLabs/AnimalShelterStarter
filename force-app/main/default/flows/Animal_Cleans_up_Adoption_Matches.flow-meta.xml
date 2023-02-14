@@ -4,6 +4,7 @@
     <description>[Animal] - Removes Adoption Matches when the animal is either status changes from Available for Adoption</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Cleans up Adoption Matches {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Cleans up Adoption Matches</label>
     <processMetadataValues>
         <name>BuilderType</name>

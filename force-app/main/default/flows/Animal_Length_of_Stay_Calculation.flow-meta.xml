@@ -173,7 +173,7 @@
             <targetReference>Get_Housed_Movement_Records</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>varAnimalId</name>
         <dataType>String</dataType>

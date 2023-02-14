@@ -46,6 +46,7 @@
         <expression>{!$Flow.CurrentDateTime} + 30</expression>
     </formulas>
     <interviewLabel>Animal - Lost/Found Animal Alert {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Lost/Found Animal Alert</label>
     <processMetadataValues>
         <name>BuilderType</name>

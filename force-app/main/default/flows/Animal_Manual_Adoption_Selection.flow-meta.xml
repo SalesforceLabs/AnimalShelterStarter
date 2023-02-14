@@ -221,7 +221,7 @@
             <targetReference>Get_Adopter_Profile_of_Contact</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>adoptionMatchRecord</name>
         <dataType>SObject</dataType>

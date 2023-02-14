@@ -4,6 +4,7 @@
     <description>[Animal Shelter] Trigger on Animal record to replace Process Builder</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Animal Create/Update Trigger {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Animal Create/Update Trigger</label>
     <processMetadataValues>
         <name>BuilderType</name>

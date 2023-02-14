@@ -86,6 +86,7 @@
         <expression>&apos;New possible Adoption for&apos; + &apos; &apos; + {!$Record.Animal_Name__c}</expression>
     </formulas>
     <interviewLabel>Animal - Find Adoption Match {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal - Find Adoption Match</label>
     <processMetadataValues>
         <name>BuilderType</name>

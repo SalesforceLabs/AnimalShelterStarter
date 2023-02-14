@@ -6,9 +6,10 @@
     <formulas>
         <name>Breed_Name_Formula</name>
         <dataType>String</dataType>
-        <expression>{!$Record.%%%NAMESPACED_ORG%%%Type__c} + &quot; - &quot; + {!$Record.%%%NAMESPACED_ORG%%%Species__c}</expression>
+        <expression>{!$Record.Type__c} + &quot; - &quot; + {!$Record.Species__c}</expression>
     </formulas>
     <interviewLabel>Breed - Name Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Breed - Name Update Flow</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -48,7 +49,7 @@
         <connector>
             <targetReference>Update_Breed_Name</targetReference>
         </connector>
-        <object>%%%NAMESPACED_ORG%%%Breed__c</object>
+        <object>Breed__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>

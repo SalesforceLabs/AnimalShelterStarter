@@ -225,6 +225,7 @@
         <expression>{!$Flow.CurrentDate} +5</expression>
     </formulas>
     <interviewLabel>Adopter Profile - Create new Adopter Profile {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Adopter Profile - Create new Adopter Profile</label>
     <processMetadataValues>
         <name>BuilderType</name>

@@ -4,6 +4,7 @@
     <description>[Animal Shelter] - Removed Adoption Match records when the Adopter Profile is set inactive, unless Adoption Match record has the Successful Adoption flag set</description>
     <environments>Default</environments>
     <interviewLabel>Adopter Profile - Clean up matches on Deactivation {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Adopter Profile - Clean up matches on Deactivation</label>
     <processMetadataValues>
         <name>BuilderType</name>

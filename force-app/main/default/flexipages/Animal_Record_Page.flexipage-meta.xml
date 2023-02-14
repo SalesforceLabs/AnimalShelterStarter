@@ -1162,6 +1162,9 @@
                         <valueListItems>
                             <value>Status__c</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Successful_Adoption__c</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1174,11 +1177,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldAlias</name>
-                    <value>__DEFAULT__</value>
+                    <value>Status__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldOrder</name>
-                    <value>Default</value>
+                    <value>Ascending</value>
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
                 <identifier>lst_dynamicRelatedList4</identifier>

@@ -125,8 +125,8 @@
         <description>Sets a variable that is available for output from the flow to signify record creation</description>
         <name>Set_Output_Flag</name>
         <label>Set Output Flag</label>
-        <locationX>622</locationX>
-        <locationY>1190</locationY>
+        <locationX>490</locationX>
+        <locationY>1310</locationY>
         <assignmentItems>
             <assignToReference>adoptionMatchRecordsCreated</assignToReference>
             <operator>Assign</operator>
@@ -144,7 +144,7 @@
         <assignNextValueToReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>Get_Adopter_Profile_records_based_on_Type</collectionReference>
-        <conditionLogic>and</conditionLogic>
+        <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4)</conditionLogic>
         <conditions>
             <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Gender__c</leftValueReference>
             <operator>EqualTo</operator>
@@ -164,6 +164,20 @@
             <operator>EqualTo</operator>
             <rightValue>
                 <elementReference>animalRecord.Age_Category__c</elementReference>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Maturity_Level__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <stringValue>No preference</stringValue>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Gender__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <stringValue>No Preference</stringValue>
             </rightValue>
         </conditions>
         <connector>
@@ -205,6 +219,28 @@
             <targetReference>Loop_Through_Animal_Records</targetReference>
         </connector>
     </collectionProcessors>
+    <decisions>
+        <name>Adoption_Match_Records_Created</name>
+        <label>Adoption Match Records Created</label>
+        <locationX>622</locationX>
+        <locationY>1190</locationY>
+        <defaultConnectorLabel>No AM Records Created</defaultConnectorLabel>
+        <rules>
+            <name>Yes_AM_records_Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>newAdopterMatchRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Output_Flag</targetReference>
+            </connector>
+            <label>Yes AM records Created</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Triggered_by_Which_Object</name>
         <label>Triggered by Which Object</label>
@@ -317,7 +353,7 @@
         <locationX>622</locationX>
         <locationY>1070</locationY>
         <connector>
-            <targetReference>Set_Output_Flag</targetReference>
+            <targetReference>Adoption_Match_Records_Created</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>

@@ -4,8 +4,8 @@
     <assignments>
         <name>Build_Adopter_Profile</name>
         <label>Build Adopter Profile</label>
-        <locationX>578</locationX>
-        <locationY>1238</locationY>
+        <locationX>732</locationX>
+        <locationY>2330</locationY>
         <assignmentItems>
             <assignToReference>newAdopterProfile.Active__c</assignToReference>
             <operator>Assign</operator>
@@ -132,8 +132,8 @@
     <assignments>
         <name>Build_Adoption_record_from_Adopter_Profile_record</name>
         <label>Build Adoption record from Adopter Profile record</label>
-        <locationX>50</locationX>
-        <locationY>758</locationY>
+        <locationX>204</locationX>
+        <locationY>1850</locationY>
         <assignmentItems>
             <assignToReference>newAdoptionRecord.Adoption_Stage__c</assignToReference>
             <operator>Assign</operator>
@@ -237,10 +237,117 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Build_Adoption_record_from_Selected_Match</name>
+        <label>Build Adoption record from Selected Match</label>
+        <locationX>50</locationX>
+        <locationY>878</locationY>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Adoption_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Initial Review</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Current_Daytime_Arrangements__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Current_Daytime_Arrangements__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Local_Vet__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Local_Vet_details__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Location_of_Animal_Daytime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Location_of_Animal_Daytime__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Location_of_Animal_Night_time__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Location_of_Animal_Night__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Other_Pets_Animals__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Other_Animal_Details__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Primary_Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Contact__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Reason_for_Adoption__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Reason_for_wanting_to_Adopt__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Type_of_Accommodation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Type_of_Accommodation__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Other_Animals__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Other_Animals__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Other_Animals_of_same_Species__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Other_Animals_of_same_Species__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Permission_to_House_Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Permission_to_House_Animal__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAdoptionRecord.Safe_Outside_Area__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Adopter_Profile.Safe_Outside_Area__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>createAdoptionRecordFromMatch</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Set_Additional_Adoption_Fields</name>
         <label>Set Additional Adoption Fields</label>
-        <locationX>710</locationX>
-        <locationY>878</locationY>
+        <locationX>996</locationX>
+        <locationY>1970</locationY>
         <assignmentItems>
             <assignToReference>newAdoptionRecord.Adoption_Stage__c</assignToReference>
             <operator>Assign</operator>
@@ -269,8 +376,8 @@
     <decisions>
         <name>Adopter_Profile_Exists</name>
         <label>Adopter Profile Exists?</label>
-        <locationX>446</locationX>
-        <locationY>518</locationY>
+        <locationX>666</locationX>
+        <locationY>1610</locationY>
         <defaultConnector>
             <targetReference>No_Adopter_Profile_Screen</targetReference>
         </defaultConnector>
@@ -292,10 +399,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Adoption_Matches_Exist</name>
+        <label>Adoption Matches Exist?</label>
+        <locationX>314</locationX>
+        <locationY>518</locationY>
+        <defaultConnector>
+            <targetReference>Start_Screen_Contact_Selection</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Adoption Match Records</defaultConnectorLabel>
+        <rules>
+            <name>Yes_AM_records</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Adoption_Match_records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AutoMatchEnabledScreen</targetReference>
+            </connector>
+            <label>Yes - AM records</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Animal_Types_Match</name>
         <label>Check Animal Types Match</label>
-        <locationX>182</locationX>
-        <locationY>638</locationY>
+        <locationX>336</locationX>
+        <locationY>1730</locationY>
         <defaultConnector>
             <targetReference>Animal_Type_Mismatch_Screen</targetReference>
         </defaultConnector>
@@ -319,8 +451,8 @@
     <decisions>
         <name>Create_Adopter_Profile</name>
         <label>Create Adopter Profile?</label>
-        <locationX>710</locationX>
-        <locationY>1118</locationY>
+        <locationX>996</locationX>
+        <locationY>2210</locationY>
         <defaultConnector>
             <targetReference>Adoption_Record_Created_Screen</targetReference>
         </defaultConnector>
@@ -345,7 +477,7 @@
         <description>Checks the status of the Animal</description>
         <name>Is_Animal_Available_for_Adoption</name>
         <label>Is Animal Available for Adoption</label>
-        <locationX>732</locationX>
+        <locationX>1183</locationX>
         <locationY>158</locationY>
         <defaultConnector>
             <targetReference>Not_Available_Screen</targetReference>
@@ -362,9 +494,34 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Start_Screen_Contact_Selection</targetReference>
+                <targetReference>Is_Automatch_On</targetReference>
             </connector>
             <label>Available for Adoption</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Automatch_On</name>
+        <label>Is Automatch On?</label>
+        <locationX>666</locationX>
+        <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>Start_Screen_Contact_Selection</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Automatch</defaultConnectorLabel>
+        <rules>
+            <name>Automatch_On</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Auto_Match__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Adoption_Match_records</targetReference>
+            </connector>
+            <label>Automatch On</label>
         </rules>
     </decisions>
     <description>[Animal Shelter] - Starts the adoption process for an available animal.  If required allows for the creation of an Adopter Profile for the selected Contact</description>
@@ -427,22 +584,30 @@
     <recordCreates>
         <name>Create_Adopter_Profile_Record</name>
         <label>Create Adopter Profile Record</label>
-        <locationX>578</locationX>
-        <locationY>1358</locationY>
+        <locationX>732</locationX>
+        <locationY>2450</locationY>
         <connector>
             <targetReference>Adoption_Record_Created_Screen</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>FlowErrorScreen</targetReference>
+        </faultConnector>
         <inputReference>newAdopterProfile</inputReference>
     </recordCreates>
     <recordLookups>
         <name>Get_Adopter_Profile_Record_for_Contact</name>
         <label>Get Adopter Profile Record for Contact</label>
-        <locationX>446</locationX>
-        <locationY>398</locationY>
+        <locationX>666</locationX>
+        <locationY>1490</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Adopter_Profile_Exists</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>FlowErrorScreen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Contact__c</field>
@@ -462,11 +627,62 @@
         <object>Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <description>Get the Adoption Match records that have been matched with the animal</description>
+        <name>Get_Adoption_Match_records</name>
+        <label>Get Adoption Match records</label>
+        <locationX>314</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Adoption_Matches_Exist</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>FlowErrorScreen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Animal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Adoption_Match__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the selected Adopter Profile record from Data Table</description>
+        <name>Get_Selected_Adopter_Profile</name>
+        <label>Get Selected Adopter Profile</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Build_Adoption_record_from_Selected_Match</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>FlowErrorScreen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AutoMatchEnabledScreenDataTable.firstSelectedRow.Adopter_Profile__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Adopter_Profile__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <screens>
         <name>Adoption_Record_Created_Screen</name>
         <label>Adoption Record Created Screen</label>
-        <locationX>446</locationX>
-        <locationY>1670</locationY>
+        <locationX>666</locationX>
+        <locationY>2798</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -481,8 +697,8 @@
     <screens>
         <name>Animal_Type_Mismatch_Screen</name>
         <label>Animal Type Mismatch Screen</label>
-        <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationX>468</locationX>
+        <locationY>1850</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -495,10 +711,83 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>AutoMatchEnabledScreen</name>
+        <label>AutoMatchEnabledScreen</label>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Selected_Adopter_Profile</targetReference>
+        </connector>
+        <fields>
+            <name>AutoMatchEnabledScreenText</name>
+            <fieldText>&lt;p&gt;As auto match is enabled, and Adoption Match records have been found, please select the Contact from the list of Adoption Match records to start the adoption process.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>AutoMatchEnabledScreenDataTable</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>Adoption_Match__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Select and Adoption Match</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>SINGLE_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>Get_Adoption_Match_records</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Adopter_Profile_Contact_Name__c&quot;,&quot;guid&quot;:&quot;column-a575&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Contact Name&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Adopter Profile Contact Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Status__c&quot;,&quot;guid&quot;:&quot;column-78f0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Capture_Adoption_Information</name>
         <label>Capture Adoption Information</label>
-        <locationX>710</locationX>
-        <locationY>758</locationY>
+        <locationX>996</locationX>
+        <locationY>1850</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -642,10 +931,26 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>FlowErrorScreen</name>
+        <label>FlowErrorScreen</label>
+        <locationX>754</locationX>
+        <locationY>518</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>FlowErrorScreenText</name>
+            <fieldText>&lt;p&gt;There has been an error in this flow. Please contact your Systems Administrator and quote:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Error: {!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>No_Adopter_Profile_Screen</name>
         <label>No Adopter Profile Screen</label>
-        <locationX>710</locationX>
-        <locationY>638</locationY>
+        <locationX>996</locationX>
+        <locationY>1730</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -722,7 +1027,7 @@
     <screens>
         <name>Not_Available_Screen</name>
         <label>Not Available Screen</label>
-        <locationX>1018</locationX>
+        <locationX>1700</locationX>
         <locationY>278</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -738,8 +1043,8 @@
     <screens>
         <name>Start_Screen_Contact_Selection</name>
         <label>Start Screen &amp; Contact Selection</label>
-        <locationX>446</locationX>
-        <locationY>278</locationY>
+        <locationX>666</locationX>
+        <locationY>1370</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -763,18 +1068,35 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>606</locationX>
+        <locationX>1057</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Is_Animal_Available_for_Adoption</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <subflows>
+        <name>createAdoptionRecordFromMatch</name>
+        <label>createAdoptionRecordFromMatch</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Adoption_Record_Created_Screen</targetReference>
+        </connector>
+        <flowName>Adoption_Create_Adoption_Record_SubFlow</flowName>
+        <inputAssignments>
+            <name>adoptionRecordtoCreate</name>
+            <value>
+                <elementReference>newAdoptionRecord</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
     <subflows>
         <name>createAdoptionRecordfromNew</name>
         <label>createAdoptionRecordfromNew</label>
-        <locationX>710</locationX>
-        <locationY>998</locationY>
+        <locationX>996</locationX>
+        <locationY>2090</locationY>
         <connector>
             <targetReference>Create_Adopter_Profile</targetReference>
         </connector>
@@ -789,8 +1111,8 @@
     <subflows>
         <name>createAdoptionRecordFromProfile</name>
         <label>createAdoptionRecordFromProfile</label>
-        <locationX>50</locationX>
-        <locationY>878</locationY>
+        <locationX>204</locationX>
+        <locationY>1970</locationY>
         <connector>
             <targetReference>Adoption_Record_Created_Screen</targetReference>
         </connector>

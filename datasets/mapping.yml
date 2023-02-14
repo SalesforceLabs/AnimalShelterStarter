@@ -145,48 +145,6 @@ Insert Locations__c:
     Parent_Block__c:
       table: Locations__c
       after: Insert Locations__c
-Insert Adoption_Match__c:
-  sf_object: Adoption_Match__c
-  fields:
-  - Auto_Matched__c
-  - Status__c
-  - Successful_Adoption__c
-  lookups:
-    Adopter_Profile__c:
-      table: Adopter_Profile__c
-    Animal__c:
-      table: Animal__c
-Insert Adoption__c:
-  sf_object: Adoption__c
-  fields:
-  - Adoption_Stage__c
-  - Current_Daytime_Arrangements__c
-  - Date_Collected__c
-  - Date_Returned__c
-  - Date_of_Adoption__c
-  - Declined_Reason__c
-  - Facilities_Available__c
-  - Has_Local_Vet__c
-  - Location_of_Animal_Daytime__c
-  - Location_of_Animal_Night_time__c
-  - Other_Animals__c
-  - Other_Animals_of_same_Species__c
-  - Other_Pets_Animals__c
-  - Permission_to_House_Animal__c
-  - Reason_for_Adoption__c
-  - Returned_Reason__c
-  - Safe_Outside_Area__c
-  - Total_Adults__c
-  - Total_Children__c
-  - Trial_End_Date_Time__c
-  - Type_of_Accommodation__c
-  lookups:
-    Animal__c:
-      table: Animal__c
-    Local_Vet__c:
-      table: Account
-    Primary_Contact__c:
-      table: Contact
 Insert Animal_Alert__c:
   sf_object: Animal_Alert__c
   fields:
@@ -241,18 +199,6 @@ Insert Assessment__c:
   lookups:
     Animal__c:
       table: Animal__c
-Insert Movement__c:
-  sf_object: Movement__c
-  fields:
-  - Current__c
-  - End_Date__c
-  - Start_Date__c
-  - Type__c
-  lookups:
-    Animal__c:
-      table: Animal__c
-    Location__c:
-      table: Locations__c
 Insert Condition__c:
   sf_object: Condition__c
   fields:
@@ -283,21 +229,6 @@ Insert Animal_Action__c:
     Condition__c:
       table: Condition__c
     Given_By__c:
-      table: Contact
-Insert Treatment__c:
-  sf_object: Treatment__c
-  fields:
-  - Date_Time_of_Treatment__c
-  - Description__c
-  - Treatment_Comments__c
-  - Treatment_Status__c
-  - Treatment_Type__c
-  lookups:
-    Animal__c:
-      table: Animal__c
-    Condition__c:
-      table: Condition__c
-    Treatment_Given_By__c:
       table: Contact
 Insert Medicine_Used__c:
   sf_object: Medicine_Used__c

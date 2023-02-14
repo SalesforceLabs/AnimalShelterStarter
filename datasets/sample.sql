@@ -47,48 +47,6 @@ INSERT INTO "Adopter_Profile__c" VALUES(5,'True','kkjdhkgf','Male','True','','',
 INSERT INTO "Adopter_Profile__c" VALUES(6,'True','','Female','False','','','Rabbit','True','False','True','Large','No preference','Approved','','','2023-02-14','','True','False','False','Farm','Dog','3','');
 INSERT INTO "Adopter_Profile__c" VALUES(7,'True','Working','Male','True','Working away with me','At home location','2 Other Dogs','True','True','True','Medium','Junior','Approved','','','2023-02-14','Love animals','True','True','False','House - Detached - Rural','Dog','4','2');
 INSERT INTO "Adopter_Profile__c" VALUES(8,'False','','Male','True','','','','False','False','True','Small','No preference','Approved','2023-02-14','','2023-02-14','','True','False','True','House - Detached - Rural','Rabbit','3','2');
-CREATE TABLE "Adoption_Match__c" (
-	id INTEGER NOT NULL, 
-	"Auto_Matched__c" VARCHAR(255), 
-	"Status__c" VARCHAR(255), 
-	"Successful_Adoption__c" VARCHAR(255), 
-	"Adopter_Profile__c" VARCHAR(255), 
-	"Animal__c" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-INSERT INTO "Adoption_Match__c" VALUES(1,'False','Auto Matched','False','4','3');
-INSERT INTO "Adoption_Match__c" VALUES(2,'False','Auto Matched','False','6','3');
-INSERT INTO "Adoption_Match__c" VALUES(3,'False','Auto Matched','True','8','4');
-INSERT INTO "Adoption_Match__c" VALUES(4,'False','Auto Matched','False','2','2');
-CREATE TABLE "Adoption__c" (
-	id INTEGER NOT NULL, 
-	"Adoption_Stage__c" VARCHAR(255), 
-	"Current_Daytime_Arrangements__c" VARCHAR(255), 
-	"Date_Collected__c" VARCHAR(255), 
-	"Date_Returned__c" VARCHAR(255), 
-	"Date_of_Adoption__c" VARCHAR(255), 
-	"Declined_Reason__c" VARCHAR(255), 
-	"Facilities_Available__c" VARCHAR(255), 
-	"Has_Local_Vet__c" VARCHAR(255), 
-	"Location_of_Animal_Daytime__c" VARCHAR(255), 
-	"Location_of_Animal_Night_time__c" VARCHAR(255), 
-	"Other_Animals__c" VARCHAR(255), 
-	"Other_Animals_of_same_Species__c" VARCHAR(255), 
-	"Other_Pets_Animals__c" VARCHAR(255), 
-	"Permission_to_House_Animal__c" VARCHAR(255), 
-	"Reason_for_Adoption__c" VARCHAR(255), 
-	"Returned_Reason__c" VARCHAR(255), 
-	"Safe_Outside_Area__c" VARCHAR(255), 
-	"Total_Adults__c" VARCHAR(255), 
-	"Total_Children__c" VARCHAR(255), 
-	"Trial_End_Date_Time__c" VARCHAR(255), 
-	"Type_of_Accommodation__c" VARCHAR(255), 
-	"Animal__c" VARCHAR(255), 
-	"Local_Vet__c" VARCHAR(255), 
-	"Primary_Contact__c" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-INSERT INTO "Adoption__c" VALUES(1,'Adopted','','2023-02-14','','2023-02-14','','','False','','','False','False','','True','','','True','','','','House - Detached - Rural','4','2','3');
 CREATE TABLE "Animal_Action__c" (
 	id INTEGER NOT NULL, 
 	"Action_Completed__c" VARCHAR(255), 
@@ -350,55 +308,4 @@ CREATE TABLE "Medicine__c" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "Medicine__c" VALUES(1,'True','1203848','AntiInflammatory','','','Metacam','');
-CREATE TABLE "Movement__c" (
-	id INTEGER NOT NULL, 
-	"Current__c" VARCHAR(255), 
-	"End_Date__c" VARCHAR(255), 
-	"Start_Date__c" VARCHAR(255), 
-	"Type__c" VARCHAR(255), 
-	"Animal__c" VARCHAR(255), 
-	"Location__c" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-INSERT INTO "Movement__c" VALUES(1,'True','','2020-06-10','Housed','3','4');
-INSERT INTO "Movement__c" VALUES(2,'False','2020-06-10','2020-04-22','Housed','3','3');
-INSERT INTO "Movement__c" VALUES(3,'False','2020-04-20','2020-04-20','Adopted, See Adoption Record','1','');
-INSERT INTO "Movement__c" VALUES(4,'False','2020-04-23','2020-04-20','Deceased','1','');
-INSERT INTO "Movement__c" VALUES(5,'True','2020-04-23','2020-04-23','Deceased','1','');
-INSERT INTO "Movement__c" VALUES(6,'False','2020-04-09','2020-04-09','Housed','1','4');
-INSERT INTO "Movement__c" VALUES(7,'False','2020-04-20','2020-04-14','Housed','1','4');
-INSERT INTO "Movement__c" VALUES(8,'False','2020-04-09','2020-04-09','Boarding','1','4');
-INSERT INTO "Movement__c" VALUES(9,'False','2020-04-14','2020-04-14','Housed','1','3');
-INSERT INTO "Movement__c" VALUES(10,'False','2020-04-14','2020-04-14','Housed','1','3');
-INSERT INTO "Movement__c" VALUES(11,'False','2020-04-14','2020-04-09','Transferred','1','11');
-INSERT INTO "Movement__c" VALUES(12,'False','2020-04-14','2020-04-14','Transferred','1','11');
-INSERT INTO "Movement__c" VALUES(13,'False','2020-04-23','2020-04-23','Transferred','1','11');
-INSERT INTO "Movement__c" VALUES(14,'False','2020-04-09','2020-04-09','Fostered','1','12');
-INSERT INTO "Movement__c" VALUES(15,'False','2020-04-23','2020-04-23','Fostered','1','12');
-INSERT INTO "Movement__c" VALUES(16,'False','2020-04-14','2020-04-14','Fostered','1','12');
-INSERT INTO "Movement__c" VALUES(17,'False','2020-04-23','2020-04-23','Boarding','1','6');
-INSERT INTO "Movement__c" VALUES(18,'False','2020-04-23','2020-04-23','Housed','1','6');
-INSERT INTO "Movement__c" VALUES(19,'False','2020-04-20','2020-04-20','Housed','1','10');
-INSERT INTO "Movement__c" VALUES(20,'False','2020-04-23','2020-04-23','Housed','1','8');
-INSERT INTO "Movement__c" VALUES(21,'False','2020-06-10','2020-04-30','Adopted, See Adoption Record','2','');
-INSERT INTO "Movement__c" VALUES(22,'False','2020-04-30','2020-04-23','Housed','2','10');
-INSERT INTO "Movement__c" VALUES(23,'False','2023-02-14','2020-06-10','Housed','2','8');
-INSERT INTO "Movement__c" VALUES(24,'False','2020-04-30','2020-04-30','Housed','2','2');
-INSERT INTO "Movement__c" VALUES(25,'False','2023-02-14','2023-02-14','Housed','4','2');
-INSERT INTO "Movement__c" VALUES(26,'True','','2023-02-14','Adopted, See Adoption Record','4','');
-INSERT INTO "Movement__c" VALUES(27,'False','2023-02-14','2023-02-14','Adopted, See Adoption Record','4','');
-INSERT INTO "Movement__c" VALUES(28,'False','2023-02-14','2023-02-14','Housed','4','10');
-INSERT INTO "Movement__c" VALUES(29,'True','','2023-02-14','Housed','2','6');
-CREATE TABLE "Treatment__c" (
-	id INTEGER NOT NULL, 
-	"Date_Time_of_Treatment__c" VARCHAR(255), 
-	"Description__c" VARCHAR(255), 
-	"Treatment_Comments__c" VARCHAR(255), 
-	"Treatment_Status__c" VARCHAR(255), 
-	"Treatment_Type__c" VARCHAR(255), 
-	"Animal__c" VARCHAR(255), 
-	"Condition__c" VARCHAR(255), 
-	"Treatment_Given_By__c" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
 COMMIT;

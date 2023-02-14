@@ -61,6 +61,16 @@
                             <value>Animal__c.Update_Animal_Location</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Animal__c.New_Assessment</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Animal_Status__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Deceased</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>FeedItem.ContentPost</value>
                         </valueListItems>
                         <valueListItems>

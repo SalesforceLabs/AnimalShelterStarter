@@ -165,7 +165,13 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Adopter Profiles</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type_of_Animal__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Profile_Approval_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Profile_Start_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>

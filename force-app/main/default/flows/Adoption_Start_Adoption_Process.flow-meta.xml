@@ -1074,7 +1074,7 @@
             <targetReference>Is_Animal_Available_for_Adoption</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>createAdoptionRecordFromMatch</name>
         <label>createAdoptionRecordFromMatch</label>

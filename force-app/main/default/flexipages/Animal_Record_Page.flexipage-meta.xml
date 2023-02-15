@@ -26,12 +26,6 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Add_Treatment_Action</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Animal__c.Add_Condition</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Animal__c.Start_Adoption_Process</value>
                             <visibilityRule>
                                 <criteria>
@@ -40,6 +34,12 @@
                                     <rightValue>Available for Adoption</rightValue>
                                 </criteria>
                             </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.Add_Treatment_Action</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.Add_Condition</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Animal__c.Find_Adoption_Matches</value>

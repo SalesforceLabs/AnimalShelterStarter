@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullname>w3w_key</fullname>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>w3w_key</shortDescription>
+        <value>9ZE19PYQ</value>
+    </labels>
+</CustomLabels>

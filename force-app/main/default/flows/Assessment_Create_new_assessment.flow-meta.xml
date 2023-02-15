@@ -50,6 +50,13 @@
                 <stringValue></stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAssessmentRecord.Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_new_Assessment_record</targetReference>
         </connector>

@@ -31,7 +31,7 @@
         <connector>
             <targetReference>Call_Block_Calculations_SubFlow</targetReference>
         </connector>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

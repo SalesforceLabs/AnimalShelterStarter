@@ -34,13 +34,13 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Active__c</field>
+            <field>%%%NAMESPACED_ORG%%%Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>Adopter_Profile__c</object>
+        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

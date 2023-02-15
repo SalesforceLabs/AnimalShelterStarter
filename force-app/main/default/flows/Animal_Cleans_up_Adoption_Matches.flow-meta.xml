@@ -33,13 +33,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Available for Adoption</stringValue>
             </value>
         </filters>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

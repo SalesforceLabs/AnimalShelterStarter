@@ -23,21 +23,21 @@
         <locationX>182</locationX>
         <locationY>1094</locationY>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.Assessment_Date_Time__c</assignToReference>
+            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Assessment_Date_Time__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Assessment_Date_Time</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.Category__c</assignToReference>
+            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Category__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>assessmentCategory</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.Assessment_Type__c</assignToReference>
+            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Assessment_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>assessmentType</elementReference>
@@ -51,7 +51,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.Animal__c</assignToReference>
+            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
@@ -99,16 +99,16 @@
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>Category__c</picklistField>
-        <picklistObject>Assessment__c</picklistObject>
+        <picklistField>%%%NAMESPACED_ORG%%%Category__c</picklistField>
+        <picklistObject>%%%NAMESPACED_ORG%%%Assessment__c</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>assessmentType</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>Assessment_Type__c</picklistField>
-        <picklistObject>Assessment__c</picklistObject>
+        <picklistField>%%%NAMESPACED_ORG%%%Assessment_Type__c</picklistField>
+        <picklistObject>%%%NAMESPACED_ORG%%%Assessment__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Assessment - Create new assessment {!$Flow.CurrentDateTime}</interviewLabel>
@@ -158,14 +158,14 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Assessment__c</object>
+        <object>%%%NAMESPACED_ORG%%%Assessment__c</object>
         <sortField>CreatedDate</sortField>
         <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -191,32 +191,32 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Mouth_Airway__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Mouth_Airway__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Appetite__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Appetite__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Coughing__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Coughing__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Fur_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Fur_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Skin_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Skin_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Sight_Eyes__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Sight_Eyes__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -232,37 +232,37 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Breathing__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Breathing__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Hydration_Level__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Hydration_Level__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Faceas__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Faceas__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Spine_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Spine_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Hearing_Ears__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Hearing_Ears__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Movement_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Movement_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Has_ability_to_curl__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Has_ability_to_curl__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -299,17 +299,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Left_Front_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Left_Front_Limb__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Left_Hind_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Left_Hind_Limb__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Wings__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Wings__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -325,12 +325,12 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Right_Front_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Right_Front_Limb__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Right_Hind_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Right_Hind_Limb__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -353,17 +353,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Lungworm__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Lungworm__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Flys__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Flys__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Ringworm__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Ringworm__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -379,17 +379,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Fleas__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Fleas__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Mange__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Mange__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Ticks__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Ticks__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -418,12 +418,12 @@
         </connector>
         <fields>
             <name>AssessmentScreen1Text</name>
-            <fieldText>&lt;p&gt;You will be presented with the results of the last assessment for {!recordId.Animal_Name__c}, so that you can review&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; and update to reflect the current situation.&lt;/span&gt;  &lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;You will be presented with the results of the last assessment for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}, so that you can review&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; and update to reflect the current situation.&lt;/span&gt;  &lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>LastAssessmentDetailsText</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Type:&lt;/strong&gt;  {!Get_Last_Assessment.Assessment_Type__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; {!Get_Last_Assessment.Category__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date/Time:&lt;/strong&gt; {!Get_Last_Assessment.Assessment_Date_Time__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Type:&lt;/strong&gt;  {!Get_Last_Assessment.%%%NAMESPACED_ORG%%%Assessment_Type__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; {!Get_Last_Assessment.%%%NAMESPACED_ORG%%%Category__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date/Time:&lt;/strong&gt; {!Get_Last_Assessment.%%%NAMESPACED_ORG%%%Assessment_Date_Time__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -436,7 +436,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.General_Comments__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%General_Comments__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -459,7 +459,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.Behaviour_s__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Behaviour_s__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -504,7 +504,7 @@
         </connector>
         <fields>
             <name>New_Assessment_Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;This wizard will create a new assessment record for {!recordId.Animal_Name__c}.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are you creating an assessment on health, behaviours or both?&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;This wizard will create a new assessment record for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are you creating an assessment on health, behaviours or both?&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -583,7 +583,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Assessment__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Assessment__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -591,6 +591,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
 </Flow>

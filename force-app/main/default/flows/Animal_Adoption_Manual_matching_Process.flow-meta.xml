@@ -7,21 +7,21 @@
         <locationX>440</locationX>
         <locationY>638</locationY>
         <assignmentItems>
-            <assignToReference>newAdoptionMatchRecord.Adopter_Profile__c</assignToReference>
+            <assignToReference>newAdoptionMatchRecord.%%%NAMESPACED_ORG%%%Adopter_Profile__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Loop_Through_Selected_Records.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionMatchRecord.Animal__c</assignToReference>
+            <assignToReference>newAdoptionMatchRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionMatchRecord.Status__c</assignToReference>
+            <assignToReference>newAdoptionMatchRecord.%%%NAMESPACED_ORG%%%Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Manual Match</stringValue>
@@ -73,7 +73,7 @@
     <dynamicChoiceSets>
         <name>animalRequirementsPicklist</name>
         <dataType>String</dataType>
-        <displayField>Rehoming_Requirements__c</displayField>
+        <displayField>%%%NAMESPACED_ORG%%%Rehoming_Requirements__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -82,33 +82,33 @@
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
         <name>animalDifferentSpeciesConversion</name>
         <dataType>Boolean</dataType>
-        <expression>IF(INCLUDES({!recordId.Rehoming_Requirements__c},&apos;No Animals of different species&apos;),TRUE,FALSE)</expression>
+        <expression>IF(INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c},&apos;No Animals of different species&apos;),TRUE,FALSE)</expression>
     </formulas>
     <formulas>
         <name>animalNoChildrenConversion</name>
         <dataType>Boolean</dataType>
-        <expression>IF(INCLUDES({!recordId.Rehoming_Requirements__c}, &quot;No Children&quot;),TRUE,FALSE)</expression>
+        <expression>IF(INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c}, &quot;No Children&quot;),TRUE,FALSE)</expression>
     </formulas>
     <formulas>
         <name>animalSafeGardenConversion</name>
         <dataType>Boolean</dataType>
-        <expression>IF(INCLUDES({!recordId.Rehoming_Requirements__c}, &quot;Secure Garden&quot;),TRUE,FALSE)</expression>
+        <expression>IF(INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c}, &quot;Secure Garden&quot;),TRUE,FALSE)</expression>
     </formulas>
     <formulas>
         <name>animalSameSpeciesConversion</name>
         <dataType>Boolean</dataType>
-        <expression>IF(INCLUDES({!recordId.Rehoming_Requirements__c},&apos;No Animals of same species&apos;),TRUE,FALSE)</expression>
+        <expression>IF(INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c},&apos;No Animals of same species&apos;),TRUE,FALSE)</expression>
     </formulas>
     <formulas>
         <name>animalSpecialCareConversion</name>
         <dataType>Boolean</dataType>
-        <expression>IF(OR(INCLUDES({!recordId.Rehoming_Requirements__c},&apos;Dietary&apos;),INCLUDES({!recordId.Rehoming_Requirements__c},&apos;Medical&apos;),INCLUDES({!recordId.Rehoming_Requirements__c},&apos;Experienced Owner&apos;),INCLUDES({!recordId.Rehoming_Requirements__c}, &apos;Specialist Equipment&apos;)), TRUE, FALSE )</expression>
+        <expression>IF(OR(INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c},&apos;Dietary&apos;),INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c},&apos;Medical&apos;),INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c},&apos;Experienced Owner&apos;),INCLUDES({!recordId.%%%NAMESPACED_ORG%%%Rehoming_Requirements__c}, &apos;Specialist Equipment&apos;)), TRUE, FALSE )</expression>
     </formulas>
     <interviewLabel>Animal - Adoption Manual matching Process {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -168,28 +168,28 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Active__c</field>
+            <field>%%%NAMESPACED_ORG%%%Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
-            <field>Profile_Approval_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Profile_Approval_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Approved</stringValue>
             </value>
         </filters>
         <filters>
-            <field>Type_of_Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Type_of_Animal__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>recordId.TypeFromBreeds__c</elementReference>
+                <elementReference>recordId.%%%NAMESPACED_ORG%%%TypeFromBreeds__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Adopter_Profile__c</object>
+        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
@@ -213,13 +213,13 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>recordId.Animal_Name__c</objectFieldReference>
+                    <objectFieldReference>recordId.%%%NAMESPACED_ORG%%%Animal_Name__c</objectFieldReference>
                 </fields>
                 <fields>
                     <name>Type</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>recordId.TypeFromBreeds__c</elementReference>
+                        <elementReference>recordId.%%%NAMESPACED_ORG%%%TypeFromBreeds__c</elementReference>
                     </defaultValue>
                     <fieldText>Type</fieldText>
                     <fieldType>InputField</fieldType>
@@ -229,7 +229,7 @@
                     <name>Species</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>recordId.Species__c</elementReference>
+                        <elementReference>recordId.%%%NAMESPACED_ORG%%%Species__c</elementReference>
                     </defaultValue>
                     <fieldText>Species</fieldText>
                     <fieldType>InputField</fieldType>
@@ -250,7 +250,7 @@
                     <name>Age_Category</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>recordId.Age_Category__c</elementReference>
+                        <elementReference>recordId.%%%NAMESPACED_ORG%%%Age_Category__c</elementReference>
                     </defaultValue>
                     <fieldText>Age Category</fieldText>
                     <fieldType>InputField</fieldType>
@@ -259,12 +259,12 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>recordId.Size__c</objectFieldReference>
+                    <objectFieldReference>recordId.%%%NAMESPACED_ORG%%%Size__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>recordId.Gender__c</objectFieldReference>
+                    <objectFieldReference>recordId.%%%NAMESPACED_ORG%%%Gender__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -342,7 +342,7 @@
             <name>PossibleAdopters</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
-                <typeValue>Adopter_Profile__c</typeValue>
+                <typeValue>%%%NAMESPACED_ORG%%%Adopter_Profile__c</typeValue>
             </dataTypeMappings>
             <extensionName>flowruntime:datatable</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -379,7 +379,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Contact_Name__c&quot;,&quot;guid&quot;:&quot;column-b9c6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Contact Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Gender__c&quot;,&quot;guid&quot;:&quot;column-dec6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gender&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Preferred_Animal_Size__c&quot;,&quot;guid&quot;:&quot;column-7e1b&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Preferred Animal Size&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Preferred_Maturity_Level__c&quot;,&quot;guid&quot;:&quot;column-5562&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Preferred Maturity Level&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Special_Care_Adoption_Considered__c&quot;,&quot;guid&quot;:&quot;column-3b07&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Special Care Adoption Considered?&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;apiName&quot;:&quot;Small_Children__c&quot;,&quot;guid&quot;:&quot;column-0861&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Small Children?&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;apiName&quot;:&quot;Reason_for_wanting_to_Adopt__c&quot;,&quot;guid&quot;:&quot;column-e8cf&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Reason for wanting to Adopt&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-d6ed&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:7,&quot;label&quot;:&quot;Adopter Profile Ref&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Contact_Name__c&quot;,&quot;guid&quot;:&quot;column-b9c6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Contact Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Gender__c&quot;,&quot;guid&quot;:&quot;column-dec6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gender&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Preferred_Animal_Size__c&quot;,&quot;guid&quot;:&quot;column-7e1b&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Preferred Animal Size&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Preferred_Maturity_Level__c&quot;,&quot;guid&quot;:&quot;column-5562&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Preferred Maturity Level&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Special_Care_Adoption_Considered__c&quot;,&quot;guid&quot;:&quot;column-3b07&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Special Care Adoption Considered?&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Small_Children__c&quot;,&quot;guid&quot;:&quot;column-0861&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Small Children?&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Reason_for_wanting_to_Adopt__c&quot;,&quot;guid&quot;:&quot;column-e8cf&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Reason for wanting to Adopt&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-d6ed&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:7,&quot;label&quot;:&quot;Adopter Profile Ref&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -420,7 +420,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adoption_Match__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>newAdoptionMatchRecords</name>
@@ -428,7 +428,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adoption_Match__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -436,6 +436,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
 </Flow>

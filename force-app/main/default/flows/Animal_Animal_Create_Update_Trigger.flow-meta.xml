@@ -31,7 +31,7 @@
         <connector>
             <targetReference>Call_Length_of_Stay_Subflow</targetReference>
         </connector>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

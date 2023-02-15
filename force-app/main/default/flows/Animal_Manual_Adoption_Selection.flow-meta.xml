@@ -23,14 +23,14 @@
         <locationX>396</locationX>
         <locationY>758</locationY>
         <assignmentItems>
-            <assignToReference>adoptionMatchRecord.Adopter_Profile__c</assignToReference>
+            <assignToReference>adoptionMatchRecord.%%%NAMESPACED_ORG%%%Adopter_Profile__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_Adopter_Profile_of_Contact.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>adoptionMatchRecord.Animal__c</assignToReference>
+            <assignToReference>adoptionMatchRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Loop_Through_Selected_Animals.Id</elementReference>
@@ -118,14 +118,14 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Contact__c</field>
+            <field>%%%NAMESPACED_ORG%%%Contact__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Adopter_Profile__c</object>
+        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -139,14 +139,14 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Available for Adoption</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
@@ -164,7 +164,7 @@
             <name>animalsForAdoption</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
-                <typeValue>Animal__c</typeValue>
+                <typeValue>%%%NAMESPACED_ORG%%%Animal__c</typeValue>
             </dataTypeMappings>
             <extensionName>flowruntime:datatable</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -201,7 +201,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Animal_Name__c&quot;,&quot;guid&quot;:&quot;column-c646&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Breed_Lookup__c&quot;,&quot;guid&quot;:&quot;column-9004&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Breed&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Age_Years__c&quot;,&quot;guid&quot;:&quot;column-016d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Age (Years)&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;Gender__c&quot;,&quot;guid&quot;:&quot;column-9600&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Gender&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Colour__c&quot;,&quot;guid&quot;:&quot;column-fa57&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Primary Colour&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Animal_Name__c&quot;,&quot;guid&quot;:&quot;column-c646&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Breed_Lookup__c&quot;,&quot;guid&quot;:&quot;column-9004&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Breed&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Age_Years__c&quot;,&quot;guid&quot;:&quot;column-016d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Age (Years)&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Gender__c&quot;,&quot;guid&quot;:&quot;column-9600&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Gender&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Colour__c&quot;,&quot;guid&quot;:&quot;column-fa57&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Primary Colour&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -228,7 +228,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adoption_Match__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>adoptionMatchRecords</name>
@@ -236,7 +236,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adoption_Match__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -252,6 +252,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
 </Flow>

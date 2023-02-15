@@ -40,11 +40,11 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.Animal__r.Id</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -61,12 +61,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Behaviours__c</field>
+            <field>%%%NAMESPACED_ORG%%%Behaviours__c</field>
             <value>
-                <elementReference>$Record.Behaviour_s__c</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Behaviour_s__c</elementReference>
             </value>
         </inputAssignments>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -74,8 +74,8 @@
         <connector>
             <targetReference>Get_Animal_Record</targetReference>
         </connector>
-        <filterFormula>{!$Setup.Animal_Shelter_Settings__c.Disable_Behaviour_Update__c}= FALSE</filterFormula>
-        <object>Assessment__c</object>
+        <filterFormula>{!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Disable_Behaviour_Update__c}= FALSE</filterFormula>
+        <object>%%%NAMESPACED_ORG%%%Assessment__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

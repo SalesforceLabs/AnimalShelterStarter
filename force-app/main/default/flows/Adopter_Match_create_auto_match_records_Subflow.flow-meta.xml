@@ -35,21 +35,21 @@
         <locationX>138</locationX>
         <locationY>638</locationY>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Animal__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>animalRecord.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Adopter_Profile__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.%%%NAMESPACED_ORG%%%Adopter_Profile__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Loop_Through_Adopter_Profile_Records.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Status__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.%%%NAMESPACED_ORG%%%Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Auto Matched</stringValue>
@@ -65,21 +65,21 @@
         <locationX>754</locationX>
         <locationY>638</locationY>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Adopter_Profile__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.%%%NAMESPACED_ORG%%%Adopter_Profile__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>adopterProfile.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Animal__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Loop_Through_Animal_Records.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterMatchRecord.Status__c</assignToReference>
+            <assignToReference>newAdopterMatchRecord.%%%NAMESPACED_ORG%%%Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Auto Matched</stringValue>
@@ -146,35 +146,35 @@
         <collectionReference>Get_Adopter_Profile_records_based_on_Type</collectionReference>
         <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4)</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Gender__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.%%%NAMESPACED_ORG%%%Gender__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>animalRecord.Gender__c</elementReference>
+                <elementReference>animalRecord.%%%NAMESPACED_ORG%%%Gender__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Animal_Size__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.%%%NAMESPACED_ORG%%%Preferred_Animal_Size__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>animalRecord.Size__c</elementReference>
+                <elementReference>animalRecord.%%%NAMESPACED_ORG%%%Size__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Maturity_Level__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.%%%NAMESPACED_ORG%%%Preferred_Maturity_Level__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>animalRecord.Age_Category__c</elementReference>
+                <elementReference>animalRecord.%%%NAMESPACED_ORG%%%Age_Category__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Preferred_Maturity_Level__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.%%%NAMESPACED_ORG%%%Preferred_Maturity_Level__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <stringValue>No preference</stringValue>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.Gender__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0.%%%NAMESPACED_ORG%%%Gender__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <stringValue>No Preference</stringValue>
@@ -195,24 +195,24 @@
         <collectionReference>Get_Animal_records_based_on_Type</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.Gender__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.%%%NAMESPACED_ORG%%%Gender__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>adopterProfile.Gender__c</elementReference>
+                <elementReference>adopterProfile.%%%NAMESPACED_ORG%%%Gender__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.Size__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.%%%NAMESPACED_ORG%%%Size__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>adopterProfile.Preferred_Animal_Size__c</elementReference>
+                <elementReference>adopterProfile.%%%NAMESPACED_ORG%%%Preferred_Animal_Size__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.Age_Category__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0.%%%NAMESPACED_ORG%%%Age_Category__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>adopterProfile.Preferred_Maturity_Level__c</elementReference>
+                <elementReference>adopterProfile.%%%NAMESPACED_ORG%%%Preferred_Maturity_Level__c</elementReference>
             </rightValue>
         </conditions>
         <connector>
@@ -377,28 +377,28 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Type_of_Animal__c</field>
+            <field>%%%NAMESPACED_ORG%%%Type_of_Animal__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>animalRecord.TypeFromBreeds__c</elementReference>
+                <elementReference>animalRecord.%%%NAMESPACED_ORG%%%TypeFromBreeds__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Active__c</field>
+            <field>%%%NAMESPACED_ORG%%%Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
-            <field>Profile_Approval_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Profile_Approval_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Approved</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Adopter_Profile__c</object>
+        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -417,21 +417,21 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Available for Adoption</stringValue>
             </value>
         </filters>
         <filters>
-            <field>TypeFromBreeds__c</field>
+            <field>%%%NAMESPACED_ORG%%%TypeFromBreeds__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>adopterProfile.Type_of_Animal__c</elementReference>
+                <elementReference>adopterProfile.%%%NAMESPACED_ORG%%%Type_of_Animal__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <runInMode>DefaultMode</runInMode>
@@ -454,7 +454,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adopter_Profile__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adopter_Profile__c</objectType>
     </variables>
     <variables>
         <name>adopterProfileRecords</name>
@@ -462,7 +462,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adopter_Profile__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adopter_Profile__c</objectType>
     </variables>
     <variables>
         <name>adoptionMatchRecordsCreated</name>
@@ -477,7 +477,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_Adopter_Profile_records_based_on_Match_Criteria_0</name>
@@ -485,7 +485,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adopter_Profile__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adopter_Profile__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_Animal_records_based_on_Matching_Criteria_0</name>
@@ -493,7 +493,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
     <variables>
         <name>newAdopterMatchRecord</name>
@@ -501,7 +501,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adoption_Match__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>newAdopterMatchRecords</name>
@@ -509,7 +509,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adoption_Match__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>Test</name>

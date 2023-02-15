@@ -83,7 +83,7 @@
     <formulas>
         <name>notificationBody</name>
         <dataType>String</dataType>
-        <expression>&apos;New possible Adoption for&apos; + &apos; &apos; + {!$Record.Animal_Name__c}</expression>
+        <expression>&apos;New possible Adoption for&apos; + &apos; &apos; + {!$Record.%%%NAMESPACED_ORG%%%Animal_Name__c}</expression>
     </formulas>
     <interviewLabel>Animal - Find Adoption Match {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -136,8 +136,8 @@
             <targetReference>Call_Auto_Match_Subflow</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterFormula>AND( {!$Setup.Animal_Shelter_Settings__c.Enable_Auto_Match__c}=TRUE, ISPICKVAL({!$Record.Animal_Status__c},&apos;Available for Adoption&apos;))</filterFormula>
-        <object>Animal__c</object>
+        <filterFormula>AND( {!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Enable_Auto_Match__c}=TRUE, ISPICKVAL({!$Record.%%%NAMESPACED_ORG%%%Animal_Status__c},&apos;Available for Adoption&apos;))</filterFormula>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

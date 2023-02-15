@@ -47,6 +47,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adoption__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adoption__c</objectType>
     </variables>
 </Flow>

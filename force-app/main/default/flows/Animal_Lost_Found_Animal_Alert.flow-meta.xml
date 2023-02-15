@@ -7,28 +7,28 @@
         <locationX>176</locationX>
         <locationY>335</locationY>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.Alert_Message__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%Alert_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>animalAlertMessage</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.Animal__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.Start_Date_Time__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%Start_Date_Time__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.End_Date_Time__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%End_Date_Time__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>daysToAddToStartDate</elementReference>
@@ -82,13 +82,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Lost_Found__c</field>
+            <field>%%%NAMESPACED_ORG%%%Lost_Found__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
@@ -109,6 +109,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal_Alert__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal_Alert__c</objectType>
     </variables>
 </Flow>

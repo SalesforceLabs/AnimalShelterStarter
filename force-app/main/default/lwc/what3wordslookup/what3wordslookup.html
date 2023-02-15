@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+      <h3 slot="title">
+        <lightning-icon icon-name="custom:custom39" size="small"></lightning-icon>
+        &nbsp;what3words lookup
+      </h3>
+      <lightning-button label="Refresh Results" onclick={getResults} slot="actions"></lightning-button>
+      <lightning-spinner if:true={isLoading}></lightning-spinner>
+      <template lwc:if={resultsFound}>
+  
+        <div class="slds-var-p-around_medium">
+  
+          <h3 class="slds-text-heading_small">what3words</h3>
+          <p>{w3w_text}</p>
+          <br />
+          <h3 class="slds-text-heading_small">Responses</h3>
+  
+
+        </div>
+      </template>
+
+    </lightning-card>
+  
+  </template>

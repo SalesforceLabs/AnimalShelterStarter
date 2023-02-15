@@ -10,12 +10,16 @@ public with sharing class W3WInvocableCallout {
     @future(callout=true)
     public static void updateAnimal(String theAnimalStr ) {
         Animal__c theAnimal = (Animal__c)JSON.deserialize(theAnimalStr, Animal__c.class);
-        //Add key as a Custom label
-        string w3wkey = System.Label.w3w_key;
+        
+        
+        //Add key as a Custom setting
+        Animal_Shelter_Settings__c apikey = Animal_Shelter_Settings__c.getOrgDefaults();
+        string w3wkey = apikey.What3Words_API_Key__c;
+            
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         //String theURL = 'https://api.what3words.com/v3/autosuggest?input='+theCase.w3w__c+'&key=HZIZ31MB';
-        String theURL = 'https://api.what3words.com/v3/convert-to-coordinates?words='+theCase.what3words__c+'&key='+w3wkey;
+        String theURL = 'https://api.what3words.com/v3/convert-to-coordinates?words='+theAnimal.what3words__c+'&key='+w3wkey;
         request.setEndpoint(theURL);
         request.setMethod('GET');
         HttpResponse response = http.send(request);

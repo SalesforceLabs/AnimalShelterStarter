@@ -769,6 +769,16 @@
                 <identifier>RecordGeolocation__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.what3words__c</fieldItem>
+                <identifier>Recordwhat3words_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-71edb8b9-8182-4e2e-931a-3882cd76f4d1</name>
         <type>Facet</type>
     </flexiPageRegions>

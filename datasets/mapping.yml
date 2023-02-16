@@ -1,58 +1,142 @@
 Insert Account:
   sf_object: Account
-  table: Account
   fields:
-    Id: sf_id
-    Name: Name
-    Animal_Organisation__c: Animal_Organisation__c
-    Medicine_Manufacturer__c: Medicine_Manufacturer__c
+  - Animal_Organisation__c
+  - Medicine_Manufacturer__c
+  - Name
   lookups:
     ParentId:
       table: Account
       after: Insert Account
-Insert Medicine__c:
-  sf_object: Medicine__c
-  table: Medicine__c
+Insert Breed__c:
+  sf_object: Breed__c
   fields:
-    Id: sf_id
-    Active__c: Active__c
-    Batch_No__c: Batch_No__c
-    Category__c: Category__c
-    Comments__c: Comments__c
-    Delivery_Method__c: Delivery_Method__c
-    Medicine_Name__c: Medicine_Name__c
-  lookups:
-    Manufacturer__c:
-      table: Account
+  - Active__c
+  - Category__c
+  - Crossbreed__c
+  - Latin_Name__c
+  - Name
+  - Species__c
+  - Status__c
+  - Type__c
 Insert Contact:
   sf_object: Contact
-  table: Contact
   fields:
-    Id: sf_id
-    FirstName: FirstName
-    LastName: LastName
-    Is_a_Foster__c: Is_a_Foster__c
+  - DoNotCall
+  - FirstName
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - Is_a_Foster__c
+  - Is_an_Adopter__c
+  - LastName
   lookups:
     AccountId:
       table: Account
     ReportsToId:
       table: Contact
       after: Insert Contact
+Insert Medicine__c:
+  sf_object: Medicine__c
+  fields:
+  - Active__c
+  - Batch_No__c
+  - Category__c
+  - Comments__c
+  - Delivery_Method__c
+  - Medicine_Name__c
+  lookups:
+    Manufacturer__c:
+      table: Account
+Insert Adopter_Profile__c:
+  sf_object: Adopter_Profile__c
+  fields:
+  - Active__c
+  - Current_Daytime_Arrangements__c
+  - Gender__c
+  - Local_Vet__c
+  - Location_of_Animal_Daytime__c
+  - Location_of_Animal_Night__c
+  - Other_Animal_Details__c
+  - Other_Animals__c
+  - Other_Animals_of_same_Species__c
+  - Permission_to_House_Animal__c
+  - Preferred_Animal_Size__c
+  - Preferred_Maturity_Level__c
+  - Profile_Approval_Status__c
+  - Profile_End_Date__c
+  - Profile_Rejected_Reason__c
+  - Profile_Start_Date__c
+  - Reason_for_wanting_to_Adopt__c
+  - Safe_Outside_Area__c
+  - Small_Children__c
+  - Special_Care_Adoption_Considered__c
+  - Type_of_Accommodation__c
+  - Type_of_Animal__c
+  lookups:
+    Contact__c:
+      table: Contact
+    Local_Vet_details__c:
+      table: Account
+Insert Animal__c:
+  sf_object: Animal__c
+  fields:
+  - Animal_Name__c
+  - Animal_Status__c
+  - Behaviours__c
+  - Breed__c
+  - Coat_Type__c
+  - Colour__c
+  - Crossbreed__c
+  - Current_Weight__c
+  - Date_of_Arrival__c
+  - Date_of_Birth__c
+  - Deceased_Date__c
+  - Deceased_Reason__c
+  - Entry_Comments__c
+  - Entry_Reason__c
+  - Estimated_Age__c
+  - Gender__c
+  - Hold_Until_Date_Time__c
+  - IsCloned__c
+  - Location_Status__c
+  - Lost_Found__c
+  - Microchip__c
+  - Neutered_Spayed_Date_Time__c
+  - Neutered_Spayed__c
+  - PTS_Reason__c
+  - Rehoming_Requirements__c
+  - Related_Schemes__c
+  - SYSTEM_Breed_Migrated__c
+  - Secondary_Colour__c
+  - Site__c
+  - Size__c
+  - Total_Adoption_Days__c
+  - Total_Away_Days__c
+  - Total_Length_of_Stay_in_Shelter_Days__c
+  - Type__c
+  lookups:
+    Account__c:
+      table: Account
+    Breed_Lookup__c:
+      table: Breed__c
+    Previous_Current_Owner__c:
+      table: Contact
 Insert Locations__c:
   sf_object: Locations__c
-  table: Locations__c
   fields:
-    Id: sf_id
-    RecordTypeId: RecordTypeId
-    Animal_Preference_Foster__c: Animal_Preference_Foster__c
-    Assessment_Due__c: Assessment_Due__c
-    Available_Capacity__c: Available_Capacity__c
-    Available_for_Boarding__c: Available_for_Boarding__c
-    Block_Status__c: Block_Status__c
-    Last_Assessment_Date__c: Last_Assessment_Date__c
-    Name__c: Name__c
-    Total_Capacity__c: Total_Capacity__c
-    Unit_Status__c: Unit_Status__c
+  - Allocation__c
+  - Animal_Preference_Foster__c
+  - Assessment_Due__c
+  - Available_Capacity__c
+  - Available_for_Boarding__c
+  - Block_Status__c
+  - Capacity__c
+  - Last_Assessment_Date__c
+  - Location_Capacity__c
+  - Name__c
+  - RecordTypeId
+  - Total_Capacity__c
+  - Unit_Status__c
   lookups:
     Foster_Contact__c:
       table: Contact
@@ -61,123 +145,84 @@ Insert Locations__c:
     Parent_Block__c:
       table: Locations__c
       after: Insert Locations__c
-Insert Animal__c:
-  sf_object: Animal__c
-  table: Animal__c
-  fields:
-    Id: sf_id
-    Animal_Name__c: Animal_Name__c
-    Animal_Status__c: Animal_Status__c
-    Behaviours__c: Behaviours__c
-    Breed__c: Breed__c
-    Coat_Type__c: Coat_Type__c
-    Colour__c: Colour__c
-    Crossbreed__c: Crossbreed__c
-    Current_Weight__c: Current_Weight__c
-    Date_of_Arrival__c: Date_of_Arrival__c
-    Date_of_Birth__c: Date_of_Birth__c
-    Deceased_Date__c: Deceased_Date__c
-    Entry_Comments__c: Entry_Comments__c
-    Entry_Reason__c: Entry_Reason__c
-    Estimated_Age__c: Estimated_Age__c
-    Gender__c: Gender__c
-    Hold_Until_Date_Time__c: Hold_Until_Date_Time__c
-    Lost_Found__c: Lost_Found__c
-    Microchip__c: Microchip__c
-    Neutered_Spayed_Date_Time__c: Neutered_Spayed_Date_Time__c
-    Neutered_Spayed__c: Neutered_Spayed__c
-    PTS_Reason__c: PTS_Reason__c
-    Rehoming_Requirements__c: Rehoming_Requirements__c
-    Related_Schemes__c: Related_Schemes__c
-    Secondary_Colour__c: Secondary_Colour__c
-    Size__c: Size__c
-    Total_Adoption_Days__c: Total_Adoption_Days__c
-    Total_Away_Days__c: Total_Away_Days__c
-    Total_Length_of_Stay_in_Shelter_Days__c: Total_Length_of_Stay_in_Shelter_Days__c
-    Type__c: Type__c
-  lookups:
-    Account__c:
-      table: Account
-    Previous_Current_Owner__c:
-      table: Contact
-Insert Condition__c:
-  sf_object: Condition__c
-  table: Condition__c
-  fields:
-    Id: sf_id
-    Condition_Description__c: Condition_Description__c
-    End_Date_Time__c: End_Date_Time__c
-    Start_Date__c: Start_Date__c
-  lookups:
-    Animal__c:
-      table: Animal__c
 Insert Animal_Alert__c:
   sf_object: Animal_Alert__c
-  table: Animal_Alert__c
   fields:
-    Id: sf_id
-    Alert_Message__c: Alert_Message__c
-    End_Date_Time__c: End_Date_Time__c
-    Start_Date_Time__c: Start_Date_Time__c
+  - Alert_Message__c
+  - End_Date_Time__c
+  - Start_Date_Time__c
   lookups:
     Animal__c:
       table: Animal__c
-Insert Adoption__c:
-  sf_object: Adoption__c
-  table: Adoption__c
+Insert Animal_Relationship__c:
+  sf_object: Animal_Relationship__c
   fields:
-    Id: sf_id
-    Adoption_Stage__c: Adoption_Stage__c
-    Current_Daytime_Arrangements__c: Current_Daytime_Arrangements__c
-    Date_Collected__c: Date_Collected__c
-    Date_Returned__c: Date_Returned__c
-    Date_of_Adoption__c: Date_of_Adoption__c
-    Declined_Reason__c: Declined_Reason__c
-    Facilities_Available__c: Facilities_Available__c
-    Location_of_Animal_Daytime__c: Location_of_Animal_Daytime__c
-    Location_of_Animal_Night_time__c: Location_of_Animal_Night_time__c
-    Other_Pets_Animals__c: Other_Pets_Animals__c
-    Reason_for_Adoption__c: Reason_for_Adoption__c
-    Returned_Reason__c: Returned_Reason__c
-    Total_Adults__c: Total_Adults__c
-    Total_Children__c: Total_Children__c
-    Trial_End_Date_Time__c: Trial_End_Date_Time__c
-    Type_of_Accommodation__c: Type_of_Accommodation__c
+  - Record_Created__c
+  - Status__c
   lookups:
     Animal__c:
       table: Animal__c
-    Local_Vet__c:
-      table: Account
-    Primary_Contact__c:
-      table: Contact
-Insert Movement__c:
-  sf_object: Movement__c
-  table: Movement__c
+    Related_Animal__c:
+      table: Animal__c
+Insert Assessment__c:
+  sf_object: Assessment__c
   fields:
-    Id: sf_id
-    Current__c: Current__c
-    End_Date__c: End_Date__c
-    Start_Date__c: Start_Date__c
-    Type__c: Type__c
+  - Appetite__c
+  - Assessment_Date_Time__c
+  - Assessment_Type__c
+  - Behaviour_s__c
+  - Breathing__c
+  - Category__c
+  - Coughing__c
+  - Faceas__c
+  - Fleas__c
+  - Flys__c
+  - Fur_Condition__c
+  - General_Comments__c
+  - Has_ability_to_curl__c
+  - Hearing_Ears__c
+  - Hydration_Level__c
+  - Left_Front_Limb__c
+  - Left_Hind_Limb__c
+  - Lungworm__c
+  - Mange__c
+  - Mouth_Airway__c
+  - Movement_Condition__c
+  - Right_Front_Limb__c
+  - Right_Hind_Limb__c
+  - Ringworm__c
+  - Sight_Eyes__c
+  - Skin_Condition__c
+  - Spine_Condition__c
+  - Ticks__c
+  - Wings__c
   lookups:
     Animal__c:
       table: Animal__c
-    Location__c:
-      table: Locations__c
+Insert Condition__c:
+  sf_object: Condition__c
+  fields:
+  - Condition_Description__c
+  - End_Date_Time__c
+  - Short_Description__c
+  - Start_Date__c
+  lookups:
+    Animal__c:
+      table: Animal__c
+    Assessment__c:
+      table: Assessment__c
 Insert Animal_Action__c:
   sf_object: Animal_Action__c
-  table: Animal_Action__c
   fields:
-    Id: sf_id
-    RecordTypeId: RecordTypeId
-    Action_Completed__c: Action_Completed__c
-    Action_Status__c: Action_Status__c
-    Comments__c: Comments__c
-    Date_Time_Action_Completed__c: Date_Time_Action_Completed__c
-    Date_Time_of_Action__c: Date_Time_of_Action__c
-    Description__c: Description__c
-    Exercise_Duration__c: Exercise_Duration__c
-    Treatment_Type__c: Treatment_Type__c
+  - Action_Completed__c
+  - Action_Status__c
+  - Comments__c
+  - Date_Time_Action_Completed__c
+  - Date_Time_of_Action__c
+  - Description__c
+  - Exercise_Duration__c
+  - RecordTypeId
+  - Treatment_Type__c
   lookups:
     Animal__c:
       table: Animal__c
@@ -187,12 +232,10 @@ Insert Animal_Action__c:
       table: Contact
 Insert Medicine_Used__c:
   sf_object: Medicine_Used__c
-  table: Medicine_Used__c
   fields:
-    Id: sf_id
-    Date_Time_Used__c: Date_Time_Used__c
-    Qty_Measure__c: Qty_Measure__c
-    Qty_Used__c: Qty_Used__c
+  - Date_Time_Used__c
+  - Qty_Measure__c
+  - Qty_Used__c
   lookups:
     Medicine_Used__c:
       table: Medicine__c

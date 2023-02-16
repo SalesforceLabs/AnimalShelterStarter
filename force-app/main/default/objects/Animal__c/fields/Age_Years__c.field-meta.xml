@@ -11,6 +11,7 @@ Estimated_Age__c, FLOOR((TODAY() - Date_of_Birth__c )/365)
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>
     <unique>false</unique>

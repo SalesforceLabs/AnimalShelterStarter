@@ -4,8 +4,8 @@
     <assignments>
         <name>Count_Total_of_Days</name>
         <label>Count Total of Days</label>
-        <locationX>1064</locationX>
-        <locationY>56</locationY>
+        <locationX>490</locationX>
+        <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varTotalDays</assignToReference>
             <operator>Add</operator>
@@ -27,8 +27,8 @@
     <decisions>
         <name>No_Records_Found</name>
         <label>No Records Found</label>
-        <locationX>499</locationX>
-        <locationY>55</locationY>
+        <locationX>226</locationX>
+        <locationY>278</locationY>
         <defaultConnector>
             <targetReference>Loop_Through_Movement_Records</targetReference>
         </defaultConnector>
@@ -37,7 +37,7 @@
             <name>No_Records</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>varMovements</leftValueReference>
+                <leftValueReference>Get_Housed_Movement_Records</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -63,10 +63,10 @@
     <loops>
         <name>Loop_Through_Movement_Records</name>
         <label>Loop Through Movement Records</label>
-        <locationX>756</locationX>
-        <locationY>46</locationY>
+        <locationX>402</locationX>
+        <locationY>398</locationY>
         <assignNextValueToReference>varMovement</assignNextValueToReference>
-        <collectionReference>varMovements</collectionReference>
+        <collectionReference>Get_Housed_Movement_Records</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Count_Total_of_Days</targetReference>
@@ -84,7 +84,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -97,9 +97,9 @@
     <recordLookups>
         <name>Get_Housed_Movement_Records</name>
         <label>Get Housed Movement Records</label>
-        <locationX>262</locationX>
-        <locationY>50</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <locationX>226</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>No_Records_Found</targetReference>
         </connector>
@@ -118,19 +118,17 @@
                 <elementReference>conHoused</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>%%%NAMESPACED_ORG%%%Movement__c</object>
-        <outputReference>varMovements</outputReference>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Start_Date__c</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%End_Date__c</queriedFields>
         <sortField>%%%NAMESPACED_ORG%%%Start_Date__c</sortField>
         <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Set_Stay_Field_to_Zero</name>
         <label>Set Stay Field to Zero</label>
-        <locationX>504</locationX>
-        <locationY>294</locationY>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -150,8 +148,8 @@
     <recordUpdates>
         <name>Set_Stay_Field_to_Zero_0</name>
         <label>Set Stay Field</label>
-        <locationX>755</locationX>
-        <locationY>299</locationY>
+        <locationX>402</locationX>
+        <locationY>734</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -169,8 +167,8 @@
         <object>%%%NAMESPACED_ORG%%%Animal__c</object>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>100</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_Housed_Movement_Records</targetReference>
         </connector>
@@ -187,14 +185,6 @@
         <name>varMovement</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
-    </variables>
-    <variables>
-        <name>varMovements</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>

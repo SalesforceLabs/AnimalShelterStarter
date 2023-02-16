@@ -5,6 +5,7 @@
     <inlineHelpText>Put To Sleep (PTS) Reason.</inlineHelpText>
     <label>PTS Reason</label>
     <required>false</required>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -55,6 +56,11 @@
                 <fullName>Illness</fullName>
                 <default>false</default>
                 <label>Illness</label>
+            </value>
+            <value>
+                <fullName>To comply with euthanasia policy</fullName>
+                <default>false</default>
+                <label>To comply with euthanasia policy</label>
             </value>
         </valueSetDefinition>
     </valueSet>

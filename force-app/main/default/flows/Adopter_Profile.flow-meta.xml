@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>[Animal Shelter] - Calls flow to create Adoption Match records</description>
+    <environments>Default</environments>
+    <interviewLabel>Adopter Profile {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Adopter Profile - Find Adoption Match</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_Auto_match_Subflow</targetReference>
+        </connector>
+        <filterFormula>AND( {!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Enable_Auto_Match__c}=TRUE, {!$Record.%%%NAMESPACED_ORG%%%Active__c}=TRUE, ISPICKVAL({!$Record.%%%NAMESPACED_ORG%%%Profile_Approval_Status__c},&apos;Approved&apos;))</filterFormula>
+        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_Auto_match_Subflow</name>
+        <label>Call Auto match Subflow</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <flowName>Adopter_Match_create_auto_match_records_Subflow</flowName>
+        <inputAssignments>
+            <name>adopterProfile</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

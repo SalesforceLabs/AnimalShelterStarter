@@ -8,12 +8,12 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Type__c</field>
+        <field>TypeFromBreeds__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Breed__c</field>
+        <field>Species__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

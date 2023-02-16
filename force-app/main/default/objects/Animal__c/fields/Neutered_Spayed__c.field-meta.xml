@@ -5,6 +5,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Has the animal been Neutered/Spayed? Check this box if the answer is yes</inlineHelpText>
     <label>Neutered/Spayed</label>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

@@ -9,6 +9,7 @@
         <expression>{!$Record.%%%NAMESPACED_ORG%%%Type__c} + &quot; - &quot; + {!$Record.%%%NAMESPACED_ORG%%%Species__c}</expression>
     </formulas>
     <interviewLabel>Breed - Name Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Breed - Name Update Flow</label>
     <processMetadataValues>
         <name>BuilderType</name>

@@ -432,9 +432,6 @@
     <flowDefinitions>
         <flows>
             <screens>
-                <fields>
-                    <name>Animal_Already_Deceased_Text_0</name>
-                </fields>
                 <name>Animal_Already_Deceased_With_Correct_Movement_Record</name>
             </screens>
             <screens>
@@ -450,12 +447,6 @@
                 <name>Error_Screen</name>
             </screens>
             <screens>
-                <fields>
-                    <name>Deceased_Date</name>
-                </fields>
-                <fields>
-                    <name>Deceased_Reason</name>
-                </fields>
                 <fields>
                     <name>Initial_Screen_Section1</name>
                 </fields>
@@ -475,9 +466,6 @@
                 </fields>
                 <fields>
                     <name>Initial_Screen_Text_Header</name>
-                </fields>
-                <fields>
-                    <name>PTS_Reason</name>
                 </fields>
                 <name>Initial_Screen</name>
             </screens>

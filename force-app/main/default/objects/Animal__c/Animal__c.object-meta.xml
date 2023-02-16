@@ -153,7 +153,7 @@
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
@@ -164,32 +164,32 @@
     <nameField>
         <displayFormat>ANIMAL{00000}</displayFormat>
         <label>Animal Reference</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Animals</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>Animal_Name__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Breed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TypeFromBreeds__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Species__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Animal_Status__c</customTabListAdditionalFields>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Animal_Name__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Breed__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>TypeFromBreeds__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Species__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Animal_Status__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Animal_Name__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Breed__c</lookupPhoneDialogsAdditionalFields>
-        <massQuickActions>Start_Adoption</massQuickActions>
+        <lookupPhoneDialogsAdditionalFields>TypeFromBreeds__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Species__c</lookupPhoneDialogsAdditionalFields>
         <massQuickActions>Add_Condition</massQuickActions>
         <searchFilterFields>Animal_Name__c</searchFilterFields>
-        <searchFilterFields>Type__c</searchFilterFields>
-        <searchFilterFields>Breed__c</searchFilterFields>
         <searchFilterFields>Animal_Status__c</searchFilterFields>
+        <searchFilterFields>TypeFromBreeds__c</searchFilterFields>
+        <searchFilterFields>Species__c</searchFilterFields>
         <searchResultsAdditionalFields>Animal_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Breed__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TypeFromBreeds__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Species__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Animal_Status__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>

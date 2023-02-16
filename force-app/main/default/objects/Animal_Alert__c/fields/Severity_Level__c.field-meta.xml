@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Severity_Level__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Define the severity of the alert, from High to Low and Information only alerts where you just want to make sure there is an alert for users viewing this record.</inlineHelpText>
+    <label>Severity Level</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High</fullName>
+                <default>false</default>
+                <label>High</label>
+            </value>
+            <value>
+                <fullName>Medium</fullName>
+                <default>false</default>
+                <label>Medium</label>
+            </value>
+            <value>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <label>Low</label>
+            </value>
+            <value>
+                <fullName>Information Only</fullName>
+                <default>false</default>
+                <label>Information Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

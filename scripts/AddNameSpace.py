@@ -14,12 +14,14 @@ SEARCH_FOLDER = "force-app/main/default"
 def update_files(RemoveOnlyMode: Optional[bool] = False):
   
   all_files = []
-  aura_files = glob.glob(SEARCH_FOLDER + "/**/*.cmp", recursive=True)
-  class_files = glob.glob(SEARCH_FOLDER + "/**/*.cls-meta.xml", recursive=True)
-  flow_files = glob.glob(SEARCH_FOLDER + "/**/*.flow-meta.xml", recursive=True)
+  aura_files = glob.glob(SEARCH_FOLDER + "/aura/*.cmp", recursive=True)
+  class_files = glob.glob(SEARCH_FOLDER + "/classes/*.cls-meta.xml", recursive=True)
+  flow_files = glob.glob(SEARCH_FOLDER + "/flows/*.flow-meta.xml", recursive=True)
   d_rule_files = glob.glob(SEARCH_FOLDER + "/**/*.duplicateRule-meta.xml", recursive=True)
-  vf_files = glob.glob(SEARCH_FOLDER + "/**/*.page-meta.xml", recursive=True)
+  vf_files = glob.glob(SEARCH_FOLDER + "/pages/*.page-meta.xml", recursive=True)
   m_rule_files = glob.glob(SEARCH_FOLDER + "/**/*.matchingRule-meta.xml", recursive=True)
+  lwc_rules = glob.glob(SEARCH_FOLDER + "/lwc/**/*.js", recursive=True)
+  lwc2_rules = glob.glob(SEARCH_FOLDER + "/lwc/**/*.js-meta.xml", recursive=True)
 
   all_files.extend(aura_files)
   all_files.extend(class_files)
@@ -27,6 +29,8 @@ def update_files(RemoveOnlyMode: Optional[bool] = False):
   all_files.extend(d_rule_files)
   all_files.extend(vf_files)
   all_files.extend(m_rule_files)
+  all_files.extend(lwc_rules)
+  all_files.extend(lwc2_rules)
 
   # Process Each File Found
   for file in all_files:

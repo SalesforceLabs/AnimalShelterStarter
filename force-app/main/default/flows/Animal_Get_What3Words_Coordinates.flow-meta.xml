@@ -48,8 +48,8 @@
             <targetReference>Get_What3Words_Coordinates</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterFormula>AND(NOT(ISBLANK({!$Record.what3words__c})),NOT(ISBLANK({!$Setup.Animal_Shelter_Settings__c.What3Words_API_Key__c})))</filterFormula>
-        <object>Animal__c</object>
+        <filterFormula>AND(NOT(ISBLANK({!$Record.%%%NAMESPACED_ORG%%%what3words__c})),NOT(ISBLANK({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%What3Words_API_Key__c})))</filterFormula>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

@@ -6,7 +6,6 @@
     <columns>Adopter_Profile_Contact_Name__c</columns>
     <columns>Animal__c</columns>
     <columns>Animal_Name__c</columns>
-    <columns>Auto_Matched__c</columns>
     <columns>Related_Animal_Status__c</columns>
     <columns>Status__c</columns>
     <columns>Successful_Adoption__c</columns>

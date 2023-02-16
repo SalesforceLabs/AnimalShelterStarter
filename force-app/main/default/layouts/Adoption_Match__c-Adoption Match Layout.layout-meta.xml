@@ -12,10 +12,6 @@
                 <field>Animal__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Auto_Matched__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Related_Animal_Status__c</field>
             </layoutItems>

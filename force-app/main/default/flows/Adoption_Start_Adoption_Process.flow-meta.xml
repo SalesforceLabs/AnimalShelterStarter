@@ -4,125 +4,125 @@
     <assignments>
         <name>Build_Adopter_Profile</name>
         <label>Build Adopter Profile</label>
-        <locationX>732</locationX>
+        <locationX>600</locationX>
         <locationY>2330</locationY>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Active__c</assignToReference>
+            <assignToReference>newAdopterProfile.Active__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Contact__c</assignToReference>
+            <assignToReference>newAdopterProfile.Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>contactId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</assignToReference>
+            <assignToReference>newAdopterProfile.Current_Daytime_Arrangements__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</elementReference>
+                <elementReference>newAdoptionRecord.Current_Daytime_Arrangements__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</assignToReference>
+            <assignToReference>newAdopterProfile.Location_of_Animal_Daytime__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</elementReference>
+                <elementReference>newAdoptionRecord.Location_of_Animal_Daytime__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Location_of_Animal_Night__c</assignToReference>
+            <assignToReference>newAdopterProfile.Location_of_Animal_Night__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Night_time__c</elementReference>
+                <elementReference>newAdoptionRecord.Location_of_Animal_Night_time__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Other_Animal_Details__c</assignToReference>
+            <assignToReference>newAdopterProfile.Other_Animal_Details__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Pets_Animals__c</elementReference>
+                <elementReference>newAdoptionRecord.Other_Pets_Animals__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Profile_Start_Date__c</assignToReference>
+            <assignToReference>newAdopterProfile.Profile_Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Small_Children__c</assignToReference>
+            <assignToReference>newAdopterProfile.Small_Children__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>childrenPresent</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</assignToReference>
+            <assignToReference>newAdopterProfile.Type_of_Accommodation__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</elementReference>
+                <elementReference>newAdoptionRecord.Type_of_Accommodation__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Type_of_Animal__c</assignToReference>
+            <assignToReference>newAdopterProfile.Type_of_Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId.%%%NAMESPACED_ORG%%%TypeFromBreeds__c</elementReference>
+                <elementReference>recordId.TypeFromBreeds__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Local_Vet__c</assignToReference>
+            <assignToReference>newAdopterProfile.Local_Vet__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Has_Local_Vet__c</elementReference>
+                <elementReference>newAdoptionRecord.Has_Local_Vet__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Local_Vet_details__c</assignToReference>
+            <assignToReference>newAdopterProfile.Local_Vet_details__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Local_Vet__r.Id</elementReference>
+                <elementReference>newAdoptionRecord.Local_Vet__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Other_Animals__c</assignToReference>
+            <assignToReference>newAdopterProfile.Other_Animals__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals__c</elementReference>
+                <elementReference>newAdoptionRecord.Other_Animals__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</assignToReference>
+            <assignToReference>newAdopterProfile.Other_Animals_of_same_Species__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</elementReference>
+                <elementReference>newAdoptionRecord.Other_Animals_of_same_Species__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</assignToReference>
+            <assignToReference>newAdopterProfile.Permission_to_House_Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</elementReference>
+                <elementReference>newAdoptionRecord.Permission_to_House_Animal__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</assignToReference>
+            <assignToReference>newAdopterProfile.Safe_Outside_Area__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</elementReference>
+                <elementReference>newAdoptionRecord.Safe_Outside_Area__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdopterProfile.%%%NAMESPACED_ORG%%%Gender__c</assignToReference>
+            <assignToReference>newAdopterProfile.Gender__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId.%%%NAMESPACED_ORG%%%Gender__c</elementReference>
+                <elementReference>recordId.Gender__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -132,104 +132,104 @@
     <assignments>
         <name>Build_Adoption_record_from_Adopter_Profile_record</name>
         <label>Build Adoption record from Adopter Profile record</label>
-        <locationX>204</locationX>
+        <locationX>72</locationX>
         <locationY>1850</locationY>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Adoption_Stage__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Adoption_Stage__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Initial Review</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Current_Daytime_Arrangements__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Current_Daytime_Arrangements__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Local_Vet__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Local_Vet__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Local_Vet_details__r.Id</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Local_Vet_details__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Location_of_Animal_Daytime__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Location_of_Animal_Daytime__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Night_time__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Location_of_Animal_Night_time__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Location_of_Animal_Night__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Location_of_Animal_Night__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Pets_Animals__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Other_Pets_Animals__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Other_Animal_Details__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Other_Animal_Details__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Primary_Contact__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Primary_Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>contactId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Reason_for_Adoption__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Reason_for_Adoption__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Reason_for_wanting_to_Adopt__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Reason_for_wanting_to_Adopt__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Type_of_Accommodation__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Type_of_Accommodation__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Other_Animals__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Other_Animals__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Other_Animals__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Other_Animals_of_same_Species__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Other_Animals_of_same_Species__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Permission_to_House_Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Permission_to_House_Animal__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Safe_Outside_Area__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</elementReference>
+                <elementReference>Get_Adopter_Profile_Record_for_Contact.Safe_Outside_Area__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -242,101 +242,101 @@
         <locationX>50</locationX>
         <locationY>878</locationY>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Adoption_Stage__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Adoption_Stage__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Initial Review</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Current_Daytime_Arrangements__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Current_Daytime_Arrangements__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Local_Vet__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Local_Vet__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Local_Vet_details__r.Id</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Local_Vet_details__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Location_of_Animal_Daytime__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Location_of_Animal_Daytime__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Night_time__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Location_of_Animal_Night_time__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Location_of_Animal_Night__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Location_of_Animal_Night__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Pets_Animals__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Other_Pets_Animals__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Other_Animal_Details__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Other_Animal_Details__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Primary_Contact__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Primary_Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Contact__r.Id</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Contact__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Reason_for_Adoption__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Reason_for_Adoption__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Reason_for_wanting_to_Adopt__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Reason_for_wanting_to_Adopt__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Type_of_Accommodation__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Type_of_Accommodation__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Other_Animals__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Other_Animals__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Other_Animals__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Other_Animals_of_same_Species__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Other_Animals_of_same_Species__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Permission_to_House_Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Permission_to_House_Animal__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Safe_Outside_Area__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Selected_Adopter_Profile.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</elementReference>
+                <elementReference>Get_Selected_Adopter_Profile.Safe_Outside_Area__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -346,24 +346,24 @@
     <assignments>
         <name>Set_Additional_Adoption_Fields</name>
         <label>Set Additional Adoption Fields</label>
-        <locationX>996</locationX>
+        <locationX>864</locationX>
         <locationY>1970</locationY>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Adoption_Stage__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Adoption_Stage__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Initial Review</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Primary_Contact__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Primary_Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>contactId</elementReference>
@@ -376,7 +376,7 @@
     <decisions>
         <name>Adopter_Profile_Exists</name>
         <label>Adopter Profile Exists?</label>
-        <locationX>666</locationX>
+        <locationX>534</locationX>
         <locationY>1610</locationY>
         <defaultConnector>
             <targetReference>No_Adopter_Profile_Screen</targetReference>
@@ -424,9 +424,41 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Auto_Match_On_or_Manual_match_Adoption_Match_records</name>
+        <label>Auto Match On or Manual match Adoption Match records?</label>
+        <locationX>534</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>Start_Screen_Contact_Selection</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Automatch</defaultConnectorLabel>
+        <rules>
+            <name>Automatch_On</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Auto_Match__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Adoption_Match_records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Adoption_Matches_Exist</targetReference>
+            </connector>
+            <label>Automatch On</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Animal_Types_Match</name>
         <label>Check Animal Types Match</label>
-        <locationX>336</locationX>
+        <locationX>204</locationX>
         <locationY>1730</locationY>
         <defaultConnector>
             <targetReference>Animal_Type_Mismatch_Screen</targetReference>
@@ -436,10 +468,10 @@
             <name>Animal_Type_Match</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Type_of_Animal__c</leftValueReference>
+                <leftValueReference>Get_Adopter_Profile_Record_for_Contact.Type_of_Animal__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>recordId.%%%NAMESPACED_ORG%%%TypeFromBreeds__c</elementReference>
+                    <elementReference>recordId.TypeFromBreeds__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -451,7 +483,7 @@
     <decisions>
         <name>Create_Adopter_Profile</name>
         <label>Create Adopter Profile?</label>
-        <locationX>996</locationX>
+        <locationX>864</locationX>
         <locationY>2210</locationY>
         <defaultConnector>
             <targetReference>Adoption_Record_Created_Screen</targetReference>
@@ -487,41 +519,16 @@
             <name>Available_for_Adoption</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>recordId.%%%NAMESPACED_ORG%%%Animal_Status__c</leftValueReference>
+                <leftValueReference>recordId.Animal_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Available for Adoption</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Is_Automatch_On</targetReference>
-            </connector>
-            <label>Available for Adoption</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Is_Automatch_On</name>
-        <label>Is Automatch On?</label>
-        <locationX>666</locationX>
-        <locationY>278</locationY>
-        <defaultConnector>
-            <targetReference>Start_Screen_Contact_Selection</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No Automatch</defaultConnectorLabel>
-        <rules>
-            <name>Automatch_On</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Enable_Auto_Match__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
                 <targetReference>Get_Adoption_Match_records</targetReference>
             </connector>
-            <label>Automatch On</label>
+            <label>Available for Adoption</label>
         </rules>
     </decisions>
     <description>[Animal Shelter] - Starts the adoption process for an available animal.  If required allows for the creation of an Adopter Profile for the selected Contact</description>
@@ -547,7 +554,7 @@
         <displayField>Name</displayField>
         <object>Account</object>
         <outputAssignments>
-            <assignToReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Local_Vet__c</assignToReference>
+            <assignToReference>newAdoptionRecord.Local_Vet__c</assignToReference>
             <field>Id</field>
         </outputAssignments>
         <sortField>Name</sortField>
@@ -557,7 +564,7 @@
     <formulas>
         <name>childrenPresent</name>
         <dataType>Boolean</dataType>
-        <expression>IF({!newAdoptionRecord.%%%NAMESPACED_ORG%%%Total_Children__c} &lt;&gt; 0, TRUE, FALSE)</expression>
+        <expression>IF({!newAdoptionRecord.Total_Children__c} &lt;&gt; 0, TRUE, FALSE)</expression>
     </formulas>
     <interviewLabel>Adoption - Start Adoption Process {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -584,7 +591,7 @@
     <recordCreates>
         <name>Create_Adopter_Profile_Record</name>
         <label>Create Adopter Profile Record</label>
-        <locationX>732</locationX>
+        <locationX>600</locationX>
         <locationY>2450</locationY>
         <connector>
             <targetReference>Adoption_Record_Created_Screen</targetReference>
@@ -598,7 +605,7 @@
     <recordLookups>
         <name>Get_Adopter_Profile_Record_for_Contact</name>
         <label>Get Adopter Profile Record for Contact</label>
-        <locationX>666</locationX>
+        <locationX>534</locationX>
         <locationY>1490</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -610,46 +617,46 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Contact__c</field>
+            <field>Contact__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>contactId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Active__c</field>
+            <field>Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
+        <object>Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Get the Adoption Match records that have been matched with the animal</description>
         <name>Get_Adoption_Match_records</name>
         <label>Get Adoption Match records</label>
-        <locationX>314</locationX>
-        <locationY>398</locationY>
+        <locationX>534</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Adoption_Matches_Exist</targetReference>
+            <targetReference>Auto_Match_On_or_Manual_match_Adoption_Match_records</targetReference>
         </connector>
         <faultConnector>
             <targetReference>FlowErrorScreen</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adoption_Match__c</object>
+        <object>Adoption_Match__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -671,24 +678,24 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>AutoMatchEnabledScreenDataTable.firstSelectedRow.%%%NAMESPACED_ORG%%%Adopter_Profile__r.Id</elementReference>
+                <elementReference>AutoMatchEnabledScreenDataTable.firstSelectedRow.Adopter_Profile__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
+        <object>Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
         <name>Adoption_Record_Created_Screen</name>
         <label>Adoption Record Created Screen</label>
-        <locationX>666</locationX>
+        <locationX>534</locationX>
         <locationY>2798</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Adoption_Record_Created_Screen_Text</name>
-            <fieldText>&lt;p&gt;An adoption record has been created for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c} with {!contactFullName}.  The adoption process can now start.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;An adoption record has been created for {!recordId.Animal_Name__c} with {!contactFullName}.  The adoption process can now start.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -697,14 +704,14 @@
     <screens>
         <name>Animal_Type_Mismatch_Screen</name>
         <label>Animal Type Mismatch Screen</label>
-        <locationX>468</locationX>
+        <locationX>336</locationX>
         <locationY>1850</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Animal_Type_Mismatch_Screen_Text</name>
-            <fieldText>&lt;p&gt;The animal type of {!Get_Adopter_Profile_Record_for_Contact.%%%NAMESPACED_ORG%%%Type_of_Animal__c} on the Adopter Profile for {!contactFullName} does not match the animal selected for adoption.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please check the details, this wizard will end&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;The animal type of {!Get_Adopter_Profile_Record_for_Contact.Type_of_Animal__c} on the Adopter Profile for {!contactFullName} does not match the animal selected for adoption.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please check the details, this wizard will end&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -723,14 +730,14 @@
         </connector>
         <fields>
             <name>AutoMatchEnabledScreenText</name>
-            <fieldText>&lt;p&gt;As auto match is enabled, and Adoption Match records have been found, please select the Contact from the list of Adoption Match records to start the adoption process.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Contacts that Match&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Either auto match is enabled or manual matches have been created.  Therefore please select the Contact from the list below to start the adoption process.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>AutoMatchEnabledScreenDataTable</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
-                <typeValue>%%%NAMESPACED_ORG%%%Adoption_Match__c</typeValue>
+                <typeValue>Adoption_Match__c</typeValue>
             </dataTypeMappings>
             <extensionName>flowruntime:datatable</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -773,7 +780,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Adopter_Profile_Contact_Name__c&quot;,&quot;guid&quot;:&quot;column-a575&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Contact Name&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Adopter Profile Contact Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;%%%NAMESPACED_ORG%%%Status__c&quot;,&quot;guid&quot;:&quot;column-78f0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Adopter_Profile_Contact_Name__c&quot;,&quot;guid&quot;:&quot;column-a575&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Contact Name&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Adopter Profile Contact Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Status__c&quot;,&quot;guid&quot;:&quot;column-78f0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -786,7 +793,7 @@
     <screens>
         <name>Capture_Adoption_Information</name>
         <label>Capture Adoption Information</label>
-        <locationX>996</locationX>
+        <locationX>864</locationX>
         <locationY>1850</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -803,33 +810,33 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Current_Daytime_Arrangements__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Other_Animals__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Other_Animals_of_same_Species__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Pets_Animals__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Other_Pets_Animals__c</objectFieldReference>
                     <visibilityRule>
                         <conditionLogic>or</conditionLogic>
                         <conditions>
-                            <leftValueReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals__c</leftValueReference>
+                            <leftValueReference>newAdoptionRecord.Other_Animals__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
                             </rightValue>
                         </conditions>
                         <conditions>
-                            <leftValueReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</leftValueReference>
+                            <leftValueReference>newAdoptionRecord.Other_Animals_of_same_Species__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
@@ -840,17 +847,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Reason_for_Adoption__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Reason_for_Adoption__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Type_of_Accommodation__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Permission_to_House_Animal__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -866,37 +873,37 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Safe_Outside_Area__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Facilities_Available__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Facilities_Available__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Location_of_Animal_Daytime__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Location_of_Animal_Night_time__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Location_of_Animal_Night_time__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Total_Adults__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Total_Adults__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Total_Children__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Total_Children__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Has_Local_Vet__c</objectFieldReference>
+                    <objectFieldReference>newAdoptionRecord.Has_Local_Vet__c</objectFieldReference>
                 </fields>
                 <fields>
                     <name>Local_Vet_Details</name>
@@ -908,7 +915,7 @@
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>newAdoptionRecord.%%%NAMESPACED_ORG%%%Has_Local_Vet__c</leftValueReference>
+                            <leftValueReference>newAdoptionRecord.Has_Local_Vet__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
@@ -933,8 +940,8 @@
     <screens>
         <name>FlowErrorScreen</name>
         <label>FlowErrorScreen</label>
-        <locationX>754</locationX>
-        <locationY>518</locationY>
+        <locationX>1568</locationX>
+        <locationY>398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -949,7 +956,7 @@
     <screens>
         <name>No_Adopter_Profile_Screen</name>
         <label>No Adopter Profile Screen</label>
-        <locationX>996</locationX>
+        <locationX>864</locationX>
         <locationY>1730</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1027,14 +1034,14 @@
     <screens>
         <name>Not_Available_Screen</name>
         <label>Not Available Screen</label>
-        <locationX>1700</locationX>
+        <locationX>1832</locationX>
         <locationY>278</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Not_Available_Screen_Text</name>
-            <fieldText>&lt;p&gt;{!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c} is not available for adoption.  Check/update the animal&apos;s status and try again&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;{!recordId.Animal_Name__c} is not available for adoption.  Check/update the animal&apos;s status and try again&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1043,7 +1050,7 @@
     <screens>
         <name>Start_Screen_Contact_Selection</name>
         <label>Start Screen &amp; Contact Selection</label>
-        <locationX>666</locationX>
+        <locationX>534</locationX>
         <locationY>1370</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1053,7 +1060,7 @@
         </connector>
         <fields>
             <name>Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;You are going to create start the adoption process for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Choose the Contact who is adopting the animal&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;You are going to create start the adoption process for {!recordId.Animal_Name__c}.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Choose the Contact who is adopting the animal&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1095,7 +1102,7 @@
     <subflows>
         <name>createAdoptionRecordfromNew</name>
         <label>createAdoptionRecordfromNew</label>
-        <locationX>996</locationX>
+        <locationX>864</locationX>
         <locationY>2090</locationY>
         <connector>
             <targetReference>Create_Adopter_Profile</targetReference>
@@ -1111,7 +1118,7 @@
     <subflows>
         <name>createAdoptionRecordFromProfile</name>
         <label>createAdoptionRecordFromProfile</label>
-        <locationX>204</locationX>
+        <locationX>72</locationX>
         <locationY>1970</locationY>
         <connector>
             <targetReference>Adoption_Record_Created_Screen</targetReference>
@@ -1144,7 +1151,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adopter_Profile__c</objectType>
+        <objectType>Adopter_Profile__c</objectType>
     </variables>
     <variables>
         <name>newAdoptionRecord</name>
@@ -1152,7 +1159,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adoption__c</objectType>
+        <objectType>Adoption__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -1160,6 +1167,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
 </Flow>

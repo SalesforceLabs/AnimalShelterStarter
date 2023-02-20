@@ -42,7 +42,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Delete_Adoption_Matches</targetReference>
+            <targetReference>Are_there_Adoption_Match_records_to_delete</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -83,7 +83,7 @@
         <locationX>226</locationX>
         <locationY>1190</locationY>
         <assignmentItems>
-            <assignToReference>amRecordtoUpdate.%%%NAMESPACED_ORG%%%Successful_Adoption__c</assignToReference>
+            <assignToReference>amRecordtoUpdate.Successful_Adoption__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -116,6 +116,28 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Are_there_Adoption_Match_records_to_delete</name>
+        <label>Are there Adoption Match records to delete?</label>
+        <locationX>490</locationX>
+        <locationY>1526</locationY>
+        <defaultConnectorLabel>No records to delete</defaultConnectorLabel>
+        <rules>
+            <name>Yes_records_to_delete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>adoptionMatchRecordstoDelete</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Adoption_Matches</targetReference>
+            </connector>
+            <label>Yes records to delete</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Does_the_Contact_on_the_Animal_match_the_Adopter_Profile</name>
         <label>Does the Contact on the Animal match the Adopter Profile</label>
         <locationX>446</locationX>
@@ -128,10 +150,10 @@
             <name>Matches</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Loop_Through_Adoption_Match_records.%%%NAMESPACED_ORG%%%Adopter_Profile_Contact_Id__c</leftValueReference>
+                <leftValueReference>Loop_Through_Adoption_Match_records.Adopter_Profile_Contact_Id__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>animalRecord.%%%NAMESPACED_ORG%%%Previous_Current_Owner__r.Id</elementReference>
+                    <elementReference>animalRecord.Previous_Current_Owner__r.Id</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -227,7 +249,7 @@
             <name>Adopted</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>animalRecord.%%%NAMESPACED_ORG%%%Animal_Status__c</leftValueReference>
+                <leftValueReference>animalRecord.Animal_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Adopted</stringValue>
@@ -242,14 +264,14 @@
             <name>No_longer_Available_for_Adoption</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>animalRecord.%%%NAMESPACED_ORG%%%Animal_Status__c</leftValueReference>
+                <leftValueReference>animalRecord.Animal_Status__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Adopted</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>animalRecord.%%%NAMESPACED_ORG%%%Animal_Status__c</leftValueReference>
+                <leftValueReference>animalRecord.Animal_Status__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Available for Adoption</stringValue>
@@ -310,8 +332,8 @@
         <description>Delete Adoption Match records that are no longer valid</description>
         <name>Delete_Adoption_Matches</name>
         <label>Delete Adoption Matches</label>
-        <locationX>490</locationX>
-        <locationY>1526</locationY>
+        <locationX>358</locationX>
+        <locationY>1646</locationY>
         <inputReference>adoptionMatchRecordstoDelete</inputReference>
     </recordDeletes>
     <recordLookups>
@@ -326,21 +348,21 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Adopter_Profile__c</field>
+            <field>Adopter_Profile__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>adopterProfile.Id</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Successful_Adoption__c</field>
+            <field>Successful_Adoption__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adoption_Match__c</object>
+        <object>Adoption_Match__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -355,14 +377,14 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>animalRecord.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adoption_Match__c</object>
+        <object>Adoption_Match__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -371,7 +393,7 @@
         <locationX>226</locationX>
         <locationY>1310</locationY>
         <connector>
-            <targetReference>Delete_Adoption_Matches</targetReference>
+            <targetReference>Are_there_Adoption_Match_records_to_delete</targetReference>
         </connector>
         <inputReference>amRecordtoUpdate</inputReference>
     </recordUpdates>
@@ -395,7 +417,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adopter_Profile__c</objectType>
+        <objectType>Adopter_Profile__c</objectType>
     </variables>
     <variables>
         <name>adoptionMatchRecordstoDelete</name>
@@ -403,7 +425,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
+        <objectType>Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>amRecordtoUpdate</name>
@@ -411,7 +433,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
+        <objectType>Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>animalRecord</name>
@@ -419,7 +441,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_Adoption_Matches_that_Match_Primary_Contact_0</name>
@@ -427,7 +449,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
+        <objectType>Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_by_Not_Equal_to_Primary_Contact</name>
@@ -435,7 +457,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
+        <objectType>Adoption_Match__c</objectType>
     </variables>
     <variables>
         <name>testRecords</name>
@@ -443,6 +465,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adoption_Match__c</objectType>
+        <objectType>Adoption_Match__c</objectType>
     </variables>
 </Flow>

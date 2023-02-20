@@ -3,7 +3,7 @@
     <fullName>what3words__c</fullName>
     <caseSensitive>false</caseSensitive>
     <externalId>true</externalId>
-    <inlineHelpText>Used for what3words integration, in the format word.word.word</inlineHelpText>
+    <inlineHelpText>Used for what3words integration, in the format word.word.word (http://what3words.com)</inlineHelpText>
     <label>what3words</label>
     <length>255</length>
     <required>false</required>

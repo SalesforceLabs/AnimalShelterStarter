@@ -17,7 +17,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
-    <description>[Animal Shelter] Get what3words coordinates from the entry in the what3words field</description>
+    <description>[Animal Shelter] Get what3words coordinates from the entry in the what3words field.  Uses Invocable Apex</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Get What3Words Coordinates {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -47,8 +47,7 @@
         <connector>
             <targetReference>Get_What3Words_Coordinates</targetReference>
         </connector>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterFormula>AND(NOT(ISBLANK({!$Record.%%%NAMESPACED_ORG%%%what3words__c})),NOT(ISBLANK({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%What3Words_API_Key__c})))</filterFormula>
+        <filterFormula>AND(NOT(ISBLANK({!$Record.%%%NAMESPACED_ORG%%%what3words__c})),ISCHANGED({!$Record.%%%NAMESPACED_ORG%%%what3words__c}),NOT(ISBLANK({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%What3Words_API_Key__c})))</filterFormula>
         <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

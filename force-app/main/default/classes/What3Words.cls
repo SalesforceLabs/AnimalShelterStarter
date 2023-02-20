@@ -1,3 +1,15 @@
+/**
+ * @File Name          : What3Words.apxc
+ * @Description        : What3words JSON parser functionality. Taken from what3words help docs
+ * @Author             : Chris Rolfe
+ * @Group              : 
+ * @Last Modified By   : Chris Rolfe
+ * @Last Modified On   : 20/02/2023
+ * @Modification Log   : 
+ * Ver       Date            Author      		    Modification
+ * 1.0    20/02/2023  Chris Rolfe                     Initial Version
+**/
+
 public class What3Words {
   
     public String country {get;set;} 

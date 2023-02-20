@@ -1,7 +1,19 @@
+/**
+ * @File Name          : W3WInvocableCallout.apxc
+ * @Description        : What3words Invocable Flow Action. Taken from what3words help docs
+ * @Author             : Chris Rolfe
+ * @Group              : 
+ * @Last Modified By   : Chris Rolfe
+ * @Last Modified On   : 20/02/2023
+ * @Modification Log   : 
+ * Ver       Date            Author      		    Modification
+ * 1.0    20/02/2023  Chris Rolfe                     Initial Version
+**/
+
 public with sharing class W3WInvocableCallout {
     @InvocableMethod(label='Get W3W Coordinates' description='Returns the Latitude and Longitude of the W3W provided' category='Animal')
-    public static List<String> getW3WCoordinates(List<%%%NAMESPACED_ORG%%%Animal__c> animals) {
-      for (%%%NAMESPACED_ORG%%%Animal__c theAnimal : animals) {
+    public static List<String> getW3WCoordinates(List<Animal__c> animals) {
+      for (Animal__c theAnimal : animals) {
         updateAnimal(JSON.serialize(theAnimal));
       }
       return null;
@@ -9,11 +21,11 @@ public with sharing class W3WInvocableCallout {
 
     @future(callout=true)
     public static void updateAnimal(String theAnimalStr ) {
-      %%%NAMESPACED_ORG%%%Animal__c theAnimal = (%%%NAMESPACED_ORG%%%Animal__c)JSON.deserialize(theAnimalStr, Animal__c.class);
+      Animal__c theAnimal = (Animal__c)JSON.deserialize(theAnimalStr, Animal__c.class);
         
         
         //Add key as a Custom setting
-        %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c apikey = Animal_Shelter_Settings__c.getOrgDefaults();
+        Animal_Shelter_Settings__c apikey = Animal_Shelter_Settings__c.getOrgDefaults();
         string w3wkey = apikey.What3Words_API_Key__c;
             
         Http http = new Http();

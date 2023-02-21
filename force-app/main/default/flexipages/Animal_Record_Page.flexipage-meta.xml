@@ -19,9 +19,6 @@
                             <value>Animal__c.Add_Condition</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Start_Adoption</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Animal__c.New_Alert</value>
                         </valueListItems>
                         <valueListItems>

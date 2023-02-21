@@ -1,4 +1,4 @@
-<design:component label="Animal Action Releated List">
+<design:component label="DEPRECATED Animal Action Related List">
     
     <design:attribute name="recordTypeName" label="Record Type Name" required="true"/>
 	

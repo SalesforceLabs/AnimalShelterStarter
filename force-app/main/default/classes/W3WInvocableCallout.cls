@@ -12,8 +12,8 @@
 
 public with sharing class W3WInvocableCallout {
     @InvocableMethod(label='Get W3W Coordinates' description='Returns the Latitude and Longitude of the W3W provided' category='Animal')
-    public static List<String> getW3WCoordinates(List<Animal__c> animals) {
-      for (Animal__c theAnimal : animals) {
+    public static List<String> getW3WCoordinates(List<%%%NAMESPACED_ORG%%%Animal__c> animals) {
+      for (%%%NAMESPACED_ORG%%%Animal__c theAnimal : animals) {
         updateAnimal(JSON.serialize(theAnimal));
       }
       return null;
@@ -21,7 +21,7 @@ public with sharing class W3WInvocableCallout {
 
     @future(callout=true)
     public static void updateAnimal(String theAnimalStr ) {
-      Animal__c theAnimal = (Animal__c)JSON.deserialize(theAnimalStr, Animal__c.class);
+      %%%NAMESPACED_ORG%%%Animal__c theAnimal = (%%%NAMESPACED_ORG%%%Animal__c)JSON.deserialize(theAnimalStr, Animal__c.class);
         
         
         //Add key as a Custom setting

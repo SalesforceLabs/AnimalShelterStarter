@@ -20,6 +20,7 @@
         <default>false</default>
         <label>Critical</label>
     </customValue>
+    <description>[Animal Shelter] Choice of Assessment conditions used on multiple fields on assessment</description>
     <masterLabel>Assessment Conditions</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

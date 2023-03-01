@@ -7,31 +7,11 @@
     <picklistValues>
         <picklist>Animal_Preference_Foster__c</picklist>
         <values>
-            <fullName>Bird</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Cat</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Dog</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Donkey</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ferret</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Gerbil</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Goat</fullName>
             <default>false</default>
         </values>
         <values>
@@ -43,19 +23,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Hedgehog</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Horse</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Mouse</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pig</fullName>
             <default>false</default>
         </values>
         <values>
@@ -64,10 +32,6 @@
         </values>
         <values>
             <fullName>Rabbit</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Rat</fullName>
             <default>false</default>
         </values>
     </picklistValues>

@@ -15,6 +15,7 @@
         <default>false</default>
         <label>Sponsorship</label>
     </customValue>
+    <description>[Animal Shelter] Schemes that an animal maybe part of</description>
     <masterLabel>Animal Schemes</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

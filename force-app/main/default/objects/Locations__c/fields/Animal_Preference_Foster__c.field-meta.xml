@@ -10,7 +10,7 @@
     <type>MultiselectPicklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetName>Animal_Type</valueSetName>
+        <valueSetName>Type_of_Animal</valueSetName>
     </valueSet>
     <visibleLines>4</visibleLines>
 </CustomField>

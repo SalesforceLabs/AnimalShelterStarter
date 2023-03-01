@@ -15,6 +15,7 @@
         <default>false</default>
         <label>Unavailable</label>
     </customValue>
+    <description>[Animal Shelter] Status of Unit locations</description>
     <masterLabel>Animal Location Status</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

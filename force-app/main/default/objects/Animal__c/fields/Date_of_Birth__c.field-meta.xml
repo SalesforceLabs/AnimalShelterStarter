@@ -5,6 +5,7 @@
     <inlineHelpText>Date the animal was born, if known.</inlineHelpText>
     <label>Date of Birth</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Date</type>
 </CustomField>

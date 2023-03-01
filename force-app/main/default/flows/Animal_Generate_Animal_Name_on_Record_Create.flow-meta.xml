@@ -51,7 +51,7 @@
         <connector>
             <targetReference>Set_Animal_Name</targetReference>
         </connector>
-        <filterFormula>{!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name__c}</filterFormula>
+        <filterFormula>AND({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name__c},ISNULL({!$Record.%%%NAMESPACED_ORG%%%Animal_Name__c}))</filterFormula>
         <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

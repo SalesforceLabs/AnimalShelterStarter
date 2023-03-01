@@ -29,14 +29,14 @@
         <name>Create_New_Movement_Record</name>
         <label>Create New Movement Record</label>
         <locationX>176</locationX>
-        <locationY>935</locationY>
+        <locationY>815</locationY>
         <connector>
             <targetReference>Update_Animal_Record</targetReference>
         </connector>
         <inputAssignments>
             <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <value>
-                <elementReference>Get_Adoption_Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -61,31 +61,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Adoption_Record</name>
-        <label>Get Adoption Record</label>
-        <locationX>176</locationX>
-        <locationY>335</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Associated_Contact_Record</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adoption__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Associated_Contact_Record</name>
         <label>Get Associated Contact Record</label>
         <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationY>335</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Adopter_Flag_on_Contact_to_True</targetReference>
@@ -95,7 +74,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Adoption_Record.%%%NAMESPACED_ORG%%%Primary_Contact__r.Id</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Primary_Contact__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -106,7 +85,7 @@
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
         <locationX>176</locationX>
-        <locationY>695</locationY>
+        <locationY>575</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Close_current_Movement_Record</targetReference>
@@ -116,7 +95,7 @@
             <field>%%%NAMESPACED_ORG%%%Animal__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Adoption_Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
             </value>
         </filters>
         <filters>
@@ -134,7 +113,7 @@
         <name>Close_current_Movement_Record</name>
         <label>Close current Movement Record</label>
         <locationX>176</locationX>
-        <locationY>815</locationY>
+        <locationY>695</locationY>
         <connector>
             <targetReference>Create_New_Movement_Record</targetReference>
         </connector>
@@ -164,7 +143,7 @@
         <name>Set_Adopter_Flag_on_Contact_to_True</name>
         <label>Set Adopter Flag on Contact to True</label>
         <locationX>176</locationX>
-        <locationY>575</locationY>
+        <locationY>455</locationY>
         <connector>
             <targetReference>Get_Current_Movement_Record</targetReference>
         </connector>
@@ -189,7 +168,7 @@
         <name>Update_Adoption_Record</name>
         <label>Update Adoption Record</label>
         <locationX>176</locationX>
-        <locationY>1175</locationY>
+        <locationY>1055</locationY>
         <inputAssignments>
             <field>%%%NAMESPACED_ORG%%%Date_Collected__c</field>
             <value>
@@ -208,7 +187,7 @@
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
         <locationX>176</locationX>
-        <locationY>1055</locationY>
+        <locationY>935</locationY>
         <connector>
             <targetReference>Update_Adoption_Record</targetReference>
         </connector>
@@ -217,7 +196,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Adoption_Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -244,8 +223,9 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Adoption_Record</targetReference>
+            <targetReference>Get_Associated_Contact_Record</targetReference>
         </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
             <field>%%%NAMESPACED_ORG%%%Adoption_Stage__c</field>

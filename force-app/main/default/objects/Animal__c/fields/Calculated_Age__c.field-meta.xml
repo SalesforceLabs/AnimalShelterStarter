@@ -10,6 +10,7 @@ TEXT(MOD(MOD((TODAY() - Date_of_Birth__c),365),30)) &amp;&apos; DAYS&apos;)</for
     <inlineHelpText>Calculated as the amount of time between today and the birthdate of the animal. If no birthdate is entered, then estimated date it used.</inlineHelpText>
     <label>Calculated Age</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

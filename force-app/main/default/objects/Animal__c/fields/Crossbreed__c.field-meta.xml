@@ -5,6 +5,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Check this is the animal is a crossbreed or mixed breed.</inlineHelpText>
     <label>Crossbreed (Legacy)</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

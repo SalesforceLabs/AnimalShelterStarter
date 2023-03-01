@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="recordId" label="RecordId" />
+    <design:attribute name="showFileHeader" label="Show File Header?" />
+    <design:attribute name="fileHeaderText" label="File Header Text" />
+    <design:attribute name="uploadMultiple" label="Upload Multiple Files?" />
+    <design:attribute name="acceptFileTypes" label="Accepted file types, comma separated list (.pdf, .jpg, etc)" />
+    <design:attribute name="files" label="Files" />
+</design:component>

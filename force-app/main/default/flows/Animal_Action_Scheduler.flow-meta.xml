@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
-        <locationX>1204</locationX>
-        <locationY>737</locationY>
+        <locationX>886</locationX>
+        <locationY>1910</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecords</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Add_to_Collection_Initial</name>
         <label>Add to Collection</label>
-        <locationX>722</locationX>
-        <locationY>421</locationY>
+        <locationX>534</locationX>
+        <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecords</assignToReference>
             <operator>Add</operator>
@@ -36,8 +36,8 @@
     <assignments>
         <name>Assign_Tasks_to_Collection</name>
         <label>Assign Tasks to Collection</label>
-        <locationX>1595</locationX>
-        <locationY>875</locationY>
+        <locationX>754</locationX>
+        <locationY>2270</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionTaskCollection</assignToReference>
             <operator>Add</operator>
@@ -52,8 +52,8 @@
     <assignments>
         <name>Assign_to_Task_Collection</name>
         <label>Assign to Task Collection</label>
-        <locationX>941</locationX>
-        <locationY>25</locationY>
+        <locationX>402</locationX>
+        <locationY>1334</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionTaskCollection</assignToReference>
             <operator>Add</operator>
@@ -68,8 +68,8 @@
     <assignments>
         <name>Assign_Variables</name>
         <label>Assign Variables</label>
-        <locationX>452</locationX>
-        <locationY>421</locationY>
+        <locationX>534</locationX>
+        <locationY>734</locationY>
         <assignmentItems>
             <assignToReference>NumberOfTimeFrames</assignToReference>
             <operator>Assign</operator>
@@ -91,8 +91,8 @@
     <assignments>
         <name>Calculate_Next_Action_Date</name>
         <label>Calculate Next Action Date</label>
-        <locationX>878</locationX>
-        <locationY>737</locationY>
+        <locationX>886</locationX>
+        <locationY>1670</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionDate</assignToReference>
             <operator>Assign</operator>
@@ -107,8 +107,8 @@
     <assignments>
         <name>Decrease_Time_Slots_Number</name>
         <label>Decrease Time Slots Number</label>
-        <locationX>1449</locationX>
-        <locationY>569</locationY>
+        <locationX>886</locationX>
+        <locationY>2486</locationY>
         <assignmentItems>
             <assignToReference>NumberOfTimeFrames</assignToReference>
             <operator>Subtract</operator>
@@ -117,44 +117,45 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>Calculate_Additional_Action</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Generate_Action_Record</name>
         <label>Generate Action Record</label>
-        <locationX>1062</locationX>
-        <locationY>737</locationY>
+        <locationX>886</locationX>
+        <locationY>1790</locationY>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Description__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Description__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Action_Description</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Date_Time_of_Action__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalActionDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Treatment_Type__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Treatment_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Treatment_Type_0</elementReference>
+                <elementReference>Treatment_Type</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Condition__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Condition__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Related_Condition_Selected</elementReference>
@@ -174,38 +175,38 @@
     <assignments>
         <name>Generate_Initial_Action</name>
         <label>Generate Initial Action</label>
-        <locationX>577</locationX>
-        <locationY>421</locationY>
+        <locationX>534</locationX>
+        <locationY>854</locationY>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Date_Time_of_Action__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>From_Date</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Treatment_Type__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Treatment_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Treatment_Type_0</elementReference>
+                <elementReference>Treatment_Type</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Description__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Description__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Action_Description</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Condition__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Condition__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Related_Condition_Selected</elementReference>
@@ -225,8 +226,8 @@
     <assignments>
         <name>Generate_Initial_Task</name>
         <label>Generate Initial Task</label>
-        <locationX>721</locationX>
-        <locationY>25</locationY>
+        <locationX>402</locationX>
+        <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionTask.Status</assignToReference>
             <operator>Assign</operator>
@@ -252,7 +253,7 @@
             <assignToReference>AnimalActionTask.WhatId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -276,8 +277,8 @@
     <assignments>
         <name>Generate_Task_in_Loop</name>
         <label>Generate Task in Loop</label>
-        <locationX>1440</locationX>
-        <locationY>875</locationY>
+        <locationX>754</locationX>
+        <locationY>2150</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionTask.ActivityDate</assignToReference>
             <operator>Assign</operator>
@@ -303,7 +304,7 @@
             <assignToReference>AnimalActionTask.WhatId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -376,8 +377,8 @@
     <decisions>
         <name>Calculate_Additional_Action</name>
         <label>Calculate Additional Action?</label>
-        <locationX>933</locationX>
-        <locationY>231</locationY>
+        <locationX>534</locationX>
+        <locationY>1550</locationY>
         <defaultConnector>
             <targetReference>Calculate_Next_Action_Date</targetReference>
         </defaultConnector>
@@ -401,8 +402,8 @@
     <decisions>
         <name>Create_Tasks</name>
         <label>Create Tasks?</label>
-        <locationX>1392</locationX>
-        <locationY>170</locationY>
+        <locationX>182</locationX>
+        <locationY>1790</locationY>
         <defaultConnector>
             <targetReference>Final_Screen</targetReference>
         </defaultConnector>
@@ -426,8 +427,8 @@
     <decisions>
         <name>Generate_Tasks</name>
         <label>Generate Tasks?</label>
-        <locationX>714</locationX>
-        <locationY>227</locationY>
+        <locationX>534</locationX>
+        <locationY>1094</locationY>
         <defaultConnector>
             <targetReference>Calculate_Additional_Action</targetReference>
         </defaultConnector>
@@ -451,8 +452,8 @@
     <decisions>
         <name>Generate_Tasks_Loop</name>
         <label>Generate Tasks?</label>
-        <locationX>1364</locationX>
-        <locationY>724</locationY>
+        <locationX>886</locationX>
+        <locationY>2030</locationY>
         <defaultConnector>
             <targetReference>Decrease_Time_Slots_Number</targetReference>
         </defaultConnector>
@@ -474,10 +475,11 @@
         </rules>
     </decisions>
     <decisions>
+        <description>If this is a Treatment get additional information</description>
         <name>Is_this_a_Treatment_Action</name>
         <label>Is this a Treatment Action?</label>
-        <locationX>235</locationX>
-        <locationY>672</locationY>
+        <locationX>534</locationX>
+        <locationY>398</locationY>
         <defaultConnector>
             <targetReference>Assign_Variables</targetReference>
         </defaultConnector>
@@ -498,14 +500,14 @@
             <label>Yes Treatment Selected</label>
         </rules>
     </decisions>
-    <description>Provides ability to create Schedules for the Animal Actions object</description>
+    <description>[Animal Shelter] Provides ability to create Schedules for the Animal Actions object</description>
     <dynamicChoiceSets>
         <name>Treatment_Types</name>
         <dataType>Picklist</dataType>
-        <displayField xsi:nil="true" />
-        <object xsi:nil="true" />
-        <picklistField>%%%NAMESPACED_ORG%%%Treatment_Type__c</picklistField>
-        <picklistObject>%%%NAMESPACED_ORG%%%Treatment__c</picklistObject>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Treatment_Type__c</picklistField>
+        <picklistObject>Treatment__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
@@ -541,7 +543,7 @@
     <formulas>
         <name>GenerateTaskSubject</name>
         <dataType>String</dataType>
-        <expression>{!Schedule_Picklist} + &quot; &quot; + {!Action_Selection}</expression>
+        <expression>{!Schedule_Picklist} + &quot; &quot; + {!Action_Selection} + &quot; Action for &quot; + {!recordId.Animal_Name__c}</expression>
     </formulas>
     <interviewLabel>Animal - Action Scheduler</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -555,7 +557,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -568,8 +570,8 @@
     <recordCreates>
         <name>Generate_Action_Records</name>
         <label>Generate Action Records</label>
-        <locationX>1400</locationX>
-        <locationY>352</locationY>
+        <locationX>182</locationX>
+        <locationY>1670</locationY>
         <connector>
             <targetReference>Create_Tasks</targetReference>
         </connector>
@@ -579,15 +581,17 @@
         <inputReference>AnimalActionRecords</inputReference>
     </recordCreates>
     <recordLookups>
+        <description>Get the Animal Action RecordType ID, based on the Users selection</description>
         <name>Get_Animal_Action_RecordType_ID</name>
         <label>Get Animal Action RecordType ID</label>
-        <locationX>160</locationX>
-        <locationY>425</locationY>
+        <locationX>534</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_this_a_Treatment_Action</targetReference>
         </connector>
         <faultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
@@ -602,7 +606,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
+                <stringValue>Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -614,8 +618,8 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1786</locationX>
-        <locationY>1010</locationY>
+        <locationX>490</locationX>
+        <locationY>1790</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -630,8 +634,8 @@
     <screens>
         <name>Final_Screen</name>
         <label>Final Screen</label>
-        <locationX>1640</locationX>
-        <locationY>344</locationY>
+        <locationX>182</locationX>
+        <locationY>2126</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -646,8 +650,8 @@
     <screens>
         <name>Schedule_Details</name>
         <label>Schedule Details</label>
-        <locationX>160</locationX>
-        <locationY>241</locationY>
+        <locationX>534</locationX>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -665,39 +669,67 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>From_Date</name>
-            <dataType>DateTime</dataType>
-            <defaultValue>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </defaultValue>
-            <fieldText>When is the first date and time of the action?</fieldText>
-            <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;Date of first treatment&lt;/p&gt;</helpText>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Schedule_Picklist</name>
-            <choiceReferences>Day_Choice</choiceReferences>
-            <choiceReferences>Week_Choice</choiceReferences>
-            <choiceReferences>Month_Choice</choiceReferences>
-            <choiceReferences>Years_Choice</choiceReferences>
-            <dataType>String</dataType>
-            <defaultSelectedChoiceReference>Day_Choice</defaultSelectedChoiceReference>
-            <fieldText>How often will this action need to be completed?</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Every_Number</name>
-            <dataType>Number</dataType>
-            <defaultValue>
-                <numberValue>1.0</numberValue>
-            </defaultValue>
-            <fieldText>For how long?</fieldText>
-            <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;Once you have set the recurrence (e.g. to Daily), how many days will the schedule run for (e.g. 6 would be 6 days)? &lt;/p&gt;</helpText>
-            <isRequired>true</isRequired>
-            <scale>0</scale>
+            <name>Schedule_Details_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Schedule_Details_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>From_Date</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>$Flow.CurrentDateTime</elementReference>
+                    </defaultValue>
+                    <fieldText>When is the first date and time of the action?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Date of first treatment&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Schedule_Details_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Schedule_Picklist</name>
+                    <choiceReferences>Day_Choice</choiceReferences>
+                    <choiceReferences>Week_Choice</choiceReferences>
+                    <choiceReferences>Month_Choice</choiceReferences>
+                    <choiceReferences>Years_Choice</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultSelectedChoiceReference>Day_Choice</defaultSelectedChoiceReference>
+                    <fieldText>How often will this action need to be completed?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Every_Number</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <numberValue>1.0</numberValue>
+                    </defaultValue>
+                    <fieldText>For how long?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Once you have set the recurrence (e.g. to Daily), how many days will the schedule run for (e.g. 6 would be 6 days)? &lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
             <name>Action_Header</name>
@@ -705,21 +737,49 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Action_Selection</name>
-            <choiceReferences>Treatment</choiceReferences>
-            <choiceReferences>Exercise</choiceReferences>
-            <choiceReferences>Nutrition</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Select the type of action for the animal:</fieldText>
-            <fieldType>RadioButtons</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Action_Description</name>
-            <fieldText>Provide a description for this action:</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
-            <isRequired>true</isRequired>
+            <name>Schedule_Details_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Schedule_Details_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Action_Selection</name>
+                    <choiceReferences>Treatment</choiceReferences>
+                    <choiceReferences>Exercise</choiceReferences>
+                    <choiceReferences>Nutrition</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Select the type of action for the animal:</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Schedule_Details_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Action_Description</name>
+                    <fieldText>Provide a description for this action:</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
             <name>Generate_Tasks_Text</name>
@@ -742,8 +802,8 @@
     <screens>
         <name>Treatment_Info</name>
         <label>Treatment Info</label>
-        <locationX>375</locationX>
-        <locationY>192</locationY>
+        <locationX>402</locationX>
+        <locationY>518</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -761,7 +821,7 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Treatment_Type_0</name>
+            <name>Treatment_Type</name>
             <choiceReferences>Treatment_Types</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Treatment Type</fieldText>
@@ -786,13 +846,13 @@
             <inputParameters>
                 <name>objectApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
+                    <stringValue>Animal_Action__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>fieldApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Condition__c</stringValue>
+                    <stringValue>Condition__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -812,18 +872,18 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>34</locationX>
-        <locationY>68</locationY>
+        <locationX>408</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Schedule_Details</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Call_Tasks_Subflow</name>
         <label>Call Tasks Subflow</label>
-        <locationX>1691</locationX>
-        <locationY>65</locationY>
+        <locationX>50</locationX>
+        <locationY>1910</locationY>
         <connector>
             <targetReference>Final_Screen</targetReference>
         </connector>
@@ -860,7 +920,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
+        <objectType>Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>AnimalActionRecords</name>
@@ -868,7 +928,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
+        <objectType>Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>AnimalActionRecordTypeId</name>
@@ -906,10 +966,11 @@
     </variables>
     <variables>
         <name>recordId</name>
-        <dataType>String</dataType>
+        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>Related_Condition_Selected</name>

@@ -270,7 +270,7 @@ INSERT INTO "Locations__c" VALUES(5,'0.0','','','2.0','False','Available','1.0',
 INSERT INTO "Locations__c" VALUES(6,'1.0','','','0.0','True','','1.0','2020-04-15','Single Animal','Pen 1','0128K000000Al9EQAS','','Allocated','','','7');
 INSERT INTO "Locations__c" VALUES(7,'0.0','','2020-10-09','4.0','False','Available','1.0','2020-04-15','Single Animal','Small Animals','0128K000000Al9AQAS','4.0','Available','','','1');
 INSERT INTO "Locations__c" VALUES(8,'1.0','','','0.0','False','','1.0','2020-04-15','Single Animal','Pen 3','0128K000000Al9EQAS','','Allocated','','','7');
-INSERT INTO "Locations__c" VALUES(9,'0.0','Bird','','0.0','False','','1.0','','Single Animal','Bert','0128K000000Al9BQAS','','Available','','','');
+INSERT INTO "Locations__c" VALUES(9,'0.0','Dog','','0.0','False','','1.0','','Single Animal','Bert','0128K000000Al9BQAS','','Available','','','');
 INSERT INTO "Locations__c" VALUES(10,'0.0','','','0.0','False','','1.0','2020-04-15','Single Animal','Pen 2','0128K000000Al9EQAS','','Available','','','7');
 INSERT INTO "Locations__c" VALUES(11,'0.0','','','0.0','False','','1.0','','Single Animal','Astros Animal Centre','0128K000000Al9CQAS','','Available','','5','');
 INSERT INTO "Locations__c" VALUES(12,'0.0','Cat;Dog','','0.0','False','','1.0','','Single Animal','Mr Benn','0128K000000Al9BQAS','','Available','7','','');

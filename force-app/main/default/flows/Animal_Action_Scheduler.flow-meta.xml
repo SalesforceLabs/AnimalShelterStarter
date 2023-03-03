@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
-        <locationX>886</locationX>
-        <locationY>1910</locationY>
+        <locationX>754</locationX>
+        <locationY>1574</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecords</assignToReference>
             <operator>Add</operator>
@@ -14,13 +14,13 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Generate_Tasks_Loop</targetReference>
+            <targetReference>Decrease_Time_Slots_Number</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Add_to_Collection_Initial</name>
         <label>Add to Collection</label>
-        <locationX>534</locationX>
+        <locationX>468</locationX>
         <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecords</assignToReference>
@@ -30,45 +30,29 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Generate_Tasks</targetReference>
+            <targetReference>Copy_1_of_Decrease_Time_Slots_Number</targetReference>
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_Tasks_to_Collection</name>
-        <label>Assign Tasks to Collection</label>
-        <locationX>754</locationX>
-        <locationY>2270</locationY>
+        <name>Assign_Animal_Record_Id</name>
+        <label>Assign Animal Record Id</label>
+        <locationX>50</locationX>
+        <locationY>2030</locationY>
         <assignmentItems>
-            <assignToReference>AnimalActionTaskCollection</assignToReference>
-            <operator>Add</operator>
+            <assignToReference>animalRecordId</assignToReference>
+            <operator>Assign</operator>
             <value>
-                <elementReference>AnimalActionTask</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Decrease_Time_Slots_Number</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_to_Task_Collection</name>
-        <label>Assign to Task Collection</label>
-        <locationX>402</locationX>
-        <locationY>1334</locationY>
-        <assignmentItems>
-            <assignToReference>AnimalActionTaskCollection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>AnimalActionTask</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Calculate_Additional_Action</targetReference>
+            <targetReference>Call_Tasks_Subflow</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_Variables</name>
         <label>Assign Variables</label>
-        <locationX>534</locationX>
+        <locationX>468</locationX>
         <locationY>734</locationY>
         <assignmentItems>
             <assignToReference>NumberOfTimeFrames</assignToReference>
@@ -91,8 +75,8 @@
     <assignments>
         <name>Calculate_Next_Action_Date</name>
         <label>Calculate Next Action Date</label>
-        <locationX>886</locationX>
-        <locationY>1670</locationY>
+        <locationX>754</locationX>
+        <locationY>1334</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionDate</assignToReference>
             <operator>Assign</operator>
@@ -105,10 +89,93 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Copy_1_of_Assign_Tasks_to_Collection</name>
+        <label>Copy 1 of Assign Tasks to Collection</label>
+        <locationX>138</locationX>
+        <locationY>1814</locationY>
+        <assignmentItems>
+            <assignToReference>AnimalActionTaskCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>AnimalActionTask</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Animal_Action_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Decrease_Time_Slots_Number</name>
+        <label>Copy 1 of Decrease Time Slots Number</label>
+        <locationX>468</locationX>
+        <locationY>1094</locationY>
+        <assignmentItems>
+            <assignToReference>NumberOfTimeFrames</assignToReference>
+            <operator>Subtract</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Calculate_Additional_Action</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Generate_Task_in_Loop</name>
+        <label>Copy 1 of Generate Task in Loop</label>
+        <locationX>138</locationX>
+        <locationY>1694</locationY>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Animal_Action_Records.Date_Time_of_Action__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GenerateTaskSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Animal_Action_Records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Action_Description</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Assign_Tasks_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Decrease_Time_Slots_Number</name>
         <label>Decrease Time Slots Number</label>
-        <locationX>886</locationX>
-        <locationY>2486</locationY>
+        <locationX>754</locationX>
+        <locationY>1694</locationY>
         <assignmentItems>
             <assignToReference>NumberOfTimeFrames</assignToReference>
             <operator>Subtract</operator>
@@ -124,8 +191,8 @@
     <assignments>
         <name>Generate_Action_Record</name>
         <label>Generate Action Record</label>
-        <locationX>886</locationX>
-        <locationY>1790</locationY>
+        <locationX>754</locationX>
+        <locationY>1454</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
@@ -175,7 +242,7 @@
     <assignments>
         <name>Generate_Initial_Action</name>
         <label>Generate Initial Action</label>
-        <locationX>534</locationX>
+        <locationX>468</locationX>
         <locationY>854</locationY>
         <assignmentItems>
             <assignToReference>AnimalActionRecord.Animal__c</assignToReference>
@@ -221,101 +288,6 @@
         </assignmentItems>
         <connector>
             <targetReference>Add_to_Collection_Initial</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Generate_Initial_Task</name>
-        <label>Generate Initial Task</label>
-        <locationX>402</locationX>
-        <locationY>1214</locationY>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Not Started</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.ActivityDate</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>From_Date</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Priority</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>High</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.WhatId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Description</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Action_Description</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Subject</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>GenerateTaskSubject</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Assign_to_Task_Collection</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Generate_Task_in_Loop</name>
-        <label>Generate Task in Loop</label>
-        <locationX>754</locationX>
-        <locationY>2150</locationY>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.ActivityDate</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>AnimalActionDate</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Not Started</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Subject</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>GenerateTaskSubject</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.WhatId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Description</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Action_Description</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Assign_Tasks_to_Collection</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -377,8 +349,8 @@
     <decisions>
         <name>Calculate_Additional_Action</name>
         <label>Calculate Additional Action?</label>
-        <locationX>534</locationX>
-        <locationY>1550</locationY>
+        <locationX>468</locationX>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>Calculate_Next_Action_Date</targetReference>
         </defaultConnector>
@@ -403,7 +375,7 @@
         <name>Create_Tasks</name>
         <label>Create Tasks?</label>
         <locationX>182</locationX>
-        <locationY>1790</locationY>
+        <locationY>1454</locationY>
         <defaultConnector>
             <targetReference>Final_Screen</targetReference>
         </defaultConnector>
@@ -419,57 +391,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Call_Tasks_Subflow</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Generate_Tasks</name>
-        <label>Generate Tasks?</label>
-        <locationX>534</locationX>
-        <locationY>1094</locationY>
-        <defaultConnector>
-            <targetReference>Calculate_Additional_Action</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Generate_Tasks_and_Treatment_Records</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Generate_Initial_Task</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Generate_Tasks_Loop</name>
-        <label>Generate Tasks?</label>
-        <locationX>886</locationX>
-        <locationY>2030</locationY>
-        <defaultConnector>
-            <targetReference>Decrease_Time_Slots_Number</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_MoreTasks</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Generate_Tasks_and_Treatment_Records</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Generate_Task_in_Loop</targetReference>
+                <targetReference>Loop_Through_Animal_Action_Records</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -478,7 +400,7 @@
         <description>If this is a Treatment get additional information</description>
         <name>Is_this_a_Treatment_Action</name>
         <label>Is this a Treatment Action?</label>
-        <locationX>534</locationX>
+        <locationX>468</locationX>
         <locationY>398</locationY>
         <defaultConnector>
             <targetReference>Assign_Variables</targetReference>
@@ -548,6 +470,20 @@
     <interviewLabel>Animal - Action Scheduler</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Action Scheduler</label>
+    <loops>
+        <name>Loop_Through_Animal_Action_Records</name>
+        <label>Loop Through Animal Action Records</label>
+        <locationX>50</locationX>
+        <locationY>1574</locationY>
+        <collectionReference>AnimalActionRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Copy_1_of_Generate_Task_in_Loop</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_Animal_Record_Id</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -571,7 +507,7 @@
         <name>Generate_Action_Records</name>
         <label>Generate Action Records</label>
         <locationX>182</locationX>
-        <locationY>1670</locationY>
+        <locationY>1334</locationY>
         <connector>
             <targetReference>Create_Tasks</targetReference>
         </connector>
@@ -584,7 +520,7 @@
         <description>Get the Animal Action RecordType ID, based on the Users selection</description>
         <name>Get_Animal_Action_RecordType_ID</name>
         <label>Get Animal Action RecordType ID</label>
-        <locationX>534</locationX>
+        <locationX>468</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -619,7 +555,7 @@
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>490</locationX>
-        <locationY>1790</locationY>
+        <locationY>1454</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -635,7 +571,7 @@
         <name>Final_Screen</name>
         <label>Final Screen</label>
         <locationX>182</locationX>
-        <locationY>2126</locationY>
+        <locationY>2366</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -650,7 +586,7 @@
     <screens>
         <name>Schedule_Details</name>
         <label>Schedule Details</label>
-        <locationX>534</locationX>
+        <locationX>468</locationX>
         <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -802,7 +738,7 @@
     <screens>
         <name>Treatment_Info</name>
         <label>Treatment Info</label>
-        <locationX>402</locationX>
+        <locationX>336</locationX>
         <locationY>518</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -872,7 +808,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>408</locationX>
+        <locationX>342</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Schedule_Details</targetReference>
@@ -883,7 +819,7 @@
         <name>Call_Tasks_Subflow</name>
         <label>Call Tasks Subflow</label>
         <locationX>50</locationX>
-        <locationY>1910</locationY>
+        <locationY>2150</locationY>
         <connector>
             <targetReference>Final_Screen</targetReference>
         </connector>
@@ -892,6 +828,12 @@
             <name>ActionTasks</name>
             <value>
                 <elementReference>AnimalActionTaskCollection</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>animalRecordId</name>
+            <value>
+                <elementReference>animalRecordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -952,6 +894,13 @@
         <isInput>false</isInput>
         <isOutput>true</isOutput>
         <objectType>Task</objectType>
+    </variables>
+    <variables>
+        <name>animalRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>NumberOfTimeFrames</name>

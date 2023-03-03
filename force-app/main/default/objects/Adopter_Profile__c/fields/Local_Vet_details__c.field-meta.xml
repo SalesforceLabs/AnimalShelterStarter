@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Local_Vet_details__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>If possible select the name of the local vet</inlineHelpText>
+    <label>Local Vet details</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Adopter Profiles</relationshipLabel>
+    <relationshipName>Adopter_Profiles</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

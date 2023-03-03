@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Animal__c</field>
+        <formula>Assessment__r.Animal__r.Id</formula>
+    </fieldOverrides>
     <label>New Condition</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>

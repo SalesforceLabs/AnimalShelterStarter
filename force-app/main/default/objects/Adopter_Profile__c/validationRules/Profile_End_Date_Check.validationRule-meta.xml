@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profile_End_Date_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>Profile_End_Date__c &lt; Profile_Start_Date__c</errorConditionFormula>
+    <errorDisplayField>Profile_End_Date__c</errorDisplayField>
+    <errorMessage>The Profile End Date cannot be earlier than the Profile Start Date</errorMessage>
+</ValidationRule>

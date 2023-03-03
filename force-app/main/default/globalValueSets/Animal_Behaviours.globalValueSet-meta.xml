@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Anxious</fullName>
+        <default>false</default>
+        <label>Anxious</label>
+    </customValue>
+    <customValue>
+        <fullName>Bad Recall</fullName>
+        <default>false</default>
+        <label>Bad Recall</label>
+    </customValue>
+    <customValue>
+        <fullName>Good Recall</fullName>
+        <default>false</default>
+        <label>Good Recall</label>
+    </customValue>
+    <customValue>
+        <fullName>Good with Children</fullName>
+        <default>false</default>
+        <label>Good with Children</label>
+    </customValue>
+    <customValue>
+        <fullName>Good with other species</fullName>
+        <default>false</default>
+        <label>Good with other species</label>
+    </customValue>
+    <customValue>
+        <fullName>Good with same species</fullName>
+        <default>false</default>
+        <label>Good with same species</label>
+    </customValue>
+    <customValue>
+        <fullName>Lead Reactive</fullName>
+        <default>false</default>
+        <label>Lead Reactive</label>
+    </customValue>
+    <customValue>
+        <fullName>Pulls on Lead</fullName>
+        <default>false</default>
+        <label>Pulls on Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>Reactive</fullName>
+        <default>false</default>
+        <label>Reactive</label>
+    </customValue>
+    <customValue>
+        <fullName>Resource Guarding</fullName>
+        <default>false</default>
+        <label>Resource Guarding</label>
+    </customValue>
+    <customValue>
+        <fullName>Separation Anxiety</fullName>
+        <default>false</default>
+        <label>Separation Anxiety</label>
+    </customValue>
+    <customValue>
+        <fullName>Aggressive</fullName>
+        <default>false</default>
+        <label>Aggressive</label>
+    </customValue>
+    <customValue>
+        <fullName>Cannot be held</fullName>
+        <default>false</default>
+        <label>Cannot be held</label>
+    </customValue>
+    <customValue>
+        <fullName>Happy being handled</fullName>
+        <default>false</default>
+        <label>Happy being handled</label>
+    </customValue>
+    <description>[Animal Shelter] A list of behaviours associated with animals</description>
+    <masterLabel>Animal Behaviours</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

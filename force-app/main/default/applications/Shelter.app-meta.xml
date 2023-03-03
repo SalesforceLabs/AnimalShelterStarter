@@ -24,19 +24,23 @@
     <navType>Console</navType>
     <tabs>standard-home</tabs>
     <tabs>Animal__c</tabs>
-    <tabs>Adoption__c</tabs>
     <tabs>Animal_Action__c</tabs>
-    <tabs>Locations__c</tabs>
-    <tabs>Medicine__c</tabs>
-    <tabs>Breed__c</tabs>
-    <tabs>standard-Task</tabs>
+    <tabs>Adoption__c</tabs>
+    <tabs>Adopter_Profile__c</tabs>
     <tabs>Capture</tabs>
     <tabs>Capture_Release</tabs>
+    <tabs>standard-Task</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>Medicine__c</tabs>
+    <tabs>Locations__c</tabs>
+    <tabs>Breed__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Shelter_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Adopter_Profile__c</tab>
+        </mappings>
         <mappings>
             <tab>Adoption__c</tab>
         </mappings>

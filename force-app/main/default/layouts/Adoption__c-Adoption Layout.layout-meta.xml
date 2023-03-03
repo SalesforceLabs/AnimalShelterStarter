@@ -30,11 +30,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Has_Local_Vet__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Total_Adults__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Type_of_Accommodation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Permission_to_House_Animal__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -73,6 +81,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Safe_Outside_Area__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Facilities_Available__c</field>
             </layoutItems>
             <layoutItems>
@@ -86,6 +98,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Location_of_Animal_Night_time__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Animals__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Animals_of_same_Species__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -302,7 +322,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h3z00000rt2cW</masterLabel>
+        <masterLabel>00h7g000003DfrQ</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

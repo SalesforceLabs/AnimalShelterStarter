@@ -5,5 +5,6 @@
     <fields>Animal__c</fields>
     <fields>Assessment_Date_Time__c</fields>
     <fields>Assessment_Type__c</fields>
+    <fields>Category__c</fields>
     <label>Default Assessment View</label>
 </CompactLayout>

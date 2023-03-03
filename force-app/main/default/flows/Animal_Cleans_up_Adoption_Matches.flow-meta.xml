@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>[Animal] - Removes Adoption Matches when the animal is either status changes from Available for Adoption</description>
+    <environments>Default</environments>
+    <interviewLabel>Animal - Cleans up Adoption Matches {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Animal - Cleans up Adoption Matches</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_Clean_Up_Subflow</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Available for Adoption</stringValue>
+            </value>
+        </filters>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_Clean_Up_Subflow</name>
+        <label>Call Clean Up Subflow</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <flowName>Adopter_Match_clean_up_Subflow</flowName>
+        <inputAssignments>
+            <name>animalRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

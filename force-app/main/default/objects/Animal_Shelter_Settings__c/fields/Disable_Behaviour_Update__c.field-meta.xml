@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disable_Behaviour_Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>[Animal Shelter] By default when animal behaviours are updated on an assessment record the animal record is updated to reflect the new statuses.  Checking this setting disables the default behaviour</description>
+    <externalId>false</externalId>
+    <label>Disable Behaviour Update</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

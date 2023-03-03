@@ -154,14 +154,32 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Type_of_Accommodation__c</fieldItem>
                 <identifier>RecordType_of_Accommodation__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Local_Vet__c</fieldItem>
-                <identifier>RecordLocal_Vet__cField</identifier>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Safe_Outside_Area__c</fieldItem>
+                <identifier>RecordSafe_Outside_Area_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Permission_to_House_Animal__c</fieldItem>
+                <identifier>RecordPermission_to_House_Animal_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-5616a206-522c-4eea-ac7a-ff406bebe610</name>
@@ -170,12 +188,20 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Total_Adults__c</fieldItem>
                 <identifier>RecordTotal_Adults__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Total_Children__c</fieldItem>
                 <identifier>RecordTotal_Children__cField</identifier>
             </fieldInstance>
@@ -210,35 +236,101 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Current_Daytime_Arrangements__c</fieldItem>
-                <identifier>RecordCurrent_Daytime_Arrangements__cField</identifier>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Has_Local_Vet__c</fieldItem>
+                <identifier>RecordHas_Local_Vet_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-5734ac12-67c7-4273-865b-1993bad5a9fd</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Local_Vet__c</fieldItem>
+                <identifier>RecordLocal_Vet__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-a0bcf767-a957-4668-8f8b-686062fcb158</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-5734ac12-67c7-4273-865b-1993bad5a9fd</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-a0bcf767-a957-4668-8f8b-686062fcb158</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-c5f5d728-11d7-4531-b0f3-5b8f05c3f309</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Location_of_Animal_Daytime__c</fieldItem>
                 <identifier>RecordLocation_of_Animal_Daytime__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Current_Daytime_Arrangements__c</fieldItem>
+                <identifier>RecordCurrent_Daytime_Arrangements__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-0a238878-03b7-40fc-919d-b4d15a0f37dc</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Location_of_Animal_Night_time__c</fieldItem>
                 <identifier>RecordLocation_of_Animal_Night_time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Facilities_Available__c</fieldItem>
                 <identifier>RecordFacilities_Available__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Other_Pets_Animals__c</fieldItem>
-                <identifier>RecordOther_Pets_Animals__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-0a238878-03b7-40fc-919d-b4d15a0f37dc</name>
+        <name>Facet-bd74965d-ab33-418c-a942-d55f93ae8c88</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -252,7 +344,79 @@
                 <identifier>flexipage_column5</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-bd74965d-ab33-418c-a942-d55f93ae8c88</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column14</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-5ef94c6b-288a-4c1c-a3e9-e41c27ed1038</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Other_Animals__c</fieldItem>
+                <identifier>RecordOther_Animals_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Other_Animals_of_same_Species__c</fieldItem>
+                <identifier>RecordOther_Animals_of_same_Species_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b34acb4e-44a3-423b-a20f-d03c488395bf</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Other_Pets_Animals__c</fieldItem>
+                <identifier>RecordOther_Pets_Animals_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-3909d9dc-cdc2-48e4-9f9e-823078f2a22e</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b34acb4e-44a3-423b-a20f-d03c488395bf</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-3909d9dc-cdc2-48e4-9f9e-823078f2a22e</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e7419ab3-98ff-4133-a822-9c735c693255</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -274,6 +438,20 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
+                    <value>Facet-c5f5d728-11d7-4531-b0f3-5b8f05c3f309</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Animal Care Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
                     <value>Facet-5ef94c6b-288a-4c1c-a3e9-e41c27ed1038</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -282,6 +460,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e7419ab3-98ff-4133-a822-9c735c693255</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Existing Animals</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection8</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-ddac90db-0116-47d9-88ec-0ee0446edffa</name>

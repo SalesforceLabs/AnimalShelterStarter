@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>[Animal Shelter] - Movement trigger, calls Length of Stay Subflow</description>
+    <environments>Default</environments>
+    <interviewLabel>Movement - Movement Create/Update Trigger {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Movement - Movement Create/Update Trigger</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Gets the animals detail from the related Movement record Id</description>
+        <name>Get_Animal_ID_from_Movement_Record</name>
+        <label>Get Animal ID from Movement Record</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Call_Length_of_Stay_Subflow</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Animal_ID_from_Movement_Record</targetReference>
+        </connector>
+        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_Length_of_Stay_Subflow</name>
+        <label>Call Length of Stay Subflow</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <flowName>Animal_Length_of_Stay_Calculation</flowName>
+        <inputAssignments>
+            <name>varAnimalId</name>
+            <value>
+                <elementReference>Get_Animal_ID_from_Movement_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

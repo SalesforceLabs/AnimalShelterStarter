@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What3Words_API_Key__c</fullName>
+    <description>[Animal Shelter] API Key for What3Word integration</description>
+    <externalId>false</externalId>
+    <inlineHelpText>API Key for What3Word integration</inlineHelpText>
+    <label>What3Words API Key</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

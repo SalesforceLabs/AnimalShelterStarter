@@ -1,0 +1,89 @@
+<template>
+    <template if:true={settings_data}>
+        <lightning-card>
+
+            <lightning-tabset variant="vertical">
+                <lightning-tab label="Animal">
+                    <div style="display: flex; flex-direction: column;">
+                        <lightning-layout pull-to-boundary="medium">
+                            <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                                <p><b>Prefix Animal Name Setting</b></p>
+                                <p>Specify a prefix for animal names.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                                <div class="slds-form-element__control slds-float_right">
+                                    <lightning-input label="Animal Name Prefix" type="text"
+                                        value={settings_data.Default_Animal_Name_Prefix__c} onchange={handleTextChange}
+                                        data-field="Default_Animal_Name_Prefix__c"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <hr />
+                        <lightning-layout pull-to-boundary="medium">
+                            <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                                <p><b>Auto Generate Animal Name Setting</b></p>
+                                <p>Turn this on to generate an animal name.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                                <div class="slds-form-element__control slds-float_right">
+                                    <lightning-input type="toggle" label="Set Default Name"
+                                        checked={settings_data.Default_Animal_Name__c} onchange={handleBooleanChange}
+                                        data-field="Default_Animal_Name__c"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-tab>
+                <lightning-tab label="Integrations">
+                    <lightning-layout pull-to-boundary="medium">
+                        <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                            <p><b>MicroChip API Token</b></p>
+                            <p>In 2023, we added the MicroChip Lookup Component which uses a service provided by <a
+                                    href="https://chipndoodle.com/" target="_blank">chipndoodle.com</a>. Please enter
+                                your API token in the field opposite.</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                            <div class="slds-form-element__control slds-float_right">
+                                <lightning-input label="API Token" type="text"
+                                    value={settings_data.microchip_api_Token__c} onchange={handleTextChange}
+                                    data-field="microchip_api_Token__c"></lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <hr />
+                    <lightning-layout pull-to-boundary="medium">
+                        <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                            <p><b>What 3 Words</b></p>
+                            <p>In 2023, we added the ability to use what3words to define locations <a
+                                    href="https://what3words.com/" target="_blank">what3words.com</a>. Please enter
+                                your API token in the field opposite.</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                            <div class="slds-form-element__control slds-float_right">
+                                <lightning-input label="API Token" type="text"
+                                    value={settings_data.What3Words_API_Key__c} onchange={handleTextChange}
+                                    data-field="What3Words_API_Key__c"></lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+                <lightning-tab label="Other">
+                    <lightning-layout pull-to-boundary="medium">
+                        <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                            <p><b>Breeds Migration Complete Setting</b></p>
+                            <p>In 2022 we moved away from the previous picklist options for Breeds. This checkbox should
+                                be checked when this has been completed and should be checked by default.</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                            <div class="slds-form-element__control slds-float_right">
+                                <lightning-input type="toggle" label="Breeds Migration Complete"
+                                    checked={settings_data.Breeds_Migration_Complete__c} onchange={handleBooleanChange}
+                                    data-field="Breeds_Migration_Complete__c"></lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+            </lightning-tabset>
+        </lightning-card>
+    </template>
+</template>

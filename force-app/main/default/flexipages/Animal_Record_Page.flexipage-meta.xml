@@ -1358,7 +1358,7 @@
                             <value>Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>RECORDTYPE</value>
+                            <value>Date_Time_Action_Completed__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -1431,7 +1431,7 @@
                             <value>Action_Completed__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>RECORDTYPE</value>
+                            <value>Date_Time_Action_Completed__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -1498,10 +1498,13 @@
                             <value>Description__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Date_Time_Action_Completed__c</value>
+                            <value>Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Action_Completed__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Date_Time_Action_Completed__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
@@ -30,7 +30,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Copy_1_of_Decrease_Time_Slots_Number</targetReference>
+            <targetReference>First_Decrease_Time_Slots_Number</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -73,6 +73,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Build_Tasks</name>
+        <label>Build Tasks</label>
+        <locationX>138</locationX>
+        <locationY>1814</locationY>
+        <assignmentItems>
+            <assignToReference>AnimalActionTaskCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>AnimalActionTask</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Animal_Action_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Calculate_Next_Action_Date</name>
         <label>Calculate Next Action Date</label>
         <locationX>754</locationX>
@@ -89,89 +105,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Copy_1_of_Assign_Tasks_to_Collection</name>
-        <label>Copy 1 of Assign Tasks to Collection</label>
-        <locationX>138</locationX>
-        <locationY>1814</locationY>
-        <assignmentItems>
-            <assignToReference>AnimalActionTaskCollection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>AnimalActionTask</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_Animal_Action_Records</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Copy_1_of_Decrease_Time_Slots_Number</name>
-        <label>Copy 1 of Decrease Time Slots Number</label>
-        <locationX>468</locationX>
-        <locationY>1094</locationY>
-        <assignmentItems>
-            <assignToReference>NumberOfTimeFrames</assignToReference>
-            <operator>Subtract</operator>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Calculate_Additional_Action</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Copy_1_of_Generate_Task_in_Loop</name>
-        <label>Copy 1 of Generate Task in Loop</label>
-        <locationX>138</locationX>
-        <locationY>1694</locationY>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.ActivityDate</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Animal_Action_Records.Date_Time_of_Action__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Not Started</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Subject</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>GenerateTaskSubject</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.WhatId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Animal_Action_Records.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Description</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Action_Description</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AnimalActionTask.Priority</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Normal</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Copy_1_of_Assign_Tasks_to_Collection</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Decrease_Time_Slots_Number</name>
         <label>Decrease Time Slots Number</label>
         <locationX>754</locationX>
@@ -185,6 +118,22 @@
         </assignmentItems>
         <connector>
             <isGoTo>true</isGoTo>
+            <targetReference>Calculate_Additional_Action</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>First_Decrease_Time_Slots_Number</name>
+        <label>First  - Decrease Time Slots Number</label>
+        <locationX>468</locationX>
+        <locationY>1094</locationY>
+        <assignmentItems>
+            <assignToReference>NumberOfTimeFrames</assignToReference>
+            <operator>Subtract</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
             <targetReference>Calculate_Additional_Action</targetReference>
         </connector>
     </assignments>
@@ -288,6 +237,57 @@
         </assignmentItems>
         <connector>
             <targetReference>Add_to_Collection_Initial</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Generate_Task_Details</name>
+        <label>Generate Task Details</label>
+        <locationX>138</locationX>
+        <locationY>1694</locationY>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Animal_Action_Records.Date_Time_of_Action__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GenerateTaskSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Animal_Action_Records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Action_Description</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AnimalActionTask.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_Tasks</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -478,7 +478,7 @@
         <collectionReference>AnimalActionRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Copy_1_of_Generate_Task_in_Loop</targetReference>
+            <targetReference>Generate_Task_Details</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Assign_Animal_Record_Id</targetReference>
@@ -673,49 +673,21 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Schedule_Details_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Schedule_Details_Section2_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Action_Selection</name>
-                    <choiceReferences>Treatment</choiceReferences>
-                    <choiceReferences>Exercise</choiceReferences>
-                    <choiceReferences>Nutrition</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>Select the type of action for the animal:</fieldText>
-                    <fieldType>RadioButtons</fieldType>
-                    <isRequired>true</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Schedule_Details_Section2_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Action_Description</name>
-                    <fieldText>Provide a description for this action:</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
-                    <isRequired>true</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <name>Action_Selection</name>
+            <choiceReferences>Treatment</choiceReferences>
+            <choiceReferences>Exercise</choiceReferences>
+            <choiceReferences>Nutrition</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Select the type of action for the animal:</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Action_Description</name>
+            <fieldText>Provide a description for this action:</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Generate_Tasks_Text</name>
@@ -814,7 +786,7 @@
             <targetReference>Schedule_Details</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Call_Tasks_Subflow</name>
         <label>Call Tasks Subflow</label>

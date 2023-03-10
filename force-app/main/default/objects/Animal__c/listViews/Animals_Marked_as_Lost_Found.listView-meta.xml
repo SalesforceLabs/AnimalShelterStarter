@@ -3,8 +3,8 @@
     <fullName>Animals_Marked_as_Lost_Found</fullName>
     <columns>NAME</columns>
     <columns>Animal_Name__c</columns>
-    <columns>Type__c</columns>
-    <columns>Breed__c</columns>
+    <columns>TypeFromBreeds__c</columns>
+    <columns>Species__c</columns>
     <columns>Age_Years__c</columns>
     <columns>Calculated_Age__c</columns>
     <columns>Animal_Status__c</columns>

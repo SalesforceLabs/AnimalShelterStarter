@@ -115,9 +115,6 @@
                 <fields>
                     <name>Treatment_Header_Text</name>
                 </fields>
-                <fields>
-                    <name>Treatment_Type_0</name>
-                </fields>
                 <name>Treatment_Info</name>
             </screens>
         </flows>

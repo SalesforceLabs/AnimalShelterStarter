@@ -35,6 +35,7 @@
     <tabs>Medicine__c</tabs>
     <tabs>Locations__c</tabs>
     <tabs>Breed__c</tabs>
+    <tabs>Animal_Shelter_Settings</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Shelter_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -46,6 +47,9 @@
         </mappings>
         <mappings>
             <tab>Animal_Action__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Animal_Shelter_Settings</tab>
         </mappings>
         <mappings>
             <tab>Animal__c</tab>

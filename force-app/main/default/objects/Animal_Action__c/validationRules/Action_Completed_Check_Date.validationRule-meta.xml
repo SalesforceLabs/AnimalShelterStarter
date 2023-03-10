@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Completed_Check_Date</fullName>
+    <active>true</active>
+    <description>When the Action Completed checkbox is true, Action Completed date must be entered</description>
+    <errorConditionFormula>AND( Action_Completed__c, ISNULL( Date_Time_Action_Completed__c ))</errorConditionFormula>
+    <errorDisplayField>Date_Time_Action_Completed__c</errorDisplayField>
+    <errorMessage>The Date/Time of the Completed Action must be entered, if Action is marked as complete</errorMessage>
+</ValidationRule>

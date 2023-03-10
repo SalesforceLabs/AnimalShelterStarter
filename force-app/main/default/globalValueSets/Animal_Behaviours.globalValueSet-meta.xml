@@ -70,6 +70,7 @@
         <default>false</default>
         <label>Happy being handled</label>
     </customValue>
+    <description>[Animal Shelter] A list of behaviours associated with animals</description>
     <masterLabel>Animal Behaviours</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

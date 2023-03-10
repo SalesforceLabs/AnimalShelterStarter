@@ -1,0 +1,119 @@
+<template>
+    <template if:true={settings_data}>
+        <lightning-card>
+
+            <div class="slds-var-p-around_medium ">
+                <p class="slds-text-body_regular slds-var-m-bottom_medium">Here you can make changes to the default settings which Animal Shelter Starter uses. Note: Settings are saved when they are changed.</p>
+            
+
+            <lightning-tabset variant="vertical">
+                <lightning-tab label="Animal">
+                    <div style="display: flex; flex-direction: column;">
+                        <lightning-layout>
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <p><b>Prefix Animal Name Setting</b></p>
+                                <p>Set a prefix for the Animal Name if using the default animal name creation, i.e. Site name</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <div class="slds-form-element__control slds-float_right">
+                                    <lightning-input label="Animal Name Prefix" type="text"
+                                        value={settings_data.Default_Animal_Name_Prefix__c} onchange={handleTextChange}
+                                        data-field="Default_Animal_Name_Prefix__c"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <hr />
+                        <lightning-layout>
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <p><b>Auto Generate Animal Name Setting</b></p>
+                                <p>Enable this setting to auto-generate animal names based on the record name.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <div class="slds-form-element__control slds-float_right">
+                                    <lightning-input type="toggle" label="Set Default Name"
+                                        checked={settings_data.Default_Animal_Name__c} onchange={handleBooleanChange}
+                                        data-field="Default_Animal_Name__c"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-tab>
+                <lightning-tab label="Animal Adoption">
+                    <lightning-layout pull-to-boundary="medium">
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <p><b>Adoption Auto-Matching</b></p>
+                            <p>When enabled, Animal Shelter Starter will auto-generate potential matches between animals and potential adopters.</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <div class="slds-form-element__control slds-float_right">
+                                <lightning-input type="toggle" label="Enable Auto-Matching"
+                                        checked={settings_data.Enable_Auto_Match__c} onchange={handleBooleanChange}
+                                        data-field="Enable_Auto_Match__c"></lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+                <lightning-tab label="Animal Assessments">
+                    <lightning-layout pull-to-boundary="medium">
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <p><b>Auto Behaviour Updates</b></p>
+                            <p>By default when animal behaviours are updated on an assessment record the animal record is updated to reflect the new statuses. Checking this setting disables the default behaviour</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <div class="slds-form-element__control slds-float_right">
+                                <lightning-input type="toggle" label="Disable Behaviour Sync"
+                                        checked={settings_data.Disable_Behaviour_Update__c} onchange={handleBooleanChange}
+                                        data-field="Disable_Behaviour_Update__c"></lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+                <lightning-tab label="Integrations">
+                    <lightning-layout multiple-rows="false">
+                        <lightning-layout-item padding="around-small"  size="6">
+                            <p><b>MicroChip API Token</b></p>
+                            <p>In 2023, we added the MicroChip Lookup Component which uses a service provided by <a
+                                    href="https://chipndoodle.com/" target="_blank">chipndoodle.com</a>. Please enter
+                                your API token in the field opposite.</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="6">
+                                <lightning-input label="API Token" type="text"
+                                    value={settings_data.microchip_api_Token__c} onchange={handleTextChange}
+                                    data-field="microchip_api_Token__c"></lightning-input>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <hr />
+                    <lightning-layout multiple-rows="false">
+                            <lightning-layout-item padding="around-small" size="6">
+                                <p><b>What 3 Words</b></p>
+                                <p>In 2023, we added the ability to use what3words to define locations <a
+                                        href="https://what3words.com/" target="_blank">what3words.com</a>. Please enter
+                                    your API token in the field opposite.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small"  size="6">
+                                    <lightning-input label="API Token" type="text" value={settings_data.What3Words_API_Key__c} onchange={handleTextChange}
+                                        data-field="What3Words_API_Key__c"></lightning-input>
+                            </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+                <lightning-tab label="Other">
+                    <lightning-layout pull-to-boundary="medium">
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <p><b>Breeds Migration Complete Setting</b></p>
+                            <p>In 2022 we moved away from the previous picklist options for Breeds. This checkbox should
+                                be checked when this has been completed and should be checked by default.</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <div class="slds-form-element__control slds-float_right">
+                                <lightning-input type="toggle" label="Breeds Migration Complete"
+                                    checked={settings_data.Breeds_Migration_Complete__c} onchange={handleBooleanChange}
+                                    data-field="Breeds_Migration_Complete__c"></lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+            </lightning-tabset>
+        </div>
+        </lightning-card>
+    </template>
+</template>

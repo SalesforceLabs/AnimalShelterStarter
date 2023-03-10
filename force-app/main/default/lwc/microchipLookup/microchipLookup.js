@@ -1,5 +1,6 @@
 import { LightningElement, track, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import MC_FIELD from '@salesforce/schema/%%%NAMESPACED_ORG%%%Animal__c.%%%NAMESPACED_ORG%%%Microchip__c';
 import getCustomSettings from '@salesforce/apex/AnimalShelterGetCustomSettings.getCustomSettings';
 import LightningModal from 'lightning/modal';
@@ -23,6 +24,7 @@ export default class MicrochipLookup extends LightningElement {
     @track isLoading = false;
     @track resultObject;
     @api recordId;
+    @track errorMessage;
 
     @track mc_num;
 
@@ -47,7 +49,7 @@ export default class MicrochipLookup extends LightningElement {
             if (this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Microchip__c.value) {
                 this.mc_num = this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Microchip__c.value;
             } else {
-                this.mc_num = 'No MicroChip Found. Please Update the record.'
+                this.mc_num = 'No MicroChip Number Found. Please Update the record.'
             }
         }
     }
@@ -58,59 +60,81 @@ export default class MicrochipLookup extends LightningElement {
     }
 
     handleOkay() {
-        //this.close('okay');
         this.isModalOpen = false;
     }
 
     getResults() {
-        console.log("Starting")
-        console.log(this.myCustomSettings)
-        //token = this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c;
-        if (this.mc_num == 'No MicroChip Found. Please Update the record.') {
+
+        this.errorMessage = ""
+        
+        // Ensure API Key has been set
+        if (!this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c){
             this.resultsFound = false;
             this.isLoading = false;
-        } else {
-            this.resultsFound = false;
-            this.isLoading = true;
-            const REC_BODY = {
-                token: this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c,
-                uid: this.mc_num,
-            };
-            fetch(ENDPOINT, {
-                method: POST_METHOD,
-                headers: {
-                    'Content-Type': CONTENT_TYPE,
-                },
-                body: JSON.stringify(REC_BODY)
-            }).then((response) => {
-                //console.log(response);
-
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    this.isLoading = false;
-                    let message = 'Unknown error';
-                    if (Array.isArray(response.body)) {
-                        message = response.body.map(e => e.message).join(', ');
-                    } else if (typeof response.body.message === 'string') {
-                        message = response.body.message;
-                    }
-                    this.dispatchEvent(
-                        new ShowToastEvent({
-                            title: 'Error Loading MicroChip Information',
-                            message,
-                            variant: 'error',
-                        }),
-                    );
-                }
-            }).then(recDetails => {
-                this.isLoading = false;
-                this.resultsFound = true;
-                this.resultObject = recDetails;
-            });
+            this.errorMessage = "No API Token found. Please update your API token in Animal Shelter Settings > Integration.";
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Error Loading MicroChip Information',
+                    message: "Missing API Key. Please enter the API key in the Animal Shelter Settings within the Integration tab. ",
+                    variant: 'error',
+                }),
+            );
+            return;
         }
 
 
+        // Ensure there is a MicroChip Number
+        if (!this.mc_num || this.mc_num == "No MicroChip Number Found. Please Update the record."){
+            this.resultsFound = false;
+            this.isLoading = false;
+            this.errorMessage = "No MicroChip Number Found. Please Update the record."
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: "No Microchip Information",
+                    message: 'No MicroChip Information found on the record. Ensure that the Microchip Number or Tag field has been populated.',
+                    variant: 'error',
+                }),
+            );
+            return;
+        }
+
+        // Providing we have values to run the featch, we can now proceed with the lookup
+        this.resultsFound = false;
+        this.isLoading = true;
+        const REC_BODY = {
+            token: this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c,
+            uid: this.mc_num,
+        };
+        fetch(ENDPOINT, {
+            method: POST_METHOD,
+            headers: {
+                'Content-Type': CONTENT_TYPE,
+            },
+            body: JSON.stringify(REC_BODY)
+        }).then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                this.isLoading = false;
+                let message = 'Unknown error';
+                if (Array.isArray(response.body)) {
+                    message = response.body.map(e => e.message).join(', ');
+                } else if (typeof response.body.message === 'string') {
+                    message = response.body.message;
+                }
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Error Loading MicroChip Information',
+                        message,
+                        variant: 'error',
+                    }),
+                );
+            }
+        }).then(recDetails => {
+            this.isLoading = false;
+            this.resultsFound = true;
+            this.resultObject = recDetails;
+        });
 
     }
 

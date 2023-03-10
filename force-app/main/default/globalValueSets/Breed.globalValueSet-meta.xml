@@ -1670,7 +1670,7 @@
         <default>false</default>
         <label>Sugar Glider</label>
     </customValue>
-    <description>Breed of Animal which should be used with the Animal Type field when added to records.</description>
-    <masterLabel>Breed</masterLabel>
+    <description>[Animal Shelter] Breed of Animal - Not used post version 1.12</description>
+    <masterLabel>Breed (Legacy)</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

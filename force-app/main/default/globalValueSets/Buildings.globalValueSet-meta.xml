@@ -10,7 +10,7 @@
         <default>false</default>
         <label>Block B</label>
     </customValue>
-    <description>Buildings where animals are housed</description>
-    <masterLabel>Buildings</masterLabel>
+    <description>[Animal Shelter] - NOT USED - Buildings where animals are housed</description>
+    <masterLabel>Buildings (Legacy)</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

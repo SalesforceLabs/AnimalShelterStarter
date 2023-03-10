@@ -8,6 +8,24 @@
         <type>Flexipage</type>
         <pageOrSobjectType>standard-home</pageOrSobjectType>
     </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Animal_Shelter_Contact_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Animal_Shelter_Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
         <logo>Screenshot_20200430_at_174027</logo>
@@ -35,6 +53,7 @@
     <tabs>Medicine__c</tabs>
     <tabs>Locations__c</tabs>
     <tabs>Breed__c</tabs>
+    <tabs>Animal_Shelter_Settings</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Shelter_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -46,6 +65,9 @@
         </mappings>
         <mappings>
             <tab>Animal_Action__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Animal_Shelter_Settings</tab>
         </mappings>
         <mappings>
             <tab>Animal__c</tab>

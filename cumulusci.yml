@@ -37,6 +37,10 @@ tasks:
             ignore:
                 - "Profile: "
 
+    deploy:
+        options: 
+            path: force-app
+
 flows:
     post_config:
         steps:

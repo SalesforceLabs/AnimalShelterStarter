@@ -7,7 +7,7 @@
         <locationX>50</locationX>
         <locationY>518</locationY>
         <assignmentItems>
-            <assignToReference>recordId.what3words__c</assignToReference>
+            <assignToReference>recordId.%%%NAMESPACED_ORG%%%what3words__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue></stringValue>
@@ -31,7 +31,7 @@
             <name>what3words_is_not_Null</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>recordId.what3words__c</leftValueReference>
+                <leftValueReference>recordId.%%%NAMESPACED_ORG%%%what3words__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -127,18 +127,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Geolocation__Latitude__s</field>
+            <field>%%%NAMESPACED_ORG%%%Geolocation__Latitude__s</field>
             <value>
                 <elementReference>Capture_Geo.latitude</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Geolocation__Longitude__s</field>
+            <field>%%%NAMESPACED_ORG%%%Geolocation__Longitude__s</field>
             <value>
                 <elementReference>Capture_Geo.longitude</elementReference>
             </value>
         </inputAssignments>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
     </recordUpdates>
     <screens>
         <name>Capture_Location</name>
@@ -153,7 +153,7 @@
         </connector>
         <fields>
             <name>help_text_locationscreen</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Getting Location&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;We are getting your current location details from your Browser/Device, and will  save them against the animal.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20);&quot;&gt;⚠️&lt;/span&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20); font-size: 10px;&quot;&gt;You may be prompted to grant permission to access your location!&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Animal Name: {!recordId.Animal_Name__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Getting Location&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;We are getting your current location details from your Browser/Device, and will  save them against the animal.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20);&quot;&gt;⚠️&lt;/span&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20); font-size: 10px;&quot;&gt;You may be prompted to grant permission to access your location!&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Animal Name: {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -177,7 +177,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Completion_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Location Update Complete!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Animal_Name__c} has been updated with the new location.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Location Update Complete!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c} has been updated with the new location.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -228,7 +228,7 @@
         </connector>
         <fields>
             <name>w3w_Confirmation_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;what3words exists&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;There is an entry in the what3words field for {!recordId.Animal_Name__c}, which indicates you already have a location.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;what3words exists&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;There is an entry in the what3words field for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}, which indicates you already have a location.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -274,6 +274,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
     </variables>
 </Flow>

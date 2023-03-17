@@ -2,7 +2,7 @@ import { LightningElement, wire, track } from 'lwc';
 import { getRecord, updateRecord } from 'lightning/uiRecordApi';
 
 import getCustomSetting from '@salesforce/apex/AnimalShelterGetCustomSettings.getCustomSettings';
-import updateCustomSetting from '@salesforce/apex/AnimalShelterGetCustomSettings.saveCustomSetting';
+import createDefaultSettings from '@salesforce/apex/AnimalShelterGetCustomSettings.createDefaultSettings';
 
 export default class AnimalShelterSettingsEditor extends LightningElement {
     @track settings_data;
@@ -10,11 +10,15 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
     @wire(getCustomSetting)
     wiredSettings({ error, data }) {
         if (data) {
-            
             this.settings_data = data;
-            console.log(this.settings_data)
         } else if (error) {
             console.error(error);
+        } else {
+            createDefaultSettings({}).then(result => {
+                this.settings_data = result;
+            }).catch(error => {
+                console.error(error);
+            });
         }
     }
 

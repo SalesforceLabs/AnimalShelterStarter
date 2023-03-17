@@ -32,6 +32,12 @@ private class AnimalShelterGetCustomSettingsTest {
         System.assertEquals(newValue, updatedSetting.microchip_api_Token__c);
     }
 
+    @IsTest static void testcreateDefaultSettings(){
+        AnimalShelterGetCustomSettings.createDefaultSettings();
+        Animal_Shelter_Settings__c returnedSetting = AnimalShelterGetCustomSettings.getCustomSettings();
+        System.assertEquals(true, returnedSetting.Enable_Auto_Match__c);
+    }
+
 
 
 }

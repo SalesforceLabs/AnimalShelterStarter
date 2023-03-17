@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Assessment_Record</name>
         <label>Assign Assessment Record</label>
-        <locationX>182</locationX>
+        <locationX>512</locationX>
         <locationY>278</locationY>
         <assignmentItems>
             <assignToReference>newAssessmentRecord</assignToReference>
@@ -20,24 +20,24 @@
     <assignments>
         <name>Assign_Date_Time_and_Categories</name>
         <label>Assign Date/Time and Categories</label>
-        <locationX>182</locationX>
+        <locationX>512</locationX>
         <locationY>1094</locationY>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Assessment_Date_Time__c</assignToReference>
+            <assignToReference>newAssessmentRecord.Assessment_Date_Time__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Assessment_Date_Time</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Category__c</assignToReference>
+            <assignToReference>newAssessmentRecord.Category__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>assessmentCategory</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Assessment_Type__c</assignToReference>
+            <assignToReference>newAssessmentRecord.Assessment_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>assessmentType</elementReference>
@@ -51,7 +51,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>newAssessmentRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
@@ -61,10 +61,96 @@
             <targetReference>Create_new_Assessment_record</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Clear_conditionRecord</name>
+        <label>Clear conditionRecord</label>
+        <locationX>50</locationX>
+        <locationY>2174</locationY>
+        <assignmentItems>
+            <assignToReference>conditionRecord.Condition_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>conditionRecord.Short_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Capture_Condition_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Create_Condition_Records</name>
+        <label>Create Condition Records</label>
+        <locationX>182</locationX>
+        <locationY>1814</locationY>
+        <assignmentItems>
+            <assignToReference>conditionRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>conditionRecord</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Have_All_Condition_Records_been_Generated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Increment_Condition_Counter</name>
+        <label>Increment Condition Counter</label>
+        <locationX>50</locationX>
+        <locationY>2054</locationY>
+        <assignmentItems>
+            <assignToReference>conditionCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Clear_conditionRecord</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Condition_Record_Values</name>
+        <label>Update Condition Record Values</label>
+        <locationX>182</locationX>
+        <locationY>1694</locationY>
+        <assignmentItems>
+            <assignToReference>conditionRecord.Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>conditionRecord.Assessment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAssessmentRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>conditionRecord.Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Assessment_Date_Time</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Condition_Records</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Capture_Health_Information</name>
         <label>Capture Health Information?</label>
-        <locationX>182</locationX>
+        <locationX>512</locationX>
         <locationY>638</locationY>
         <defaultConnector>
             <targetReference>Assign_Date_Time_and_Categories</targetReference>
@@ -93,22 +179,70 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] Flow to create new assessment record</description>
+    <decisions>
+        <description>If Toggle set to True, then create condition(s)</description>
+        <name>Create_Condition</name>
+        <label>Create Condition</label>
+        <locationX>512</locationX>
+        <locationY>1454</locationY>
+        <defaultConnectorLabel>No Conditions</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Create_Conditions</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_Conditions.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Capture_Condition_Screen</targetReference>
+            </connector>
+            <label>Yes - Create Conditions</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Have_All_Condition_Records_been_Generated</name>
+        <label>Have All Condition Records been Generated?</label>
+        <locationX>182</locationX>
+        <locationY>1934</locationY>
+        <defaultConnector>
+            <targetReference>Create_Condition_New_Records</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes All Done</defaultConnectorLabel>
+        <rules>
+            <name>No_More_to_Do</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>conditionCounter</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Number_of_Conditions_to_create</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Increment_Condition_Counter</targetReference>
+            </connector>
+            <label>No More to Do</label>
+        </rules>
+    </decisions>
+    <description>[Animal Shelter] Flow to create new assessment record, and optionally conditions</description>
     <dynamicChoiceSets>
         <name>assessmentCategory</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>%%%NAMESPACED_ORG%%%Category__c</picklistField>
-        <picklistObject>%%%NAMESPACED_ORG%%%Assessment__c</picklistObject>
+        <picklistField>Category__c</picklistField>
+        <picklistObject>Assessment__c</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>assessmentType</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>%%%NAMESPACED_ORG%%%Assessment_Type__c</picklistField>
-        <picklistObject>%%%NAMESPACED_ORG%%%Assessment__c</picklistObject>
+        <picklistField>Assessment_Type__c</picklistField>
+        <picklistObject>Assessment__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Assessment - Create new assessment {!$Flow.CurrentDateTime}</interviewLabel>
@@ -134,10 +268,24 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>Create_Condition_New_Records</name>
+        <label>Create Condition New Records</label>
+        <locationX>314</locationX>
+        <locationY>2054</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Fault_Screen</targetReference>
+        </faultConnector>
+        <inputReference>conditionRecords</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>Create_new_Assessment_record</name>
         <label>Create new Assessment record</label>
-        <locationX>182</locationX>
+        <locationX>512</locationX>
         <locationY>1214</locationY>
+        <connector>
+            <targetReference>Create_Condition_Screen</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Fault_Screen</targetReference>
         </faultConnector>
@@ -146,7 +294,7 @@
     <recordLookups>
         <name>Get_Last_Assessment</name>
         <label>Get Last Assessment</label>
-        <locationX>182</locationX>
+        <locationX>512</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -158,14 +306,14 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Assessment__c</object>
+        <object>Assessment__c</object>
         <sortField>CreatedDate</sortField>
         <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -173,7 +321,7 @@
     <screens>
         <name>Assessment_Screen_Health</name>
         <label>Assessment Screen - Health</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -191,32 +339,32 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Mouth_Airway__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Mouth_Airway__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Appetite__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Appetite__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Coughing__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Coughing__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Fur_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Fur_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Skin_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Skin_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Sight_Eyes__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Sight_Eyes__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -232,37 +380,37 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Breathing__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Breathing__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Hydration_Level__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Hydration_Level__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Faceas__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Faceas__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Spine_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Spine_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Hearing_Ears__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Hearing_Ears__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Movement_Condition__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Movement_Condition__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Has_ability_to_curl__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Has_ability_to_curl__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -281,7 +429,7 @@
     <screens>
         <name>Assessment_Screen_Limbs_Disease</name>
         <label>Assessment Screen - Limbs &amp; Disease</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>878</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -299,17 +447,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Left_Front_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Left_Front_Limb__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Left_Hind_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Left_Hind_Limb__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Wings__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Wings__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -325,12 +473,12 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Right_Front_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Right_Front_Limb__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Right_Hind_Limb__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Right_Hind_Limb__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -353,17 +501,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Lungworm__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Lungworm__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Flys__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Flys__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Ringworm__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Ringworm__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -379,17 +527,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Fleas__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Fleas__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Mange__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Mange__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Ticks__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Ticks__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -408,7 +556,7 @@
     <screens>
         <name>AssessmentScreen1</name>
         <label>Assessment Screen - General &amp; Behaviours</label>
-        <locationX>182</locationX>
+        <locationX>512</locationX>
         <locationY>518</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -418,12 +566,12 @@
         </connector>
         <fields>
             <name>AssessmentScreen1Text</name>
-            <fieldText>&lt;p&gt;You will be presented with the results of the last assessment for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}, so that you can review&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; and update to reflect the current situation.&lt;/span&gt;  &lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;You will be presented with the results of the last assessment for {!recordId.Animal_Name__c}, so that you can review&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; and update to reflect the current situation.&lt;/span&gt;  &lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>LastAssessmentDetailsText</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Type:&lt;/strong&gt;  {!Get_Last_Assessment.%%%NAMESPACED_ORG%%%Assessment_Type__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; {!Get_Last_Assessment.%%%NAMESPACED_ORG%%%Category__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date/Time:&lt;/strong&gt; {!Get_Last_Assessment.%%%NAMESPACED_ORG%%%Assessment_Date_Time__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Type:&lt;/strong&gt;  {!Get_Last_Assessment.Assessment_Type__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; {!Get_Last_Assessment.Category__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date/Time:&lt;/strong&gt; {!Get_Last_Assessment.Assessment_Date_Time__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -436,7 +584,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%General_Comments__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.General_Comments__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -459,7 +607,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAssessmentRecord.%%%NAMESPACED_ORG%%%Behaviour_s__c</objectFieldReference>
+                    <objectFieldReference>newAssessmentRecord.Behaviour_s__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -476,9 +624,104 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Capture_Condition_Screen</name>
+        <label>Capture Condition Screen</label>
+        <locationX>182</locationX>
+        <locationY>1574</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_Condition_Record_Values</targetReference>
+        </connector>
+        <fields>
+            <name>Capture_Condition_Screen_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Condition {!conditionCounter} of {!Number_of_Conditions_to_create}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Enter the Short Description (Subject), and Condition Description (Detail)&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>conditionRecord.Short_Description__c</objectFieldReference>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>conditionRecord.Condition_Description__c</objectFieldReference>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Create_Condition_Screen</name>
+        <label>Create Condition Screen</label>
+        <locationX>512</locationX>
+        <locationY>1334</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Condition</targetReference>
+        </connector>
+        <fields>
+            <name>Create_Condition_Screen_Text</name>
+            <fieldText>&lt;p&gt;Now the Assessment record has been created for {!recordId.Animal_Name__c}, do you want to create any Conditions that are related to the Animal and may need treatment?&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Create_Conditions</name>
+            <extensionName>flowruntime:toggle</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Create Conditions?</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>messageToggleActive</name>
+                <value>
+                    <stringValue>Yes</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>messageToggleInactive</name>
+                <value>
+                    <stringValue>No</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Number_of_Conditions_to_create</name>
+            <dataType>Number</dataType>
+            <defaultValue>
+                <numberValue>1.0</numberValue>
+            </defaultValue>
+            <fieldText>Number of Conditions to create?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Create_Conditions.value</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Fault_Screen</name>
         <label>Fault Screen</label>
-        <locationX>490</locationX>
+        <locationX>1018</locationX>
         <locationY>1334</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -494,7 +737,7 @@
     <screens>
         <name>New_Assessment_Start_Screen</name>
         <label>New Assessment Start Screen</label>
-        <locationX>182</locationX>
+        <locationX>512</locationX>
         <locationY>398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -504,7 +747,7 @@
         </connector>
         <fields>
             <name>New_Assessment_Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;This wizard will create a new assessment record for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are you creating an assessment on health, behaviours or both?&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;This wizard will create a new assessment record for {!recordId.Animal_Name__c}.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are you creating an assessment on health, behaviours or both?&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -570,7 +813,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>386</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Last_Assessment</targetReference>
@@ -578,12 +821,39 @@
     </start>
     <status>Active</status>
     <variables>
+        <name>conditionCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>conditionRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Condition__c</objectType>
+    </variables>
+    <variables>
+        <name>conditionRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Condition__c</objectType>
+    </variables>
+    <variables>
         <name>newAssessmentRecord</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Assessment__c</objectType>
+        <objectType>Assessment__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -591,6 +861,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
 </Flow>

@@ -92,7 +92,7 @@
         <isActive>false</isActive>
         <label>Reptile</label>
     </customValue>
-    <description>[Animal Shelter] Types of Animals - not used post version 1.12</description>
-    <masterLabel>Animal Type (Legacy)</masterLabel>
+    <description>[Animal Shelter] Types of Animals</description>
+    <masterLabel>Animal Type</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

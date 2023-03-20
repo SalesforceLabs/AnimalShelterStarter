@@ -126,12 +126,6 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows>
-            <choices>
-                <name>choiceExisting</name>
-            </choices>
-            <choices>
-                <name>choiceNew</name>
-            </choices>
             <screens>
                 <fields>
                     <name>Capture_Geo</name>
@@ -146,95 +140,6 @@
                     <name>Completion_Screen_Text</name>
                 </fields>
                 <name>Completion_Screen</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>Error_Creating_New_Animal_Text</name>
-                </fields>
-                <name>Error_Creating_New_Animal</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>Error_Updating_Animal_Record_Text</name>
-                </fields>
-                <name>Error_Updating_Animal_Record</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>SelectAnimal</name>
-                </fields>
-                <fields>
-                    <name>help_animalnameselection</name>
-                </fields>
-                <name>Existing_Animal_Selection</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>Initial_Screen_Text</name>
-                </fields>
-                <fields>
-                    <name>Initial_Screen_Text_Alert</name>
-                </fields>
-                <name>Initial_Screen</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>Animal_Name</name>
-                </fields>
-                <fields>
-                    <name>Crossbreed</name>
-                </fields>
-                <fields>
-                    <name>Estimated_Age</name>
-                </fields>
-                <fields>
-                    <name>Estimated_Weight</name>
-                </fields>
-                <fields>
-                    <name>Gender</name>
-                </fields>
-                <fields>
-                    <name>MicroChip</name>
-                </fields>
-                <fields>
-                    <name>Primary_Colour</name>
-                </fields>
-                <fields>
-                    <name>Secondary_Colour</name>
-                </fields>
-                <fields>
-                    <inputParameters>
-                        <name>dependencyWrapperApiName</name>
-                        <value />
-                    </inputParameters>
-                    <inputParameters>
-                        <name>middleLabel</name>
-                        <value />
-                    </inputParameters>
-                    <inputParameters>
-                        <name>middlePicklistApiName</name>
-                        <value />
-                    </inputParameters>
-                    <inputParameters>
-                        <name>topLabel</name>
-                        <value />
-                    </inputParameters>
-                    <inputParameters>
-                        <name>topPicklistApiName</name>
-                        <value />
-                    </inputParameters>
-                    <name>TypeAndBreed</name>
-                </fields>
-                <name>New_Animal_Details</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>New_or_Existing_Option</name>
-                </fields>
-                <fields>
-                    <name>New_or_Existing_Text</name>
-                </fields>
-                <name>New_or_Existing</name>
             </screens>
         </flows>
         <fullName>Animal_Animal_Location_Flow</fullName>
@@ -443,29 +348,6 @@
                 </fields>
                 <name>Error_Screen</name>
             </screens>
-            <screens>
-                <fields>
-                    <name>Initial_Screen_Section1</name>
-                </fields>
-                <fields>
-                    <inputParameters>
-                        <name>width</name>
-                        <value />
-                    </inputParameters>
-                    <name>Initial_Screen_Section1_Column1</name>
-                </fields>
-                <fields>
-                    <inputParameters>
-                        <name>width</name>
-                        <value />
-                    </inputParameters>
-                    <name>Initial_Screen_Section1_Column2</name>
-                </fields>
-                <fields>
-                    <name>Initial_Screen_Text_Header</name>
-                </fields>
-                <name>Initial_Screen</name>
-            </screens>
         </flows>
         <fullName>Animal_Deceased_Animal_Flow</fullName>
     </flowDefinitions>
@@ -612,46 +494,6 @@
                     <name>Foster_Selection_Screen_Text</name>
                 </fields>
                 <name>Foster_Selection_Screen</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>Choose_a_Movement</name>
-                </fields>
-                <fields>
-                    <inputParameters>
-                        <name>label</name>
-                        <value />
-                    </inputParameters>
-                    <inputParameters>
-                        <name>value</name>
-                        <value />
-                    </inputParameters>
-                    <name>Generate_Tasks</name>
-                </fields>
-                <fields>
-                    <name>Initial_Screen_Section1</name>
-                </fields>
-                <fields>
-                    <inputParameters>
-                        <name>width</name>
-                        <value />
-                    </inputParameters>
-                    <name>Initial_Screen_Section1_Column1</name>
-                </fields>
-                <fields>
-                    <inputParameters>
-                        <name>width</name>
-                        <value />
-                    </inputParameters>
-                    <name>Initial_Screen_Section1_Column2</name>
-                </fields>
-                <fields>
-                    <name>Screen_Generate_Tasks_Information</name>
-                </fields>
-                <fields>
-                    <name>Screen_TypeOfMovement_Info</name>
-                </fields>
-                <name>Initial_Screen</name>
             </screens>
             <screens>
                 <fields>

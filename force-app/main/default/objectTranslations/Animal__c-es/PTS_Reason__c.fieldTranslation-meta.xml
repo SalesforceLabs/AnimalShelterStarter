@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Poner a dormir (PTS) Razón.</help>
+    <label>Razón PTS</label>
+    <name>PTS_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Aggression to other animals</masterLabel>
+        <translation>Agresión a otros animales</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aggression to people</masterLabel>
+        <translation>Agresión a las personas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Behavioural</masterLabel>
+        <translation>Comportamental</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Illness</masterLabel>
+        <translation>Enfermedad</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Illness - Terminal</masterLabel>
+        <translation>Enfermedad Terminal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical</masterLabel>
+        <translation>Médico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Old Age</masterLabel>
+        <translation>Vejez</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Otro</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stress or Anxiety</masterLabel>
+        <translation>Estrés o ansiedad</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>To comply with euthanasia policy</masterLabel>
+        <translation>Para cumplir con la política de eutanasia</translation>
+    </picklistValues>
+</CustomFieldTranslation>

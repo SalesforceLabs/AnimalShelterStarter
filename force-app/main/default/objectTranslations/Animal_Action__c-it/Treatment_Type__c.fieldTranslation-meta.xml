@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Il tipo di Trattamento</help>
+    <label>Tipo di trattamento</label>
+    <name>Treatment_Type__c</name>
+    <picklistValues>
+        <masterLabel>Medicine</masterLabel>
+        <translation>Farmaci</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physio</masterLabel>
+        <translation>Fisioterapia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Surgery</masterLabel>
+        <translation>Chirurgia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vaccination</masterLabel>
+        <translation>Vaccinazione</translation>
+    </picklistValues>
+</CustomFieldTranslation>

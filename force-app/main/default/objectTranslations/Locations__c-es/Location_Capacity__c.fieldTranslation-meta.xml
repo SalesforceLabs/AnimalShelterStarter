@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Seleccione el tipo de capacidad que tiene esta ubicación</help>
+    <label>Capacidad de ubicación</label>
+    <name>Location_Capacity__c</name>
+    <picklistValues>
+        <masterLabel>Multiple Animals</masterLabel>
+        <translation>Múltiples animales</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single Animal</masterLabel>
+        <translation>Animal individual</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Untracked</masterLabel>
+        <translation>Sin seguimiento</translation>
+    </picklistValues>
+</CustomFieldTranslation>

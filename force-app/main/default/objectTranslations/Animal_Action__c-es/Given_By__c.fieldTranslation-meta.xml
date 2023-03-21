@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿La acción fue dada por?</help>
+    <label>Impartido por</label>
+    <name>Given_By__c</name>
+    <relationshipLabel>Acciones animales</relationshipLabel>
+</CustomFieldTranslation>

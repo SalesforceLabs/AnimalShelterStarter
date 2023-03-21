@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Fecha en que el animal fue devuelto si la adopción no ha tenido éxito</help>
+    <label>Fecha de devolución</label>
+    <name>Date_Returned__c</name>
+</CustomFieldTranslation>

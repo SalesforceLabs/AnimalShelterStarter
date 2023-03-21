@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <fieldSets>
+        <label>Set di campi per carte gabbia animale</label>
+        <name>Animal_Cage_Card_Field_Set</name>
+    </fieldSets>
+    <fieldSets>
+        <label>Dettagli dell&apos;animale</label>
+        <name>Animal_Details</name>
+    </fieldSets>
+    <gender></gender>
+    <layouts>
+        <layout>Animal Layout</layout>
+        <sections>
+            <label>Età</label>
+            <section>Age</section>
+        </sections>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Informazioni sui deceduti</label>
+            <section>Deceased Information</section>
+        </sections>
+        <sections>
+            <label>Voce</label>
+            <section>Entry</section>
+        </sections>
+        <sections>
+            <label>InformazioniLocalità</label>
+            <section>Location Information</section>
+        </sections>
+        <sections>
+            <label>Requisiti</label>
+            <section>Requirements</section>
+        </sections>
+        <sections>
+            <label>Tracciamento</label>
+            <section>Tracking</section>
+        </sections>
+        <sections>
+            <label>Informazioni sul tipo</label>
+            <section>Type Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Nuova condizione</label>
+        <name>Add_Condition</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Nuova azione di esercizio</label>
+        <name>Add_Exercise_Action</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Aggiungere azioni pianificate</label>
+        <name>Add_Scheduled_Action</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Aggiungere Trattamento</label>
+        <name>Add_Treatment_Action</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Scheda gabbia</label>
+        <name>Cage_Card</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Completa l&apos;azione di esercizio</label>
+        <name>Complete_Exercise_Action</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Crea nuova valutazione</label>
+        <name>Create_New_Assessment</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Trova corrispondenze per l&apos;adozione</label>
+        <name>Find_Adoption_Matches</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Contrassegna come deceduto</label>
+        <name>Mark_as_Deceased</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Multi_Animal_Clone</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Nuovo avviso</label>
+        <name>New_Alert</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Nuova valutazione</label>
+        <name>New_Assessment</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Inizia il processo di adozione</label>
+        <name>Start_Adoption_Process</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Update_Animal</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Aggiorna la posizione degli animali</label>
+        <name>Update_Animal_Location</name>
+    </quickActions>
+    <startsWith></startsWith>
+    <validationRules>
+        <errorMessage>È stato notato che l&apos;animale è stato castrato / sterilizzato sebbene non sia stata aggiunta alcuna data / ora. Si prega di aggiungere anche la data / ora in cui l&apos;animale è stato castrato / sterilizzato.</errorMessage>
+        <name>Animal_Neutered_Spayed_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Hai indicato che questo animale è deceduto. Fornisci un motivo utilizzando il campo Motivo del decunto e inserisci una data utilizzando il campo della data deceduta.</errorMessage>
+        <name>Deceased_Required_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Hai indicato che questo animale è stato PTS. Fornisci un motivo utilizzando il campo Motivo PTS e inserisci una data utilizzando il campo della data deceduta.</errorMessage>
+        <name>PTS_Required_Fields</name>
+    </validationRules>
+</CustomObjectTranslation>

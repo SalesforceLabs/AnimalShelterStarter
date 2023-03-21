@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Se l&apos;imbarco è l&apos;attuale proprietario, altrimenti impostalo sul precedente proprietario dell&apos;animale.</help>
+    <label>Proprietario precedente/attuale</label>
+    <name>Previous_Current_Owner__c</name>
+    <relationshipLabel>Animali correlati</relationshipLabel>
+</CustomFieldTranslation>

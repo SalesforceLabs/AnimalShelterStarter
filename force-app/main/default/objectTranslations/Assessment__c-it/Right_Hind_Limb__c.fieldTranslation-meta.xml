@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Qual è la condizione dell&apos;arto posteriore destro</help>
+    <label>Arto posteriore destro</label>
+    <name>Right_Hind_Limb__c</name>
+</CustomFieldTranslation>

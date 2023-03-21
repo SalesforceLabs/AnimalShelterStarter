@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Condition Layout</layout>
+        <sections>
+            <label>Personalizado</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Generar alerta</label>
+        <name>Generate_Alert</name>
+    </quickActions>
+</CustomObjectTranslation>

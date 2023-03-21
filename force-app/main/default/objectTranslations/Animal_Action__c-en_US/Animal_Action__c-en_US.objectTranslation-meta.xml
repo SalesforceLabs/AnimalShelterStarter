@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Animal Action</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Animal Actions</value>
+    </caseValues>
+    <layouts>
+        <layout>Animal Action Layout</layout>
+        <sections>
+            <label></label>
+            <section>Action Description</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Action Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Related Records</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Exercise Action Layout</layout>
+        <sections>
+            <label></label>
+            <section>Action Description</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Action Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Related Records</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Treatment Action Layout</layout>
+        <sections>
+            <label></label>
+            <section>Action Description</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Action Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Related Records</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Exercise</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Nutrition</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Treatment</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Action_Completed_Check_Date</name>
+    </validationRules>
+</CustomObjectTranslation>

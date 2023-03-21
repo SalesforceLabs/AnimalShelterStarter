@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>El estado de la acción</help>
+    <label>Estado de la acción</label>
+    <name>Action_Status__c</name>
+    <picklistValues>
+        <masterLabel>Given</masterLabel>
+        <translation>Dados</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Given - See Comments</masterLabel>
+        <translation>Dado - Ver comentarios</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Given</masterLabel>
+        <translation>No hay ningún pedido con este id dado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scheduled</masterLabel>
+        <translation>Programado</translation>
+    </picklistValues>
+</CustomFieldTranslation>

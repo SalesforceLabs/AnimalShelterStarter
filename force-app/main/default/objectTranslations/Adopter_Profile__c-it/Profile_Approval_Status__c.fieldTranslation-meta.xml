@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Stato di approvazione del profilo</label>
+    <name>Profile_Approval_Status__c</name>
+    <picklistValues>
+        <masterLabel>Approved</masterLabel>
+        <translation>Approvato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>More info needed</masterLabel>
+        <translation>Maggiori informazioni necessarie</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New</masterLabel>
+        <translation>Nuovo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected</masterLabel>
+        <translation>Rifiutato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Under Review</masterLabel>
+        <translation>In fase di moderazione</translation>
+    </picklistValues>
+</CustomFieldTranslation>

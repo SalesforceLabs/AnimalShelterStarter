@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Il Sito (Posizione Fisica) in cui si trova l&apos;Animale</help>
+    <label>Sito</label>
+    <name>Site__c</name>
+</CustomFieldTranslation>

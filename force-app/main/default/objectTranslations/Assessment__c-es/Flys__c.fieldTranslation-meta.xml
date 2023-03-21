@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Si la evidencia de moscas, entonces qué tipo</help>
+    <label>Moscas</label>
+    <name>Flys__c</name>
+    <picklistValues>
+        <masterLabel>Adult maggots</masterLabel>
+        <translation>Gusanos adultos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eggs</masterLabel>
+        <translation>Huevos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New born maggots</masterLabel>
+        <translation>Gusanos recién nacidos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation>Ninguno</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -123,4 +123,8 @@
         <label></label>
         <name>Treatment</name>
     </recordTypes>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Action_Completed_Check_Date</name>
+    </validationRules>
 </CustomObjectTranslation>

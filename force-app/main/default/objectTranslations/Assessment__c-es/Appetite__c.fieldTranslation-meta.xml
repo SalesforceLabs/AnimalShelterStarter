@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Cuál es el apetito de los animales?</help>
+    <label>Apetito</label>
+    <name>Appetite__c</name>
+    <picklistValues>
+        <masterLabel>Healthy</masterLabel>
+        <translation>Sano</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Eating</masterLabel>
+        <translation>No comer</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trying to Eat</masterLabel>
+        <translation>Tratando de comer</translation>
+    </picklistValues>
+</CustomFieldTranslation>

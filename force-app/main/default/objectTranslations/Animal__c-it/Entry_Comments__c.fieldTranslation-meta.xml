@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Eventuali commenti o elementi aggiuntivi che dovrebbero essere annotati sull&apos;animale e le ragioni per cui è stato introdotto.</help>
+    <label>Commenti di iscrizione</label>
+    <name>Entry_Comments__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Animal Alert Layout</layout>
+        <sections>
+            <label>Personalizado</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Mensaje</label>
+            <section>Message</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <validationRules>
+        <errorMessage>La fecha de finalización no puede ser inferior a la fecha de inicio. Compruebe las fechas que ha introducido e inténtelo de nuevo.</errorMessage>
+        <name>Animal_Alert_Date_Check</name>
+    </validationRules>
+</CustomObjectTranslation>

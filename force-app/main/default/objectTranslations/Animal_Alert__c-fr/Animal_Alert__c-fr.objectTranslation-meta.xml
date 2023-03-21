@@ -15,6 +15,10 @@
             <label></label>
             <section>Custom Links</section>
         </sections>
+        <sections>
+            <label></label>
+            <section>Message</section>
+        </sections>
     </layouts>
     <nameFieldLabel></nameFieldLabel>
     <startsWith></startsWith>

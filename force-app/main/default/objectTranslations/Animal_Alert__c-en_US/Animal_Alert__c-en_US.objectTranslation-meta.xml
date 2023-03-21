@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Animal Alert</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Animal Alerts</value>
+    </caseValues>
+    <layouts>
+        <layout>Animal Alert Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Message</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Animal_Alert_Date_Check</name>
+    </validationRules>
+</CustomObjectTranslation>

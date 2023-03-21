@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Adopter Profile Layout</layout>
+        <sections>
+            <label>Detalles del alojamiento</label>
+            <section>Accommodation Details</section>
+        </sections>
+        <sections>
+            <label>Detalles del animal</label>
+            <section>Animal Details</section>
+        </sections>
+        <sections>
+            <label>Información de aprobación</label>
+            <section>Approval Info</section>
+        </sections>
+        <sections>
+            <label>Personalizado</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Detalles del estilo de vida</label>
+            <section>Lifestyle Details</section>
+        </sections>
+        <sections>
+            <label>Otros Detalles</label>
+            <section>Other Details</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <validationRules>
+        <errorMessage>La fecha de finalización del perfil no puede ser anterior a la fecha de inicio del perfil</errorMessage>
+        <name>Profile_End_Date_Check</name>
+    </validationRules>
+</CustomObjectTranslation>

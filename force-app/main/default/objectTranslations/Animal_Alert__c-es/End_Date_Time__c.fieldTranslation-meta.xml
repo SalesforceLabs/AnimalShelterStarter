@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Cuándo dejará de aparecer la alerta en el registro?</help>
+    <label>Fecha de finalización y hora</label>
+    <name>End_Date_Time__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Gli altri animali sono della stessa specie di quello che vuoi adottare?</help>
+    <label>Altri animali della stessa specie</label>
+    <name>Other_Animals_of_same_Species__c</name>
+</CustomFieldTranslation>

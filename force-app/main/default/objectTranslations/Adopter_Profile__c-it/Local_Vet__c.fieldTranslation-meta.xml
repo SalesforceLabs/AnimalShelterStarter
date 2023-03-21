@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>C&apos;è accesso a un veterinario locale?</help>
+    <label>Veterinario locale?</label>
+    <name>Local_Vet__c</name>
+</CustomFieldTranslation>

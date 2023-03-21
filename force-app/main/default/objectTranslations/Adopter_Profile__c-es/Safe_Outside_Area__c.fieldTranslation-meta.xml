@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿El alojamiento tiene una zona exterior segura?</help>
+    <label>Área exterior segura</label>
+    <name>Safe_Outside_Area__c</name>
+</CustomFieldTranslation>

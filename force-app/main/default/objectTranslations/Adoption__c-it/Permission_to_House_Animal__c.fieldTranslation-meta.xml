@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Se l&apos;adottante è convivente, affitta o non possiede il proprio alloggio, ha il permesso di ospitare un animale, cioè dal proprietario?</help>
+    <label>Permesso di ospitare animali?</label>
+    <name>Permission_to_House_Animal__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La geolocalización de donde el animal fue liberado</help>
+    <label>Ubicación del lanzamiento</label>
+    <name>Release_Location__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Location</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Locations</value>
+    </caseValues>
+    <layouts>
+        <layout>Location Block Layout</layout>
+        <sections>
+            <label></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Foster Layout</layout>
+        <sections>
+            <label></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Organisation Layout</layout>
+        <sections>
+            <label></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Site Layout</layout>
+        <sections>
+            <label></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Unit Layout</layout>
+        <sections>
+            <label></label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>Set_Assessment_Date</name>
+    </quickActions>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Block</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Foster</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Organisation</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Site</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Unit</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Check_Capacity_is_Completed</name>
+    </validationRules>
+</CustomObjectTranslation>

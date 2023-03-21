@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Se la posizione è disponibile per gli animali d&apos;imbarco</help>
+    <label>Disponibile per l&apos;imbarco</label>
+    <name>Available_for_Boarding__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Evidenza di verme polmonare</help>
+    <label>Verme polmonare</label>
+    <name>Lungworm__c</name>
+</CustomFieldTranslation>

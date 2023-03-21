@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La razón por la que el animal ha sido llevado al Refugio de Animales</help>
+    <label>Motivo de la entrada</label>
+    <name>Entry_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Abandoned</masterLabel>
+        <translation>Abandonado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Abuse</masterLabel>
+        <translation>Abuso</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Allergies</masterLabel>
+        <translation>Alergias</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Behaviour Issue</masterLabel>
+        <translation>Problema de comportamiento</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boarding</masterLabel>
+        <translation>Abordaje</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Household Unable to Cope</masterLabel>
+        <translation>Hogar incapaz de hacer frente</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Household cannot afford</masterLabel>
+        <translation>El hogar no puede permitirse el lujo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Housing Unsuitable</masterLabel>
+        <translation>Vivienda inadecuada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner passed or moved out of home address</masterLabel>
+        <translation>El propietario falleció o se mudó de la dirección de su casa</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Relationship Issue</masterLabel>
+        <translation>Problema de relación</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sick/Injured</masterLabel>
+        <translation>Enfermo/Lesionado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stray</masterLabel>
+        <translation>Extraviado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transfer</masterLabel>
+        <translation>Transferir</translation>
+    </picklistValues>
+</CustomFieldTranslation>

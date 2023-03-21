@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Cualquier comentario relacionado con el medicamento o su uso</help>
+    <label>Comentarios</label>
+    <name>Comments__c</name>
+</CustomFieldTranslation>

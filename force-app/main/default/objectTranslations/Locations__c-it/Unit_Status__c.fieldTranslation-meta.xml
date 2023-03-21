@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Lo stato dell&apos;unità</help>
+    <label>Stato dell&apos;unità</label>
+    <name>Unit_Status__c</name>
+</CustomFieldTranslation>

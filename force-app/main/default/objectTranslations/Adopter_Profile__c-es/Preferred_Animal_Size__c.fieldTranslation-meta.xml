@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Cuál es el tamaño preferido del animal que el adoptante desea adoptar?</help>
+    <label>Tamaño de animal preferido</label>
+    <name>Preferred_Animal_Size__c</name>
+</CustomFieldTranslation>

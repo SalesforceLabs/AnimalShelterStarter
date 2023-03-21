@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Requisiti di reinserimento</label>
+    <name>Rehoming_Requirements__c</name>
+    <picklistValues>
+        <masterLabel>Cannot be left for long periods</masterLabel>
+        <translation>Non può essere lasciato per lunghi periodi</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dietary</masterLabel>
+        <translation>Dietetico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Experienced Owner</masterLabel>
+        <translation>Proprietario esperto</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical</masterLabel>
+        <translation>Industria medicale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Animals of different species</masterLabel>
+        <translation>No Animali di specie diverse</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Animals of same species</masterLabel>
+        <translation>N. Animali della stessa specie</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Children</masterLabel>
+        <translation>Nessun bambino</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rural Area</masterLabel>
+        <translation>Campagna</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Secure Garden</masterLabel>
+        <translation>Giardino sicuro</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist Equipment</masterLabel>
+        <translation>Attrezzature specialistiche</translation>
+    </picklistValues>
+</CustomFieldTranslation>

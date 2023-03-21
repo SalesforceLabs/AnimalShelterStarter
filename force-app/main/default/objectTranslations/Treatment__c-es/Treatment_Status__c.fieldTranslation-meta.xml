@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Estado del tratamiento</label>
+    <name>Treatment_Status__c</name>
+    <picklistValues>
+        <masterLabel>Given</masterLabel>
+        <translation>Dados</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Given - See Comment</masterLabel>
+        <translation>Dado - Ver comentario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Given</masterLabel>
+        <translation>No hay ningún pedido con este id dado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scheduled</masterLabel>
+        <translation>Programado</translation>
+    </picklistValues>
+</CustomFieldTranslation>

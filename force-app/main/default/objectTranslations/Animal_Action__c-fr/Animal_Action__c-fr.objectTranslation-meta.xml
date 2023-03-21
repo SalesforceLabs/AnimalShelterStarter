@@ -92,4 +92,8 @@
         <name>Treatment</name>
     </recordTypes>
     <startsWith></startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Action_Completed_Check_Date</name>
+    </validationRules>
 </CustomObjectTranslation>

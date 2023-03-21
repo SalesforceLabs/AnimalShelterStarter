@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Il peso attuale dell&apos;animale. Questo campo viene monitorato e le modifiche verranno registrate nella cronologia dei campi.</help>
+    <label>Peso attuale</label>
+    <name>Current_Weight__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Edad calculada del animal basada en la fecha de nacimiento</help>
+    <label>Edad (años)</label>
+    <name>Age_Years__c</name>
+</CustomFieldTranslation>

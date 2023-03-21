@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Tempo calcolato noto</label>
+    <name>Calculated_Time_Known__c</name>
+</CustomFieldTranslation>

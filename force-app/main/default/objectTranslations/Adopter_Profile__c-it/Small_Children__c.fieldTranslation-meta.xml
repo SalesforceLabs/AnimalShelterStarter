@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Indica che ci sono bambini piccoli nella famiglia</help>
+    <label>Bambini piccoli?</label>
+    <name>Small_Children__c</name>
+</CustomFieldTranslation>

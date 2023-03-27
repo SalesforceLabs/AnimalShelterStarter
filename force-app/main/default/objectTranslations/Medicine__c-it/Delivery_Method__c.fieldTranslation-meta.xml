@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Come viene normalmente somministrato il medicinale</help>
+    <label>Modalità di spedizione</label>
+    <name>Delivery_Method__c</name>
+    <picklistValues>
+        <masterLabel>Coated - Tablet</masterLabel>
+        <translation>Rivestito - Tablet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dissolvable - Tablet</masterLabel>
+        <translation>Dissolvibile - Tablet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Drops</masterLabel>
+        <translation>Gocce</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gel</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Injected - Solution</masterLabel>
+        <translation>Iniettato - Soluzione</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ointment/Cream</masterLabel>
+        <translation>Unguento/Crema</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paste</masterLabel>
+        <translation>Incolla</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poultice</masterLabel>
+        <translation>Cataplasma</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Powder</masterLabel>
+        <translation>Polvere</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shampoo</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spray</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Syrup</masterLabel>
+        <translation>Sciroppo</translation>
+    </picklistValues>
+</CustomFieldTranslation>

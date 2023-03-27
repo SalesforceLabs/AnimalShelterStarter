@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Condizioni del movimento dell&apos;animale</help>
+    <label>Condizioni di movimento</label>
+    <name>Movement_Condition__c</name>
+    <picklistValues>
+        <masterLabel>Normal</masterLabel>
+        <translation>Normale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unsteady</masterLabel>
+        <translation>Vacillante</translation>
+    </picklistValues>
+</CustomFieldTranslation>

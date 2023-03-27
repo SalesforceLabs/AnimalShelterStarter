@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Cuál es la condición de la extremidad posterior derecha?</help>
+    <label>Miembro posterior derecho</label>
+    <name>Right_Hind_Limb__c</name>
+</CustomFieldTranslation>

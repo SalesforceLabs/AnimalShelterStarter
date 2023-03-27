@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Número de animales asignados a la Unidad/Acogida/Organización</help>
+    <label>Asignación</label>
+    <name>Allocation__c</name>
+</CustomFieldTranslation>

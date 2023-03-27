@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Animal Shelter Account Layout</layout>
+        <sections>
+            <label>Canile</label>
+            <section>Animal Shelter</section>
+        </sections>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Aggiorna l&apos;organizzazione</label>
+        <name>Update_Organisation</name>
+    </quickActions>
+</CustomObjectTranslation>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Location Block Layout</layout>
+        <sections>
+            <label>Date di valutazione</label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Foster Layout</layout>
+        <sections>
+            <label>Date di valutazione</label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label>Capacità</label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Organisation Layout</layout>
+        <sections>
+            <label>Date di valutazione</label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label>Capacità</label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Site Layout</layout>
+        <sections>
+            <label>Date di valutazione</label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Location Unit Layout</layout>
+        <sections>
+            <label>Date di valutazione</label>
+            <section>Assessment Dates</section>
+        </sections>
+        <sections>
+            <label>Capacità</label>
+            <section>Capacity</section>
+        </sections>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Imposta data di valutazione</label>
+        <name>Set_Assessment_Date</name>
+    </quickActions>
+    <recordTypes>
+        <description>Un blocco, cioè Kennel Block, contiene unità, cioè Gabbie</description>
+        <label>Blocco</label>
+        <name>Block</name>
+    </recordTypes>
+    <recordTypes>
+        <description>Un luogo di affidamento in cui un animale può essere ospitato</description>
+        <label>Promuovere</label>
+        <name>Foster</name>
+    </recordTypes>
+    <recordTypes>
+        <description>Un&apos;organizzazione è una 3a parte a cui un animale può essere trasferito</description>
+        <label>Organizzazione</label>
+        <name>Organisation</name>
+    </recordTypes>
+    <recordTypes>
+        <description>Un luogo fisico, cioè Animal Centre XXX</description>
+        <label>Sito</label>
+        <name>Site</name>
+    </recordTypes>
+    <recordTypes>
+        <description>Un&apos;unità è una sottoposizione di un blocco, ad esempio gabbia, penna, ecc.</description>
+        <label>Unità</label>
+        <name>Unit</name>
+    </recordTypes>
+    <startsWith></startsWith>
+    <validationRules>
+        <errorMessage>Se Location Capacity è impostato su Multiple Animals (Capacità di localizzazione) è necessario immettere un valore in Capacità</errorMessage>
+        <name>Check_Capacity_is_Completed</name>
+    </validationRules>
+</CustomObjectTranslation>

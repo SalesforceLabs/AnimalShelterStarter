@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Fecha y hora en que comenzó la afección o se notó por primera vez</help>
+    <label>Fecha de inicio</label>
+    <name>Start_Date__c</name>
+</CustomFieldTranslation>

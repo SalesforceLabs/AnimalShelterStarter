@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Treatment Layout</layout>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Record correlati</label>
+            <section>Related Records</section>
+        </sections>
+        <sections>
+            <label>Descrizione del trattamento</label>
+            <section>Treatment Description</section>
+        </sections>
+        <sections>
+            <label>Dettagli del trattamento</label>
+            <section>Treatment Details</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <startsWith></startsWith>
+</CustomObjectTranslation>

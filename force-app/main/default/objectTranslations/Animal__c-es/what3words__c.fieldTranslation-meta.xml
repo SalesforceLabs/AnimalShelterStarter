@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Introduzca una fase what3words con el formato word.word.word. Tenga en cuenta que es posible que la ubicación no aparezca inmediatamente al guardar el registro</help>
+    <label></label>
+    <name>what3words__c</name>
+</CustomFieldTranslation>

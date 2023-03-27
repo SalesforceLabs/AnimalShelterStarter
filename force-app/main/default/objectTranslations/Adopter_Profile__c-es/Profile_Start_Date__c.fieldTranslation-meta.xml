@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La fecha de validez de este perfil a partir de</help>
+    <label>Fecha de inicio del perfil</label>
+    <name>Profile_Start_Date__c</name>
+</CustomFieldTranslation>

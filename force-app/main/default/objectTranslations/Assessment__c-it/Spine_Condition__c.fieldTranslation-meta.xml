@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Qual è la condizione delle spine</help>
+    <label>Condizione della colonna vertebrale</label>
+    <name>Spine_Condition__c</name>
+</CustomFieldTranslation>

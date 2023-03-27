@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Definire la gravità dell&apos;avviso, da Alta a Bassa e solo informazioni in cui si desidera solo assicurarsi che sia presente un avviso per gli utenti che visualizzano questo record.</help>
+    <label>Livello di gravità</label>
+    <name>Severity_Level__c</name>
+    <picklistValues>
+        <masterLabel>High</masterLabel>
+        <translation>Alta</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Information Only</masterLabel>
+        <translation>Puramente Informativo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Low</masterLabel>
+        <translation>Bassa</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medium</masterLabel>
+        <translation>Medio</translation>
+    </picklistValues>
+</CustomFieldTranslation>

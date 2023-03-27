@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Se la prova di mosche, allora che tipo</help>
+    <label>Vola</label>
+    <name>Flys__c</name>
+    <picklistValues>
+        <masterLabel>Adult maggots</masterLabel>
+        <translation>Vermi adulti</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eggs</masterLabel>
+        <translation>Uova</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New born maggots</masterLabel>
+        <translation>Vermi appena nati</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation>Nessuna</translation>
+    </picklistValues>
+</CustomFieldTranslation>

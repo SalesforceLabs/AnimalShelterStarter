@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Motivo fallecido</label>
+    <name>Deceased_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Dead On Arrival</masterLabel>
+        <translation>Muerto a la llegada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Death during Treatment</masterLabel>
+        <translation>Muerte durante el tratamiento</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natural Causes</masterLabel>
+        <translation>Causas naturales</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Put To Sleep (PTS)</masterLabel>
+        <translation>Poner a dormir (PTS)</translation>
+    </picklistValues>
+</CustomFieldTranslation>

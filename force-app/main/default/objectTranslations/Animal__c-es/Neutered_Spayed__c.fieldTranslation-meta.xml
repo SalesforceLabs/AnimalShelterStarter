@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿El animal ha sido castrado/esterilizado? Marque esta casilla si la respuesta es sí</help>
+    <label>Castrado/esterilizado</label>
+    <name>Neutered_Spayed__c</name>
+</CustomFieldTranslation>

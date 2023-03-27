@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Cuál es la condición de los animales que respiran?</help>
+    <label>Respiración</label>
+    <name>Breathing__c</name>
+    <picklistValues>
+        <masterLabel>Normal</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rapid</masterLabel>
+        <translation>Rápido</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shallow</masterLabel>
+        <translation>Superficial</translation>
+    </picklistValues>
+</CustomFieldTranslation>

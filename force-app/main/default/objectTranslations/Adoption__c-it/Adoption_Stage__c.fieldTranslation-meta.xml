@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>L&apos;attuale fase dell&apos;adozione</help>
+    <label>Fase di adozione</label>
+    <name>Adoption_Stage__c</name>
+    <picklistValues>
+        <masterLabel>Adopted</masterLabel>
+        <translation>Adottato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Declined</masterLabel>
+        <translation>Rifiutato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Home Inspection</masterLabel>
+        <translation>Ispezione domestica</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Initial Review</masterLabel>
+        <translation>Revisione iniziale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reserved</masterLabel>
+        <translation>Riservato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Returned</masterLabel>
+        <translation>Restituito</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trial Period</masterLabel>
+        <translation>Periodo di Prova</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Veterinary Check</masterLabel>
+        <translation>Controllo veterinario</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La categoría del medicamento</help>
+    <label>Categoría</label>
+    <name>Category__c</name>
+    <picklistValues>
+        <masterLabel>Anthelmintic</masterLabel>
+        <translation>Antihelmíntico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anti-bacterial</masterLabel>
+        <translation>Antibacteriano</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anti-parasitic</masterLabel>
+        <translation>Antiparasitario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anti-seizure</masterLabel>
+        <translation>Anticonvulsivo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AntiInflammatory</masterLabel>
+        <translation>Antiinflamatorio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antibiotic</masterLabel>
+        <translation>Antibiótico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antiemetic</masterLabel>
+        <translation>Antiemético</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antimicrobial</masterLabel>
+        <translation>Antimicrobiano</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antimicrobial intramammary</masterLabel>
+        <translation>Antimicrobiano intramamario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antimicrobial intramammary/Anti Inflammatory</masterLabel>
+        <translation>Antimicrobiano intramamario/antiinflamatorio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antimicrobial/Anti Inflammatory</masterLabel>
+        <translation>Antimicrobiano/Antiinflamatorio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antimicrobial/Anti Inflammatory; Antimycotic</masterLabel>
+        <translation>Antimicrobiano/antiinflamatorio; Antimicótico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antimicrobial/Antimycotic</masterLabel>
+        <translation>Antimicrobiano/antimicótico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antimycotic</masterLabel>
+        <translation>Antimicótico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antiprotozoal</masterLabel>
+        <translation>Antiprotozoarios</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antiprotozoal anticoccidial</masterLabel>
+        <translation>Antiprotozoario anticoccidial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antiprotozoal coccidiostat</masterLabel>
+        <translation>Coccidiostático antiprotozoario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antiseptic</masterLabel>
+        <translation>Antiséptico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antisera</masterLabel>
+        <translation>Antisueros</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cardio Vascular</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cardio Vascular ACE inhibitor</masterLabel>
+        <translation>Inhibidor de la ECA cardiovascular</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cardio Vascular diuretic</masterLabel>
+        <translation>Diurético cardiovascular</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cardio Vascular/Respiratory Agent</masterLabel>
+        <translation>Agente cardiovascular/respiratorio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cytokine</masterLabel>
+        <translation>Citoquina</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Decongestant</masterLabel>
+        <translation>Descongestivo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Diagnostic Preparation</masterLabel>
+        <translation>Preparación diagnóstica</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Diluent</masterLabel>
+        <translation>Diluyente</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ectoparasiticide</masterLabel>
+        <translation>Ectoparasiticida</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emetic</masterLabel>
+        <translation>Emético</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Endectocide</masterLabel>
+        <translation>Endectocida</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Euthanasia</masterLabel>
+        <translation>Eutanasia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastrointestinal</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastrointestinal anti-emetic</masterLabel>
+        <translation>Antiemético gastrointestinal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastrointestinal antibloat</masterLabel>
+        <translation>Antihinchazón gastrointestinal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastrointestinal antidiarrhoeal</masterLabel>
+        <translation>Antidiarreico gastrointestinal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastrointestinal laxative</masterLabel>
+        <translation>Laxante gastrointestinal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastrointestinal metabolic</masterLabel>
+        <translation>Metabólico gastrointestinal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Herbal</masterLabel>
+        <translation>Herbario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hormone</masterLabel>
+        <translation>Hormona</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hormone anabolic steroid</masterLabel>
+        <translation>Hormona esteroide anabólico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hormone sex</masterLabel>
+        <translation>Sexo hormonal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Immunomodulator</masterLabel>
+        <translation>Inmunomodulador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactivated Bacterial Vaccine</masterLabel>
+        <translation>Vacuna bacteriana inactivada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactivated Viral Vaccine</masterLabel>
+        <translation>Vacuna viral inactivada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactivated Viral and Bacterial Vaccine</masterLabel>
+        <translation>Vacuna viral y bacteriana inactivada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lactoserum</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Bacterial Vaccine</masterLabel>
+        <translation>Vacuna bacteriana viva</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Bacterial and Viral Vaccine</masterLabel>
+        <translation>Vacuna viva bacteriana y viral</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Fungal Vaccine</masterLabel>
+        <translation>Vacuna fúngica viva</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Parasitic Vaccine</masterLabel>
+        <translation>Vacuna parásita viva</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Viral Vaccine</masterLabel>
+        <translation>Vacuna viral viva</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Viral and Inactivated Bacterial Vaccine</masterLabel>
+        <translation>Vacuna viral viva y bacteriana inactivada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Viral and Inactivated Viral and Bacterial Vaccine</masterLabel>
+        <translation>Vacuna viral viva y viral e inactivada y bacteriana</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live and Inactivated Viral Vaccine</masterLabel>
+        <translation>Vacuna viral viva e inactivada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lubricant</masterLabel>
+        <translation>Lubricante</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mineral</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mineral anti-toxic</masterLabel>
+        <translation>Mineral antitóxico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mineral antianaemia</masterLabel>
+        <translation>Antianemia mineral</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mineral deficiency</masterLabel>
+        <translation>Deficiencia de minerales</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Musculoskeletal</masterLabel>
+        <translation>Musculoesquelético</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neurological Agent</masterLabel>
+        <translation>Agente neurológico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pain Killer</masterLabel>
+        <translation>Analgésico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Probiotic</masterLabel>
+        <translation>Probiótico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prostaglandin</masterLabel>
+        <translation>Prostaglandina</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Replacement Agent</masterLabel>
+        <translation>Agente de reemplazo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory expectorant</masterLabel>
+        <translation>Expectorante respiratorio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory mucolytic</masterLabel>
+        <translation>Mucolítico respiratorio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sedative</masterLabel>
+        <translation>Sedante</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Serum</masterLabel>
+        <translation>Suero</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tranquilizer</masterLabel>
+        <translation>Tranquilizante</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vaccination</masterLabel>
+        <translation>Vacunación</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vector Vaccine</masterLabel>
+        <translation>Vacuna vectorial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vitamin</masterLabel>
+        <translation>Vitamina</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vitamin/Mineral</masterLabel>
+        <translation>Vitamina/Mineral</translation>
+    </picklistValues>
+</CustomFieldTranslation>

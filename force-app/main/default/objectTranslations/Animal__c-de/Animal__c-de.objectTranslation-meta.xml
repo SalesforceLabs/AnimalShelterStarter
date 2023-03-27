@@ -111,6 +111,14 @@
     </quickActions>
     <quickActions>
         <label></label>
+        <name>Create_New_Assessment</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Find_Adoption_Matches</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
         <name>Mark_as_Deceased</name>
     </quickActions>
     <quickActions>
@@ -127,7 +135,7 @@
     </quickActions>
     <quickActions>
         <label></label>
-        <name>Start_Adoption</name>
+        <name>Start_Adoption_Process</name>
     </quickActions>
     <quickActions>
         <label></label>

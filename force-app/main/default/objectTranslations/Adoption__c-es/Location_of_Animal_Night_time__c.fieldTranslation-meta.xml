@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Dónde se guardará el animal durante la noche? ¿El área y el alojamiento son adecuados para el animal?</help>
+    <label>Ubicación del animal (noche)</label>
+    <name>Location_of_Animal_Night_time__c</name>
+</CustomFieldTranslation>

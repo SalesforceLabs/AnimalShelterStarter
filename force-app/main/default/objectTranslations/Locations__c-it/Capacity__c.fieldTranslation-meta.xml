@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La capacità dell&apos;Unità/Affidamento/Organizzazione, se la Capacità di localizzazione è impostata su Più Animali</help>
+    <label>Capacità</label>
+    <name>Capacity__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Cuáles son sus arreglos diurnos, es decir, trabajar desde casa, trabajar fuera, etc.?</help>
+    <label>Arreglos diurnos actuales</label>
+    <name>Current_Daytime_Arrangements__c</name>
+</CustomFieldTranslation>

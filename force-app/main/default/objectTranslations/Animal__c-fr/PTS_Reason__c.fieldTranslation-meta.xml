@@ -39,4 +39,8 @@
         <masterLabel>Stress or Anxiety</masterLabel>
         <translation></translation>
     </picklistValues>
+    <picklistValues>
+        <masterLabel>To comply with euthanasia policy</masterLabel>
+        <translation></translation>
+    </picklistValues>
 </CustomFieldTranslation>

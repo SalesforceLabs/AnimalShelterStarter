@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Calcolato come la quantità di tempo tra oggi e la data di nascita dell&apos;animale. Se non viene immessa alcuna data di nascita, viene utilizzata la data stimata.</help>
+    <label>Età calcolata</label>
+    <name>Calculated_Age__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La categoría de animales</help>
+    <label>Categoría</label>
+    <name>Category__c</name>
+    <picklistValues>
+        <masterLabel>Amphibian</masterLabel>
+        <translation>Anfibio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bird</masterLabel>
+        <translation>Pájaro</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fish</masterLabel>
+        <translation>Pescado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invertebrate</masterLabel>
+        <translation>Invertebrado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mammal</masterLabel>
+        <translation>Mamífero</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reptile</masterLabel>
+        <translation>Reptil</translation>
+    </picklistValues>
+</CustomFieldTranslation>

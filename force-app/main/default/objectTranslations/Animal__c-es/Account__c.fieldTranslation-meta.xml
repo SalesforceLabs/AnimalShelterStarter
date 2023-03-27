@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Si el animal fue transferido o vino de una organización, vincúlelos aquí.</help>
+    <label>Organización anterior/actual</label>
+    <name>Account__c</name>
+    <relationshipLabel>Animales relacionados</relationshipLabel>
+</CustomFieldTranslation>

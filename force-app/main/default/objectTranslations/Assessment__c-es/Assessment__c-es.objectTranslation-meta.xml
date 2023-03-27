@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Assessment Layout</layout>
+        <sections>
+            <label>Información de comportamiento</label>
+            <section>Behavioural Information</section>
+        </sections>
+        <sections>
+            <label>Personalizado</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Información general sobre el estado</label>
+            <section>Health Overview</section>
+        </sections>
+        <sections>
+            <label>Condición de las extremidades</label>
+            <section>Limb Condition</section>
+        </sections>
+        <sections>
+            <label>Parásitos/Enfermedades</label>
+            <section>Parasites/Disease</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Estado nuevo</label>
+        <name>New_Condition</name>
+    </quickActions>
+</CustomObjectTranslation>

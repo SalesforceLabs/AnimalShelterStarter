@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Comportamientos</label>
+    <name>Behaviours__c</name>
+    <picklistValues>
+        <masterLabel>Aggressive</masterLabel>
+        <translation>Agresivo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anxious</masterLabel>
+        <translation>Ansiedad</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bad Recall</masterLabel>
+        <translation>Mala recuperación</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cannot be held</masterLabel>
+        <translation>No se puede retener</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good Recall</masterLabel>
+        <translation>Buen recuerdo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with Children</masterLabel>
+        <translation>Bueno con los niños</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with other species</masterLabel>
+        <translation>Bueno con otras especies</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good with same species</masterLabel>
+        <translation>Bueno con la misma especie</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Happy being handled</masterLabel>
+        <translation>Feliz ser manejado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lead Reactive</masterLabel>
+        <translation>Plomo reactivo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulls on Lead</masterLabel>
+        <translation>Tira del plomo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reactive</masterLabel>
+        <translation>Reactiva</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resource Guarding</masterLabel>
+        <translation>Protección de recursos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Separation Anxiety</masterLabel>
+        <translation>Ansiedad por separación</translation>
+    </picklistValues>
+</CustomFieldTranslation>

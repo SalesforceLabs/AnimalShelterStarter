@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Stato</label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Domestic</masterLabel>
+        <translation>Nazionale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Exotic</masterLabel>
+        <translation>Esotico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Feral</masterLabel>
+        <translation>Ferino</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wild</masterLabel>
+        <translation>Selvaggio</translation>
+    </picklistValues>
+</CustomFieldTranslation>

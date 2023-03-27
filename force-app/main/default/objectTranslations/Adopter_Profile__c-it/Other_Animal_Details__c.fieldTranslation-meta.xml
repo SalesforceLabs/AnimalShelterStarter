@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Quali altri animali ci sono in casa?</help>
+    <label>Altri dettagli sugli animali</label>
+    <name>Other_Animal_Details__c</name>
+</CustomFieldTranslation>

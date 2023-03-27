@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Animal Alert Layout</layout>
+        <sections>
+            <label>Collegamenti personalizzati</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Messaggio</label>
+            <section>Message</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+    <startsWith></startsWith>
+    <validationRules>
+        <errorMessage>La data di fine non può essere inferiore alla data di inizio. Controlla le date inserite e riprova.</errorMessage>
+        <name>Animal_Alert_Date_Check</name>
+    </validationRules>
+</CustomObjectTranslation>

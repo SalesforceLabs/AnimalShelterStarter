@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Ci sono altri animali domestici / animali nel luogo in cui si troverà l&apos;animale? C&apos;è qualcosa che dobbiamo registrare su di loro? Questo animale sarebbe adatto a ospitare con gli altri animali / animali domestici nella posizione?</help>
+    <label>Altri animali domestici/animali</label>
+    <name>Other_Pets_Animals__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Medicine Layout</layout>
+        <sections>
+            <label>Detalles Adicionales</label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label>Personalizado</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Detalles del fabricante</label>
+            <section>Manufacturer Details</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+</CustomObjectTranslation>

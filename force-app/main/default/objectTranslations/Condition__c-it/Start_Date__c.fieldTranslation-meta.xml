@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Data e ora in cui la condizione è iniziata o è stata notata per la prima volta</help>
+    <label>Data Inizio</label>
+    <name>Start_Date__c</name>
+</CustomFieldTranslation>

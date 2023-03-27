@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>El número de microchip o número de etiqueta/ID del animal.</help>
+    <label>Número o etiqueta de microchip</label>
+    <name>Microchip__c</name>
+</CustomFieldTranslation>

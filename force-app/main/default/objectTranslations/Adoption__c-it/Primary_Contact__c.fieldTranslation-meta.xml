@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Il contatto principale per questa adozione.</help>
+    <label>Contatto Principale</label>
+    <name>Primary_Contact__c</name>
+    <relationshipLabel>Adozioni</relationshipLabel>
+</CustomFieldTranslation>

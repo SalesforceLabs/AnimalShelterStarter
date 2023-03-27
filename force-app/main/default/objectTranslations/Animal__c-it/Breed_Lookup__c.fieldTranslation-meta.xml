@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La razza degli animali - cerca l&apos;oggetto Razze</help>
+    <label>Razza</label>
+    <name>Breed_Lookup__c</name>
+    <relationshipLabel>Animali</relationshipLabel>
+</CustomFieldTranslation>

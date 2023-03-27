@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>L&apos;animale è stato sterilizzato/sterilizzato? Seleziona questa casella se la risposta è sì</help>
+    <label>Sterilizzato/Spayed</label>
+    <name>Neutered_Spayed__c</name>
+</CustomFieldTranslation>

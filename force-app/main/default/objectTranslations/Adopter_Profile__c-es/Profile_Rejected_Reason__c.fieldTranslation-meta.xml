@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>La razón por la que este perfil ha sido rechazado</help>
+    <label>Motivo del perfil rechazado</label>
+    <name>Profile_Rejected_Reason__c</name>
+</CustomFieldTranslation>

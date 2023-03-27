@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value></value>
+    </caseValues>
+    <gender></gender>
+    <layouts>
+        <layout>Adoption Layout</layout>
+        <sections>
+            <label>Detalles de adopción</label>
+            <section>Adoption Details</section>
+        </sections>
+        <sections>
+            <label>Inspección de adopción</label>
+            <section>Adoption Inspection</section>
+        </sections>
+        <sections>
+            <label>Personalizado</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Detalles rechazados</label>
+            <section>Declined Detail</section>
+        </sections>
+        <sections>
+            <label>Interno</label>
+            <section>Internal</section>
+        </sections>
+        <sections>
+            <label>Devuelto</label>
+            <section>Returned</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel></nameFieldLabel>
+</CustomObjectTranslation>

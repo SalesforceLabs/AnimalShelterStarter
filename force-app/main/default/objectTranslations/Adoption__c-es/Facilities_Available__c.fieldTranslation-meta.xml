@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Hay instalaciones adecuadas en la dirección de los adoptantes para el animal? es decir, alojamiento adecuado, áreas de ejercicio, entorno adecuado.</help>
+    <label>Instalaciones disponibles</label>
+    <name>Facilities_Available__c</name>
+</CustomFieldTranslation>

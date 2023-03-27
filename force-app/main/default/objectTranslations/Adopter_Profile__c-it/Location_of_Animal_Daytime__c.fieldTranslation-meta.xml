@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Dove sarà l&apos;animale durante il giorno, cioè casa, ufficio, asilo nido</help>
+    <label>Posizione di Animal - Daytime</label>
+    <name>Location_of_Animal_Daytime__c</name>
+</CustomFieldTranslation>

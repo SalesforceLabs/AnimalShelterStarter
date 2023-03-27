@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>¿Cuál es el nivel de hidratación?</help>
+    <label>Nivel de hidratación</label>
+    <name>Hydration_Level__c</name>
+    <picklistValues>
+        <masterLabel>Dehydrated</masterLabel>
+        <translation>Deshidratado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Normal</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

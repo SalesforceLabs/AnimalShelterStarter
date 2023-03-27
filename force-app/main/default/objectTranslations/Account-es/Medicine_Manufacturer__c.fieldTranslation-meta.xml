@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Compruebe esto para indicar que es un fabricante / proveedor de medicamentos</help>
+    <label>Fabricante del medicamento</label>
+    <name>Medicine_Manufacturer__c</name>
+</CustomFieldTranslation>

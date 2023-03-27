@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Il trattamento in cui il medicinale è usato</help>
+    <label>Trattamento utilizzato in</label>
+    <name>Treatment_Used_In__c</name>
+    <relationshipLabel>Medicinali utilizzati</relationshipLabel>
+</CustomFieldTranslation>

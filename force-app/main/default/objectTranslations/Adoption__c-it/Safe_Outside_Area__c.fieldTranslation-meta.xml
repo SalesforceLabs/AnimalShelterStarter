@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>L&apos;alloggio dell&apos;adottante ha una zona sicura?</help>
+    <label>Area esterna sicura</label>
+    <name>Safe_Outside_Area__c</name>
+</CustomFieldTranslation>

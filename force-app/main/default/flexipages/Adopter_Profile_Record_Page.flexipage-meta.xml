@@ -819,7 +819,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>Adopter_Profile__c.Contact__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Adopter_Profile__c.Contact__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>

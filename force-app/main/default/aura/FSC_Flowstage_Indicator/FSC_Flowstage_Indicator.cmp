@@ -1,4 +1,4 @@
-<aura:component implements="lightning:availableForFlowScreens">
+<aura:component implements="lightning:availableForFlowScreens" access="global">
    <!-- Attributes that store $Flow.ActiveStages and $Flow.CurrentStage -->
    <aura:attribute name="stages" type="String[]"/>
    <aura:attribute name="currentStage" type="String"/>

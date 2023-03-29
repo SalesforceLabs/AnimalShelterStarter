@@ -15,7 +15,7 @@ def update_files(RemoveOnlyMode: Optional[bool] = False):
   
   all_files = []
   aura_files = glob.glob(SEARCH_FOLDER + "/aura/*.cmp", recursive=True)
-  class_files = glob.glob(SEARCH_FOLDER + "/classes/*.cls-meta.xml", recursive=True)
+  class_files = glob.glob(SEARCH_FOLDER + "/classes/*.cls", recursive=True)
   flow_files = glob.glob(SEARCH_FOLDER + "/flows/*.flow-meta.xml", recursive=True)
   d_rule_files = glob.glob(SEARCH_FOLDER + "/**/*.duplicateRule-meta.xml", recursive=True)
   vf_files = glob.glob(SEARCH_FOLDER + "/pages/*.page-meta.xml", recursive=True)

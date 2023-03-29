@@ -1,5 +1,5 @@
-@isTest
 global class MockW3WResponseGenerator implements HttpCalloutMock {
+
     global HTTPResponse respond(HTTPRequest req) {
         // Create a fake response
         HttpResponse res = new HttpResponse();

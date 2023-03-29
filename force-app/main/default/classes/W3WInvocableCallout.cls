@@ -25,13 +25,13 @@ public with sharing class W3WInvocableCallout {
         
         
         //Add key as a Custom setting
-        Animal_Shelter_Settings__c apikey = Animal_Shelter_Settings__c.getOrgDefaults();
+        %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c apikey = %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.getOrgDefaults();
         string w3wkey = apikey.What3Words_API_Key__c;
             
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         //String theURL = 'https://api.what3words.com/v3/autosuggest?input='+theAnimal.what3words__c+'&key=APIKEY';
-        String theURL = 'https://api.what3words.com/v3/convert-to-coordinates?words='+theAnimal.what3words__c+'&key='+w3wkey;
+        String theURL = 'https://api.what3words.com/v3/convert-to-coordinates?words='+theAnimal.%%%NAMESPACED_ORG%%%what3words__c+'&key='+w3wkey;
         request.setEndpoint(theURL);
         request.setMethod('GET');
         HttpResponse response = http.send(request);

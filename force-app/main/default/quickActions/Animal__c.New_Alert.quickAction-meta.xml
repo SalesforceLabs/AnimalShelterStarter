@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldOverrides>
-        <field>Severity_Level__c</field>
+        <field>%%%NAMESPACED_ORG%%%Severity_Level__c</field>
         <literalValue>Medium</literalValue>
     </fieldOverrides>
     <fieldOverrides>
-        <field>Start_Date_Time__c</field>
+        <field>%%%NAMESPACED_ORG%%%Start_Date_Time__c</field>
         <formula>NOW()</formula>
     </fieldOverrides>
     <fieldOverrides>
-        <field>Type__c</field>
+        <field>%%%NAMESPACED_ORG%%%Type__c</field>
         <literalValue>General</literalValue>
     </fieldOverrides>
     <label>New Alert</label>
@@ -19,17 +19,17 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Alert_Message__c</field>
+                <field>%%%NAMESPACED_ORG%%%Alert_Message__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Start_Date_Time__c</field>
+                <field>%%%NAMESPACED_ORG%%%Start_Date_Time__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Type__c</field>
+                <field>%%%NAMESPACED_ORG%%%Type__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
@@ -40,18 +40,18 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>End_Date_Time__c</field>
+                <field>%%%NAMESPACED_ORG%%%End_Date_Time__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Severity_Level__c</field>
+                <field>%%%NAMESPACED_ORG%%%Severity_Level__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
     <successMessage>Alert added for this animal!</successMessage>
-    <targetObject>Animal_Alert__c</targetObject>
-    <targetParentField>Animal__c</targetParentField>
+    <targetObject>%%%NAMESPACED_ORG%%%Animal_Alert__c</targetObject>
+    <targetParentField>%%%NAMESPACED_ORG%%%Animal__c</targetParentField>
     <type>Create</type>
 </QuickAction>

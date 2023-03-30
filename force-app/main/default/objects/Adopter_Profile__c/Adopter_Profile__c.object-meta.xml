@@ -156,7 +156,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <label>Adopter Profile</label>
     <nameField>
         <displayFormat>ADPROFILE{000000}</displayFormat>
@@ -172,7 +172,7 @@
         <searchResultsAdditionalFields>Profile_Approval_Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Profile_Start_Date__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
 </CustomObject>

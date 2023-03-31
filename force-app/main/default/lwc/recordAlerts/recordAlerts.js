@@ -6,6 +6,7 @@ import { NavigationMixin } from 'lightning/navigation';
 export default class RecordAlerts extends NavigationMixin(LightningElement) {
   @api recordId;
   @track isNoAlerts;
+  @track showRecords;
   error;
   records;
 
@@ -16,16 +17,24 @@ export default class RecordAlerts extends NavigationMixin(LightningElement) {
       fields: ['%%%NAMESPACED_ORG%%%Animal_Alert__c.Id','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Alert_Message__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Start_Date_Time__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%End_Date_Time__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Severity_Level__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Type__c'],
       where: "{ %%%NAMESPACED_ORG%%%IsDisplayed__c: { eq: true } }"
   })listInfo({ error, data }) {
+
+      console.log("Animal Alerts LWC: Loading Records...");
+
+      this.isNoAlerts = true;
+      this.showRecords = false;
+      this.error = undefined;
+
       if (data) {
-            this.records = data.records;
-            this.isNoAlerts = false
-            if (this.records.length === 0) {
-                this.isNoAlerts = true;
+            console.log("Animal Alerts LWC: Records Found!");
+            //console.log(data)
+            //console.log(data.records)
+            if (data.records.length > 0){
+                console.log("Animal Alerts LWC: Loading Alert Data");
+                this.isNoAlerts = false;
+                this.showRecords = true;
+                this.records = data.records;
             }
-            this.error = undefined;
       } else if (error) {
-            this.error = error;
-            this.isNoAlerts = true;
             this.records = undefined;
             let message = 'Unknown error';
             if (Array.isArray(error.body)) {

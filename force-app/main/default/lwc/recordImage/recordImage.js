@@ -36,7 +36,7 @@ export default class recordImage extends LightningElement {
             this.IdField = CONTACT_ID_FIELD
             this.photoIdField = CONTACT_PHOTO_ID_FIELD
         }
-        if (this.objectApiName == 'Animal__c') {
+        if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
             this.IdField = ANIMAL_ID_FIELD
             this.photoIdField = ANIMAL_PHOTO_ID_FIELD
         }        
@@ -61,8 +61,8 @@ export default class recordImage extends LightningElement {
             );
         } else if (data) {
             this.CurrentRecord = data;
-            if (this.CurrentRecord.fields.Photo_Id__c.value) {
-                this.photoId = this.CurrentRecord.fields.Photo_Id__c.value;
+            if (this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value) {
+                this.photoId = this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value;
                 this.photoURL = '/sfc/servlet.shepherd/version/download/' + this.photoId;
             }
         }
@@ -89,7 +89,7 @@ export default class recordImage extends LightningElement {
             fields[CONTACT_ID_FIELD.fieldApiName] = this.recordId;
             fields[CONTACT_PHOTO_ID_FIELD.fieldApiName] = photoId;
         }
-        if (this.objectApiName == 'Animal__c') {
+        if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
             fields[ANIMAL_ID_FIELD.fieldApiName] = this.recordId;
             fields[ANIMAL_PHOTO_ID_FIELD.fieldApiName] = photoId;
         }        
@@ -100,8 +100,8 @@ export default class recordImage extends LightningElement {
             if (this.objectApiName == 'Contact') {
                 return refreshApex(this.Contact);
             }
-            if (this.objectApiName == 'Animal__c') {
-                return refreshApex(this.Animal__c);
+            if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
+                return refreshApex(this.%%%NAMESPACED_ORG%%%Animal__c);
             }  
             
         })

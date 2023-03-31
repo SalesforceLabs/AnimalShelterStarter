@@ -13,6 +13,8 @@ SEARCH_FOLDER = "force-app/main/default"
 
 def update_files(RemoveOnlyMode: Optional[bool] = False):
   
+  # FILES SPLIT TO ALLOW FOR EASIER READING
+
   all_files = []
   aura_files = glob.glob(SEARCH_FOLDER + "/aura/*.cmp", recursive=True)
   class_files = glob.glob(SEARCH_FOLDER + "/classes/*.cls", recursive=True)

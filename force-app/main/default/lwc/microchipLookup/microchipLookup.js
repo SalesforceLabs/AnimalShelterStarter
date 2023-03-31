@@ -46,8 +46,8 @@ export default class MicrochipLookup extends LightningElement {
             );
         } else if (data) {
             this.CurrentRecord = data;
-            if (this.CurrentRecord.fields.Microchip__c.value) {
-                this.mc_num = this.CurrentRecord.fields.Microchip__c.value;
+            if (this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Microchip__c.value) {
+                this.mc_num = this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Microchip__c.value;
             } else {
                 this.mc_num = 'No MicroChip Number Found. Please Update the record.'
             }
@@ -68,7 +68,7 @@ export default class MicrochipLookup extends LightningElement {
         this.errorMessage = ""
         
         // Ensure API Key has been set
-        if (!this.myCustomSettings.data.microchip_api_Token__c){
+        if (!this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c){
             this.resultsFound = false;
             this.isLoading = false;
             this.errorMessage = "No API Token found. Please update your API token in Animal Shelter Settings > Integration.";
@@ -102,7 +102,7 @@ export default class MicrochipLookup extends LightningElement {
         this.resultsFound = false;
         this.isLoading = true;
         const REC_BODY = {
-            token: this.myCustomSettings.data.microchip_api_Token__c,
+            token: this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c,
             uid: this.mc_num,
         };
         fetch(ENDPOINT, {

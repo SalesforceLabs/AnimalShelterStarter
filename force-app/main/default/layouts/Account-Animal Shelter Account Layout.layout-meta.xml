@@ -103,13 +103,13 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Animal_Organisation__c</field>
+                <field>%%%NAMESPACED_ORG%%%Animal_Organisation__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Medicine_Manufacturer__c</field>
+                <field>%%%NAMESPACED_ORG%%%Medicine_Manufacturer__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

@@ -71,9 +71,6 @@
                             <value>Animal__c.Multi_Animal_Clone</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>FeedItem.ContentPost</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Global.NewEvent</value>
                         </valueListItems>
                         <valueListItems>
@@ -84,9 +81,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Global.NewCase</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>FeedItem.LinkPost</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
@@ -109,7 +103,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>

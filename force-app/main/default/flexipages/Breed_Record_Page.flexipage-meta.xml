@@ -10,13 +10,7 @@
                             <value>Breed__c.Migrate_Breeds</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>FeedItem.ContentPost</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Edit</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>FeedItem.ContentNote</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>

@@ -22,12 +22,12 @@ All you need is to install the application in your org from the AppExchange.
 
 The app is free of use: open sourced, available on the AppExchange for free on GitHub.
 
-Keep in mind that Animal Shelter Starter Pack is not a Salesforce product.  Support is based on open source participation and requests are managed (as we can) via GitHub at <a href="https://github.com/SalesforceLabs/AnimalShelterStarter/issues"></a>
+Keep in mind that Animal Shelter Starter Pack is not a Salesforce product.  Support is based on open source participation and requests are managed (as we can) via GitHub at:  https://github.com/SalesforceLabs/AnimalShelterStarter/issues
 
 ## How Do I install
 The application is available to install from the AppExchange
 
-<a href="https://sfdc.co/btyOTa"><img width="300" src="./assets/Install_from_AppExchange.png" alt="Install from AppExchange"></a><br/>
+<a href="https://sfdc.co/btyOTa"><img width="300" src="./images/Install_from_AppExchange.png" alt="Install from AppExchange"></a><br/>
 
 ## How to get Support
 

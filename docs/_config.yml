@@ -1,0 +1,12 @@
+show_title: false
+##title: Animal Shelter Starter Pack
+
+description: Animal Shelter Starter Pack is an easy to use app to give Animal Organisations of any size the capability to manage the animals in their care on Salesforce
+
+show_downloads: false
+
+email: crolfe@salesforce.com
+github_username: cjrolfe
+
+page_home_label: Home
+page_home: /

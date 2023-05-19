@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Welcome to the Animal Shelter Starter Pack
+---
+
 
 # Welcome to the Animal Shelter Starter Pack
 

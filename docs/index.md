@@ -27,7 +27,7 @@ Keep in mind that Animal Shelter Starter Pack is not a Salesforce product.  Supp
 ## How Do I install
 The application is available to install from the AppExchange
 
-<a href="https://sfdc.co/btyOTa" target="_blank"><img width="300" src=./assets/Install_from_AppExchange.png" alt="Install from AppExchange"></a><br/>
+<a href="https://sfdc.co/btyOTa" target="_blank"><img width="300" src="./assets/Install_from_AppExchange.png" alt="Install from AppExchange"></a><br/>
 
 ## How to get Support
 

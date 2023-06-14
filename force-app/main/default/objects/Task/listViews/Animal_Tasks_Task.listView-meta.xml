@@ -10,6 +10,8 @@
     <columns>CORE.USERS.ALIAS</columns>
     <columns>LAST_UPDATE</columns>
     <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Movement__c</columns>
+    <columns>Animal_Action__c</columns>
     <filterScope>Queue</filterScope>
     <filters>
         <field>IS_CLOSED</field>

@@ -29,10 +29,10 @@
         <name>Update_Task_Associated</name>
         <label>Update Task Associated</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>WhatId</field>
+            <field>Animal_Action__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
@@ -55,13 +55,13 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
+            <field>Action_Completed__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

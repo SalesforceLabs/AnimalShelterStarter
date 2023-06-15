@@ -17,11 +17,6 @@
                 <label>Scheduled</label>
             </value>
             <value>
-                <fullName>Given - See Comments</fullName>
-                <default>false</default>
-                <label>Given - See Comments</label>
-            </value>
-            <value>
                 <fullName>Given</fullName>
                 <default>false</default>
                 <label>Given</label>
@@ -30,6 +25,12 @@
                 <fullName>Not Given</fullName>
                 <default>false</default>
                 <label>Not Given</label>
+            </value>
+            <value>
+                <fullName>Given - See Comments</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Given - See Comments</label>
             </value>
         </valueSetDefinition>
     </valueSet>

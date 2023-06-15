@@ -17,7 +17,7 @@
             <targetReference>Update_Task_Associated</targetReference>
         </connector>
     </assignments>
-    <description>[Animal Shelter] - On completion of Animal Action the associated Task is marked as complete</description>
+    <description>[Animal Shelter] - On completion of Animal Action the associated Task is marked as complete, and Animal Action fields are updated</description>
     <environments>Default</environments>
     <interviewLabel>Animal Action - Close Associated Task {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Animal Action - Close Associated Task</label>
@@ -62,11 +62,39 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Sync_Animal_Action_Fields</name>
+        <label>Sync Animal Action Fields</label>
+        <locationX>176</locationX>
+        <locationY>647</locationY>
+        <inputAssignments>
+            <field>Action_Completed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Action_Status__c</field>
+            <value>
+                <stringValue>Given</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Time_Action_Completed__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <description>Updates, and marks as complete the task associated with the Animal Action Record</description>
         <name>Update_Task_Associated</name>
         <label>Update Task Associated</label>
         <locationX>176</locationX>
         <locationY>539</locationY>
+        <connector>
+            <targetReference>Sync_Animal_Action_Fields</targetReference>
+        </connector>
         <inputReference>Get_Associated_Task</inputReference>
     </recordUpdates>
     <start>
@@ -82,13 +110,6 @@
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Action_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Given - See Comments</stringValue>
             </value>
         </filters>
         <filters>

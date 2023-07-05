@@ -567,21 +567,6 @@
             <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
         </fields>
-        <fields>
-            <name>Generate_Tasks_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Would you also like to generate tasks within Salesforce?&lt;/b&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Generate_Tasks_and_Treatment_Records</name>
-            <dataType>Boolean</dataType>
-            <defaultValue>
-                <booleanValue>false</booleanValue>
-            </defaultValue>
-            <fieldText>Yes, generate Tasks as well</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>

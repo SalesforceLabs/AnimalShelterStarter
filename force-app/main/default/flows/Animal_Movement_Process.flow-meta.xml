@@ -1154,7 +1154,7 @@
             <targetReference>Get_Animals_Details</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Create_Movement_Tasks</name>
         <label>Create Movement Tasks</label>
@@ -1174,6 +1174,12 @@
             <name>movementRecordId</name>
             <value>
                 <elementReference>CreateMovementRecord.newMovementRecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>taskDueDate</name>
+            <value>
+                <elementReference>Movement_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

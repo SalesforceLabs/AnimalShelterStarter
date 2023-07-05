@@ -67,15 +67,10 @@
     <description>[Animal Shelter Starter] - Subflow to generate tasks</description>
     <environments>Default</environments>
     <formulas>
-        <name>taskDueDate</name>
-        <dataType>Date</dataType>
-        <expression>{!$Flow.CurrentDate} +2</expression>
-    </formulas>
-    <formulas>
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
         <expression>IF(
-            {!Movement}, {!Get_Animal_Details.Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.Location_Name__c}, {!Get_Animal_Details.Animal_Name__c} + &quot; &quot; + {!Get_Animal_Action_Record.Action_Type__c} + &quot; action to be Completed&quot;)</expression>
+            {!Movement}, {!Get_Animal_Details.Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.Location_Name__c}, {!Get_Animal_Action_Record.Action_Type__c} + &quot; action for  &quot; + {!Get_Animal_Details.Animal_Name__c})</expression>
     </formulas>
     <interviewLabel>Animal - Generate Tasks Subflow</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -347,6 +342,13 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Task</objectType>
+    </variables>
+    <variables>
+        <name>taskDueDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <description>Which Animal Shelter object is this task related to</description>

@@ -70,9 +70,6 @@
                     <name>From_Date</name>
                 </fields>
                 <fields>
-                    <name>Generate_Tasks_Text</name>
-                </fields>
-                <fields>
                     <name>Generate_Tasks_and_Treatment_Records</name>
                 </fields>
                 <fields>

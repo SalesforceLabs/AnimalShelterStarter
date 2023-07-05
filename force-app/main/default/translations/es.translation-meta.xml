@@ -567,9 +567,6 @@
                     <name>From_Date</name>
                 </fields>
                 <fields>
-                    <name>Generate_Tasks_Text</name>
-                </fields>
-                <fields>
                     <name>Generate_Tasks_and_Treatment_Records</name>
                 </fields>
                 <fields>
@@ -1199,17 +1196,6 @@
                     <name>Choose_a_Movement</name>
                 </fields>
                 <fields>
-                    <inputParameters>
-                        <name>label</name>
-                        <value/>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>value</name>
-                        <value/>
-                    </inputParameters>
-                    <name>Generate_Tasks</name>
-                </fields>
-                <fields>
                     <name>Initial_Screen_Section1</name>
                 </fields>
                 <fields>
@@ -1225,12 +1211,6 @@
                         <value/>
                     </inputParameters>
                     <name>Initial_Screen_Section1_Column2</name>
-                </fields>
-                <fields>
-                    <name>Screen_Generate_Tasks_Information</name>
-                </fields>
-                <fields>
-                    <name>Screen_TypeOfMovement_Info</name>
                 </fields>
                 <name>Initial_Screen</name>
             </screens>

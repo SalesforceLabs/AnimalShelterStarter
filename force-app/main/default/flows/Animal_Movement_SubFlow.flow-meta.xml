@@ -4,7 +4,7 @@
         <name>Error_Email</name>
         <label>Error Email</label>
         <locationX>440</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -32,37 +32,37 @@
         <name>Movement_Record_Assignments</name>
         <label>Movement Record Assignments</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Start_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>startDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varNewMovementType</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.%%%NAMESPACED_ORG%%%Location__c</assignToReference>
+            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>LocationId</elementReference>
@@ -76,7 +76,7 @@
         <name>Set_Output_Variable</name>
         <label>Set Output Variable</label>
         <locationX>176</locationX>
-        <locationY>878</locationY>
+        <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>newMovementRecordId</assignToReference>
             <operator>Assign</operator>
@@ -85,13 +85,14 @@
             </value>
         </assignmentItems>
     </assignments>
+    <description>[Animal Shelter] Subflow to create Movement Records</description>
     <environments>Default</environments>
     <formulas>
         <name>fmlLocationName</name>
         <dataType>String</dataType>
         <expression>IF(
 {!varNewMovementType} = &quot;Housed&quot;, 
-{!varNewMovementType} + &quot; - &quot; + {!Get_Newly_Created_Movement_Record.%%%NAMESPACED_ORG%%%Location_Name__c},
+{!varNewMovementType} + &quot; - &quot; + {!Get_Newly_Created_Movement_Record.Location_Name__c},
 {!varNewMovementType}
 )</expression>
     </formulas>
@@ -99,7 +100,7 @@
         <name>IncrementAllocationBy1</name>
         <dataType>Number</dataType>
         <expression>IF(
-            ISPICKVAL({!Get_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Location_Record.%%%NAMESPACED_ORG%%%Allocation__c} + 1, 0)        </expression>
+            ISPICKVAL({!Get_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Location_Record.Allocation__c} + 1, 0)</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Movement SubFlow</interviewLabel>
@@ -128,7 +129,7 @@
         <name>Create_Movement_Record</name>
         <label>Create Movement Record</label>
         <locationX>176</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <connector>
             <targetReference>Get_Newly_Created_Movement_Record</targetReference>
         </connector>
@@ -142,7 +143,7 @@
         <name>Get_Location_Record</name>
         <label>Get Location Record</label>
         <locationX>176</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Location_Allocation</targetReference>
@@ -159,14 +160,14 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Newly_Created_Movement_Record</name>
         <label>Get Newly Created Movement Record</label>
         <locationX>176</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Animal_Location_Status</targetReference>
@@ -184,14 +185,14 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Update_Animal_Location_Status</name>
         <label>Update Animal Location Status</label>
         <locationX>176</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <connector>
             <targetReference>Get_Location_Record</targetReference>
         </connector>
@@ -208,24 +209,24 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <value>
                 <elementReference>fmlLocationName</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Site__c</field>
+            <field>Site__c</field>
             <value>
-                <elementReference>Get_Newly_Created_Movement_Record.%%%NAMESPACED_ORG%%%Sitename__c</elementReference>
+                <elementReference>Get_Newly_Created_Movement_Record.Sitename__c</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Location_Allocation</name>
         <label>Update Location Allocation</label>
         <locationX>176</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Set_Output_Variable</targetReference>
         </connector>
@@ -238,12 +239,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Allocation__c</field>
+            <field>Allocation__c</field>
             <value>
                 <elementReference>IncrementAllocationBy1</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -280,12 +281,19 @@
         <isOutput>true</isOutput>
     </variables>
     <variables>
+        <name>startDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>varNewMovementRecord</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
     <variables>
         <name>varNewMovementType</name>

@@ -5,16 +5,16 @@
         <name>Create_Animal_record_for_Update</name>
         <label>Create Animal record for Update</label>
         <locationX>710</locationX>
-        <locationY>1130</locationY>
+        <locationY>1022</locationY>
         <assignmentItems>
-            <assignToReference>recordId.%%%NAMESPACED_ORG%%%Animal_Status__c</assignToReference>
+            <assignToReference>recordId.Animal_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Deceased</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>recordId.%%%NAMESPACED_ORG%%%Location_Status__c</assignToReference>
+            <assignToReference>recordId.Location_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue></stringValue>
@@ -28,7 +28,7 @@
         <name>Is_Animal_Already_Marked_as_Deceased</name>
         <label>Is Animal Already Marked as Deceased?</label>
         <locationX>380</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <defaultConnector>
             <targetReference>Initial_Screen</targetReference>
         </defaultConnector>
@@ -37,7 +37,7 @@
             <name>Yes_Animal_Already_Marked_as_Deceased</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>recordId.%%%NAMESPACED_ORG%%%Animal_Status__c</leftValueReference>
+                <leftValueReference>recordId.Animal_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Deceased</stringValue>
@@ -53,7 +53,7 @@
         <name>Is_there_an_existing_Movement_Record</name>
         <label>Is there an existing Movement Record</label>
         <locationX>710</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Create_Animal_record_for_Update</targetReference>
         </defaultConnector>
@@ -80,7 +80,7 @@
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
         <expression>IF(
-            ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Allocation__c} - 1, 0)</expression>
+            ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.Allocation__c} - 1, 0)</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Deceased Animal Flow</interviewLabel>
@@ -109,7 +109,7 @@
         <name>Get_Current_Location_Record</name>
         <label>Get Current Location Record</label>
         <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Reset_Location_Status</targetReference>
@@ -119,18 +119,18 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Current_Movement_Record.%%%NAMESPACED_ORG%%%Location__r.Id</elementReference>
+                <elementReference>Get_Current_Movement_Record.Location__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
         <locationX>710</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_there_an_existing_Movement_Record</targetReference>
@@ -141,21 +141,21 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -163,7 +163,7 @@
         <name>Clear_Current_Movement_Record</name>
         <label>Clear Current Movement Record</label>
         <locationX>314</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <connector>
             <targetReference>Get_Current_Location_Record</targetReference>
         </connector>
@@ -180,24 +180,24 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%End_Date__c</field>
+            <field>End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
         <locationX>314</locationX>
-        <locationY>878</locationY>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Create_Animal_record_for_Update</targetReference>
         </connector>
@@ -214,24 +214,24 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Allocation__c</field>
+            <field>Allocation__c</field>
             <value>
                 <elementReference>DecrementAllocationBy1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
         <locationX>710</locationX>
-        <locationY>1250</locationY>
+        <locationY>1130</locationY>
         <connector>
             <targetReference>Completion_Screen</targetReference>
         </connector>
@@ -244,13 +244,13 @@
         <name>Animal_Already_Deceased_With_Correct_Movement_Record</name>
         <label>Animal Already Deceased With Correct Movement Record</label>
         <locationX>50</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Animal_Already_Deceased_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c} is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is an error, please review the animal record information and update it accordingly.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Animal_Name__c} is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is an error, please review the animal record information and update it accordingly.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -260,13 +260,13 @@
         <name>Completion_Screen</name>
         <label>Completion Screen</label>
         <locationX>710</locationX>
-        <locationY>1370</locationY>
+        <locationY>1238</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Completion_Screen_Text</name>
-            <fieldText>&lt;p&gt;{!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c} is now marked as deceased&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;{!recordId.Animal_Name__c} is now marked as deceased&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -276,7 +276,7 @@
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>1282</locationX>
-        <locationY>1370</locationY>
+        <locationY>1238</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -292,7 +292,7 @@
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
         <locationX>710</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -313,16 +313,16 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>recordId.%%%NAMESPACED_ORG%%%Deceased_Reason__c</objectFieldReference>
+                    <objectFieldReference>recordId.Deceased_Reason__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>recordId.%%%NAMESPACED_ORG%%%PTS_Reason__c</objectFieldReference>
+                    <objectFieldReference>recordId.PTS_Reason__c</objectFieldReference>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>recordId.%%%NAMESPACED_ORG%%%Deceased_Reason__c</leftValueReference>
+                            <leftValueReference>recordId.Deceased_Reason__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <stringValue>Put To Sleep (PTS)</stringValue>
@@ -344,7 +344,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>recordId.%%%NAMESPACED_ORG%%%Deceased_Date__c</objectFieldReference>
+                    <objectFieldReference>recordId.Deceased_Date__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -367,13 +367,13 @@
             <targetReference>Is_Animal_Already_Marked_as_Deceased</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
 </Flow>

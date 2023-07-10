@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Error_Email</name>
         <label>Error Email</label>
-        <locationX>440</locationX>
-        <locationY>674</locationY>
+        <locationX>578</locationX>
+        <locationY>1166</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -29,9 +29,39 @@
     </actionCalls>
     <apiVersion>55.0</apiVersion>
     <assignments>
+        <name>Future_Date_Assignments</name>
+        <label>Future Date Assignments</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varNewMovementRecord.Movement_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateAnimalLocation</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Movement_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Movement_Record_Assignments</name>
         <label>Movement Record Assignments</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>134</locationY>
         <assignmentItems>
             <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
@@ -41,24 +71,17 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>startDate</elementReference>
+                <elementReference>movementStartDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>varNewMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>varNewMovementType</elementReference>
+                <elementReference>movementType</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -69,14 +92,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_Movement_Record</targetReference>
+            <targetReference>Is_the_Movement_Date_in_the_Future</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Set_Output_Variable</name>
         <label>Set Output Variable</label>
-        <locationX>176</locationX>
-        <locationY>782</locationY>
+        <locationX>182</locationX>
+        <locationY>1274</locationY>
         <assignmentItems>
             <assignToReference>newMovementRecordId</assignToReference>
             <operator>Assign</operator>
@@ -84,16 +107,121 @@
                 <elementReference>varNewMovementRecord.Id</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Generate_Movement_Task</targetReference>
+        </connector>
     </assignments>
+    <assignments>
+        <name>Todays_Date_Assignments</name>
+        <label>Todays Date Assignments</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varNewMovementRecord.Movement_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateAnimalLocation</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Movement_Record</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Generate_Movement_Task</name>
+        <label>Generate Movement Task?</label>
+        <locationX>182</locationX>
+        <locationY>1382</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Movement_Tasks__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Movement_Task</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_the_Movement_Date_in_the_Future</name>
+        <label>Is the Movement Date in the Future?</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Todays_Date_Assignments</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Future_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>movementStartDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Future_Date_Assignments</targetReference>
+            </connector>
+            <label>Yes Future Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Animal_Location_Fields</name>
+        <label>Update Animal Location Fields</label>
+        <locationX>182</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>Get_Location_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>updateAnimalLocation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Animal_Location_Status</targetReference>
+            </connector>
+            <label>Yes - Update</label>
+        </rules>
+    </decisions>
     <description>[Animal Shelter] Subflow to create Movement Records</description>
     <environments>Default</environments>
     <formulas>
         <name>fmlLocationName</name>
         <dataType>String</dataType>
         <expression>IF(
-{!varNewMovementType} = &quot;Housed&quot;, 
-{!varNewMovementType} + &quot; - &quot; + {!Get_Newly_Created_Movement_Record.Location_Name__c},
-{!varNewMovementType}
+{!movementType} = &quot;Housed&quot;, 
+{!movementType} + &quot; - &quot; + {!Get_Newly_Created_Movement_Record.Location_Name__c},
+{!movementType}
 )</expression>
     </formulas>
     <formulas>
@@ -128,8 +256,8 @@
     <recordCreates>
         <name>Create_Movement_Record</name>
         <label>Create Movement Record</label>
-        <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationX>182</locationX>
+        <locationY>542</locationY>
         <connector>
             <targetReference>Get_Newly_Created_Movement_Record</targetReference>
         </connector>
@@ -142,8 +270,8 @@
     <recordLookups>
         <name>Get_Location_Record</name>
         <label>Get Location Record</label>
-        <locationX>176</locationX>
-        <locationY>566</locationY>
+        <locationX>182</locationX>
+        <locationY>1058</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Location_Allocation</targetReference>
@@ -166,11 +294,11 @@
     <recordLookups>
         <name>Get_Newly_Created_Movement_Record</name>
         <label>Get Newly Created Movement Record</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationX>182</locationX>
+        <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Animal_Location_Status</targetReference>
+            <targetReference>Update_Animal_Location_Fields</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -191,15 +319,11 @@
     <recordUpdates>
         <name>Update_Animal_Location_Status</name>
         <label>Update Animal Location Status</label>
-        <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationX>50</locationX>
+        <locationY>866</locationY>
         <connector>
             <targetReference>Get_Location_Record</targetReference>
         </connector>
-        <faultConnector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Error_Email</targetReference>
-        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -225,8 +349,8 @@
     <recordUpdates>
         <name>Update_Location_Allocation</name>
         <label>Update Location Allocation</label>
-        <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationX>182</locationX>
+        <locationY>1166</locationY>
         <connector>
             <targetReference>Set_Output_Variable</targetReference>
         </connector>
@@ -247,13 +371,51 @@
         <object>Locations__c</object>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Movement_Record_Assignments</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <subflows>
+        <name>Create_Movement_Task</name>
+        <label>Create Movement Task</label>
+        <locationX>50</locationX>
+        <locationY>1490</locationY>
+        <flowName>Animal_Generate_Tasks_Subflow</flowName>
+        <inputAssignments>
+            <name>animalRecordId</name>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>movementRecordId</name>
+            <value>
+                <elementReference>newMovementRecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>taskDueDate</name>
+            <value>
+                <elementReference>movementStartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>taskObjectType</name>
+            <value>
+                <stringValue>Movement</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>taskQueueName</name>
+            <value>
+                <stringValue>Animal_Tasks</stringValue>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
     <textTemplates>
         <name>FlowErrorMessage</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -274,6 +436,20 @@
         <isOutput>true</isOutput>
     </variables>
     <variables>
+        <name>movementStartDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>movementType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
         <name>newMovementRecordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -281,10 +457,10 @@
         <isOutput>true</isOutput>
     </variables>
     <variables>
-        <name>startDate</name>
-        <dataType>Date</dataType>
+        <name>updateAnimalLocation</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
-        <isInput>true</isInput>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>
@@ -294,12 +470,5 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Movement__c</objectType>
-    </variables>
-    <variables>
-        <name>varNewMovementType</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
     </variables>
 </Flow>

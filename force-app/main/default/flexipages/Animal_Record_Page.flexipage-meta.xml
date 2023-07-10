@@ -1790,6 +1790,21 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>MassChangeOwner</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>Animal__c.Id</value>
                 </componentInstanceProperties>
@@ -1798,19 +1813,56 @@
                     <value>Movements__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
+                    <name>relatedListDisplayType</name>
                     <value>ADVGRID</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Type__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Start_Date__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>End_Date__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Current__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Location_Name__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Location__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Movement_Status__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Movements</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
                     <value>false</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer4</identifier>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>Start_Date__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Descending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList6</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-5ec4c2b9-ad75-4ceb-b025-17e6bbd594ed</name>

@@ -139,6 +139,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Animal Action</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>animalRecordId</elementReference>
@@ -189,6 +195,12 @@
             <field>Subject</field>
             <value>
                 <elementReference>taskSubjectFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Animal Movement</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

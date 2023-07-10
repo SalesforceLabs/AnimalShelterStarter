@@ -151,24 +151,13 @@
         <connector>
             <targetReference>Get_Animals_Current_Movement_Record</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Animal Movement</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Completed</stringValue>
-            </value>
-        </filters>
+        <filterFormula>AND(
+ISPICKVAL({!$Record.Type}, &quot;Animal Movement&quot;),
+ISPICKVAL({!$Record.Status}, &quot;Completed&quot;),
+ISPICKVAL({!$Record.Movement__r.Movement_Status__c}, &quot;Pending&quot;))</filterFormula>
         <object>Task</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

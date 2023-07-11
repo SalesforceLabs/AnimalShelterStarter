@@ -11,13 +11,6 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <layouts>
-        <layout>Contact Layout</layout>
-        <sections>
-            <label>Personalizado</label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
     <quickActions>
         <aspect>Master</aspect>
         <label>Nuevo perfil de adoptante</label>

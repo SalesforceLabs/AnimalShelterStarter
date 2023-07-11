@@ -70,9 +70,6 @@
                     <name>From_Date</name>
                 </fields>
                 <fields>
-                    <name>Generate_Tasks_and_Treatment_Records</name>
-                </fields>
-                <fields>
                     <name>Schedule_Header</name>
                 </fields>
                 <fields>
@@ -470,18 +467,6 @@
                     <name>Error_Text</name>
                 </fields>
                 <name>Error_Screen</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>Error_Text_2</name>
-                </fields>
-                <name>Error_Screen_2</name>
-            </screens>
-            <screens>
-                <fields>
-                    <name>Finish_Text</name>
-                </fields>
-                <name>Finish</name>
             </screens>
             <screens>
                 <fields>

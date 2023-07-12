@@ -5,7 +5,7 @@
     <inlineHelpText>The animals type</inlineHelpText>
     <label>Type</label>
     <length>50</length>
-    <required>false</required>
+    <required>true</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

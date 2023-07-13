@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Movement_Tasks__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>When checked tasks are created for each Movement record created. Default is enabled</description>
+    <externalId>false</externalId>
+    <label>Enable Movement Tasks</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

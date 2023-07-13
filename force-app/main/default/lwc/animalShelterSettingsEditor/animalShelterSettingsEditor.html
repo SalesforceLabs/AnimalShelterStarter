@@ -68,6 +68,35 @@
                         </lightning-layout-item>
                     </lightning-layout>
                 </lightning-tab>
+                <lightning-tab label="Tasks">
+                    <lightning-layout>
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <p><b>Enable Movement Tasks</b></p>
+                            <p>When enabled, Animal Shelter Starter will create Tasks for each Movement record created.</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <div class="slds-form-element__control slds-float_right">
+                                <lightning-input type="toggle" label="Enable Movement Tasks"
+                                        checked={settings_data.%%%NAMESPACED_ORG%%%Enable_Movement_Tasks__c} onchange={handleBooleanChange}
+                                        data-field="%%%NAMESPACED_ORG%%%Enable_Movement_Tasks__c"></lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <hr />
+                        <lightning-layout>
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <p><b>Enable Animal Action Tasks</b></p>
+                                <p>When enabled, Animal Shelter Starter will create Tasks for each Animal Action record.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <div class="slds-form-element__control slds-float_right">
+                                    <lightning-input type="toggle" label="Enable Animal Action Tasks"
+                                        checked={settings_data.%%%NAMESPACED_ORG%%%Enable_Animal_Action_Tasks__c} onchange={handleBooleanChange}
+                                        data-field="%%%NAMESPACED_ORG%%%Enable_Animal_Action_Tasks__c"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                </lightning-tab>
                 <lightning-tab label="Integrations">
                     <lightning-layout multiple-rows="false">
                         <lightning-layout-item padding="around-small"  size="6">

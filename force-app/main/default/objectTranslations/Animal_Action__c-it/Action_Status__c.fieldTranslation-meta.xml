@@ -8,10 +8,6 @@
         <translation>Date</translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Given - See Comments</masterLabel>
-        <translation>Dato - Vedi Commenti</translation>
-    </picklistValues>
-    <picklistValues>
         <masterLabel>Not Given</masterLabel>
         <translation>Non dato</translation>
     </picklistValues>

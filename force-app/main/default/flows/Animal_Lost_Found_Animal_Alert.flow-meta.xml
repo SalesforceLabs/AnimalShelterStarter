@@ -5,30 +5,30 @@
         <name>Build_Alert</name>
         <label>Build Alert</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%Alert_Message__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.Alert_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>animalAlertMessage</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%Start_Date_Time__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.Start_Date_Time__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>newAnimalAlertRecord.%%%NAMESPACED_ORG%%%End_Date_Time__c</assignToReference>
+            <assignToReference>newAnimalAlertRecord.End_Date_Time__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>daysToAddToStartDate</elementReference>
@@ -71,7 +71,7 @@
         <name>Create_Animal_Alert</name>
         <label>Create Animal Alert</label>
         <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <inputReference>newAnimalAlertRecord</inputReference>
     </recordCreates>
     <start>
@@ -80,15 +80,16 @@
         <connector>
             <targetReference>Build_Alert</targetReference>
         </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Lost_Found__c</field>
+            <field>Lost_Found__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
@@ -109,6 +110,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal_Alert__c</objectType>
+        <objectType>Animal_Alert__c</objectType>
     </variables>
 </Flow>

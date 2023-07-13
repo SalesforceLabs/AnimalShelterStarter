@@ -114,6 +114,10 @@
         <name>New_Assessment</name>
     </quickActions>
     <quickActions>
+        <label></label>
+        <name>Start_Adoption</name>
+    </quickActions>
+    <quickActions>
         <aspect>Master</aspect>
         <label>Iniciar proceso de adopción</label>
         <name>Start_Adoption_Process</name>

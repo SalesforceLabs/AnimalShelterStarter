@@ -8,10 +8,6 @@
         <translation>Dados</translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Given - See Comments</masterLabel>
-        <translation>Dado - Ver comentarios</translation>
-    </picklistValues>
-    <picklistValues>
         <masterLabel>Not Given</masterLabel>
         <translation>No hay ningún pedido con este id dado</translation>
     </picklistValues>

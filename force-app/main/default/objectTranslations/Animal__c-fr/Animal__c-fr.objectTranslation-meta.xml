@@ -103,6 +103,10 @@
     </quickActions>
     <quickActions>
         <label></label>
+        <name>Start_Adoption</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
         <name>Start_Adoption_Process</name>
     </quickActions>
     <quickActions>

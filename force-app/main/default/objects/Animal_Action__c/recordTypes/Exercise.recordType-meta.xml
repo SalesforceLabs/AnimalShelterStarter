@@ -10,10 +10,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Given - See Comments</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Not Given</fullName>
             <default>false</default>
         </values>

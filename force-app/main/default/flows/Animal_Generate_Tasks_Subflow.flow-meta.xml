@@ -70,7 +70,7 @@
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
         <expression>IF(
-            {!Movement}, {!Get_Animal_Details.Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.Location_Name__c}, {!Get_Animal_Action_Record.Action_Type__c} + &quot; action for  &quot; + {!Get_Animal_Details.Animal_Name__c})</expression>
+            {!Movement}, {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.%%%NAMESPACED_ORG%%%Location_Name__c}, {!Get_Animal_Action_Record.%%%NAMESPACED_ORG%%%Action_Type__c} + &quot; action for  &quot; + {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c})</expression>
     </formulas>
     <interviewLabel>Animal - Generate Tasks Subflow</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -105,11 +105,11 @@
         <inputAssignments>
             <field>ActivityDate</field>
             <value>
-                <elementReference>Get_Animal_Action_Record.Date_Time_of_Action__c</elementReference>
+                <elementReference>Get_Animal_Action_Record.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Animal_Action__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Action__c</field>
             <value>
                 <elementReference>animalActionRecordId</elementReference>
             </value>
@@ -168,7 +168,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Movement__c</field>
+            <field>%%%NAMESPACED_ORG%%%Movement__c</field>
             <value>
                 <elementReference>movementRecordId</elementReference>
             </value>
@@ -230,7 +230,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Animal_Action__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -251,7 +251,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Animal__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -272,7 +272,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Movement__c</object>
+        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>

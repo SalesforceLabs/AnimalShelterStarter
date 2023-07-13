@@ -19,7 +19,7 @@
         <value>0</value>
     </filters>
     <label>Animal Tasks - Outstanding</label>
-    <queue>Animal_Tasks</queue>
+    <queue>%%%NAMESPACED_ORG%%%Animal_Tasks</queue>
     <sharedTo>
         <allInternalUsers></allInternalUsers>
     </sharedTo>

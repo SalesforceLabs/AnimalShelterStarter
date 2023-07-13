@@ -154,7 +154,7 @@
         <name>queueName</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>Adoption_Tasks</stringValue>
+            <stringValue>%%%NAMESPACED_ORG%%%Adoption_Tasks</stringValue>
         </value>
     </constants>
     <decisions>

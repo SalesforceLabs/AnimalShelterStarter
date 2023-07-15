@@ -12,5 +12,5 @@
     <columns>UPDATEDBY_USER.ALIAS</columns>
     <filterScope>Queue</filterScope>
     <label>Adoption Tasks - All</label>
-    <queue>%%%NAMESPACED_ORG%%%Adoption_Tasks</queue>
+    <queue>Adoption_Tasks</queue>
 </ListView>

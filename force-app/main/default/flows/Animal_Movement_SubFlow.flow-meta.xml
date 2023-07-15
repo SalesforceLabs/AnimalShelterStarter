@@ -411,7 +411,7 @@
         <inputAssignments>
             <name>taskQueueName</name>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Animal_Tasks</stringValue>
+                <stringValue>Animal_Tasks</stringValue>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>

@@ -80,7 +80,7 @@
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
         <expression>IF(
-            ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.Allocation__c} - 1, 0)</expression>
+            ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.%%%NAMESPACED_ORG%%%Allocation__c} - 1, 0)</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Deceased Animal Flow</interviewLabel>
@@ -225,7 +225,7 @@
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Record</name>
@@ -250,7 +250,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Animal_Already_Deceased_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Animal_Name__c} is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is an error, please review the animal record information and update it accordingly.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c} is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is an error, please review the animal record information and update it accordingly.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

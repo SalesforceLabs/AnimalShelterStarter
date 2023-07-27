@@ -7,7 +7,7 @@
         <locationX>578</locationX>
         <locationY>1382</locationY>
         <assignmentItems>
-            <assignToReference>profile.Contact__c</assignToReference>
+            <assignToReference>profile.%%%NAMESPACED_ORG%%%Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
@@ -30,21 +30,21 @@
         <locationX>578</locationX>
         <locationY>2030</locationY>
         <assignmentItems>
-            <assignToReference>profile.Active__c</assignToReference>
+            <assignToReference>profile.%%%NAMESPACED_ORG%%%Active__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>profile.Profile_Start_Date__c</assignToReference>
+            <assignToReference>profile.%%%NAMESPACED_ORG%%%Profile_Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>profile.Profile_Approval_Status__c</assignToReference>
+            <assignToReference>profile.%%%NAMESPACED_ORG%%%Profile_Approval_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>New</stringValue>
@@ -154,7 +154,7 @@
         <name>queueName</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>%%%NAMESPACED_ORG%%%Task_List</stringValue>
+            <stringValue>Task_List</stringValue>
         </value>
     </constants>
     <decisions>
@@ -214,7 +214,7 @@
         <displayField>Name</displayField>
         <object>Account</object>
         <outputAssignments>
-            <assignToReference>profile.Local_Vet_details__c</assignToReference>
+            <assignToReference>profile.%%%NAMESPACED_ORG%%%Local_Vet_details__c</assignToReference>
             <field>Id</field>
         </outputAssignments>
     </dynamicChoiceSets>
@@ -319,21 +319,21 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Active__c</field>
+            <field>%%%NAMESPACED_ORG%%%Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
-            <field>Contact__c</field>
+            <field>%%%NAMESPACED_ORG%%%Contact__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Adopter_Profile__c</object>
+        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -389,18 +389,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Active__c</field>
+            <field>%%%NAMESPACED_ORG%%%Active__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Profile_End_Date__c</field>
+            <field>%%%NAMESPACED_ORG%%%Profile_End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>Adopter_Profile__c</object>
+        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
     </recordUpdates>
     <screens>
         <name>Active_Profile_Screen</name>
@@ -421,7 +421,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Active_Profile_Screen_Text</name>
-                    <fieldText>&lt;p&gt;An active Adopter Profile dated {!Get_Adopter_Profiles_for_this_Contact.Profile_Start_Date__c} already exists do you want to create a new one?  Select your option on the right.&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;An active Adopter Profile dated {!Get_Adopter_Profiles_for_this_Contact.%%%NAMESPACED_ORG%%%Profile_Start_Date__c} already exists do you want to create a new one?  Select your option on the right.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -524,12 +524,12 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Type_of_Accommodation__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Location_of_Animal_Daytime__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -545,17 +545,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Permission_to_House_Animal__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Safe_Outside_Area__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Location_of_Animal_Night__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Location_of_Animal_Night__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -620,26 +620,26 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Type_of_Animal__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Type_of_Animal__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Other_Animals__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Other_Animals__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Other_Animals_of_same_Species__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Other_Animal_Details__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Other_Animal_Details__c</objectFieldReference>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>profile.Other_Animals__c</leftValueReference>
+                            <leftValueReference>profile.%%%NAMESPACED_ORG%%%Other_Animals__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
@@ -661,22 +661,22 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Preferred_Maturity_Level__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Preferred_Maturity_Level__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Gender__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Gender__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Preferred_Animal_Size__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Preferred_Animal_Size__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Special_Care_Adoption_Considered__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Special_Care_Adoption_Considered__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -776,7 +776,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Current_Daytime_Arrangements__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -792,7 +792,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Small_Children__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Small_Children__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -857,7 +857,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Reason_for_wanting_to_Adopt__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Reason_for_wanting_to_Adopt__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -873,7 +873,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.Local_Vet__c</objectFieldReference>
+                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Local_Vet__c</objectFieldReference>
                 </fields>
                 <fields>
                     <name>Local_Vet</name>
@@ -885,7 +885,7 @@
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>profile.Local_Vet__c</leftValueReference>
+                            <leftValueReference>profile.%%%NAMESPACED_ORG%%%Local_Vet__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
@@ -1101,7 +1101,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Adopter_Profile__c</objectType>
+        <objectType>%%%NAMESPACED_ORG%%%Adopter_Profile__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>

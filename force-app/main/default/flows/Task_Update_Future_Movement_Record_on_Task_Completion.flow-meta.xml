@@ -82,7 +82,7 @@
         <inputAssignments>
             <field>%%%NAMESPACED_ORG%%%Site__c</field>
             <value>
-                <elementReference>$Record.Movement__r.Sitename__c</elementReference>
+                <elementReference>$Record.%%%NAMESPACED_ORG%%%Movement__r.%%%NAMESPACED_ORG%%%Sitename__c</elementReference>
             </value>
         </inputAssignments>
         <object>%%%NAMESPACED_ORG%%%Animal__c</object>

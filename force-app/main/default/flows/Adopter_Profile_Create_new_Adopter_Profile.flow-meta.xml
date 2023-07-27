@@ -5,9 +5,9 @@
         <name>Assign_Contact_ID_Stage_3</name>
         <label>Assign Contact ID &amp; Stage 3</label>
         <locationX>578</locationX>
-        <locationY>1550</locationY>
+        <locationY>1382</locationY>
         <assignmentItems>
-            <assignToReference>profile.%%%NAMESPACED_ORG%%%Contact__c</assignToReference>
+            <assignToReference>profile.Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
@@ -28,23 +28,23 @@
         <name>Assign_other_details</name>
         <label>Assign other details</label>
         <locationX>578</locationX>
-        <locationY>2270</locationY>
+        <locationY>2030</locationY>
         <assignmentItems>
-            <assignToReference>profile.%%%NAMESPACED_ORG%%%Active__c</assignToReference>
+            <assignToReference>profile.Active__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>profile.%%%NAMESPACED_ORG%%%Profile_Start_Date__c</assignToReference>
+            <assignToReference>profile.Profile_Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>profile.%%%NAMESPACED_ORG%%%Profile_Approval_Status__c</assignToReference>
+            <assignToReference>profile.Profile_Approval_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>New</stringValue>
@@ -58,7 +58,7 @@
         <name>Stage_1</name>
         <label>Stage 1</label>
         <locationX>578</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -74,7 +74,7 @@
         <name>Stage_2</name>
         <label>Stage 2</label>
         <locationX>578</locationX>
-        <locationY>1310</locationY>
+        <locationY>1166</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -90,7 +90,7 @@
         <name>Stage_4</name>
         <label>Stage 4</label>
         <locationX>578</locationX>
-        <locationY>1790</locationY>
+        <locationY>1598</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -106,7 +106,7 @@
         <name>Stage_5</name>
         <label>Stage 5</label>
         <locationX>578</locationX>
-        <locationY>2030</locationY>
+        <locationY>1814</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -122,7 +122,7 @@
         <name>Stage_6_File_Upload</name>
         <label>Stage 6 - File Upload</label>
         <locationX>578</locationX>
-        <locationY>2510</locationY>
+        <locationY>2246</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -138,7 +138,7 @@
         <name>Stage_7_Complete</name>
         <label>Stage 7 - Complete</label>
         <locationX>578</locationX>
-        <locationY>2990</locationY>
+        <locationY>2678</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -154,14 +154,14 @@
         <name>queueName</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>%%%NAMESPACED_ORG%%%Adoption_Tasks</stringValue>
+            <stringValue>%%%NAMESPACED_ORG%%%Task_List</stringValue>
         </value>
     </constants>
     <decisions>
         <name>Create_New_Profile_Selected</name>
         <label>Create New Profile Selected</label>
         <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <defaultConnector>
             <targetReference>No_New_Profile_Screen</targetReference>
         </defaultConnector>
@@ -186,7 +186,7 @@
         <name>Existing_Adopter_Profiles</name>
         <label>Existing Adopter Profiles?</label>
         <locationX>578</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Stage_2</targetReference>
         </defaultConnector>
@@ -214,7 +214,7 @@
         <displayField>Name</displayField>
         <object>Account</object>
         <outputAssignments>
-            <assignToReference>profile.%%%NAMESPACED_ORG%%%Local_Vet_details__c</assignToReference>
+            <assignToReference>profile.Local_Vet_details__c</assignToReference>
             <field>Id</field>
         </outputAssignments>
     </dynamicChoiceSets>
@@ -250,7 +250,7 @@
         <name>Create_Adopter_Profile</name>
         <label>Create Adopter Profile</label>
         <locationX>578</locationX>
-        <locationY>2390</locationY>
+        <locationY>2138</locationY>
         <connector>
             <targetReference>Stage_6_File_Upload</targetReference>
         </connector>
@@ -264,7 +264,7 @@
         <name>Create_Adoption_Task</name>
         <label>Create Adoption Task</label>
         <locationX>578</locationX>
-        <locationY>2870</locationY>
+        <locationY>2570</locationY>
         <assignRecordIdToReference>taskId</assignRecordIdToReference>
         <connector>
             <targetReference>Stage_7_Complete</targetReference>
@@ -309,7 +309,7 @@
         <name>Get_Adopter_Profiles_for_this_Contact</name>
         <label>Get Adopter Profiles for this Contact</label>
         <locationX>578</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Existing_Adopter_Profiles</targetReference>
@@ -319,28 +319,28 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Active__c</field>
+            <field>Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Contact__c</field>
+            <field>Contact__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
+        <object>Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Queue_Id</name>
         <label>Get Queue Id</label>
         <locationX>578</locationX>
-        <locationY>2750</locationY>
+        <locationY>2462</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Adoption_Task</targetReference>
@@ -372,7 +372,7 @@
         <name>Update_Existing_Profile</name>
         <label>Update Existing Profile</label>
         <locationX>50</locationX>
-        <locationY>878</locationY>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Stage_2</targetReference>
         </connector>
@@ -389,24 +389,24 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Active__c</field>
+            <field>Active__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Profile_End_Date__c</field>
+            <field>Profile_End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
+        <object>Adopter_Profile__c</object>
     </recordUpdates>
     <screens>
         <name>Active_Profile_Screen</name>
         <label>Active Profile Screen</label>
         <locationX>314</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -421,7 +421,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Active_Profile_Screen_Text</name>
-                    <fieldText>&lt;p&gt;An active Adopter Profile dated {!Get_Adopter_Profiles_for_this_Contact.%%%NAMESPACED_ORG%%%Profile_Start_Date__c} already exists do you want to create a new one?  Select your option on the right.&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;An active Adopter Profile dated {!Get_Adopter_Profiles_for_this_Contact.Profile_Start_Date__c} already exists do you want to create a new one?  Select your option on the right.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -479,7 +479,7 @@
         <name>Adopter_Profile_Accommodation_Screen</name>
         <label>Adopter Profile Accommodation Screen</label>
         <locationX>578</locationX>
-        <locationY>1670</locationY>
+        <locationY>1490</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -524,12 +524,12 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Type_of_Accommodation__c</objectFieldReference>
+                    <objectFieldReference>profile.Type_of_Accommodation__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Location_of_Animal_Daytime__c</objectFieldReference>
+                    <objectFieldReference>profile.Location_of_Animal_Daytime__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -545,17 +545,17 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Permission_to_House_Animal__c</objectFieldReference>
+                    <objectFieldReference>profile.Permission_to_House_Animal__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Safe_Outside_Area__c</objectFieldReference>
+                    <objectFieldReference>profile.Safe_Outside_Area__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Location_of_Animal_Night__c</objectFieldReference>
+                    <objectFieldReference>profile.Location_of_Animal_Night__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -575,7 +575,7 @@
         <name>Adopter_Profile_Animal_Screen</name>
         <label>Adopter Profile Animal Screen</label>
         <locationX>578</locationX>
-        <locationY>1430</locationY>
+        <locationY>1274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -620,26 +620,26 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Type_of_Animal__c</objectFieldReference>
+                    <objectFieldReference>profile.Type_of_Animal__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Other_Animals__c</objectFieldReference>
+                    <objectFieldReference>profile.Other_Animals__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Other_Animals_of_same_Species__c</objectFieldReference>
+                    <objectFieldReference>profile.Other_Animals_of_same_Species__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Other_Animal_Details__c</objectFieldReference>
+                    <objectFieldReference>profile.Other_Animal_Details__c</objectFieldReference>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>profile.%%%NAMESPACED_ORG%%%Other_Animals__c</leftValueReference>
+                            <leftValueReference>profile.Other_Animals__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
@@ -661,22 +661,22 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Preferred_Maturity_Level__c</objectFieldReference>
+                    <objectFieldReference>profile.Preferred_Maturity_Level__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Gender__c</objectFieldReference>
+                    <objectFieldReference>profile.Gender__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Preferred_Animal_Size__c</objectFieldReference>
+                    <objectFieldReference>profile.Preferred_Animal_Size__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Special_Care_Adoption_Considered__c</objectFieldReference>
+                    <objectFieldReference>profile.Special_Care_Adoption_Considered__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -696,7 +696,7 @@
         <name>Adopter_Profile_Created_Screen</name>
         <label>Adopter Profile Created Screen</label>
         <locationX>578</locationX>
-        <locationY>3110</locationY>
+        <locationY>2786</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -731,7 +731,7 @@
         <name>Adopter_Profile_Lifestyle_Details</name>
         <label>Adopter Profile Lifestyle Details</label>
         <locationX>578</locationX>
-        <locationY>1910</locationY>
+        <locationY>1706</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -776,7 +776,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Current_Daytime_Arrangements__c</objectFieldReference>
+                    <objectFieldReference>profile.Current_Daytime_Arrangements__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -792,7 +792,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Small_Children__c</objectFieldReference>
+                    <objectFieldReference>profile.Small_Children__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -812,7 +812,7 @@
         <name>Adopter_Profile_Other_Screen</name>
         <label>Adopter Profile Other Screen</label>
         <locationX>578</locationX>
-        <locationY>2150</locationY>
+        <locationY>1922</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -857,7 +857,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Reason_for_wanting_to_Adopt__c</objectFieldReference>
+                    <objectFieldReference>profile.Reason_for_wanting_to_Adopt__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -873,7 +873,7 @@
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>profile.%%%NAMESPACED_ORG%%%Local_Vet__c</objectFieldReference>
+                    <objectFieldReference>profile.Local_Vet__c</objectFieldReference>
                 </fields>
                 <fields>
                     <name>Local_Vet</name>
@@ -885,7 +885,7 @@
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>profile.%%%NAMESPACED_ORG%%%Local_Vet__c</leftValueReference>
+                            <leftValueReference>profile.Local_Vet__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <booleanValue>true</booleanValue>
@@ -911,7 +911,7 @@
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>1810</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -927,7 +927,7 @@
         <name>File_Upload_Screen</name>
         <label>File Upload Screen</label>
         <locationX>578</locationX>
-        <locationY>2630</locationY>
+        <locationY>2354</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -990,7 +990,7 @@
         <name>No_New_Profile_Screen</name>
         <label>No New Profile Screen</label>
         <locationX>578</locationX>
-        <locationY>878</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1006,7 +1006,7 @@
         <name>Start_Screen</name>
         <label>Start Screen</label>
         <locationX>578</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1101,7 +1101,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adopter_Profile__c</objectType>
+        <objectType>Adopter_Profile__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>

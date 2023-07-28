@@ -29,7 +29,7 @@
         <name>Get_Associated_Animal_Action_Record</name>
         <label>Get Associated Animal Action Record</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Animal_Action_record</targetReference>
@@ -39,11 +39,11 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.WhatId</elementReference>
+                <elementReference>$Record.Animal_Action__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -51,7 +51,7 @@
         <name>Update_Animal_Action_record</name>
         <label>Update Animal Action record</label>
         <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -61,30 +61,30 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
+            <field>Action_Completed__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
+            <field>Action_Status__c</field>
             <value>
                 <stringValue>Given</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Comments__c</field>
+            <field>Comments__c</field>
             <value>
                 <elementReference>$Record.Description</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</field>
+            <field>Date_Time_Action_Completed__c</field>
             <value>
                 <elementReference>$Record.CompletedDateTime</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>

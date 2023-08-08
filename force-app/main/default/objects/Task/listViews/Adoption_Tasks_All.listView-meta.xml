@@ -13,4 +13,7 @@
     <filterScope>Queue</filterScope>
     <label>Adoption Tasks - All</label>
     <queue>Task_List</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
 </ListView>

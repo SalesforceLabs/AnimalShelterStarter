@@ -13,4 +13,7 @@
     <filterScope>Queue</filterScope>
     <label>Animal Tasks - All</label>
     <queue>Animal_Tasks</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
 </ListView>

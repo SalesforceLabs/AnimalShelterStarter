@@ -38,8 +38,14 @@ tasks:
                 - "Profile: "
 
     deploy:
-        options: 
+        options:
             path: force-app
+
+    test_deploy_package:
+        class_path: cumulusci.tasks.salesforce.UpdateDependencies
+        options:
+            dependencies:
+                - version_id: 04t4L000000UGhiQAG
 
 flows:
     post_config:

@@ -3,6 +3,7 @@
     <fullName>Task_Queue_Name__c</fullName>
     <description>[Animal Shelter] Used by flows to assign Tasks to a Queue rather than record Owner, if populated.</description>
     <externalId>false</externalId>
+    <inlineHelpText>Please use the Tasks API/Developer Name</inlineHelpText>
     <label>Task Queue Name</label>
     <length>100</length>
     <required>false</required>

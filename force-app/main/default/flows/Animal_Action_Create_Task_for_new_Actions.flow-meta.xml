@@ -12,14 +12,14 @@
             <name>Action_Completed</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Action_Completed__c</leftValueReference>
+                <leftValueReference>$Record.animalshelters__Action_Completed__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Action_Status__c</leftValueReference>
+                <leftValueReference>$Record.animalshelters__Action_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Given</stringValue>
@@ -108,7 +108,7 @@
         <connector>
             <targetReference>Create_Action_Task</targetReference>
         </connector>
-        <filterFormula>{!$Setup.Animal_Shelter_Settings__c.Enable_Animal_Action_Tasks__c}=TRUE</filterFormula>
+        <filterFormula>{!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Animal_Action_Tasks__c}=TRUE</filterFormula>
         <object>Animal_Action__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

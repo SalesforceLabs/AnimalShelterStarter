@@ -2,7 +2,7 @@
  * @File Name          : LocationController.apxc
  * @Description        : Gets records that are to be displayed on Location Map
  * @Author             : Chris Rolfe (Salesforce.org)
- * @Group              : 
+ * @Group              :
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
  * @Last Modified On   : 09/04/2021, 17:38
  * @Modification Log   : Removed need for WHERE, LIMITS to 100 records
@@ -21,14 +21,14 @@ public with sharing class LocationController {
         System.debug(listOfFields);
         String whereClause = varLat + ' != null';
         System.debug('Where Clause: ' + whereClause);
-        
+
         //Get 100 records
         if(Schema.describeSObjects(new List<String>{varObj})[0].isAccessible()){
             String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100';
             System.debug('Query String: ' + queryString);
             List<sObject> myData = Database.query(String.escapeSingleQuotes(queryString));
             System.debug('Returned Data: ' + myData);
-            
+
             //Get Field Label of varDescDate field
             List<Schema.DescribeSObjectResult> dsr = Schema.describeSObjects(new List<String> {varObj});
             String objectLabel = dsr[0].getLabel();
@@ -57,8 +57,8 @@ public with sharing class LocationController {
         System.debug('User does not have access to this object');
         return null;
     }
-    
-        
+
+
     public class Location{
         @AuraEnabled
         public String icon{get;set;}

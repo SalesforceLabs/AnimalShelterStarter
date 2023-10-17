@@ -1,11 +1,11 @@
 /**
  * @File Name          : AnimalActionRLClass2.apxc
- * @Description        : 
+ * @Description        :
  * @Author             : Chris Rolfe (Salesforce.org)
- * @Group              : 
+ * @Group              :
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
  * @Last Modified On   : 15/7/2020, 9:47:43 PM
- * @Modification Log   : 
+ * @Modification Log   :
  * Ver       Date            Author      		    Modification
  * 1.0    30/4/2020   Chris Rolfe (Salesforce.org)     Initial Version
  * 1.1    15/7/2020   Chris Rolfe                      removed namepsace reference
@@ -14,7 +14,7 @@ public with sharing class AnimalActionRLClass2 {
 
     @AuraEnabled
     public static List<%%%NAMESPACED_ORG%%%Animal_Action__c> getAnimalActions(String recId, String rTypeName){
-       
+
         // System.debug('recId = ' + recId);
         // System.debug('rTypeName = ' + rTypeName);
 
@@ -31,12 +31,12 @@ public with sharing class AnimalActionRLClass2 {
                     {
                         animalActions.add(z);
                     }
-                blnFirstTimeRound = true;     
-                }    
+                blnFirstTimeRound = true;
+                }
             }
             return animalActions;
         }
 
-        return null;   
+        return null;
     }
 }

@@ -4,10 +4,10 @@
     <dynamicChoiceSets>
         <name>AnimalActionExerciseRecordChoice</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Action_Lookup_Name__c</displayField>
+        <displayField>Action_Lookup_Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId</elementReference>
@@ -20,16 +20,16 @@
                 <elementReference>AnimalActionRecordTypeId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
         <outputAssignments>
             <assignToReference>AnimalActionStartDateTime</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</field>
+            <field>Date_Time_of_Action__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>AnimalActionId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</sortField>
+        <sortField>Date_Time_of_Action__c</sortField>
         <sortOrder>Asc</sortOrder>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
@@ -62,7 +62,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -75,13 +75,14 @@
     <recordLookups>
         <name>Get_Animal_Action_Exercise_RecordTypeID</name>
         <label>Get Animal Action Exercise RecordTypeID</label>
-        <locationX>546</locationX>
-        <locationY>490</locationY>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Exercise_Details_Screen</targetReference>
         </connector>
         <faultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
@@ -96,7 +97,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
+                <stringValue>animalshelters__Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -108,8 +109,8 @@
     <recordUpdates>
         <name>Update_Animal_Action_Exercise_Record</name>
         <label>Update Animal Action Exercise Record</label>
-        <locationX>1302</locationX>
-        <locationY>506</locationY>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
         <connector>
             <targetReference>End_Screen</targetReference>
         </connector>
@@ -125,42 +126,42 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
+            <field>Action_Completed__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Comments__c</field>
+            <field>Comments__c</field>
             <value>
                 <elementReference>Exercise_Comments_Long</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</field>
+            <field>Date_Time_Action_Completed__c</field>
             <value>
                 <elementReference>CalculateEndDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Exercise_Duration__c</field>
+            <field>Exercise_Duration__c</field>
             <value>
                 <elementReference>Exercise_Duration</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Given_By__c</field>
+            <field>Given_By__c</field>
             <value>
                 <elementReference>contactId</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
     </recordUpdates>
     <screens>
         <name>End_Screen</name>
         <label>End_Screen</label>
-        <locationX>1670</locationX>
-        <locationY>380</locationY>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -175,8 +176,8 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>912</locationX>
-        <locationY>856</locationY>
+        <locationX>440</locationX>
+        <locationY>458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -191,8 +192,8 @@
     <screens>
         <name>Exercise_Details_Screen</name>
         <label>Exercise Details Screen</label>
-        <locationX>913</locationX>
-        <locationY>380</locationY>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -252,8 +253,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>68</locationX>
-        <locationY>361</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_Animal_Action_Exercise_RecordTypeID</targetReference>
         </connector>
@@ -272,7 +273,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
+        <objectType>Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>AnimalActionRecords</name>
@@ -280,7 +281,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
+        <objectType>Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>AnimalActionRecordTypeId</name>

@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Task_Status</name>
         <label>Assign Task Status</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <assignmentItems>
             <assignToReference>Get_Associated_Task.Status</assignToReference>
             <operator>Assign</operator>
@@ -17,6 +17,29 @@
             <targetReference>Update_Task_Associated</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <description>Check if an associated task exists</description>
+        <name>Task_Found</name>
+        <label>Task Found</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>yes_task_connected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Associated_Task.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Task_Status</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
     <description>[Animal Shelter] - On completion of Animal Action the associated Task is marked as complete, and Animal Action fields are updated</description>
     <environments>Default</environments>
     <interviewLabel>Animal Action - Close Associated Task {!$Flow.CurrentDateTime}</interviewLabel>
@@ -43,15 +66,15 @@
     <recordLookups>
         <name>Get_Associated_Task</name>
         <label>Get Associated Task</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Task_Status</targetReference>
+            <targetReference>Task_Found</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal_Action__c</field>
+            <field>Animal_Action__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
@@ -64,22 +87,22 @@
     <recordUpdates>
         <name>Sync_Animal_Action_Fields</name>
         <label>Sync Animal Action Fields</label>
-        <locationX>176</locationX>
-        <locationY>647</locationY>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
+            <field>Action_Completed__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
+            <field>Action_Status__c</field>
             <value>
                 <stringValue>Given</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</field>
+            <field>Date_Time_Action_Completed__c</field>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
@@ -90,15 +113,15 @@
         <description>Updates, and marks as complete the task associated with the Animal Action Record</description>
         <name>Update_Task_Associated</name>
         <label>Update Task Associated</label>
-        <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Sync_Animal_Action_Fields</targetReference>
         </connector>
         <inputReference>Get_Associated_Task</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Associated_Task</targetReference>
@@ -106,20 +129,20 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>or</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
+            <field>Action_Completed__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
+            <field>Action_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Given</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

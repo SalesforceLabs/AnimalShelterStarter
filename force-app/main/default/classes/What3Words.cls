@@ -2,24 +2,24 @@
  * @File Name          : What3Words.apxc
  * @Description        : What3words JSON parser functionality. Taken from what3words help docs
  * @Author             : Chris Rolfe
- * @Group              : 
+ * @Group              :
  * @Last Modified By   : Chris Rolfe
  * @Last Modified On   : 20/02/2023
- * @Modification Log   : 
+ * @Modification Log   :
  * Ver       Date            Author      		    Modification
  * 1.0    20/02/2023  Chris Rolfe                     Initial Version
 **/
 
 public class What3Words {
-  
-    public String country {get;set;} 
-    public Square square {get;set;} 
-    public String nearestPlace {get;set;} 
-    public Southwest coordinates {get;set;} 
-    public String words {get;set;} 
-    public String language {get;set;} 
+
+    public String country {get;set;}
+    public Square square {get;set;}
+    public String nearestPlace {get;set;}
+    public Southwest coordinates {get;set;}
+    public String words {get;set;}
+    public String language {get;set;}
     public String mapUrl {get;set;} // in json: map
-  
+
     public What3Words(JSONParser parser) {
       while (parser.nextToken() != System.JSONToken.END_OBJECT) {
         if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
@@ -47,11 +47,11 @@ public class What3Words {
         }
       }
     }
-    
+
     public class Square {
-      public Southwest southwest {get;set;} 
-      public Southwest northeast {get;set;} 
-  
+      public Southwest southwest {get;set;}
+      public Southwest northeast {get;set;}
+
       public Square(JSONParser parser) {
         while (parser.nextToken() != System.JSONToken.END_OBJECT) {
           if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
@@ -70,11 +70,11 @@ public class What3Words {
         }
       }
     }
-  
+
     public class Southwest {
-      public Double lng {get;set;} 
-      public Double lat {get;set;} 
-  
+      public Double lng {get;set;}
+      public Double lat {get;set;}
+
       public Southwest(JSONParser parser) {
         while (parser.nextToken() != System.JSONToken.END_OBJECT) {
           if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
@@ -92,13 +92,13 @@ public class What3Words {
           }
         }
       }
-    }  
-      
+    }
+
     public static void consumeObject(System.JSONParser parser) {
       Integer depth = 0;
       do {
         System.JSONToken curr = parser.getCurrentToken();
-        if (curr == System.JSONToken.START_OBJECT || 
+        if (curr == System.JSONToken.START_OBJECT ||
           curr == System.JSONToken.START_ARRAY) {
           depth++;
         } else if (curr == System.JSONToken.END_OBJECT ||
@@ -107,10 +107,10 @@ public class What3Words {
         }
       } while (depth > 0 && parser.nextToken() != null);
     }
-    
+
     public static What3Words parse(String json) {
       System.JSONParser parser = System.JSON.createParser(json);
       return new What3Words(parser);
     }
-  
+
   }

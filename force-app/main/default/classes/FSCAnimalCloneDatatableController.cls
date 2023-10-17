@@ -1,11 +1,11 @@
 /**
  * @File Name          : FSCAnimalCloneDatatableController.cls
- * @Description        : 
+ * @Description        :
  * @Author             : Chris Rolfe (Salesforce.org)
- * @Group              : 
+ * @Group              :
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
  * @Last Modified On   : 11/06/2021, 08:27:00 AM
- * @Modification Log   : 
+ * @Modification Log   :
  * Ver       Date            Author      		    Modification
  * 1.0    11/06/2021   Chris Rolfe (Salesforce.org)     Initial Version
 **/
@@ -22,9 +22,9 @@ public with sharing class FSCAnimalCloneDatatableController {
                                     FROM %%%NAMESPACED_ORG%%%Animal__c
                                     WHERE %%%NAMESPACED_ORG%%%IsCloned__c = True WITH SECURITY_ENFORCED ];
 
-        return clonedAnimals;                           
+        return clonedAnimals;
         }
-    return null;  
+    return null;
     }
 
     @AuraEnabled

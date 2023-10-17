@@ -5,19 +5,19 @@
  * @Group              : Salesforce.org
  * @Last Modified By   : Chris Rolfe (Salesforce.org)
  * @Last Modified On   : 15/7/2020, 9:46:48 AM
- * @Modification Log   : 
+ * @Modification Log   :
  * Ver       Date            Author      		    Modification
  * 1.0    4/6/2020   Stewart Anderson     Initial Version
  * 1.1    15/7/2020  Chris Rolfe          removed namespace reference
- * 1.2    3/2/2022   Stewart Anderson     Added CRUD Permission Checks 
+ * 1.2    3/2/2022   Stewart Anderson     Added CRUD Permission Checks
 **/
 public with sharing class AlertBannerController {
-   
+
     /**
     * @description Returns a list of related Animal Alerts for a given Animal record ID
-    * @author Stewart Anderson (Salesforce.org) | 4/7/2020 
-    * @param parentId 
-    * @return List<%%%NAMESPACED_ORG%%%Animal_Alert__c> 
+    * @author Stewart Anderson (Salesforce.org) | 4/7/2020
+    * @param parentId
+    * @return List<%%%NAMESPACED_ORG%%%Animal_Alert__c>
     **/
     @AuraEnabled
     public static List<%%%NAMESPACED_ORG%%%Animal_Alert__c> getRelatedAlertRecords(Id parentId) {
@@ -32,7 +32,7 @@ public with sharing class AlertBannerController {
             return AlertList;
 
         }
-        
+
         return null;
     }
 }

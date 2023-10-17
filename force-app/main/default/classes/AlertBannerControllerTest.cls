@@ -1,11 +1,11 @@
 /**
  * @File Name          : AlertBannerControllerTest.cls
- * @Description        : 
+ * @Description        :
  * @Author             : Stewart Anderson (Salesforce.org)
- * @Group              : 
+ * @Group              :
  * @Last Modified By   : Stewart Anderson (Salesforce.org)
  * @Last Modified On   : 4/30/2020, 4:49:06 PM
- * @Modification Log   : 
+ * @Modification Log   :
  * Ver       Date            Author      		    Modification
  * 1.0    4/30/2020   Stewart Anderson (Salesforce.org)     Initial Version
 **/

@@ -1,5 +1,5 @@
 @IsTest
-    
+
 public class FSC_FileUploadPreviewControllerTest {
 
     @TestSetup
@@ -35,17 +35,17 @@ public class FSC_FileUploadPreviewControllerTest {
     }
 
         @isTest static void testReadDocument(){
-        
+
             List<Account> accList = [SELECT Id FROM Account WHERE Name = 'ASS Test Account' LIMIT 1];
             for(Account acc : accList){
                 List<ContentDocument> tstGetFiles  = new List<ContentDocument>();
                 tstGetFiles = FSC_FileUploadPreviewController.getFiles(String.valueOf(acc.Id));
                 Assert.isNotNull(tstGetFiles,'Read Uploaded Files Failed');
-            }           
+            }
         }
-        
+
         @isTest static  void testDeleteDocument(){
-            
+
             List<ContentDocument> cdList = [SELECT Id FROM ContentDocument WHERE Title = 'ASS Test File' LIMIT 1];
             for(ContentDocument cd : cdList){
                 FSC_FileUploadPreviewController.deleteFile(String.valueOf(cd.Id));
@@ -55,7 +55,7 @@ public class FSC_FileUploadPreviewControllerTest {
                 Assert.isTrue(df.IsDeleted, 'Delete File Failed');
             }
 
-        
+
         }
 
 }

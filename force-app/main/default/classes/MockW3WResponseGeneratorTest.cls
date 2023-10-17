@@ -7,11 +7,11 @@ private class MockW3WResponseGeneratorTest {
         HttpRequest req = new HttpRequest();
         req.setEndpoint('http://www.example.com');
         req.setMethod('GET');
-        
+
         // Call the mock response generator
         MockW3WResponseGenerator generator = new MockW3WResponseGenerator();
         HttpResponse res = generator.respond(req);
-        
+
         // Verify the response
         System.assertEquals(200, res.getStatusCode());
         System.assertEquals('application/json', res.getHeader('Content-Type'));

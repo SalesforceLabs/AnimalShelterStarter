@@ -1,6 +1,13 @@
+/**
+ * @description       :
+ * @author            : Stewart Anderson
+ * @group             :
+ * @last modified on  : 10-17-2023
+ * @last modified by  : Stewart Anderson
+**/
 public with sharing class AnimalShelterGetCustomSettings {
 
-    @AuraEnabled(cacheable=true) 
+    @AuraEnabled(cacheable=true)
     public static %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c getCustomSettings(){
         return %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.getOrgDefaults();
     }
@@ -13,7 +20,7 @@ public with sharing class AnimalShelterGetCustomSettings {
     @AuraEnabled
     public static %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c createDefaultSettings() {
         %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c animal_settings = new %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c();
-        animal_settings.%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c = true; 
+        animal_settings.%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c = true;
         animal_settings.%%%NAMESPACED_ORG%%%Enable_Auto_Match__c = true;
         animal_settings.%%%NAMESPACED_ORG%%%Default_Animal_Name__c = true;
         animal_settings.%%%NAMESPACED_ORG%%%Disable_Behaviour_Update__c = false;

@@ -7,25 +7,25 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Animal__c.Add_Scheduled_Action</value>
+                            <value>animalshelters__Animal__c.Add_Scheduled_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Complete_Exercise_Action</value>
+                            <value>animalshelters__Animal__c.Complete_Exercise_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Add_Treatment_Action</value>
+                            <value>animalshelters__Animal__c.Add_Treatment_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Add_Condition</value>
+                            <value>animalshelters__Animal__c.Add_Condition</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.New_Alert</value>
+                            <value>animalshelters__Animal__c.New_Alert</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Cage_Card</value>
+                            <value>animalshelters__Animal__c.Cage_Card</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Mark_as_Deceased</value>
+                            <value>animalshelters__Animal__c.Mark_as_Deceased</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -35,7 +35,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Start_Adoption_Process</value>
+                            <value>animalshelters__Animal__c.Start_Adoption_Process</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -45,7 +45,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Create_New_Assessment</value>
+                            <value>animalshelters__Animal__c.Create_New_Assessment</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -55,7 +55,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Find_Adoption_Matches</value>
+                            <value>animalshelters__Animal__c.Find_Adoption_Matches</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -65,10 +65,10 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Update_Animal_Location</value>
+                            <value>animalshelters__Animal__c.Update_Animal_Location</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Multi_Animal_Clone</value>
+                            <value>animalshelters__Animal__c.Multi_Animal_Clone</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Global.NewEvent</value>
@@ -1156,6 +1156,24 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-00d87a6d-07a7-4fcd-bed6-a8a2290b1cc1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Rehoming Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>actionNames</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1214,23 +1232,12 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-00d87a6d-07a7-4fcd-bed6-a8a2290b1cc1</value>
+                    <name>actionNames</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Rehoming Information</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection9</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>Animal__c.Id</value>
@@ -1240,19 +1247,47 @@
                     <value>Adoptions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Primary_Contact__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Date_of_Adoption__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Date_Collected__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Adoption_Stage__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Adoptions</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer</identifier>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>Date_of_Adoption__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Descending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList8</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-58c1fa3c-2fbf-4cc7-bf07-bf455acb4e81</name>
@@ -1735,6 +1770,13 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>Animal__c.Id</value>
                 </componentInstanceProperties>
@@ -1743,19 +1785,44 @@
                     <value>Conditions__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Condition_Description__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Start_Date__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>End_Date_Time__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Conditions</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer3</identifier>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>Start_Date__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Descending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList7</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-8caff930-736d-417d-9500-dc8658d5ea73</name>
@@ -1872,6 +1939,21 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>MassChangeOwner</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>Animal__c.Id</value>
                 </componentInstanceProperties>
@@ -1880,19 +1962,44 @@
                     <value>Animal_Relationships__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Related_Animal__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Related_Animal_Name__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Status__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Animal Relationships</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer5</identifier>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>Status__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Ascending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList9</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-d29ddff1-4c2b-41b7-8464-4022c20ebe8b</name>
@@ -1911,7 +2018,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
+                    <value>GRID</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>rowsToDisplay</name>

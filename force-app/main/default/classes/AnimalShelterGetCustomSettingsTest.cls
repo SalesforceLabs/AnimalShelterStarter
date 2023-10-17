@@ -1,6 +1,13 @@
+/**
+ * @description       :
+ * @author            : Stewart Anderson
+ * @group             :
+ * @last modified on  : 10-17-2023
+ * @last modified by  : Stewart Anderson
+**/
 @IsTest
 private class AnimalShelterGetCustomSettingsTest {
-    
+
     @IsTest static void testGetCustomSetting() {
         // Create a new custom setting record
         %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c setting = new %%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c();

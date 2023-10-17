@@ -2,36 +2,246 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
     <assignments>
-        <name>Return_Animal_Action_Task_Id</name>
-        <label>Return Animal Action Task Id</label>
+        <name>Assign_Queue_as_Owner</name>
+        <label>Assign Queue as Owner</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>866</locationY>
         <assignmentItems>
-            <assignToReference>createdTaskRecordId</assignToReference>
+            <assignToReference>taskToCreate.OwnerId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Create_Animal_Action_Task</elementReference>
+                <elementReference>Get_Queue_ID.Id</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Create_Task</targetReference>
+        </connector>
     </assignments>
     <assignments>
-        <name>Return_Movement_Task_Id</name>
-        <label>Return Movement Task Id</label>
+        <name>Build_Adopter_Profile_Task</name>
+        <label>Build Adopter Profile Task</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>taskToCreate.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>taskDueDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New Adopter Profile to review</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Adopter_Profile_Record.Owner:User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>adopterProfileId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Has_a_User_Defined_Queue_been_configured</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Build_Animal_Action_Task</name>
+        <label>Build Animal Action Task</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>taskToCreate.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Animal_Action_Record.Date_Time_of_Action__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Animal_Action__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>animalActionRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>taskSubjectFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Animal Action</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>animalRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Animal_Action_Record.Owner:User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Has_a_User_Defined_Queue_been_configured</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Build_Movement_Task</name>
+        <label>Build Movement Task</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>taskToCreate.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>taskDueDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Movement__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>movementRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>taskSubjectFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Animal Movement</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>animalRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>taskToCreate.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Current_Movement_Record.Owner:User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Has_a_User_Defined_Queue_been_configured</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Return_Task_Id</name>
+        <label>Return Task Id</label>
+        <locationX>446</locationX>
+        <locationY>1166</locationY>
         <assignmentItems>
             <assignToReference>createdTaskRecordId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Create_Movement_Task</elementReference>
+                <elementReference>taskToCreate.Id</elementReference>
             </value>
         </assignmentItems>
     </assignments>
     <decisions>
+        <description>Does the Task Queue Name custom setting contain a value?</description>
+        <name>Has_a_User_Defined_Queue_been_configured</name>
+        <label>Has a User Defined Queue been configured</label>
+        <locationX>446</locationX>
+        <locationY>650</locationY>
+        <defaultConnector>
+            <targetReference>Create_Task</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Queue Configured</defaultConnectorLabel>
+        <rules>
+            <name>Queue_Configured</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Task_Queue_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Queue_ID</targetReference>
+            </connector>
+            <label>Queue Configured</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>What_Type_of_Task_to_Create</name>
         <label>What Type of Task to Create</label>
-        <locationX>314</locationX>
-        <locationY>350</locationY>
+        <locationX>446</locationX>
+        <locationY>242</locationY>
         <defaultConnectorLabel>None</defaultConnectorLabel>
         <rules>
             <name>Movement</name>
@@ -63,6 +273,21 @@
             </connector>
             <label>Animal Action</label>
         </rules>
+        <rules>
+            <name>Adopter_Profile</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>taskObjectType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AdopterProfile</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Adopter_Profile_Record</targetReference>
+            </connector>
+            <label>Adopter Profile</label>
+        </rules>
     </decisions>
     <description>[Animal Shelter Starter] - Subflow to generate tasks</description>
     <environments>Default</environments>
@@ -70,7 +295,7 @@
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
         <expression>IF(
-            {!Movement}, {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.%%%NAMESPACED_ORG%%%Location_Name__c}, {!Get_Animal_Action_Record.%%%NAMESPACED_ORG%%%Action_Type__c} + &quot; action for  &quot; + {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c})</expression>
+            {!Movement}, {!Get_Animal_Details.Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.Location_Name__c}, {!Get_Animal_Action_Record.Action_Type__c} + &quot; action for  &quot; + {!Get_Animal_Details.Animal_Name__c})</expression>
     </formulas>
     <interviewLabel>Animal - Generate Tasks Subflow</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -95,131 +320,44 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Create_Animal_Action_Task</name>
-        <label>Create Animal Action Task</label>
-        <locationX>314</locationX>
-        <locationY>566</locationY>
+        <name>Create_Task</name>
+        <label>Create Task</label>
+        <locationX>446</locationX>
+        <locationY>1058</locationY>
         <connector>
-            <targetReference>Return_Animal_Action_Task_Id</targetReference>
+            <targetReference>Return_Task_Id</targetReference>
         </connector>
-        <inputAssignments>
-            <field>ActivityDate</field>
-            <value>
-                <elementReference>Get_Animal_Action_Record.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal_Action__c</field>
-            <value>
-                <elementReference>animalActionRecordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>Get_Queue_ID.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Priority</field>
-            <value>
-                <stringValue>Normal</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Not Started</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Subject</field>
-            <value>
-                <elementReference>taskSubjectFormula</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Type</field>
-            <value>
-                <stringValue>Animal Action</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>WhatId</field>
-            <value>
-                <elementReference>animalRecordId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Task</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <inputReference>taskToCreate</inputReference>
     </recordCreates>
-    <recordCreates>
-        <name>Create_Movement_Task</name>
-        <label>Create Movement Task</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
+    <recordLookups>
+        <name>Get_Adopter_Profile_Record</name>
+        <label>Get Adopter Profile Record</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Return_Movement_Task_Id</targetReference>
+            <targetReference>Build_Adopter_Profile_Task</targetReference>
         </connector>
-        <inputAssignments>
-            <field>ActivityDate</field>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
             <value>
-                <elementReference>taskDueDate</elementReference>
+                <elementReference>adopterProfileId</elementReference>
             </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Movement__c</field>
-            <value>
-                <elementReference>movementRecordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>Get_Queue_ID.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Priority</field>
-            <value>
-                <stringValue>Normal</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Not Started</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Subject</field>
-            <value>
-                <elementReference>taskSubjectFormula</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Type</field>
-            <value>
-                <stringValue>Animal Movement</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>WhatId</field>
-            <value>
-                <elementReference>animalRecordId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Task</object>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
+    </recordLookups>
     <recordLookups>
         <name>Get_Animal_Action_Record</name>
         <label>Get Animal Action Record</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_Animal_Action_Task</targetReference>
+            <targetReference>Build_Animal_Action_Task</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -230,14 +368,14 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Animal_Details</name>
         <label>Get Animal Details</label>
-        <locationX>314</locationX>
-        <locationY>242</locationY>
+        <locationX>446</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>What_Type_of_Task_to_Create</targetReference>
@@ -251,17 +389,17 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_Movement_Task</targetReference>
+            <targetReference>Build_Movement_Task</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -272,24 +410,24 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Queue_ID</name>
         <label>Get Queue ID</label>
         <locationX>314</locationX>
-        <locationY>134</locationY>
+        <locationY>758</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Animal_Details</targetReference>
+            <targetReference>Assign_Queue_as_Owner</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>taskQueueName</elementReference>
+                <elementReference>$Setup.Animal_Shelter_Settings__c.Task_Queue_Name__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -304,20 +442,19 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>188</locationX>
+        <locationX>320</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Queue_ID</targetReference>
+            <targetReference>Get_Animal_Details</targetReference>
         </connector>
     </start>
     <status>Active</status>
     <variables>
-        <name>ActionTasks</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
+        <name>adopterProfileId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Task</objectType>
     </variables>
     <variables>
         <name>animalActionRecordId</name>
@@ -348,14 +485,6 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>SingleTask</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Task</objectType>
-    </variables>
-    <variables>
         <name>taskDueDate</name>
         <dataType>Date</dataType>
         <isCollection>false</isCollection>
@@ -371,16 +500,9 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>taskQueueName</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>updatedTasks</name>
+        <name>taskToCreate</name>
         <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Task</objectType>

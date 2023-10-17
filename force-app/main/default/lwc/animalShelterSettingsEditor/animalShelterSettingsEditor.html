@@ -96,6 +96,19 @@
                                 </div>
                             </lightning-layout-item>
                         </lightning-layout>
+                        <hr />
+                        <lightning-layout multiple-rows="false">
+                            <lightning-layout-item padding="around-small"  size="6">
+                                <p><b>Task Queue Name</b></p>
+                                <p>Tasks created for Movements and Actions will be assigned to the record Owner, unless a Queue is created and the DeveloperName of the Queue is entered here. </p>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6">
+                                    <lightning-input label="Task Queue Name" type="text"
+                                        value={settings_data.%%%NAMESPACED_ORG%%%Task_Queue_Name__c} onchange={handleTextChange}
+                                        data-field="%%%NAMESPACED_ORG%%%Task_Queue_Name__c"></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <hr />
                 </lightning-tab>
                 <lightning-tab label="Integrations">
                     <lightning-layout multiple-rows="false">

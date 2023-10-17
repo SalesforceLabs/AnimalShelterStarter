@@ -12,14 +12,14 @@
             <name>Action_Completed</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.%%%NAMESPACED_ORG%%%Action_Completed__c</leftValueReference>
+                <leftValueReference>$Record.Action_Completed__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.%%%NAMESPACED_ORG%%%Action_Status__c</leftValueReference>
+                <leftValueReference>$Record.Action_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Given</stringValue>
@@ -62,19 +62,19 @@
             <targetReference>Update_Created_Task</targetReference>
         </connector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
+            <field>Action_Completed__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
+            <field>Action_Status__c</field>
             <value>
                 <stringValue>Given</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</field>
+            <field>Date_Time_Action_Completed__c</field>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
@@ -108,8 +108,8 @@
         <connector>
             <targetReference>Create_Action_Task</targetReference>
         </connector>
-        <filterFormula>{!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Enable_Animal_Action_Tasks__c}=TRUE</filterFormula>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <filterFormula>{!$Setup.Animal_Shelter_Settings__c.Enable_Animal_Action_Tasks__c}=TRUE</filterFormula>
+        <object>Animal_Action__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
@@ -132,19 +132,13 @@
         <inputAssignments>
             <name>animalRecordId</name>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <name>taskObjectType</name>
             <value>
                 <stringValue>Action</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>taskQueueName</name>
-            <value>
-                <stringValue>Animal_Tasks</stringValue>
             </value>
         </inputAssignments>
         <outputAssignments>

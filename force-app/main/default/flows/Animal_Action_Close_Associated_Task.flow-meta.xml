@@ -74,7 +74,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Animal_Action__c</field>
+            <field>%%%NAMESPACED_ORG%%%Animal_Action__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
@@ -90,19 +90,19 @@
         <locationX>50</locationX>
         <locationY>755</locationY>
         <inputAssignments>
-            <field>Action_Completed__c</field>
+            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Action_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
             <value>
                 <stringValue>Given</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Date_Time_Action_Completed__c</field>
+            <field>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</field>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
@@ -129,20 +129,20 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>or</filterLogic>
         <filters>
-            <field>Action_Completed__c</field>
+            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
-            <field>Action_Status__c</field>
+            <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Given</stringValue>
             </value>
         </filters>
-        <object>Animal_Action__c</object>
+        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

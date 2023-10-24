@@ -2,7 +2,8 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>58.0</apiVersion>
     <decisions>
-        <description>If the Animal Action record is created as completed, then the task is marked as completed</description>
+        <description>If the Animal Action record is created as completed, then the task is marked as
+            completed</description>
         <name>Has_Action_Been_Completed</name>
         <label>Has Action Been Completed?</label>
         <locationX>182</locationX>
@@ -12,14 +13,14 @@
             <name>Action_Completed</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.%%%NAMESPACED_ORG%%%animalshelters__Action_Completed__c</leftValueReference>
+                <leftValueReference>$Record.%%%NAMESPACED_ORG%%%Action_Completed__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.%%%NAMESPACED_ORG%%%animalshelters__Action_Status__c</leftValueReference>
+                <leftValueReference>$Record.%%%NAMESPACED_ORG%%%Action_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Given</stringValue>
@@ -108,7 +109,8 @@
         <connector>
             <targetReference>Create_Action_Task</targetReference>
         </connector>
-        <filterFormula>{!$Setup.%%%NAMESPACED_ORG%%%animalshelters__Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%animalshelters__Enable_Animal_Action_Tasks__c}=TRUE</filterFormula>
+        <filterFormula>
+            {!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Enable_Animal_Action_Tasks__c}=TRUE</filterFormula>
         <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

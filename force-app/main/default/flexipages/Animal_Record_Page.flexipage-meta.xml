@@ -7,25 +7,25 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Add_Scheduled_Action</value>
+                            <value>Animal__c.Add_Scheduled_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Complete_Exercise_Action</value>
+                            <value>Animal__c.Complete_Exercise_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Add_Treatment_Action</value>
+                            <value>Animal__c.Add_Treatment_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Add_Condition</value>
+                            <value>Animal__c.Add_Condition</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.New_Alert</value>
+                            <value>Animal__c.New_Alert</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Cage_Card</value>
+                            <value>Animal__c.Cage_Card</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Mark_as_Deceased</value>
+                            <value>Animal__c.Mark_as_Deceased</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -35,7 +35,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Start_Adoption_Process</value>
+                            <value>Animal__c.Start_Adoption_Process</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -45,7 +45,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Create_New_Assessment</value>
+                            <value>Animal__c.Create_New_Assessment</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -55,7 +55,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Find_Adoption_Matches</value>
+                            <value>Animal__c.Find_Adoption_Matches</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Animal_Status__c}</leftValue>
@@ -65,10 +65,10 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Update_Animal_Location</value>
+                            <value>Animal__c.Update_Animal_Location</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>animalshelters__Animal__c.Multi_Animal_Clone</value>
+                            <value>Animal__c.Multi_Animal_Clone</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Global.NewEvent</value>
@@ -1689,7 +1689,12 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Note: To add actions, use the &lt;/span&gt;&lt;b style=&quot;font-size: 11px;&quot;&gt;Add Scheduled Actions&lt;/b&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt; button above and follow the steps to add Treatments, Exercise Schedules and Nutrition/Diet Plans.&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span
+                        style=&quot;font-size: 11px;&quot;&gt;Note: To add actions, use the
+                        &lt;/span&gt;&lt;b style=&quot;font-size: 11px;&quot;&gt;Add Scheduled
+                        Actions&lt;/b&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt; button
+                        above and follow the steps to add Treatments, Exercise Schedules and
+                        Nutrition/Diet Plans.&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText</identifier>
@@ -1833,7 +1838,8 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>flowArguments</name>
-                    <value>[{&quot;label&quot;:&quot;recordId&quot;,&quot;dataType&quot;:&quot;SObject&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
+                    <value>
+                        [{&quot;label&quot;:&quot;recordId&quot;,&quot;dataType&quot;:&quot;SObject&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>flowLayout</name>

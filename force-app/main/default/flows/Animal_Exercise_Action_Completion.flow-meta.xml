@@ -97,7 +97,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%animalshelters__Animal_Action__c</stringValue>
+                <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -167,7 +167,8 @@
         <allowPause>false</allowPause>
         <fields>
             <name>End_Screen_Text</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;The exercise has been logged in Salesforce. Please click Finish to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;The exercise has been logged
+                in Salesforce. Please click Finish to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -183,7 +184,13 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an error!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and use the previous button below to go back a step and try again. If the problem persists please take a note of the fault message below and send it to your Salesforce Administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an
+                error!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and use the
+                previous button below to go back a step and try again. If the problem persists
+                please take a note of the fault message below and send it to your Salesforce
+                Administrator or Salesforce
+                Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault
+                Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -202,7 +209,8 @@
         </connector>
         <fields>
             <name>Exercise_Details_Text</name>
-            <fieldText>&lt;p&gt;Use the form below to enter the details of the completed Exercise&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Use the form below to enter the details of the completed
+                Exercise&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -226,7 +234,8 @@
             </defaultValue>
             <fieldText>Exercise Duration (Hours)</fieldText>
             <fieldType>InputField</fieldType>
-            <helpText>&lt;p&gt;What was the duration in hours at the end of the scheduled action?&lt;/p&gt;</helpText>
+            <helpText>&lt;p&gt;What was the duration in hours at the end of the scheduled
+                action?&lt;/p&gt;</helpText>
             <isRequired>true</isRequired>
             <scale>0</scale>
         </fields>

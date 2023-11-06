@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Lightning Print View</masterLabel>
+    <description>Reusable Print View Component which uses related field sets to print fields.</description>
+</LightningComponentBundle>

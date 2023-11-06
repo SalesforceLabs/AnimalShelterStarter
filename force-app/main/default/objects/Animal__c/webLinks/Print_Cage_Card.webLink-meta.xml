@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Print_Cage_Card</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Print Cage Card</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>
+        /c/lightningPrintViewApp.app?recordid={!%%%NAMESPACED_ORG%%%Animal__c.Id}&amp;fieldSetName=animal_cage_card_field_set&amp;sObjectTypeName=%%%NAMESPACED_ORG%%%Animal__c&amp;badgefields=%%%NAMESPACED_ORG%%%Behaviours__c</url>
+</WebLink>

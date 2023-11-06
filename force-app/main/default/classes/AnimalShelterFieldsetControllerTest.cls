@@ -27,7 +27,7 @@ private class AnimalShelterFieldsetControllerTest {
     @isTest static void testGetBadgeFieldsData() {
         // Setup test data
         // Create a record for the sObject you're testing against
-        %%%NAMESPACED_ORG%%%Animal__c testRecord = new %%%NAMESPACED_ORG%%%Animal__c(Name='Test', /* other fields */);
+        %%%NAMESPACED_ORG%%%Animal__c testRecord = new %%%NAMESPACED_ORG%%%Animal__c(%%%NAMESPACED_ORG%%%Animal_Name__c='Test', %%%NAMESPACED_ORG%%%Date_of_Arrival__c=Datetime.now());
         insert testRecord;
 
         // Set the multi-select picklist field to test values

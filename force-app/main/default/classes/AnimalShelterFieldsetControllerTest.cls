@@ -27,23 +27,23 @@ private class AnimalShelterFieldsetControllerTest {
     @isTest static void testGetBadgeFieldsData() {
         // Setup test data
         // Create a record for the sObject you're testing against
-        YourSObject testRecord = new YourSObject(Name='Test', /* other fields */);
+        %%%NAMESPACED_ORG%%%Animal__c testRecord = new %%%NAMESPACED_ORG%%%Animal__c(Name='Test', /* other fields */);
         insert testRecord;
 
         // Set the multi-select picklist field to test values
-        testRecord.YourMultiSelectField__c = 'Value1;Value2';
+        testRecord.%%%NAMESPACED_ORG%%%Behaviours__c = 'Anxious;Bad Recall';
         update testRecord;
 
         // Execute the method to test
         Test.startTest();
         Map<String, List<String>> badgeData =
-            AnimalShelterFieldsetController.getBadgeFieldsData(testRecord.Id, 'YourSObject', new List<String>{'YourMultiSelectField__c'});
+            AnimalShelterFieldsetController.getBadgeFieldsData(testRecord.Id, '%%%NAMESPACED_ORG%%%Animal__c', new List<String>{'%%%NAMESPACED_ORG%%%Behaviours__c'});
         Test.stopTest();
 
         // Perform assertions
         System.assertNotEquals(null, badgeData, 'Badge data should not be null');
-        System.assertEquals(2, badgeData.get('YourMultiSelectField__c').size(), 'There should be two values in the list');
-        System.assertEquals('Value1', badgeData.get('YourMultiSelectField__c')[0], 'The first value should be Value1');
-        System.assertEquals('Value2', badgeData.get('YourMultiSelectField__c')[1], 'The second value should be Value2');
+        System.assertEquals(2, badgeData.get('%%%NAMESPACED_ORG%%%Behaviours__c').size(), 'There should be two values in the list');
+        System.assertEquals('Anxious', badgeData.get('%%%NAMESPACED_ORG%%%Behaviours__c')[0], 'The first value should be Anxious');
+        System.assertEquals('Bad Recall', badgeData.get('%%%NAMESPACED_ORG%%%Behaviours__c')[1], 'The second value should be Bad Recall');
     }
 }

@@ -29,9 +29,18 @@
 
       <!-- QR Code Column -->
       <div class="slds-col slds-size_1-of-2 slds-medium-size_3-of-12 slds-p-horizontal_small slds-p-vertical_xx-small">
-        <div class="slds-align_absolute-center">
+        <div class="slds-text-align_right">
           <img src={qrCodeUrl} alt="Scan QR code to open record" />
         </div>
+        <template if:true={badgeData}>
+          <div class="slds-m-top_small slds-text-align_right">
+            <template for:each={badgeData} for:item="badgeValue">
+              <span class="slds-badge slds-m-around_xx-small" key={badgeValue}>
+                {badgeValue}
+              </span>
+            </template>
+          </div>
+        </template>
       </div>
     </div>
   </template>

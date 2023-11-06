@@ -40,4 +40,27 @@ public with sharing class AnimalShelterFieldsetController {
 
         return fieldSetMemberWrappers;
     }
+
+    @AuraEnabled(cacheable=true)
+    public static Map<String, List<String>> getBadgeFieldsData(String recordId, String sObjectName, List<String> badgeFieldNames) {
+        // Fetch the record and specified fields using dynamic SOQL
+        String fieldListString = String.join(badgeFieldNames, ',');
+        String queryString = 'SELECT ' + fieldListString + ' FROM ' + sObjectName + ' WHERE Id = :recordId';
+        SObject record = Database.query(queryString);
+
+        // Extract the fields and their values, split multi-select picklist values
+        Map<String, List<String>> badgeFieldsData = new Map<String, List<String>>();
+        for (String fieldName : badgeFieldNames) {
+            // Assuming all fields are multi-select picklists
+            String fieldValue = (String)record.get(fieldName);
+            if (String.isNotEmpty(fieldValue)) {
+                List<String> values = fieldValue.split(';');
+                badgeFieldsData.put(fieldName, values);
+            } else {
+                // Handle null or empty case if necessary
+                badgeFieldsData.put(fieldName, new List<String>());
+            }
+        }
+        return badgeFieldsData;
+    }
 }

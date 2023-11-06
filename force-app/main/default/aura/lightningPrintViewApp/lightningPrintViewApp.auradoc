@@ -1,6 +1,7 @@
 <aura:documentation>
-	<aura:description>Documentation</aura:description>
-	<aura:example name="ExampleName" ref="exampleComponentName" label="Label">
-		Example Description
-	</aura:example>
+	<aura:description>
+		<p>Built into the Animal Shelter Starter this is a reusable app which can provide a print ready view to a given
+			fieldset on a given object. In addition a QR code for the record link and optional badges can also be displayed.
+			Note that for best results users should disabled the print headers and footers option when printing.</p>
+	</aura:description>
 </aura:documentation>

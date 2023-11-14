@@ -113,7 +113,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Adopter_Profile__c.Other_Animal_Details__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -125,6 +125,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Adopter_Profile__c.Other_Animals_of_same_Species__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Adopter_Profile__c.Other_Pets_Animals__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

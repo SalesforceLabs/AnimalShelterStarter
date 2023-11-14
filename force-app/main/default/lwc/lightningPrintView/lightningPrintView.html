@@ -1,0 +1,50 @@
+<!--
+  @description       :
+  @author            : Stewart Anderson
+  @group             :
+  @last modified on  : 11-06-2023
+  @last modified by  : Stewart Anderson
+-->
+<template>
+  <template if:true={recordData}>
+    <div class="slds-grid slds-wrap">
+      <!-- Field Data Columns -->
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_9-of-12 slds-p-horizontal_small slds-p-vertical_xx-small">
+        <div class="slds-grid slds-wrap">
+          <template for:each={fields} for:item="field">
+            <div key={field.apiName}
+              class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-horizontal_small slds-p-vertical_xx-small">
+              <div class="slds-form-element">
+                <label class="slds-form-element__label" for={field.apiName}>
+                  {field.label}
+                </label>
+                <div class="slds-form-element__control">
+                  <span class="slds-form-element__static">{field.value}</span>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- QR Code Column -->
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_3-of-12 slds-p-horizontal_small slds-p-vertical_xx-small">
+        <div class="slds-text-align_right">
+          <img src={qrCodeUrl} alt="Scan QR code to open record" />
+        </div>
+        <template if:true={badgeData}>
+          <div class="slds-m-top_small slds-text-align_right">
+            <template for:each={badgeData} for:item="badgeValue">
+              <span class="slds-badge slds-m-around_xx-small" key={badgeValue}>
+                {badgeValue}
+              </span>
+            </template>
+          </div>
+        </template>
+      </div>
+    </div>
+  </template>
+  <template if:true={error}>
+    <div>{error}</div>
+  </template>
+</template>

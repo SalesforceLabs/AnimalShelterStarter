@@ -62,7 +62,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Other_Animal_Details__c</field>
+                <field>Other_Pets_Animals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -228,7 +228,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8K000000KPUR</masterLabel>
+        <masterLabel>00h010000021K9Q</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

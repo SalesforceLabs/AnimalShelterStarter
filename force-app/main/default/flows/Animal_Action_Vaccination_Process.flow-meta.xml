@@ -4,7 +4,7 @@
     <assignments>
         <name>Build_new_Treatment_Record</name>
         <label>Build new Treatment Record</label>
-        <locationX>176</locationX>
+        <locationX>314</locationX>
         <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>newAnimalActionRecord.Treatment_Type__c</assignToReference>
@@ -55,7 +55,32 @@
                 <stringValue>Given</stringValue>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Create_Treatment_Record</targetReference>
+        </connector>
     </assignments>
+    <decisions>
+        <name>Medicine_Selected</name>
+        <label>Medicine Selected</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Medicine_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>newVaccinationMedicineCapture.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Selected_Medicine_Details</targetReference>
+            </connector>
+            <label>Yes Medicine Selected</label>
+        </rules>
+    </decisions>
     <description>[Animal Shelter] Flow to capture new Vaccinations</description>
     <dynamicChoiceSets>
         <name>medicineLookup</name>
@@ -67,6 +92,13 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Vaccination</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Medicine__c</object>
@@ -99,10 +131,84 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Medicine_Used_Record</name>
+        <label>Create Medicine Used Record</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <inputAssignments>
+            <field>Medicine_Used__c</field>
+            <value>
+                <elementReference>newVaccinationMedicineSelection</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Treatment_Used_In__c</field>
+            <value>
+                <elementReference>Create_Treatment_Record</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Medicine_Used__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Treatment_Record</name>
+        <label>Create Treatment Record</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Medicine_Selected</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Flow_Error_Screen</targetReference>
+        </faultConnector>
+        <inputReference>newAnimalActionRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Selected_Medicine_Details</name>
+        <label>Get Selected Medicine Details</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Medicine_Used_Record</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Flow_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>newMedicineRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Medicine__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Flow_Error_Screen</name>
+        <label>Flow Error Screen</label>
+        <locationX>754</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>FlowErrorScreenText</name>
+            <fieldText>&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <screens>
         <name>New_Vaccination</name>
         <label>New Vaccination</label>
-        <locationX>176</locationX>
+        <locationX>314</locationX>
         <locationY>242</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -235,7 +341,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_RecordType</targetReference>
@@ -245,7 +351,7 @@
     <subflows>
         <name>Get_RecordType</name>
         <label>Get RecordType</label>
-        <locationX>176</locationX>
+        <locationX>314</locationX>
         <locationY>134</locationY>
         <connector>
             <targetReference>New_Vaccination</targetReference>

@@ -2,6 +2,29 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
     <assignments>
+        <name>Build_New_Medicine_Record</name>
+        <label>Build New Medicine Record</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>newMedicineRecord.Active__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newMedicineRecord.Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Vaccination</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_new_Medicine_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Build_new_Treatment_Record</name>
         <label>Build new Treatment Record</label>
         <locationX>314</locationX>
@@ -64,15 +87,18 @@
         <label>Medicine Selected</label>
         <locationX>314</locationX>
         <locationY>566</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <defaultConnector>
+            <targetReference>Build_New_Medicine_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>New Medicine entered</defaultConnectorLabel>
         <rules>
             <name>Yes_Medicine_Selected</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>newVaccinationMedicineCapture.value</leftValueReference>
+                <leftValueReference>Enter_a_new_Medicine_instead_of_choosing_an_existing_one</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -152,6 +178,17 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
+        <name>Create_new_Medicine_Record</name>
+        <label>Create new Medicine Record</label>
+        <locationX>578</locationX>
+        <locationY>782</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Flow_Error_Screen</targetReference>
+        </faultConnector>
+        <inputReference>newMedicineRecord</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Treatment_Record</name>
         <label>Create Treatment Record</label>
         <locationX>314</locationX>
@@ -192,7 +229,7 @@
     <screens>
         <name>Flow_Error_Screen</name>
         <label>Flow Error Screen</label>
-        <locationX>754</locationX>
+        <locationX>1106</locationX>
         <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -277,30 +314,11 @@
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>newVaccinationMedicineCapture</name>
-            <extensionName>flowruntime:toggle</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Do you wish to capture the Medicine Details?</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleActive</name>
-                <value>
-                    <stringValue>Yes</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleInactive</name>
-                <value>
-                    <stringValue>No</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <name>Enter_a_new_Medicine_instead_of_choosing_an_existing_one</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Enter a new Medicine instead of choosing an existing one</fieldText>
+            <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <name>New_Vaccination_Section2</name>
@@ -329,13 +347,76 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>newVaccinationMedicineCapture.value</leftValueReference>
+                    <leftValueReference>Enter_a_new_Medicine_instead_of_choosing_an_existing_one</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>New_Vaccination_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>New_Vaccination_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newMedicineRecord.Medicine_Name__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newMedicineRecord.Delivery_Method__c</objectFieldReference>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>New_Vaccination_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newMedicineRecord.Batch_No__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newMedicineRecord.Manufacturer__c</objectFieldReference>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Enter_a_new_Medicine_instead_of_choosing_an_existing_one</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>newMedicineRecord.Comments__c</objectFieldReference>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -386,6 +467,15 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Animal_Action__c</objectType>
+    </variables>
+    <variables>
+        <description>Data required to make new Medicine Record</description>
+        <name>newMedicineRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Medicine__c</objectType>
     </variables>
     <variables>
         <name>newMedicineRecordId</name>

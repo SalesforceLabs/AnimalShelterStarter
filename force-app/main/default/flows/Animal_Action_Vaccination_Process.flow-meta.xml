@@ -2,10 +2,47 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
     <assignments>
+        <name>Assign_Treatment_Completed_Date_Time</name>
+        <label>Assign Treatment Completed Date/Time</label>
+        <locationX>182</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>newAnimalActionRecord.Date_Time_Action_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAnimalActionRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>existingVaccineRecords.firstSelectedRow.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAnimalActionRecord.Action_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newAnimalActionRecord.Action_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Given</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_selected_Treatment_record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Build_Future_Treatment_Record</name>
         <label>Build Future Treatment Record</label>
-        <locationX>732</locationX>
-        <locationY>2102</locationY>
+        <locationX>776</locationX>
+        <locationY>2210</locationY>
         <assignmentItems>
             <assignToReference>futureTreatmentRecord.Action_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -45,7 +82,7 @@
             <assignToReference>futureTreatmentRecord.Description__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>newVaccinationDescription</elementReference>
+                <elementReference>futureTreatmentDescription</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -57,7 +94,7 @@
         <name>Build_Medicine_Used_record</name>
         <label>Build Medicine Used record</label>
         <locationX>644</locationX>
-        <locationY>1778</locationY>
+        <locationY>1886</locationY>
         <assignmentItems>
             <assignToReference>vaccinationGiven.Batch_No__c</assignToReference>
             <operator>Assign</operator>
@@ -108,7 +145,7 @@
         <name>Build_New_Medicine_Record</name>
         <label>Build New Medicine Record</label>
         <locationX>908</locationX>
-        <locationY>1430</locationY>
+        <locationY>1538</locationY>
         <assignmentItems>
             <assignToReference>medicineRecord.Active__c</assignToReference>
             <operator>Assign</operator>
@@ -230,7 +267,7 @@
         <name>Create_Future_Treatment_Record</name>
         <label>Create Future Treatment Record</label>
         <locationX>644</locationX>
-        <locationY>1994</locationY>
+        <locationY>2102</locationY>
         <defaultConnector>
             <targetReference>Build_Future_Treatment_Record</targetReference>
         </defaultConnector>
@@ -289,7 +326,7 @@
         <name>Medicine_Selected</name>
         <label>Medicine Selected</label>
         <locationX>644</locationX>
-        <locationY>1322</locationY>
+        <locationY>1430</locationY>
         <defaultConnector>
             <targetReference>Build_New_Medicine_Record</targetReference>
         </defaultConnector>
@@ -316,7 +353,7 @@
         <locationX>50</locationX>
         <locationY>782</locationY>
         <defaultConnector>
-            <targetReference>Update_selected_Treatment_record</targetReference>
+            <targetReference>Assign_Treatment_Completed_Date_Time</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -371,6 +408,11 @@
         <expression>DATEVALUE({!nextVaccineDateTime})</expression>
     </formulas>
     <formulas>
+        <name>futureTreatmentDescription</name>
+        <dataType>String</dataType>
+        <expression>&quot;Follow up &quot; &amp; TEXT({!Vaccine_Period_Months}) &amp; &quot; Month(s) Vaccination&quot;</expression>
+    </formulas>
+    <formulas>
         <name>nextVaccineDateTime</name>
         <dataType>DateTime</dataType>
         <expression>ADDMONTHS({!newAnimalActionRecord.Date_Time_Action_Completed__c}, {!Vaccine_Period_Months})</expression>
@@ -407,7 +449,7 @@
         <name>Create_Medicine_Used_record</name>
         <label>Create Medicine Used record</label>
         <locationX>644</locationX>
-        <locationY>1886</locationY>
+        <locationY>1994</locationY>
         <connector>
             <targetReference>Create_Future_Treatment_Record</targetReference>
         </connector>
@@ -421,7 +463,7 @@
         <name>Create_new_Medicine_Record</name>
         <label>Create new Medicine Record</label>
         <locationX>908</locationX>
-        <locationY>1538</locationY>
+        <locationY>1646</locationY>
         <connector>
             <targetReference>Build_Medicine_Used_record</targetReference>
         </connector>
@@ -448,8 +490,8 @@
     <recordCreates>
         <name>new_Future_Treatment_Record</name>
         <label>new Future Treatment Record</label>
-        <locationX>732</locationX>
-        <locationY>2210</locationY>
+        <locationX>776</locationX>
+        <locationY>2318</locationY>
         <connector>
             <targetReference>Create_Future_Treatment_Task</targetReference>
         </connector>
@@ -503,7 +545,7 @@
         <name>Get_Selected_Medicine_Details</name>
         <label>Get Selected Medicine Details</label>
         <locationX>380</locationX>
-        <locationY>1430</locationY>
+        <locationY>1538</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Build_Medicine_Used_record</targetReference>
@@ -534,7 +576,7 @@
         <name>Update_selected_Treatment_record</name>
         <label>Update selected Treatment record</label>
         <locationX>182</locationX>
-        <locationY>890</locationY>
+        <locationY>998</locationY>
         <connector>
             <targetReference>Vaccination_Details</targetReference>
         </connector>
@@ -542,33 +584,7 @@
             <isGoTo>true</isGoTo>
             <targetReference>Flow_Error_Screen</targetReference>
         </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>existingVaccineRecords.firstSelectedRow.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Action_Completed__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Action_Status__c</field>
-            <value>
-                <stringValue>Given</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Date_Time_Action_Completed__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Animal_Action__c</object>
+        <inputReference>newAnimalActionRecord</inputReference>
     </recordUpdates>
     <screens>
         <description>Screen to Capture Vaccination details</description>
@@ -622,7 +638,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Date_Time_of_Action__c&quot;,&quot;guid&quot;:&quot;column-0981&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Date/Time of Action&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-31c0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;&quot;,&quot;guid&quot;:&quot;column-8997&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Date_Time_of_Action__c&quot;,&quot;guid&quot;:&quot;column-8997&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Date/Time of Vaccination Due&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Date/Time of Action&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-31c0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -727,6 +743,9 @@
         <fields>
             <name>newVaccinationDescription</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>Initial Vaccination</stringValue>
+            </defaultValue>
             <fieldText>Vaccination Description/Purpose</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>false</isRequired>
@@ -739,7 +758,7 @@
         <name>Vaccination_Details</name>
         <label>Vaccination Details</label>
         <locationX>644</locationX>
-        <locationY>1214</locationY>
+        <locationY>1322</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -852,6 +871,26 @@
             </visibilityRule>
         </fields>
         <fields>
+            <name>vaccineDetailsHLine_1</name>
+            <extensionName>c:flowHLine</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>color</name>
+                <value>
+                    <stringValue>Blue</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>thickness</name>
+                <value>
+                    <stringValue>2px</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
             <name>Vaccination_Details_Section3</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
@@ -904,6 +943,26 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
+            <name>vaccineDetailsHLine_2</name>
+            <extensionName>c:flowHLine</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>color</name>
+                <value>
+                    <stringValue>Blue</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>thickness</name>
+                <value>
+                    <stringValue>2px</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
             <name>Vaccination_Details_Section4</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
@@ -911,7 +970,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>vaccinePeriodText</name>
-                    <fieldText>&lt;p&gt;How long does this vaccination protect {!animalRecord.Animal_Name__c}? Enter the number of months for the next vaccination due date.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If no follow up Vaccination is required leave the Vaccine Period field empty&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;A future Treatment record and Task will be created for this date/time&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;How long does this vaccination protect {!animalRecord.Animal_Name__c}? Enter the number of months for the next vaccination is due from today.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If no follow up Vaccination is required leave the Vaccine Period field empty&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;A future Treatment record and Task will be created for this date/time&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -968,13 +1027,13 @@
     <subflows>
         <name>Create_Future_Treatment_Task</name>
         <label>Create Future Treatment Task</label>
-        <locationX>732</locationX>
-        <locationY>2318</locationY>
+        <locationX>776</locationX>
+        <locationY>2426</locationY>
         <flowName>Animal_Generate_Tasks_Subflow</flowName>
         <inputAssignments>
             <name>animalActionRecordId</name>
             <value>
-                <elementReference>Get_RecordType.returnedRecordTypeId</elementReference>
+                <elementReference>newAnimalActionRecord.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

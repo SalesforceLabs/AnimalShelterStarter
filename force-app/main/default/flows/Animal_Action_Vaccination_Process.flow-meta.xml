@@ -54,7 +54,7 @@
             <assignToReference>futureTreatmentRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalRecord.Id</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -188,7 +188,7 @@
             <assignToReference>newAnimalActionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalRecord.Id</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -421,10 +421,11 @@
         <description>The proposed amount of vaccine in ml based on the Animals Current Weight</description>
         <name>proposedVaccineAmount</name>
         <dataType>Number</dataType>
-        <expression>IF(ISNULL({!animalRecord.Current_Weight__c}), 0, {!animalRecord.Current_Weight__c}*{!vaccineDosagePerWeight})</expression>
+        <expression>IF(ISNULL({!recordId.Current_Weight__c}), 0, {!recordId.Current_Weight__c}*{!vaccineDosagePerWeight})</expression>
         <scale>2</scale>
     </formulas>
     <interviewLabel>Animal Action - Vaccination Process {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Animal Action - Vaccination Process</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -537,6 +538,13 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Animal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Animal_Action__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -600,7 +608,7 @@
         </connector>
         <fields>
             <name>existingVaccinationAnimalName</name>
-            <fieldText>&lt;p&gt;Existing vaccination record(s) for {!animalRecord.Animal_Name__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Existing vaccination record(s) for {!recordId.Animal_Name__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -689,7 +697,7 @@
         </connector>
         <fields>
             <name>newVaccinationAnimalName</name>
-            <fieldText>&lt;p&gt;New Vaccination record for {!animalRecord.Animal_Name__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;New Vaccination record for {!recordId.Animal_Name__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -898,7 +906,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>dosageText</name>
-                    <fieldText>&lt;p&gt;Based on the current weight (kg) of {!animalRecord.Current_Weight__c} for {!animalRecord.Animal_Name__c}, and the dosage / weight entered here of {!vaccineDosagePerWeight} the recommended dosage is {!proposedVaccineAmount} ml&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If the current weight is 0 then no calculation is available.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Accept this dosage or enter a different dosage below&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Based on the current weight (kg) of {!recordId.Current_Weight__c} for {!recordId.Animal_Name__c}, and the dosage / weight entered here of {!vaccineDosagePerWeight} the recommended dosage is {!proposedVaccineAmount} ml&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If the current weight is 0 then no calculation is available.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Accept this dosage or enter a different dosage below&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -970,7 +978,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>vaccinePeriodText</name>
-                    <fieldText>&lt;p&gt;How long does this vaccination protect {!animalRecord.Animal_Name__c}? Enter the number of months for the next vaccination is due from today.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If no follow up Vaccination is required leave the Vaccine Period field empty&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;A future Treatment record and Task will be created for this date/time&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;How long does this vaccination protect {!recordId.Animal_Name__c}? Enter the number of months for the next vaccination is due from today.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If no follow up Vaccination is required leave the Vaccine Period field empty&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;A future Treatment record and Task will be created for this date/time&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1023,7 +1031,7 @@
             <targetReference>Get_RecordType</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Create_Future_Treatment_Task</name>
         <label>Create Future Treatment Task</label>
@@ -1039,7 +1047,7 @@
         <inputAssignments>
             <name>animalRecordId</name>
             <value>
-                <elementReference>animalRecord.Id</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1080,14 +1088,6 @@
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
-    <variables>
-        <name>animalRecord</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
-    </variables>
     <variables>
         <name>futureTreatmentRecord</name>
         <dataType>SObject</dataType>
@@ -1134,6 +1134,14 @@
         <value>
             <numberValue>0.0</numberValue>
         </value>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <description>Details of the vaccination being given</description>

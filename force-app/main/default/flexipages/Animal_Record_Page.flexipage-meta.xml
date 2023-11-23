@@ -10,9 +10,6 @@
                             <value>Animal__c.Add_Scheduled_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Complete_Exercise_Action</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Animal__c.Add_Treatment_Action</value>
                         </valueListItems>
                         <valueListItems>
@@ -22,7 +19,13 @@
                             <value>Animal__c.New_Alert</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Animal__c.Vaccination</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.Animal__c.Print_Cage_Card</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.Complete_Exercise_Action</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Animal__c.Mark_as_Deceased</value>

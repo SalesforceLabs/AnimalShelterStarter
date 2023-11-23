@@ -8,7 +8,7 @@
         <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lighning__FlowScreen">
+        <targetConfig targets="lightning__FlowScreen">
             <property name="marginTop" type="String" label="Top Margin" default="none"/>
             <property name="marginBottom" type="String" label="Bottom Margin" default="xx-small"/>
             <property name="thickness" type="String" label="Line Thickness" default="1px"/>

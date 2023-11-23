@@ -1890,6 +1890,9 @@
                             <value>Date_Time_of_Action__c</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Previous_Action_Detail__c</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Action_Completed__c</value>
                         </valueListItems>
                     </valueList>
@@ -1900,7 +1903,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldAlias</name>

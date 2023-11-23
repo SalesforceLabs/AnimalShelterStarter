@@ -262,6 +262,16 @@
                 <identifier>RecordAnimal_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Previous_Animal_Action__c</fieldItem>
+                <identifier>RecordPrevious_Animal_Action_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6175dd6a-6161-460e-bcf5-15606c2a0316</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -274,6 +284,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Condition__c</fieldItem>
                 <identifier>RecordCondition_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Previous_Action_Detail__c</fieldItem>
+                <identifier>RecordPrevious_Action_Detail_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-72111946-fe88-4751-bc74-cb39951a2d60</name>

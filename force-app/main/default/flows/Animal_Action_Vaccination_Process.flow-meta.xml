@@ -85,6 +85,13 @@
                 <elementReference>futureTreatmentDescription</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>futureTreatmentRecord.Previous_Animal_Action__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAnimalActionRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>new_Future_Treatment_Record</targetReference>
         </connector>
@@ -239,7 +246,7 @@
             <assignToReference>numOfRecords</assignToReference>
             <operator>AssignCount</operator>
             <value>
-                <elementReference>Find_existing_Vaccination_records</elementReference>
+                <elementReference>Find_existing_Animal_Action_records</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -504,8 +511,8 @@
     </recordCreates>
     <recordLookups>
         <description>Search for any Animal Action - Treatment records, of Category Type = Vaccination and no Completed Date/Time</description>
-        <name>Find_existing_Vaccination_records</name>
-        <label>Find existing Vaccination records</label>
+        <name>Find_existing_Animal_Action_records</name>
+        <label>Find existing Animal Action records</label>
         <locationX>644</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -608,7 +615,7 @@
         </connector>
         <fields>
             <name>existingVaccinationAnimalName</name>
-            <fieldText>&lt;p&gt;Existing vaccination record(s) for {!recordId.Animal_Name__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/strong&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Existing vaccination record(s) for &lt;/span&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;{!recordId.Animal_Name__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -640,13 +647,13 @@
             <inputParameters>
                 <name>tableData</name>
                 <value>
-                    <elementReference>Find_existing_Vaccination_records</elementReference>
+                    <elementReference>Find_existing_Animal_Action_records</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Date_Time_of_Action__c&quot;,&quot;guid&quot;:&quot;column-8997&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Date/Time of Vaccination Due&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Date/Time of Action&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-31c0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Date_Time_of_Action__c&quot;,&quot;guid&quot;:&quot;column-8997&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Date/Time of Vaccination Due&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Date/Time of Action&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-31c0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Previous_Action_Detail__c&quot;,&quot;guid&quot;:&quot;column-1d9c&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Previous Vaccine Detail&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Previous Action Detail&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -661,7 +668,7 @@
         </fields>
         <fields>
             <name>existingSelectionText</name>
-            <fieldText>&lt;p&gt;If no record from the above options are applicable, a new Vaccination record will be created.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If no record from the above options are applicable, a new Vaccination record will be created.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -672,9 +679,9 @@
         <label>Flow Error Screen</label>
         <locationX>974</locationX>
         <locationY>890</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <fields>
             <name>FlowErrorScreenText</name>
             <fieldText>&lt;p&gt;Sorry, there has been an error: {!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
@@ -697,7 +704,7 @@
         </connector>
         <fields>
             <name>newVaccinationAnimalName</name>
-            <fieldText>&lt;p&gt;New Vaccination record for {!recordId.Animal_Name__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;New Vaccination record for &lt;/span&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;{!recordId.Animal_Name__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -906,7 +913,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>dosageText</name>
-                    <fieldText>&lt;p&gt;Based on the current weight (kg) of {!recordId.Current_Weight__c} for {!recordId.Animal_Name__c}, and the dosage / weight entered here of {!vaccineDosagePerWeight} the recommended dosage is {!proposedVaccineAmount} ml&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If the current weight is 0 then no calculation is available.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Accept this dosage or enter a different dosage below&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Based on the current weight (kg) of {!recordId.Current_Weight__c} for {!recordId.Animal_Name__c}, and the dosage / weight figure entered of {!vaccineDosagePerWeight}ml the recommended dosage is {!proposedVaccineAmount} ml&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If the current weight is 0 then no calculation is available.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Accept this dosage or enter a different dosage in the Dosage Given field&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -934,7 +941,7 @@
                     <defaultValue>
                         <elementReference>proposedVaccineAmount</elementReference>
                     </defaultValue>
-                    <fieldText>Dosage Given</fieldText>
+                    <fieldText>Dosage Given (ml)</fieldText>
                     <fieldType>InputField</fieldType>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
@@ -978,7 +985,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>vaccinePeriodText</name>
-                    <fieldText>&lt;p&gt;How long does this vaccination protect {!recordId.Animal_Name__c}? Enter the number of months for the next vaccination is due from today.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If no follow up Vaccination is required leave the Vaccine Period field empty&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;A future Treatment record and Task will be created for this date/time&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;How long does this vaccination protect {!recordId.Animal_Name__c}?&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Enter the number of months that the next vaccination is due, from today.  A future Treatment record and Task will be created for this date/time&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;If no follow up Vaccination is required leave the Vaccine Period field empty&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1071,7 +1078,7 @@
         <locationX>644</locationX>
         <locationY>134</locationY>
         <connector>
-            <targetReference>Find_existing_Vaccination_records</targetReference>
+            <targetReference>Find_existing_Animal_Action_records</targetReference>
         </connector>
         <flowName>Animal_RecordType_Subflow</flowName>
         <inputAssignments>

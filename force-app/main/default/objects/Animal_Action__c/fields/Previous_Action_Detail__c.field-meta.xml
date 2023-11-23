@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Action_Detail__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK( Previous_Animal_Action__c ), &quot; &quot;, &quot;Previous Vaccine on &quot; &amp; TEXT(DAY(DATEVALUE(Previous_Animal_Action__r.Date_Time_of_Action__c))) &amp;&quot;/&quot;&amp; TEXT(MONTH(DATEVALUE(Previous_Animal_Action__r.Date_Time_of_Action__c)))&amp;&quot;/&quot;&amp; TEXT(YEAR(DATEVALUE(Previous_Animal_Action__r.Date_Time_of_Action__c))) &amp; &quot; For &quot; &amp;  Previous_Animal_Action__r.Description__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Previous Action Detail</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

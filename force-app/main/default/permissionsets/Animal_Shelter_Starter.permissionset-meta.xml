@@ -422,6 +422,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Animal_Action__c.Previous_Action_Detail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Animal_Action__c.Previous_Animal_Action__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Animal_Action__c.Treatment_Type__c</field>
         <readable>true</readable>
@@ -1039,6 +1049,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Locations__c.Unit_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medicine_Used__c.Batch_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

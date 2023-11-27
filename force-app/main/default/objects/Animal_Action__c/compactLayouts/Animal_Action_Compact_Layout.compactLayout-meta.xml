@@ -3,5 +3,7 @@
     <fullName>Animal_Action_Compact_Layout</fullName>
     <fields>Action_Type__c</fields>
     <fields>Name</fields>
+    <fields>Date_Time_of_Action__c</fields>
+    <fields>Action_Status__c</fields>
     <label>Animal Action Compact Layout</label>
 </CompactLayout>

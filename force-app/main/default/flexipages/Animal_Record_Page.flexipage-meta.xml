@@ -10,9 +10,6 @@
                             <value>Animal__c.Add_Scheduled_Action</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Animal__c.Complete_Exercise_Action</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Animal__c.Add_Treatment_Action</value>
                         </valueListItems>
                         <valueListItems>
@@ -22,7 +19,13 @@
                             <value>Animal__c.New_Alert</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Animal__c.Vaccination</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.Animal__c.Print_Cage_Card</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Animal__c.Complete_Exercise_Action</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Animal__c.Mark_as_Deceased</value>
@@ -1397,6 +1400,9 @@
                         <valueListItems>
                             <value>RECORDTYPE|EQUALS|[&quot;Treatment&quot;]</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Treatment_Type__c|NOT_EQUAL|[&quot;Vaccination&quot;]</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1837,6 +1843,87 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>RECORDTYPE|EQUALS|[&quot;Treatment&quot;]</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Treatment_Type__c|EQUALS|[&quot;Vaccination&quot;]</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Animal__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Animal_Actions__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Description__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Date_Time_of_Action__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Previous_Action_Detail__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Action_Completed__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Vaccinations</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>Date_Time_of_Action__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-5faf4f72-b4fa-4a8b-ba43-b742d0730aac</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>flowArguments</name>
                     <value>[{&quot;label&quot;:&quot;recordId&quot;,&quot;dataType&quot;:&quot;SObject&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
                 </componentInstanceProperties>
@@ -2085,6 +2172,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-5faf4f72-b4fa-4a8b-ba43-b742d0730aac</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Vaccinations</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

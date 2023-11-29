@@ -583,7 +583,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>Animal_Action__c.Animal__c</value>
+                    <value>%%%NAMESPACED_ORG%%%Animal_Action__c.%%%NAMESPACED_ORG%%%Animal__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>59.0</apiVersion>
+    <apiVersion>58.0</apiVersion>
     <assignments>
         <name>Assign_Treatment_Completed_Date_Time</name>
         <label>Assign Treatment Completed Date/Time</label>
@@ -407,6 +407,7 @@
         </outputAssignments>
         <sortField>Medicine_Name__c</sortField>
         <sortOrder>Asc</sortOrder>
+        <valueField>Medicine_Name__c</valueField>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
@@ -887,7 +888,7 @@
         </fields>
         <fields>
             <name>vaccineDetailsHLine_1</name>
-            <extensionName>c:flowHLine</extensionName>
+            <extensionName>animalshelters:flowHLine</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>color</name>
@@ -959,7 +960,7 @@
         </fields>
         <fields>
             <name>vaccineDetailsHLine_2</name>
-            <extensionName>c:flowHLine</extensionName>
+            <extensionName>animalshelters:flowHLine</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>color</name>
@@ -1090,7 +1091,7 @@
         <inputAssignments>
             <name>sObjectName</name>
             <value>
-                <stringValue>Animal_Action__c</stringValue>
+                <stringValue>animalshelters__Animal_Action__c</stringValue>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>

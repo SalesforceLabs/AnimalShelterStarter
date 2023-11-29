@@ -65,3 +65,10 @@ flows:
         steps:
             3:
                 flow: post_config
+
+orgs:
+    scratch:
+        dev:
+            days: 15
+            config_file: orgs/dev.json
+            namespaced: false

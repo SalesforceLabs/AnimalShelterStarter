@@ -944,8 +944,8 @@
                     </defaultValue>
                     <fieldText>Dosage Given (ml)</fieldText>
                     <fieldType>InputField</fieldType>
-                    <isRequired>false</isRequired>
-                    <scale>0</scale>
+                    <isRequired>true</isRequired>
+                    <scale>2</scale>
                 </fields>
                 <inputParameters>
                     <name>width</name>

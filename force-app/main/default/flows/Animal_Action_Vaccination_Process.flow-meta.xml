@@ -888,7 +888,7 @@
         </fields>
         <fields>
             <name>vaccineDetailsHLine_1</name>
-            <extensionName>animalshelters:flowHLine</extensionName>
+            <extensionName>c:flowHLine</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>color</name>
@@ -960,7 +960,7 @@
         </fields>
         <fields>
             <name>vaccineDetailsHLine_2</name>
-            <extensionName>animalshelters:flowHLine</extensionName>
+            <extensionName>c:flowHLine</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>color</name>

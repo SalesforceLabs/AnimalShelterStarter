@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Build_List_of_Records_to_Update</name>
         <label>Build List of Records to Update</label>
         <locationX>1194</locationX>
-        <locationY>1694</locationY>
+        <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>AnimalsToUpdate</assignToReference>
             <operator>Add</operator>
@@ -22,7 +22,7 @@
         <name>Get_Animal_and_Breed_record_Ids</name>
         <label>Get Animal and Breed record Ids</label>
         <locationX>1194</locationX>
-        <locationY>1574</locationY>
+        <locationY>1406</locationY>
         <assignmentItems>
             <assignToReference>SingleAnimalRecord.Id</assignToReference>
             <operator>Assign</operator>
@@ -31,14 +31,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>SingleAnimalRecord.%%%NAMESPACED_ORG%%%SYSTEM_Breed_Migrated__c</assignToReference>
+            <assignToReference>SingleAnimalRecord.SYSTEM_Breed_Migrated__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>SingleAnimalRecord.%%%NAMESPACED_ORG%%%Breed_Lookup__c</assignToReference>
+            <assignToReference>SingleAnimalRecord.Breed_Lookup__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>BreedRecordId</elementReference>
@@ -52,7 +52,7 @@
         <name>Get_Single_Breed_Record_Id</name>
         <label>Get Single Breed Record Id</label>
         <locationX>1282</locationX>
-        <locationY>1358</locationY>
+        <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>BreedRecordId</assignToReference>
             <operator>Assign</operator>
@@ -68,7 +68,7 @@
         <name>Number_of_Breed_Records</name>
         <label>Number of Breed Records</label>
         <locationX>1018</locationX>
-        <locationY>998</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>BreedRecordCount</assignToReference>
             <operator>AssignCount</operator>
@@ -84,7 +84,7 @@
         <name>Set_Error_Flag</name>
         <label>Set Error Flag</label>
         <locationX>842</locationX>
-        <locationY>1238</locationY>
+        <locationY>1106</locationY>
         <assignmentItems>
             <assignToReference>MigrationErrors</assignToReference>
             <operator>Assign</operator>
@@ -102,23 +102,23 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Search Breeds Collection</label>
         <locationX>1018</locationX>
-        <locationY>878</locationY>
+        <locationY>782</locationY>
         <assignNextValueToReference>CurrentItem_Search_Breeds_Collection</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>AllActiveBreedRecords</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>CurrentItem_Search_Breeds_Collection.%%%NAMESPACED_ORG%%%Type__c</leftValueReference>
+            <leftValueReference>CurrentItem_Search_Breeds_Collection.Type__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>Cycle_through_Animal_Records.%%%NAMESPACED_ORG%%%Type__c</elementReference>
+                <elementReference>Cycle_through_Animal_Records.Type__c</elementReference>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>CurrentItem_Search_Breeds_Collection.%%%NAMESPACED_ORG%%%Species__c</leftValueReference>
+            <leftValueReference>CurrentItem_Search_Breeds_Collection.Species__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>Cycle_through_Animal_Records.%%%NAMESPACED_ORG%%%Breed__c</elementReference>
+                <elementReference>Cycle_through_Animal_Records.Breed__c</elementReference>
             </rightValue>
         </conditions>
         <connector>
@@ -129,7 +129,7 @@
         <name>Continue_with_Migration</name>
         <label>Continue with Migration</label>
         <locationX>1183</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <defaultConnectorLabel>Migration No Go</defaultConnectorLabel>
         <rules>
             <name>Migration_Go</name>
@@ -151,7 +151,7 @@
         <name>Has_Breed_Record_Been_Found</name>
         <label>Has Breed Record Been Found?</label>
         <locationX>1018</locationX>
-        <locationY>1118</locationY>
+        <locationY>998</locationY>
         <defaultConnector>
             <targetReference>Get_Breed_Record_Id</targetReference>
         </defaultConnector>
@@ -176,7 +176,7 @@
         <name>Has_Migration_Already_Been_Completed</name>
         <label>Has Migration Already Been Completed?</label>
         <locationX>616</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <defaultConnector>
             <targetReference>Confirm_Migration_Screen</targetReference>
         </defaultConnector>
@@ -201,7 +201,7 @@
         <name>Mark_Migration_as_Complete</name>
         <label>Mark Migration as Complete?</label>
         <locationX>952</locationX>
-        <locationY>2366</locationY>
+        <locationY>2114</locationY>
         <defaultConnectorLabel>Migration Not Complete</defaultConnectorLabel>
         <rules>
             <name>Migration_Complete</name>
@@ -223,7 +223,7 @@
         <name>Were_There_Errors_in_Matching</name>
         <label>Were There Errors in Matching</label>
         <locationX>754</locationX>
-        <locationY>2126</locationY>
+        <locationY>1898</locationY>
         <defaultConnector>
             <targetReference>No_Match_Errors_Screen</targetReference>
         </defaultConnector>
@@ -250,7 +250,7 @@
         <description>Matched to Custom Setting</description>
         <name>BreedsMigrationComplete</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c}</expression>
+        <expression>{!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Breeds_Migration_Complete__c}</expression>
     </formulas>
     <interviewLabel>Animal - Breeds Migration Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -259,7 +259,7 @@
         <name>Cycle_through_Animal_Records</name>
         <label>Cycle through Animal Records</label>
         <locationX>754</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <collectionReference>AnimalsToMigrate</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -273,7 +273,7 @@
         <name>Get_Breed_Record_Id</name>
         <label>Get Breed Record Id</label>
         <locationX>1194</locationX>
-        <locationY>1238</locationY>
+        <locationY>1106</locationY>
         <collectionReference>Search_Breeds_Collection</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -307,69 +307,69 @@
         <name>Update_Custom_Setting_to_True</name>
         <label>Update Custom Setting to True</label>
         <locationX>820</locationX>
-        <locationY>2486</locationY>
+        <locationY>2222</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c</field>
+            <field>Breeds_Migration_Complete__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c</object>
+        <object>Animal_Shelter_Settings__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <name>Get_All_Active_Breed_Records</name>
         <label>Get All Active Breed Records</label>
         <locationX>754</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Cycle_through_Animal_Records</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Active__c</field>
+            <field>Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Breed__c</object>
+        <object>Breed__c</object>
         <outputReference>AllActiveBreedRecords</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Type__c</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Species__c</queriedFields>
+        <queriedFields>Type__c</queriedFields>
+        <queriedFields>Species__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <description>Gets all animal records with Is Migrated flag set to false</description>
         <name>Get_Animals_Records_for_Migration</name>
         <label>Get Animals Records for Migration</label>
         <locationX>754</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_All_Active_Breed_Records</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%SYSTEM_Breed_Migrated__c</field>
+            <field>SYSTEM_Breed_Migrated__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <outputReference>AnimalsToMigrate</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Type__c</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Breed__c</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Breed_Lookup__c</queriedFields>
+        <queriedFields>Type__c</queriedFields>
+        <queriedFields>Breed__c</queriedFields>
+        <queriedFields>Breed_Lookup__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Animal_Records</name>
         <label>Update Animal Records</label>
         <locationX>754</locationX>
-        <locationY>2006</locationY>
+        <locationY>1790</locationY>
         <connector>
             <targetReference>Were_There_Errors_in_Matching</targetReference>
         </connector>
@@ -382,7 +382,7 @@
         <name>Confirm_Migration_Screen</name>
         <label>Confirm Migration Screen</label>
         <locationX>1183</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -399,6 +399,7 @@
             <dataType>Boolean</dataType>
             <fieldText>Check the box to continue</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -408,7 +409,7 @@
         <name>Fault_Updating_Animal_Records</name>
         <label>Fault Updating Animal Records</label>
         <locationX>1348</locationX>
-        <locationY>2126</locationY>
+        <locationY>1898</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -424,7 +425,7 @@
         <name>Match_Errors_Screen</name>
         <label>Match Errors Screen</label>
         <locationX>556</locationX>
-        <locationY>2246</locationY>
+        <locationY>2006</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -440,7 +441,7 @@
         <name>Migration_Previously_Completed</name>
         <label>Migration Previously Completed</label>
         <locationX>50</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -456,7 +457,7 @@
         <name>No_Match_Errors_Screen</name>
         <label>No Match Errors Screen</label>
         <locationX>952</locationX>
-        <locationY>2246</locationY>
+        <locationY>2006</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -473,6 +474,7 @@
             <dataType>Boolean</dataType>
             <fieldText>Confirm to mark migration as complete</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -492,7 +494,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Breed__c</objectType>
+        <objectType>Breed__c</objectType>
     </variables>
     <variables>
         <name>AnimalsToMigrate</name>
@@ -500,7 +502,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>AnimalsToUpdate</name>
@@ -508,7 +510,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>BreedPicklistValue</name>
@@ -538,7 +540,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Breed__c</objectType>
+        <objectType>Breed__c</objectType>
     </variables>
     <variables>
         <description>Indicates that not all animal records can be matched to breeds</description>
@@ -557,7 +559,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>TypePicklistValue</name>

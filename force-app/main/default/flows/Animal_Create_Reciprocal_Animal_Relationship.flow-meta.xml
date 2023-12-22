@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] Creates a Reciprocal Relationship for an Animal Relationship when a new record is created.</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Create Reciprocal Animal Relationship</interviewLabel>
@@ -30,39 +30,39 @@
         <name>Create_Reciprocal_Relationship</name>
         <label>Create Reciprocal Relationship</label>
         <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Related_Animal__r.Id</elementReference>
+                <elementReference>$Record.Related_Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Record_Created__c</field>
+            <field>Record_Created__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Related_Animal__c</field>
+            <field>Related_Animal__c</field>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Status__c</field>
+            <field>Status__c</field>
             <value>
                 <stringValue>Current</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Relationship__c</object>
+        <object>Animal_Relationship__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordUpdates>
         <name>Update_Origin</name>
         <label>Update Origin</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <connector>
             <targetReference>Create_Reciprocal_Relationship</targetReference>
         </connector>
@@ -75,12 +75,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Record_Created__c</field>
+            <field>Record_Created__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Relationship__c</object>
+        <object>Animal_Relationship__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -90,13 +90,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Record_Created__c</field>
+            <field>Record_Created__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal_Relationship__c</object>
+        <object>Animal_Relationship__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

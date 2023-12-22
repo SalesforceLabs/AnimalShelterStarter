@@ -4,7 +4,7 @@
         <name>Notification_On_Adoption_Match</name>
         <label>Notification On Adoption Match</label>
         <locationX>50</locationX>
-        <locationY>815</locationY>
+        <locationY>755</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -38,13 +38,15 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>56.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Assign_Recipients</name>
         <label>Assign Recipients</label>
         <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>notificationRecipients</assignToReference>
             <operator>Add</operator>
@@ -60,7 +62,7 @@
         <name>Is_Notification_Flag_Set</name>
         <label>Is Notification Flag Set</label>
         <locationX>182</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -83,7 +85,7 @@
     <formulas>
         <name>notificationBody</name>
         <dataType>String</dataType>
-        <expression>&apos;New possible Adoption for&apos; + &apos; &apos; + {!$Record.%%%NAMESPACED_ORG%%%Animal_Name__c}</expression>
+        <expression>&apos;New possible Adoption for&apos; + &apos; &apos; + {!$Record.animalshelters__Animal_Name__c}</expression>
     </formulas>
     <interviewLabel>Animal - Find Adoption Match {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -112,7 +114,7 @@
         <name>Get_Custom_Notification_ID</name>
         <label>Get Custom Notification ID</label>
         <locationX>50</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Recipients</targetReference>
@@ -136,8 +138,8 @@
             <targetReference>Call_Auto_Match_Subflow</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterFormula>AND( {!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Enable_Auto_Match__c}=TRUE, ISPICKVAL({!$Record.%%%NAMESPACED_ORG%%%Animal_Status__c},&apos;Available for Adoption&apos;))</filterFormula>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <filterFormula>AND( {!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Auto_Match__c}=TRUE, ISPICKVAL({!$Record.Animal_Status__c},&apos;Available for Adoption&apos;))</filterFormula>
+        <object>Animal__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
@@ -146,7 +148,7 @@
         <name>Call_Auto_Match_Subflow</name>
         <label>Call Auto Match Subflow</label>
         <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <connector>
             <targetReference>Is_Notification_Flag_Set</targetReference>
         </connector>

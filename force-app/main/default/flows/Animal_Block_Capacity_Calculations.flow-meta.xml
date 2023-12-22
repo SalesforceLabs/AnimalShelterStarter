@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Available_Child_Record_Count</name>
         <label>Available Child Record Count</label>
@@ -131,20 +131,20 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
+            <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varLocationId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Available</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>varLocationChildRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -160,13 +160,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Parent_Block__c</field>
+            <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varLocationId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>varLocationChildRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -184,12 +184,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Available_Capacity__c</field>
+            <field>Available_Capacity__c</field>
             <value>
                 <elementReference>conZero</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Update the Available Capacity value on the current Location</description>
@@ -206,12 +206,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Available_Capacity__c</field>
+            <field>Available_Capacity__c</field>
             <value>
                 <elementReference>varAvailableCount</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Update the Total Capacity value on the current Location</description>
@@ -231,12 +231,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Total_Capacity__c</field>
+            <field>Total_Capacity__c</field>
             <value>
                 <elementReference>varTotalCount</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -260,7 +260,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>varLocationChildRecords</name>
@@ -268,7 +268,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>varLocationId</name>

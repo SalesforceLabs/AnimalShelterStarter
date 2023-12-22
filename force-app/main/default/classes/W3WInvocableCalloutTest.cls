@@ -11,10 +11,10 @@ private class W3WInvocableCalloutTest {
 
         Test.setMock(HttpCalloutMock.class, new MockW3WResponseGenerator());
 
-        %%%NAMESPACED_ORG%%%Animal__c theAnimal = new %%%NAMESPACED_ORG%%%Animal__c(%%%NAMESPACED_ORG%%%Date_of_Arrival__c = Date.Today(), %%%NAMESPACED_ORG%%%what3words__c = 'whips.vanish.store');
+        animalshelters__Animal__c theAnimal = new animalshelters__Animal__c(animalshelters__Date_of_Arrival__c = Date.Today(), animalshelters__what3words__c = 'whips.vanish.store');
         insert theAnimal;
 
-        List<%%%NAMESPACED_ORG%%%Animal__c> animals = new List<%%%NAMESPACED_ORG%%%Animal__c>();
+        List<animalshelters__Animal__c> animals = new List<animalshelters__Animal__c>();
         animals.add(theAnimal);
 
         test.startTest();

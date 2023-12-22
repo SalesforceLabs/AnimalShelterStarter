@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>58.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] - When a Movement Task is completed the Movement Record is Updated</description>
     <environments>Default</environments>
     <formulas>
         <name>locationNameFormula</name>
         <dataType>String</dataType>
-        <expression>IF({!$Record.%%%NAMESPACED_ORG%%%Movement__r.%%%NAMESPACED_ORG%%%Type__c} = &quot;Housed&quot;,
-       {!$Record.%%%NAMESPACED_ORG%%%Movement__r.%%%NAMESPACED_ORG%%%Type__c} + &quot; - &quot; + {!$Record.%%%NAMESPACED_ORG%%%Movement__r.%%%NAMESPACED_ORG%%%Location_Name__c},
-               {!$Record.%%%NAMESPACED_ORG%%%Movement__r.%%%NAMESPACED_ORG%%%Type__c}
+        <expression>IF({!$Record.animalshelters__Movement__r.animalshelters__Type__c} = &quot;Housed&quot;,
+       {!$Record.animalshelters__Movement__r.animalshelters__Type__c} + &quot; - &quot; + {!$Record.animalshelters__Movement__r.animalshelters__Location_Name__c},
+               {!$Record.animalshelters__Movement__r.animalshelters__Type__c}
 )</expression>
     </formulas>
     <interviewLabel>Task - Update Future Movement Record on Task Completion {!$Flow.CurrentDateTime}</interviewLabel>
@@ -43,21 +43,21 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.WhatId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -74,18 +74,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <value>
                 <elementReference>locationNameFormula</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Site__c</field>
+            <field>Site__c</field>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Movement__r.%%%NAMESPACED_ORG%%%Sitename__c</elementReference>
+                <elementReference>$Record.Movement__r.Sitename__c</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Current_Movement_Record</name>
@@ -104,18 +104,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%End_Date__c</field>
+            <field>End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Task_Associated_Movement_Record</name>
@@ -126,24 +126,24 @@
             <targetReference>Update_Animal_Location_Field</targetReference>
         </connector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Movement_Status__c</field>
+            <field>Movement_Status__c</field>
             <value>
                 <stringValue>Completed</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Start_Date__c</field>
+            <field>Start_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <inputReference>$Record.%%%NAMESPACED_ORG%%%Movement__r</inputReference>
+        <inputReference>$Record.Movement__r</inputReference>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -154,7 +154,7 @@
         <filterFormula>AND(
 ISPICKVAL({!$Record.Type}, &quot;Animal Movement&quot;),
 ISPICKVAL({!$Record.Status}, &quot;Completed&quot;),
-ISPICKVAL({!$Record.%%%NAMESPACED_ORG%%%Movement__r.%%%NAMESPACED_ORG%%%Movement_Status__c}, &quot;Pending&quot;))</filterFormula>
+ISPICKVAL({!$Record.Movement__r.Movement_Status__c}, &quot;Pending&quot;))</filterFormula>
         <object>Task</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

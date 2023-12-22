@@ -17,7 +17,7 @@
         <label>Update Stay Length</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
-        <actionName>Animal_Length_of_Stay_Calculation</actionName>
+        <actionName>animalshelters__Animal_Length_of_Stay_Calculation</actionName>
         <actionType>flow</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -59,9 +59,11 @@
             </processMetadataValues>
             <name>varAnimalId</name>
             <value>
-                <elementReference>myVariable_current.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>myVariable_current.Animal__r.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>animalshelters__Animal_Length_of_Stay_Calculation</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>49.0</apiVersion>
     <decisions>
@@ -103,7 +105,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>%%%NAMESPACED_ORG%%%Movement__c</stringValue>
+            <stringValue>Movement__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -126,14 +128,14 @@
     </processMetadataValues>
     <processType>Workflow</processType>
     <startElementReference>myDecision</startElementReference>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -141,6 +143,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
 </Flow>

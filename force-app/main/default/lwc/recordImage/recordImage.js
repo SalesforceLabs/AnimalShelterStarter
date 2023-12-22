@@ -1,9 +1,16 @@
+/**
+ * @description       :
+ * @author            : Stewart Anderson
+ * @group             :
+ * @last modified on  : 12-15-2023
+ * @last modified by  : Stewart Anderson
+**/
 import { LightningElement, wire, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getRecord, updateRecord } from 'lightning/uiRecordApi';
 import { refreshApex } from '@salesforce/apex';
 
-// Animal Object References 
+// Animal Object References
 import ANIMAL_ID_FIELD from '@salesforce/schema/Animal__c.Id';
 import ANIMAL_PHOTO_ID_FIELD from '@salesforce/schema/Animal__c.Photo_Id__c';
 
@@ -20,9 +27,9 @@ export default class recordImage extends LightningElement {
     @api recordId;
     @api objectApiName;
     CurrentRecord;
-    IdField 
+    IdField
     photoIdField
-    
+
     // Photo Field and ID
     photoId;
     photoURL;
@@ -36,10 +43,10 @@ export default class recordImage extends LightningElement {
             this.IdField = CONTACT_ID_FIELD
             this.photoIdField = CONTACT_PHOTO_ID_FIELD
         }
-        if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
+        if (this.objectApiName == 'animalshelters__Animal__c') {
             this.IdField = ANIMAL_ID_FIELD
             this.photoIdField = ANIMAL_PHOTO_ID_FIELD
-        }        
+        }
     }
 
     // Wire Record and load Photo Id Field
@@ -61,8 +68,8 @@ export default class recordImage extends LightningElement {
             );
         } else if (data) {
             this.CurrentRecord = data;
-            if (this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value) {
-                this.photoId = this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Photo_Id__c.value;
+            if (this.CurrentRecord.fields.animalshelters__Photo_Id__c.value) {
+                this.photoId = this.CurrentRecord.fields.animalshelters__Photo_Id__c.value;
                 this.photoURL = '/sfc/servlet.shepherd/version/download/' + this.photoId;
             }
         }
@@ -89,21 +96,21 @@ export default class recordImage extends LightningElement {
             fields[CONTACT_ID_FIELD.fieldApiName] = this.recordId;
             fields[CONTACT_PHOTO_ID_FIELD.fieldApiName] = photoId;
         }
-        if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
+        if (this.objectApiName == 'animalshelters__Animal__c') {
             fields[ANIMAL_ID_FIELD.fieldApiName] = this.recordId;
             fields[ANIMAL_PHOTO_ID_FIELD.fieldApiName] = photoId;
-        }        
-      
+        }
+
         const recordInput = { fields };
         updateRecord(recordInput)
         .then(() => {
             if (this.objectApiName == 'Contact') {
                 return refreshApex(this.Contact);
             }
-            if (this.objectApiName == '%%%NAMESPACED_ORG%%%Animal__c') {
-                return refreshApex(this.%%%NAMESPACED_ORG%%%Animal__c);
-            }  
-            
+            if (this.objectApiName == 'animalshelters__Animal__c') {
+                return refreshApex(this.animalshelters__Animal__c);
+            }
+
         })
         .catch(error => {
             this.dispatchEvent(

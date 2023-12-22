@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Update_w3w_field_for_current_record</name>
         <label>Update w3w field for current record</label>
         <locationX>50</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <assignmentItems>
-            <assignToReference>recordId.%%%NAMESPACED_ORG%%%what3words__c</assignToReference>
+            <assignToReference>recordId.what3words__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue></stringValue>
@@ -22,7 +22,7 @@
         <name>Check_if_what3word_is_populated</name>
         <label>Check if what3word is populated</label>
         <locationX>578</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <defaultConnector>
             <targetReference>Capture_Location</targetReference>
         </defaultConnector>
@@ -31,7 +31,7 @@
             <name>what3words_is_not_Null</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>recordId.%%%NAMESPACED_ORG%%%what3words__c</leftValueReference>
+                <leftValueReference>recordId.what3words__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -47,7 +47,7 @@
         <name>Overwrite_w3w_Field</name>
         <label>Overwrite w3w Field?</label>
         <locationX>314</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <defaultConnector>
             <targetReference>No_Changes_Screen</targetReference>
         </defaultConnector>
@@ -97,7 +97,7 @@
         <name>Clear_the_what3words_field</name>
         <label>Clear the what3words field</label>
         <locationX>50</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <connector>
             <targetReference>Capture_Location</targetReference>
         </connector>
@@ -111,7 +111,7 @@
         <name>Update_Animal_with_Location</name>
         <label>Update Animal with Location</label>
         <locationX>578</locationX>
-        <locationY>1106</locationY>
+        <locationY>998</locationY>
         <connector>
             <targetReference>Completion_Screen</targetReference>
         </connector>
@@ -127,24 +127,24 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Geolocation__Latitude__s</field>
+            <field>Geolocation__Latitude__s</field>
             <value>
                 <elementReference>Capture_Geo.latitude</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Geolocation__Longitude__s</field>
+            <field>Geolocation__Longitude__s</field>
             <value>
                 <elementReference>Capture_Geo.longitude</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <screens>
         <name>Capture_Location</name>
         <label>Capture Location</label>
         <locationX>578</locationX>
-        <locationY>986</locationY>
+        <locationY>890</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -153,12 +153,12 @@
         </connector>
         <fields>
             <name>help_text_locationscreen</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Getting Location&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;We are getting your current location details from your Browser/Device, and will  save them against the animal.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20);&quot;&gt;⚠️&lt;/span&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20); font-size: 10px;&quot;&gt;You may be prompted to grant permission to access your location!&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Animal Name: {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Getting Location&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;We are getting your current location details from your Browser/Device, and will  save them against the animal.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20);&quot;&gt;⚠️&lt;/span&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(192, 34, 20); font-size: 10px;&quot;&gt;You may be prompted to grant permission to access your location!&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Animal Name: {!recordId.Animal_Name__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Capture_Geo</name>
-            <extensionName>c:FSCGeolocation</extensionName>
+            <extensionName>animalshelters:FSCGeolocation</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -171,13 +171,13 @@
         <name>Completion_Screen</name>
         <label>Completion Screen</label>
         <locationX>578</locationX>
-        <locationY>1226</locationY>
+        <locationY>1106</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Completion_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Location Update Complete!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c} has been updated with the new location.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Location Update Complete!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Animal_Name__c} has been updated with the new location.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -187,7 +187,7 @@
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>1018</locationX>
-        <locationY>1226</locationY>
+        <locationY>1106</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -203,7 +203,7 @@
         <name>No_Changes_Screen</name>
         <label>No Changes Screen</label>
         <locationX>578</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -219,7 +219,7 @@
         <name>w3w_Confirmation_Screen</name>
         <label>w3w Confirmation Screen</label>
         <locationX>314</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -228,7 +228,7 @@
         </connector>
         <fields>
             <name>w3w_Confirmation_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;what3words exists&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;There is an entry in the what3words field for {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}, which indicates you already have a location.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;what3words exists&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;There is an entry in the what3words field for {!recordId.Animal_Name__c}, which indicates you already have a location.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -274,6 +274,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
 </Flow>

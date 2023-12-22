@@ -16,7 +16,7 @@
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
-    <description>Field Set to allow Admin to select fields for the Visualforce Cage Card function</description>
+    <description>Field Set used by Print Cage Card action.</description>
     <displayedFields>
         <field>Animal_Name__c</field>
         <isFieldManaged>false</isFieldManaged>

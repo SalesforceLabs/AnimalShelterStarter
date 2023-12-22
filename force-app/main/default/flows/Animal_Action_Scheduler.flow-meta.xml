@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>57.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
@@ -111,35 +111,35 @@
         <locationX>578</locationX>
         <locationY>1298</locationY>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Description__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Description__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Action_Description</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Date_Time_of_Action__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalActionDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Treatment_Type__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Treatment_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Treatment_Type</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Condition__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Condition__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Related_Condition_Selected</elementReference>
@@ -162,35 +162,35 @@
         <locationX>314</locationX>
         <locationY>758</locationY>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Animal__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Date_Time_of_Action__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>From_Date</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Treatment_Type__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Treatment_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Treatment_Type</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Description__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Description__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Action_Description</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>AnimalActionRecord.%%%NAMESPACED_ORG%%%Condition__c</assignToReference>
+            <assignToReference>AnimalActionRecord.Condition__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Related_Condition_Selected</elementReference>
@@ -320,8 +320,8 @@
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>%%%NAMESPACED_ORG%%%Treatment_Type__c</picklistField>
-        <picklistObject>%%%NAMESPACED_ORG%%%Treatment__c</picklistObject>
+        <picklistField>Treatment_Type__c</picklistField>
+        <picklistObject>Treatment__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
@@ -357,7 +357,7 @@
     <formulas>
         <name>GenerateTaskSubject</name>
         <dataType>String</dataType>
-        <expression>{!Schedule_Picklist} + &quot; &quot; + {!Action_Selection} + &quot; Action for &quot; + {!recordId.%%%NAMESPACED_ORG%%%Animal_Name__c}</expression>
+        <expression>{!Schedule_Picklist} + &quot; &quot; + {!Action_Selection} + &quot; Action for &quot; + {!recordId.Animal_Name__c}</expression>
     </formulas>
     <interviewLabel>Animal - Action Scheduler</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -420,7 +420,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
+                <stringValue>animalshelters__Animal_Action__c</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -497,6 +497,7 @@
                     <fieldText>When is the first date and time of the action?</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;Date of first treatment&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
@@ -520,6 +521,7 @@
                     <defaultSelectedChoiceReference>Day_Choice</defaultSelectedChoiceReference>
                     <fieldText>How often will this action need to be completed?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
@@ -531,6 +533,7 @@
                     <fieldText>For how long?</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;Once you have set the recurrence (e.g. to Daily), how many days will the schedule run for (e.g. 6 would be 6 days)? &lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                 </fields>
@@ -558,6 +561,7 @@
             <dataType>String</dataType>
             <fieldText>Select the type of action for the animal:</fieldText>
             <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -565,6 +569,7 @@
             <fieldText>Provide a description for this action:</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -597,6 +602,7 @@
             <dataType>String</dataType>
             <fieldText>Treatment Type</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -617,13 +623,13 @@
             <inputParameters>
                 <name>objectApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Animal_Action__c</stringValue>
+                    <stringValue>animalshelters__Animal_Action__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>fieldApiName</name>
                 <value>
-                    <stringValue>%%%NAMESPACED_ORG%%%Condition__c</stringValue>
+                    <stringValue>animalshelters__Condition__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -663,7 +669,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
+        <objectType>Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>animalActionRecordId</name>
@@ -678,7 +684,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal_Action__c</objectType>
+        <objectType>Animal_Action__c</objectType>
     </variables>
     <variables>
         <name>AnimalActionRecordTypeId</name>
@@ -727,7 +733,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>Related_Condition_Selected</name>

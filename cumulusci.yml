@@ -3,7 +3,7 @@ project:
     package:
         name: Animal Shelter Starter
         namespace: animalshelters
-        api_version: "56.0"
+        api_version: "59.0"
     source_format: sfdx
     git:
         default_branch: "master"
@@ -30,12 +30,12 @@ tasks:
     list_changes:
         options:
             ignore:
-                - "Profile: "
+                - "Profile:"
 
     retrieve_changes:
         options:
             ignore:
-                - "Profile: "
+                - "Profile:"
 
     deploy:
         options:
@@ -56,6 +56,7 @@ flows:
                     api_names: "Animal_Shelter_Starter"
             2:
                 task: load_dataset
+                ignore_failure: true
 
     config_qa:
         steps:
@@ -69,6 +70,6 @@ flows:
 orgs:
     scratch:
         dev:
-            days: 15
-            config_file: orgs/dev.json
-            namespaced: false
+            days: 30
+            config_file: config/dev-scratch-def.json
+            namespaced: True

@@ -1,3 +1,10 @@
+<!--
+  @description       :
+  @author            : Stewart Anderson
+  @group             :
+  @last modified on  : 12-15-2023
+  @last modified by  : Stewart Anderson
+-->
 <aura:component controller="ProfilePictureController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
 
    	<!-- Load Data from the Record -->
@@ -6,11 +13,11 @@
     <aura:attribute name="recordLoadError" type="String"/>
     <force:recordData aura:id="recordLoader"
     recordId="{!v.recordId}"
-    fields="%%%NAMESPACED_ORG%%%Animal_Name__c"
+    fields="animalshelters__Animal_Name__c"
     targetFields="{!v.animalRecord}"
     targetError="{!v.recordLoadError}"
     />
-    
+
     <!-- Set Defaults -->
     <aura:attribute name="pictureSrc" type="String" default="https://s3-us-west-1.amazonaws.com/sfdc-demo/image-placeholder.png" />
     <aura:attribute name="message" type="String" default="Drag and Drop Image Here" access="global"/>
@@ -18,12 +25,12 @@
     <aura:attribute name="ToggleAreaClass" type="String" default="slds-hide" />
     <aura:attribute name="ImageClass" type="String" default="Round_Image" access="global"/>
     <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
-     
+
     <!-- Image Compoenent Start -->
     <div class="slds-text-align_center" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
         <article class="slds-card">
             <div class="slds-card__header">
-                <h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" title="{!v.animalRecord.%%%NAMESPACED_ORG%%%Animal_Name__c}">{!v.animalRecord.%%%NAMESPACED_ORG%%%Animal_Name__c}</h1>
+                <h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" title="{!v.animalRecord.animalshelters__Animal_Name__c}">{!v.animalRecord.animalshelters__Animal_Name__c}</h1>
             </div>
             <div class="slds-card__body slds-card__body_inner">
         		<img src="{!v.pictureSrc}" class="{!v.ImageClass}"/>
@@ -37,5 +44,5 @@
             </div>
         </article>
     </div>
-     
+
 </aura:component>

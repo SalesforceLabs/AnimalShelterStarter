@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <customApplications>
+        <description xsi:nil="true"/>
         <label><!-- Animal Shelter --></label>
         <name>Shelter</name>
     </customApplications>
@@ -516,6 +517,10 @@
         <fullName>Animal_Action_Close_Associated_Task</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows/>
+        <fullName>Animal_Action_Create_Task_for_new_Actions</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows>
             <choices>
                 <name>Day_Choice</name>
@@ -630,6 +635,206 @@
             </screens>
         </flows>
         <fullName>Animal_Action_Scheduler</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <fields>
+                    <name>existingSelectionText</name>
+                </fields>
+                <fields>
+                    <name>existingVaccinationAnimalName</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>columns</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxRowSelection</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>minRowSelection</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>selectionMode</name>
+                        <value/>
+                    </inputParameters>
+                    <name>existingVaccineRecords</name>
+                </fields>
+                <name>Existing_Vaccination</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>FlowErrorScreenText</name>
+                </fields>
+                <name>Flow_Error_Screen</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>New_Vaccination_Section1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>New_Vaccination_Section1_Column1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>New_Vaccination_Section1_Column2</name>
+                </fields>
+                <fields>
+                    <name>newVaccinationAnimalName</name>
+                </fields>
+                <fields>
+                    <name>newVaccinationDateTime</name>
+                </fields>
+                <fields>
+                    <name>newVaccinationDateTimeCompleted</name>
+                </fields>
+                <fields>
+                    <name>newVaccinationDescription</name>
+                </fields>
+                <name>New_Vaccination</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>Dosage_Given</name>
+                </fields>
+                <fields>
+                    <name>Vaccination_Details_Section1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Vaccination_Details_Section1_Column1</name>
+                </fields>
+                <fields>
+                    <name>Vaccination_Details_Section2</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Vaccination_Details_Section2_Column1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Vaccination_Details_Section2_Column2</name>
+                </fields>
+                <fields>
+                    <name>Vaccination_Details_Section3</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Vaccination_Details_Section3_Column1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Vaccination_Details_Section3_Column2</name>
+                </fields>
+                <fields>
+                    <name>Vaccination_Details_Section4</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Vaccination_Details_Section4_Column1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Vaccination_Details_Section4_Column2</name>
+                </fields>
+                <fields>
+                    <name>Vaccine_Due_On</name>
+                </fields>
+                <fields>
+                    <name>Vaccine_Period_Months</name>
+                </fields>
+                <fields>
+                    <name>dosageText</name>
+                </fields>
+                <fields>
+                    <name>el_0</name>
+                </fields>
+                <fields>
+                    <name>el_1</name>
+                </fields>
+                <fields>
+                    <name>el_2</name>
+                </fields>
+                <fields>
+                    <name>el_3</name>
+                </fields>
+                <fields>
+                    <name>el_4</name>
+                </fields>
+                <fields>
+                    <name>medicineDecision</name>
+                </fields>
+                <fields>
+                    <name>vaccinationMedicineSelection</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>color</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>thickness</name>
+                        <value/>
+                    </inputParameters>
+                    <name>vaccineDetailsHLine_1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>color</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>thickness</name>
+                        <value/>
+                    </inputParameters>
+                    <name>vaccineDetailsHLine_2</name>
+                </fields>
+                <fields>
+                    <name>vaccineDosagePerWeight</name>
+                </fields>
+                <fields>
+                    <name>vaccinePeriodText</name>
+                </fields>
+                <name>Vaccination_Details</name>
+            </screens>
+        </flows>
+        <fullName>Animal_Action_Vaccination_Process</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows>
@@ -1197,6 +1402,18 @@
                     </inputParameters>
                     <name>Initial_Screen_Section1_Column2</name>
                 </fields>
+                <fields>
+                    <name>Movement_Date</name>
+                </fields>
+                <fields>
+                    <name>Screen_MovementDate_Text</name>
+                </fields>
+                <fields>
+                    <name>Screen_Tasks_Note_Text</name>
+                </fields>
+                <fields>
+                    <name>Screen_TypeOfMovement_Text</name>
+                </fields>
                 <name>Initial_Screen</name>
             </screens>
             <screens>
@@ -1237,6 +1454,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Animal_Object_Handler_Process</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Animal_RecordType_Subflow</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows>
@@ -1575,6 +1796,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Task_Close_associated_Animal_Action</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Task_Update_Future_Movement_Record_on_Task_Completion</fullName>
     </flowDefinitions>
     <quickActions>
         <label><!-- LogACall --></label>

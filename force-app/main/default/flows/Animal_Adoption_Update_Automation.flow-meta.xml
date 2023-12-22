@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>On Adoption Status = Adopted, Update Contact Flag, Clear current and create new Movement record, update Animal status</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Adoption Update Automation</interviewLabel>
@@ -29,42 +29,42 @@
         <name>Create_New_Movement_Record</name>
         <label>Create New Movement Record</label>
         <locationX>176</locationX>
-        <locationY>815</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Update_Animal_Record</targetReference>
         </connector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Start_Date__c</field>
+            <field>Start_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
             <value>
                 <stringValue>Adopted, See Adoption Record</stringValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <name>Get_Associated_Contact_Record</name>
         <label>Get Associated Contact Record</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Adopter_Flag_on_Contact_to_True</targetReference>
@@ -74,7 +74,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Primary_Contact__r.Id</elementReference>
+                <elementReference>$Record.Primary_Contact__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -85,35 +85,35 @@
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
         <locationX>176</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Close_current_Movement_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.Animal__r.Id</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Close_current_Movement_Record</name>
         <label>Close current Movement Record</label>
         <locationX>176</locationX>
-        <locationY>695</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Create_New_Movement_Record</targetReference>
         </connector>
@@ -126,24 +126,24 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Current__c</field>
+            <field>Current__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%End_Date__c</field>
+            <field>End_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Set_Adopter_Flag_on_Contact_to_True</name>
         <label>Set Adopter Flag on Contact to True</label>
         <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Get_Current_Movement_Record</targetReference>
         </connector>
@@ -156,7 +156,7 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Is_an_Adopter__c</field>
+            <field>Is_an_Adopter__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
@@ -168,15 +168,15 @@
         <name>Update_Adoption_Record</name>
         <label>Update Adoption Record</label>
         <locationX>176</locationX>
-        <locationY>1055</locationY>
+        <locationY>971</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_Collected__c</field>
+            <field>Date_Collected__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_of_Adoption__c</field>
+            <field>Date_of_Adoption__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
@@ -187,7 +187,7 @@
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
         <locationX>176</locationX>
-        <locationY>935</locationY>
+        <locationY>863</locationY>
         <connector>
             <targetReference>Update_Adoption_Record</targetReference>
         </connector>
@@ -196,28 +196,28 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>$Record.Animal__r.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <field>Animal_Status__c</field>
             <value>
                 <stringValue>Adopted</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <value>
                 <stringValue>Adopted - See Adoption Record</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Previous_Current_Owner__c</field>
+            <field>Previous_Current_Owner__c</field>
             <value>
                 <elementReference>Get_Associated_Contact_Record.Id</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -228,13 +228,13 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Adoption_Stage__c</field>
+            <field>Adoption_Stage__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Adopted</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Adoption__c</object>
+        <object>Adoption__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

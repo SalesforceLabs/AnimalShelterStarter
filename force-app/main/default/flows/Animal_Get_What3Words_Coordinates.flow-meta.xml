@@ -4,7 +4,7 @@
         <name>Get_What3Words_Coordinates</name>
         <label>Get What3Words Coordinates</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <actionName>W3WInvocableCallout</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -14,9 +14,11 @@
                 <elementReference>$Record</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>W3WInvocableCallout</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>57.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] Get what3words coordinates from the entry in the what3words field.  Uses Invocable Apex</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Get What3Words Coordinates {!$Flow.CurrentDateTime}</interviewLabel>
@@ -47,8 +49,8 @@
         <connector>
             <targetReference>Get_What3Words_Coordinates</targetReference>
         </connector>
-        <filterFormula>AND(NOT(ISBLANK({!$Record.%%%NAMESPACED_ORG%%%what3words__c})),ISCHANGED({!$Record.%%%NAMESPACED_ORG%%%what3words__c}),NOT(ISBLANK({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%What3Words_API_Key__c})))</filterFormula>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <filterFormula>AND(NOT(ISBLANK({!$Record.what3words__c})),ISCHANGED({!$Record.what3words__c}),NOT(ISBLANK({!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__What3Words_API_Key__c})))</filterFormula>
+        <object>Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

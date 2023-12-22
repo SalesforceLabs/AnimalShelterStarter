@@ -6,12 +6,12 @@
         <label>Duplicate Breeds Matching Rule</label>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>%%%NAMESPACED_ORG%%%Type__c</fieldName>
+            <fieldName>animalshelters__Type__c</fieldName>
             <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>%%%NAMESPACED_ORG%%%Species__c</fieldName>
+            <fieldName>animalshelters__Species__c</fieldName>
             <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
         <ruleStatus>Active</ruleStatus>

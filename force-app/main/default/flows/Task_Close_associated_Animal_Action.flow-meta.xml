@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>57.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] - When a Task is marked as complete the associated Animal Action Record is marked as completed</description>
     <environments>Default</environments>
     <interviewLabel>Task - Close associated Animal Action {!$Flow.CurrentDateTime}</interviewLabel>
@@ -39,11 +39,11 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.%%%NAMESPACED_ORG%%%Animal_Action__r.Id</elementReference>
+                <elementReference>$Record.Animal_Action__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -61,30 +61,30 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Completed__c</field>
+            <field>Action_Completed__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Action_Status__c</field>
+            <field>Action_Status__c</field>
             <value>
                 <stringValue>Given</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Comments__c</field>
+            <field>Comments__c</field>
             <value>
                 <elementReference>$Record.Description</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Date_Time_Action_Completed__c</field>
+            <field>Date_Time_Action_Completed__c</field>
             <value>
                 <elementReference>$Record.CompletedDateTime</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>

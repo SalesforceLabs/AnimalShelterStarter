@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Animal_Details</fullName>
-    <description>General</description>
+    <description>General field set to display animal details.</description>
     <displayedFields>
         <field>Animal_Name__c</field>
         <isFieldManaged>false</isFieldManaged>

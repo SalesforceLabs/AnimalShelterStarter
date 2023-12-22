@@ -1,10 +1,17 @@
+<!--
+  @description       :
+  @author            : Stewart Anderson
+  @group             :
+  @last modified on  : 12-15-2023
+  @last modified by  : Stewart Anderson
+-->
 <template>
     <template if:true={settings_data}>
         <lightning-card>
 
             <div class="slds-var-p-around_medium ">
                 <p class="slds-text-body_regular slds-var-m-bottom_medium">Here you can make changes to the default settings which Animal Shelter Starter uses. Note: Settings are saved when they are changed.</p>
-            
+
 
             <lightning-tabset variant="vertical">
                 <lightning-tab label="Animal">
@@ -17,8 +24,8 @@
                             <lightning-layout-item flexibility="auto" padding="around-small">
                                 <div class="slds-form-element__control slds-float_right">
                                     <lightning-input label="Animal Name Prefix" type="text"
-                                        value={settings_data.%%%NAMESPACED_ORG%%%Default_Animal_Name_Prefix__c} onchange={handleTextChange}
-                                        data-field="%%%NAMESPACED_ORG%%%Default_Animal_Name_Prefix__c"></lightning-input>
+                                        value={settings_data.animalshelters__Default_Animal_Name_Prefix__c} onchange={handleTextChange}
+                                        data-field="animalshelters__Default_Animal_Name_Prefix__c"></lightning-input>
                                 </div>
                             </lightning-layout-item>
                         </lightning-layout>
@@ -31,8 +38,8 @@
                             <lightning-layout-item flexibility="auto" padding="around-small">
                                 <div class="slds-form-element__control slds-float_right">
                                     <lightning-input type="toggle" label="Set Default Name"
-                                        checked={settings_data.%%%NAMESPACED_ORG%%%Default_Animal_Name__c} onchange={handleBooleanChange}
-                                        data-field="%%%NAMESPACED_ORG%%%Default_Animal_Name__c"></lightning-input>
+                                        checked={settings_data.animalshelters__Default_Animal_Name__c} onchange={handleBooleanChange}
+                                        data-field="animalshelters__Default_Animal_Name__c"></lightning-input>
                                 </div>
                             </lightning-layout-item>
                         </lightning-layout>
@@ -47,8 +54,8 @@
                         <lightning-layout-item flexibility="auto" padding="around-small">
                             <div class="slds-form-element__control slds-float_right">
                                 <lightning-input type="toggle" label="Enable Auto-Matching"
-                                        checked={settings_data.%%%NAMESPACED_ORG%%%Enable_Auto_Match__c} onchange={handleBooleanChange}
-                                        data-field="%%%NAMESPACED_ORG%%%Enable_Auto_Match__c"></lightning-input>
+                                        checked={settings_data.animalshelters__Enable_Auto_Match__c} onchange={handleBooleanChange}
+                                        data-field="animalshelters__Enable_Auto_Match__c"></lightning-input>
                             </div>
                         </lightning-layout-item>
                     </lightning-layout>
@@ -62,8 +69,8 @@
                         <lightning-layout-item flexibility="auto" padding="around-small">
                             <div class="slds-form-element__control slds-float_right">
                                 <lightning-input type="toggle" label="Disable Behaviour Sync"
-                                        checked={settings_data.%%%NAMESPACED_ORG%%%Disable_Behaviour_Update__c} onchange={handleBooleanChange}
-                                        data-field="%%%NAMESPACED_ORG%%%Disable_Behaviour_Update__c"></lightning-input>
+                                        checked={settings_data.animalshelters__Disable_Behaviour_Update__c} onchange={handleBooleanChange}
+                                        data-field="animalshelters__Disable_Behaviour_Update__c"></lightning-input>
                             </div>
                         </lightning-layout-item>
                     </lightning-layout>
@@ -77,8 +84,8 @@
                         <lightning-layout-item flexibility="auto" padding="around-small">
                             <div class="slds-form-element__control slds-float_right">
                                 <lightning-input type="toggle" label="Enable Movement Tasks"
-                                        checked={settings_data.%%%NAMESPACED_ORG%%%Enable_Movement_Tasks__c} onchange={handleBooleanChange}
-                                        data-field="%%%NAMESPACED_ORG%%%Enable_Movement_Tasks__c"></lightning-input>
+                                        checked={settings_data.animalshelters__Enable_Movement_Tasks__c} onchange={handleBooleanChange}
+                                        data-field="animalshelters__Enable_Movement_Tasks__c"></lightning-input>
                             </div>
                         </lightning-layout-item>
                     </lightning-layout>
@@ -91,8 +98,8 @@
                             <lightning-layout-item flexibility="auto" padding="around-small">
                                 <div class="slds-form-element__control slds-float_right">
                                     <lightning-input type="toggle" label="Enable Animal Action Tasks"
-                                        checked={settings_data.%%%NAMESPACED_ORG%%%Enable_Animal_Action_Tasks__c} onchange={handleBooleanChange}
-                                        data-field="%%%NAMESPACED_ORG%%%Enable_Animal_Action_Tasks__c"></lightning-input>
+                                        checked={settings_data.animalshelters__Enable_Animal_Action_Tasks__c} onchange={handleBooleanChange}
+                                        data-field="animalshelters__Enable_Animal_Action_Tasks__c"></lightning-input>
                                 </div>
                             </lightning-layout-item>
                         </lightning-layout>
@@ -104,8 +111,8 @@
                             </lightning-layout-item>
                             <lightning-layout-item padding="around-small" size="6">
                                     <lightning-input label="Task Queue Name" type="text"
-                                        value={settings_data.%%%NAMESPACED_ORG%%%Task_Queue_Name__c} onchange={handleTextChange}
-                                        data-field="%%%NAMESPACED_ORG%%%Task_Queue_Name__c"></lightning-input>
+                                        value={settings_data.animalshelters__Task_Queue_Name__c} onchange={handleTextChange}
+                                        data-field="animalshelters__Task_Queue_Name__c"></lightning-input>
                             </lightning-layout-item>
                         </lightning-layout>
                         <hr />
@@ -120,8 +127,8 @@
                         </lightning-layout-item>
                         <lightning-layout-item padding="around-small" size="6">
                                 <lightning-input label="API Token" type="text"
-                                    value={settings_data.%%%NAMESPACED_ORG%%%microchip_api_Token__c} onchange={handleTextChange}
-                                    data-field="%%%NAMESPACED_ORG%%%microchip_api_Token__c"></lightning-input>
+                                    value={settings_data.animalshelters__microchip_api_Token__c} onchange={handleTextChange}
+                                    data-field="animalshelters__microchip_api_Token__c"></lightning-input>
                         </lightning-layout-item>
                     </lightning-layout>
                     <hr />
@@ -133,8 +140,8 @@
                                     your API token in the field opposite.</p>
                             </lightning-layout-item>
                             <lightning-layout-item padding="around-small"  size="6">
-                                    <lightning-input label="API Token" type="text" value={settings_data.%%%NAMESPACED_ORG%%%What3Words_API_Key__c} onchange={handleTextChange}
-                                        data-field="%%%NAMESPACED_ORG%%%What3Words_API_Key__c"></lightning-input>
+                                    <lightning-input label="API Token" type="text" value={settings_data.animalshelters__What3Words_API_Key__c} onchange={handleTextChange}
+                                        data-field="animalshelters__What3Words_API_Key__c"></lightning-input>
                             </lightning-layout-item>
                     </lightning-layout>
                 </lightning-tab>
@@ -148,8 +155,8 @@
                         <lightning-layout-item flexibility="auto" padding="around-small">
                             <div class="slds-form-element__control slds-float_right">
                                 <lightning-input type="toggle" label="Breeds Migration Complete"
-                                    checked={settings_data.%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c} onchange={handleBooleanChange}
-                                    data-field="%%%NAMESPACED_ORG%%%Breeds_Migration_Complete__c"></lightning-input>
+                                    checked={settings_data.animalshelters__Breeds_Migration_Complete__c} onchange={handleBooleanChange}
+                                    data-field="animalshelters__Breeds_Migration_Complete__c"></lightning-input>
                             </div>
                         </lightning-layout-item>
                     </lightning-layout>

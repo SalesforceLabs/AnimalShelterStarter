@@ -1,3 +1,10 @@
+/**
+ * @description       :
+ * @author            : Stewart Anderson
+ * @group             :
+ * @last modified on  : 12-15-2023
+ * @last modified by  : Stewart Anderson
+**/
 import { LightningElement, track, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -46,8 +53,8 @@ export default class MicrochipLookup extends LightningElement {
             );
         } else if (data) {
             this.CurrentRecord = data;
-            if (this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Microchip__c.value) {
-                this.mc_num = this.CurrentRecord.fields.%%%NAMESPACED_ORG%%%Microchip__c.value;
+            if (this.CurrentRecord.fields.animalshelters__Microchip__c.value) {
+                this.mc_num = this.CurrentRecord.fields.animalshelters__Microchip__c.value;
             } else {
                 this.mc_num = 'No MicroChip Number Found. Please Update the record.'
             }
@@ -66,9 +73,9 @@ export default class MicrochipLookup extends LightningElement {
     getResults() {
 
         this.errorMessage = ""
-        
+
         // Ensure API Key has been set
-        if (!this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c){
+        if (!this.myCustomSettings.data.animalshelters__microchip_api_Token__c){
             this.resultsFound = false;
             this.isLoading = false;
             this.errorMessage = "No API Token found. Please update your API token in Animal Shelter Settings > Integration.";
@@ -102,7 +109,7 @@ export default class MicrochipLookup extends LightningElement {
         this.resultsFound = false;
         this.isLoading = true;
         const REC_BODY = {
-            token: this.myCustomSettings.data.%%%NAMESPACED_ORG%%%microchip_api_Token__c,
+            token: this.myCustomSettings.data.animalshelters__microchip_api_Token__c,
             uid: this.mc_num,
         };
         fetch(ENDPOINT, {

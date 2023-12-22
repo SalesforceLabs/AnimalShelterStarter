@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>56.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] - Removed Adoption Match records when the Adopter Profile is set inactive, unless Adoption Match record has the Successful Adoption flag set</description>
     <environments>Default</environments>
     <interviewLabel>Adopter Profile - Clean up matches on Deactivation {!$Flow.CurrentDateTime}</interviewLabel>
@@ -34,13 +34,13 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Active__c</field>
+            <field>Active__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
+        <object>Adopter_Profile__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
@@ -49,7 +49,7 @@
         <name>Call_Clean_Up_Flow</name>
         <label>Call Clean Up Flow</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <flowName>Adopter_Match_clean_up_Subflow</flowName>
         <inputAssignments>
             <name>adopterProfile</name>

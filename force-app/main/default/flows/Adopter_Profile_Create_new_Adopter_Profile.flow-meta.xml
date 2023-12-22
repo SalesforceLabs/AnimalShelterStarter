@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>56.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Assign_Contact_ID_Stage_3</name>
         <label>Assign Contact ID &amp; Stage 3</label>
@@ -416,7 +416,7 @@
         </fields>
         <fields>
             <name>IndAccommodationStage</name>
-            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <extensionName>animalshelters:FSC_Flowstage_Indicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>currentStage</name>
@@ -446,11 +446,13 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Type_of_Accommodation__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Location_of_Animal_Daytime__c</objectFieldReference>
                 </fields>
@@ -467,16 +469,19 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Permission_to_House_Animal__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Safe_Outside_Area__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Location_of_Animal_Night__c</objectFieldReference>
                 </fields>
@@ -512,7 +517,7 @@
         </fields>
         <fields>
             <name>IndAnimalStage</name>
-            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <extensionName>animalshelters:FSC_Flowstage_Indicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>currentStage</name>
@@ -542,21 +547,25 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Type_of_Animal__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Other_Animals__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Other_Animals_of_same_Species__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Other_Pets_Animals__c</objectFieldReference>
                     <visibilityRule>
@@ -583,21 +592,25 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Preferred_Maturity_Level__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Gender__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Preferred_Animal_Size__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Special_Care_Adoption_Considered__c</objectFieldReference>
                 </fields>
@@ -625,7 +638,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>IndCompleteStage</name>
-            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <extensionName>animalshelters:FSC_Flowstage_Indicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>currentStage</name>
@@ -668,7 +681,7 @@
         </fields>
         <fields>
             <name>IndLifestyleStage</name>
-            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <extensionName>animalshelters:FSC_Flowstage_Indicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>currentStage</name>
@@ -698,6 +711,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Current_Daytime_Arrangements__c</objectFieldReference>
                 </fields>
@@ -714,6 +728,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Small_Children__c</objectFieldReference>
                 </fields>
@@ -749,7 +764,7 @@
         </fields>
         <fields>
             <name>IndOtherStage</name>
-            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <extensionName>animalshelters:FSC_Flowstage_Indicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>currentStage</name>
@@ -779,6 +794,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Reason_for_wanting_to_Adopt__c</objectFieldReference>
                 </fields>
@@ -795,6 +811,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>profile.Local_Vet__c</objectFieldReference>
                 </fields>
@@ -804,6 +821,7 @@
                     <dataType>String</dataType>
                     <fieldText>Local Vet Details</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
@@ -859,7 +877,7 @@
         </connector>
         <fields>
             <name>FileUpload_StageInd</name>
-            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <extensionName>animalshelters:FSC_Flowstage_Indicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>currentStage</name>
@@ -888,7 +906,7 @@
         </fields>
         <fields>
             <name>FileUploadPreview</name>
-            <extensionName>c:FSC_FileUploadPreview</extensionName>
+            <extensionName>animalshelters:FSC_FileUploadPreview</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>acceptFileTypes</name>
@@ -943,7 +961,7 @@
         </fields>
         <fields>
             <name>IndicatorStartStage</name>
-            <extensionName>c:FSC_Flowstage_Indicator</extensionName>
+            <extensionName>animalshelters:FSC_Flowstage_Indicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>currentStage</name>

@@ -194,7 +194,11 @@
         <relatedList>Activity.Animal_Action__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>Medicine_Name__c</fields>
         <fields>NAME</fields>
+        <fields>Qty_Measure__c</fields>
+        <fields>Qty_Used__c</fields>
+        <fields>Medicine__c.Delivery_Method__c</fields>
         <relatedList>Medicine_Used__c.Treatment_Used_In__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -215,7 +219,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hDa000006b6jC</masterLabel>
+        <masterLabel>00h8H0000048QNC</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

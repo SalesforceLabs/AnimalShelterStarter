@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Assign_Queue_as_Owner</name>
         <label>Assign Queue as Owner</label>
@@ -77,11 +77,11 @@
             <assignToReference>taskToCreate.ActivityDate</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Animal_Action_Record.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c</elementReference>
+                <elementReference>Get_Animal_Action_Record.Date_Time_of_Action__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>taskToCreate.%%%NAMESPACED_ORG%%%Animal_Action__c</assignToReference>
+            <assignToReference>taskToCreate.Animal_Action__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>animalActionRecordId</elementReference>
@@ -146,7 +146,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>taskToCreate.%%%NAMESPACED_ORG%%%Movement__c</assignToReference>
+            <assignToReference>taskToCreate.Movement__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>movementRecordId</elementReference>
@@ -225,7 +225,7 @@
             <name>Queue_Configured</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Task_Queue_Name__c</leftValueReference>
+                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Task_Queue_Name__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -295,7 +295,7 @@
         <name>taskSubjectFormula</name>
         <dataType>String</dataType>
         <expression>IF(
-            {!Movement}, {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.%%%NAMESPACED_ORG%%%Location_Name__c}, {!Get_Animal_Action_Record.%%%NAMESPACED_ORG%%%Action_Type__c} + &quot; action for  &quot; + {!Get_Animal_Details.%%%NAMESPACED_ORG%%%Animal_Name__c})</expression>
+            {!Movement}, {!Get_Animal_Details.Animal_Name__c} + &quot; needs to be moved to &quot; + {!Get_Current_Movement_Record.Location_Name__c}, {!Get_Animal_Action_Record.Action_Type__c} + &quot; action for  &quot; + {!Get_Animal_Details.Animal_Name__c})</expression>
     </formulas>
     <interviewLabel>Animal - Generate Tasks Subflow</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -347,7 +347,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Adopter_Profile__c</object>
+        <object>Adopter_Profile__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -368,7 +368,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal_Action__c</object>
+        <object>Animal_Action__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -389,7 +389,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -410,7 +410,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -427,7 +427,7 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Task_Queue_Name__c</elementReference>
+                <elementReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Task_Queue_Name__c</elementReference>
             </value>
         </filters>
         <filters>

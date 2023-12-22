@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Update_Animal_Data</name>
         <label>Update Animal Data</label>
         <locationX>176</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
-            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Animal_Status__c</assignToReference>
+            <assignToReference>varAnimalToBeReleased.Animal_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Released</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Location_Status__c</assignToReference>
+            <assignToReference>varAnimalToBeReleased.Location_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Released</stringValue>
@@ -28,30 +28,30 @@
         <name>Update_Movement_Data</name>
         <label>Update Movement Data</label>
         <locationX>176</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <assignmentItems>
-            <assignToReference>varMovementRecord.%%%NAMESPACED_ORG%%%End_Date__c</assignToReference>
+            <assignToReference>varMovementRecord.End_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varMovementRecord.%%%NAMESPACED_ORG%%%Release_Location__Latitude__s</assignToReference>
+            <assignToReference>varMovementRecord.Release_Location__Latitude__s</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>CaptureCurrentLocation.latitude</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varMovementRecord.%%%NAMESPACED_ORG%%%Release_Location__Longitude__s</assignToReference>
+            <assignToReference>varMovementRecord.Release_Location__Longitude__s</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>CaptureCurrentLocation.longitude</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varMovementRecord.%%%NAMESPACED_ORG%%%Type__c</assignToReference>
+            <assignToReference>varMovementRecord.Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Animal Released</stringValue>
@@ -65,49 +65,49 @@
     <dynamicChoiceSets>
         <name>choiceAnimalsToBeReleased</name>
         <dataType>String</dataType>
-        <displayField>%%%NAMESPACED_ORG%%%Animal_Name__c</displayField>
+        <displayField>Animal_Name__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <field>Animal_Status__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Deceased</stringValue>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <field>Animal_Status__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Released</stringValue>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <field>Location_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Release</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
         <outputAssignments>
-            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Animal_Status__c</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Animal_Status__c</field>
+            <assignToReference>varAnimalToBeReleased.Animal_Status__c</assignToReference>
+            <field>Animal_Status__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>varAnimalToBeReleased.Id</assignToReference>
             <field>Id</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>varAnimalToBeReleased.%%%NAMESPACED_ORG%%%Location_Status__c</assignToReference>
-            <field>%%%NAMESPACED_ORG%%%Location_Status__c</field>
+            <assignToReference>varAnimalToBeReleased.Location_Status__c</assignToReference>
+            <field>Location_Status__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>varAnimalToBeReleased.Name</assignToReference>
             <field>Name</field>
         </outputAssignments>
-        <sortField>%%%NAMESPACED_ORG%%%Animal_Name__c</sortField>
+        <sortField>Animal_Name__c</sortField>
         <sortOrder>Asc</sortOrder>
-        <valueField>%%%NAMESPACED_ORG%%%Animal_Name__c</valueField>
+        <valueField>Animal_Name__c</valueField>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Animal - Animal Release Flow</interviewLabel>
@@ -136,7 +136,7 @@
         <name>Get_Movement_Record</name>
         <label>Get Movement Record</label>
         <locationX>176</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Capture_Location</targetReference>
@@ -146,32 +146,32 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varAnimalToBeReleased.Id</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Release</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
+        <object>Movement__c</object>
         <outputReference>varMovementRecord</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Release_Location__Latitude__s</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Release_Location__Longitude__s</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%Type__c</queriedFields>
-        <queriedFields>%%%NAMESPACED_ORG%%%End_Date__c</queriedFields>
+        <queriedFields>Release_Location__Latitude__s</queriedFields>
+        <queriedFields>Release_Location__Longitude__s</queriedFields>
+        <queriedFields>Type__c</queriedFields>
+        <queriedFields>End_Date__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
         <locationX>176</locationX>
-        <locationY>878</locationY>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Flow_Completion_Screen</targetReference>
         </connector>
@@ -184,7 +184,7 @@
         <name>Update_Movement_Record</name>
         <label>Update Movement Record</label>
         <locationX>176</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <connector>
             <targetReference>Update_Animal_Data</targetReference>
         </connector>
@@ -197,7 +197,7 @@
         <name>Capture_Location</name>
         <label>Capture Location</label>
         <locationX>176</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -206,7 +206,7 @@
         </connector>
         <fields>
             <name>CaptureCurrentLocation</name>
-            <extensionName>c:FSCGeolocation</extensionName>
+            <extensionName>animalshelters:FSCGeolocation</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -219,7 +219,7 @@
         <name>Choose_an_Animal</name>
         <label>Choose an Animal</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -237,6 +237,7 @@
             <dataType>String</dataType>
             <fieldText>Choose an Animal to Release</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -251,7 +252,7 @@
         <name>Error_Getting_Movement_Record</name>
         <label>Error Getting Movement Record</label>
         <locationX>968</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -267,7 +268,7 @@
         <name>Error_Updating_Animal</name>
         <label>Error Updating Animal</label>
         <locationX>440</locationX>
-        <locationY>998</locationY>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -283,7 +284,7 @@
         <name>Error_Updating_Movement</name>
         <label>Error Updating Movement</label>
         <locationX>704</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -299,7 +300,7 @@
         <name>Flow_Completion_Screen</name>
         <label>Flow Completion Screen</label>
         <locationX>176</locationX>
-        <locationY>998</locationY>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -325,7 +326,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Animal__c</objectType>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>varMovementRecord</name>
@@ -333,6 +334,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
 </Flow>

@@ -13,21 +13,21 @@
 public with sharing class AnimalActionRLClass2 {
 
     @AuraEnabled
-    public static List<%%%NAMESPACED_ORG%%%Animal_Action__c> getAnimalActions(String recId, String rTypeName){
+    public static List<animalshelters__Animal_Action__c> getAnimalActions(String recId, String rTypeName){
 
         // System.debug('recId = ' + recId);
         // System.debug('rTypeName = ' + rTypeName);
 
-        if(Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Action__c.isAccessible() && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Action__c.fields.name.isAccessible() && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Action__c.fields.%%%NAMESPACED_ORG%%%Action_Completed__c.isAccessible() && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Action__c.fields.%%%NAMESPACED_ORG%%%Date_Time_of_Action__c.isAccessible() && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Action__c.fields.%%%NAMESPACED_ORG%%%Description__c.isAccessible() && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal_Action__c.fields.RecordTypeId.isAccessible() && Schema.sObjectType.%%%NAMESPACED_ORG%%%Animal__c.isAccessible()){
-            List<%%%NAMESPACED_ORG%%%Animal_Action__c> animalActions= new List<%%%NAMESPACED_ORG%%%Animal_Action__c>();
+        if(Schema.sObjectType.animalshelters__Animal_Action__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.name.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Action_Completed__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Date_Time_of_Action__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Description__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.RecordTypeId.isAccessible() && Schema.sObjectType.animalshelters__Animal__c.isAccessible()){
+            List<animalshelters__Animal_Action__c> animalActions= new List<animalshelters__Animal_Action__c>();
             boolean blnFirstTimeRound = false;
-            for(RecordType rec : [SELECT Id FROM RecordType WHERE sObjectType = '%%%NAMESPACED_ORG%%%Animal_Action__c' and Name =:rTypeName])
+            for(RecordType rec : [SELECT Id FROM RecordType WHERE sObjectType = 'animalshelters__Animal_Action__c' and Name =:rTypeName])
             {
             if (!blnFirstTimeRound){
-                List<%%%NAMESPACED_ORG%%%Animal_Action__c> y = [SELECT Id, Name, %%%NAMESPACED_ORG%%%Action_Completed__c, %%%NAMESPACED_ORG%%%Date_Time_of_Action__c, %%%NAMESPACED_ORG%%%Description__c
-                                            FROM 	%%%NAMESPACED_ORG%%%Animal_Action__c
-                                            WHERE 	%%%NAMESPACED_ORG%%%Animal__c= :recId and RecordTypeId= :rec.Id WITH SECURITY_ENFORCED ];
-                for(%%%NAMESPACED_ORG%%%Animal_Action__c z : y)
+                List<animalshelters__Animal_Action__c> y = [SELECT Id, Name, animalshelters__Action_Completed__c, animalshelters__Date_Time_of_Action__c, animalshelters__Description__c
+                                            FROM 	animalshelters__Animal_Action__c
+                                            WHERE 	animalshelters__Animal__c= :recId and RecordTypeId= :rec.Id WITH SECURITY_ENFORCED ];
+                for(animalshelters__Animal_Action__c z : y)
                     {
                         animalActions.add(z);
                     }

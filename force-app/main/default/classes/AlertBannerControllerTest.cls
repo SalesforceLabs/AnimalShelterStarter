@@ -12,7 +12,7 @@
 @isTest
 public class AlertBannerControllerTest {
     static testMethod void testMethod1 () {
-        List<%%%NAMESPACED_ORG%%%Animal_Alert__c> AlertListTest = AlertBannerController.getRelatedAlertRecords('a003z00000rlhSbAAI');
-        List<%%%NAMESPACED_ORG%%%Animal_Alert__c> AlertListTest2 = AlertBannerController.getRelatedAlertRecords(null);
+        List<animalshelters__Animal_Alert__c> AlertListTest = AlertBannerController.getRelatedAlertRecords('a003z00000rlhSbAAI');
+        List<animalshelters__Animal_Alert__c> AlertListTest2 = AlertBannerController.getRelatedAlertRecords(null);
     }
 }

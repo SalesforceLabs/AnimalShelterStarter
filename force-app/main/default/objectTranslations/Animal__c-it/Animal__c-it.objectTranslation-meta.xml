@@ -130,6 +130,10 @@
         <label>Aggiorna la posizione degli animali</label>
         <name>Update_Animal_Location</name>
     </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Vaccination</name>
+    </quickActions>
     <startsWith></startsWith>
     <validationRules>
         <errorMessage>È stato notato che l&apos;animale è stato castrato / sterilizzato sebbene non sia stata aggiunta alcuna data / ora. Si prega di aggiungere anche la data / ora in cui l&apos;animale è stato castrato / sterilizzato.</errorMessage>
@@ -143,4 +147,8 @@
         <errorMessage>Hai indicato che questo animale è stato PTS. Fornisci un motivo utilizzando il campo Motivo PTS e inserisci una data utilizzando il campo della data deceduta.</errorMessage>
         <name>PTS_Required_Fields</name>
     </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Print_Cage_Card</name>
+    </webLinks>
 </CustomObjectTranslation>

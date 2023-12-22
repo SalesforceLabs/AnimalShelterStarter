@@ -117,6 +117,10 @@
         <label></label>
         <name>Update_Animal_Location</name>
     </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Vaccination</name>
+    </quickActions>
     <startsWith></startsWith>
     <validationRules>
         <errorMessage></errorMessage>
@@ -130,4 +134,8 @@
         <errorMessage></errorMessage>
         <name>PTS_Required_Fields</name>
     </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Print_Cage_Card</name>
+    </webLinks>
 </CustomObjectTranslation>

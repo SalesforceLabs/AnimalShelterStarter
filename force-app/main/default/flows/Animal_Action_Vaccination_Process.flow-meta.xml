@@ -654,7 +654,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Date_Time_of_Action__c&quot;,&quot;guid&quot;:&quot;column-8997&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Date/Time of Vaccination Due&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Date/Time of Action&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-31c0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Previous_Action_Detail__c&quot;,&quot;guid&quot;:&quot;column-1d9c&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Previous Vaccine Detail&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Previous Action Detail&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;animalshelters__Date_Time_of_Action__c&quot;,&quot;guid&quot;:&quot;column-8997&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Date/Time of Vaccination Due&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Date/Time of Action&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;animalshelters__Description__c&quot;,&quot;guid&quot;:&quot;column-31c0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;animalshelters__Previous_Action_Detail__c&quot;,&quot;guid&quot;:&quot;column-1d9c&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Previous Vaccine Detail&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Previous Action Detail&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -722,6 +722,7 @@
                     </defaultValue>
                     <fieldText>Vaccination Date/Time</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -743,6 +744,7 @@
                     </defaultValue>
                     <fieldText>Vaccination Date/Time Completed</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -764,6 +766,7 @@
             </defaultValue>
             <fieldText>Vaccination Description/Purpose</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -786,6 +789,7 @@
             <dataType>Boolean</dataType>
             <fieldText>Enter a new Medicine instead of choosing an existing one</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -800,6 +804,7 @@
                     <dataType>String</dataType>
                     <fieldText>Select existing Medicine</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -831,16 +836,19 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>medicineRecord.Medicine_Name__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>medicineRecord.Delivery_Method__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>medicineRecord.Comments__c</objectFieldReference>
                 </fields>
@@ -857,11 +865,13 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>medicineRecord.Batch_No__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>medicineRecord.Manufacturer__c</objectFieldReference>
                 </fields>
@@ -888,7 +898,7 @@
         </fields>
         <fields>
             <name>vaccineDetailsHLine_1</name>
-            <extensionName>c:flowHLine</extensionName>
+            <extensionName>animalshelters:flowHLine</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>color</name>
@@ -933,6 +943,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Vaccination dosage (ml) / animal weight (kg)</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>2</scale>
                 </fields>
@@ -944,6 +955,7 @@
                     </defaultValue>
                     <fieldText>Dosage Given (ml)</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>2</scale>
                 </fields>
@@ -960,7 +972,7 @@
         </fields>
         <fields>
             <name>vaccineDetailsHLine_2</name>
-            <extensionName>c:flowHLine</extensionName>
+            <extensionName>animalshelters:flowHLine</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>color</name>
@@ -1005,6 +1017,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Vaccine Period (Months)</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                 </fields>
@@ -1016,6 +1029,7 @@
                     </defaultValue>
                     <fieldText>Vaccine Due On</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -1091,7 +1105,7 @@
         <inputAssignments>
             <name>sObjectName</name>
             <value>
-                <stringValue>Animal_Action__c</stringValue>
+                <stringValue>animalshelters__Animal_Action__c</stringValue>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>

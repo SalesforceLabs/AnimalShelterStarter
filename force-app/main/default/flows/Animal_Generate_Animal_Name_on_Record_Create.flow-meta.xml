@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>56.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] Generates the Animal Name on record creation</description>
     <environments>Default</environments>
     <formulas>
         <description>Generates the Animal Name</description>
         <name>GenerateAnimalName</name>
         <dataType>String</dataType>
-        <expression>IF(ISBLANK({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name_Prefix__c}), {!$Record.Name}, {!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name_Prefix__c} + &apos;-&apos; + {!$Record.Name})</expression>
+        <expression>IF(ISBLANK({!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Default_Animal_Name_Prefix__c}), {!$Record.Name}, {!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Default_Animal_Name_Prefix__c} + &apos;-&apos; + {!$Record.Name})</expression>
     </formulas>
     <interviewLabel>Animal - Generate Animal Name on Record Create {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -36,9 +36,9 @@
         <name>Set_Animal_Name</name>
         <label>Set Animal Name</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal_Name__c</field>
+            <field>Animal_Name__c</field>
             <value>
                 <elementReference>GenerateAnimalName</elementReference>
             </value>
@@ -51,8 +51,8 @@
         <connector>
             <targetReference>Set_Animal_Name</targetReference>
         </connector>
-        <filterFormula>AND({!$Setup.%%%NAMESPACED_ORG%%%Animal_Shelter_Settings__c.%%%NAMESPACED_ORG%%%Default_Animal_Name__c},ISNULL({!$Record.%%%NAMESPACED_ORG%%%Animal_Name__c}))</filterFormula>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <filterFormula>AND({!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Default_Animal_Name__c},ISNULL({!$Record.Animal_Name__c}))</filterFormula>
+        <object>Animal__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

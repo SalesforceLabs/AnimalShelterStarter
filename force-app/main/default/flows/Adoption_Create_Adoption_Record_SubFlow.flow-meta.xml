@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>56.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] Create adoption record Sub flow</description>
     <environments>Default</environments>
     <interviewLabel>Adoption - Create Adoption Record SubFlow {!$Flow.CurrentDateTime}</interviewLabel>
@@ -29,7 +29,7 @@
         <name>Create_Adoption_Record</name>
         <label>Create Adoption Record</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <inputReference>adoptionRecordtoCreate</inputReference>
     </recordCreates>
     <runInMode>SystemModeWithSharing</runInMode>
@@ -47,6 +47,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Adoption__c</objectType>
+        <objectType>Adoption__c</objectType>
     </variables>
 </Flow>

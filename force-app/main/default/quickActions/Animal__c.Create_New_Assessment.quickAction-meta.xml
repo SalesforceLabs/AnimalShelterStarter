@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>[Animal Shelter Starter Pack] Start new assessment flow</description>
     <flowDefinition>Assessment_Create_new_assessment</flowDefinition>
     <label>Create New Assessment</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>

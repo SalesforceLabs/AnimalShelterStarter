@@ -1,5 +1,12 @@
+<!--
+  @description       :
+  @author            : Stewart Anderson
+  @group             :
+  @last modified on  : 12-15-2023
+  @last modified by  : Stewart Anderson
+-->
 <template>
-  
+
     <lightning-card title="Alerts" icon-name="custom:custom53">
       <div class="slds-m-around_medium">
       <ul class="slds-has-dividers_around-space">
@@ -8,12 +15,12 @@
             <li class="slds-item" key={rec.fields.Id.value}>
               <article class="slds-tile slds-tile_board">
                 <h3 class="slds-tile__title slds-truncate" title="Animal Alert">
-                  <a onclick={handleClick} data-alertid={rec.fields.Id.value}>{rec.fields.%%%NAMESPACED_ORG%%%Severity_Level__c.value} | {rec.fields.%%%NAMESPACED_ORG%%%Type__c.value} Alert</a>
+                  <a onclick={handleClick} data-alertid={rec.fields.Id.value}>{rec.fields.animalshelters__Severity_Level__c.value} | {rec.fields.animalshelters__Type__c.value} Alert</a>
                 </h3>
                 <div class="slds-tile__detail">
-                  <p class="slds-text-heading_small">{rec.fields.%%%NAMESPACED_ORG%%%Alert_Message__c.value}</p>
-                  <template lwc:if={rec.fields.%%%NAMESPACED_ORG%%%End_Date_Time__c.value}>
-                    <p class="slds-truncate" title="End Date">Ending <lightning-formatted-date-time value={rec.fields.%%%NAMESPACED_ORG%%%End_Date_Time__c.value}></lightning-formatted-date-time> </p>
+                  <p class="slds-text-heading_small">{rec.fields.animalshelters__Alert_Message__c.value}</p>
+                  <template lwc:if={rec.fields.animalshelters__End_Date_Time__c.value}>
+                    <p class="slds-truncate" title="End Date">Ending <lightning-formatted-date-time value={rec.fields.animalshelters__End_Date_Time__c.value}></lightning-formatted-date-time> </p>
                   </template>
                   <template lwc:else>
                     <p class="slds-truncate" title="End Date">Currently Open Ended</p>
@@ -35,6 +42,6 @@
       </ul>
       </div>
     </lightning-card>
-  
-  
+
+
 </template>

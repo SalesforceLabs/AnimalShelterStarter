@@ -13,14 +13,14 @@
 public with sharing class FSCAnimalCloneDatatableController {
 
     @AuraEnabled
-    public static List<%%%NAMESPACED_ORG%%%Animal__c> getClonedAnimals() {
+    public static List<animalshelters__Animal__c> getClonedAnimals() {
 
-        if(Schema.SObjectType.%%%NAMESPACED_ORG%%%Animal__c.isAccessible()){
+        if(Schema.SObjectType.animalshelters__Animal__c.isAccessible()){
 
-            List<%%%NAMESPACED_ORG%%%Animal__c> clonedAnimals = new List<%%%NAMESPACED_ORG%%%Animal__c>();
-            clonedAnimals = [SELECT Id, %%%NAMESPACED_ORG%%%Animal_Name__c, %%%NAMESPACED_ORG%%%Colour__c, %%%NAMESPACED_ORG%%%Secondary_Colour__c, %%%NAMESPACED_ORG%%%Gender__c, %%%NAMESPACED_ORG%%%Current_Weight__c, %%%NAMESPACED_ORG%%%Estimated_Age__c, %%%NAMESPACED_ORG%%%Microchip__c
-                                    FROM %%%NAMESPACED_ORG%%%Animal__c
-                                    WHERE %%%NAMESPACED_ORG%%%IsCloned__c = True WITH SECURITY_ENFORCED ];
+            List<animalshelters__Animal__c> clonedAnimals = new List<animalshelters__Animal__c>();
+            clonedAnimals = [SELECT Id, animalshelters__Animal_Name__c, animalshelters__Colour__c, animalshelters__Secondary_Colour__c, animalshelters__Gender__c, animalshelters__Current_Weight__c, animalshelters__Estimated_Age__c, animalshelters__Microchip__c
+                                    FROM animalshelters__Animal__c
+                                    WHERE animalshelters__IsCloned__c = True WITH SECURITY_ENFORCED ];
 
         return clonedAnimals;
         }
@@ -28,7 +28,7 @@ public with sharing class FSCAnimalCloneDatatableController {
     }
 
     @AuraEnabled
-    public static List<%%%NAMESPACED_ORG%%%Animal__c> updateClonedRecords(List<%%%NAMESPACED_ORG%%%Animal__c> updatedAnimalList ){
+    public static List<animalshelters__Animal__c> updateClonedRecords(List<animalshelters__Animal__c> updatedAnimalList ){
         system.debug('****'+updatedAnimalList);
         try {
             update updatedAnimalList;
@@ -38,4 +38,3 @@ public with sharing class FSCAnimalCloneDatatableController {
         return updatedAnimalList;
     }
 }
-

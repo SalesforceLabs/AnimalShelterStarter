@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <description>[Animal Shelter] This flow allows an end user to create an Animal Alert from a condition record.</description>
     <environments>Default</environments>
     <interviewLabel>Condition - Generate Alert from Condition</interviewLabel>
@@ -29,42 +29,42 @@
         <name>CreateAlert</name>
         <label>CreateAlert</label>
         <locationX>176</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <assignRecordIdToReference>AlertID</assignRecordIdToReference>
         <faultConnector>
             <targetReference>ErrorScreen</targetReference>
         </faultConnector>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Alert_Message__c</field>
+            <field>Alert_Message__c</field>
             <value>
                 <elementReference>Alert_Description</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <value>
-                <elementReference>recordId.%%%NAMESPACED_ORG%%%Animal__r.Id</elementReference>
+                <elementReference>recordId.Animal__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%End_Date_Time__c</field>
+            <field>End_Date_Time__c</field>
             <value>
                 <elementReference>End_Date_Time</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Start_Date_Time__c</field>
+            <field>Start_Date_Time__c</field>
             <value>
                 <elementReference>Start_Date_Time</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal_Alert__c</object>
+        <object>Animal_Alert__c</object>
     </recordCreates>
     <screens>
         <name>CheckDetails</name>
         <label>CheckDetails</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -73,18 +73,19 @@
         </connector>
         <fields>
             <name>Screen_AlertDesc_Info</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Create a new Alert&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Use the form below to create a new alert for {!recordId.%%%NAMESPACED_ORG%%%Animal__r.%%%NAMESPACED_ORG%%%Animal_Name__c} for the following condition:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.%%%NAMESPACED_ORG%%%Condition_Description__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Create a new Alert&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Use the form below to create a new alert for {!recordId.Animal__r.Animal_Name__c} for the following condition:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Condition_Description__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Alert_Description</name>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>recordId.%%%NAMESPACED_ORG%%%Condition_Description__c</elementReference>
+                <elementReference>recordId.Condition_Description__c</elementReference>
             </defaultValue>
             <fieldText>Alert Description</fieldText>
             <fieldType>InputField</fieldType>
             <helpText>&lt;p&gt;Update this description (if needed) to define the alert message which other users will see.&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -97,11 +98,12 @@
                     <name>Start_Date_Time</name>
                     <dataType>DateTime</dataType>
                     <defaultValue>
-                        <elementReference>recordId.%%%NAMESPACED_ORG%%%Start_Date__c</elementReference>
+                        <elementReference>recordId.Start_Date__c</elementReference>
                     </defaultValue>
                     <fieldText>Start Date/Time</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;When should this alert be shown from?&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
@@ -119,11 +121,12 @@
                     <name>End_Date_Time</name>
                     <dataType>DateTime</dataType>
                     <defaultValue>
-                        <elementReference>recordId.%%%NAMESPACED_ORG%%%End_Date_Time__c</elementReference>
+                        <elementReference>recordId.End_Date_Time__c</elementReference>
                     </defaultValue>
                     <fieldText>End Date/Time</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;When should we stop showing the alert? Note that you can leave this blank and it will show the alert on the animal record until an end date is added on the record.&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -144,7 +147,7 @@
         <name>ErrorScreen</name>
         <label>ErrorScreen</label>
         <locationX>440</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -177,6 +180,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Condition__c</objectType>
+        <objectType>Condition__c</objectType>
     </variables>
 </Flow>

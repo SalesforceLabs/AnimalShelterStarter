@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Calculate_Next_Assessment_Date</name>
         <label>Calculate Next Assessment Date</label>
-        <locationX>1137</locationX>
-        <locationY>70</locationY>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
         <assignmentItems>
-            <assignToReference>locationRecord.%%%NAMESPACED_ORG%%%Assessment_Due__c</assignToReference>
+            <assignToReference>locationRecord.Assessment_Due__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>assessmentDatePlusPeriod</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>locationRecord.%%%NAMESPACED_ORG%%%Last_Assessment_Date__c</assignToReference>
+            <assignToReference>locationRecord.Last_Assessment_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>todaysDate</elementReference>
@@ -56,7 +56,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -69,13 +69,14 @@
     <recordLookups>
         <name>Get_Location_Record</name>
         <label>Get Location Record</label>
-        <locationX>652</locationX>
-        <locationY>329</locationY>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Calculate_Next_Assessment_Date</targetReference>
         </connector>
         <faultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
@@ -86,15 +87,15 @@
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>locationRecord</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Location_Record</name>
         <label>Update Location Record</label>
-        <locationX>1637</locationX>
-        <locationY>319</locationY>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
         <connector>
             <targetReference>Success_Screen</targetReference>
         </connector>
@@ -106,8 +107,8 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1151</locationX>
-        <locationY>648</locationY>
+        <locationX>440</locationX>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -122,8 +123,8 @@
     <screens>
         <name>Success_Screen</name>
         <label>Success Screen</label>
-        <locationX>2031</locationX>
-        <locationY>66</locationY>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -137,7 +138,7 @@
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_Location_Record</targetReference>
         </connector>
@@ -170,7 +171,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>newAssessmentDate</name>

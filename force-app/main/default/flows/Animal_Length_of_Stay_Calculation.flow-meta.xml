@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Count_Total_of_Days</name>
         <label>Count Total of Days</label>
         <locationX>490</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>varTotalDays</assignToReference>
             <operator>Add</operator>
@@ -28,7 +28,7 @@
         <name>No_Records_Found</name>
         <label>No Records Found</label>
         <locationX>226</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <defaultConnector>
             <targetReference>Loop_Through_Movement_Records</targetReference>
         </defaultConnector>
@@ -54,7 +54,7 @@
     <formulas>
         <name>DaysCalculation</name>
         <dataType>Number</dataType>
-        <expression>IF({!varMovement.%%%NAMESPACED_ORG%%%End_Date__c} = {!varMovement.%%%NAMESPACED_ORG%%%Start_Date__c},1,({!varMovement.%%%NAMESPACED_ORG%%%End_Date__c} - {!varMovement.%%%NAMESPACED_ORG%%%Start_Date__c}))</expression>
+        <expression>IF({!varMovement.End_Date__c} = {!varMovement.Start_Date__c},1,({!varMovement.End_Date__c} - {!varMovement.Start_Date__c}))</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Length of Stay Calculation</interviewLabel>
@@ -64,7 +64,7 @@
         <name>Loop_Through_Movement_Records</name>
         <label>Loop Through Movement Records</label>
         <locationX>402</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignNextValueToReference>varMovement</assignNextValueToReference>
         <collectionReference>Get_Housed_Movement_Records</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -98,29 +98,29 @@
         <name>Get_Housed_Movement_Records</name>
         <label>Get Housed Movement Records</label>
         <locationX>226</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>No_Records_Found</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Animal__c</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varAnimalId</elementReference>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Type__c</field>
+            <field>Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>conHoused</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>%%%NAMESPACED_ORG%%%Movement__c</object>
-        <sortField>%%%NAMESPACED_ORG%%%Start_Date__c</sortField>
+        <object>Movement__c</object>
+        <sortField>Start_Date__c</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -128,7 +128,7 @@
         <name>Set_Stay_Field_to_Zero</name>
         <label>Set Stay Field to Zero</label>
         <locationX>50</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -138,18 +138,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Total_Length_of_Stay_in_Shelter_Days__c</field>
+            <field>Total_Length_of_Stay_in_Shelter_Days__c</field>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Set_Stay_Field_to_Zero_0</name>
         <label>Set Stay Field</label>
         <locationX>402</locationX>
-        <locationY>734</locationY>
+        <locationY>650</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -159,12 +159,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Total_Length_of_Stay_in_Shelter_Days__c</field>
+            <field>Total_Length_of_Stay_in_Shelter_Days__c</field>
             <value>
                 <elementReference>varTotalDays</elementReference>
             </value>
         </inputAssignments>
-        <object>%%%NAMESPACED_ORG%%%Animal__c</object>
+        <object>Animal__c</object>
     </recordUpdates>
     <start>
         <locationX>100</locationX>
@@ -187,7 +187,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Movement__c</objectType>
+        <objectType>Movement__c</objectType>
     </variables>
     <variables>
         <name>varTotalDays</name>

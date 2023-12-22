@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>[Animal Shelter Starter Pack] Add vaccination details for the animal</description>
     <flowDefinition>Animal_Action_Vaccination_Process</flowDefinition>
     <label>Vaccination</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>

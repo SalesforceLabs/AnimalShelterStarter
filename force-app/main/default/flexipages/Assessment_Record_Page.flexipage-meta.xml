@@ -7,7 +7,7 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Assessment__c.New_Condition</value>
+                            <value>animalshelters__Assessment__c.New_Condition</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>

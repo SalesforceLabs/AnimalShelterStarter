@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>[Animal Shelter Starter Pack] Quick action to complete an exercise action</description>
     <flowDefinition>Animal_Exercise_Action_Completion</flowDefinition>
     <label>Complete Exercise Action</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>

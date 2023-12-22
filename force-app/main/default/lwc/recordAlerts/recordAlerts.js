@@ -1,3 +1,10 @@
+/**
+ * @description       :
+ * @author            : Stewart Anderson
+ * @group             :
+ * @last modified on  : 12-15-2023
+ * @last modified by  : Stewart Anderson
+**/
 import { LightningElement, wire, api, track} from 'lwc';
 import { getRelatedListRecords } from 'lightning/uiRelatedListApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -13,9 +20,9 @@ export default class RecordAlerts extends NavigationMixin(LightningElement) {
 
   @wire(getRelatedListRecords, {
       parentRecordId: '$recordId',
-      relatedListId: '%%%NAMESPACED_ORG%%%Animal_Alerts__r',
-      fields: ['%%%NAMESPACED_ORG%%%Animal_Alert__c.Id','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Alert_Message__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Start_Date_Time__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%End_Date_Time__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Severity_Level__c','%%%NAMESPACED_ORG%%%Animal_Alert__c.%%%NAMESPACED_ORG%%%Type__c'],
-      where: "{ %%%NAMESPACED_ORG%%%IsDisplayed__c: { eq: true } }"
+      relatedListId: 'animalshelters__Animal_Alerts__r',
+      fields: ['animalshelters__Animal_Alert__c.Id','animalshelters__Animal_Alert__c.animalshelters__Alert_Message__c','animalshelters__Animal_Alert__c.animalshelters__Start_Date_Time__c','animalshelters__Animal_Alert__c.animalshelters__End_Date_Time__c','animalshelters__Animal_Alert__c.animalshelters__Severity_Level__c','animalshelters__Animal_Alert__c.animalshelters__Type__c'],
+      where: "{ animalshelters__IsDisplayed__c: { eq: true } }"
   })listInfo({ error, data }) {
 
       console.log("Animal Alerts LWC: Loading Records...");
@@ -60,7 +67,7 @@ export default class RecordAlerts extends NavigationMixin(LightningElement) {
         type: 'standard__recordPage',
         attributes: {
             actionName: "view",
-            objectApiName: "%%%NAMESPACED_ORG%%%Animal_Alert__c",
+            objectApiName: "animalshelters__Animal_Alert__c",
             recordId: recordId
         }
     });

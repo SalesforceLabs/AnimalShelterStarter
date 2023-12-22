@@ -2,7 +2,7 @@
  * @description       :
  * @author            : Stewart Anderson
  * @group             :
- * @last modified on  : 10-23-2023
+ * @last modified on  : 12-15-2023
  * @last modified by  : Stewart Anderson
 **/
 ({
@@ -19,12 +19,12 @@
                 var records = response.getReturnValue();
                 records.forEach(function (record) {
                     record.linkName = '/' + record.Id;
-                    if (record.%%%NAMESPACED_ORG%%%Action_Completed__c) {
-                        record.showClass = (record.%%%NAMESPACED_ORG%%%Action_Completed__c === true ? 'redcolor' : 'blackcolor');
+                    if (record.animalshelters__Action_Completed__c) {
+                        record.showClass = (record.animalshelters__Action_Completed__c === true ? 'redcolor' : 'blackcolor');
                         record.displayIconName = 'utility:check';
                     }
                     else {
-                        record.showClass = (record.%%%NAMESPACED_ORG%%%Action_Completed__c === false ? 'blackcolor' : 'redcolor');
+                        record.showClass = (record.animalshelters__Action_Completed__c === false ? 'blackcolor' : 'redcolor');
                         record.displayIconName = 'utility:close';
                     }
                 });

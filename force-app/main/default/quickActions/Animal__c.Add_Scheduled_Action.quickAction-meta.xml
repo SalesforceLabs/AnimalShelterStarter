@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>[Animal Shelter Starter Pack] Add a Scheduled Action for the Animal</description>
     <flowDefinition>Animal_Action_Scheduler</flowDefinition>
     <label>Add Scheduled Actions</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>

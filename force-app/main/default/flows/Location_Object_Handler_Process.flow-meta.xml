@@ -17,7 +17,7 @@
         <label>Capacity Rollups</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
-        <actionName>Animal_Block_Capacity_Calculations</actionName>
+        <actionName>animalshelters__Animal_Block_Capacity_Calculations</actionName>
         <actionType>flow</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -62,6 +62,8 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>animalshelters__Animal_Block_Capacity_Calculations</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>49.0</apiVersion>
     <decisions>
@@ -103,7 +105,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>%%%NAMESPACED_ORG%%%Locations__c</stringValue>
+            <stringValue>Locations__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -126,14 +128,14 @@
     </processMetadataValues>
     <processType>Workflow</processType>
     <startElementReference>myDecision</startElementReference>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -141,6 +143,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>%%%NAMESPACED_ORG%%%Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
 </Flow>

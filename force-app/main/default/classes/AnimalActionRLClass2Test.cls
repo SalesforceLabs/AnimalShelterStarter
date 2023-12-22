@@ -17,7 +17,7 @@ public class AnimalActionRLClass2Test {
 
         Test.startTest();
 
-        List<%%%NAMESPACED_ORG%%%Animal_Action__c> TestingList = AnimalActionRLClass2.getAnimalActions('a003z00000rlhSbAAI','Treatment');
+        List<animalshelters__Animal_Action__c> TestingList = AnimalActionRLClass2.getAnimalActions('a003z00000rlhSbAAI','Treatment');
 
         Test.stopTest();
 

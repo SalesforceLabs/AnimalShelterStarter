@@ -149,6 +149,10 @@
         <label></label>
         <name>Update_Animal_Location</name>
     </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Vaccination</name>
+    </quickActions>
     <validationRules>
         <errorMessage></errorMessage>
         <name>Animal_Neutered_Spayed_Check</name>
@@ -161,4 +165,8 @@
         <errorMessage></errorMessage>
         <name>PTS_Required_Fields</name>
     </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Print_Cage_Card</name>
+    </webLinks>
 </CustomObjectTranslation>

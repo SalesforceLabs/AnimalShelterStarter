@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>[Animal Shelter Starter Pack] (DEPRECATED) Use Print Cage Card Action instead</description>
     <height>250</height>
-    <label>Cage Card</label>
+    <label>(DEPRECATED) Cage Card</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>
     <page>AnimalCageCard</page>
     <type>VisualforcePage</type>

@@ -340,11 +340,6 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Animal__c.Multi_Animal_Clone</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>6</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Animal__c.New_Alert</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
@@ -409,16 +404,21 @@
             <actionType>StandardButton</actionType>
             <sortOrder>19</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Animal__c.Multi_Animal_Clone</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>6</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
-            <quickActionName>Animal__c.Add_Condition</quickActionName>
+            <quickActionName>animalshelters__Animal__c.Add_Condition</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>Animal__c.Add_Exercise_Action</quickActionName>
+            <quickActionName>animalshelters__Animal__c.Add_Exercise_Action</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>Animal__c.Add_Treatment_Action</quickActionName>
+            <quickActionName>animalshelters__Animal__c.Add_Treatment_Action</quickActionName>
         </quickActionListItems>
     </quickActionList>
     <relatedLists>

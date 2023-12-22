@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PTS_Required_Fields</fullName>
-    <active>false</active>
+    <active>true</active>
     <description>When active, this makes the PTS Reason field required when the Deceased Reasaon field marked as PTS.</description>
     <errorConditionFormula>AND(
 ISPICKVAL( Deceased_Reason__c, &quot;Put To Sleep (PTS)&quot;), ISBLANK(TEXT(  PTS_Reason__c  ))

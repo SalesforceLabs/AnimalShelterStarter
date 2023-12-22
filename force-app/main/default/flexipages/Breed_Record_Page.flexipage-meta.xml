@@ -7,7 +7,7 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Breed__c.Migrate_Breeds</value>
+                            <value>animalshelters__Breed__c.Migrate_Breeds</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Edit</value>

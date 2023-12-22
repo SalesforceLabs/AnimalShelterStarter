@@ -5,7 +5,7 @@
         <name>Is_there_Availability</name>
         <label>Is there Availability?</label>
         <locationX>314</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Unit_is_Unavailable</name>
@@ -42,7 +42,7 @@
     <formulas>
         <name>NoMoreCapacity</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Record.%%%NAMESPACED_ORG%%%Availability__c} = 0</expression>
+        <expression>{!$Record.animalshelters__Availability__c} = 0</expression>
     </formulas>
     <interviewLabel>Animal - Update Location Unit Status</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -70,9 +70,9 @@
         <name>Set_Status_to_Available</name>
         <label>Set Status to Available</label>
         <locationX>314</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>
             </value>
@@ -83,9 +83,9 @@
         <name>Set_Status_Unavailable</name>
         <label>Set Status Unavailable</label>
         <locationX>50</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <inputAssignments>
-            <field>%%%NAMESPACED_ORG%%%Unit_Status__c</field>
+            <field>Unit_Status__c</field>
             <value>
                 <stringValue>Allocated</stringValue>
             </value>
@@ -100,20 +100,20 @@
         </connector>
         <filterLogic>or</filterLogic>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Location_Capacity__c</field>
+            <field>Location_Capacity__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Single Animal</stringValue>
             </value>
         </filters>
         <filters>
-            <field>%%%NAMESPACED_ORG%%%Location_Capacity__c</field>
+            <field>Location_Capacity__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Multiple Animals</stringValue>
             </value>
         </filters>
-        <object>%%%NAMESPACED_ORG%%%Locations__c</object>
+        <object>Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

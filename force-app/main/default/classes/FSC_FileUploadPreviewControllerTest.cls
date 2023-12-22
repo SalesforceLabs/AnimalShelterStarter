@@ -59,4 +59,3 @@ public class FSC_FileUploadPreviewControllerTest {
         }
 
 }
-

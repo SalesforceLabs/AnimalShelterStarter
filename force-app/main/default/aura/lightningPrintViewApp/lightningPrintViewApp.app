@@ -1,4 +1,4 @@
-<aura:application extends="force:slds">
+<aura:application extends="force:slds" access="global">
   <aura:attribute name="recordid" type="String" />
   <aura:attribute name="fieldSetName" type="String" />
   <aura:attribute name="sObjectTypeName" type="String" />

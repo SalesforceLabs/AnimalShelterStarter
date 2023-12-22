@@ -2,7 +2,9 @@
 <WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Print_Cage_Card</fullName>
     <availability>online</availability>
-    <description>[Animal Shelter Starter Pack] Default button to launch cage card. Uses a defined fieldset on the Animal Object called animalshelters__Animal_Cage_Card_Field_Set but that can be changed if needed.</description>
+    <description>[Animal Shelter Starter Pack] Default button to launch cage card. Uses a defined
+        fieldset on the Animal Object called animalshelters__Animal_Cage_Card_Field_Set but that can
+        be changed if needed.</description>
     <displayType>button</displayType>
     <encodingKey>UTF-8</encodingKey>
     <hasMenubar>false</hasMenubar>
@@ -17,5 +19,6 @@
     <protected>false</protected>
     <showsLocation>false</showsLocation>
     <showsStatus>false</showsStatus>
-    <url>/c/lightningPrintViewApp.app?recordid={!Animal__c.Id}&amp;fieldSetName=animalshelters__Animal_Cage_Card_Field_Set&amp;sObjectTypeName=animalshelters__Animal__c&amp;badgefields=animalshelters__Behaviours__c</url>
+    <url>
+        /animalshelters/lightningPrintViewApp.app?recordid={!animalshelters__Animal__c.Id}&amp;fieldSetName=animalshelters__Animal_Cage_Card_Field_Set&amp;sObjectTypeName=animalshelters__Animal__c&amp;badgefields=animalshelters__Behaviours__c</url>
 </WebLink>

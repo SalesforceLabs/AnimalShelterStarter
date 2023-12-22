@@ -2,7 +2,7 @@
  * @description       :
  * @author            : Stewart Anderson
  * @group             :
- * @last modified on  : 11-06-2023
+ * @last modified on  : 12-22-2023
  * @last modified by  : Stewart Anderson
 **/
 @isTest
@@ -16,7 +16,7 @@ private class AnimalShelterFieldsetControllerTest {
         // Execute the method to test
         Test.startTest();
         List<AnimalShelterFieldsetController.FieldSetMemberWrapper> result =
-            AnimalShelterFieldsetController.getFieldSet('animalshelters__Animal__c', 'animal_cage_card_field_set');
+            AnimalShelterFieldsetController.getFieldSet('animalshelters__Animal__c', 'animalshelters__animal_cage_card_field_set');
         Test.stopTest();
 
         // Perform assertions

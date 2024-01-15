@@ -6,19 +6,19 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>descDateField</name>
-                    <value>Date_of_Arrival__c</value>
+                    <value>animalshelters__Date_of_Arrival__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>descTextField</name>
-                    <value>Type__c</value>
+                    <value>animalshelters__Type__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>latField</name>
-                    <value>Geolocation__latitude__s</value>
+                    <value>animalshelters__Geolocation__latitude__s</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>longField</name>
-                    <value>Geolocation__longitude__s</value>
+                    <value>animalshelters__Geolocation__longitude__s</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>mapTitle</name>
@@ -26,11 +26,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>nameField</name>
-                    <value>Animal_Name__c</value>
+                    <value>animalshelters__Animal_Name__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>obj</name>
-                    <value>Animal__c</value>
+                    <value>animalshelters__Animal__c</value>
                 </componentInstanceProperties>
                 <componentName>LocationMap</componentName>
                 <identifier>LocationMap</identifier>

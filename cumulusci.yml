@@ -17,15 +17,15 @@ tasks:
     update_admin_profile:
         options:
             record_types:
-                - record_type: "{managed}Animal_Action__c.{managed}Exercise"
-                - record_type: "{managed}Animal_Action__c.{managed}Nutrition"
-                - record_type: "{managed}Animal_Action__c.{managed}Treatment"
+                - record_type: "animalshelters__Animal_Action__c.animalshelters__Exercise"
+                - record_type: "animalshelters__Animal_Action__c.animalshelters__Nutrition"
+                - record_type: "animalshelters__Animal_Action__c.animalshelters__Treatment"
                   default: True
-                - record_type: "{managed}Locations__c.{managed}Block"
+                - record_type: "animalshelters__Locations__c.animalshelters__Block"
                   default: True
-                - record_type: "{managed}Locations__c.{managed}Foster"
-                - record_type: "{managed}Locations__c.{managed}Organisation"
-                - record_type: "{managed}Locations__c.{managed}Unit"
+                - record_type: "animalshelters__Locations__c.animalshelters__Foster"
+                - record_type: "animalshelters__Locations__c.animalshelters__Organisation"
+                - record_type: "animalshelters__Locations__c.animalshelters__Unit"
 
     list_changes:
         options:

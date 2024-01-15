@@ -2,19 +2,29 @@
  * @description       :
  * @author            : Stewart Anderson
  * @group             :
- * @last modified on  : 10-17-2023
+ * @last modified on  : 01-15-2024
  * @last modified by  : Stewart Anderson
 **/
 public with sharing class AnimalShelterGetCustomSettings {
 
     @AuraEnabled(cacheable=true)
     public static animalshelters__Animal_Shelter_Settings__c getCustomSettings(){
-        return animalshelters__Animal_Shelter_Settings__c.getOrgDefaults();
+        if (Schema.sObjectType.animalshelters__Animal_Shelter_Settings__c.isAccessible()) {
+            return animalshelters__Animal_Shelter_Settings__c.getOrgDefaults();
+        } else {
+            throw new AuraHandledException('Access Issue: There was an attempt to access Animal Shelter Starter Settings by a user without access.');
+        }
+
     }
 
     @AuraEnabled
     public static void saveCustomSetting(animalshelters__Animal_Shelter_Settings__c customSetting) {
-        update customSetting;
+        if (Schema.sObjectType.animalshelters__Animal_Shelter_Settings__c.isUpdateable()) {
+            update customSetting;
+        } else {
+            throw new AuraHandledException('Access Issue: There was an attempt to update Animal Shelter Starter Settings by a user without access.');
+        }
+
     }
 
     @AuraEnabled
@@ -28,7 +38,7 @@ public with sharing class AnimalShelterGetCustomSettings {
         animal_settings.animalshelters__What3Words_API_Key__c = '';
         animal_settings.animalshelters__microchip_api_Token__c = '';
 
-        Database.SaveResult sr = Database.insert(animal_settings, false);
+        Database.SaveResult sr = Database.insert(animal_settings, false, AccessLevel.USER_MODE);
         if (sr.isSuccess()) {
             // Insert successful
             return animal_settings;

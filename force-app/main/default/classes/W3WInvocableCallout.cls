@@ -12,6 +12,7 @@
 
 public with sharing class W3WInvocableCallout {
     @InvocableMethod(label='Get W3W Coordinates' description='Returns the Latitude and Longitude of the W3W provided' category='Animal')
+    
     public static List<String> getW3WCoordinates(List<animalshelters__Animal__c> animals) {
       for (animalshelters__Animal__c theAnimal : animals) {
         updateAnimal(JSON.serialize(theAnimal));
@@ -21,7 +22,7 @@ public with sharing class W3WInvocableCallout {
 
     @future(callout=true)
     public static void updateAnimal(String theAnimalStr ) {
-      animalshelters__Animal__c theAnimal = (animalshelters__Animal__c)JSON.deserialize(theAnimalStr, animalshelters__Animal__c.class);
+        animalshelters__Animal__c theAnimal = (animalshelters__Animal__c)JSON.deserialize(theAnimalStr, animalshelters__Animal__c.class);
 
 
         //Add key as a Custom setting
@@ -30,13 +31,14 @@ public with sharing class W3WInvocableCallout {
 
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        //String theURL = 'https://api.what3words.com/v3/autosuggest?input='+theAnimal.animalshelters__what3words__c+'&key=APIKEY';
+        
+        //String theURL = URL + What3words String + API Key
         String theURL = 'https://api.what3words.com/v3/convert-to-coordinates?words='+theAnimal.animalshelters__what3words__c+'&key='+w3wkey;
         request.setEndpoint(theURL);
         request.setMethod('GET');
         HttpResponse response = http.send(request);
         // If the request is successful, parse the JSON response.
-        if (response.getStatusCode() == 200) {
+        if (response.getStatusCode() == 200 && Schema.sObjectType.animalshelters__Animal__c.isAccessible() && Schema.sObjectType.animalshelters__Animal__c.fields.animalshelters__Geolocation__c.isAccessible()){
             // Deserialize the JSON string into collections of primitive data types.
             What3Words theResult = What3Words.parse(response.getBody());
             theAnimal.animalshelters__Geolocation__latitude__s = theResult.coordinates.lat;

@@ -494,13 +494,6 @@
         <objectType>Animal__c</objectType>
     </variables>
     <variables>
-        <name>cloneRecordId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
         <name>clonesCounter</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
@@ -513,13 +506,6 @@
         <dataType>String</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>OldrecordId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>

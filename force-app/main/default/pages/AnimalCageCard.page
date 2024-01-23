@@ -86,7 +86,7 @@
                         </apex:outputPanel>
                     </apex:pageBlockSectionItem>
 
-                    	<apex:outputText escape="false" value="{! animalshelters__Animal__c.animalshelters__Record_QR_Code__c }" escape="false" />
+                    	<apex:outputText escape="false" value="{! animalshelters__Animal__c.animalshelters__Record_QR_Code__c }" />
                     	<br/>
                 </apex:pageBlockSection>
             </apex:pageBlock>

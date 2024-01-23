@@ -18,23 +18,25 @@ public with sharing class LocationController {
 
         //Build SOQL String
         String listOfFields = varName + ', ' + varLat + ', ' + varLong + ', ' + varDescText + ', ' + varDescDate;
-        System.debug(listOfFields);
+        // System.debug(listOfFields);
         String whereClause = varLat + ' != null';
-        System.debug('Where Clause: ' + whereClause);
+        // System.debug('Where Clause: ' + whereClause);
 
         //Get 100 records
         if(Schema.describeSObjects(new List<String>{varObj})[0].isAccessible()){
-            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100';
-            System.debug('Query String: ' + queryString);
+   
+
+            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100 WITH SECURITY_ENFORCED';
+            // System.debug('Query String: ' + queryString);
             List<sObject> myData = Database.query(String.escapeSingleQuotes(queryString));
-            System.debug('Returned Data: ' + myData);
+            // System.debug('Returned Data: ' + myData);
 
             //Get Field Label of varDescDate field
             List<Schema.DescribeSObjectResult> dsr = Schema.describeSObjects(new List<String> {varObj});
             String objectLabel = dsr[0].getLabel();
             Map<String, Schema.SObjectField> allFields = dsr[0].fields.getMap();
             String fieldLabel = allFields.get(varDescDate).getDescribe().getLabel();
-            System.debug('Object Label: ' + objectLabel + ' Field Label: ' + fieldLabel);
+            // System.debug('Object Label: ' + objectLabel + ' Field Label: ' + fieldLabel);
 
             //Build Location records
             List<Location> loc = new List<Location>();
@@ -50,11 +52,11 @@ public with sharing class LocationController {
 
                 loc.add(locDetail);
             }
-            System.debug('Locations: ' + loc);
+            // System.debug('Locations: ' + loc);
             return loc;
 
         }
-        System.debug('User does not have access to this object');
+        // System.debug('User does not have access to this object');
         return null;
     }
 

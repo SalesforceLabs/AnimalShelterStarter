@@ -3,15 +3,16 @@
     Date: 26th May 2022
     Author: Chris Rolfe
 	Updated: 20th Oct 2022 to include FieldSets for Breeds Migration
+    Updated: 23rd Jan 2023 - Security Fixes
 -->
 
 <apex:page standardController="animalshelters__Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
 
-    <apex:outputText value="Animal Name: {! animalshelters__Animal__c.animalshelters__Animal_Name__c }" rendered="false"/>
-    <apex:repeat value="{!$ObjectType.animalshelters__Animal__c.FieldSets.animalshelters__Animal_Cage_Card_Field_Set}" var="field">
-        <apex:outputText value="{!animalshelters__Animal__c[field]}" rendered="false" />
+    <apex:outputText escape="false" value="Animal Name: {! animalshelters__Animal__c.animalshelters__Animal_Name__c }" rendered="false"/>
+    <apex:repeat escape="false" value="{!$ObjectType.animalshelters__Animal__c.FieldSets.animalshelters__Animal_Cage_Card_Field_Set}" var="field">
+        <apex:outputText escape="false" value="{!animalshelters__Animal__c[field]}" rendered="false" />
     </apex:repeat>
-    <apex:outputText value="{!animalshelters__Animal__c.animalshelters__Record_QR_Code__c}" rendered="false" />
+    <apex:outputText escape="false" value="{!animalshelters__Animal__c.animalshelters__Record_QR_Code__c}" rendered="false" />
 
     <html>
 
@@ -59,7 +60,7 @@
 
     <body>
         <h1 class="title">
-            <apex:outputText value="Animal Name: {! animalshelters__Animal__c.animalshelters__Animal_Name__c }"/>
+            <apex:outputText escape="false" value="Animal Name: {! animalshelters__Animal__c.animalshelters__Animal_Name__c }"/>
             <br/>
         </h1>
 
@@ -71,7 +72,7 @@
                     <apex:pageBlockSectionItem >
                         <apex:outputPanel >
 	                        <apex:repeat value="{!$ObjectType.animalshelters__Animal__c.FieldSets.animalshelters__Animal_Cage_Card_Field_Set}" var="field">
-    	                    	<apex:outputText styleClass="details" value="{!field.Label}" /><br/>
+    	                    	<apex:outputText escape="false" styleClass="details" value="{!field.Label}" /><br/>
 					    	</apex:repeat>
                     		<br/>
                         </apex:outputPanel>
@@ -79,17 +80,17 @@
                     <apex:pageBlockSectionItem >
                         <apex:outputPanel >
                         	<apex:repeat value="{!$ObjectType.animalshelters__Animal__c.FieldSets.animalshelters__Animal_Cage_Card_Field_Set}" var="field">
-                        		<apex:outputText styleClass="details" value="{!Animal__c[field]}" /><br/>
+                        		<apex:outputText escape="false" styleClass="details" value="{!Animal__c[field]}" /><br/>
                             </apex:repeat>
                     		<br/>
                         </apex:outputPanel>
                     </apex:pageBlockSectionItem>
 
-                    	<apex:outputText value="{! animalshelters__Animal__c.animalshelters__Record_QR_Code__c }" escape="false" />
+                    	<apex:outputText escape="false" value="{! animalshelters__Animal__c.animalshelters__Record_QR_Code__c }" />
                     	<br/>
                 </apex:pageBlockSection>
             </apex:pageBlock>
-            <apex:outputText styleClass="details" value="Printed on {! NOW()}" />
+            <apex:outputText escape="false" styleClass="details" value="Printed on {! NOW()}" />
         </apex:form>
         <div class="footer-section">
             <div>

@@ -1,75 +1,77 @@
 project:
-    name: animal_shelter_starter
-    package:
-        name: Animal Shelter Starter
-        namespace: animalshelters
-        api_version: "59.0"
-    source_format: sfdx
-    git:
-        default_branch: "master"
-        repo_url: https://github.com/SalesforceLabs/AnimalShelterStarter
+  name: animal_shelter_starter
+  package:
+    name: Animal Shelter Starter
+    namespace: animalshelters
+    api_version: "59.0"
+  source_format: sfdx
+  git:
+    default_branch: master
+    repo_url: https://github.com/SalesforceLabs/AnimalShelterStarter
 
 tasks:
-    run_tests:
-        options:
-            required_org_code_coverage_percent: 75
+  run_tests:
+    options:
+      required_org_code_coverage_percent: 75
 
-    update_admin_profile:
-        options:
-            record_types:
-                - record_type: "{managed}Animal_Action__c.{managed}Exercise"
-                - record_type: "{managed}Animal_Action__c.{managed}Nutrition"
-                - record_type: "{managed}Animal_Action__c.{managed}Treatment"
-                  default: True
-                - record_type: "{managed}Locations__c.{managed}Block"
-                  default: True
-                - record_type: "{managed}Locations__c.{managed}Foster"
-                - record_type: "{managed}Locations__c.{managed}Organisation"
-                - record_type: "{managed}Locations__c.{managed}Unit"
+  update_admin_profile:
+    options:
+      record_types:
+        - record_type: animalshelters__Animal_Action__c.animalshelters__Exercise
+        - record_type: animalshelters__Animal_Action__c.animalshelters__Nutrition
+        - record_type: animalshelters__Animal_Action__c.animalshelters__Treatment
+          default: true
+        - record_type: animalshelters__Locations__c.animalshelters__Block
+          default: true
+        - record_type: animalshelters__Locations__c.animalshelters__Foster
+        - record_type: animalshelters__Locations__c.animalshelters__Organisation
+        - record_type: animalshelters__Locations__c.animalshelters__Unit
 
-    list_changes:
-        options:
-            ignore:
-                - "Profile:"
+  list_changes:
+    options:
+      ignore:
+        - "Profile:"
 
-    retrieve_changes:
-        options:
-            ignore:
-                - "Profile:"
+  retrieve_changes:
+    options:
+      ignore:
+        - "Profile:"
 
-    deploy:
-        options:
-            path: force-app
+  deploy:
+    options:
+      path: force-app
 
-    test_deploy_package:
-        class_path: cumulusci.tasks.salesforce.UpdateDependencies
-        options:
-            dependencies:
-                - version_id: 04t4L000000UGhiQAG
+  test_deploy_package:
+    class_path: cumulusci.tasks.salesforce.UpdateDependencies
+    options:
+      dependencies:
+        - version_id: 04t4L000000UGhiQAG
 
 flows:
-    post_config:
-        steps:
-            1:
-                task: assign_permission_sets
-                options:
-                    api_names: "Animal_Shelter_Starter"
-            2:
-                task: load_dataset
-                ignore_failure: true
+  post_config:
+    steps:
+      1:
+        task: assign_permission_sets
+        options:
+          api_names: Animal_Shelter_Starter
+      2:
+        task: load_dataset
+        ignore_failure: true
+      3:
+        task: deploy_post
 
-    config_qa:
-        steps:
-            3:
-                flow: post_config
-    config_dev:
-        steps:
-            3:
-                flow: post_config
+  config_qa:
+    steps:
+      3:
+        flow: post_config
+  config_dev:
+    steps:
+      3:
+        flow: post_config
 
 orgs:
-    scratch:
-        dev:
-            days: 30
-            config_file: config/dev-scratch-def.json
-            namespaced: True
+  scratch:
+    dev:
+      days: 30
+      config_file: config/dev-scratch-def.json
+      namespaced: "True"

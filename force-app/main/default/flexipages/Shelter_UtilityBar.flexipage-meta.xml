@@ -20,7 +20,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>entityName</name>
-                    <value>Animal__c</value>
+                    <value>animalshelters__Animal__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>filterName</name>

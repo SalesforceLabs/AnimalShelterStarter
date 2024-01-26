@@ -3,8 +3,8 @@
  * @Description        : Gets records that are to be displayed on Location Map
  * @Author             : Chris Rolfe (Salesforce.org)
  * @Group              :
- * @Last Modified By   : Chris Rolfe (Salesforce.org)
- * @Last Modified On   : 09/04/2021, 17:38
+ * @Last Modified By   : Stewart Anderson
+ * @Last Modified On   : 01-26-2024
  * @Modification Log   : Removed need for WHERE, LIMITS to 100 records
  * Ver       Date            Author      		    Modification
  * 1.0    09/04/2021   Chris Rolfe (Salesforce.org)     Initial Version
@@ -24,10 +24,10 @@ public with sharing class LocationController {
 
         //Get 100 records
         if(Schema.describeSObjects(new List<String>{varObj})[0].isAccessible()){
-   
 
-            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100 WITH SECURITY_ENFORCED';
-            // System.debug('Query String: ' + queryString);
+
+            String queryString = 'SELECT ' + listOfFields + ' FROM ' + varObj + ' WHERE ' + whereClause + ' ORDER BY ' + varDescDate + ' DESC LIMIT 100';
+            System.debug('Query String: ' + queryString);
             List<sObject> myData = Database.query(String.escapeSingleQuotes(queryString));
             // System.debug('Returned Data: ' + myData);
 

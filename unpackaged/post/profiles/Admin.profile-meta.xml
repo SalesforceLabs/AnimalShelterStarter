@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+  <layoutAssignments>
+    <layout>Locations__c-Location Foster Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Animal_Action__c-Treatment Action Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Breed__c-Breed Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Condition__c-Condition Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Animal_Relationship__c-Animal Relationship Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Locations__c-Location Unit Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Movement__c-Movement Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Animal_Age_Range__mdt-Animal Age Range Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Contact-Animal Shelter Contact Page Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Locations__c-Location Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Animal_Action__c-Exercise Action Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Locations__c-Location Organisation Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Animal_Action__c-Animal Action Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Assessment__c-Assessment Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Adoption__c-Adoption Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Account-Animal Shelter Account Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Locations__c-Location Site Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Animal_Alert__c-Animal Alert Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Locations__c-Location Block Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Adoption_Match__c-Adoption Match Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Animal__c-Animal Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Adopter_Profile__c-Adopter Profile Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Medicine__c-Medicine Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Medicine_Used__c-Medicine Used Layout</layout>
+  </layoutAssignments>
+  <layoutAssignments>
+    <layout>Treatment__c-Treatment Layout</layout>
+  </layoutAssignments>
+</Profile>

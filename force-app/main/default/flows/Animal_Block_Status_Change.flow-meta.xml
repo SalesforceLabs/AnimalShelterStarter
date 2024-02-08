@@ -5,7 +5,7 @@
         <description>Does the Collection Filter have any values</description>
         <name>Filtered_Record_Count</name>
         <label>Filtered Record Count</label>
-        <locationX>710</locationX>
+        <locationX>754</locationX>
         <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>allocationCount</assignToReference>
@@ -21,8 +21,8 @@
     <assignments>
         <name>Get_Selected_Choice</name>
         <label>Get Selected Choice</label>
-        <locationX>710</locationX>
-        <locationY>1406</locationY>
+        <locationX>754</locationX>
+        <locationY>1814</locationY>
         <assignmentItems>
             <assignToReference>SelectedChoice</assignToReference>
             <operator>Assign</operator>
@@ -32,6 +32,46 @@
         </assignmentItems>
         <connector>
             <targetReference>Update_Block_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Location_Record_to_Update</name>
+        <label>Location Record to Update</label>
+        <locationX>1018</locationX>
+        <locationY>1106</locationY>
+        <assignmentItems>
+            <assignToReference>updatedLocationRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>updatedLocationRecord</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Units</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set the Allocation of the Location Record - Equal to the Capacity</description>
+        <name>Update_Unit_Allocation</name>
+        <label>Update Unit Allocation</label>
+        <locationX>1018</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>updatedLocationRecord.Allocation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Units.Capacity__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updatedLocationRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Units.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Location_Record_to_Update</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -54,17 +94,38 @@
         <name>Filter_for_Allocated_Records</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter for Allocated Records</label>
-        <locationX>710</locationX>
+        <locationX>754</locationX>
         <locationY>566</locationY>
-        <assignNextValueToReference>currentItem_Filter_for_Allocated_Records</assignNextValueToReference>
+        <assignNextValueToReference>currentItem_Filter_for_Allocated_Records_0</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>AllRecords</collectionReference>
-        <conditionLogic>and</conditionLogic>
+        <conditionLogic>(1 AND 2) OR (3 AND 4)</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Filter_for_Allocated_Records.Unit_Status__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_for_Allocated_Records_0.Unit_Status__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <stringValue>Allocated</stringValue>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_for_Allocated_Records_0.Location_Capacity__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <stringValue>Single Animal</stringValue>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_for_Allocated_Records_0.Location_Capacity__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <stringValue>Multiple Animals</stringValue>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_for_Allocated_Records_0.Allocation__c</leftValueReference>
+            <operator>GreaterThan</operator>
+            <rightValue>
+                <numberValue>0.0</numberValue>
             </rightValue>
         </conditions>
         <connector>
@@ -74,10 +135,10 @@
     <decisions>
         <name>Does_Block_Have_Allocated_Units</name>
         <label>Does Block Have Allocated Units</label>
-        <locationX>710</locationX>
+        <locationX>754</locationX>
         <locationY>782</locationY>
         <defaultConnector>
-            <targetReference>Update_Unit_Status_to_Unavailable</targetReference>
+            <targetReference>Loop_Through_Units</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -99,7 +160,7 @@
     <decisions>
         <name>What_is_the_new_Status</name>
         <label>What is the new Status?</label>
-        <locationX>710</locationX>
+        <locationX>754</locationX>
         <locationY>458</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -138,6 +199,20 @@
     <interviewLabel>Animal - Block Status Change</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Block Status Change</label>
+    <loops>
+        <name>Loop_Through_Units</name>
+        <label>Loop Through Units</label>
+        <locationX>930</locationX>
+        <locationY>890</locationY>
+        <collectionReference>AllRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Update_Unit_Allocation</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Unit_Status_to_Unavailable</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -160,16 +235,12 @@
     <recordLookups>
         <name>Get_All_Units</name>
         <label>Get All Units</label>
-        <locationX>710</locationX>
+        <locationX>754</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>What_is_the_new_Status</targetReference>
         </connector>
-        <faultConnector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Parent_Block__c</field>
@@ -188,16 +259,23 @@
         <object>Locations__c</object>
         <outputReference>AllRecords</outputReference>
         <queriedFields>Id</queriedFields>
+        <queriedFields>Allocation__c</queriedFields>
+        <queriedFields>Capacity__c</queriedFields>
         <queriedFields>Unit_Status__c</queriedFields>
+        <queriedFields>Location_Capacity__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Block_Status</name>
         <label>Update Block Status</label>
-        <locationX>710</locationX>
-        <locationY>1514</locationY>
+        <locationX>754</locationX>
+        <locationY>1922</locationY>
         <connector>
             <targetReference>Completed</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -222,10 +300,6 @@
         <connector>
             <targetReference>Get_Selected_Choice</targetReference>
         </connector>
-        <faultConnector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Parent_Block__c</field>
@@ -252,42 +326,21 @@
     <recordUpdates>
         <name>Update_Unit_Status_to_Unavailable</name>
         <label>Update Unit Status to Unavailable</label>
-        <locationX>842</locationX>
-        <locationY>890</locationY>
+        <locationX>930</locationX>
+        <locationY>1298</locationY>
         <connector>
             <targetReference>Get_Selected_Choice</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Parent_Block__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>RecordTypeId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Unit_RecordType_Id.returnedRecordTypeId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Allocation__c</field>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </inputAssignments>
-        <object>Locations__c</object>
+        <inputReference>updatedLocationRecords</inputReference>
     </recordUpdates>
     <screens>
         <name>Completed</name>
         <label>Completed</label>
-        <locationX>710</locationX>
-        <locationY>1622</locationY>
+        <locationX>754</locationX>
+        <locationY>2030</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -302,14 +355,14 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1106</locationX>
-        <locationY>998</locationY>
+        <locationX>1194</locationX>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;&lt;i&gt;OOPS!&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There has been an error when the wizard attempted to update the status for this block. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and click the Previous button below to go back and try again, although if the problem persists, send a note of the fault message below to your Salesforce administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Fault Message:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There has been an error when the flow attempted to update the status for this block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and click the Previous button below to go back and try again.  If the problem persists, send a note of the fault message below to your Salesforce administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Fault Message:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -334,7 +387,7 @@
     <screens>
         <name>Start_Screen</name>
         <label>Start Screen</label>
-        <locationX>710</locationX>
+        <locationX>754</locationX>
         <locationY>134</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -362,7 +415,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>584</locationX>
+        <locationX>628</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Start_Screen</targetReference>
@@ -372,7 +425,7 @@
     <subflows>
         <name>Get_Unit_RecordType_Id</name>
         <label>Get Unit RecordType Id</label>
-        <locationX>710</locationX>
+        <locationX>754</locationX>
         <locationY>242</locationY>
         <connector>
             <targetReference>Get_All_Units</targetReference>
@@ -393,14 +446,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <variables>
-        <name>AllocatedRecords</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
-    </variables>
-    <variables>
         <name>allocationCount</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
@@ -417,12 +462,28 @@
         <objectType>Locations__c</objectType>
     </variables>
     <variables>
-        <name>currentItem_Filter_for_Allocated_Records</name>
+        <name>currentItem_Filter_for_Allocated_Records_0</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Locations__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_for_MultiAnimal_Units</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
+    </variables>
+    <variables>
+        <name>noOfMultiAnimalUnits</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
     </variables>
     <variables>
         <name>recordId</name>
@@ -438,5 +499,21 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>updatedLocationRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
+    </variables>
+    <variables>
+        <name>updatedLocationRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
     </variables>
 </Flow>

@@ -558,8 +558,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Hold_Until_Date_Time__c</fieldItem>
-                <identifier>RecordHold_Until_Date_Time__cField</identifier>
+                <fieldItem>Record.Neutered_Spayed_Date_Time__c</fieldItem>
+                <identifier>RecordNeutered_Spayed_Date_Time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -568,8 +568,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Neutered_Spayed_Date_Time__c</fieldItem>
-                <identifier>RecordNeutered_Spayed_Date_Time__cField</identifier>
+                <fieldItem>Record.Hold_Until_Date_Time__c</fieldItem>
+                <identifier>RecordHold_Until_Date_Time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

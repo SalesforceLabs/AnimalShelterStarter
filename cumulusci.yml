@@ -75,4 +75,4 @@ orgs:
     dev:
       days: 30
       config_file: config/dev-scratch-def.json
-      namespaced: "True"
+      namespaced: True

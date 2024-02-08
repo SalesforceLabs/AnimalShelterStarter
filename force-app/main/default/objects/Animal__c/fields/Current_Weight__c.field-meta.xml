@@ -2,9 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Current_Weight__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>The current weight of the animal. This field is tracked and changes will be logged in the Field History.</inlineHelpText>
-    <label>Current Weight</label>
-    <precision>5</precision>
+    <inlineHelpText>The current weight of the animal in KG. This field is tracked and changes will be logged in the Field History.</inlineHelpText>
+    <label>Current Weight (KG)</label>
+    <precision>7</precision>
     <required>false</required>
     <scale>2</scale>
     <trackHistory>true</trackHistory>

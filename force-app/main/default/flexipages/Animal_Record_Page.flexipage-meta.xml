@@ -162,6 +162,16 @@
                 <identifier>RecordEstimated_Age__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Calculated_Age__c</fieldItem>
+                <identifier>RecordCalculated_Age__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4c49db03-428d-4fcb-a44e-6e9be7ede66a</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -192,8 +202,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Date_of_Birth__c</fieldItem>
-                <identifier>RecordDate_of_Birth__cField</identifier>
+                <fieldItem>Record.Current_Weight_ibs__c</fieldItem>
+                <identifier>Recordanimalshelters_Current_Weight_ibs_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -202,8 +212,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Calculated_Age__c</fieldItem>
-                <identifier>RecordCalculated_Age__cField</identifier>
+                <fieldItem>Record.Date_of_Birth__c</fieldItem>
+                <identifier>RecordDate_of_Birth__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

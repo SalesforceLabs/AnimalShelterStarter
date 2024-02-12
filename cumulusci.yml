@@ -26,6 +26,7 @@ tasks:
         - record_type: animalshelters__Locations__c.animalshelters__Foster
         - record_type: animalshelters__Locations__c.animalshelters__Organisation
         - record_type: animalshelters__Locations__c.animalshelters__Unit
+        - record_type: animalshelters__Locations__c.animalshelters__Site
 
   list_changes:
     options:
@@ -74,4 +75,4 @@ orgs:
     dev:
       days: 30
       config_file: config/dev-scratch-def.json
-      namespaced: "True"
+      namespaced: True

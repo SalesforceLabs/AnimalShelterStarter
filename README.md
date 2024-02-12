@@ -12,11 +12,19 @@ Please note that you must have access to the managed package namespace before yo
 
 ### Dependencies
 
-- CumulusCI
-- Salesforce DX
-- GitHub Desktop
-- VSCode
-- Salesforce Extension Pack (Extended) for VSCode
+- VSCode > https://code.visualstudio.com/download
+- Salesforce Extension Pack > https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode
+- CumulusCI > https://cumulusci.readthedocs.io/en/latest/get-started.html
+- Salesforce DX > https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm
+- GitHub Desktop > https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop
+
+### DevHub
+
+Request access to the DevHub from Stewart Anderson. Once you have a username and password do the follow:
+
+1. Open the command pallette in VSCode and select "SFDX: Authorize a DevHub"
+2. Login with you details
+3. Done
 
 ### Development Process
 

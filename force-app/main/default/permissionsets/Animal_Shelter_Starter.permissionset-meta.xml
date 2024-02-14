@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label>Animal Shelter Starter</label>
     <applicationVisibilities>
         <application>Shelter</application>
         <visible>true</visible>
@@ -10,51 +9,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>AnimalActionRLClass2</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>AnimalShelterFieldsetController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>AnimalShelterGetCustomSettings</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>FSCAnimalCloneDatatableController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>FSC_FileUploadPreviewController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>GetRandomNumber</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LocationController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>MockW3WResponseGenerator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ProfilePictureController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>W3WInvocableCallout</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>What3Words</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>AlertBannerControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AnimalActionRLClass2</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -62,7 +21,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AnimalShelterFieldsetController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AnimalShelterFieldsetControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AnimalShelterGetCustomSettings</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -70,7 +37,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FSCAnimalCloneDatatableController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>FSCAnimalCloneDatatableControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FSC_FileUploadPreviewController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -78,7 +53,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>GetRandomNumber</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>GetRandomNumberTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LocationController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -86,7 +69,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MockW3WResponseGenerator</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MockW3WResponseGeneratorTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProfilePictureController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -94,7 +85,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>W3WInvocableCallout</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>W3WInvocableCalloutTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>What3Words</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -612,6 +611,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Animal__c.Current_Weight__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Animal__c.Current_Weight_ibs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1249,265 +1253,192 @@
         <field>Treatment__c.Treatment_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Activity.Animal_Action__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Activity.Movement__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Age_Range__mdt.Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Age_Range__mdt.Maximum__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Age_Range__mdt.Minimum__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Breeds_Migration_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Default_Animal_Name_Prefix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Default_Animal_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Disable_Behaviour_Update__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Enable_Animal_Action_Tasks__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Enable_Auto_Match__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Enable_Movement_Tasks__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.Task_Queue_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.What3Words_API_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Animal_Shelter_Settings__c.microchip_api_Token__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Adopter_Match_clean_up_Subflow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Adopter_Match_create_auto_match_records_Subflow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Adopter_Profile</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Adopter_Profile_Clean_up_matches_on_Deactivation</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Adopter_Profile_Create_new_Adopter_Profile</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Adoption_Create_Adoption_Record_SubFlow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Adoption_Start_Adoption_Process</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Action_Close_Associated_Task</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Action_Create_Task_for_new_Actions</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Action_Scheduler</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Action_Vaccination_Process</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Adoption_Manual_matching_Process</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Adoption_Update_Automation</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Animal_Create_Update_Trigger</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Animal_Location_Flow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Animal_Release_Flow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Block_Capacity_Calculations</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Block_Status_Change</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Breeds_Migration_Flow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Cleans_up_Adoption_Matches</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Clone_Animal_Record</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Create_Reciprocal_Animal_Relationship</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Deceased_Animal_Flow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Exercise_Action_Completion</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Find_Adoption_Match</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Generate_Animal_Name_on_Record_Create</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Generate_Tasks_Subflow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Get_What3Words_Coordinates</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Length_of_Stay_Calculation</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Lost_Found_Animal_Alert</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Movement_Process</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Movement_SubFlow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Object_Handler_Process</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_RecordType_Subflow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Set_Location_Assessment_Date</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Animal_Update_Location_Unit_Status</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Assessment_Create_new_assessment</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Assessment_Update_Behaviours_on_Animal</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Breed_Name_Update_Flow</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Condition_Generate_Alert_from_Condition</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Location_Location_Create_Update_Trigger</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Location_Object_Handler_Process</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Movement_Movement_Create_Update_Trigger</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Movement_Object_Handler</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
+        <enabled>true</enabled>
         <flow>Task_Close_associated_Animal_Action</flow>
-        <enabled>true</enabled>
     </flowAccesses>
     <flowAccesses>
-        <flow>Task_Update_Future_Movement_Record_on_Task_Completion</flow>
         <enabled>true</enabled>
+        <flow>Task_Update_Future_Movement_Record_on_Task_Completion</flow>
     </flowAccesses>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Animal Shelter Starter</label>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
@@ -1661,33 +1592,6 @@
         <object>Treatment__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Animal_Shelter_Settings__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Activity</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Animal_Age_Range__mdt</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
     <pageAccesses>
         <apexPage>AnimalCageCard</apexPage>
         <enabled>true</enabled>
@@ -1765,6 +1669,14 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Capture</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Capture_Release</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Condition__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
@@ -1778,14 +1690,6 @@
     </tabSettings>
     <tabSettings>
         <tab>Treatment__c</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Capture</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Capture_Release</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <userPermissions>

@@ -7,66 +7,69 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>Locations__c.Capacity__c</column>
+            <column>Adoption_Match__c.Successful_Adoption__c</column>
         </chartSummaries>
         <chartType>Donut</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>false</expandOthers>
-        <groupingColumn>Locations__c.Parent_Block_Name__c</groupingColumn>
+        <groupingColumn>Adoption_Match__c.Status__c</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
-        <showAxisLabels>true</showAxisLabels>
+        <showAxisLabels>false</showAxisLabels>
         <showPercentage>false</showPercentage>
-        <showTotal>false</showTotal>
-        <showValues>true</showValues>
+        <showTotal>true</showTotal>
+        <showValues>false</showValues>
         <size>Medium</size>
         <summaryAxisRange>Auto</summaryAxisRange>
         <textColor>#000000</textColor>
         <textSize>12</textSize>
-        <title>Available Capacity</title>
         <titleColor>#000000</titleColor>
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>Locations__c.Block_Unit__c</field>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Adoption_Match__c.Animal_Name__c</field>
+    </columns>
+    <columns>
+        <field>Adoption_Match__c.Related_Animal_Status__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Locations__c.Capacity__c</field>
+        <field>Adoption_Match__c.Successful_Adoption__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Locations__c.Availability__c</field>
-    </columns>
-    <description>Shows all locations which are currently available for animals.</description>
     <filter>
         <criteriaItems>
-            <column>CUST_RECORDTYPE</column>
+            <column>Adoption_Match__c.Successful_Adoption__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Locations__c.Unit</value>
+            <value>1</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Locations__c.Parent_Block_Name__c</field>
+        <field>Adoption_Match__c.Status__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Locations - All Available Locations</name>
+    <name>Successful Adoptions by Match Type</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
-    <reportType>CustomEntity$Locations__c</reportType>
+    <reportType>CustomEntity$Adoption_Match__c@Adoption_Match__c.Animal__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Locations__c.Assessment_Due__c</dateColumn>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>FK_NAME</field>
-    </columns>
-    <columns>
-        <field>CUST_NAME</field>
-    </columns>
-    <columns>
         <field>FK_$Animal__c.Animal_Name__c</field>
     </columns>
     <columns>

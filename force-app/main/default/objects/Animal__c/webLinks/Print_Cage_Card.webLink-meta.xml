@@ -19,6 +19,5 @@
     <protected>false</protected>
     <showsLocation>false</showsLocation>
     <showsStatus>false</showsStatus>
-    <url>
-        /animalshelters/lightningPrintViewApp.app?recordid={!animalshelters__Animal__c.Id}&amp;fieldSetName=animalshelters__Animal_Cage_Card_Field_Set&amp;sObjectTypeName=animalshelters__Animal__c&amp;badgefields=animalshelters__Behaviours__c</url>
+    <url>/animalshelters/lightningPrintViewApp.app?recordid={!Animal__c.Id}&amp;fieldSetName=animalshelters__Animal_Cage_Card_Field_Set&amp;sObjectTypeName=animalshelters__Animal__c&amp;badgefields=animalshelters__Behaviours__c</url>
 </WebLink>

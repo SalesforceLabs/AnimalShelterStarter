@@ -1,3 +1,10 @@
+<!--
+  @description       :
+  @author            : Stewart Anderson
+  @group             :
+  @last modified on  : 02-19-2024
+  @last modified by  : Stewart Anderson
+-->
 <template>
   <lightning-card>
 
@@ -10,7 +17,8 @@
     </template>
 
     <p slot="footer">
-      <lightning-file-upload label="Upload Photo" name="fileUploader" accept={acceptedFormats} record-id={recordId} onuploadfinished={handleUploadFinished}>
+      <lightning-file-upload label="Upload Photo" multiple="false" name="fileUploader" accept={acceptedFormats}
+        record-id={recordId} onuploadfinished={handleUploadFinished}>
       </lightning-file-upload>
     </p>
   </lightning-card>

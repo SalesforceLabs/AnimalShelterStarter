@@ -2,7 +2,7 @@
  * @description       :
  * @author            : Stewart Anderson
  * @group             :
- * @last modified on  : 12-15-2023
+ * @last modified on  : 02-19-2024
  * @last modified by  : Stewart Anderson
 **/
 import { LightningElement, wire, api } from 'lwc';
@@ -77,7 +77,7 @@ export default class recordImage extends LightningElement {
 
     // Set Accepted Photo Formats
     get acceptedFormats() {
-        return ['.png','.jpg','.jpeg'];
+        return ['.png', '.jpg', '.jpeg', '.webp', '.heic', '.heif', '.avif', '.bmp', '.gif'];
     }
 
     // Handle a Completed Upload of the Photo
@@ -85,7 +85,7 @@ export default class recordImage extends LightningElement {
         const uploadedFiles = event.detail.files;
         this.photoId = uploadedFiles[0].contentVersionId;
         this.updateRecord(this.photoId);
-        this.photoURL = '/sfc/servlet.shepherd/version/download/'  + this.photoId;
+        this.photoURL = '/sfc/servlet.shepherd/version/download/' + this.photoId;
     }
 
     // Update the PhotoId Field on the Record
@@ -103,23 +103,23 @@ export default class recordImage extends LightningElement {
 
         const recordInput = { fields };
         updateRecord(recordInput)
-        .then(() => {
-            if (this.objectApiName == 'Contact') {
-                return refreshApex(this.Contact);
-            }
-            if (this.objectApiName == 'animalshelters__Animal__c') {
-                return refreshApex(this.animalshelters__Animal__c);
-            }
+            .then(() => {
+                if (this.objectApiName == 'Contact') {
+                    return refreshApex(this.Contact);
+                }
+                if (this.objectApiName == 'animalshelters__Animal__c') {
+                    return refreshApex(this.animalshelters__Animal__c);
+                }
 
-        })
-        .catch(error => {
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'Error Uploading Photo',
-                    message: error.body.message,
-                    variant: 'error'
-                })
-            );
-        });
+            })
+            .catch(error => {
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Error Uploading Photo',
+                        message: error.body.message,
+                        variant: 'error'
+                    })
+                );
+            });
     }
 }

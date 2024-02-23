@@ -45,6 +45,7 @@
     <tabs>Animal_Action__c</tabs>
     <tabs>Adoption__c</tabs>
     <tabs>Adopter_Profile__c</tabs>
+    <tabs>Shelter_Dashboard</tabs>
     <tabs>Capture</tabs>
     <tabs>Capture_Release</tabs>
     <tabs>standard-Task</tabs>
@@ -86,6 +87,9 @@
         </mappings>
         <mappings>
             <tab>Medicine__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Shelter_Dashboard</tab>
         </mappings>
         <mappings>
             <tab>standard-Dashboard</tab>

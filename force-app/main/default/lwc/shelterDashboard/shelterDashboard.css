@@ -1,0 +1,19 @@
+.custom-box {
+    border: 1px solid var(--lwc-borderColor, #d6d6d6);
+    box-shadow: var(--lwc-boxShadowMedium, 0 2px 2px 0 rgba(0, 0, 0, 0.1));
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.custom-box:hover {
+    transform: scale(1.03);
+    box-shadow: var(--lwc-boxShadowStrong, 0 4px 4px 0 rgba(0, 0, 0, 0.2));
+}
+
+.slds-var-p-around_small {
+    padding: 0.75rem;
+}
+
+.slds-theme_shade {
+    background-color: var(--lwc-colorBackgroundShade, #f3f2f2);
+}

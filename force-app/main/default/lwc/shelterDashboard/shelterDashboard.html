@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Shelter Dashboard" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <template if:true={locations}>
+                <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                    <template for:each={locations} for:item="location">
+                        <div key={location.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
+                            <div class="custom-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small">
+                                <p class="slds-var-p-around_small"> {location.animalshelters__Parent_Block_Name__c}</p>
+                                <p></p>
+                                <p class="slds-var-p-around_small"> {location.animalshelters__Name__c}</p>
+                                <p class="slds-var-p-around_small"> {location.animalshelters__Unit_Status__c}</p>
+                        </div>  
+                </div>
+            </template>
+        </div>
+        </template>
+        <template if:false={locations}>
+            No Date Found
+        </template>
+        </div>
+    </lightning-card>
+</template>

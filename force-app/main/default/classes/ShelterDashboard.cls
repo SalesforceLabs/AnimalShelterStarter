@@ -5,9 +5,9 @@ public with sharing class ShelterDashboard {
         
         //Query to fetch Locations of RecordType Unit
 
-        if (Schema.sObjectType.animalshelters__Locations__c.isAccessible()) {
+        if (Schema.SObjectType.animalshelters__Locations__c.isAccessible()) {
             List<animalshelters__Locations__c> locations = [
-                SELECT Id, animalshelters__Name__c, animalshelters__Parent_Block_Name__c, animalshelters__Unit_Status__c, RecordType.Name
+                SELECT Id, animalshelters__Name__c, animalshelters__Parent_Block_Name__c, animalshelters__Unit_Status__c, animalshelters__Animal_Record_Id__c, RecordType.Name
                 FROM animalshelters__Locations__c
                 WHERE RecordType.DeveloperName = 'Unit'
                 WITH SECURITY_ENFORCED
@@ -16,5 +16,6 @@ public with sharing class ShelterDashboard {
             return locations;
         }
         return null;
+
     }
 }

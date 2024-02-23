@@ -370,6 +370,12 @@
                 <elementReference>IncrementAllocationBy1</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Animal_Record_Id__c</field>
+            <value>
+                <elementReference>AnimalId</elementReference>
+            </value>
+        </inputAssignments>
         <object>Locations__c</object>
     </recordUpdates>
     <start>

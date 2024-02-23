@@ -704,6 +704,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Animal_Record_Id__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>

@@ -1,23 +1,23 @@
 <template>
     <lightning-card title="Shelter Dashboard" icon-name="custom:custom63">
         <div class="slds-var-m-around_medium">
-            <template if:true={locations}>
+            <template if:true={records}>
                 <div class="slds-grid slds-wrap slds-grid_pull-padded">
-                    <template for:each={locations} for:item="location">
-                        <div key={location.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
+                    <template for:each={records} for:item="record">
+                        <div key={record.RecordId} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
                             <div class="custom-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small">
-                                <p class="slds-var-p-around_small"> {location.animalshelters__Parent_Block_Name__c}</p>
+                                <p class="slds-var-p-around_small"> {record.LocationParentBlockName}</p>
                                 <p></p>
-                                <p class="slds-var-p-around_small"> {location.animalshelters__Name__c}</p>
-                                <p class="slds-var-p-around_small"> {location.animalshelters__Internal_Animal_Lookup__r.animalShelters__Animal_Name__c}</p>
-                                <p class="slds-var-p-around_small"> {location.animalshelters__Internal_Animal_Lookup__r.animalShelters__Animal_Status__c}</p>
+                                <p class="slds-var-p-around_small"> {record.LocationName}</p>
+                                <p class="slds-var-p-around_small"> {record.AnimalName}</p>
+                                <p class="slds-var-p-around_small"> {record.AnimalStatus}</p>
                         </div>  
                 </div>
             </template>
         </div>
         </template>
         <template if:false={locations}>
-            No Date Found
+            No Data Found
         </template>
         </div>
     </lightning-card>

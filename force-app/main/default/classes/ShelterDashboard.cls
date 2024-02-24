@@ -7,7 +7,7 @@ public with sharing class ShelterDashboard {
 
         if (Schema.SObjectType.animalshelters__Locations__c.isAccessible()) {
             List<animalshelters__Locations__c> locations = [
-                SELECT Id, animalshelters__Name__c, animalshelters__Parent_Block_Name__c, animalshelters__Internal_Animal_Lookup__r.animalShelters__Animal_Name__c, animalshelters__Internal_Animal_Lookup__r.animalShelters__Animal_Status__c, RecordType.Name
+                SELECT Id, animalshelters__Name__c, animalshelters__Parent_Block_Name__c, RecordType.Name, animalshelters__Internal_Animal_Lookup__r.animalshelters__Animal_Name__c, animalshelters__Internal_Animal_Lookup__r.animalshelters__Animal_Status__c 
                 FROM animalshelters__Locations__c
                 WHERE RecordType.DeveloperName = 'Unit'
                 WITH SECURITY_ENFORCED

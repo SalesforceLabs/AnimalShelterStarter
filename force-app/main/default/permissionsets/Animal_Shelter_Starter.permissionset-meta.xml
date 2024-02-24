@@ -85,6 +85,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ShelterDashboard</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>W3WInvocableCallout</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1066,6 +1070,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Locations__c.Foster_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Locations__c.Internal_Animal_Lookup__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

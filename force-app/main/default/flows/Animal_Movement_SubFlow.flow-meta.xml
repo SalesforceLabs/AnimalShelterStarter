@@ -371,7 +371,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Internal_Animal_Lookup__c</field>
+            <field>Animal_Record_Id__c</field>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>

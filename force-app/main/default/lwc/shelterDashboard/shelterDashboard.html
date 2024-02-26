@@ -1,22 +1,22 @@
 <template>
     <lightning-card title="Shelter Dashboard" icon-name="custom:custom63">
         <div class="slds-var-m-around_medium">
-            <template if:true={records}>
+            <template if:true={locationsWithAnimals}>
                 <div class="slds-grid slds-wrap slds-grid_pull-padded">
-                    <template for:each={records} for:item="record">
-                        <div key={record.RecordId} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
+                    <template for:each={locationsWithAnimals} for:item="loc">
+                        <div key={loc.RecordId} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
                             <div class="custom-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small">
-                                <p class="slds-var-p-around_small"> {record.LocationParentBlockName}</p>
+                                <p class="slds-var-p-around_small"> {loc.locationParentBlock}</p>
+                                <p class="slds-var-p-around_small"> {loc.locationName}</p>
                                 <p></p>
-                                <p class="slds-var-p-around_small"> {record.LocationName}</p>
-                                <p class="slds-var-p-around_small"> {record.AnimalName}</p>
-                                <p class="slds-var-p-around_small"> {record.AnimalStatus}</p>
+                                <p class="slds-var-p-around_small"> <b>Animal Name: </b>{loc.animalName}</p>
+                                <p class="slds-var-p-around_small"> <b>Animal Status: </b>{loc.animalStatus}</p>
                         </div>  
                 </div>
             </template>
         </div>
         </template>
-        <template if:false={locations}>
+        <template if:false={error}>
             No Data Found
         </template>
         </div>

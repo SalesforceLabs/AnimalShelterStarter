@@ -1080,11 +1080,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Locations__c.Internal_Animal_Lookup__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Locations__c.Last_Assessment_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1711,6 +1706,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Medicine__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Shelter_Dashboard</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

@@ -1,4 +1,4 @@
-public with sharing class ShelterDashboard {
+public with sharing class ShelterDashboardController {
 
     @AuraEnabled(cacheable=true)
     public static List<DashboardWrapper> getLocationWithAnimals(){

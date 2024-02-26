@@ -1,5 +1,5 @@
 import { LightningElement, wire, track } from 'lwc';
-import getLocationWithAnimals from '@salesforce/apex/ShelterDashboard.getLocationWithAnimals';
+import getLocationWithAnimals from '@salesforce/apex/ShelterDashboardController.getLocationWithAnimals';
 import { ShowToastEvents } from 'lightning/platformShowToastEvent';
 
 

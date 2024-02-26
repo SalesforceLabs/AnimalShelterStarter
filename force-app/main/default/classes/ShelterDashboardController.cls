@@ -1,3 +1,15 @@
+/**
+ * @File Name          : ShelterDashboardController.apxc
+ * @Description        : Get Location Records, and Associated Animal Records to populate the Shelter Dashboard
+ *                     : This is the controller for the Shelter Dashboard Lightning Component
+ *
+ * @Author             : Chris Rolfe (Salesforce)
+ * @Last Modified By   : Chris Rolfe
+ * @Last Modified On   : 02-26-2024
+ * @Modification Log   : 
+ * Ver       Date            Author      Modification
+ * 1.0    02-26-2024   Chris Rolfe       Initial Version
+**/
 public with sharing class ShelterDashboardController {
 
     @AuraEnabled(cacheable=true)
@@ -5,7 +17,7 @@ public with sharing class ShelterDashboardController {
 
         List<DashboardWrapper> locationsWithAnimals = new List<DashboardWrapper>();
         
-        // Query Location Records with a RecordType of Unit
+        // Query Location Records with the RecordType = Unit
         List<animalshelters__Locations__c> locations = [ SELECT Id, animalshelters__Name__c, animalshelters__Parent_Block_Name__c, RecordType.Name, animalshelters__Animal_Record_Id__c 
                                                         FROM animalshelters__Locations__c
                                                         WHERE RecordType.DeveloperName = 'Unit'
@@ -20,7 +32,7 @@ public with sharing class ShelterDashboardController {
             }
         }
 
-        // Query Animal records based on collected Animal Ids
+        // Query Animal records based on collected AnimalIds
         Map<String, animalshelters__Animal__c> animalMap = new Map<String, animalshelters__Animal__c>();
         if(!animalIds.isEmpty()) {
             List<animalshelters__Animal__c> animals = [ SELECT Id, animalshelters__Animal_Name__c, animalshelters__Animal_Status__c
@@ -28,11 +40,10 @@ public with sharing class ShelterDashboardController {
                                                         WHERE Id IN :animalIds];
                 for(animalshelters__Animal__c animal : animals) {
                     animalMap.put(animal.Id, animal);
-                }
-                                                            
+                }                                               
         }
 
-        //Combine Location and Animal Reocrds into DashboardWrapper objects
+        //Combine Location and Animal Records into DashboardWrapper objects
         for(animalshelters__Locations__c loc : locations) {
             DashboardWrapper wrapper = new DashboardWrapper();
             wrapper.locationId = loc.Id;
@@ -50,6 +61,7 @@ public with sharing class ShelterDashboardController {
     }
 
     // Wrapper class to hold combined Location and Animal data
+    @TestVisible
     public class DashboardWrapper {
         @AuraEnabled public String locationId;
         @AuraEnabled public String locationName;

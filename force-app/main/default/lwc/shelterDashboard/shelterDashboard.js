@@ -1,9 +1,12 @@
 import { LightningElement, wire, track } from 'lwc';
 import getLocationWithAnimals from '@salesforce/apex/ShelterDashboard.getLocationWithAnimals';
+import { ShowToastEvents } from 'lightning/platformShowToastEvent';
+
 
 export default class ShelterDashboard extends LightningElement {
     @track locationsWithAnimals;
     @track error;
+    @track showAdditionalAnimalInfo
 
     @wire(getLocationWithAnimals)
     wiredLocations({ error, data }){
@@ -12,9 +15,15 @@ export default class ShelterDashboard extends LightningElement {
             this.error = undefined;
             console.log('Data Returned: ', data);
         } else if (error) {
-            this.error = error;
-            this.locationsWithAnimals = undefined;
             console.log('Error Returned: ', error);
+            // Show error toast
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Error',
+                    message: error.message,
+                    variant: 'error',
+                }),
+            );
         }
     }
 }

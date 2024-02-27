@@ -10,6 +10,7 @@
  * Ver       Date            Author      Modification
  * 1.0    02-26-2024   Chris Rolfe       Initial Version
 **/
+
 public with sharing class ShelterDashboardController {
 
     @AuraEnabled(cacheable=true)
@@ -35,9 +36,10 @@ public with sharing class ShelterDashboardController {
         // Query Animal records based on collected AnimalIds
         Map<String, animalshelters__Animal__c> animalMap = new Map<String, animalshelters__Animal__c>();
         if(!animalIds.isEmpty()) {
-            List<animalshelters__Animal__c> animals = [ SELECT Id, animalshelters__Animal_Name__c, animalshelters__Animal_Status__c
+            List<animalshelters__Animal__c> animals = [ SELECT Id, animalshelters__Animal_Name__c, animalshelters__Animal_Status__c, (SELECT Id, animalshelters__Action_Type__c, animalshelters__Action_Completed__c, animalshelters__Date_Time_of_Action__c, animalshelters__Description__c, RecordType.Name, animalshelters__Animal__c FROM animalshelters__Animal_Actions__r WHERE animalshelters__Date_Time_of_Action__c <= NEXT_N_DAYS:7 AND animalshelters__Date_Time_of_Action__c >= TODAY AND animalshelters__Action_Completed__c = false)
                                                         FROM animalshelters__Animal__c
-                                                        WHERE Id IN :animalIds];
+                                                        WHERE Id IN :animalIds
+                                                        WITH SECURITY_ENFORCED];
                 for(animalshelters__Animal__c animal : animals) {
                     animalMap.put(animal.Id, animal);
                 }                                               
@@ -54,6 +56,15 @@ public with sharing class ShelterDashboardController {
             if(relatedAnimal != null) {
                 wrapper.animalName = relatedAnimal.animalshelters__Animal_Name__c;
                 wrapper.animalStatus = relatedAnimal.animalshelters__Animal_Status__c;
+                if(relatedAnimal.animalshelters__Animal_Actions__r.size() == 0) {
+                    wrapper.animalActionType = 'None';
+                    wrapper.animalActionDatetime = null;
+                    wrapper.animalActionDescription = null;
+                } else {
+                    wrapper.animalActionType = relatedAnimal.animalshelters__Animal_Actions__r.get(0).animalshelters__Action_Type__c;
+                    wrapper.animalActionDateTime = string.valueOf(relatedAnimal.animalshelters__Animal_Actions__r.get(0).animalshelters__Date_Time_of_Action__c);
+                 wrapper.animalActionDescription = relatedAnimal.animalshelters__Animal_Actions__r.get(0).animalshelters__Description__c;
+                }
             }
             locationsWithAnimals.add(wrapper);
         }
@@ -68,5 +79,9 @@ public with sharing class ShelterDashboardController {
         @AuraEnabled public String locationParentBlock;
         @AuraEnabled public String animalName;
         @AuraEnabled public String animalStatus;
+        @AuraEnabled public String animalActionType;
+        @AuraEnabled public String animalActionDateTime;
+        @AuraEnabled public String animalActionDescription;
+
     }
 }

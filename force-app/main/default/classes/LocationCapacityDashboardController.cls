@@ -19,4 +19,13 @@ public with sharing class LocationCapacityDashboardController {
         }
 
     }
+
+    @AuraEnabled(cacheable=true)
+    public static List<animalshelters__Locations__c> getSites() {
+
+        Id recordTypeId = [SELECT Id
+                            FROM RecordType
+                            WHERE SObjectType = 'animalshelters__Locations__c' AND DeveloperName = 'Site'].Id;
+        return [SELECT Id, animalshelters__Name__c FROM animalshelters__Locations__c WHERE RecordTypeId = :recordTypeId WITH SECURITY_ENFORCED];
+    }
 }

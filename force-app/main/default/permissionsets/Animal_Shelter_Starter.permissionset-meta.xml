@@ -560,11 +560,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Animal__c.Animal_Has_Alerts__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Animal__c.Animal_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>

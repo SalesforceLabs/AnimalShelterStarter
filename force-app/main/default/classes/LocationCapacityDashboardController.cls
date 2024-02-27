@@ -1,0 +1,22 @@
+public with sharing class LocationCapacityDashboardController {
+
+    @AuraEnabled(cacheable=true)
+    public static List<animalshelters__Locations__c> getLocations(String siteId) {
+        // If no siteId is provided, return an empty List to avoid returing all records unintentionally
+        if(String.isBlank(siteId)) {
+            return new List<animalshelters__Locations__c>();
+
+            // Query to fetch Site, its Blocks, and Units.
+            return [
+                SELECT Id, animalshelters__Name__c, animalshelters__Capacity__c, RecordTypeId,
+                (SELECT Id, animalshelters__Name__c, animalshelters__Capacity__c FROM animalshelters__Parent_Block__r)
+                FROM animalshelters__Locations__c
+                WHERE Id = :siteId
+                OR animalshelters__Parent_Block__c = :siteId
+                OR Id IN (SELECT Id FROM animalshelters__Locations__c WHERE animalshelters__Parent_Block__c IN (SELECT Id FROM animalshelters__Locations__c WHERE animalshelters__Parent_Block__c = :siteId))
+                WITH SECURITY_ENFORCED
+            ];
+        }
+
+    }
+}

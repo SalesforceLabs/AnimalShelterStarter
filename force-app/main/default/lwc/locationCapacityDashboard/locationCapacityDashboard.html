@@ -1,0 +1,22 @@
+<template>
+    <lightning-combobox 
+        name="siteSelector" 
+        label="Select a Site" 
+        value={selectedSiteId} 
+        placeholder="Choose a Site"
+        options={siteOptions}
+        onchange={handleSiteChange}></lightning-combobox>
+    <template if:true={locations}>
+        <div class="slds-var-m-around_medium">
+            <template for:each={locations} for:item="loc">
+                <div key={loc.Id} class="slds-box slds-var-m-bottom_small">
+                    <p>Name: {loc.animalshelters__Name__c}</p>
+                    <p>Capacity: {loc.animalshelters__Capacity__c}</p>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:true={error}>
+        <p>{error}</p>
+    </template>
+</template>

@@ -9,10 +9,10 @@ export default class LocationCapacityDashboard extends LightningElement {
     @track error;
     selectedSiteId;
 
-    @wire(getLocations, { siteId: '$SelectedSiteId' })
+    @wire(getLocations, { siteId: '$selectedSiteId' })
     wiredLocations( { error, data }) {
         if (data) {
-            this.locations = result.data;
+            this.locations = data;
             this.error = undefined
         } else if (error) {
             this.error = error;
@@ -24,8 +24,9 @@ export default class LocationCapacityDashboard extends LightningElement {
         if (data) {
             this.siteOptions = data.map(site => ({
                 label: site.animalshelters__Name__c,
-                value: site.siteId
+                value: site.Id
             }));
+            console.log('Site Data', data);
             this.error = undefined;
         } else if (error) {
             this.error = error;
@@ -34,6 +35,6 @@ export default class LocationCapacityDashboard extends LightningElement {
     }
 
     handleSiteChange(event) {
-        this.selectedSiteId = event.target.value;
+        this.selectedSiteId = event.detail.value;
     }
 }

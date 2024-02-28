@@ -1,22 +1,27 @@
 <template>
-    <lightning-combobox 
-        name="siteSelector" 
-        label="Select a Site" 
-        value={selectedSiteId} 
-        placeholder="Choose a Site"
-        options={siteOptions}
-        onchange={handleSiteChange}></lightning-combobox>
-    <template if:true={locations}>
-        <div class="slds-var-m-around_medium">
-            <template for:each={locations} for:item="loc">
-                <div key={loc.Id} class="slds-box slds-var-m-bottom_small">
-                    <p>Name: {loc.animalshelters__Name__c}</p>
-                    <p>Capacity: {loc.animalshelters__Capacity__c}</p>
+    <lightning-card title="Location Capacity Dashboard" icon-name="standard:dashboard_component">
+        <lightning-combobox 
+            name="siteSelector" 
+            label="Select a Site" 
+            value={selectedSiteId} 
+            placeholder="Choose a Site"
+            options={siteOptions}
+            onchange={handleSiteChange}></lightning-combobox>
+        <template if:true={locations}>
+                <div class="slds-grid slds-wrap">
+                    <template for:each={locations} for:item="loc">
+                        <div key={loc.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
+                            <div class="record-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small">
+                                <p>Name: {loc.animalshelters__Name__c}</p>
+                                <p>Capacity: {loc.animalshelters__Capacity__c}</p>
+                                <p>Unit Name: {loc.animalshelters__Locations__r.animalshelters__Name__c}</p>
+                            </div>
+                        </div>
+                    </template>
                 </div>
-            </template>
-        </div>
-    </template>
-    <template if:true={error}>
-        <p>{error}</p>
-    </template>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
 </template>

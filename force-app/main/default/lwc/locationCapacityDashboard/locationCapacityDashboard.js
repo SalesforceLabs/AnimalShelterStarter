@@ -23,8 +23,7 @@ export default class LocationCapacityDashboard extends LightningElement {
     wiredSites({ error, data }){
         if (data) {
             this.siteOptions = data.map(site => ({
-                label: site.animalshelters__Name__c,
-                value: site.Id
+                label: site.animalshelters__Name__c, value: site.Id
             }));
             console.log('Site Data', data);
             this.error = undefined;

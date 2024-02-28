@@ -8,13 +8,22 @@
             options={siteOptions}
             onchange={handleSiteChange}></lightning-combobox>
         <template if:true={locations}>
-                <div class="slds-grid slds-wrap">
+                <div class="slds-grid slds-wrap locations-list">
                     <template for:each={locations} for:item="loc">
-                        <div key={loc.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
-                            <div class="record-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small">
-                                <p>Name: {loc.animalshelters__Name__c}</p>
-                                <p>Capacity: {loc.animalshelters__Capacity__c}</p>
-                                <p>Unit Name: {loc.animalshelters__Locations__r.animalshelters__Name__c}</p>
+                        <div key={loc.Id} class="location-block-box">
+                                <p><strong>{loc.animalshelters__Name__c} - Block Capacity: {loc.animalshelters__Available_Capacity__c}</strong></p>
+                                <div class="slds-border_top"></div>
+                                <div class="unit-locations">
+                                <template if:true={loc.animalshelters__Locations__r}>
+                                    <template for:each={loc.animalshelters__Locations__r} for:item="uloc">
+                                        <div key={uloc.Id} class="unit-box">
+                                            <p>{uloc.animalshelters__Name__c}</p>
+                                            <p>{uloc.animalshelters__Location_Capacity__c}</p>
+                                            <p>Capacity: {uloc.animalshelters__Capacity__c}</p>
+                                            <p>Last Assessment: {uloc.animalshelters__Last_Assessment_Date__c}</p>
+                                        </div> 
+                                    </template>
+                                </template>
                             </div>
                         </div>
                     </template>

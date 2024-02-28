@@ -13,6 +13,7 @@ export default class LocationCapacityDashboard extends LightningElement {
     wiredLocations( { error, data }) {
         if (data) {
             this.locations = data;
+            console.log('Locations: ', data);
             this.error = undefined
         } else if (error) {
             this.error = error;
@@ -25,6 +26,7 @@ export default class LocationCapacityDashboard extends LightningElement {
             this.siteOptions = data.map(site => ({
                 label: site.animalshelters__Name__c, value: site.Id
             }));
+            this.unitLocations = data.animalshelters__Locations__r;
             console.log('Site Data', data);
             this.error = undefined;
         } else if (error) {

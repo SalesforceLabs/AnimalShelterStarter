@@ -10,7 +10,7 @@
         <template if:true={locations}>
                 <div class="slds-grid slds-wrap locations-list">
                     <template for:each={locations} for:item="loc">
-                        <div key={loc.Id} class="location-block-box">
+                        <div key={loc.Id} class="location-block-box slds-var-p-around_small slds-var-m-bottom_small">
                                 <p><strong>{loc.animalshelters__Name__c} - Block Capacity: {loc.animalshelters__Available_Capacity__c}</strong></p>
                                 <div class="slds-border_top"></div>
                                 <div class="unit-locations">

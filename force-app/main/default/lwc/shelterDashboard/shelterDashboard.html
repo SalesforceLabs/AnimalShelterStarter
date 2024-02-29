@@ -7,14 +7,15 @@
             placeholder="Choose a Site"
             options={siteOptions}
             onchange={handleSiteChange}></lightning-combobox>
+            <div class="slds-var-m-bottom_small"></div>
         <template if:true={locationsWithAnimals}>
             <div class="slds-grid slds-wrap">
                 <template for:each={locationsWithAnimals} for:item="loc">
                     <div key={loc.RecordId} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
-                        <div class="record-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small">
+                        <div class="record-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small slds-var-m-bottom_small">
                             <p><strong>{loc.locationParentBlock} - {loc.locationName}</strong></p>
                             <p></p>
-                            <p>Animal Name: <strong>{loc.animalName}</strong></p>
+                            <p>Animal Name: <strong>{loc.animalName}</strong> - No. of Days in Shelter: {loc.animalStayLength}</p>
                             <p>Animal Status: <strong>{loc.animalStatus}</strong></p>
                             <div class="slds-border_top"></div>
                             <p><strong>Next Action</strong></p>

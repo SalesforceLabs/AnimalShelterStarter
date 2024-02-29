@@ -9,7 +9,7 @@ public with sharing class LocationCapacityDashboardController {
         } else {
             return [
                 SELECT Id, animalshelters__Name__c, animalshelters__Capacity__c, animalshelters__Available_Capacity__c, RecordType.Name,
-                (SELECT Id, animalshelters__Name__c, animalshelters__Capacity__c,animalshelters__Location_Capacity__c, animalshelters__Last_Assessment_Date__c FROM animalshelters__Locations__r)
+                (SELECT Id, animalshelters__Name__c, animalshelters__Capacity__c,animalshelters__Location_Capacity__c, animalshelters__Last_Assessment_Date__c FROM animalshelters__Locations__r ORDER BY animalshelters__Name__c ASC)
                 FROM animalshelters__Locations__c
                 WHERE RecordType.DeveloperName = 'Block' AND animalshelters__Parent_Block__c = :siteId
                 WITH SECURITY_ENFORCED

@@ -14,14 +14,14 @@
 public with sharing class ShelterDashboardController {
 
     @AuraEnabled(cacheable=true)
-    public static List<DashboardWrapper> getLocationWithAnimals(){
+    public static List<DashboardWrapper> getLocationsWithAnimals(String site){
 
         List<DashboardWrapper> locationsWithAnimals = new List<DashboardWrapper>();
         
         // Query Location Records with the RecordType = Unit
         List<animalshelters__Locations__c> locations = [ SELECT Id, animalshelters__Name__c, animalshelters__Parent_Block_Name__c, RecordType.Name, animalshelters__Animal_Record_Id__c 
                                                         FROM animalshelters__Locations__c
-                                                        WHERE RecordType.DeveloperName = 'Unit'
+                                                        WHERE RecordType.DeveloperName = 'Unit' AND animalshelters__Sitename__c = :site
                                                         WITH SECURITY_ENFORCED
                                                         ORDER BY animalshelters__Parent_Block_Name__c, animalshelters__Name__c ASC];
 
@@ -69,6 +69,16 @@ public with sharing class ShelterDashboardController {
             locationsWithAnimals.add(wrapper);
         }
         return locationsWithAnimals;
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static List<animalshelters__Locations__c> getSites() {
+
+        Id recordTypeId = [SELECT Id
+                            FROM RecordType
+                            WHERE SObjectType = 'animalshelters__Locations__c' AND DeveloperName = 'Site'].Id;
+
+        return [SELECT Id, animalshelters__Name__c, animalshelters__Sitename__c FROM animalshelters__Locations__c WHERE RecordTypeId = :recordTypeId WITH SECURITY_ENFORCED];
     }
 
     // Wrapper class to hold combined Location and Animal data

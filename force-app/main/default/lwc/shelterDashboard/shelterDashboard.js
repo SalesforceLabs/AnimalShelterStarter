@@ -1,13 +1,15 @@
 import { LightningElement, wire, track } from 'lwc';
-import getLocationWithAnimals from '@salesforce/apex/ShelterDashboardController.getLocationWithAnimals';
+import getLocationsWithAnimals from '@salesforce/apex/ShelterDashboardController.getLocationsWithAnimals';
+import getSites from '@salesforce/apex/ShelterDashboardController.getSites';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 
 export default class ShelterDashboard extends LightningElement {
     @track locationsWithAnimals;
     @track error;
+    selectedSite;
 
-    @wire(getLocationWithAnimals)
+    @wire(getLocationsWithAnimals, { site: '$selectedSite' })
     wiredLocations({ error, data }){
         if (data) {
             this.locationsWithAnimals = data;
@@ -24,5 +26,23 @@ export default class ShelterDashboard extends LightningElement {
             });
             this.dispatchEvent(event);
         }
+    }
+
+    @wire(getSites)
+    wiredSites({ error, data }){
+        if (data) {
+            this.siteOptions = data.map(site => ({
+                label: site.animalshelters__Name__c, value: site.animalshelters__Sitename__c
+            }));
+            console.log('Site Data', data);
+            this.error = undefined;
+        } else if (error) {
+            this.error = error;
+            this.siteOptions = undefined;
+        }
+    }
+
+    handleSiteChange(event) {
+        this.selectedSite = event.detail.value;
     }
 }

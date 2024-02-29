@@ -1,5 +1,12 @@
 <template>
     <lightning-card title="Shelter Dashboard" icon-name="standard:dashboard_component">
+        <lightning-combobox 
+            name="siteSelector" 
+            label="Select a Site" 
+            value={selectedSite} 
+            placeholder="Choose a Site"
+            options={siteOptions}
+            onchange={handleSiteChange}></lightning-combobox>
         <template if:true={locationsWithAnimals}>
             <div class="slds-grid slds-wrap">
                 <template for:each={locationsWithAnimals} for:item="loc">
@@ -17,7 +24,7 @@
                 </template>
             </div>
         </template>
-        <template if:false={locationsWithAnimals}>
+        <template if:true={error}>
             No Data Found
         </template>
     </lightning-card>

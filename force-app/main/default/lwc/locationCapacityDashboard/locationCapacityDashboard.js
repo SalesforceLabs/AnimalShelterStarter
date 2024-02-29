@@ -26,7 +26,6 @@ export default class LocationCapacityDashboard extends LightningElement {
             this.siteOptions = data.map(site => ({
                 label: site.animalshelters__Name__c, value: site.Id
             }));
-            this.unitLocations = data.animalshelters__Locations__r;
             console.log('Site Data', data);
             this.error = undefined;
         } else if (error) {

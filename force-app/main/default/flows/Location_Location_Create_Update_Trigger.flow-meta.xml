@@ -44,9 +44,9 @@
         <locationY>323</locationY>
         <flowName>Animal_Block_Capacity_Calculations</flowName>
         <inputAssignments>
-            <name>varLocationId</name>
+            <name>locRecord</name>
             <value>
-                <elementReference>$Record.Id</elementReference>
+                <elementReference>$Record</elementReference>
             </value>
         </inputAssignments>
     </subflows>

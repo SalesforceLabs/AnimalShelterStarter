@@ -2,103 +2,53 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
     <assignments>
-        <name>Available_Child_Record_Count</name>
-        <label>Available Child Record Count</label>
-        <locationX>1373</locationX>
-        <locationY>482</locationY>
+        <name>Unit_record_Counts</name>
+        <label>Unit record Counts</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
         <assignmentItems>
-            <assignToReference>varAvailableCount</assignToReference>
-            <operator>AssignCount</operator>
+            <assignToReference>totalUnitCapacity</assignToReference>
+            <operator>Add</operator>
             <value>
-                <elementReference>varLocationChildRecords</elementReference>
+                <elementReference>location.Capacity__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>totalUnitAllocation</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>location.Allocation__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_Through_Child_Records_that_have_Available_Status</targetReference>
+            <targetReference>Loop_Through_Unit_Records</targetReference>
         </connector>
     </assignments>
-    <assignments>
-        <name>Total_Child_Record_Count</name>
-        <label>Total Child Record Count</label>
-        <locationX>807</locationX>
-        <locationY>58</locationY>
-        <assignmentItems>
-            <assignToReference>varTotalCount</assignToReference>
-            <operator>AssignCount</operator>
-            <value>
-                <elementReference>varLocationChildRecords</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_Child_Records</targetReference>
-        </connector>
-    </assignments>
-    <constants>
-        <description>Constant of zero</description>
-        <name>conZero</name>
-        <dataType>Number</dataType>
-        <value>
-            <numberValue>0.0</numberValue>
-        </value>
-    </constants>
-    <decisions>
-        <name>No_Records_Found</name>
-        <label>No Records Found</label>
-        <locationX>821</locationX>
-        <locationY>484</locationY>
-        <defaultConnector>
-            <targetReference>Loop_Through_Child_Records_that_have_Available_Status</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>At least 1 record found</defaultConnectorLabel>
-        <rules>
-            <name>No_Records</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>varLocationChildRecords</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Available_Capacity_to_Zero</targetReference>
-            </connector>
-            <label>No Records</label>
-        </rules>
-    </decisions>
     <description>Calculates and populates the Block Capacity fields</description>
     <environments>Default</environments>
+    <formulas>
+        <description>Calculates the available capacity in the Block</description>
+        <name>blockAvailableCapacity</name>
+        <dataType>Number</dataType>
+        <expression>{!totalUnitCapacity} - {!totalUnitAllocation}</expression>
+        <scale>0</scale>
+    </formulas>
     <interviewLabel>Animal - Block Capacity Calculations</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Block Capacity Calculations</label>
     <loops>
-        <name>Loop_Through_Child_Records</name>
-        <label>Loop Through Child Records</label>
-        <locationX>528</locationX>
-        <locationY>50</locationY>
-        <assignNextValueToReference>varLocation</assignNextValueToReference>
-        <collectionReference>varLocationChildRecords</collectionReference>
+        <name>Loop_Through_Unit_Records</name>
+        <label>Loop Through Unit Records</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNextValueToReference>location</assignNextValueToReference>
+        <collectionReference>locationUnitRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Total_Child_Record_Count</targetReference>
+            <targetReference>Unit_record_Counts</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_Total_Capacity_Value</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
-        <name>Loop_Through_Child_Records_that_have_Available_Status</name>
-        <label>Loop Through Child Records that have Available Status</label>
-        <locationX>1101</locationX>
-        <locationY>479</locationY>
-        <assignNextValueToReference>varLocation</assignNextValueToReference>
-        <collectionReference>varLocationChildRecords</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Available_Child_Record_Count</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Update_Available_Capacity_Value</targetReference>
+            <targetReference>Update_Block_Capacity_Fields</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -110,7 +60,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -121,141 +71,91 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Location_Child_Records_with_Available_Status</name>
-        <label>Get Location Child Records with Available Status</label>
-        <locationX>531</locationX>
-        <locationY>483</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>No_Records_Found</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Parent_Block__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varLocationId</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Unit_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Available</stringValue>
-            </value>
-        </filters>
-        <object>Locations__c</object>
-        <outputReference>varLocationChildRecords</outputReference>
-        <queriedFields>Id</queriedFields>
-    </recordLookups>
-    <recordLookups>
-        <description>Get all the Child records for the current Location</description>
-        <name>Get_Locations_Child_Records</name>
-        <label>Get Locations Child Records</label>
-        <locationX>269</locationX>
-        <locationY>50</locationY>
+        <description>Get all the Unit records for the retrieved Block Location</description>
+        <name>Get_All_Unit_Records_for_Block</name>
+        <label>Get All Unit Records for Block</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Loop_Through_Child_Records</targetReference>
+            <targetReference>Loop_Through_Unit_Records</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Parent_Block__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varLocationId</elementReference>
+                <elementReference>Get_Parent_Record_from_Unit.Id</elementReference>
             </value>
         </filters>
         <object>Locations__c</object>
-        <outputReference>varLocationChildRecords</outputReference>
+        <outputReference>locationUnitRecords</outputReference>
         <queriedFields>Id</queriedFields>
+        <queriedFields>Location_Capacity__c</queriedFields>
+        <queriedFields>Allocation__c</queriedFields>
+        <queriedFields>Availability__c</queriedFields>
+        <queriedFields>Capacity__c</queriedFields>
     </recordLookups>
-    <recordUpdates>
-        <name>Set_Available_Capacity_to_Zero</name>
-        <label>Set Available Capacity to Zero</label>
-        <locationX>652</locationX>
-        <locationY>669</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varLocationId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Available_Capacity__c</field>
-            <value>
-                <elementReference>conZero</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Locations__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <description>Update the Available Capacity value on the current Location</description>
-        <name>Update_Available_Capacity_Value</name>
-        <label>Update Available Capacity Value</label>
-        <locationX>1104</locationX>
-        <locationY>703</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varLocationId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Available_Capacity__c</field>
-            <value>
-                <elementReference>varAvailableCount</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Locations__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <description>Update the Total Capacity value on the current Location</description>
-        <name>Update_Total_Capacity_Value</name>
-        <label>Update Total Capacity Value</label>
-        <locationX>531</locationX>
-        <locationY>295</locationY>
+    <recordLookups>
+        <description>Gets the Parent record (Block) from Unit record passed</description>
+        <name>Get_Parent_Record_from_Unit</name>
+        <label>Get Parent Record from Unit</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Location_Child_Records_with_Available_Status</targetReference>
+            <targetReference>Get_All_Unit_Records_for_Block</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varLocationId</elementReference>
+                <elementReference>locRecord.Parent_Block__r.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Locations__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update the Total and Available Capacity on the Block record</description>
+        <name>Update_Block_Capacity_Fields</name>
+        <label>Update Block Capacity Fields</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>locRecord.Parent_Block__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Available_Capacity__c</field>
+            <value>
+                <elementReference>blockAvailableCapacity</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Total_Capacity__c</field>
             <value>
-                <elementReference>varTotalCount</elementReference>
+                <elementReference>totalUnitCapacity</elementReference>
             </value>
         </inputAssignments>
         <object>Locations__c</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Locations_Child_Records</targetReference>
+            <targetReference>Get_Parent_Record_from_Unit</targetReference>
         </connector>
     </start>
     <status>Active</status>
     <variables>
-        <name>varAvailableCount</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
-    </variables>
-    <variables>
-        <name>varLocation</name>
+        <name>location</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -263,7 +163,7 @@
         <objectType>Locations__c</objectType>
     </variables>
     <variables>
-        <name>varLocationChildRecords</name>
+        <name>locationUnitRecords</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
@@ -271,14 +171,25 @@
         <objectType>Locations__c</objectType>
     </variables>
     <variables>
-        <name>varLocationId</name>
-        <dataType>String</dataType>
+        <name>locRecord</name>
+        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
-        <name>varTotalCount</name>
+        <description>The number of animals allocated to the Unit</description>
+        <name>totalUnitAllocation</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>The capacity set on the Unit record</description>
+        <name>totalUnitCapacity</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

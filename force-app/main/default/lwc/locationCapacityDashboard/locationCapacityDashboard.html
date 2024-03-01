@@ -11,7 +11,8 @@
                 <div class="slds-grid slds-wrap locations-list">
                     <template for:each={locations} for:item="loc">
                         <div key={loc.Id} class="location-block-box slds-var-p-around_small slds-var-m-bottom_small">
-                                <p><strong>{loc.animalshelters__Name__c} - Block Capacity: {loc.animalshelters__Available_Capacity__c}</strong></p>
+                                <p><strong>{loc.animalshelters__Name__c}</strong></p>
+                                <p>Total Cap: {loc.animalshelters__Total_Capacity__c} - Total Avail: {loc.animalshelters__Available_Capacity__c}</strong></p>
                                 <div class="slds-border_top"></div>
                                 <div class="unit-locations">
                                 <template if:true={loc.animalshelters__Locations__r}>
@@ -20,6 +21,7 @@
                                             <p>{uloc.animalshelters__Name__c}</p>
                                             <p>{uloc.animalshelters__Location_Capacity__c}</p>
                                             <p>Capacity: {uloc.animalshelters__Capacity__c}</p>
+                                            <p>Allocation: {uloc.animalshelters__Allocation__c}</p>
                                             <p>Last Assessment: {uloc.animalshelters__Last_Assessment_Date__c}</p>
                                         </div> 
                                     </template>

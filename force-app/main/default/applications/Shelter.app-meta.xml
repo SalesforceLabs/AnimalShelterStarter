@@ -41,6 +41,7 @@
     <label>Animal Shelter</label>
     <navType>Console</navType>
     <tabs>standard-home</tabs>
+    <tabs>Location_Dashboard</tabs>
     <tabs>Shelter_Dashboard</tabs>
     <tabs>Animal__c</tabs>
     <tabs>Animal_Action__c</tabs>
@@ -81,6 +82,9 @@
         </mappings>
         <mappings>
             <tab>Capture_Release</tab>
+        </mappings>
+        <mappings>
+            <tab>Location_Dashboard</tab>
         </mappings>
         <mappings>
             <tab>Locations__c</tab>

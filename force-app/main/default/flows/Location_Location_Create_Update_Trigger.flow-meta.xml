@@ -31,6 +31,7 @@
         <connector>
             <targetReference>Call_Block_Calculations_SubFlow</targetReference>
         </connector>
+        <filterFormula>{!$Record.RecordType.DeveloperName} = &quot;Unit&quot;</filterFormula>
         <object>Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

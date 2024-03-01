@@ -36,7 +36,7 @@ public with sharing class ShelterDashboardController {
         // Query Animal records based on collected AnimalIds
         Map<String, animalshelters__Animal__c> animalMap = new Map<String, animalshelters__Animal__c>();
         if(!animalIds.isEmpty()) {
-            List<animalshelters__Animal__c> animals = [ SELECT Id, animalshelters__Animal_Name__c, animalshelters__Animal_Status__c, animalshelters__Total_Length_of_Stay_in_Shelter_Days__c, (SELECT Id, animalshelters__Action_Type__c, animalshelters__Action_Completed__c, animalshelters__Date_Time_of_Action__c, animalshelters__Description__c, RecordType.Name, animalshelters__Animal__c FROM animalshelters__Animal_Actions__r WHERE animalshelters__Date_Time_of_Action__c <= NEXT_N_DAYS:7 AND animalshelters__Date_Time_of_Action__c >= TODAY AND animalshelters__Action_Completed__c = false)
+            List<animalshelters__Animal__c> animals = [ SELECT Id, animalshelters__Animal_Name__c, animalshelters__Animal_Status__c, animalshelters__Total_Length_of_Stay_in_Shelter_Days__c, animalshelters__Alerts_Present__c, (SELECT Id, animalshelters__Action_Type__c, animalshelters__Action_Completed__c, animalshelters__Date_Time_of_Action__c, animalshelters__Description__c, RecordType.Name, animalshelters__Animal__c FROM animalshelters__Animal_Actions__r WHERE animalshelters__Date_Time_of_Action__c <= NEXT_N_DAYS:7 AND animalshelters__Date_Time_of_Action__c >= TODAY AND animalshelters__Action_Completed__c = false)
                                                         FROM animalshelters__Animal__c
                                                         WHERE Id IN :animalIds
                                                         WITH SECURITY_ENFORCED];
@@ -57,6 +57,7 @@ public with sharing class ShelterDashboardController {
                 wrapper.animalName = relatedAnimal.animalshelters__Animal_Name__c;
                 wrapper.animalStatus = relatedAnimal.animalshelters__Animal_Status__c;
                 wrapper.animalStayLength = String.valueOf(relatedAnimal.animalshelters__Total_Length_of_Stay_in_Shelter_Days__c);
+                wrapper.animalAlertsFlag = relatedAnimal.animalshelters__Alerts_Present__c;
                 if(relatedAnimal.animalshelters__Animal_Actions__r.size() == 0) {
                     wrapper.animalActionType = 'None';
                     wrapper.animalActionDatetime = null;
@@ -94,6 +95,7 @@ public with sharing class ShelterDashboardController {
         @AuraEnabled public String animalActionDateTime;
         @AuraEnabled public String animalActionDescription;
         @AuraEnabled public String animalStayLength;
+        @AuraEnabled public Boolean animalAlertsFlag;
         }
 
     }

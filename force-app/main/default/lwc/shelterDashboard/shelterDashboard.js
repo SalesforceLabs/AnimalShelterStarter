@@ -7,6 +7,8 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class ShelterDashboard extends LightningElement {
     @track locationsWithAnimals;
     @track error;
+    @track isModalOpen = false; 
+    @track selectedAnimal = {};
     selectedSite;
 
     @wire(getLocationsWithAnimals, { site: '$selectedSite' })
@@ -44,5 +46,20 @@ export default class ShelterDashboard extends LightningElement {
 
     handleSiteChange(event) {
         this.selectedSite = event.detail.value;
+    }
+
+    handleAnimalClick(event) {
+        const animalId = event.target.dataset.id;
+        console.log('AnimalId: ',animalId);
+        const animalDetails = this.locationsWithAnimals.find(loc => loc.animalId === animalId);
+        console.log('Animal: ', animalDetails);
+            if (animalDetails){
+                this.selectedAnimal = animalDetails;
+                this.isModalOpen = true;
+            }
+    }
+
+    handleModalClose(){
+        this.isModalOpen = false;
     }
 }

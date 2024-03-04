@@ -17,7 +17,8 @@
                             <template if:true={loc.animalAlertsFlag}>
                                 <span class="slds-badge slds-theme_error">Alerts</span>
                             </template></p>
-                            <lightning-button variant="base" label={loc.animalName} title="Click for Details" onclick={handleAnimalClick} data-id={loc.animalId}></lightning-button>
+                            <div class="slds-border_top"></div>
+                            <lightning-button variant="Neutral" label={loc.animalName} title="Click for Details" onclick={handleAnimalClick} data-id={loc.animalId}></lightning-button>
                             <p><strong> - No. of Days in Shelter: {loc.animalStayLength}</strong></p>
                             <p>Animal Status: <strong>{loc.animalStatus}</strong></p>
                             <div class="slds-border_top"></div>
@@ -40,8 +41,7 @@
                                             <p>Current Weight: <strong>{selectedAnimal.animalCurrentWeight}</strong></p>
                                             <p>Gender: <strong>{selectedAnimal.animalGender}</strong></p>
                                             <p>Colour: <strong>{selectedAnimal.animalColour}</strong></p>
-                                            <p>Type: <strong>{selectedAnimal.animalType}</strong></p>
-                                            <p>Species: <strong>{selectedAnimal.animalSpecies}</strong></p>
+                                            <p>Type/Species: <strong>{selectedAnimal.animalType}/{selectedAnimal.animalSpecies}</strong></p>
                                         </div>
                                         <footer class="slds-modal__footer">
                                             <lightning-button variant="neutral" label="Close" onclick={handleModalClose}></lightning-button>

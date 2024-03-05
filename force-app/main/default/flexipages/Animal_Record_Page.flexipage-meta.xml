@@ -927,6 +927,16 @@
                 <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Alerts_Present__c</fieldItem>
+                <identifier>Recordanimalshelters_Alerts_Present_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-aac6ddaa-54f0-4332-9a4f-98d918ba8eaf</name>
         <type>Facet</type>
     </flexiPageRegions>

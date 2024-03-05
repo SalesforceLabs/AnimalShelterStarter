@@ -35,6 +35,10 @@
                 <behavior>Readonly</behavior>
                 <field>Current_Weight_ibs__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Alerts_Present__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

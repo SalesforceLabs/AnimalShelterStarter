@@ -46,10 +46,6 @@
     </fieldSets>
     <fieldSets>
         <label></label>
-        <name>Animal_Dashboard_FieldSet</name>
-    </fieldSets>
-    <fieldSets>
-        <label></label>
         <name>Animal_Details</name>
     </fieldSets>
     <gender>Neuter</gender>

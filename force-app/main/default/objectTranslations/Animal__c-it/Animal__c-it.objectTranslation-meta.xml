@@ -13,10 +13,6 @@
         <name>Animal_Cage_Card_Field_Set</name>
     </fieldSets>
     <fieldSets>
-        <label></label>
-        <name>Animal_Dashboard_FieldSet</name>
-    </fieldSets>
-    <fieldSets>
         <label>Dettagli dell&apos;animale</label>
         <name>Animal_Details</name>
     </fieldSets>

@@ -13,17 +13,19 @@
                 <template for:each={locationsWithAnimals} for:item="loc">
                     <div key={loc.RecordId} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
                         <div class="record-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small slds-var-m-bottom_small">
-                            <p><strong>{loc.locationParentBlock} - {loc.locationName}</strong>
-                            <template if:true={loc.animalAlertsFlag}>
-                                <span class="slds-badge slds-theme_error">Alerts</span>
-                            </template></p>
+                            <p><strong>{loc.locationParentBlock} - {loc.locationName}</strong></p>
                             <div class="slds-border_top"></div>
-                            <lightning-button variant="Neutral" label={loc.animalName} title="Click for Details" onclick={handleAnimalClick} data-id={loc.animalId}></lightning-button>
-                            <p><strong> - No. of Days in Shelter: {loc.animalStayLength}</strong></p>
-                            <p>Animal Status: <strong>{loc.animalStatus}</strong></p>
-                            <div class="slds-border_top"></div>
-                            <p><strong>Next Action</strong></p>
-                            <p>{loc.animalActionType} - {loc.animalActionDescription} - {loc.animalActionDateTime}</p>
+                            <template if:true={loc.animalName}>
+                                <lightning-button variant="Neutral" label={loc.animalName} title="Click for Details" onclick={handleAnimalClick} data-id={loc.animalId}></lightning-button>
+                                <template if:true={loc.animalAlertsFlag}>
+                                    <span class="slds-badge slds-theme_error">Alerts</span>
+                                </template>
+                                <p>No. of Days in Shelter: <strong>{loc.animalStayLength}</strong></p>
+                                <p>Animal Status: <strong>{loc.animalStatus}</strong></p>
+                                <div class="slds-border_top"></div>
+                                <p><strong>Next Action</strong></p>
+                                <p>{loc.animalActionType} - {loc.animalActionDescription} - {loc.animalActionDateTime}</p>
+                            </template>
                         </div>
                         <template if:true={isModalOpen}>
                             <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-modal="true" aria-labelledby="modal-heading-01">
@@ -33,10 +35,9 @@
                                                 <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
                                                 <span class="slds-assistive-text">Close</span>
                                             </button>
-                                            <h2 class="slds-modal__title"> Animal Details</h2>
+                                            <h2 class="slds-modal__title"> Details for {selectedAnimal.animalName}</h2>
                                         </header>
                                         <div class="slds-modal__content slds-var-p-around_medium">
-                                            <p>Name: <strong>{selectedAnimal.animalName}</strong></p>
                                             <p>Status: <strong>{selectedAnimal.animalStatus}</strong></p>
                                             <p>Current Weight: <strong>{selectedAnimal.animalCurrentWeight}</strong></p>
                                             <p>Gender: <strong>{selectedAnimal.animalGender}</strong></p>

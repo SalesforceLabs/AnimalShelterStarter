@@ -65,10 +65,12 @@ public with sharing class ShelterDashboardController {
                 wrapper.animalSpecies = relatedAnimal.animalshelters__Species__c;
                 wrapper.animalType = relatedAnimal.animalshelters__TypeFromBreeds__c;
                 if(relatedAnimal.animalshelters__Animal_Actions__r.size() == 0) {
+                    wrapper.animalActionId = null;
                     wrapper.animalActionType = 'None';
                     wrapper.animalActionDatetime = null;
                     wrapper.animalActionDescription = null;
                 } else {
+                    wrapper.animalActionId = relatedAnimal.animalshelters__Animal_Actions__r.get(0).Id;
                     wrapper.animalActionType = relatedAnimal.animalshelters__Animal_Actions__r.get(0).animalshelters__Action_Type__c;
                     wrapper.animalActionDateTime = relatedAnimal.animalshelters__Animal_Actions__r.get(0).animalshelters__Date_Time_of_Action__c.format('dd-MM-yyyy HH:mm', UserInfo.getTimeZone().getID());
                     wrapper.animalActionDescription = relatedAnimal.animalshelters__Animal_Actions__r.get(0).animalshelters__Description__c;
@@ -108,6 +110,8 @@ public with sharing class ShelterDashboardController {
         @AuraEnabled public String animalColour;
         @AuraEnabled public String animalSpecies;
         @AuraEnabled public String animalType;
+        @AuraEnabled public String animalActionId;
         }
 
     }
+

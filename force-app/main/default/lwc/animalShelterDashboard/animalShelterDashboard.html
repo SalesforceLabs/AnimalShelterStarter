@@ -46,6 +46,9 @@
                                                 <span class="slds-assistive-text">Close</span>
                                             </button>
                                             <h2 class="slds-modal__title"> Details for {currentAnimal.animal.animalshelters__Animal_Name__c}</h2>
+                                            <template if:true={currentAnimal.animal.animalshelters__Alerts_Present__c}>
+                                                <span class="slds-badge slds-theme_error">Alerts</span>
+                                            </template>
                                         </div>
                                         <div class="slds-modal__content slds-var-p-around_medium">
                                             <p>Status: <strong>{currentAnimal.animal.animalshelters__Animal_Status__c}</strong></p>

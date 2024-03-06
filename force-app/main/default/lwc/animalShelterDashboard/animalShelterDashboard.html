@@ -18,17 +18,18 @@
                             <div class="slds-border_top"></div>
                             <template if:true={loc.animals}>
                                 <template for:each={loc.animals} for:item="animal">
-                                    <p key={animal.animal.Id} data-id={animal.animal.Id} onclick={handleAnimalClick}> {animal.animal.animalshelters__Animal_Name__c} </p>
-                                <template for:each={animal.upcomingActions} for:item="action">
+                                    <div key={animal.animal.Id}>
+                                    <lightning-button variant="Neutral" label={animal.animal.animalshelters__Animal_Name__c} title="Click for Details" onclick={handleAnimalClick} data-id={animal.animal.Id}></lightning-button>
+                                    </div>
+                                    <template for:each={animal.upcomingActions} for:item="action">
                                     <div key={action.Id}>
-                                        {action.animalshelters__Action_Type__c} - {action.animalshelters__Description__c} - 
-                                            <lightning-formatted-date-time value={action.animalshelters__Date_Time_of_Action__c}
-                                                year="numeric"
-                                                month="2-digit"
-                                                day="2-digit"
-                                                hour="2-digit"
-                                                minute="2-digit"
-                                                time-zone="UTC"></lightning-formatted-date-time>
+                                        {action.animalshelters__Action_Type__c} - <lightning-formatted-date-time value={action.animalshelters__Date_Time_of_Action__c}
+                                                                                                                                year="numeric"
+                                                                                                                                month="2-digit"
+                                                                                                                                day="2-digit"
+                                                                                                                                hour="2-digit"
+                                                                                                                                minute="2-digit"
+                                                                                                                                time-zone="UTC"></lightning-formatted-date-time>
                                     </div>
                                 </template>
                             </template>
@@ -39,22 +40,37 @@
                         <template if:true={isModalOpen}>
                             <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-modal="true" aria-labelledby="modal-heading-01">
                                 <div class="slds-modal__container">
-                                        <header class="slds-modal__header">
-                                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" aria-label="Close" onclick={handleModalClose}>
+                                        <div class="slds-modal__header">
+                                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleModalClose}>
                                                 <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
                                                 <span class="slds-assistive-text">Close</span>
                                             </button>
                                             <h2 class="slds-modal__title"> Details for {currentAnimal.animal.animalshelters__Animal_Name__c}</h2>
-                                        </header>
+                                        </div>
                                         <div class="slds-modal__content slds-var-p-around_medium">
                                             <p>Status: <strong>{currentAnimal.animal.animalshelters__Animal_Status__c}</strong></p>
                                             <p>Current Weight: <strong>{currentAnimal.animal.animalshelters__Current_Weight__c}</strong></p>
                                             <p>Gender: <strong>{currentAnimal.animal.animalshelters__Gender__c}</strong></p>
                                             <p>Colour: <strong>{currentAnimal.animal.animalshelters__Colour__c}</strong></p>
                                             <p>Type/Species: <strong>{currentAnimal.animal.animalshelters__TypeFromBreeds__c}/{currentAnimal.animal.animalshelters__Species__c}</strong></p>
+                                        <template if:true={currentAnimal.upcomingActions}>
+                                            <p><strong>Upcoming Actions</strong></p>
+                                            <div class="slds-border_top"></div>
+                                            <template for:each={currentAnimal.upcomingActions} for:item="action">
+                                                <div key={action.Id}>
+                                                    {action.animalshelters__Action_Type__c} - {action.animalshelters__Description__c} - <lightning-formatted-date-time value={action.animalshelters__Date_Time_of_Action__c}
+                                                    year="numeric"
+                                                    month="2-digit"
+                                                    day="2-digit"
+                                                    hour="2-digit"
+                                                    minute="2-digit"
+                                                    time-zone="UTC"></lightning-formatted-date-time> 
+                                                </div>
+                                            </template>
+                                        </template>
                                         </div>
                                         <footer class="slds-modal__footer">
-                                            <lightning-button variant="neutral" label="Close" onclick={handleModalClose}></lightning-button>
+                                            <button class="slds-button slds-button_neutral" onclick={handleModalClose}>Close</button>
                                         </footer>
                                 </div>
                             </section>

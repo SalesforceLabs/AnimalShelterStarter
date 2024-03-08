@@ -21,18 +21,17 @@
                                     <div key={animal.animal.Id}>
                                     <lightning-button variant="base" label={animal.animal.animalshelters__Animal_Name__c} title="Click for Details" onclick={handleAnimalClick} data-id={animal.animal.Id}></lightning-button>
                                     </div>
-                                    <template for:each={animal.upcomingActions} for:item="action">
-                                    <div key={action.Id}>
-                                        {action.animalshelters__Action_Type__c} - <lightning-formatted-date-time value={action.animalshelters__Date_Time_of_Action__c}
-                                                                                                                                year="numeric"
-                                                                                                                                month="2-digit"
-                                                                                                                                day="2-digit"
-                                                                                                                                hour="2-digit"
-                                                                                                                                minute="2-digit"
-                                                                                                                                time-zone="UTC"></lightning-formatted-date-time>
-                                    </div>
-                                </template>
+                                        <template for:each={animal.upcomingActions} for:item="action">
+                                            <div key={action.Id} class="slds-var-m-around_small">
+                                                {action.Name}
+                                                <span class={action.badgeClass}>
+                                                    {action.RecordType.Name}
+                                                </span>
+                                            </div>
+                                        </template>
                             </template>
+                        </div>
+                    </div>
                 </template>
             </div>
 

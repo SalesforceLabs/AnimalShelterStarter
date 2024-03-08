@@ -14,13 +14,19 @@ export default class AnimalShelterDashboard extends LightningElement {
     @wire(getLocationsWithAnimals, { site: '$selectedSite' })
     wiredLocations({ error, data }){
         if (data) {
-            this.locations = data;
-            this.error = undefined;
             console.log('Data Returned: ', data);
+            this.locations = JSON.parse(JSON.stringify(data)).map(location => {
+                location.animals = location.animals.map(animal => {
+                    animal.upcomingActions = this.processActions(animal.upcomingActions);
+                    console.log('Stage :2', location.animals);
+                    console.log('Stage :3', animal.upcomingActions);
+                    return animal;
+                });
+                return location;
+            });
         } else if (error) {
             console.log('Error Returned: ', error);
             this.error = error;
-            this.locations = undefined;
             const event = new ShowToastEvent({
                 title: 'Error',
                 message: error.message,
@@ -29,6 +35,22 @@ export default class AnimalShelterDashboard extends LightningElement {
             this.dispatchEvent(event);
         }
     }
+
+    processActions(actions) {
+        const badgeClassMap = {
+            'Treatment': 'badge-treatment',
+            'Nutrition': 'badge-nutrition',
+            'Exercise': 'badge-exercise'
+        };
+
+        return actions.map(action => {
+            const recordTypeName = action.RecordType.Name;
+            const badgeClass = badgeClassMap[recordTypeName];
+            action.badgeClass = badgeClass;
+            return action;
+         });
+    }
+
 
     @wire(getSites)
     wiredSites({ error, data }){

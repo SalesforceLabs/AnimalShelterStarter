@@ -5,3 +5,27 @@
     border-radius: 10px;
     text-align: left;
 }
+
+.badge-treatment { 
+    background-color: blue;
+    color: white;
+    border-radius: 12px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.badge-exercise  { 
+    background-color: orange;
+    color: white;
+    border-radius: 12px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.badge-nutrition {
+    background-color: green;
+    color: white;
+    border-radius: 12px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}

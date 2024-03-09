@@ -955,6 +955,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Condition__c.Condition_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Condition__c.End_Date_Time__c</field>
         <readable>true</readable>
     </fieldPermissions>

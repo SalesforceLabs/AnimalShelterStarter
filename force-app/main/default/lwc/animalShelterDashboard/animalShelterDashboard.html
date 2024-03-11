@@ -27,6 +27,9 @@
                                                 <span class={action.badgeClass}>
                                                     {action.RecordType.Name}
                                                 </span>
+                                                <template if:true={animal.hasConditions}>
+                                                    <span class="badge-condition">Condition</span>
+                                                </template>
                                             </div>
                                         </template>
                             </template>

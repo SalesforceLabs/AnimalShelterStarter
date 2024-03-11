@@ -1,5 +1,7 @@
+ <!-- Animal Shelters Dashboard -->
 <template>
     <lightning-card title="Animal Shelter Dashboard" icon-name="standard:dashboard_component">
+        <!-- Setup Up Dropdown Box-->
         <lightning-combobox 
             name="siteSelector" 
             label="Select a Site" 
@@ -9,78 +11,39 @@
             onchange={handleSiteChange}></lightning-combobox>
 
             <div class="slds-var-m-bottom_small"></div>
+        <!-- Display each Unit as a Box --> 
         <template if:true={locations}>
             <div class="slds-grid slds-wrap">
                 <template for:each={locations} for:item="loc">
                     <div key={loc.location.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4 slds-var-p-horizontal_small">
                         <div class="record-box slds-box slds-theme_default slds-theme_shade slds-var-p-around_small slds-var-m-bottom_small">
                             <h3>{loc.location.animalshelters__Parent_Block_Name__c} - {loc.location.animalshelters__Name__c}</h3>
-                            <div class="slds-border_top"></div>
+
+                            <!-- Display each Animal -->
                             <template if:true={loc.animals}>
                                 <template for:each={loc.animals} for:item="animal">
-                                    <div key={animal.animal.Id}>
-                                    <lightning-button variant="base" label={animal.animal.animalshelters__Animal_Name__c} title="Click for Details" onclick={handleAnimalClick} data-id={animal.animal.Id}></lightning-button>
-                                    </div>
-                                        <template for:each={animal.upcomingActions} for:item="action">
-                                            <div key={action.Id} class="slds-var-m-around_small">
-                                                {action.Name}
-                                                <span class={action.badgeClass}>
-                                                    {action.RecordType.Name}
-                                                </span>
-                                                <template if:true={animal.hasConditions}>
-                                                    <span class="badge-condition">Condition</span>
-                                                </template>
-                                            </div>
-                                        </template>
-                            </template>
-                        </div>
-                    </div>
-                </template>
-            </div>
-
-
-                        <template if:true={isModalOpen}>
-                            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-modal="true" aria-labelledby="modal-heading-01">
-                                <div class="slds-modal__container">
-                                        <div class="slds-modal__header">
-                                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleModalClose}>
-                                                <lightning-button-icon icon-name="utility:close" size="small"><label>Close</label></lightning-button-icon>
-                                                <span class="slds-assistive-text">Close</span>
-                                            </button>
-                                            <h2 class="slds-modal__title"> Details for {currentAnimal.animal.animalshelters__Animal_Name__c}</h2>
-                                            <template if:true={currentAnimal.animal.animalshelters__Alerts_Present__c}>
-                                                <span class="slds-badge slds-theme_error">Alerts</span>
-                                            </template>
-                                        </div>
-                                        <div class="slds-modal__content slds-var-p-around_medium">
-                                            <p>Status: <strong>{currentAnimal.animal.animalshelters__Animal_Status__c}</strong></p>
-                                            <p>Current Weight: <strong>{currentAnimal.animal.animalshelters__Current_Weight__c}</strong></p>
-                                            <p>Gender: <strong>{currentAnimal.animal.animalshelters__Gender__c}</strong></p>
-                                            <p>Colour: <strong>{currentAnimal.animal.animalshelters__Colour__c}</strong></p>
-                                            <p>Type/Species: <strong>{currentAnimal.animal.animalshelters__TypeFromBreeds__c}/{currentAnimal.animal.animalshelters__Species__c}</strong></p>
-                                        <template if:true={currentAnimal.upcomingActions}>
-                                            <p><strong>Upcoming Actions</strong></p>
-                                            <div class="slds-border_top"></div>
-                                            <template for:each={currentAnimal.upcomingActions} for:item="action">
-                                                <div key={action.Id}>
-                                                    {action.animalshelters__Action_Type__c} - {action.animalshelters__Description__c} - <lightning-formatted-date-time value={action.animalshelters__Date_Time_of_Action__c}
-                                                    year="numeric"
-                                                    month="2-digit"
-                                                    day="2-digit"
-                                                    hour="2-digit"
-                                                    minute="2-digit"
-                                                    time-zone="UTC"></lightning-formatted-date-time> 
+                                    <div key={animal.animal.Id} class="slds-box slds-theme_default slds-var-p-around_medium">
+                                        <p><strong>{animal.animal.animalshelters__Animal_Name__c}</strong></p>
+                                        <div class="slds-border_top"></div>
+                                        <p>Status: <strong>{animal.animal.animalshelters__Animal_Status__c}</strong></p>
+                                        <p>Type/Species: <strong>{animal.animal.animalshelters__TypeFromBreeds__c}/{animal.animal.animalshelters__Species__c}</strong></p>
+                                        <p>Colour: <strong>{animal.animal.animalshelters__Colour__c}</strong></p>
+                                        <div class="slds-grid slds-gutters_x-small">
+                                            <template if:true={animal.hasConditions}>
+                                                <div class="slds-col">
+                                                    <span class="badge badge-condition">Condition</span>
                                                 </div>
                                             </template>
-                                        </template>
+                                            <template for:each={animal.upcomingActions} for:item="action">
+                                                <div key={action.Id} class="slds-col">
+                                                    <span class={action.badgeClass}>{action.RecordType.Name}</span>
+                                                </div>
+                                            </template>
                                         </div>
-                                        <footer class="slds-modal__footer">
-                                            <button class="slds-button slds-button_neutral" onclick={handleModalClose}>Close</button>
-                                        </footer>
-                                </div>
-                            </section>
-                            <div class="slds-backdrop slds-backdrop_open"></div>
-                        </template>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
                     </div>
                 </template>
             </div>

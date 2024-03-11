@@ -18,17 +18,6 @@ export default class AnimalShelterDashboard extends LightningElement {
             this.locations = JSON.parse(JSON.stringify(data)).map(location => {
                 location.animals = location.animals.map(animal => {
                     animal.upcomingActions = this.processActions(animal.upcomingActions);
-
-                    console.log('Conditions', animal.animalshelters___Conditions__r);
-                    
-                    if(animal.animalshelters___Conditions__r && animal.animalshelters__Conditions__r.length >0){
-                        animal.hasConditions = true;
-                    } else {
-                        animal.hasConditions = false;
-                    }
-                    console.log('Stage :2', location.animals);
-                    console.log('Stage :3', animal.upcomingActions);
-                    console.log('Stage :4', animal.hasConditions);
                     return animal;
                 });
                 return location;

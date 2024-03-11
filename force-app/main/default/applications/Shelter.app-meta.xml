@@ -42,7 +42,6 @@
     <navType>Console</navType>
     <tabs>standard-home</tabs>
     <tabs>Location_Dashboard</tabs>
-    <tabs>Shelter_Dashboard</tabs>
     <tabs>Animal__c</tabs>
     <tabs>Animal_Action__c</tabs>
     <tabs>Adoption__c</tabs>
@@ -91,9 +90,6 @@
         </mappings>
         <mappings>
             <tab>Medicine__c</tab>
-        </mappings>
-        <mappings>
-            <tab>Shelter_Dashboard</tab>
         </mappings>
         <mappings>
             <tab>standard-Dashboard</tab>

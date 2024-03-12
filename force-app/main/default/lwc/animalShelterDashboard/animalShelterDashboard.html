@@ -29,11 +29,19 @@
                                         <p>Type/Species: <strong>{animal.animal.animalshelters__TypeFromBreeds__c}/{animal.animal.animalshelters__Species__c}</strong></p>
                                         <p>Colour: <strong>{animal.animal.animalshelters__Colour__c}</strong></p>
                                         <div class="slds-grid slds-gutters_x-small">
+                                            <!--If Animal has a Condition, display badge-->
                                             <template if:true={animal.hasConditions}>
                                                 <div class="slds-col">
                                                     <span class="badge badge-condition">Condition</span>
                                                 </div>
                                             </template>
+                                            <!-- If Animal has an Alert, display badge-->
+                                            <template if:true={animal.hasAlerts}>
+                                                <div class="slds-col">
+                                                    <span class="badge badge-alert">Alerts</span>
+                                                </div>
+                                            </template>
+                                            <!-- If Animal has Actions, then display badge per Action Type-->
                                             <template for:each={animal.upcomingActions} for:item="action">
                                                 <div key={action.Id} class="slds-col">
                                                     <span class={action.badgeClass}>{action.RecordType.Name}</span>

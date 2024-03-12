@@ -1,6 +1,6 @@
 /**
  * @File Name          : AnimalShelterDashboardController.apxc
- * @Description        : Gets Locations, Animals, Actions and Condition data to display in LWC
+ * @Description        : Gets Locations, Animals, Actions, Alerts and Condition data to display in LWC
  *                     : Used by LWC animalShelterDashboard
  * @Author             : Chris Rolfe (Salesforce)
  * @Group              :
@@ -27,6 +27,8 @@ public with sharing class AnimalShelterDashboardController {
         public List<animalshelters__Animal_Action__c> upcomingActions;
         @AuraEnabled
         public Boolean hasConditions;
+        @AuraEnabled
+        public Boolean hasAlerts;
     }
 
     @AuraEnabled(cacheable=true)
@@ -60,11 +62,20 @@ public with sharing class AnimalShelterDashboardController {
 
         // Query for Condition records related to Animal records
         Map<Id, List<animalshelters__Condition__c>> animalConditionMap = new Map<Id, List<animalshelters__Condition__c>>();
-        for (animalshelters__Condition__c cond: [SELECT Id, animalshelters__Animal__c FROM animalshelters__Condition__c WHERE animalshelters__Animal__c IN :animalIds WITH SECURITY_ENFORCED]) {
+        for (animalshelters__Condition__c cond: [SELECT Id, animalshelters__Animal__c FROM animalshelters__Condition__c WHERE animalshelters__Animal__c IN :animalIds AND animalshelters__End_Date_Time__c = null WITH SECURITY_ENFORCED]) {
             if (!animalConditionMap.containsKey(cond.animalshelters__Animal__c)){
                 animalConditionMap.put(cond.animalshelters__Animal__c, new List<animalshelters__Condition__c>());
             }
             animalConditionMap.get(cond.animalshelters__Animal__c).add(cond);
+        }
+
+        //Query for Alert records related to Animal records
+        Map<Id, List<animalshelters__Animal_Alert__c>> animalAlertMap = new Map<Id, List<animalshelters__Animal_Alert__c>>();
+        for (animalshelters__Animal_Alert__c alert: [SELECT Id, animalshelters__Animal__c FROM animalshelters__Animal_Alert__c WHERE animalshelters__Animal__c IN :animalIds AND animalshelters__End_Date_Time__c = null WITH SECURITY_ENFORCED]) {
+            if (!animalAlertMap.containsKey(alert.animalshelters__Animal__c)){
+                animalAlertMap.put(alert.animalshelters__Animal__c, new List<animalshelters__Animal_Alert__c>());
+            }
+            animalAlertMap.get(alert.animalshelters__Animal__c).add(alert);
         }
 
         // Construct response Wrapper
@@ -77,8 +88,9 @@ public with sharing class AnimalShelterDashboardController {
                     AnimalWrapper aniWrapper = new AnimalWrapper();
                     aniWrapper.animal = animalsMap.get(mov.animalshelters__Animal__c);
                     aniWrapper.upcomingActions = aniWrapper.animal.animalshelters__Animal_Actions__r;
-                    // Set hasConditons flag based on the presence of related Condition records
+                    // Set hasConditons and hasAlerts flags based on the presence of related Condition/Alert records
                     aniWrapper.hasConditions = animalConditionMap.containsKey(mov.animalshelters__Animal__c) && !animalConditionMap.get(mov.animalshelters__Animal__c).isEmpty();
+                    aniWrapper.hasAlerts = animalAlertMap.containsKey(mov.animalshelters__Animal__c) && !animalAlertMap.get(mov.animalshelters__Animal__c).isEmpty();
                     locWrapper.animals.add(aniWrapper);
                 }
             } 

@@ -2500,6 +2500,12 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>animalHistoryWeightChart</componentName>
+                <identifier>animalshelters_animalHistoryWeightChart</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>microchipLookup</componentName>
                 <identifier>c_microchipLookup</identifier>
             </componentInstance>

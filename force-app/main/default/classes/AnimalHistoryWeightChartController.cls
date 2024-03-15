@@ -8,7 +8,7 @@
 public with sharing class AnimalHistoryWeightChartController {
 
     @AuraEnabled(cacheable=true)
-    public static List<HistoryData> getWeigthHistory(String recordId) {
+    public static List<HistoryData> getWeightHistory(String recordId) {
         List<HistoryData> historyDataList = new List<HistoryData>();
         
         // Get data for the last 30 days, and use format() method on CreatedDate
@@ -23,6 +23,7 @@ public with sharing class AnimalHistoryWeightChartController {
                 historyDataList.add(new HistoryData(history.CreatedDate.format('yyyy-MM-dd'), (Decimal)history.NewValue));
             }
         }
+        system.debug(historyDataList);
         return historyDataList;
     }
 

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Animal Weight Chart" icon-name="utility:chart">
+        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+            <div if:true={chartjsInitialized} class="slds-col_padded slds-size_1-of-1">
+                <canvas class="linechart" lwc:dom="manual"></canvas>
+            </div>
+            <div if:false={chartjsInitialized} class="slds-col_padded slds-size_1-of-1">
+                ChartJs Note loaded yet
+            </div>
+            <div class="slds-col_padded slds-size_1-of-1">
+                Weight in kg
+            </div>
+        </div>
+    </lightning-card>
+    
+</template>

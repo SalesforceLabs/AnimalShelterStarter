@@ -15,7 +15,7 @@ public with sharing class AnimalHistoryWeightChartController {
         for (animalshelters__Animal__History history : [SELECT OldValue, NewValue, CreatedDate
                                                         FROM animalshelters__Animal__History
                                                         WHERE Field = 'animalshelters__Current_Weight__c' 
-                                                        AND CreatedDate > LAST_N_DAYS:30
+                                                        AND CreatedDate = LAST_N_DAYS:30
                                                         AND ParentId = :recordId
                                                         WITH SECURITY_ENFORCED
                                                         ORDER BY CreatedDate ASC]) {

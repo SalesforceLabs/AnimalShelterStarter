@@ -29,7 +29,7 @@ public class AnimalHistoryWeightController {
             	if (history.NewValue != null) {
                 	String formattedDate = history.CreatedDate.format('yyyy-MM-dd');
                 	Decimal newValue = (Decimal)history.NewValue;
-                	historyDataList.add(new HistoryData(formattedDate, newValue));
+                	historyDataList.add(new HistoryData(recordId, formattedDate, newValue));
             	}
         	}
         	return historyDataList;
@@ -39,7 +39,7 @@ public class AnimalHistoryWeightController {
     
     //Mock service implementation for Testing
     @TestVisible
-    public class MockHistoryDataService implements IHistoryDataService {
+    private class MockHistoryDataService implements IHistoryDataService {
         private List<HistoryData> mockData;
         
         public MockHistoryDataService(List<HistoryData> mockData) {
@@ -51,6 +51,12 @@ public class AnimalHistoryWeightController {
     	}
 
 	}
+
+    //Method for testing to inject mock service
+    //@TestVisible
+    //private static void setMockService(IHistoryDataService mockService) {
+    //    IHistoryDataService service = mockService;
+    //}
     
     //Controller Logic
     @AuraEnabled(cacheable=true)
@@ -60,10 +66,12 @@ public class AnimalHistoryWeightController {
     }
 
     public class HistoryData {
+        @AuraEnabled public Id cwParentId {get; set;}
         @AuraEnabled public String cwDate {get; set;}
         @AuraEnabled public Decimal cwWeight {get; set;}
 
-        public HistoryData(String cwDate, Decimal cwWeight) {
+        public HistoryData(Id cwParentId, String cwDate, Decimal cwWeight) {
+            this.cwParentId = cwParentId;
             this.cwDate = cwDate;
             this.cwWeight = cwWeight;
         }

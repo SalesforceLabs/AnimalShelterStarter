@@ -2,7 +2,7 @@
 private class AnimalHistoryWeightControllerTest {
 
     // Helper method to create a test animal and return its Id
-    Private static Id createTestAnimal() {
+    private static Id createTestAnimal() {
         animalshelters__Animal__c testAnimal = new animalshelters__Animal__c(animalshelters__Animal_Name__c = 'Tandy', animalshelters__Date_of_Arrival__c = Date.today());
         Insert testAnimal;
         return testAnimal.Id;
@@ -15,7 +15,7 @@ private class AnimalHistoryWeightControllerTest {
             new AnimalHistoryWeightController.HistoryData('2024-03-10', 20),
             new AnimalHistoryWeightController.HistoryData('2024-03-15', 22)
         };
-        AnimalHistoryWeightController.setMockService(new AnimalHistoryWeightController.MockHistoryDataService(mockData));
+        AnimalHistoryWeightController.MockHistoryDataService mockService = new AnimalHistoryWeightController.MockHistoryDataService(mockData);
     }
 
     @isTest

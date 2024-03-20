@@ -8,7 +8,7 @@
 import { LightningElement, api, wire, track } from 'lwc';
 import { loadScript } from 'lightning/platformResourceLoader';
 import chartjs from '@salesforce/resourceUrl/chartjs280';
-import getWeightHistory from '@salesforce/apex/AnimalHistoryWeightChartController.getWeightHistory';
+import getWeightHistory from '@salesforce/apex/AnimalHistoryWeightController.getWeightHistory';
 
 export default class AnimalHistoryWeightChart extends LightningElement {
     @api recordId;

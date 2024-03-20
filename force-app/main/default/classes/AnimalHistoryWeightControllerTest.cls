@@ -1,25 +1,32 @@
 @isTest
 private class AnimalHistoryWeightControllerTest {
+
+    // Helper method to create a test animal and return its Id
+    Private static Id createTestAnimal() {
+        animalshelters__Animal__c testAnimal = new animalshelters__Animal__c(animalshelters__Animal_Name__c = 'Tandy', animalshelters__Date_of_Arrival__c = Date.today());
+        Insert testAnimal;
+        return testAnimal.Id;
+    }
     
+    // Helper method to setup mock data
+    private static void setupMockData() {
+        
+        List<AnimalHistoryWeightController.HistoryData> mockData = new List<AnimalHistoryWeightController.HistoryData> {
+            new AnimalHistoryWeightController.HistoryData('2024-03-10', 20),
+            new AnimalHistoryWeightController.HistoryData('2024-03-15', 22)
+        };
+        AnimalHistoryWeightController.setMockService(new AnimalHistoryWeightController.MockHistoryDataService(mockData));
+    }
+
     @isTest
     static void testGetWeightHistoryWithMock() {
         
-        // Helper method to create a test animal and return its Id
-    	animalshelters__Animal__c testAnimal = new animalshelters__Animal__c(animalshelters__Animal_Name__c = 'Tandy', animalshelters__Date_of_Arrival__c = Date.today());
-       	Insert testAnimal;
-        
-        // Helper method to setup mock data
-    	List<AnimalHistoryWeightChartController.HistoryData> mockData = new List<AnimalHistoryWeightChartController.HistoryData> {
-            	new AnimalHistoryWeightChartController.HistoryData('2024-03-10', 20),
-            	new AnimalHistoryWeightChartController.HistoryData('2024-03-15', 22)
-        };
-        AnimalHistoryWeightChartController.setMockService(new MockHistoryDataService(mockData));
-        
+        setupMockData();
+        Id testAnimalId = createTestAnimal();
+        Integer numberOfDays = 30;
 
-        
-        //Assuming 'someRecordId' is a valid record ID for the test
         Test.startTest();
-        List<AnimalHistoryWeightChartController.HistoryData> result = AnimalHistoryWeightChartController.getWeightHistory(testAnimal.Id);
+        List<AnimalHistoryWeightController.HistoryData> result = AnimalHistoryWeightController.getWeightHistory(testAnimalId, numberOfDays);
         Test.stopTest();
         
         //Assert based on Mock Data

@@ -7,4 +7,9 @@
     <targets>
         <target>lightning__RecordPage</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="numberOfDays" type="Integer" label="Number of Days" description="Enter the number of days to display results for." default="30" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

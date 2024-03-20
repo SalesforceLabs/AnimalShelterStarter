@@ -12,10 +12,11 @@ import getWeightHistory from '@salesforce/apex/AnimalHistoryWeightController.get
 
 export default class AnimalHistoryWeightChart extends LightningElement {
     @api recordId;
+    @api numberOfDays;
     @track chartjsInitialized = false;
     chart;
 
-    @wire(getWeightHistory, { recordId: '$recordId' })
+    @wire(getWeightHistory, { recordId: '$recordId', noOfDays: '$numberOfDays' })
     weightHistory({ error, data }) {
         if (data) {
             console.log(JSON.stringify(data));

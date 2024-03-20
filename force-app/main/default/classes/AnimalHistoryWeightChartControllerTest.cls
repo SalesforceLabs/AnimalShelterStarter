@@ -28,8 +28,9 @@ private class AnimalHistoryWeightChartControllerTest {
         
         //Assuming 'someRecordId' is a valid record ID for the test
         String someRecordId = testAnimalId;
+        Integer numberOfDays = 30;
         Test.startTest();
-        List<AnimalHistoryWeightChartController.HistoryData> result = AnimalHistoryWeightChartController.getWeightHistory(somerecordId);
+        List<AnimalHistoryWeightChartController.HistoryData> result = AnimalHistoryWeightChartController.getWeightHistory(somerecordId, numberOfDays);
         Test.stopTest();
         
         //Assert based on Mock Data

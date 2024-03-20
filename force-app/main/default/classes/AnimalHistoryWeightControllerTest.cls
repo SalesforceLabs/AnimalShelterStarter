@@ -60,7 +60,11 @@ private class AnimalHistoryWeightControllerTest {
 
         List<AnimalHistoryWeightController.HistoryData> mockResponseEmpty = new List<AnimalHistoryWeightController.HistoryData>();
         AnimalHistoryWeightController.historyService = new MockAnimalHistoryService(mockResponseEmpty);
+
+        Test.startTest();
         List<AnimalHistoryWeightController.HistoryData> resultEmpty = AnimalHistoryWeightController.getWeightHistory(testAnimalId, numberOfDays);
+        Test.stopTest();
+        
         System.assertEquals(0, resultEmpty.Size(), 'Expected no history data returned');
 
     }

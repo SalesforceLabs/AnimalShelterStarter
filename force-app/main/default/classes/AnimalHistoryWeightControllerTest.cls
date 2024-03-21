@@ -1,11 +1,11 @@
 @isTest
 private class AnimalHistoryWeightControllerTest {
 
+    @TestSetup static void makeData(){
+        
      // Helper method to create a test animal and return its Id
-     Private static Id createTestAnimal() {
         animalshelters__Animal__c testAnimal = new animalshelters__Animal__c(animalshelters__Animal_Name__c = 'Tandy', animalshelters__Date_of_Arrival__c = Date.today());
         Insert testAnimal;
-        return testAnimal.Id;
     }
     
     private class MockAnimalHistoryService implements AnimalHistoryWeightController.AnimalHistoryService {
@@ -19,13 +19,12 @@ private class AnimalHistoryWeightControllerTest {
             return this.mockResponse;
         }
     }
-    
 
     @isTest
     static void testGetWeightHistoryWithMock() {
 
-        Id testAnimalId = createTestAnimal();
         Integer numberOfDays = 30;
+        animalshelters__Animal__c testAnimal = [SELECT Id FROM animalshelters__Animal__c ];
     
         List<AnimalHistoryWeightController.HistoryData> mockResponse = new List<AnimalHistoryWeightController.HistoryData> {
             new AnimalHistoryWeightController.HistoryData('2024-03-10', 20),
@@ -34,8 +33,9 @@ private class AnimalHistoryWeightControllerTest {
         
         AnimalHistoryWeightController.historyService = new MockAnimalHistoryService(mockResponse);
 
+
         Test.startTest();
-        List<AnimalHistoryWeightController.HistoryData> result = AnimalHistoryWeightController.getWeightHistory(testAnimalId, numberOfDays);
+        List<AnimalHistoryWeightController.HistoryData> result = AnimalHistoryWeightController.getWeightHistory(testAnimal.Id, numberOfDays);
         Test.stopTest();
         
         //Assert based on Mock Data
@@ -55,14 +55,14 @@ private class AnimalHistoryWeightControllerTest {
     @isTest
     static void testGetWeightHistoryWithNoMockData() {
 
-        Id testAnimalId = createTestAnimal();
+        animalshelters__Animal__c testAnimal = [SELECT Id FROM animalshelters__Animal__c ];
         Integer numberOfDays = 30;
 
         List<AnimalHistoryWeightController.HistoryData> mockResponseEmpty = new List<AnimalHistoryWeightController.HistoryData>();
         AnimalHistoryWeightController.historyService = new MockAnimalHistoryService(mockResponseEmpty);
 
         Test.startTest();
-        List<AnimalHistoryWeightController.HistoryData> resultEmpty = AnimalHistoryWeightController.getWeightHistory(testAnimalId, numberOfDays);
+        List<AnimalHistoryWeightController.HistoryData> resultEmpty = AnimalHistoryWeightController.getWeightHistory(testAnimal.Id, numberOfDays);
         Test.stopTest();
         
         System.assertEquals(0, resultEmpty.Size(), 'Expected no history data returned');

@@ -1,0 +1,13 @@
+.badge {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 12px;
+    color: white;
+    margin-right: 10px;
+}
+.alert { background-color: red; }
+.condition { background-color: grey; }
+.nutrition { background-color: green; }
+.exercise { background-color: orange; }
+.treatment { background-color: blue; }
+.vaccination { background-color: pink; }

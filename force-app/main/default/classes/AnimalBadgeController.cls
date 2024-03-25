@@ -46,7 +46,7 @@ public with sharing class AnimalBadgeController {
         }
 
         // Check for Action Records and RecordTypes
-        if(Schema.sObjectType.animalshelters__Animal_Action__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.RecordType.Name.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Treatment_Type__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Action_Completed__c.isAccessible()) {
+        if(Schema.sObjectType.animalshelters__Animal_Action__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Treatment_Type__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Action_Completed__c.isAccessible()) {
         List<animalshelters__Animal_Action__c> actions = [SELECT Id, RecordType.Name, animalshelters__Treatment_Type__c
                                                             FROM animalshelters__Animal_Action__c
                                                             WHERE animalshelters__Animal__c = :animalId

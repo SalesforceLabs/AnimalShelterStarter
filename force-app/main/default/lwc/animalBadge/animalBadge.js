@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import { subscribe, unsubscribe, onError } from 'lightning/empApi';
+import { subscribe, unsubscribe, onError, setDebugFlag, isEmpEnabled } from 'lightning/empApi';
 import getRelatedBadges from '@salesforce/apex/AnimalBadgeController.getRelatedBadges';
 
 export default class AnimalBadge extends LightningElement {
@@ -20,33 +20,31 @@ export default class AnimalBadge extends LightningElement {
         }
     }
 
+    // Initializes the component
     connectedCallback() {
+        // Register error listener
         this.registerErrorListener();
-        this.subscribeToPlatformEvent();
+        this.handleSubscribe()
     }
+    
+    // Handles subscribe button click
+    handleSubscribe() {
+        // Callback invoked whenever a new event message is received
+        const messageCallback = (response) => {
+            console.log('New message received: ', JSON.stringify(response));
+            // Response contains the payload of the new message received
+            //this.handleEvent(response);
+        };
 
-    disconnectedCallback() {
-        this.unsubscribeFromPlatformEvent();
-    }
-
-    subscribeToPlatformEvent() {
-        subscribe(this.channelName, -1, (response) => {
-            this.handleEvent(response);
-        }).then((response) => {
-            console.log('Successfully subscribed to event channel.', response);
+        // Invoke subscribe method of empApi. Pass reference to messageCallback
+        subscribe(this.channelName, -1, messageCallback).then((response) => {
+            // Response contains the subscription information on subscribe call
+            console.log('Subscription request sent to: ', JSON.stringify(response.channel));
             this.subscription = response;
-        }).catch(error => {
-            console.error('Subscription error', error);
         });
     }
 
-    unsubscribeFromPlatformEvent() {
-        unsubscribe(this.subscription, (response) => {
-            console.log('Successfully unsubscribed from event channel.', response);
-        });
-    }
-
-    handleEvent(response) {
+    handleEvent(response){
         getRelatedBadges({ animalId: this.recordId })
             .then((result) => {
                 this.badges = result;
@@ -56,21 +54,20 @@ export default class AnimalBadge extends LightningElement {
                 console.log('Error fetching updated badges: ', error);
             });
     }
+
+    disconnectedCallback() {
+        // Invoke unsubscribe method of empApi
+        unsubscribe(this.subscription, (response) => {
+            console.log('unsubscribe() response: ', JSON.stringify(response));
+            // Response is true for successful unsubscribe
+        });
+    }
     
     registerErrorListener() {
+        // Invoke onError empApi method
         onError((error) => {
-            console.log('Received error from server: ', error);
-            try {
-                if (error.body) {
-                    console.log('Error details:', error.body.messsage);
-                } else if (error.message) {
-                    console.log('Error details:', error.message);
-                } else {
-                     console.log('Unknown error: ', JSON.stringify(error));
-                }
-            } catch (e) {
-                 console.log('Error: ', e.message);
-            }      
+            console.log('Received error from server: ', JSON.stringify(error));
+            // Error contains the server-side error
         });
     }
 }

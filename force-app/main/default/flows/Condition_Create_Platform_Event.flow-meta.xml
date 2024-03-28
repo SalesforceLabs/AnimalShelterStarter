@@ -44,7 +44,7 @@
         <connector>
             <targetReference>Create_Platform_Event</targetReference>
         </connector>
-        <object>Condition__c</object>
+        <object>animalshelters__Condition__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

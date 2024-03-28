@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 import { subscribe, unsubscribe, onError, setDebugFlag, isEmpEnabled } from 'lightning/empApi';
 
 export default class PlatformEventTest extends LightningElement {
-    channelName = 'event/Badge_Update_Event__e';
+    channelName = '/event/Badge_Update_Event__e';
     isSubscribeDisabled = false;
     isUnsubscribeDisabled = !this.isSubscribeDisabled;
 

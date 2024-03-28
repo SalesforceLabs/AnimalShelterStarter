@@ -1,3 +1,10 @@
+/**
+ * @description       : Animal Badges - Displays badges for various Animal Statuses
+ * @author            : Chris Rolfe
+ * @group             :
+ * @last modified on  : 28-03-2024
+ * @last modified by  : Chris Rolfe
+**/
 import { LightningElement, api, wire } from 'lwc';
 import { subscribe, unsubscribe, onError, setDebugFlag, isEmpEnabled } from 'lightning/empApi';
 import { refreshApex } from '@salesforce/apex';
@@ -10,12 +17,10 @@ export default class AnimalBadge extends LightningElement {
     subscription = {};
     wiredBadgesResult;
 
-
     //Get initial statuses of Badges for current Animal
     @wire(getRelatedBadges, {animalId: '$recordId'})
     wiredBadges(response) {
         this.wiredBadgesResult = response;
-        console.log('Result --->', response);
         const { data, error } = response;
         if (data) {
             this.badges = data;
@@ -43,8 +48,6 @@ export default class AnimalBadge extends LightningElement {
         const messageCallback = (response) => {
             console.log('New message received: ', JSON.stringify(response));
             // Check if the event is for the current Animal
-            console.log('Message Record Id: ', response.data.payload.animalshelters__Record_ID__c);
-            console.log('Current Record Id: ', this.recordId);
             if (response.data.payload.animalshelters__Record_ID__c === this.recordId){
                 refreshApex(this.wiredBadgesResult);
             }

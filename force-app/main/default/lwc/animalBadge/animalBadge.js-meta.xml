@@ -3,7 +3,7 @@
     <apiVersion>59.0</apiVersion>
     <isExposed>true</isExposed>
 <masterLabel>Animal Badges</masterLabel>
-<description>Displays badges for various Animal Statusess</description>
+<description>Displays badges for various Animal Statuses</description>
 <targets>
     <target>lightning__RecordPage</target>
 </targets>

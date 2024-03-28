@@ -30,6 +30,12 @@
         <locationX>176</locationX>
         <locationY>323</locationY>
         <inputAssignments>
+            <field>Record_ID__c</field>
+            <value>
+                <elementReference>$Record.Animal__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Update_Type__c</field>
             <value>
                 <stringValue>Alert</stringValue>
@@ -44,7 +50,7 @@
         <connector>
             <targetReference>Create_Platform_Event</targetReference>
         </connector>
-        <object>animalshelters__Animal_Alert__c</object>
+        <object>Animal_Alert__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

@@ -2319,6 +2319,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>animalBadge</componentName>
+                <identifier>animalshelters_animalBadge</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-f421f272-c351-4481-8a82-63cfcca7afc8</value>

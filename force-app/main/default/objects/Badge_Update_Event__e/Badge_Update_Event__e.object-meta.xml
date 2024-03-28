@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>[Animal Shelter Starter] - Used to update badges LWC</description>
+    <description>[Animal Shelter Starter] - Used to capture changes to Animal Badge statuses. Triggered by Flows on Animal Action, Alert and Condition objects.  Passes Animal Record Id</description>
     <eventType>HighVolume</eventType>
     <label>Badge Update</label>
     <pluralLabel>Badge Updates</pluralLabel>

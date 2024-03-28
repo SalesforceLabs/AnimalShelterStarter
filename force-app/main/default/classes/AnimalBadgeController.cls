@@ -21,7 +21,7 @@ public with sharing class AnimalBadgeController {
             'Vaccination' => false
         };
 
-        // Check for Alerts
+        // Check for Alerts with no end date
         if(Schema.sObjectType.animalshelters__Animal_Alert__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Alert__c.fields.Animalshelters__End_Date_Time__c.isAccessible()) {
             List<animalshelters__Animal_Alert__c> alerts = [SELECT Id
                                                             FROM animalshelters__Animal_Alert__c
@@ -33,7 +33,7 @@ public with sharing class AnimalBadgeController {
             }
         }
 
-        // Check for Condiitons
+        // Check for Condiitons that have no end date
         if(Schema.sObjectType.animalshelters__Condition__c.isAccessible() && Schema.sObjectType.animalshelters__Condition__c.fields.Animalshelters__End_Date_Time__c.isAccessible()) {
         List<animalshelters__Condition__c> conditions = [SELECT Id
                                                         FROM animalshelters__Condition__c

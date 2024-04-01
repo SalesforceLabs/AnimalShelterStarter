@@ -20,12 +20,8 @@ export default class AnimalHistoryWeightChart extends LightningElement {
     weightHistory({ error, data }) {
         if (data) {
             console.log(JSON.stringify(data));
-            //let dates = JSON.parse(JSON.stringify(data)).map(record => record.cwDate);
-            //let weights = JSON.parse(JSON.stringify(data)).map(record => record.cwWeight);
             let dates = data.map(record => record.cwDate);
             let weights = data.map(record => record.cwWeight);
-            console.log('Dates:', dates);
-            console.log('Weights:', weights);
             this.renderChart(dates, weights);
         } else if (error) {
             // Handle error

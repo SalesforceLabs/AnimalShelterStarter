@@ -2,7 +2,7 @@
  * @description       : Animal Badges - Displays badges for various Animal Statuses
  * @author            : Chris Rolfe
  * @group             :
- * @last modified on  : 28-03-2024
+ * @last modified on  : 01-04-2024
  * @last modified by  : Chris Rolfe
 **/
 import { LightningElement, api, wire } from 'lwc';

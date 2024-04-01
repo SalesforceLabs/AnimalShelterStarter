@@ -29,6 +29,7 @@ public with sharing class AnimalHistoryWeightController {
                 WHERE Field = 'animalshelters__Current_Weight__c'
                 AND ParentId = :recordId
                 AND CreatedDate >= :limitDate
+                WITH SECURITY_ENFORCED
                 ORDER BY CreatedDate ASC
             ]) {
                 if (history.NewValue != null) {

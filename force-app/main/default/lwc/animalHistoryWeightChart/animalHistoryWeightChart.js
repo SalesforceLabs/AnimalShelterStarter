@@ -52,13 +52,20 @@ export default class AnimalHistoryWeightChart extends LightningElement {
             data: {
                 labels: dates,
                 datasets: [{
-                    label: 'Weight',
+                    label: 'Weight (kg)',
                     data: weights,
                     fill: false,
                     borderColor: 'rgb(75, 192, 192)',
                     tension: 0.1
                 }]
+            },
+            options: {
+                title: {
+                    display: false,
+                    text: 'Animal Weight (kg)'
+                }
             }
+
         });
     }
 }

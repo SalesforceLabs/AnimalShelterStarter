@@ -41,7 +41,6 @@
     <label>Animal Shelter</label>
     <navType>Console</navType>
     <tabs>standard-home</tabs>
-    <tabs>Location_Dashboard</tabs>
     <tabs>Animal__c</tabs>
     <tabs>Animal_Action__c</tabs>
     <tabs>Adoption__c</tabs>
@@ -51,6 +50,8 @@
     <tabs>standard-Task</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>Location_Dashboard</tabs>
+    <tabs>Shelter_Dashboard</tabs>
     <tabs>Medicine__c</tabs>
     <tabs>Locations__c</tabs>
     <tabs>Breed__c</tabs>
@@ -90,6 +91,9 @@
         </mappings>
         <mappings>
             <tab>Medicine__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Shelter_Dashboard</tab>
         </mappings>
         <mappings>
             <tab>standard-Dashboard</tab>

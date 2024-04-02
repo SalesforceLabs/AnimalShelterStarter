@@ -42,12 +42,12 @@ public with sharing class LocationController {
             List<Location> loc = new List<Location>();
             for(sObject locs :myData){
                 GeoLocation geoInfo = new GeoLocation();
-                geoInfo.Latitude = String.ValueOf(locs.get(varLat));
-                geoInfo.Longitude = String.ValueOf(locs.get(varLong));
+                geoInfo.Latitude = String.valueOf(locs.get(varLat));
+                geoInfo.Longitude = String.valueOf(locs.get(varLong));
                 Location locDetail = new Location();
                 locDetail.icon = 'utility:animal_and_nature';
-                locDetail.title = String.ValueOf(locs.get(varName));
-                locDetail.description = locs.get(varDescText) + ' - ' + fieldLabel + ': ' + String.ValueOf(locs.get(varDescDate));
+                locDetail.title = String.valueOf(locs.get(varName));
+                locDetail.description = locs.get(varDescText) + ' - ' + fieldLabel + ': ' + String.valueOf(locs.get(varDescDate));
                 locDetail.location = geoInfo;
 
                 loc.add(locDetail);

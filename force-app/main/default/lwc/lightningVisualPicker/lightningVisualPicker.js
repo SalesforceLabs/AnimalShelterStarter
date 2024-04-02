@@ -61,7 +61,7 @@ export default class LightningVisualPicker extends LightningElement {
             }
 
             if (this.options.length > 0
-                && this.options.length != this.items.length) {
+                && this.options.length !== this.items.length) {
                 let iterator = 0;
                 let items = [];
                 this.options.forEach(option => {

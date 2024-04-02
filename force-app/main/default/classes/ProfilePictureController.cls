@@ -2,9 +2,9 @@ public with sharing class ProfilePictureController {
 
     @AuraEnabled
     public static Attachment getProfilePicture(Id parentId) {
-        if (Schema.sObjectType.Attachment.isAccessible()) {
+        if (Schema.SObjectType.Attachment.isAccessible()) {
             return [SELECT Id, Name, LastModifiedDate, ContentType FROM Attachment
-            WHERE parentid=:ParentId AND ContentType IN ('image/png', 'image/jpeg', 'image/gif')
+            WHERE ParentId=:parentId AND ContentType IN ('image/png', 'image/jpeg', 'image/gif')
             ORDER BY LastModifiedDate DESC LIMIT 1];
         }
         System.debug('User does not have access to view Attachments. Please review access.');
@@ -13,14 +13,14 @@ public with sharing class ProfilePictureController {
 
     @AuraEnabled
     public static Id saveAttachment(Id parentId, String fileName, String base64Data, String contentType) {
-         if (Schema.sObjectType.Attachment.isCreateable() && Schema.sObjectType.Attachment.fields.parentId.isAccessible() && Schema.sObjectType.Attachment.fields.name.isAccessible() && Schema.sObjectType.Attachment.fields.contentType.isAccessible()) {
+         if (Schema.SObjectType.Attachment.isCreateable() && Schema.SObjectType.Attachment.fields.ParentId.isAccessible() && Schema.SObjectType.Attachment.fields.Name.isAccessible() && Schema.SObjectType.Attachment.fields.ContentType.isAccessible()) {
             Attachment attachment = new Attachment();
-            attachment.parentId = parentId;
-            attachment.body = EncodingUtil.base64Decode(base64Data);
-            attachment.name = fileName;
-            attachment.contentType = contentType;
+            attachment.ParentId = parentId;
+            attachment.Body = EncodingUtil.base64Decode(base64Data);
+            attachment.Name = fileName;
+            attachment.ContentType = contentType;
             insert attachment;
-            return attachment.id;
+            return attachment.Id;
         }
         System.debug('User does not have access to create Attachments. Please review access.');
         return null;

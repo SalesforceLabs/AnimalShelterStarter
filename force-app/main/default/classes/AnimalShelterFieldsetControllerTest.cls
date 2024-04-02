@@ -5,10 +5,10 @@
  * @last modified on  : 12-22-2023
  * @last modified by  : Stewart Anderson
 **/
-@isTest
+@IsTest
 private class AnimalShelterFieldsetControllerTest {
 
-    @isTest static void testGetFieldSet() {
+    @IsTest static void testGetFieldSet() {
         // Setup test data
         // Since Schema and FieldSets cannot be created in test methods,
         // we'll assume there's an existing object and field set available.
@@ -24,7 +24,7 @@ private class AnimalShelterFieldsetControllerTest {
         System.assertNotEquals(0, result.size(), 'The result should have elements');
     }
 
-    @isTest static void testGetBadgeFieldsData() {
+    @IsTest static void testGetBadgeFieldsData() {
         // Setup test data
         // Create a record for the sObject you're testing against
         animalshelters__Animal__c testRecord = new animalshelters__Animal__c(animalshelters__Animal_Name__c='Test', animalshelters__Date_of_Arrival__c=Datetime.now());

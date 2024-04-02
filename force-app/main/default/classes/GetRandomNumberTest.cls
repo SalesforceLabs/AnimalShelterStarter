@@ -1,7 +1,7 @@
-@isTest
+@IsTest
 global with sharing class GetRandomNumberTest {
 
-    @isTest
+    @IsTest
     public static void numberReturnedIsInRange() {
         Integer startNum = 0;
         Integer endNum =1;
@@ -23,7 +23,7 @@ global with sharing class GetRandomNumberTest {
         System.assertEquals(true, resultNum <= endNum);
     }
 
-    @isTest
+    @IsTest
     public static void numberZeroToOneGeneratedIsInRange() {
         Integer startNum = 0;
         Integer endNum =1;
@@ -36,7 +36,7 @@ global with sharing class GetRandomNumberTest {
         System.assertEquals(true, resultNum <= endNum);
     }
 
-    @isTest
+    @IsTest
     public static void numberAboveOneGeneratedIsInRange() {
         Integer startNum = 5;
         Integer endNum =7;

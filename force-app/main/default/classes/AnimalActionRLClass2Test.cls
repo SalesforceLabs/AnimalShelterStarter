@@ -9,7 +9,7 @@
  * Ver       Date            Author      		    Modification
  * 1.0    4/30/2020   Stewart Anderson (Salesforce.org)     Initial Version
 **/
-@isTest
+@IsTest
 public class AnimalActionRLClass2Test {
 
     @IsTest

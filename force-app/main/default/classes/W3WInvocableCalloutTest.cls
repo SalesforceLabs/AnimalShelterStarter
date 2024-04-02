@@ -5,20 +5,21 @@
  * @last modified on  : 10-17-2023
  * @last modified by  : Stewart Anderson
 **/
-@isTest
+@IsTest
 private class W3WInvocableCalloutTest {
-     @isTest static void testCallout() {
+     @IsTest
+     static void testCallout() {
 
         Test.setMock(HttpCalloutMock.class, new MockW3WResponseGenerator());
 
-        animalshelters__Animal__c theAnimal = new animalshelters__Animal__c(animalshelters__Date_of_Arrival__c = Date.Today(), animalshelters__what3words__c = 'whips.vanish.store');
+        animalshelters__Animal__c theAnimal = new animalshelters__Animal__c(animalshelters__Date_of_Arrival__c = Date.today(), animalshelters__what3words__c = 'whips.vanish.store');
         insert theAnimal;
 
         List<animalshelters__Animal__c> animals = new List<animalshelters__Animal__c>();
         animals.add(theAnimal);
 
-        test.startTest();
+        Test.startTest();
             W3WInvocableCallout.getW3WCoordinates(animals);
-        test.stopTest();
+        Test.stopTest();
     }
 }

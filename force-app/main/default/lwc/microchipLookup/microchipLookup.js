@@ -127,7 +127,7 @@ export default class MicrochipLookup extends LightningElement {
 
 
         // Ensure there is a MicroChip Number
-        if (!this.mc_num || this.mc_num == "No MicroChip Number Found. Please Update the record.") {
+        if (!this.mc_num || this.mc_num === "No MicroChip Number Found. Please Update the record.") {
             this.errorMessage = "No MicroChip Number Found. Please Update the record."
             this.handleErrorMessage(this.errorMessage);
             return;
@@ -173,7 +173,7 @@ export default class MicrochipLookup extends LightningElement {
                         variant: 'error',
                     }),
                 );
-                return;
+
             }
         }).then(recDetails => {
 
@@ -197,7 +197,7 @@ export default class MicrochipLookup extends LightningElement {
         }).catch(error => {
             this.errorMessage = error
             this.handleErrorMessage(this.errorMessage);
-            return
+
         });
 
     }

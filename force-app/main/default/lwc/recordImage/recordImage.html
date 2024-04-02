@@ -9,11 +9,11 @@
   <lightning-card>
 
     <template if:true={photoId}>
-      <img class="slds-align_absolute-center image_container" src={photoURL}></img>
+      <img class="slds-align_absolute-center image_container" src={photoURL} alt="Animal Image">
     </template>
 
     <template if:false={photoId}>
-      <img class="slds-align_absolute-center image_container" src={placeholderURL}>
+      <img class="slds-align_absolute-center image_container" src={placeholderURL} alt="Animal Image">
     </template>
 
     <p slot="footer">

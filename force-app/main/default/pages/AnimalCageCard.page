@@ -1,5 +1,5 @@
 <!-- Visualforce Page: AnimalCageCard
-    Displays a subset of fields from current Animal Record to be printed
+    Displays a subset of fields from the current Animal Record to be printed
     Date: 26th May 2022
     Author: Chris Rolfe
 	Updated: 20th Oct 2022 to include FieldSets for Breeds Migration
@@ -14,10 +14,10 @@
     </apex:repeat>
     <apex:outputText escape="false" value="{!animalshelters__Animal__c.animalshelters__Record_QR_Code__c}" rendered="false" />
 
-    <html>
+    <html lang="en">
 
     <head>
-        <style type="text/css">
+        <style>
             @page {
                 size: A5 landscape;
                 margin: 5mm;
@@ -28,7 +28,7 @@
             }
 
             .title {
-                font-family: Arial Unicode MS;
+                font-family: Arial Unicode MS, serif;
                 font-size: 20px;
                 font-weight: 600;
                 color: #fff!important;
@@ -41,13 +41,13 @@
             }
 
             .details {
-                font-family: Arial Unicode MS;
+                font-family: Arial Unicode MS, serif;
                 font-size: 16px;
                 font-weight: 600;
             }
 
             .footer-section {
-                font-family: Arial Unicode MS;
+                font-family: Arial Unicode MS, serif;
                 font-size: 10px;
                 font-weight: 600;
                 text-align: center;
@@ -56,6 +56,7 @@
                 position: running(footer-section);
             }
         </style>
+        <title>Animal Cage Card</title>
     </head>
 
     <body>

@@ -39,11 +39,11 @@ export default class recordImage extends LightningElement {
 
     // Configure Component based on Object on init
     connectedCallback() {
-        if (this.objectApiName == 'Contact') {
+        if (this.objectApiName === 'Contact') {
             this.IdField = CONTACT_ID_FIELD
             this.photoIdField = CONTACT_PHOTO_ID_FIELD
         }
-        if (this.objectApiName == 'animalshelters__Animal__c') {
+        if (this.objectApiName === 'animalshelters__Animal__c') {
             this.IdField = ANIMAL_ID_FIELD
             this.photoIdField = ANIMAL_PHOTO_ID_FIELD
         }
@@ -92,11 +92,11 @@ export default class recordImage extends LightningElement {
     updateRecord(photoId) {
         const fields = {};
 
-        if (this.objectApiName == 'Contact') {
+        if (this.objectApiName === 'Contact') {
             fields[CONTACT_ID_FIELD.fieldApiName] = this.recordId;
             fields[CONTACT_PHOTO_ID_FIELD.fieldApiName] = photoId;
         }
-        if (this.objectApiName == 'animalshelters__Animal__c') {
+        if (this.objectApiName === 'animalshelters__Animal__c') {
             fields[ANIMAL_ID_FIELD.fieldApiName] = this.recordId;
             fields[ANIMAL_PHOTO_ID_FIELD.fieldApiName] = photoId;
         }
@@ -104,10 +104,10 @@ export default class recordImage extends LightningElement {
         const recordInput = { fields };
         updateRecord(recordInput)
             .then(() => {
-                if (this.objectApiName == 'Contact') {
+                if (this.objectApiName === 'Contact') {
                     return refreshApex(this.Contact);
                 }
-                if (this.objectApiName == 'animalshelters__Animal__c') {
+                if (this.objectApiName === 'animalshelters__Animal__c') {
                     return refreshApex(this.animalshelters__Animal__c);
                 }
 

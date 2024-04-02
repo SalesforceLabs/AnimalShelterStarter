@@ -1,7 +1,7 @@
-@isTest
+@IsTest
 private class MockW3WResponseGeneratorTest {
 
-    @isTest
+    @IsTest
     static void testRespond() {
         // Create a mock request
         HttpRequest req = new HttpRequest();

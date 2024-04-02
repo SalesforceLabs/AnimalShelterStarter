@@ -7,9 +7,9 @@
 **/
 public with sharing class AnimalShelterGetCustomSettings {
 
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled(Cacheable=true)
     public static animalshelters__Animal_Shelter_Settings__c getCustomSettings(){
-        if (Schema.sObjectType.animalshelters__Animal_Shelter_Settings__c.isAccessible()) {
+        if (Schema.SObjectType.animalshelters__Animal_Shelter_Settings__c.isAccessible()) {
             return animalshelters__Animal_Shelter_Settings__c.getOrgDefaults();
         } else {
             throw new AuraHandledException('Access Issue: There was an attempt to access Animal Shelter Starter Settings by a user without access.');
@@ -19,7 +19,7 @@ public with sharing class AnimalShelterGetCustomSettings {
 
     @AuraEnabled
     public static void saveCustomSetting(animalshelters__Animal_Shelter_Settings__c customSetting) {
-        if (Schema.sObjectType.animalshelters__Animal_Shelter_Settings__c.isUpdateable()) {
+        if (Schema.SObjectType.animalshelters__Animal_Shelter_Settings__c.isUpdateable()) {
             update customSetting;
         } else {
             throw new AuraHandledException('Access Issue: There was an attempt to update Animal Shelter Starter Settings by a user without access.');

@@ -5,10 +5,10 @@
  * @last modified on  : 10-17-2023
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
-@isTest
+@IsTest
 private class What3WordsTest {
 
-    @isTest
+    @IsTest
     static void testParse_ValidJson() {
         String json = '{"country":"United States","square":{"southwest":{"lng":-77.036604,"lat":38.897626},"northeast":{"lng":-77.036505,"lat":38.897725}},"nearestPlace":"White House, Washington D.C.","coordinates":{"lng":-77.036572,"lat":38.897675},"words":"filled.count.soap","language":"en","map":"https://w3w.co/filled.count.soap"}';
 
@@ -30,7 +30,7 @@ private class What3WordsTest {
         System.assertEquals(38.897675, coordinates.lat);
     }
 
-    @isTest
+    @IsTest
     static void testParse_NullValues() {
         String json = '{"country":null,"square":null,"nearestPlace":null,"coordinates":null,"words":null,"language":null,"map":null}';
 
@@ -45,7 +45,7 @@ private class What3WordsTest {
         System.assertEquals(null, w3w.coordinates);
     }
 
-    @isTest
+    @IsTest
     static void testConsumeObject_StartObject() {
         String json = '{ "obj": { "prop": "value" } }';
 
@@ -59,7 +59,7 @@ private class What3WordsTest {
         System.assertEquals(System.JSONToken.END_OBJECT, parser.getCurrentToken());
     }
 
-    @isTest
+    @IsTest
     static void testConsumeObject_StartArray() {
         String json = '{ "arr": [ "value" ] }';
 
@@ -73,7 +73,7 @@ private class What3WordsTest {
         System.assertEquals(System.JSONToken.END_ARRAY, parser.getCurrentToken());
     }
 
-    @isTest
+    @IsTest
     static void testConsumeObject_MultipleObjects() {
         String json = '{ "obj1": { "prop1": "value1" }, "obj2": { "prop2": "value2" } }';
 
@@ -90,7 +90,7 @@ private class What3WordsTest {
         System.assertEquals(System.JSONToken.END_OBJECT, parser.getCurrentToken());
     }
 
-    @isTest
+    @IsTest
     static void testSquare_ValidJson() {
         String json = '{ "southwest": { "lng": -77.036604, "lat": 38.897626 }, "northeast": { "lng": -77.036505, "lat": 38.897725 } }';
 
@@ -102,7 +102,7 @@ private class What3WordsTest {
         System.assertEquals(38.897725, square.northeast.lat);
     }
 
-    @isTest
+    @IsTest
     static void testSouthwest_ValidJson() {
         String json = '{ "lng": -77.036572, "lat": 38.897675 }';
 

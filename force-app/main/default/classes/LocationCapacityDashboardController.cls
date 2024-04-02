@@ -1,9 +1,20 @@
+/**
+ * @File Name          : LocationCapacityDashboardController.apxc
+ * @Description        : Gets Location details based on selected Site to display on dashboard
+ * @Author             : Chris Rolfe (Salesforce)
+ * @Group              :
+ * @Last Modified By   : 
+ * @Last Modified On   : 02-04-2024
+ * @Modification Log   : 
+ * Ver       Date            Author      		    Modification
+ * 1.0    02/04/2024   Chris Rolfe (Salesforce)     Initial Version
+**/
 public with sharing class LocationCapacityDashboardController {
 
     @AuraEnabled(cacheable=true)
     public static List<animalshelters__Locations__c> getLocations(String siteId) {
         // If no siteId is provided, return an empty List to avoid returing all records unintentionally
-        System.debug('siteId: ' + siteId);
+        //System.debug('siteId: ' + siteId);
         if (siteId == null) {
             return new List<animalshelters__Locations__c>();
         } else {

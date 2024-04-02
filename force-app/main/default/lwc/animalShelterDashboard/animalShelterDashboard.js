@@ -7,6 +7,7 @@ export default class AnimalShelterDashboard extends LightningElement {
 
     @track locations;
     @track error;
+    @track siteOptions = [];
     @track isModalOpen = false; 
     @track currentAnimal;
     selectedSite;

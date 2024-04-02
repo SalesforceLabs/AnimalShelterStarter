@@ -21,6 +21,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AnimalShelterDashboardController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AnimalShelterFieldsetController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -86,10 +90,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ProfilePictureControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ShelterDashboardController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1702,6 +1702,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Condition__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Location_Dashboard</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

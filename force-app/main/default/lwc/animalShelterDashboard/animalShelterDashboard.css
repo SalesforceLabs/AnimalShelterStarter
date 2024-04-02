@@ -9,7 +9,7 @@
 .badge-treatment { 
     background-color: blue;
     color: white;
-    border-radius: 12px;
+    border-radius: 5px;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
 }
@@ -17,7 +17,7 @@
 .badge-exercise  { 
     background-color: orange;
     color: white;
-    border-radius: 12px;
+    border-radius: 5px;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
 }
@@ -25,7 +25,7 @@
 .badge-nutrition {
     background-color: green;
     color: white;
-    border-radius: 12px;
+    border-radius: 5px;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
 }
@@ -33,7 +33,7 @@
 .badge-condition {
     background-color: grey;
     color: white;
-    border-radius: 12px;
+    border-radius: 5px;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
 }
@@ -41,7 +41,7 @@
 .badge-alert {
     background-color: red;
     color: white;
-    border-radius: 12px;
+    border-radius: 5px;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
 

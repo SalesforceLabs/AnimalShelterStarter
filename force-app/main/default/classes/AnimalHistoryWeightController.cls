@@ -33,7 +33,7 @@ public with sharing class AnimalHistoryWeightController {
                 ORDER BY CreatedDate ASC
             ]) {
                 if (history.NewValue != null) {
-                    String formattedDate = history.CreatedDate.format('yyyy-MM-dd');
+                    String formattedDate = history.CreatedDate.format('dd-MM-yy');
                     Decimal newValue = (Decimal)history.NewValue;
                     historyDataList.add(new HistoryData(formattedDate, newValue));
                 }

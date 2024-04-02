@@ -46,7 +46,7 @@ export default class AnimalHistoryWeightChart extends LightningElement {
     }
 
     renderChart(dates, weights) {
-        const ctx = this.template.querySelector('canvas').getContext('2d');
+        const ctx = this.template.querySelector('canvas.linechart').getContext('2d');
         this.chart = new window.Chart(ctx, {
             type: 'line',
             data: {

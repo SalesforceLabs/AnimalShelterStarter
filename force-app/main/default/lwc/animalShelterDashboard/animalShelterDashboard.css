@@ -11,7 +11,7 @@
     color: white;
     border-radius: 5px;
     padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
 }
 
 .badge-exercise  { 
@@ -19,7 +19,7 @@
     color: white;
     border-radius: 5px;
     padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
 }
 
 .badge-nutrition {
@@ -27,7 +27,7 @@
     color: white;
     border-radius: 5px;
     padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
 }
 
 .badge-condition {
@@ -35,7 +35,7 @@
     color: white;
     border-radius: 5px;
     padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
 }
 
 .badge-alert {
@@ -43,6 +43,14 @@
     color: white;
     border-radius: 5px;
     padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
 
+}
+
+.badge-vaccination {
+    background-color: pink;
+    color: black;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.5rem;
 }

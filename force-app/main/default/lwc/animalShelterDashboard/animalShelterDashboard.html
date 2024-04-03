@@ -41,11 +41,21 @@
                                                     <span class="badge badge-alert">Alerts</span>
                                                 </div>
                                             </template>
+                                        </div>
+                                            <p><strong>Upcoming Actions</strong></p>
+                                            <div class="slds-grid slds-gutters_x-small">
                                             <!-- If Animal has Actions, then display badge per Action Type-->
-                                            <template for:each={animal.upcomingActions} for:item="action">
-                                                <div key={action.Id} class="slds-col">
-                                                    <span class={action.badgeClass}>{action.RecordType.Name}</span>
-                                                </div>
+                                            <template if:true={animal.hasNutritionAction}>
+                                                <span class="badge badge-nutrition">Nutrition</span>
+                                            </template>
+                                            <template if:true={animal.hasExerciseAction}>
+                                                <span class="badge badge-exercise">Exercise</span>
+                                            </template>
+                                            <template if:true={animal.hasTreatmentAction}>
+                                                <span class="badge badge-treatment">Treatment</span>
+                                            </template>
+                                            <template if:true={animal.hasVaccination}>
+                                                <span class="badge badge-vaccination">Vaccination</span>
                                             </template>
                                         </div>
                                     </div>

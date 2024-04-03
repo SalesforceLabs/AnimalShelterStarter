@@ -29,6 +29,15 @@ public with sharing class AnimalShelterDashboardController {
         public Boolean hasConditions;
         @AuraEnabled
         public Boolean hasAlerts;
+        @AuraEnabled
+        public Boolean hasTreatmentAction;
+        @AuraEnabled
+        public Boolean hasNutritionAction;
+        @AuraEnabled
+        public Boolean hasExerciseAction;
+        @AuraEnabled
+        public Boolean hasVaccination;
+
     }
 
     @AuraEnabled(cacheable=true)
@@ -89,6 +98,17 @@ public with sharing class AnimalShelterDashboardController {
                     aniWrapper.animal = animalsMap.get(mov.animalshelters__Animal__c);
                     aniWrapper.upcomingActions = aniWrapper.animal.animalshelters__Animal_Actions__r;
                     // Set hasConditons and hasAlerts flags based on the presence of related Condition/Alert records
+                    for(animalshelters__Animal_Action__c action : aniWrapper.upcomingActions){
+                        if(action.RecordType.Name == 'Nutrition') {
+                            aniWrapper.hasNutritionAction = true;
+                        } else if(action.RecordType.Name == 'Exercise'){
+                            aniWrapper.hasExerciseAction = true;
+                        } else if(action.RecordType.Name == 'Treatment' && action.animalshelters__Treatment_Type__c == 'Vaccination'){
+                            aniWrapper.hasVaccination = true;
+                        } else if(action.RecordType.Name == 'Treatment' && action.animalshelters__Treatment_Type__c != 'Vaccination'){
+                            aniWrapper.hasTreatmentAction = true;
+                        }
+                    }
                     aniWrapper.hasConditions = animalConditionMap.containsKey(mov.animalshelters__Animal__c) && !animalConditionMap.get(mov.animalshelters__Animal__c).isEmpty();
                     aniWrapper.hasAlerts = animalAlertMap.containsKey(mov.animalshelters__Animal__c) && !animalAlertMap.get(mov.animalshelters__Animal__c).isEmpty();
                     locWrapper.animals.add(aniWrapper);

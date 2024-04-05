@@ -34,7 +34,7 @@ public class FSC_FileUploadPreviewControllerTest {
 
     }
 
-        @isTest static void testReadDocument(){
+        @IsTest static void testReadDocument(){
 
             List<Account> accList = [SELECT Id FROM Account WHERE Name = 'ASS Test Account' LIMIT 1];
             for(Account acc : accList){
@@ -44,7 +44,7 @@ public class FSC_FileUploadPreviewControllerTest {
             }
         }
 
-        @isTest static  void testDeleteDocument(){
+        @IsTest static  void testDeleteDocument(){
 
             List<ContentDocument> cdList = [SELECT Id FROM ContentDocument WHERE Title = 'ASS Test File' LIMIT 1];
             for(ContentDocument cd : cdList){

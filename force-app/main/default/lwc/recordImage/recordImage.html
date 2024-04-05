@@ -8,13 +8,9 @@
 <template>
   <lightning-card>
 
-    <template if:true={photoId}>
-      <img class="slds-align_absolute-center image_container" src={photoURL}></img>
-    </template>
-
-    <template if:false={photoId}>
-      <img class="slds-align_absolute-center image_container" src={placeholderURL}>
-    </template>
+    <div class="parent-container">
+      <div class="image-container"></div>
+    </div>
 
     <p slot="footer">
       <lightning-file-upload label="Upload Photo" multiple="false" name="fileUploader" accept={acceptedFormats}

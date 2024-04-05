@@ -49,7 +49,7 @@
         <connector>
             <targetReference>Get_What3Words_Coordinates</targetReference>
         </connector>
-        <filterFormula>AND(NOT(ISBLANK({!$Record.what3words__c})),ISCHANGED({!$Record.what3words__c}),NOT(ISBLANK({!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__What3Words_API_Key__c})))</filterFormula>
+        <filterFormula>AND(NOT(ISBLANK({!$Record.what3words__c})),ISCHANGED({!$Record.what3words__c}),NOT(ISBLANK({!$Setup.Animal_Shelter_Settings__c.What3Words_API_Key__c})))</filterFormula>
         <object>Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

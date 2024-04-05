@@ -1,4 +1,4 @@
-.image_container {
+.old_image_container {
   border-radius: 50%;
   overflow: hidden;
   display: block;
@@ -6,4 +6,21 @@
   max-height: 300px;
   width: auto;
   height: auto;
+}
+
+.image-container {
+    width: 300px; /* Desired width of the circle */
+    height: 300px; /* Height to match the width for a perfect circle */
+    border-radius: 50%; /* Creates the circular shape */
+    background-image: url('yourImageUrlHere'); /* Replace with your dynamic image URL */
+    background-size: cover; /* Ensures the image covers the circle, maintaining its aspect ratio */
+    background-position: center; /* Centers the image within the circle */
+    overflow: hidden; /* Ensures no overflow outside the circular boundary */
+}
+
+.parent-container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
+    height: 100%; /* Ensure it takes full height of its container, adjust as needed */
 }

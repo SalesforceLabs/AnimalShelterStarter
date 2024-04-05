@@ -1,0 +1,20 @@
+/**
+ * Created by stewart.anderson on 05/04/2024.
+ */
+.exercise{
+    --slds-c-badge-text-color: white;
+    --slds-c-badge-color-background: #9050e9;
+}
+
+.treatment{
+    --slds-c-badge-color-background: #fb538a;
+}
+
+.vaccination{
+    --slds-c-badge-text-color: white;
+    --slds-c-badge-color-background: #2796ff;
+}
+
+.condition {
+    --slds-c-badge-color-background: #fb5d2e;
+}

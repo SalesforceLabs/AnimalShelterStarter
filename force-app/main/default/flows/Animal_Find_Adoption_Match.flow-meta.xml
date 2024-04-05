@@ -138,7 +138,7 @@
             <targetReference>Call_Auto_Match_Subflow</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterFormula>AND( {!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Auto_Match__c}=TRUE, ISPICKVAL({!$Record.Animal_Status__c},&apos;Available for Adoption&apos;))</filterFormula>
+        <filterFormula>AND( {!$Setup.Animal_Shelter_Settings__c.Enable_Auto_Match__c}=TRUE, ISPICKVAL({!$Record.Animal_Status__c},&apos;Available for Adoption&apos;))</filterFormula>
         <object>Animal__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

@@ -74,7 +74,7 @@
         <connector>
             <targetReference>Get_Animal_Record</targetReference>
         </connector>
-        <filterFormula>{!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Disable_Behaviour_Update__c}= FALSE</filterFormula>
+        <filterFormula>{!$Setup.Animal_Shelter_Settings__c.Disable_Behaviour_Update__c}= FALSE</filterFormula>
         <object>Assessment__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

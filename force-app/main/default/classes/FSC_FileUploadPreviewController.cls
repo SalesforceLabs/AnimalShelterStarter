@@ -33,7 +33,7 @@ public with sharing class FSC_FileUploadPreviewController {
 
     @AuraEnabled
     public static void deleteFile(String contentDocumentId){
-        if (ContentDocument.sObjectType.getDescribe().isDeletable()){
+        if (ContentDocument.SObjectType.getDescribe().isDeletable()){
             delete [SELECT Id
                 FROM ContentDocument
                 WHERE Id = :contentDocumentId

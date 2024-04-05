@@ -1,10 +1,6 @@
 <template>
-  <lightning-card>
-    <h3 slot="title">
-      <lightning-icon icon-name="custom:custom39" size="small"></lightning-icon>
-      &nbsp;Microchip Lookup
-    </h3>
-    <lightning-button label="Refresh Results" onclick={getResults} slot="actions"></lightning-button>
+  <lightning-card title="Microchip Lookup" icon-name="custom:custom39">
+    <lightning-button icon-name="utility:refresh" onclick={getResults} slot="actions" title="Refresh" label="Refresh"></lightning-button>
     <lightning-spinner if:true={isLoading}></lightning-spinner>
     <template lwc:if={resultsFound}>
 
@@ -48,7 +44,7 @@
     </template>
     <template lwc:else>
       <div class="slds-var-p-around_medium">
-        <h3 class="slds-text-body_regular">Click <strong>Refresh Results</strong> to see the latest information.</h3>
+        <h3 class="slds-text-body_regular">Click <strong>Refresh</strong> button above to see the latest information.</h3>
         <p>{errorMessage}</p>
       </div>
 
@@ -57,7 +53,7 @@
       <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
         <div class="slds-modal__container">
           <lightning-modal-header label="Animal Image"></lightning-modal-header>
-          <lightning-modal-body><img src={content} style="max-width: 100%"></img></lightning-modal-body>
+          <lightning-modal-body><img src={content} style="max-width: 100%" alt="animal image"></lightning-modal-body>
           <lightning-modal-footer>
             <lightning-button label="OK" onclick={handleOkay}></lightning-button>
           </lightning-modal-footer>

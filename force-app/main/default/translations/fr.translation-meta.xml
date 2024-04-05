@@ -518,6 +518,10 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
+        <fullName>Animal_Action_Create_Platform_Event</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
         <fullName>Animal_Action_Create_Task_for_new_Actions</fullName>
     </flowDefinitions>
     <flowDefinitions>
@@ -936,6 +940,14 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
+        <fullName>Animal_Alert_Alert_Deleted_Event</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Animal_Alert_Create_Platform_Event</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
         <fullName>Animal_Animal_Create_Update_Trigger</fullName>
     </flowDefinitions>
     <flowDefinitions>
@@ -1064,7 +1076,16 @@
             </screens>
             <screens>
                 <fields>
+                    <name>Copy_1_of_Has_Allocated_Units_Text</name>
+                </fields>
+                <name>Has_Allocated_Units</name>
+            </screens>
+            <screens>
+                <fields>
                     <name>Start_Screen_Text</name>
+                </fields>
+                <fields>
+                    <name>Start_Screen_Text_Note</name>
                 </fields>
                 <fields>
                     <name>Status_Options</name>
@@ -1729,6 +1750,10 @@
         <fullName>Breed_Name_Update_Flow</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows/>
+        <fullName>Condition_Create_Platform_Event</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows>
             <screens>
                 <fields>
@@ -1839,17 +1864,4 @@
         <label><!-- SendEmail --></label>
         <name>SendEmail</name>
     </quickActions>
-    <reportTypes>
-        <description><!-- Screen Flows --></description>
-        <label><!-- Screen Flows --></label>
-        <name>screen_flows_prebuilt_crt</name>
-        <sections>
-            <label><!-- Flow Interview Log Entries --></label>
-            <name>Flow Interview Log Entries</name>
-        </sections>
-        <sections>
-            <label><!-- Flow Interview Logs --></label>
-            <name>Flow Interview Logs</name>
-        </sections>
-    </reportTypes>
 </Translations>

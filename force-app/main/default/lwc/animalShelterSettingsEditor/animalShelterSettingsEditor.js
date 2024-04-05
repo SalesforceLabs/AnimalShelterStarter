@@ -1,5 +1,5 @@
 import { LightningElement, wire, track } from 'lwc';
-import { getRecord, updateRecord } from 'lightning/uiRecordApi';
+import { updateRecord } from 'lightning/uiRecordApi';
 
 import getCustomSetting from '@salesforce/apex/AnimalShelterGetCustomSettings.getCustomSettings';
 import createDefaultSettings from '@salesforce/apex/AnimalShelterGetCustomSettings.createDefaultSettings';

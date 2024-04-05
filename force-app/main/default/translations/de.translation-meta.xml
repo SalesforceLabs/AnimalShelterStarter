@@ -940,7 +940,15 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
+        <fullName>Animal_Alert_Alert_Deleted_Event</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
         <fullName>Animal_Alert_Create_Platform_Event</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Animal_Alert_Created_Deleted_Alert_Event</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>

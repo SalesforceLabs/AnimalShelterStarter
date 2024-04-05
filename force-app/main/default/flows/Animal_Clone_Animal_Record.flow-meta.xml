@@ -428,6 +428,7 @@
                     </defaultValue>
                     <fieldText>No. of Clones</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                     <validationRule>

@@ -1504,6 +1504,9 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Condition_Type__c</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Condition_Description__c</value>
                         </valueListItems>
                         <valueListItems>
@@ -2314,6 +2317,12 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>animalBadge</componentName>
+                <identifier>animalshelters_animalBadge</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

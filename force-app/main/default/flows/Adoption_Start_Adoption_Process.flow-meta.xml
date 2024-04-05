@@ -443,7 +443,7 @@
             <name>Automatch_On</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Auto_Match__c</leftValueReference>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Auto_Match__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>

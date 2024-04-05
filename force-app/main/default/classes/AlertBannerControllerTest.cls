@@ -9,9 +9,10 @@
  * Ver       Date            Author      		    Modification
  * 1.0    4/30/2020   Stewart Anderson (Salesforce.org)     Initial Version
 **/
-@isTest
+@IsTest
 public class AlertBannerControllerTest {
-    static testMethod void testMethod1 () {
+    @IsTest
+    static void testMethod1 () {
         List<animalshelters__Animal_Alert__c> AlertListTest = AlertBannerController.getRelatedAlertRecords('a003z00000rlhSbAAI');
         List<animalshelters__Animal_Alert__c> AlertListTest2 = AlertBannerController.getRelatedAlertRecords(null);
     }

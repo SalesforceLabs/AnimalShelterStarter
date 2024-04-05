@@ -17,7 +17,7 @@ public with sharing class AnimalShelterFieldsetController {
         }
     }
 
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled(Cacheable=true)
     public static List<FieldSetMemberWrapper> getFieldSet(String sObjectName, String fieldSetName) {
         List<FieldSetMemberWrapper> fieldSetMemberWrappers = new List<FieldSetMemberWrapper>();
 
@@ -48,7 +48,7 @@ public with sharing class AnimalShelterFieldsetController {
         return fieldSetMemberWrappers;
     }
 
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled(Cacheable=true)
     public static Map<String, List<String>> getBadgeFieldsData(String recordId, String sObjectName, List<String> badgeFieldNames) {
 
         // Check Object and Field Security

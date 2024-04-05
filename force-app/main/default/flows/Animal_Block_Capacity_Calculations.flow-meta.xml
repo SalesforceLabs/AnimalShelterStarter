@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>59.0</apiVersion>
+    <apiVersion>60.0</apiVersion>
     <assignments>
         <name>Available_Child_Record_Count</name>
         <label>Available Child Record Count</label>
-        <locationX>1373</locationX>
-        <locationY>482</locationY>
+        <locationX>490</locationX>
+        <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>varAvailableCount</assignToReference>
             <operator>AssignCount</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Total_Child_Record_Count</name>
         <label>Total Child Record Count</label>
-        <locationX>807</locationX>
-        <locationY>58</locationY>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>varTotalCount</assignToReference>
             <operator>AssignCount</operator>
@@ -44,8 +44,8 @@
     <decisions>
         <name>No_Records_Found</name>
         <label>No Records Found</label>
-        <locationX>821</locationX>
-        <locationY>484</locationY>
+        <locationX>226</locationX>
+        <locationY>758</locationY>
         <defaultConnector>
             <targetReference>Loop_Through_Child_Records_that_have_Available_Status</targetReference>
         </defaultConnector>
@@ -74,8 +74,8 @@
     <loops>
         <name>Loop_Through_Child_Records</name>
         <label>Loop Through Child Records</label>
-        <locationX>528</locationX>
-        <locationY>50</locationY>
+        <locationX>226</locationX>
+        <locationY>242</locationY>
         <assignNextValueToReference>varLocation</assignNextValueToReference>
         <collectionReference>varLocationChildRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -89,8 +89,8 @@
     <loops>
         <name>Loop_Through_Child_Records_that_have_Available_Status</name>
         <label>Loop Through Child Records that have Available Status</label>
-        <locationX>1101</locationX>
-        <locationY>479</locationY>
+        <locationX>402</locationX>
+        <locationY>866</locationY>
         <assignNextValueToReference>varLocation</assignNextValueToReference>
         <collectionReference>varLocationChildRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -110,7 +110,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -123,8 +123,8 @@
     <recordLookups>
         <name>Get_Location_Child_Records_with_Available_Status</name>
         <label>Get Location Child Records with Available Status</label>
-        <locationX>531</locationX>
-        <locationY>483</locationY>
+        <locationX>226</locationX>
+        <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>No_Records_Found</targetReference>
@@ -152,8 +152,8 @@
         <description>Get all the Child records for the current Location</description>
         <name>Get_Locations_Child_Records</name>
         <label>Get Locations Child Records</label>
-        <locationX>269</locationX>
-        <locationY>50</locationY>
+        <locationX>226</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Through_Child_Records</targetReference>
@@ -173,8 +173,8 @@
     <recordUpdates>
         <name>Set_Available_Capacity_to_Zero</name>
         <label>Set Available Capacity to Zero</label>
-        <locationX>652</locationX>
-        <locationY>669</locationY>
+        <locationX>50</locationX>
+        <locationY>866</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -195,8 +195,8 @@
         <description>Update the Available Capacity value on the current Location</description>
         <name>Update_Available_Capacity_Value</name>
         <label>Update Available Capacity Value</label>
-        <locationX>1104</locationX>
-        <locationY>703</locationY>
+        <locationX>402</locationX>
+        <locationY>1166</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -217,8 +217,8 @@
         <description>Update the Total Capacity value on the current Location</description>
         <name>Update_Total_Capacity_Value</name>
         <label>Update Total Capacity Value</label>
-        <locationX>531</locationX>
-        <locationY>295</locationY>
+        <locationX>226</locationX>
+        <locationY>542</locationY>
         <connector>
             <targetReference>Get_Location_Child_Records_with_Available_Status</targetReference>
         </connector>
@@ -239,8 +239,8 @@
         <object>Locations__c</object>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>100</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_Locations_Child_Records</targetReference>
         </connector>

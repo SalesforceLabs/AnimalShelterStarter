@@ -33,6 +33,6 @@ export default class FlowHLine extends LightningElement {
     }
 
     get displayVCard(){
-        return (this.vCard === true) ? true : false;
+        return (this.vCard === true);
     }
 }

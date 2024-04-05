@@ -11,8 +11,8 @@ private class AnimalShelterGetCustomSettingsTest {
     @IsTest static void testGetCustomSetting() {
         // Create a new custom setting record
         animalshelters__Animal_Shelter_Settings__c setting = new animalshelters__Animal_Shelter_Settings__c();
-        setting.animalshelters__Breeds_Migration_Complete__c = True;
-        setting.animalshelters__Default_Animal_Name__c = False;
+        setting.animalshelters__Breeds_Migration_Complete__c = true;
+        setting.animalshelters__Default_Animal_Name__c = false;
         setting.animalshelters__Default_Animal_Name_Prefix__c = 'pre';
         setting.animalshelters__microchip_api_Token__c = 'TestValue';
         insert setting;
@@ -25,8 +25,8 @@ private class AnimalShelterGetCustomSettingsTest {
     @IsTest static void testSaveCustomSetting() {
         // Create a new custom setting record
         animalshelters__Animal_Shelter_Settings__c setting = new animalshelters__Animal_Shelter_Settings__c();
-        setting.animalshelters__Breeds_Migration_Complete__c = True;
-        setting.animalshelters__Default_Animal_Name__c = False;
+        setting.animalshelters__Breeds_Migration_Complete__c = true;
+        setting.animalshelters__Default_Animal_Name__c = false;
         setting.animalshelters__Default_Animal_Name_Prefix__c = 'pre';
         setting.animalshelters__microchip_api_Token__c = 'TestValueNew';
         insert setting;

@@ -32,7 +32,7 @@ export default class LightningPrintPreview extends LightningElement {
 
   get qrCodeUrl() {
     const baseUrl = 'https://' + window.location.hostname;
-    const qrCodeBaseUrl = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=';
+    const qrCodeBaseUrl = 'https://bwipjs-api.metafloor.com/?bcid=qrcode&scale=3&text=';
     const recordUrl = baseUrl + '/' + this.recordId;
 
     return qrCodeBaseUrl + encodeURIComponent(recordUrl);

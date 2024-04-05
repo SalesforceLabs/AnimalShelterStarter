@@ -1,14 +1,13 @@
 <template>
-  <lightning-card>
-    <h3 slot="title">
-      <lightning-icon icon-name="custom:custom39" size="small"></lightning-icon>
-      &nbsp;Microchip Lookup
-    </h3>
-    <lightning-button label="Refresh Results" onclick={getResults} slot="actions"></lightning-button>
+  <lightning-card title="Microchip Lookup" icon-name="custom:custom39">
+    <lightning-button icon-name="utility:refresh" onclick={getResults} slot="actions" title="Refresh" label="Refresh"></lightning-button>
     <lightning-spinner if:true={isLoading}></lightning-spinner>
     <template lwc:if={resultsFound}>
 
       <div class="slds-var-p-around_medium">
+<img src="https://chart.googleapis.com/chart?chs=200x200&amp;cht=qr&amp;chl=https%3A%2F%2Fdata-connect-6641-dev-ed.scratch.lightning.force.com%2Fa07DR000005eJ5A" alt="Scan QR code to open record">
+
+        "https://bwipjs-api.metafloor.com/?bcid=gs1qrcode&text=test&backgroundcolor=ffffff&scale=2"
 
         <h3 class="slds-text-heading_small">MicroChip Number</h3>
         <p>{mc_num}</p>
@@ -48,7 +47,7 @@
     </template>
     <template lwc:else>
       <div class="slds-var-p-around_medium">
-        <h3 class="slds-text-body_regular">Click <strong>Refresh Results</strong> to see the latest information.</h3>
+        <h3 class="slds-text-body_regular">Click <strong>Refresh</strong> button above to see the latest information.</h3>
         <p>{errorMessage}</p>
       </div>
 

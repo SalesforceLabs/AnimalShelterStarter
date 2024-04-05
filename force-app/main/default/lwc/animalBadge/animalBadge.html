@@ -2,22 +2,22 @@
     <lightning-card title="Animal Status Indicators" icon-name="custom:custom26">
         <div class="slds-var-m-around_medium">
             <template if:true={badges.Alert}>
-                <span class="badge alert">Alert</span>
+                <lightning-badge label="Alert" class="slds-theme_error"></lightning-badge>
             </template>
             <template if:true={badges.Condition}>
-                <span class="badge condition">Condition</span>
+                <lightning-badge label="Condition" class="condition"></lightning-badge>
             </template>
             <template if:true={badges.Nutrition}>
-                <span class="badge nutrition">Nutrition</span>
+                <lightning-badge label="Nutrition" class="slds-theme_success"></lightning-badge>
             </template>
             <template if:true={badges.Exercise}>
-                <span class="badge exercise">Exercise</span>
+                <lightning-badge label="Exercise" class="exercise"></lightning-badge>
             </template>
             <template if:true={badges.Treatment}>
-                <span class="badge treatment">Treatment</span>
+                <lightning-badge label="Treatment" class="treatment"></lightning-badge>
             </template>
             <template if:true={badges.Vaccination}>
-                <span class="badge vaccination">Vaccination</span>
+                <lightning-badge label="Vaccination" class="vaccination"></lightning-badge>
             </template>
         </div>
     </lightning-card>

@@ -4,6 +4,7 @@
     <description>[Animal Shelter Starter] - Creates a Platform Event for Badge Update on record create or update</description>
     <environments>Default</environments>
     <interviewLabel>Condition - Create Platform Event {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Condition - Create Platform Event</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -41,7 +42,7 @@
                 <stringValue>Condition</stringValue>
             </value>
         </inputAssignments>
-        <object>Badge_Update_Event__e</object>
+        <object>Animal_Update_Event__e</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <start>

@@ -28,7 +28,7 @@ public with sharing class AlertBannerController {
 
         if(Schema.SObjectType.animalshelters__Animal_Alert__c.isAccessible() && Schema.SObjectType.animalshelters__Animal_Alert__c.fields.animalshelters__Alert_Message__c.isAccessible() && Schema.SObjectType.animalshelters__Animal_Alert__c.fields.animalshelters__Start_Date_Time__c.isAccessible() && Schema.SObjectType.animalshelters__Animal_Alert__c.fields.animalshelters__End_Date_Time__c.isAccessible()){
 
-            List<animalshelters__Animal_Alert__c> AlertList = [SELECT Id, animalshelters__Alert_Message__c,animalshelters__Start_Date_Time__c FROM animalshelters__Animal_Alert__c WHERE animalshelters__Animal__c = :parentId AND animalshelters__Start_Date_Time__c <= TODAY AND (animalshelters__End_Date_Time__c >= TODAY OR animalshelters__End_Date_Time__c = NULL)  WITH SECURITY_ENFORCED LIMIT 20];
+            List<animalshelters__Animal_Alert__c> AlertList = [SELECT Id, animalshelters__Alert_Message__c,animalshelters__Start_Date_Time__c,animalshelters__End_Date_Time__c,animalshelters__Severity_Level__c,animalshelters__Type__c FROM animalshelters__Animal_Alert__c WHERE animalshelters__Animal__c = :parentId AND animalshelters__Start_Date_Time__c <= TODAY AND (animalshelters__End_Date_Time__c >= TODAY OR animalshelters__End_Date_Time__c = NULL)  WITH SECURITY_ENFORCED LIMIT 20];
             return AlertList;
 
         }

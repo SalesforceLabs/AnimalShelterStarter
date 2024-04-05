@@ -85,7 +85,6 @@
             <fieldText>Alert Description</fieldText>
             <fieldType>InputField</fieldType>
             <helpText>&lt;p&gt;Update this description (if needed) to define the alert message which other users will see.&lt;/p&gt;</helpText>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -103,7 +102,6 @@
                     <fieldText>Start Date/Time</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;When should this alert be shown from?&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
@@ -126,7 +124,6 @@
                     <fieldText>End Date/Time</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;When should we stop showing the alert? Note that you can leave this blank and it will show the alert on the animal record until an end date is added on the record.&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>

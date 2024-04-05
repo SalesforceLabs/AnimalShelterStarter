@@ -6,14 +6,14 @@
  * @last modified by  : Chris Rolfe
 **/
 import { LightningElement, api, wire } from 'lwc';
-import { subscribe, unsubscribe, onError, setDebugFlag, isEmpEnabled } from 'lightning/empApi';
+import { subscribe, unsubscribe, onError } from 'lightning/empApi';
 import { refreshApex } from '@salesforce/apex';
 import getRelatedBadges from '@salesforce/apex/AnimalBadgeController.getRelatedBadges';
 
 export default class AnimalBadge extends LightningElement {
     @api recordId;
     badges = {};
-    channelName = '/event/Badge_Update_Event__e';
+    channelName = '/event/animalshelters__Animal_Update_Event__e';
     subscription = {};
     wiredBadgesResult;
 

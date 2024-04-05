@@ -443,7 +443,7 @@
             <name>Automatch_On</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Auto_Match__c</leftValueReference>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Auto_Match__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -932,7 +932,6 @@
                     <dataType>String</dataType>
                     <fieldText>Local Vet Details</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
@@ -1091,7 +1090,6 @@
             <dataType>String</dataType>
             <fieldText>Select a Contact</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>

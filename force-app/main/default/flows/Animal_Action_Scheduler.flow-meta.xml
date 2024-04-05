@@ -497,7 +497,6 @@
                     <fieldText>When is the first date and time of the action?</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;Date of first treatment&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
@@ -521,7 +520,6 @@
                     <defaultSelectedChoiceReference>Day_Choice</defaultSelectedChoiceReference>
                     <fieldText>How often will this action need to be completed?</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
@@ -533,7 +531,6 @@
                     <fieldText>For how long?</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;Once you have set the recurrence (e.g. to Daily), how many days will the schedule run for (e.g. 6 would be 6 days)? &lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                 </fields>
@@ -561,7 +558,6 @@
             <dataType>String</dataType>
             <fieldText>Select the type of action for the animal:</fieldText>
             <fieldType>RadioButtons</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -569,7 +565,6 @@
             <fieldText>Provide a description for this action:</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <helpText>&lt;p&gt;Provide specifics for this action, so that other people know what to do in order to complete this action for the animal.&lt;/p&gt;</helpText>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -602,7 +597,6 @@
             <dataType>String</dataType>
             <fieldText>Treatment Type</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>

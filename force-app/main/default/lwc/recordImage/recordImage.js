@@ -49,9 +49,17 @@ export default class recordImage extends LightningElement {
         }
     }
 
+    updateImageStyle(imageUrl) {
+        const imageContainer = this.template.querySelector('.image-container');
+        if (imageContainer) {
+            imageContainer.style.backgroundImage = `url(${imageUrl})`;
+        }
+    }
+
     // Wire Record and load Photo Id Field
     @wire(getRecord, { recordId: '$recordId', fields: '$photoIdField' })
     wiredRecord({ error, data }) {
+        this.updateImageStyle(this.placeholderURL);
         if (error) {
             let message = 'Unknown error';
             if (Array.isArray(error.body)) {
@@ -71,6 +79,7 @@ export default class recordImage extends LightningElement {
             if (this.CurrentRecord.fields.animalshelters__Photo_Id__c.value) {
                 this.photoId = this.CurrentRecord.fields.animalshelters__Photo_Id__c.value;
                 this.photoURL = '/sfc/servlet.shepherd/version/download/' + this.photoId;
+                this.updateImageStyle(this.photoURL);
             }
         }
     }
@@ -86,6 +95,7 @@ export default class recordImage extends LightningElement {
         this.photoId = uploadedFiles[0].contentVersionId;
         this.updateRecord(this.photoId);
         this.photoURL = '/sfc/servlet.shepherd/version/download/' + this.photoId;
+        this.updateImageStyle(this.photoURL);
     }
 
     // Update the PhotoId Field on the Record

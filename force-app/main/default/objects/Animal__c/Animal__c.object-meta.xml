@@ -174,8 +174,8 @@
         <customTabListAdditionalFields>Species__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Animal_Status__c</customTabListAdditionalFields>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Animal_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>TypeFromBreeds__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Species__c</lookupDialogsAdditionalFields>

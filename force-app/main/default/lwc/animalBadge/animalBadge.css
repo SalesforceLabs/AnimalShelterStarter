@@ -1,13 +1,20 @@
-.badge {
-    display: inline-block;
-    padding: 2px;
-    border-radius: 5px;
-    color: white;
-    margin-right: 10px;
+/**
+ * Created by stewart.anderson on 05/04/2024.
+ */
+.exercise{
+    --slds-c-badge-text-color: white;
+    --slds-c-badge-color-background: #9050e9;
 }
-.alert { background-color: red; }
-.condition { background-color: grey; }
-.nutrition { background-color: green; }
-.exercise { background-color: orange; }
-.treatment { background-color: blue; }
-.vaccination { background-color: pink; }
+
+.treatment{
+    --slds-c-badge-color-background: #fb538a;
+}
+
+.vaccination{
+    --slds-c-badge-text-color: white;
+    --slds-c-badge-color-background: #2796ff;
+}
+
+.condition {
+    --slds-c-badge-color-background: #fb5d2e;
+}

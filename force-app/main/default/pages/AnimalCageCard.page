@@ -6,13 +6,13 @@
     Updated: 23rd Jan 2023 - Security Fixes
 -->
 
-<apex:page standardController="animalshelters__Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+<apex:page standardController="Animal__c" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
 
     <apex:outputText escape="false" value="Animal Name: {! animalshelters__Animal__c.animalshelters__Animal_Name__c }" rendered="false"/>
-    <apex:repeat value="{!$ObjectType.animalshelters__Animal__c.FieldSets.animalshelters__Animal_Cage_Card_Field_Set}" var="field">
-        <apex:outputText escape="false" value="{!animalshelters__Animal__c[field]}" rendered="false" />
+    <apex:repeat value="{!$ObjectType.Animal__c.FieldSets.Animal_Cage_Card_Field_Set}" var="field">
+        <apex:outputText escape="false" value="{!Animal__c[field]}" rendered="false" />
     </apex:repeat>
-    <apex:outputText escape="false" value="{!animalshelters__Animal__c.animalshelters__Record_QR_Code__c}" rendered="false" />
+    <apex:outputText escape="false" value="{!Animal__c.Record_QR_Code__c}" rendered="false" />
 
     <html lang="en">
 
@@ -72,7 +72,7 @@
                 <apex:pageBlockSection columns="2">
                     <apex:pageBlockSectionItem >
                         <apex:outputPanel >
-	                        <apex:repeat value="{!$ObjectType.animalshelters__Animal__c.FieldSets.animalshelters__Animal_Cage_Card_Field_Set}" var="field">
+	                        <apex:repeat value="{!$ObjectType.Animal__c.FieldSets.Animal_Cage_Card_Field_Set}" var="field">
     	                    	<apex:outputText escape="false" styleClass="details" value="{!field.Label}" /><br/>
 					    	</apex:repeat>
                     		<br/>
@@ -80,7 +80,7 @@
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputPanel >
-                        	<apex:repeat value="{!$ObjectType.animalshelters__Animal__c.FieldSets.animalshelters__Animal_Cage_Card_Field_Set}" var="field">
+                        	<apex:repeat value="{!$ObjectType.Animal__c.FieldSets.Animal_Cage_Card_Field_Set}" var="field">
                         		<apex:outputText escape="false" styleClass="details" value="{!Animal__c[field]}" /><br/>
                             </apex:repeat>
                     		<br/>

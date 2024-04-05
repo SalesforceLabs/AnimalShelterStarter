@@ -1,76 +1,123 @@
-/**
- * @description       :
- * @author            : Stewart Anderson
- * @group             :
- * @last modified on  : 12-15-2023
- * @last modified by  : Stewart Anderson
-**/
-import { LightningElement, wire, api, track} from 'lwc';
-import { getRelatedListRecords } from 'lightning/uiRelatedListApi';
+import { LightningElement, api, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { subscribe, unsubscribe, onError } from 'lightning/empApi';
 import { NavigationMixin } from 'lightning/navigation';
+import getRelatedAlertRecords from '@salesforce/apex/AlertBannerController.getRelatedAlertRecords';
 
 export default class RecordAlerts extends NavigationMixin(LightningElement) {
   @api recordId;
-  @track isNoAlerts;
   @track showRecords;
-  error;
+  @track isNoAlerts;
   records;
+  subscription = {};
+  channelName = '/event/animalshelters__Animal_Update_Event__e';
+
+  connectedCallback() {
+    this.subscribeToPlatformEvent();
+    this.loadRelatedAlerts(); // Load alerts on component load
+  }
+
+  disconnectedCallback() {
+    this.unsubscribeFromPlatformEvent();
+  }
+
+  loadRelatedAlerts() {
+    getRelatedAlertRecords({ parentId: this.recordId })
+        .then(result => {
+            if (result && result.length > 0) {
+
+                // Define a mapping of severity levels to numerical values for sorting
+                const severityOrder = {
+                    'High': 1,
+                    'Medium': 2,
+                    'Low': 3,
+                    'Information Only': 4,
+                    'Undefined': 5
+                };
+
+                // Sort the result based on severity
+                const sortedResult = result.sort((a, b) => {
+                    // Compare the mapped numerical values of severity levels
+                    return severityOrder[a.animalshelters__Severity_Level__c] - severityOrder[b.animalshelters__Severity_Level__c];
+                });
 
 
-  @wire(getRelatedListRecords, {
-      parentRecordId: '$recordId',
-      relatedListId: 'animalshelters__Animal_Alerts__r',
-      fields: ['animalshelters__Animal_Alert__c.Id','animalshelters__Animal_Alert__c.animalshelters__Alert_Message__c','animalshelters__Animal_Alert__c.animalshelters__Start_Date_Time__c','animalshelters__Animal_Alert__c.animalshelters__End_Date_Time__c','animalshelters__Animal_Alert__c.animalshelters__Severity_Level__c','animalshelters__Animal_Alert__c.animalshelters__Type__c'],
-      where: "{ animalshelters__IsDisplayed__c: { eq: true } }"
-  })listInfo({ error, data }) {
-
-      console.log("Animal Alerts LWC: Loading Records...");
-
-      this.isNoAlerts = true;
-      this.showRecords = false;
-      this.error = undefined;
-
-      if (data) {
-            console.log("Animal Alerts LWC: Records Found!");
-            //console.log(data)
-            //console.log(data.records)
-            if (data.records.length > 0){
-                console.log("Animal Alerts LWC: Loading Alert Data");
-                this.isNoAlerts = false;
+                this.records = result.map(record => {
+                    let severityIconName;
+                    switch(record.animalshelters__Severity_Level__c) {
+                        case 'High':
+                            severityIconName = 'custom:custom53';
+                            break;
+                        case 'Medium':
+                            severityIconName = 'custom:custom30';
+                            break;
+                        default:
+                            severityIconName = 'standard:events'; // Default or unknown severity level
+                    }
+                    // Return the enhanced record with a new property for the icon name
+                    return { ...record, severityIconName };
+                });
                 this.showRecords = true;
-                this.records = data.records;
+                this.isNoAlerts = false;
+            } else {
+                // No records returned
+                this.records = []; // Ensure records is always an array for consistent data type
+                this.showRecords = false;
+                this.isNoAlerts = true;
             }
-      } else if (error) {
-            this.records = undefined;
-            let message = 'Unknown error';
-            if (Array.isArray(error.body)) {
-                message = error.body.map(e => e.message).join(', ');
-            } else if (typeof error.body.message === 'string') {
-                message = error.body.message;
-            }
+        })
+        .catch(error => {
             this.dispatchEvent(
                 new ShowToastEvent({
-                    title: 'Error Loading Record',
-                    message,
+                    title: 'Unable to fetch Animal Alert records',
+                    message: error.body.message,
                     variant: 'error',
                 }),
             );
+            this.showRecords = false;
+            this.isNoAlerts = true; // Assuming you want to indicate no alerts in case of error as well
+        });
+}
+
+  subscribeToPlatformEvent() {
+    const messageCallback = (response) => {
+      console.log('Event Received : ', JSON.stringify(response));
+      // Check if the update type is 'Alert'
+      if (response.data.payload.animalshelters__Record_ID__c === this.recordId && (response.data.payload.animalshelters__Update_Type__c === 'Alert' || response.data.payload.animalshelters__Update_Type__c === 'AlertDeleted')) {
+        this.loadRelatedAlerts(); // Reload alerts on event trigger
       }
+    };
+
+    subscribe(this.channelName, -1, messageCallback).then(response => {
+      console.log('Successfully subscribed to ', this.channelName, response);
+      this.subscription = response;
+    });
+
+    onError(error => {
+      console.log('Subscription Error : ', error);
+    });
   }
 
-  handleClick(event){
-    const recordId = event.target.dataset.alertid;
-    event.preventDefault();
-    event.stopPropagation();
-    this[NavigationMixin.Navigate]({
-        type: 'standard__recordPage',
-        attributes: {
-            actionName: "view",
-            objectApiName: "animalshelters__Animal_Alert__c",
-            recordId: recordId
-        }
+  unsubscribeFromPlatformEvent() {
+    unsubscribe(this.subscription, response => {
+      console.log('Unsubscribed from ', this.channelName, response);
+      this.subscription = null;
     });
-    }
+  }
 
+  handleClick(event) {
+    // Prevent the default action
+    event.preventDefault();
+    // Get the Alert record Id from the data attribute of the clicked element
+    const recordId = event.currentTarget.dataset.alertid;
+
+    // Navigate to the Alert record page
+    this[NavigationMixin.Navigate]({
+      type: 'standard__recordPage',
+      attributes: {
+        recordId: recordId,
+        actionName: 'view'
+      }
+    });
+  }
 }

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Animal Status Indicators" icon-name="custom:custom26">
+        <div class="slds-var-m-around_medium">
+            <template if:true={badges.Alert}>
+                <span class="badge alert">Alert</span>
+            </template>
+            <template if:true={badges.Condition}>
+                <span class="badge condition">Condition</span>
+            </template>
+            <template if:true={badges.Nutrition}>
+                <span class="badge nutrition">Nutrition</span>
+            </template>
+            <template if:true={badges.Exercise}>
+                <span class="badge exercise">Exercise</span>
+            </template>
+            <template if:true={badges.Treatment}>
+                <span class="badge treatment">Treatment</span>
+            </template>
+            <template if:true={badges.Vaccination}>
+                <span class="badge vaccination">Vaccination</span>
+            </template>
+        </div>
+    </lightning-card>
+</template>

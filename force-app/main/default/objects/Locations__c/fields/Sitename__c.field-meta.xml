@@ -3,9 +3,11 @@
     <fullName>Sitename__c</fullName>
     <description>Used Internally to capture the Site the Location is based in</description>
     <externalId>false</externalId>
-    <formula>IF( RecordType.Name =&apos;Unit&apos;, Parent_Block__r.Parent_Block__r.Name__c,
+    <formula>IF( AND(RecordType.Name =&apos;Unit&apos;, Parent_Block__r.RecordType.Name =&apos;SubBlock&apos;), Parent_Block__r.Parent_Block__r.Parent_Block__r.Name__c,
+IF( RecordType.Name =&apos;Unit&apos;, Parent_Block__r.Parent_Block__r.Name__c,
+IF( RecordType.Name =&apos;SubBlock&apos;, Parent_Block__r.Parent_Block__r.Name__c,
 IF( RecordType.Name =&apos;Block&apos;, Parent_Block__r.Name__c,
-IF( RecordType.Name =&apos;Site&apos;, Name__c, NULL)))</formula>
+IF( RecordType.Name =&apos;Site&apos;, Name__c, NULL)))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Sitename</label>
     <required>false</required>

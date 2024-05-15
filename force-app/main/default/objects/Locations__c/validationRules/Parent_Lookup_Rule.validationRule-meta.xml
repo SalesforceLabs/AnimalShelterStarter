@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Lookup_Rule</fullName>
+    <active>true</active>
+    <description>Ensures the correct Parent Location (RecordType) is selected</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK( Parent_Block__c)),
+    OR(
+    AND(
+        RecordType.DeveloperName = &apos;Unit&apos;,
+        NOT(
+           OR(
+          Parent_Block__r.RecordType.DeveloperName = &apos;Block&apos;,
+         Parent_Block__r.RecordType.DeveloperName = &apos;SubBlock&apos;
+)
+)
+),
+AND(RecordType.DeveloperName = &apos;SubBlock&apos;,
+Parent_Block__r.RecordType.DeveloperName &lt;&gt; &apos;Block&apos;
+),
+AND(RecordType.DeveloperName = &apos;Block&apos;,
+Parent_Block__r.RecordType.DeveloperName &lt;&gt; &apos;Site&apos;
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Parent_Block__c</errorDisplayField>
+    <errorMessage>The selected Parent Block type is incorrect. For Unit, select a Block or SubBlock, for SubBlock select a Block, for Block select a Site</errorMessage>
+</ValidationRule>

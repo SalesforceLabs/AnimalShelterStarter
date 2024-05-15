@@ -65,5 +65,9 @@
             <fullName>Unavailable</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Unavailable - Cleaning Required</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
 </RecordType>

@@ -10,5 +10,6 @@
     }
   ],
   "namespace": "animalshelters",
-  "sourceApiVersion": "60.0"
+  "sourceApiVersion": "60.0",
+  "oauthLocalPort": 1718
 }

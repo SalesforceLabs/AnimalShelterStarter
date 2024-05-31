@@ -118,6 +118,12 @@
         <locationX>578</locationX>
         <locationY>539</locationY>
         <inputAssignments>
+            <field>Allocation__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Unit_Status__c</field>
             <value>
                 <stringValue>Available</stringValue>

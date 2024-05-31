@@ -382,7 +382,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Copy_1_of_Has_Allocated_Units_Text</name>
-            <fieldText>&lt;p&gt;Block &lt;strong&gt;&lt;em&gt;{!recordId.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Block/Sub Block &lt;strong&gt;&lt;em&gt;{!recordId.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this Block/Sub Block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -401,7 +401,7 @@
         </connector>
         <fields>
             <name>Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;To change the status of the current block and all its units, select an option below&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;To change the status of the current Block or Sub Block and all its units, select an option below&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -413,11 +413,6 @@
             <fieldType>RadioButtons</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Start_Screen_Text_Note</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 10px;&quot;&gt;NOTE:&lt;/strong&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt; Units will be set as Allocated, and the Block will be set as Unavailable&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if the block needs to be closed for maintenance, you can use this to update the whole block to unavailable.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>

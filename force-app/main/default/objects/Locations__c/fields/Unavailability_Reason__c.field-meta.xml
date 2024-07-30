@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unavailability_Reason__c</fullName>
+    <description>The reason the location has been made unavailable</description>
+    <externalId>false</externalId>
+    <label>Unavailability Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Biohazard/Outbreak</fullName>
+                <default>false</default>
+                <label>Biohazard/Outbreak</label>
+            </value>
+            <value>
+                <fullName>Cleaning</fullName>
+                <default>false</default>
+                <label>Cleaning</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Reserved</fullName>
+                <default>false</default>
+                <label>Reserved</label>
+            </value>
+            <value>
+                <fullName>Staff Shortages</fullName>
+                <default>false</default>
+                <label>Staff Shortages</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

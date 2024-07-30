@@ -62,6 +62,10 @@
                 <behavior>Readonly</behavior>
                 <field>Sitename__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Unavailability_Reason__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

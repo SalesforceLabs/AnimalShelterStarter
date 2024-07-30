@@ -18,6 +18,7 @@
     <customValue>
         <fullName>Unavailable - Cleaning Required</fullName>
         <default>false</default>
+        <isActive>false</isActive>
         <label>Unavailable - Cleaning Required</label>
     </customValue>
     <description>[Animal Shelter] Status of Unit locations</description>

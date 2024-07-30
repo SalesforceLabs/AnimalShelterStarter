@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
     <assignments>
         <description>Does the Collection Filter have any values</description>
@@ -285,6 +285,14 @@
         </rules>
     </decisions>
     <description>Flow to change the Status of a Unit, Sub Block or Block to make the associated Units Available or Unavailable</description>
+    <dynamicChoiceSets>
+        <name>Reason_Unavailable_Picklist</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Unavailability_Reason__c</picklistField>
+        <picklistObject>Locations__c</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Location - Change Status Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -399,6 +407,12 @@
             <field>Allocation__c</field>
             <value>
                 <elementReference>recordId.Capacity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unavailability_Reason__c</field>
+            <value>
+                <elementReference>Reason_Unavailable</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -574,14 +588,61 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Status_Options</name>
-            <choiceReferences>Available_Choice</choiceReferences>
-            <choiceReferences>Unavailable_Choice</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Status Options</fieldText>
-            <fieldType>RadioButtons</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <name>Start_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Start_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Status_Options</name>
+                    <choiceReferences>Available_Choice</choiceReferences>
+                    <choiceReferences>Unavailable_Choice</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Status Options</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Start_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Reason_Unavailable</name>
+                    <choiceReferences>Reason_Unavailable_Picklist</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Reason Unavailable</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Status_Options</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Unavailable_Choice</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if the block needs to be closed for maintenance, you can use this to update the whole block to unavailable.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>

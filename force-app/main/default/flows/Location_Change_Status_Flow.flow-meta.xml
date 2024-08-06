@@ -2,15 +2,63 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
     <assignments>
-        <name>Add_Units</name>
-        <label>Add Units</label>
-        <locationX>1986</locationX>
-        <locationY>1322</locationY>
+        <name>Add_SubBlock_to_Variable</name>
+        <label>Add SubBlock to Variable</label>
+        <locationX>2250</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>subBlocks</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_SubBlock_for_Block_in_Site.childRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Site_SubBlocks</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Sublocks</name>
+        <label>Add Sublocks</label>
+        <locationX>1810</locationX>
+        <locationY>2030</locationY>
+        <assignmentItems>
+            <assignToReference>subBlocks</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_SubBlock_for_Block.childRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>All_Blocks_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Unit_for_Each_Block_SubBlock</name>
+        <label>Add Unit for Each Block &amp; SubBlock</label>
+        <locationX>2250</locationX>
+        <locationY>1622</locationY>
         <assignmentItems>
             <assignToReference>Units</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Get_SubBlockUnits.UnitsFound</elementReference>
+                <elementReference>Get_Units_for_Each_Block_in_Site.childRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_All_Blocks_SubBlocks</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Units</name>
+        <label>Add Units</label>
+        <locationX>1898</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>Units</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Units_for_Each_SubBlock.childRecords</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -18,15 +66,47 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Build_Block_Updates</name>
+        <label>Build Block Updates</label>
+        <locationX>1898</locationX>
+        <locationY>2462</locationY>
+        <assignmentItems>
+            <assignToReference>subBlock_Blocks</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>subBlock_Block</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Block_Record_Details</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Combine_All_Blocks_and_SubBlocks_for_Site</name>
+        <label>Combine All Blocks and SubBlocks for Site</label>
+        <locationX>2162</locationX>
+        <locationY>1190</locationY>
+        <assignmentItems>
+            <assignToReference>subBlocks</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Blocks_Related_to_Site.childRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Combine_Site_Blocks_and_SubBlocks</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Combine_All_Units</name>
         <label>Combine All Units</label>
-        <locationX>1898</locationX>
-        <locationY>1514</locationY>
+        <locationX>1810</locationX>
+        <locationY>1406</locationY>
         <assignmentItems>
             <assignToReference>Units</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>blockUnits</elementReference>
+                <elementReference>Get_Units_Related_to_Block.childRecords</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -34,39 +114,26 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Copy_1_of_Count_No_of_Allocated_Units</name>
-        <label>Copy 1 of Count No of Allocated Units</label>
-        <locationX>1766</locationX>
+        <name>Combine_Block_SubBlock_records</name>
+        <label>Combine Block/SubBlock records</label>
+        <locationX>1810</locationX>
         <locationY>1922</locationY>
         <assignmentItems>
-            <assignToReference>allocationCount</assignToReference>
-            <operator>AssignCount</operator>
+            <assignToReference>subBlocks</assignToReference>
+            <operator>Add</operator>
             <value>
-                <elementReference>Copy_1_of_Filter_for_Units_with_an_Allocation</elementReference>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <assignments>
-        <name>Count_No_of_Allocated_Units</name>
-        <label>Count No of Allocated Units</label>
-        <locationX>1238</locationX>
-        <locationY>890</locationY>
-        <assignmentItems>
-            <assignToReference>allocationCount</assignToReference>
-            <operator>AssignCount</operator>
-            <value>
-                <elementReference>Filter_for_Units_with_an_Allocation</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Does_Block_Have_Allocated_Units</targetReference>
+            <targetReference>Add_Sublocks</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Get_Selected_Choice</name>
         <label>Get Selected Choice</label>
-        <locationX>1370</locationX>
-        <locationY>1214</locationY>
+        <locationX>1282</locationX>
+        <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>SelectedChoice</assignToReference>
             <operator>Assign</operator>
@@ -76,6 +143,36 @@
         </assignmentItems>
         <connector>
             <targetReference>Update_Block_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Block_details</name>
+        <label>Set Block details</label>
+        <locationX>1898</locationX>
+        <locationY>2354</locationY>
+        <assignmentItems>
+            <assignToReference>subBlock_Block.Block_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Status_Options</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subBlock_Block.Unavailability_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>resetUnavailableReason</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subBlock_Block.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Set_Block_Record_Details.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_Block_Updates</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -168,55 +265,6 @@
             <stringValue>Unavailable</stringValue>
         </value>
     </choices>
-    <collectionProcessors>
-        <name>Copy_1_of_Filter_for_Units_with_an_Allocation</name>
-        <elementSubtype>FilterCollectionProcessor</elementSubtype>
-        <label>Copy 1 of Filter for Units with an Allocation</label>
-        <locationX>1766</locationX>
-        <locationY>1814</locationY>
-        <assignNextValueToReference>currentItem_Filter_for_Units_with_an_Allocation</assignNextValueToReference>
-        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
-        <collectionReference>Units</collectionReference>
-        <conditionLogic>and</conditionLogic>
-        <conditions>
-            <leftValueReference>currentItem_Filter_for_Units_with_an_Allocation.Allocation__c</leftValueReference>
-            <operator>GreaterThan</operator>
-            <rightValue>
-                <numberValue>0.0</numberValue>
-            </rightValue>
-        </conditions>
-        <connector>
-            <targetReference>Copy_1_of_Count_No_of_Allocated_Units</targetReference>
-        </connector>
-    </collectionProcessors>
-    <collectionProcessors>
-        <name>Filter_for_Units_with_an_Allocation</name>
-        <elementSubtype>FilterCollectionProcessor</elementSubtype>
-        <label>Filter for Units with an Allocation</label>
-        <locationX>1238</locationX>
-        <locationY>782</locationY>
-        <assignNextValueToReference>currentItem_Filter_for_Units_with_an_Allocation</assignNextValueToReference>
-        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
-        <collectionReference>Get_Sub_Block_Units.UnitsFound</collectionReference>
-        <conditionLogic>and</conditionLogic>
-        <conditions>
-            <leftValueReference>currentItem_Filter_for_Units_with_an_Allocation.Allocation__c</leftValueReference>
-            <operator>GreaterThan</operator>
-            <rightValue>
-                <numberValue>0.0</numberValue>
-            </rightValue>
-        </conditions>
-        <conditions>
-            <leftValueReference>currentItem_Filter_for_Units_with_an_Allocation.Unit_Status__c</leftValueReference>
-            <operator>EqualTo</operator>
-            <rightValue>
-                <stringValue>Allocated</stringValue>
-            </rightValue>
-        </conditions>
-        <connector>
-            <targetReference>Count_No_of_Allocated_Units</targetReference>
-        </connector>
-    </collectionProcessors>
     <decisions>
         <name>Are_There_Active_Movement_Records</name>
         <label>Are There Active Movement Records?</label>
@@ -245,7 +293,7 @@
     <decisions>
         <name>Are_There_SubBlock_Units</name>
         <label>Are There SubBlock Units</label>
-        <locationX>1040</locationX>
+        <locationX>1018</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Temp</targetReference>
@@ -255,7 +303,7 @@
             <name>No_SubBlock_Units</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Sub_Block_Units.UnitsFound</leftValueReference>
+                <leftValueReference>Get_SubBlock_Units.childRecords</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -267,8 +315,8 @@
     <decisions>
         <name>Are_there_SubBlocks</name>
         <label>Are there SubBlocks?</label>
-        <locationX>1766</locationX>
-        <locationY>998</locationY>
+        <locationX>1678</locationX>
+        <locationY>890</locationY>
         <defaultConnector>
             <targetReference>Loop_Through_SubBlocks</targetReference>
         </defaultConnector>
@@ -277,41 +325,66 @@
             <name>No_SubBlocks</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>subBlocks</leftValueReference>
+                <leftValueReference>Get_SubBlock_for_Block.childRecords</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Copy_1_of_Filter_for_Units_with_an_Allocation</targetReference>
+                <targetReference>Change_Block_Units_Status_and_Check_for_Allocated_Units</targetReference>
             </connector>
             <label>No - SubBlocks</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Does_Block_Have_Allocated_Units</name>
-        <label>Does Block Have Allocated Units</label>
-        <locationX>1238</locationX>
-        <locationY>998</locationY>
+        <name>Did_Block_Have_Allocated_Units</name>
+        <label>Did Block Have Allocated Units</label>
+        <locationX>1678</locationX>
+        <locationY>1814</locationY>
         <defaultConnector>
-            <targetReference>Change_SubBlock_Units_Status</targetReference>
+            <targetReference>Combine_Block_SubBlock_records</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <defaultConnectorLabel>No - Block hasn&apos;t</defaultConnectorLabel>
         <rules>
-            <name>Yes</name>
+            <name>Yes_Block_has</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>allocationCount</leftValueReference>
-                <operator>GreaterThan</operator>
+                <leftValueReference>allocatedUnits</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <numberValue>0.0</numberValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Has_Allocated_Units</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>Yes - Block has</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_SubBlock_Have_Allocated_Units</name>
+        <label>Did SubBlock Have Allocated Units</label>
+        <locationX>1194</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <targetReference>Get_Selected_Choice</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - SubBlock hasn&apos;t</defaultConnectorLabel>
+        <rules>
+            <name>Yes_SubBlock_has</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>allocatedUnits</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Has_Allocated_Units</targetReference>
+            </connector>
+            <label>Yes - SubBlock has</label>
         </rules>
     </decisions>
     <decisions>
@@ -375,7 +448,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Sub_Block_Units</targetReference>
+                <targetReference>Get_SubBlock_Units</targetReference>
             </connector>
             <label>Sub Block</label>
         </rules>
@@ -390,7 +463,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_SubBlock_RecordType_Id</targetReference>
+                <targetReference>Get_SubBlock_for_Block</targetReference>
             </connector>
             <label>Block</label>
         </rules>
@@ -404,6 +477,9 @@
                     <stringValue>Site</stringValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Get_Blocks_Related_to_Site</targetReference>
+            </connector>
             <label>Site</label>
         </rules>
     </decisions>
@@ -426,17 +502,59 @@
     <isTemplate>true</isTemplate>
     <label>Location - Change Status Flow</label>
     <loops>
-        <name>Loop_Through_SubBlocks</name>
-        <label>Loop Through SubBlocks</label>
-        <locationX>1898</locationX>
-        <locationY>1106</locationY>
+        <name>Get_SubBlock_for_Each_Block</name>
+        <label>Get SubBlock for Each Block</label>
+        <locationX>2162</locationX>
+        <locationY>674</locationY>
+        <collectionReference>Get_Blocks_Related_to_Site.childRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_SubBlock_for_Block_in_Site</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Combine_All_Blocks_and_SubBlocks_for_Site</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Through_All_Blocks_SubBlocks</name>
+        <label>Loop Through All Blocks &amp; SubBlocks</label>
+        <locationX>2162</locationX>
+        <locationY>1406</locationY>
         <collectionReference>subBlocks</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Get_SubBlockUnits</targetReference>
+            <targetReference>Get_Units_for_Each_Block_in_Site</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Units_for_Block_Sub_Blocks</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Through_SubBlocks</name>
+        <label>Loop Through SubBlocks</label>
+        <locationX>1810</locationX>
+        <locationY>998</locationY>
+        <collectionReference>Get_SubBlock_for_Block.childRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_Units_for_Each_SubBlock</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Combine_All_Units</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Set_Block_Record_Details</name>
+        <label>Set Block Record Details</label>
+        <locationX>1810</locationX>
+        <locationY>2246</locationY>
+        <collectionReference>subBlocks</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Block_details</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Block_Status_Block</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -486,73 +604,11 @@
         <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordLookups>
-        <name>Get_SubBlocks_related_to_Block</name>
-        <label>Get SubBlocks related to Block</label>
-        <locationX>1766</locationX>
-        <locationY>566</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_SubBlocks</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Parent_Block__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>RecordTypeId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_SubBlock_RecordType_Id.returnedRecordTypeId</elementReference>
-            </value>
-        </filters>
-        <object>Locations__c</object>
-        <outputReference>subBlocks</outputReference>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Allocation__c</queriedFields>
-        <queriedFields>Capacity__c</queriedFields>
-        <queriedFields>Unavailability_Reason__c</queriedFields>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Units_Related_to_Block</name>
-        <label>Get Units Related to Block</label>
-        <locationX>1766</locationX>
-        <locationY>782</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Units_Related_to_Block</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Parent_Block__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>RecordTypeId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_RecordType_Id_for_Unit.returnedRecordTypeId</elementReference>
-            </value>
-        </filters>
-        <object>Locations__c</object>
-        <outputReference>blockUnits</outputReference>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Allocation__c</queriedFields>
-        <queriedFields>Capacity__c</queriedFields>
-        <queriedFields>Unavailability_Reason__c</queriedFields>
-    </recordLookups>
     <recordUpdates>
         <name>Update_Block_Status</name>
         <label>Update Block Status</label>
-        <locationX>1370</locationX>
-        <locationY>1322</locationY>
+        <locationX>1282</locationX>
+        <locationY>1106</locationY>
         <connector>
             <targetReference>Completed</targetReference>
         </connector>
@@ -579,6 +635,17 @@
         <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Block_Status_Block</name>
+        <label>Update Block Status - (Block)</label>
+        <locationX>1810</locationX>
+        <locationY>2654</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Completed</targetReference>
+        </connector>
+        <inputReference>subBlock_Blocks</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Unit</name>
         <label>Update Unit</label>
         <locationX>446</locationX>
@@ -586,19 +653,57 @@
         <inputReference>Unit_Assignment</inputReference>
     </recordUpdates>
     <screens>
-        <name>Combined_Units</name>
-        <label>Combined Units</label>
-        <locationX>1898</locationX>
-        <locationY>1622</locationY>
+        <name>All_Blocks_Screen</name>
+        <label>All Blocks Screen</label>
+        <locationX>1810</locationX>
+        <locationY>2138</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Copy_1_of_Filter_for_Units_with_an_Allocation</targetReference>
+            <targetReference>Set_Block_Record_Details</targetReference>
+        </connector>
+        <fields>
+            <name>All_Blocks_ScreenText</name>
+            <fieldText>&lt;p&gt;{!subBlocks}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Combine_Site_Blocks_and_SubBlocks</name>
+        <label>Combine Site Blocks and SubBlocks</label>
+        <locationX>2162</locationX>
+        <locationY>1298</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Loop_Through_All_Blocks_SubBlocks</targetReference>
+        </connector>
+        <fields>
+            <name>Combine_Site_Blocks_and_SubBlocksText</name>
+            <fieldText>&lt;p&gt;Blocks and SubBlocks for Site&lt;/p&gt;&lt;p&gt;{!subBlocks}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Combined_Units</name>
+        <label>Combined Units</label>
+        <locationX>1810</locationX>
+        <locationY>1514</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Change_Block_Units_Status_and_Check_for_Allocated_Units</targetReference>
         </connector>
         <fields>
             <name>Combined_UnitsText</name>
-            <fieldText>&lt;p&gt;{!Units}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Combined Units&lt;/p&gt;&lt;p&gt;{!Units}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -607,8 +712,8 @@
     <screens>
         <name>Completed</name>
         <label>Completed</label>
-        <locationX>1370</locationX>
-        <locationY>1430</locationY>
+        <locationX>1282</locationX>
+        <locationY>1214</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -621,10 +726,29 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Get_Blocks</name>
+        <label>Get Blocks</label>
+        <locationX>2162</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Get_SubBlock_for_Each_Block</targetReference>
+        </connector>
+        <fields>
+            <name>Get_BlocksText</name>
+            <fieldText>&lt;p&gt;Blocks&lt;/p&gt;&lt;p&gt;{!Get_Blocks_Related_to_Site.childRecords}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Get_SubBlocks</name>
         <label>Get SubBlocks</label>
-        <locationX>1766</locationX>
-        <locationY>674</locationY>
+        <locationX>1678</locationX>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -633,7 +757,26 @@
         </connector>
         <fields>
             <name>Get_SubBlocksText</name>
-            <fieldText>&lt;p&gt;{!subBlocks}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Sub Blocks&lt;/p&gt;&lt;p&gt;{!Get_SubBlock_for_Block.childRecords}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Get_Units_for_Block_Sub_Blocks</name>
+        <label>Get Units for Block &amp; Sub Blocks</label>
+        <locationX>2162</locationX>
+        <locationY>1814</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Change_Units_Status_for_All_Site_Units</targetReference>
+        </connector>
+        <fields>
+            <name>Get_Units_for_Block_Sub_BlocksText</name>
+            <fieldText>&lt;p&gt;Units for Blocks &amp;amp; SubBlocks in Site&lt;/p&gt;&lt;p&gt;{!Units}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -642,8 +785,8 @@
     <screens>
         <name>Has_Allocated_Units</name>
         <label>Has Allocated Units</label>
-        <locationX>1106</locationX>
-        <locationY>1106</locationY>
+        <locationX>1337</locationX>
+        <locationY>2996</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -749,19 +892,38 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Site_SubBlocks</name>
+        <label>Site SubBlocks</label>
+        <locationX>2250</locationX>
+        <locationY>998</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Get_SubBlock_for_Each_Block</targetReference>
+        </connector>
+        <fields>
+            <name>Site_SubBlocksText</name>
+            <fieldText>&lt;p&gt;Site Block, SubBlocks&lt;/p&gt;&lt;p&gt;{!subBlocks}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Temp</name>
         <label>Temp</label>
-        <locationX>1238</locationX>
+        <locationX>1194</locationX>
         <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Filter_for_Units_with_an_Allocation</targetReference>
+            <targetReference>Change_SubBlock_Units_Status_and_Check_for_Allocations</targetReference>
         </connector>
         <fields>
             <name>TestText</name>
-            <fieldText>&lt;p&gt;{!Get_Sub_Block_Units.UnitsFound}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;{!Get_SubBlock_Units.childRecords}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -786,8 +948,8 @@
     <screens>
         <name>Units_Related_to_Block</name>
         <label>Units Related to Block</label>
-        <locationX>1766</locationX>
-        <locationY>890</locationY>
+        <locationX>1678</locationX>
+        <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -796,7 +958,7 @@
         </connector>
         <fields>
             <name>UnitsRelatedToBlockText</name>
-            <fieldText>&lt;p&gt;{!blockUnits}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Units related to Block&lt;/p&gt;&lt;p&gt;{!Get_Units_Related_to_Block.childRecords}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -811,12 +973,12 @@
     </start>
     <status>Draft</status>
     <subflows>
-        <name>Change_SubBlock_Units_Status</name>
-        <label>Change SubBlock Units Status</label>
-        <locationX>1370</locationX>
-        <locationY>1106</locationY>
+        <name>Change_Block_Units_Status_and_Check_for_Allocated_Units</name>
+        <label>Change Block Units Status and Check for Allocated Units</label>
+        <locationX>1678</locationX>
+        <locationY>1706</locationY>
         <connector>
-            <targetReference>Get_Selected_Choice</targetReference>
+            <targetReference>Did_Block_Have_Allocated_Units</targetReference>
         </connector>
         <flowName>Location_Change_Unit_Status_SubFlow</flowName>
         <inputAssignments>
@@ -834,9 +996,94 @@
         <inputAssignments>
             <name>unitsForStatusChange</name>
             <value>
-                <elementReference>Get_Sub_Block_Units.UnitsFound</elementReference>
+                <elementReference>Units</elementReference>
             </value>
         </inputAssignments>
+        <outputAssignments>
+            <assignToReference>allocatedUnits</assignToReference>
+            <name>unitsHaveAllocation</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>Change_SubBlock_Units_Status_and_Check_for_Allocations</name>
+        <label>Change SubBlock Units Status and Check for Allocations</label>
+        <locationX>1194</locationX>
+        <locationY>782</locationY>
+        <connector>
+            <targetReference>Did_SubBlock_Have_Allocated_Units</targetReference>
+        </connector>
+        <flowName>Location_Change_Unit_Status_SubFlow</flowName>
+        <inputAssignments>
+            <name>newStatus</name>
+            <value>
+                <elementReference>Status_Options</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>newUnavailabilityReason</name>
+            <value>
+                <elementReference>Reason_Unavailable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>unitsForStatusChange</name>
+            <value>
+                <elementReference>Get_SubBlock_Units.childRecords</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>allocatedUnits</assignToReference>
+            <name>unitsHaveAllocation</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>Change_Units_Status_for_All_Site_Units</name>
+        <label>Change Units Status for All Site Units</label>
+        <locationX>2162</locationX>
+        <locationY>1922</locationY>
+        <flowName>Location_Change_Unit_Status_SubFlow</flowName>
+        <inputAssignments>
+            <name>newStatus</name>
+            <value>
+                <elementReference>Status_Options</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>newUnavailabilityReason</name>
+            <value>
+                <elementReference>Reason_Unavailable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>unitsForStatusChange</name>
+            <value>
+                <elementReference>Units</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Get_Blocks_Related_to_Site</name>
+        <label>Get Blocks Related to Site</label>
+        <locationX>2162</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Get_Blocks</targetReference>
+        </connector>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
+        <inputAssignments>
+            <name>childRecordTypeName</name>
+            <value>
+                <stringValue>Block</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>locationRecord</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <subflows>
         <name>Get_RecordType_Id_for_Unit</name>
@@ -862,14 +1109,20 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <subflows>
-        <name>Get_Sub_Block_Units</name>
-        <label>Get Sub Block Units</label>
-        <locationX>1040</locationX>
+        <name>Get_SubBlock_for_Block</name>
+        <label>Get SubBlock for Block</label>
+        <locationX>1678</locationX>
         <locationY>458</locationY>
         <connector>
-            <targetReference>Are_There_SubBlock_Units</targetReference>
+            <targetReference>Get_SubBlocks</targetReference>
         </connector>
-        <flowName>Location_Get_Units_Subflow</flowName>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
+        <inputAssignments>
+            <name>childRecordTypeName</name>
+            <value>
+                <stringValue>SubBlock</stringValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <name>locationRecord</name>
             <value>
@@ -879,37 +1132,89 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <subflows>
-        <name>Get_SubBlock_RecordType_Id</name>
-        <label>Get SubBlock RecordType Id</label>
-        <locationX>1766</locationX>
-        <locationY>458</locationY>
+        <name>Get_SubBlock_for_Block_in_Site</name>
+        <label>Get SubBlock for Block in Site</label>
+        <locationX>2250</locationX>
+        <locationY>782</locationY>
         <connector>
-            <targetReference>Get_SubBlocks_related_to_Block</targetReference>
+            <targetReference>Add_SubBlock_to_Variable</targetReference>
         </connector>
-        <flowName>Animal_RecordType_Subflow</flowName>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
         <inputAssignments>
-            <name>developerName</name>
+            <name>childRecordTypeName</name>
             <value>
                 <stringValue>SubBlock</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <name>sObjectName</name>
+            <name>locationRecord</name>
             <value>
-                <stringValue>animalshelters__Locations__c</stringValue>
+                <elementReference>Get_SubBlock_for_Each_Block</elementReference>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <subflows>
-        <name>Get_SubBlockUnits</name>
-        <label>Get SubBlockUnits</label>
-        <locationX>1986</locationX>
-        <locationY>1214</locationY>
+        <name>Get_SubBlock_Units</name>
+        <label>Get SubBlock Units</label>
+        <locationX>1018</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Are_There_SubBlock_Units</targetReference>
+        </connector>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
+        <inputAssignments>
+            <name>childRecordTypeName</name>
+            <value>
+                <stringValue>Unit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>locationRecord</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Get_Units_for_Each_Block_in_Site</name>
+        <label>Get Units for Each Block in Site</label>
+        <locationX>2250</locationX>
+        <locationY>1514</locationY>
+        <connector>
+            <targetReference>Add_Unit_for_Each_Block_SubBlock</targetReference>
+        </connector>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
+        <inputAssignments>
+            <name>childRecordTypeName</name>
+            <value>
+                <stringValue>Unit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>locationRecord</name>
+            <value>
+                <elementReference>Loop_Through_All_Blocks_SubBlocks</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Get_Units_for_Each_SubBlock</name>
+        <label>Get Units for Each SubBlock</label>
+        <locationX>1898</locationX>
+        <locationY>1106</locationY>
         <connector>
             <targetReference>Add_Units</targetReference>
         </connector>
-        <flowName>Location_Get_Units_Subflow</flowName>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
+        <inputAssignments>
+            <name>childRecordTypeName</name>
+            <value>
+                <stringValue>Unit</stringValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <name>locationRecord</name>
             <value>
@@ -918,6 +1223,36 @@
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
+    <subflows>
+        <name>Get_Units_Related_to_Block</name>
+        <label>Get Units Related to Block</label>
+        <locationX>1678</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Units_Related_to_Block</targetReference>
+        </connector>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
+        <inputAssignments>
+            <name>childRecordTypeName</name>
+            <value>
+                <stringValue>Unit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>locationRecord</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <name>allocatedUnits</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>allocationCount</name>
         <dataType>Number</dataType>
@@ -928,6 +1263,14 @@
     </variables>
     <variables>
         <name>AllRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
+    </variables>
+    <variables>
+        <name>blocks</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
@@ -988,6 +1331,22 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>subBlock_Block</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
+    </variables>
+    <variables>
+        <name>subBlock_Blocks</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>subBlocks</name>

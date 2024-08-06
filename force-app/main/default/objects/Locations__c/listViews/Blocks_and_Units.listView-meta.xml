@@ -17,7 +17,7 @@
     <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>
-        <value>Locations__c.Block,Locations__c.Unit</value>
+        <value>Locations__c.Block,Locations__c.Unit,Locations__c.SubBlock</value>
     </filters>
     <label>Blocks and Units</label>
 </ListView>

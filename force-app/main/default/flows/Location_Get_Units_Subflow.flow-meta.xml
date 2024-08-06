@@ -52,6 +52,7 @@
         <queriedFields>Allocation__c</queriedFields>
         <queriedFields>Capacity__c</queriedFields>
         <queriedFields>Unavailability_Reason__c</queriedFields>
+        <queriedFields>Unit_Status__c</queriedFields>
     </recordLookups>
     <start>
         <locationX>50</locationX>

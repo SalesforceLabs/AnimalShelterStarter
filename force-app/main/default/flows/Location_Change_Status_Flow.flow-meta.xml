@@ -2,9 +2,54 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
     <assignments>
+        <name>Add_Units</name>
+        <label>Add Units</label>
+        <locationX>1986</locationX>
+        <locationY>1322</locationY>
+        <assignmentItems>
+            <assignToReference>Units</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_SubBlockUnits.UnitsFound</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_SubBlocks</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Combine_All_Units</name>
+        <label>Combine All Units</label>
+        <locationX>1898</locationX>
+        <locationY>1514</locationY>
+        <assignmentItems>
+            <assignToReference>Units</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>blockUnits</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Combined_Units</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Count_No_of_Allocated_Units</name>
+        <label>Copy 1 of Count No of Allocated Units</label>
+        <locationX>1766</locationX>
+        <locationY>1922</locationY>
+        <assignmentItems>
+            <assignToReference>allocationCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Copy_1_of_Filter_for_Units_with_an_Allocation</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Count_No_of_Allocated_Units</name>
         <label>Count No of Allocated Units</label>
-        <locationX>1458</locationX>
+        <locationX>1238</locationX>
         <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>allocationCount</assignToReference>
@@ -20,8 +65,8 @@
     <assignments>
         <name>Get_Selected_Choice</name>
         <label>Get Selected Choice</label>
-        <locationX>1810</locationX>
-        <locationY>2054</locationY>
+        <locationX>1370</locationX>
+        <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>SelectedChoice</assignToReference>
             <operator>Assign</operator>
@@ -31,22 +76,6 @@
         </assignmentItems>
         <connector>
             <targetReference>Update_Block_Status</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Location_Record_to_Update</name>
-        <label>Location Record to Update</label>
-        <locationX>1810</locationX>
-        <locationY>1430</locationY>
-        <assignmentItems>
-            <assignToReference>updatedLocationRecords</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>updatedLocationRecord</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_Units</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -123,37 +152,6 @@
             <targetReference>Update_Unit</targetReference>
         </connector>
     </assignments>
-    <assignments>
-        <description>Set the Allocation of the Location Record - Equal to the Capacity</description>
-        <name>Update_Unit_Allocation</name>
-        <label>Update Unit Allocation</label>
-        <locationX>1810</locationX>
-        <locationY>1322</locationY>
-        <assignmentItems>
-            <assignToReference>updatedLocationRecord.Allocation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Units.Capacity__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>updatedLocationRecord.Id</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Units.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>updatedLocationRecord.Unit_Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Unavailable</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Location_Record_to_Update</targetReference>
-        </connector>
-    </assignments>
     <choices>
         <name>Available_Choice</name>
         <choiceText>Available</choiceText>
@@ -171,10 +169,31 @@
         </value>
     </choices>
     <collectionProcessors>
+        <name>Copy_1_of_Filter_for_Units_with_an_Allocation</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Copy 1 of Filter for Units with an Allocation</label>
+        <locationX>1766</locationX>
+        <locationY>1814</locationY>
+        <assignNextValueToReference>currentItem_Filter_for_Units_with_an_Allocation</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Units</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_for_Units_with_an_Allocation.Allocation__c</leftValueReference>
+            <operator>GreaterThan</operator>
+            <rightValue>
+                <numberValue>0.0</numberValue>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Copy_1_of_Count_No_of_Allocated_Units</targetReference>
+        </connector>
+    </collectionProcessors>
+    <collectionProcessors>
         <name>Filter_for_Units_with_an_Allocation</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter for Units with an Allocation</label>
-        <locationX>1458</locationX>
+        <locationX>1238</locationX>
         <locationY>782</locationY>
         <assignNextValueToReference>currentItem_Filter_for_Units_with_an_Allocation</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
@@ -185,6 +204,13 @@
             <operator>GreaterThan</operator>
             <rightValue>
                 <numberValue>0.0</numberValue>
+            </rightValue>
+        </conditions>
+        <conditions>
+            <leftValueReference>currentItem_Filter_for_Units_with_an_Allocation.Unit_Status__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <stringValue>Allocated</stringValue>
             </rightValue>
         </conditions>
         <connector>
@@ -219,7 +245,7 @@
     <decisions>
         <name>Are_There_SubBlock_Units</name>
         <label>Are There SubBlock Units</label>
-        <locationX>1150</locationX>
+        <locationX>1040</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Temp</targetReference>
@@ -239,12 +265,37 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Does_Block_Have_Allocated_Units</name>
-        <label>Does Block Have Allocated Units</label>
-        <locationX>1458</locationX>
+        <name>Are_there_SubBlocks</name>
+        <label>Are there SubBlocks?</label>
+        <locationX>1766</locationX>
         <locationY>998</locationY>
         <defaultConnector>
-            <targetReference>What_is_the_new_Status</targetReference>
+            <targetReference>Loop_Through_SubBlocks</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_SubBlocks</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>subBlocks</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Filter_for_Units_with_an_Allocation</targetReference>
+            </connector>
+            <label>No - SubBlocks</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Block_Have_Allocated_Units</name>
+        <label>Does Block Have Allocated Units</label>
+        <locationX>1238</locationX>
+        <locationY>998</locationY>
+        <defaultConnector>
+            <targetReference>Change_SubBlock_Units_Status</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -292,7 +343,7 @@
     <decisions>
         <name>What_is_the_Locations_RecordType</name>
         <label>What is the Locations RecordType</label>
-        <locationX>1469</locationX>
+        <locationX>1337</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Location_RecordType_Error</targetReference>
@@ -339,49 +390,21 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_SubBlock_ID</targetReference>
+                <targetReference>Get_SubBlock_RecordType_Id</targetReference>
             </connector>
             <label>Block</label>
         </rules>
-    </decisions>
-    <decisions>
-        <name>What_is_the_new_Status</name>
-        <label>What is the new Status?</label>
-        <locationX>1810</locationX>
-        <locationY>1106</locationY>
-        <defaultConnector>
-            <targetReference>Get_Selected_Choice</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Status_Available</name>
+            <name>Site</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Status_Options</leftValueReference>
+                <leftValueReference>recordId.RecordType.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Available_Choice</elementReference>
+                    <stringValue>Site</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Update_Unit_Status_to_Available</targetReference>
-            </connector>
-            <label>Available</label>
-        </rules>
-        <rules>
-            <name>Status_Unavailable</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Status_Options</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Unavailable_Choice</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Loop_Through_Units</targetReference>
-            </connector>
-            <label>Unavailable</label>
+            <label>Site</label>
         </rules>
     </decisions>
     <description>Flow to change the Status of a Unit, Sub Block or Block to make the associated Units Available or Unavailable</description>
@@ -394,21 +417,26 @@
         <picklistObject>Locations__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>resetUnavailableReason</name>
+        <dataType>String</dataType>
+        <expression>IF({!Status_Options} = &apos;Available&apos;, &apos; &apos;, {!Reason_Unavailable})</expression>
+    </formulas>
     <interviewLabel>Location - Change Status Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Location - Change Status Flow</label>
     <loops>
-        <name>Loop_Through_Units</name>
-        <label>Loop Through Units</label>
-        <locationX>1722</locationX>
-        <locationY>1214</locationY>
-        <collectionReference>Get_Sub_Block_Units.UnitsFound</collectionReference>
+        <name>Loop_Through_SubBlocks</name>
+        <label>Loop Through SubBlocks</label>
+        <locationX>1898</locationX>
+        <locationY>1106</locationY>
+        <collectionReference>subBlocks</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Update_Unit_Allocation</targetReference>
+            <targetReference>Get_SubBlockUnits</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_Unit_Status_to_Unavailable</targetReference>
+            <targetReference>Combine_All_Units</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -458,11 +486,73 @@
         <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_SubBlocks_related_to_Block</name>
+        <label>Get SubBlocks related to Block</label>
+        <locationX>1766</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_SubBlocks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Parent_Block__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_SubBlock_RecordType_Id.returnedRecordTypeId</elementReference>
+            </value>
+        </filters>
+        <object>Locations__c</object>
+        <outputReference>subBlocks</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Allocation__c</queriedFields>
+        <queriedFields>Capacity__c</queriedFields>
+        <queriedFields>Unavailability_Reason__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Units_Related_to_Block</name>
+        <label>Get Units Related to Block</label>
+        <locationX>1766</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Units_Related_to_Block</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Parent_Block__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_RecordType_Id_for_Unit.returnedRecordTypeId</elementReference>
+            </value>
+        </filters>
+        <object>Locations__c</object>
+        <outputReference>blockUnits</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Allocation__c</queriedFields>
+        <queriedFields>Capacity__c</queriedFields>
+        <queriedFields>Unavailability_Reason__c</queriedFields>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Block_Status</name>
         <label>Update Block Status</label>
-        <locationX>1810</locationX>
-        <locationY>2162</locationY>
+        <locationX>1370</locationX>
+        <locationY>1322</locationY>
         <connector>
             <targetReference>Completed</targetReference>
         </connector>
@@ -477,7 +567,13 @@
         <inputAssignments>
             <field>Block_Status__c</field>
             <value>
-                <elementReference>SelectedChoice</elementReference>
+                <elementReference>Status_Options</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unavailability_Reason__c</field>
+            <value>
+                <elementReference>resetUnavailableReason</elementReference>
             </value>
         </inputAssignments>
         <object>Locations__c</object>
@@ -489,55 +585,30 @@
         <locationY>974</locationY>
         <inputReference>Unit_Assignment</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Unit_Status_to_Available</name>
-        <label>Update Unit Status to Available</label>
-        <locationX>1370</locationX>
-        <locationY>1214</locationY>
-        <connector>
-            <targetReference>Get_Selected_Choice</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Parent_Block__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>RecordTypeId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Unit_RecordType_Id.returnedRecordTypeId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Allocation__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <object>Locations__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Unit_Status_to_Unavailable</name>
-        <label>Update Unit Status to Unavailable</label>
-        <locationX>1722</locationX>
+    <screens>
+        <name>Combined_Units</name>
+        <label>Combined Units</label>
+        <locationX>1898</locationX>
         <locationY>1622</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
         <connector>
-            <targetReference>Get_Selected_Choice</targetReference>
+            <targetReference>Copy_1_of_Filter_for_Units_with_an_Allocation</targetReference>
         </connector>
-        <faultConnector>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
-        <inputReference>updatedLocationRecords</inputReference>
-    </recordUpdates>
+        <fields>
+            <name>Combined_UnitsText</name>
+            <fieldText>&lt;p&gt;{!Units}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <screens>
         <name>Completed</name>
         <label>Completed</label>
-        <locationX>1810</locationX>
-        <locationY>2270</locationY>
+        <locationX>1370</locationX>
+        <locationY>1430</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -550,16 +621,19 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Error_Screen</name>
-        <label>Error Screen</label>
-        <locationX>1986</locationX>
-        <locationY>1730</locationY>
+        <name>Get_SubBlocks</name>
+        <label>Get SubBlocks</label>
+        <locationX>1766</locationX>
+        <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Get_Units_Related_to_Block</targetReference>
+        </connector>
         <fields>
-            <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;There has been an error in the flow when it attempting to update records.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click the Previous button below to go back and try again.  If the problem persists, contact your &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Salesforce administrator with &lt;/span&gt;the fault message below.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Fault Message:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <name>Get_SubBlocksText</name>
+            <fieldText>&lt;p&gt;{!subBlocks}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -582,31 +656,15 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Location_RecordType_Error</name>
-        <label>Location RecordType Error</label>
-        <locationX>2690</locationX>
-        <locationY>458</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Location_RecordType_Error_Text</name>
-            <fieldText>&lt;p&gt;ERROR! - The Location {!recordId.Name__c} has no Record Type&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <name>Start_Screen</name>
-        <label>Start Screen</label>
-        <locationX>1469</locationX>
+        <name>Initial_Screen</name>
+        <label>Initial Screen</label>
+        <locationX>1337</locationX>
         <locationY>134</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Get_Unit_RecordType_Id</targetReference>
+            <targetReference>Get_RecordType_Id_for_Unit</targetReference>
         </connector>
         <fields>
             <name>Start_Screen_Text</name>
@@ -614,10 +672,10 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Start_Screen_Section1</name>
+            <name>Initial_Screen_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Start_Screen_Section1_Column1</name>
+                <name>Initial_Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Status_Options</name>
@@ -638,7 +696,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Start_Screen_Section1_Column2</name>
+                <name>Initial_Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Reason_Unavailable</name>
@@ -675,9 +733,25 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Location_RecordType_Error</name>
+        <label>Location RecordType Error</label>
+        <locationX>2426</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Location_RecordType_Error_Text</name>
+            <fieldText>&lt;p&gt;ERROR! - The Location {!recordId.Name__c} has no Record Type&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Temp</name>
         <label>Temp</label>
-        <locationX>1458</locationX>
+        <locationX>1238</locationX>
         <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -709,55 +783,65 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>Units_Related_to_Block</name>
+        <label>Units Related to Block</label>
+        <locationX>1766</locationX>
+        <locationY>890</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Are_there_SubBlocks</targetReference>
+        </connector>
+        <fields>
+            <name>UnitsRelatedToBlockText</name>
+            <fieldText>&lt;p&gt;{!blockUnits}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>1343</locationX>
+        <locationX>1211</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Start_Screen</targetReference>
+            <targetReference>Initial_Screen</targetReference>
         </connector>
     </start>
     <status>Draft</status>
     <subflows>
-        <name>Get_Sub_Block_Units</name>
-        <label>Get Sub Block Units</label>
-        <locationX>1150</locationX>
-        <locationY>458</locationY>
+        <name>Change_SubBlock_Units_Status</name>
+        <label>Change SubBlock Units Status</label>
+        <locationX>1370</locationX>
+        <locationY>1106</locationY>
         <connector>
-            <targetReference>Are_There_SubBlock_Units</targetReference>
+            <targetReference>Get_Selected_Choice</targetReference>
         </connector>
-        <flowName>Location_Get_Units_Subflow</flowName>
+        <flowName>Location_Change_Unit_Status_SubFlow</flowName>
         <inputAssignments>
-            <name>locationRecord</name>
+            <name>newStatus</name>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Status_Options</elementReference>
             </value>
         </inputAssignments>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <inputAssignments>
+            <name>newUnavailabilityReason</name>
+            <value>
+                <elementReference>Reason_Unavailable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>unitsForStatusChange</name>
+            <value>
+                <elementReference>Get_Sub_Block_Units.UnitsFound</elementReference>
+            </value>
+        </inputAssignments>
     </subflows>
     <subflows>
-        <name>Get_SubBlock_ID</name>
-        <label>Get SubBlock ID</label>
-        <locationX>2426</locationX>
-        <locationY>458</locationY>
-        <flowName>Animal_RecordType_Subflow</flowName>
-        <inputAssignments>
-            <name>developerName</name>
-            <value>
-                <stringValue>Sub_Block</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>sObjectName</name>
-            <value>
-                <stringValue>animalshelters__Locations__c</stringValue>
-            </value>
-        </inputAssignments>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </subflows>
-    <subflows>
-        <name>Get_Unit_RecordType_Id</name>
-        <label>Get Unit RecordType Id</label>
-        <locationX>1469</locationX>
+        <name>Get_RecordType_Id_for_Unit</name>
+        <label>Get RecordType Id for Unit</label>
+        <locationX>1337</locationX>
         <locationY>242</locationY>
         <connector>
             <targetReference>What_is_the_Locations_RecordType</targetReference>
@@ -777,6 +861,63 @@
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
+    <subflows>
+        <name>Get_Sub_Block_Units</name>
+        <label>Get Sub Block Units</label>
+        <locationX>1040</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Are_There_SubBlock_Units</targetReference>
+        </connector>
+        <flowName>Location_Get_Units_Subflow</flowName>
+        <inputAssignments>
+            <name>locationRecord</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Get_SubBlock_RecordType_Id</name>
+        <label>Get SubBlock RecordType Id</label>
+        <locationX>1766</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Get_SubBlocks_related_to_Block</targetReference>
+        </connector>
+        <flowName>Animal_RecordType_Subflow</flowName>
+        <inputAssignments>
+            <name>developerName</name>
+            <value>
+                <stringValue>SubBlock</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>sObjectName</name>
+            <value>
+                <stringValue>animalshelters__Locations__c</stringValue>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Get_SubBlockUnits</name>
+        <label>Get SubBlockUnits</label>
+        <locationX>1986</locationX>
+        <locationY>1214</locationY>
+        <connector>
+            <targetReference>Add_Units</targetReference>
+        </connector>
+        <flowName>Location_Get_Units_Subflow</flowName>
+        <inputAssignments>
+            <name>locationRecord</name>
+            <value>
+                <elementReference>Loop_Through_SubBlocks</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
     <variables>
         <name>allocationCount</name>
         <dataType>Number</dataType>
@@ -787,6 +928,14 @@
     </variables>
     <variables>
         <name>AllRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
+    </variables>
+    <variables>
+        <name>blockUnits</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
@@ -839,6 +988,14 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>subBlocks</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>Unit_Assignment</name>

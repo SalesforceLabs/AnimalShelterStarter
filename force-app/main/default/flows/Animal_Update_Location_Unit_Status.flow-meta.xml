@@ -20,13 +20,6 @@
                     <stringValue>Unavailable</stringValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Unit_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Unavailable - Cleaning Required</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Update_Allocation</targetReference>
             </connector>
@@ -155,5 +148,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>

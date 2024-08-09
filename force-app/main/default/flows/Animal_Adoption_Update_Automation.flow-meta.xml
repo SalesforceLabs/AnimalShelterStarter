@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
-    <description>On Adoption Status = Adopted, Update Contact Flag, Clear current and create new Movement record, update Animal status</description>
+    <description>[Animal Shelter] - When Adoption Status = Adopted: Update Contact Flag, Clear current and create new Movement record, update Animal status and details</description>
     <environments>Default</environments>
+    <formulas>
+        <name>formulaAdoptionDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(ISBLANK({!$Record.animalshelters__Date_of_Adoption__c}) , {!$Flow.CurrentDate}, {!$Record.animalshelters__Date_of_Adoption__c})</expression>
+    </formulas>
+    <formulas>
+        <name>formulaCollectedDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(ISBLANK({!$Record.animalshelters__Date_Collected__c}) , {!$Flow.CurrentDate}, {!$Record.animalshelters__Date_Collected__c})</expression>
+    </formulas>
     <interviewLabel>Animal - Adoption Update Automation</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Adoption Update Automation</label>
@@ -26,12 +36,13 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
+        <description>Creates a new Movement Record, of Type Adopted with the Start Date = to Date Collected</description>
         <name>Create_New_Movement_Record</name>
         <label>Create New Movement Record</label>
         <locationX>176</locationX>
         <locationY>755</locationY>
         <connector>
-            <targetReference>Update_Animal_Record</targetReference>
+            <targetReference>Close_Animal_Action_Records</targetReference>
         </connector>
         <inputAssignments>
             <field>Animal__c</field>
@@ -48,7 +59,7 @@
         <inputAssignments>
             <field>Start_Date__c</field>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>$Record.Date_Collected__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -61,34 +72,14 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Associated_Contact_Record</name>
-        <label>Get Associated Contact Record</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Set_Adopter_Flag_on_Contact_to_True</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Primary_Contact__r.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Contact</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
+        <description>Get the Current Movement Record for the Animal</description>
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
         <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Close_current_Movement_Record</targetReference>
+            <targetReference>Clean_Up_Location_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -110,8 +101,90 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Close_current_Movement_Record</name>
-        <label>Close current Movement Record</label>
+        <description>Frees up the Location record where the Animal was housed</description>
+        <name>Clean_Up_Location_Record</name>
+        <label>Clean Up Location Record</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Close_Current_Movement_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Current_Movement_Record.Location__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Allocation__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unit_Status__c</field>
+            <value>
+                <stringValue>Available</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Locations__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Close Outstanding Animal Action Records</description>
+        <name>Close_Animal_Action_Records</name>
+        <label>Close Animal Action Records</label>
+        <locationX>176</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>Update_Animal_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Animal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Animal__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Date_Time_Action_Completed__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Action_Completed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Action_Status__c</field>
+            <value>
+                <stringValue>Not Given</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comments__c</field>
+            <value>
+                <stringValue>N/A Animal Adopted</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Time_Action_Completed__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal_Action__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Sets the &apos;Current&apos; Movement record with end date and Current = False</description>
+        <name>Close_Current_Movement_Record</name>
+        <label>Close Current Movement Record</label>
         <locationX>176</locationX>
         <locationY>647</locationY>
         <connector>
@@ -140,10 +213,11 @@
         <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
+        <description>Sets the &quot;Is An Adopter&quot; Flag on the associated Contact to indicate they are an Adopter</description>
         <name>Set_Adopter_Flag_on_Contact_to_True</name>
         <label>Set Adopter Flag on Contact to True</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>323</locationY>
         <connector>
             <targetReference>Get_Current_Movement_Record</targetReference>
         </connector>
@@ -152,7 +226,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Associated_Contact_Record.Id</elementReference>
+                <elementReference>$Record.Primary_Contact__r.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -168,26 +242,27 @@
         <name>Update_Adoption_Record</name>
         <label>Update Adoption Record</label>
         <locationX>176</locationX>
-        <locationY>971</locationY>
+        <locationY>1079</locationY>
         <inputAssignments>
             <field>Date_Collected__c</field>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>formulaCollectedDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Date_of_Adoption__c</field>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>formulaAdoptionDate</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <description>Updates the Animal Record</description>
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
         <locationX>176</locationX>
-        <locationY>863</locationY>
+        <locationY>971</locationY>
         <connector>
             <targetReference>Update_Adoption_Record</targetReference>
         </connector>
@@ -214,7 +289,7 @@
         <inputAssignments>
             <field>Previous_Current_Owner__c</field>
             <value>
-                <elementReference>Get_Associated_Contact_Record.Id</elementReference>
+                <elementReference>$Record.Primary_Contact__r.Id</elementReference>
             </value>
         </inputAssignments>
         <object>Animal__c</object>
@@ -223,7 +298,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Associated_Contact_Record</targetReference>
+            <targetReference>Set_Adopter_Flag_on_Contact_to_True</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>

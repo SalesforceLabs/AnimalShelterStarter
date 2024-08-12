@@ -153,7 +153,7 @@
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Movement_Tasks__c</leftValueReference>
+                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Movement_Tasks__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -229,8 +229,7 @@
     <formulas>
         <name>IncrementAllocationBy1</name>
         <dataType>Number</dataType>
-        <expression>IF(
-            ISPICKVAL({!Get_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Location_Record.Allocation__c} + 1, 0)</expression>
+        <expression>{!Get_Location_Record.Allocation__c} + 1</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Movement SubFlow</interviewLabel>

@@ -181,7 +181,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get</targetReference>
+                <targetReference>Get_All_Units</targetReference>
             </connector>
             <label>Block</label>
         </rules>
@@ -238,7 +238,7 @@
             <label>Unavailable</label>
         </rules>
     </decisions>
-    <description>When Changing the status of a Block the Sub Locations are also updated</description>
+    <description>DEPRECATED - When Changing the status of a Block the Sub Locations are also updated</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Block Status Change</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -276,18 +276,6 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-    <recordLookups>
-        <name>Get</name>
-        <label>Get</label>
-        <locationX>248</locationX>
-        <locationY>458</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_All_Units</targetReference>
-        </connector>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordLookups>
         <name>Get_All_Units</name>
         <label>Get All Units</label>
@@ -481,7 +469,7 @@
             <targetReference>Start_Screen</targetReference>
         </connector>
     </start>
-    <status>InvalidDraft</status>
+    <status>Draft</status>
     <subflows>
         <name>Get_Unit_RecordType_Id</name>
         <label>Get Unit RecordType Id</label>

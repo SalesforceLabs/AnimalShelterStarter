@@ -59,7 +59,7 @@
         <inputAssignments>
             <field>Start_Date__c</field>
             <value>
-                <elementReference>$Record.Date_Collected__c</elementReference>
+                <elementReference>formulaCollectedDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -153,6 +153,13 @@
             <operator>IsNull</operator>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Treatment_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Vaccination</stringValue>
             </value>
         </filters>
         <inputAssignments>

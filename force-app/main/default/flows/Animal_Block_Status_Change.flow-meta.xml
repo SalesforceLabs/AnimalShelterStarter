@@ -241,7 +241,6 @@
     <description>DEPRECATED - When Changing the status of a Block the Sub Locations are also updated</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Block Status Change</interviewLabel>
-    <isTemplate>true</isTemplate>
     <label>Animal - Block Status Change</label>
     <loops>
         <name>Loop_Through_Units</name>

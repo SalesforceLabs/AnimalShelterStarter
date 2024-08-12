@@ -270,6 +270,7 @@
         <scale>0</scale>
     </formulas>
     <interviewLabel>Location - Change Unit Status SubFlow {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Location - Change Unit Status SubFlow</label>
     <loops>
         <name>Loop_Through_All_Units</name>

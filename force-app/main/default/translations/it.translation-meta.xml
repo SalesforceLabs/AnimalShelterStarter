@@ -1085,9 +1085,6 @@
                     <name>Start_Screen_Text</name>
                 </fields>
                 <fields>
-                    <name>Start_Screen_Text_Note</name>
-                </fields>
-                <fields>
                     <name>Status_Options</name>
                 </fields>
                 <name>Start_Screen</name>

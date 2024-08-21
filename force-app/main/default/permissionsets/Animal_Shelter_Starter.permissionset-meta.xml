@@ -1110,6 +1110,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Locations__c.Unavailability_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Locations__c.Unit_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1641,6 +1646,10 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <recordType>Locations__c.Site</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Locations__c.SubBlock</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

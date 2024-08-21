@@ -512,12 +512,7 @@
     <formulas>
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
-        <expression>IF({!Get_Current_Location_Record.Allocation__c} &lt;= 0,
-        {!Get_Current_Location_Record.Allocation__c},
-              IF(ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c},
-                   &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c},
-                   &quot;Multiple Animals&quot;) = True,
-        {!Get_Current_Location_Record.Allocation__c} - 1, 0))</expression>
+        <expression>{!Get_Current_Location_Record.Allocation__c} - 1</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Movement Process</interviewLabel>

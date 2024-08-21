@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Site</fullName>
+    <fullName>SubBlock</fullName>
     <active>true</active>
-    <description>A Physical Location, i.e. Animal Centre XXX</description>
-    <label>Site</label>
+    <description>A sub division of Block that can contain Units</description>
+    <label>SubBlock</label>
     <picklistValues>
         <picklist>Animal_Preference_Foster__c</picklist>
         <values>

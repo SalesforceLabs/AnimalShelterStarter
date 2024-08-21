@@ -79,8 +79,7 @@
     <formulas>
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
-        <expression>IF(
-            ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.Allocation__c} - 1, 0)</expression>
+        <expression>{!Get_Current_Location_Record.Allocation__c} - 1</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Deceased Animal Flow</interviewLabel>
@@ -194,6 +193,59 @@
         <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Close_Down_Outstanding_Animal_Action_Records</name>
+        <label>Close Down Outstanding Animal Action Records</label>
+        <locationX>710</locationX>
+        <locationY>1238</locationY>
+        <connector>
+            <targetReference>Completion_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Animal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Date_Time_Action_Completed__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Action_Completed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Action_Status__c</field>
+            <value>
+                <stringValue>Not Given</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comments__c</field>
+            <value>
+                <stringValue>Animal Deceased</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Time_Action_Completed__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal_Action__c</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
         <locationX>314</locationX>
@@ -216,13 +268,19 @@
         <inputAssignments>
             <field>Allocation__c</field>
             <value>
-                <elementReference>DecrementAllocationBy1</elementReference>
+                <elementReference>Get_Current_Location_Record.Capacity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unavailability_Reason__c</field>
+            <value>
+                <stringValue>Cleaning</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Unit_Status__c</field>
             <value>
-                <stringValue>Available</stringValue>
+                <stringValue>Unavailable</stringValue>
             </value>
         </inputAssignments>
         <object>Locations__c</object>
@@ -233,7 +291,7 @@
         <locationX>710</locationX>
         <locationY>1130</locationY>
         <connector>
-            <targetReference>Completion_Screen</targetReference>
+            <targetReference>Close_Down_Outstanding_Animal_Action_Records</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
@@ -260,7 +318,7 @@
         <name>Completion_Screen</name>
         <label>Completion Screen</label>
         <locationX>710</locationX>
-        <locationY>1238</locationY>
+        <locationY>1346</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -275,7 +333,7 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1282</locationX>
+        <locationX>1546</locationX>
         <locationY>1238</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>

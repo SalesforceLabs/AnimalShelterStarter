@@ -66,6 +66,13 @@
     <description>Autolaunched flow to update the Location Status based on availability</description>
     <environments>Default</environments>
     <formulas>
+        <description>Checks the Capacity of the Location</description>
+        <name>allocationFormula</name>
+        <dataType>Number</dataType>
+        <expression>IF({!$Record.animalshelters__Capacity__c} = 1, 0, {!$Record.animalshelters__Allocation__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
         <name>NoMoreCapacity</name>
         <dataType>Boolean</dataType>
         <expression>{!$Record.animalshelters__Availability__c} = 0</expression>
@@ -113,7 +120,7 @@
         <inputAssignments>
             <field>Allocation__c</field>
             <value>
-                <numberValue>0.0</numberValue>
+                <elementReference>allocationFormula</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

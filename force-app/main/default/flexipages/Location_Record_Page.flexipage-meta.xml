@@ -603,6 +603,12 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>locationAnimals</componentName>
+                <identifier>animalshelters_locationAnimals</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>sidebartabs</value>

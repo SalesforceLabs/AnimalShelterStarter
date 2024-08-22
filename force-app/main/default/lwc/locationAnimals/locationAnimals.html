@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Animals in Location">
+        <template if:true={isUnit}>
+            <template if:true={hasAnimals}>
+                <ul class="slds-list_dotted">
+                    <template for:each={animals} for:item="animal">
+                        <li key={animal.Id}>
+                            <div class="slds-text-heading_small">
+                                {animal.animalshelters__Animal__r.animalshelters__Animal_Name__c}
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={hasAnimals}>
+                <div class="slds-align_absolute-center" style="height:5rem">
+                    <p>No animals found for this Unit location.</p>
+                </div>
+            </template>
+        </template>
+        <template if:false={isUnit}>
+            <div class="slds-align_absolute-center" style="height:5rem">
+                <p>Not available for this Location.</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

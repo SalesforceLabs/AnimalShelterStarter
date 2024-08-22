@@ -4,7 +4,7 @@
     <assignments>
         <name>Add_SubBlock_to_Variable</name>
         <label>Add SubBlock to Variable</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>subBlocks</assignToReference>
@@ -20,7 +20,7 @@
     <assignments>
         <name>Add_Sublocks</name>
         <label>Add Sublocks</label>
-        <locationX>1612</locationX>
+        <locationX>1656</locationX>
         <locationY>1706</locationY>
         <assignmentItems>
             <assignToReference>subBlocks</assignToReference>
@@ -36,7 +36,7 @@
     <assignments>
         <name>Add_Unit_for_Each_Block_SubBlock</name>
         <label>Add Unit for Each Block &amp; SubBlock</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1298</locationY>
         <assignmentItems>
             <assignToReference>Units</assignToReference>
@@ -52,7 +52,7 @@
     <assignments>
         <name>Add_Units</name>
         <label>Add Units</label>
-        <locationX>1700</locationX>
+        <locationX>1788</locationX>
         <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>Units</assignToReference>
@@ -66,9 +66,26 @@
         </connector>
     </assignments>
     <assignments>
+        <description>Assigns the output of Get Units Related to Block Subflow to the Units Collection</description>
+        <name>Assign_Block_Units_to_Collection</name>
+        <label>Assign Block Units to Collection</label>
+        <locationX>1348</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>Units</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Units_Related_to_Block.childRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Change_Block_Units_Status_and_Check_for_Allocated_Units</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Build_Block_Updates</name>
         <label>Build Block Updates</label>
-        <locationX>1700</locationX>
+        <locationX>1744</locationX>
         <locationY>2030</locationY>
         <assignmentItems>
             <assignToReference>subBlock_Blocks</assignToReference>
@@ -84,7 +101,7 @@
     <assignments>
         <name>Build_Block_Updates_Site</name>
         <label>Build Block Updates (Site)</label>
-        <locationX>2228</locationX>
+        <locationX>2316</locationX>
         <locationY>1922</locationY>
         <assignmentItems>
             <assignToReference>subBlock_Blocks</assignToReference>
@@ -100,7 +117,7 @@
     <assignments>
         <name>Combine_All_Blocks_and_SubBlocks_for_Site</name>
         <label>Combine All Blocks and SubBlocks for Site</label>
-        <locationX>2008</locationX>
+        <locationX>2096</locationX>
         <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>subBlocks</assignToReference>
@@ -114,9 +131,10 @@
         </connector>
     </assignments>
     <assignments>
+        <description>Combine the SubBlock Units and Block Units</description>
         <name>Combine_All_Units</name>
         <label>Combine All Units</label>
-        <locationX>1612</locationX>
+        <locationX>1700</locationX>
         <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>Units</assignToReference>
@@ -132,7 +150,7 @@
     <assignments>
         <name>Combine_Block_SubBlock_records</name>
         <label>Combine Block/SubBlock records</label>
-        <locationX>1612</locationX>
+        <locationX>1656</locationX>
         <locationY>1598</locationY>
         <assignmentItems>
             <assignToReference>subBlocks</assignToReference>
@@ -164,7 +182,7 @@
     <assignments>
         <name>Set_Block_details</name>
         <label>Set Block details</label>
-        <locationX>1700</locationX>
+        <locationX>1744</locationX>
         <locationY>1922</locationY>
         <assignmentItems>
             <assignToReference>subBlock_Block.Block_Status__c</assignToReference>
@@ -194,7 +212,7 @@
     <assignments>
         <name>Set_Block_details_Site</name>
         <label>Set Block details (Site)</label>
-        <locationX>2228</locationX>
+        <locationX>2316</locationX>
         <locationY>1814</locationY>
         <assignmentItems>
             <assignToReference>subBlock_Block.Block_Status__c</assignToReference>
@@ -336,7 +354,7 @@
     <decisions>
         <name>Are_there_SubBlocks</name>
         <label>Are there SubBlocks?</label>
-        <locationX>1480</locationX>
+        <locationX>1524</locationX>
         <locationY>674</locationY>
         <defaultConnector>
             <targetReference>Loop_Through_SubBlocks</targetReference>
@@ -353,7 +371,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Change_Block_Units_Status_and_Check_for_Allocated_Units</targetReference>
+                <targetReference>Assign_Block_Units_to_Collection</targetReference>
             </connector>
             <label>No - SubBlocks</label>
         </rules>
@@ -361,7 +379,7 @@
     <decisions>
         <name>Did_Block_Have_Allocated_Units</name>
         <label>Did Block Have Allocated Units</label>
-        <locationX>1480</locationX>
+        <locationX>1524</locationX>
         <locationY>1490</locationY>
         <defaultConnector>
             <targetReference>Combine_Block_SubBlock_records</targetReference>
@@ -487,7 +505,7 @@
     <decisions>
         <name>Were_there_any_Allocated_Units</name>
         <label>Were there any Allocated Units?</label>
-        <locationX>2008</locationX>
+        <locationX>2096</locationX>
         <locationY>1598</locationY>
         <defaultConnector>
             <targetReference>Loop_Through_all_Site_Blocks_SubBlocks</targetReference>
@@ -512,7 +530,7 @@
     <decisions>
         <name>What_is_the_Locations_RecordType</name>
         <label>What is the Locations RecordType</label>
-        <locationX>1293</locationX>
+        <locationX>1337</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Location_RecordType_Error</targetReference>
@@ -612,7 +630,7 @@
     <loops>
         <name>Get_SubBlock_for_Each_Block</name>
         <label>Get SubBlock for Each Block</label>
-        <locationX>2008</locationX>
+        <locationX>2096</locationX>
         <locationY>566</locationY>
         <collectionReference>Get_Blocks_Related_to_Site.childRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -626,7 +644,7 @@
     <loops>
         <name>Loop_Through_All_Blocks_SubBlocks</name>
         <label>Loop Through All Blocks &amp; SubBlocks</label>
-        <locationX>2008</locationX>
+        <locationX>2096</locationX>
         <locationY>1082</locationY>
         <collectionReference>subBlocks</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -640,7 +658,7 @@
     <loops>
         <name>Loop_Through_all_Site_Blocks_SubBlocks</name>
         <label>Loop Through all Site Blocks &amp; SubBlocks</label>
-        <locationX>2140</locationX>
+        <locationX>2228</locationX>
         <locationY>1706</locationY>
         <collectionReference>subBlocks</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -654,7 +672,7 @@
     <loops>
         <name>Loop_Through_SubBlocks</name>
         <label>Loop Through SubBlocks</label>
-        <locationX>1612</locationX>
+        <locationX>1700</locationX>
         <locationY>782</locationY>
         <collectionReference>Get_SubBlock_for_Block.childRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -668,7 +686,7 @@
     <loops>
         <name>Set_Block_Record_Details</name>
         <label>Set Block Record Details</label>
-        <locationX>1612</locationX>
+        <locationX>1656</locationX>
         <locationY>1814</locationY>
         <collectionReference>subBlocks</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -731,7 +749,7 @@
     <recordUpdates>
         <name>Update_Block_Status_Block</name>
         <label>Update Block Status - (Block)</label>
-        <locationX>1612</locationX>
+        <locationX>1656</locationX>
         <locationY>2222</locationY>
         <connector>
             <isGoTo>true</isGoTo>
@@ -742,7 +760,7 @@
     <recordUpdates>
         <name>Update_Block_Status_Site</name>
         <label>Update Block Status - (Site)</label>
-        <locationX>2140</locationX>
+        <locationX>2228</locationX>
         <locationY>2114</locationY>
         <connector>
             <isGoTo>true</isGoTo>
@@ -776,7 +794,7 @@
     <screens>
         <name>Has_Allocated_Units</name>
         <label>Has Allocated Units</label>
-        <locationX>1293</locationX>
+        <locationX>1337</locationX>
         <locationY>2564</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -792,7 +810,7 @@
     <screens>
         <name>Initial_Screen</name>
         <label>Initial Screen</label>
-        <locationX>1293</locationX>
+        <locationX>1337</locationX>
         <locationY>134</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -905,7 +923,7 @@
     <screens>
         <name>Location_RecordType_Error</name>
         <label>Location RecordType Error</label>
-        <locationX>2404</locationX>
+        <locationX>2492</locationX>
         <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -935,7 +953,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>1167</locationX>
+        <locationX>1211</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Initial_Screen</targetReference>
@@ -945,7 +963,7 @@
     <subflows>
         <name>Change_Block_Units_Status_and_Check_for_Allocated_Units</name>
         <label>Change Block Units Status and Check for Allocated Units</label>
-        <locationX>1480</locationX>
+        <locationX>1524</locationX>
         <locationY>1382</locationY>
         <connector>
             <targetReference>Did_Block_Have_Allocated_Units</targetReference>
@@ -1021,7 +1039,7 @@
     <subflows>
         <name>Change_Units_Status_for_All_Site_Units</name>
         <label>Change Units Status for All Site Units</label>
-        <locationX>2008</locationX>
+        <locationX>2096</locationX>
         <locationY>1490</locationY>
         <connector>
             <targetReference>Were_there_any_Allocated_Units</targetReference>
@@ -1059,7 +1077,7 @@
     <subflows>
         <name>Get_Blocks_Related_to_Site</name>
         <label>Get Blocks Related to Site</label>
-        <locationX>2008</locationX>
+        <locationX>2096</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Get_SubBlock_for_Each_Block</targetReference>
@@ -1082,7 +1100,7 @@
     <subflows>
         <name>Get_RecordType_Id_for_Unit</name>
         <label>Get RecordType Id for Unit</label>
-        <locationX>1293</locationX>
+        <locationX>1337</locationX>
         <locationY>242</locationY>
         <connector>
             <targetReference>What_is_the_Locations_RecordType</targetReference>
@@ -1105,7 +1123,7 @@
     <subflows>
         <name>Get_SubBlock_for_Block</name>
         <label>Get SubBlock for Block</label>
-        <locationX>1480</locationX>
+        <locationX>1524</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Get_Units_Related_to_Block</targetReference>
@@ -1128,7 +1146,7 @@
     <subflows>
         <name>Get_SubBlock_for_Block_in_Site</name>
         <label>Get SubBlock for Block in Site</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>674</locationY>
         <connector>
             <targetReference>Add_SubBlock_to_Variable</targetReference>
@@ -1174,7 +1192,7 @@
     <subflows>
         <name>Get_Units_for_Each_Block_in_Site</name>
         <label>Get Units for Each Block in Site</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1190</locationY>
         <connector>
             <targetReference>Add_Unit_for_Each_Block_SubBlock</targetReference>
@@ -1197,7 +1215,7 @@
     <subflows>
         <name>Get_Units_for_Each_SubBlock</name>
         <label>Get Units for Each SubBlock</label>
-        <locationX>1700</locationX>
+        <locationX>1788</locationX>
         <locationY>890</locationY>
         <connector>
             <targetReference>Add_Units</targetReference>
@@ -1220,7 +1238,7 @@
     <subflows>
         <name>Get_Units_Related_to_Block</name>
         <label>Get Units Related to Block</label>
-        <locationX>1480</locationX>
+        <locationX>1524</locationX>
         <locationY>566</locationY>
         <connector>
             <targetReference>Are_there_SubBlocks</targetReference>

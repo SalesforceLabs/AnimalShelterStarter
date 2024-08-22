@@ -103,6 +103,11 @@
         <name>Site</name>
     </recordTypes>
     <recordTypes>
+        <description></description>
+        <label></label>
+        <name>SubBlock</name>
+    </recordTypes>
+    <recordTypes>
         <description>Una unidad es una sububicación de un bloque, es decir, jaula, corral, etc.</description>
         <label>Unidad</label>
         <name>Unit</name>
@@ -110,5 +115,9 @@
     <validationRules>
         <errorMessage>Si Capacidad de ubicación se establece en Varios animales, se debe introducir un valor en Capacidad</errorMessage>
         <name>Check_Capacity_is_Completed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Parent_Lookup_Rule</name>
     </validationRules>
 </CustomObjectTranslation>

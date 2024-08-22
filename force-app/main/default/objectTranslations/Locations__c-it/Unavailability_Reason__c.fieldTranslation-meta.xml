@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label><!-- Unavailability Reason --></label>
+    <label></label>
     <name>Unavailability_Reason__c</name>
     <picklistValues>
         <masterLabel>Biohazard/Outbreak</masterLabel>
-        <translation><!-- Biohazard/Outbreak --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Cleaning</masterLabel>
-        <translation><!-- Cleaning --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Maintenance</masterLabel>
-        <translation><!-- Maintenance --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Reserved</masterLabel>
-        <translation><!-- Reserved --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Staff Shortages</masterLabel>
-        <translation><!-- Staff Shortages --></translation>
+        <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>

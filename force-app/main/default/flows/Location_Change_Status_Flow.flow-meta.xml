@@ -234,13 +234,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Unit_Assignment.Allocation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>formulaUnitAvailableAllocation</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>Unit_Assignment.Unit_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -268,13 +261,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Unit_Assignment.Allocation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>formulaUnitUnavailableAllocation</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -425,6 +411,13 @@
                 <operator>GreaterThan</operator>
                 <rightValue>
                     <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Status_Options</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Unavailable_Choice</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -589,18 +582,6 @@
         <picklistObject>Locations__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
-    <formulas>
-        <name>formulaUnitAvailableAllocation</name>
-        <dataType>Number</dataType>
-        <expression>IF({!Ignore_Allocated_Units} = TRUE, {!recordId.Allocation__c}, 0)</expression>
-        <scale>0</scale>
-    </formulas>
-    <formulas>
-        <name>formulaUnitUnavailableAllocation</name>
-        <dataType>Number</dataType>
-        <expression>IF({!Ignore_Allocated_Units} = TRUE, {!recordId.Allocation__c}, {!recordId.Capacity__c})</expression>
-        <scale>0</scale>
-    </formulas>
     <formulas>
         <name>resetUnavailableReason</name>
         <dataType>String</dataType>
@@ -852,6 +833,11 @@
                     </visibilityRule>
                 </fields>
                 <fields>
+                    <name>InitialScreenIgnoreAllocatedWarning</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(247, 69, 69);&quot;&gt;WARNING!&lt;/strong&gt;&lt;strong&gt; - &lt;/strong&gt;Setting the Ignore Allocated Units checkbox will update the status of the Units that may house animals&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
                     <name>Ignore_Allocated_Units</name>
                     <dataType>Boolean</dataType>
                     <defaultValue>
@@ -861,31 +847,6 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Status_Options</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <elementReference>Unavailable_Choice</elementReference>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>InitialScreenIgnoreAllocatedWarning</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(247, 69, 69);&quot;&gt;WARNING!&lt;/strong&gt;&lt;strong&gt; - &lt;/strong&gt;Setting the above checkbox will update the status of the Units that may house animals&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Ignore_Allocated_Units</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>

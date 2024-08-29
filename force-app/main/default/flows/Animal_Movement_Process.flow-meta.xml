@@ -20,17 +20,17 @@
     <assignments>
         <name>Count_Movement_Records</name>
         <label>Count Movement Records</label>
-        <locationX>1018</locationX>
-        <locationY>1190</locationY>
+        <locationX>930</locationX>
+        <locationY>1082</locationY>
         <assignmentItems>
             <assignToReference>MovementCount</assignToReference>
             <operator>AssignCount</operator>
             <value>
-                <elementReference>MovementRecords</elementReference>
+                <elementReference>Get_All_Movement_Records_by_Animal_ID</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_Through_Movement_Records</targetReference>
+            <targetReference>More_than_1_Current_Movement</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -201,14 +201,14 @@
             <name>Yes_Movement_RecordsExist</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>MovementRecords</leftValueReference>
+                <leftValueReference>Get_All_Movement_Records_by_Animal_ID</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Loop_Through_Movement_Records</targetReference>
+                <targetReference>Count_Movement_Records</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -217,7 +217,7 @@
         <name>Continue_With_Flow</name>
         <label>Continue With Flow?</label>
         <locationX>886</locationX>
-        <locationY>1814</locationY>
+        <locationY>1622</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Continue</name>
@@ -252,7 +252,7 @@
         <name>Is_Movement_Date_Today_or_in_the_Future</name>
         <label>Is Movement Date Today or in the Future</label>
         <locationX>600</locationX>
-        <locationY>1490</locationY>
+        <locationY>1298</locationY>
         <defaultConnector>
             <targetReference>Get_Current_Movement_Record</targetReference>
         </defaultConnector>
@@ -277,7 +277,7 @@
         <name>More_than_1_Current_Movement</name>
         <label>More than 1 Current Movement?</label>
         <locationX>930</locationX>
-        <locationY>1382</locationY>
+        <locationY>1190</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>More_than_1</name>
@@ -512,21 +512,6 @@
     <interviewLabel>Animal - Movement Process</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Movement Process</label>
-    <loops>
-        <name>Loop_Through_Movement_Records</name>
-        <label>Loop Through Movement Records</label>
-        <locationX>930</locationX>
-        <locationY>1082</locationY>
-        <assignNextValueToReference>varMovementRecord</assignNextValueToReference>
-        <collectionReference>MovementRecords</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Count_Movement_Records</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>More_than_1_Current_Movement</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -552,7 +537,7 @@
         <label>Get All Movement Records by Animal ID</label>
         <locationX>1502</locationX>
         <locationY>866</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Any_Existing_Movement_records</targetReference>
         </connector>
@@ -571,15 +556,15 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Movement__c</object>
-        <outputReference>MovementRecords</outputReference>
-        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Current_Movement_Record</name>
         <label>Get Current Movement Record</label>
         <locationX>886</locationX>
-        <locationY>1598</locationY>
+        <locationY>1406</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Animal_Has_Existing_Location_Screen</targetReference>
@@ -611,7 +596,7 @@
         <name>Clear_Current_Movement_Record</name>
         <label>Clear Current Movement Record</label>
         <locationX>490</locationX>
-        <locationY>1922</locationY>
+        <locationY>1730</locationY>
         <connector>
             <targetReference>CreateMovementRecord</targetReference>
         </connector>
@@ -645,7 +630,7 @@
         <name>Animal_Has_Existing_Location_Screen</name>
         <label>Animal Has Existing Location Screen</label>
         <locationX>886</locationX>
-        <locationY>1706</locationY>
+        <locationY>1514</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -730,7 +715,7 @@
         <name>Error_Movement_Records_Screen</name>
         <label>Error Movement Records Screen</label>
         <locationX>50</locationX>
-        <locationY>1490</locationY>
+        <locationY>1298</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -746,7 +731,7 @@
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>1546</locationX>
-        <locationY>1706</locationY>
+        <locationY>1514</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -871,7 +856,7 @@
         <name>Movement_Complete</name>
         <label>Movement Complete</label>
         <locationX>1502</locationX>
-        <locationY>2522</locationY>
+        <locationY>2330</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -946,12 +931,12 @@
             <targetReference>Get_Unit_Record_Type</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>CreateMovementRecord</name>
         <label>CreateMovementRecord</label>
         <locationX>1502</locationX>
-        <locationY>2414</locationY>
+        <locationY>2222</locationY>
         <connector>
             <targetReference>Movement_Complete</targetReference>
         </connector>
@@ -1076,21 +1061,6 @@
         <scale>0</scale>
     </variables>
     <variables>
-        <name>movementCurrentFlag</name>
-        <dataType>Boolean</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>MovementRecords</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Movement__c</objectType>
-    </variables>
-    <variables>
         <name>newMovementType</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1111,13 +1081,5 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>varMovementRecord</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Movement__c</objectType>
     </variables>
 </Flow>

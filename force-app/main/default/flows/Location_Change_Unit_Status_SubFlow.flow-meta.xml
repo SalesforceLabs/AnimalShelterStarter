@@ -2,8 +2,8 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
     <assignments>
-        <name>Build_Units_to_Set_to_Available</name>
-        <label>Build Units to Set to Available</label>
+        <name>Build_Units_to_Set_to_New_Status</name>
+        <label>Build Units to Set to New Status</label>
         <locationX>468</locationX>
         <locationY>1358</locationY>
         <assignmentItems>
@@ -47,17 +47,10 @@
         </assignmentItems>
     </assignments>
     <assignments>
-        <name>Set_Allocation_to_0</name>
-        <label>Set Allocation to 0</label>
+        <name>Set_Allocation_to_Available</name>
+        <label>Set Allocation to Available</label>
         <locationX>336</locationX>
         <locationY>1166</locationY>
-        <assignmentItems>
-            <assignToReference>updatedUnit.Allocation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>formulaAllocationAvailable</elementReference>
-            </value>
-        </assignmentItems>
         <assignmentItems>
             <assignToReference>updatedUnit.Id</assignToReference>
             <operator>Assign</operator>
@@ -80,7 +73,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Build_Units_to_Set_to_Available</targetReference>
+            <targetReference>Build_Units_to_Set_to_New_Status</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -88,13 +81,6 @@
         <label>Set Allocation to Unavailable</label>
         <locationX>600</locationX>
         <locationY>1166</locationY>
-        <assignmentItems>
-            <assignToReference>updatedUnit.Allocation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>formulaAllocationUnavailable</elementReference>
-            </value>
-        </assignmentItems>
         <assignmentItems>
             <assignToReference>updatedUnit.Id</assignToReference>
             <operator>Assign</operator>
@@ -117,7 +103,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Build_Units_to_Set_to_Available</targetReference>
+            <targetReference>Build_Units_to_Set_to_New_Status</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -250,7 +236,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Set_Allocation_to_0</targetReference>
+                <targetReference>Set_Allocation_to_Available</targetReference>
             </connector>
             <label>Set to Available</label>
         </rules>
@@ -283,7 +269,7 @@
             <targetReference>What_is_the_new_Status</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_All_Units_to_Available</targetReference>
+            <targetReference>Update_All_Units_to_New_Status</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -306,8 +292,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_All_Units_to_Available</name>
-        <label>Update All Units to Available</label>
+        <name>Update_All_Units_to_New_Status</name>
+        <label>Update All Units to New Status</label>
         <locationX>248</locationX>
         <locationY>1550</locationY>
         <inputReference>updatedUnits</inputReference>

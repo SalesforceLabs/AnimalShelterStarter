@@ -40,7 +40,7 @@
         <name>Create_New_Movement_Record</name>
         <label>Create New Movement Record</label>
         <locationX>176</locationX>
-        <locationY>755</locationY>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Close_Animal_Action_Records</targetReference>
         </connector>
@@ -71,72 +71,12 @@
         <object>Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
-    <recordLookups>
-        <description>Get the Current Movement Record for the Animal</description>
-        <name>Get_Current_Movement_Record</name>
-        <label>Get Current Movement Record</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Clean_Up_Location_Record</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Animal__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Animal__r.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Current__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Movement__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordUpdates>
-        <description>Frees up the Location record where the Animal was housed</description>
-        <name>Clean_Up_Location_Record</name>
-        <label>Clean Up Location Record</label>
-        <locationX>176</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Close_Current_Movement_Record</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Current_Movement_Record.Location__r.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Allocation__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Unit_Status__c</field>
-            <value>
-                <stringValue>Available</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Locations__c</object>
-    </recordUpdates>
     <recordUpdates>
         <description>Close Outstanding Animal Action Records</description>
         <name>Close_Animal_Action_Records</name>
         <label>Close Animal Action Records</label>
         <locationX>176</locationX>
-        <locationY>863</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Update_Animal_Record</targetReference>
         </connector>
@@ -193,16 +133,23 @@
         <name>Close_Current_Movement_Record</name>
         <label>Close Current Movement Record</label>
         <locationX>176</locationX>
-        <locationY>647</locationY>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Create_New_Movement_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Id</field>
+            <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Current_Movement_Record.Id</elementReference>
+                <elementReference>$Record.Animal__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Current__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <inputAssignments>
@@ -226,7 +173,7 @@
         <locationX>176</locationX>
         <locationY>323</locationY>
         <connector>
-            <targetReference>Get_Current_Movement_Record</targetReference>
+            <targetReference>Close_Current_Movement_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -249,7 +196,7 @@
         <name>Update_Adoption_Record</name>
         <label>Update Adoption Record</label>
         <locationX>176</locationX>
-        <locationY>1079</locationY>
+        <locationY>863</locationY>
         <inputAssignments>
             <field>Date_Collected__c</field>
             <value>
@@ -269,7 +216,7 @@
         <name>Update_Animal_Record</name>
         <label>Update Animal Record</label>
         <locationX>176</locationX>
-        <locationY>971</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Update_Adoption_Record</targetReference>
         </connector>

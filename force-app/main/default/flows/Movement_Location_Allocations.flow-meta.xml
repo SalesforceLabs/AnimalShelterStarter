@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Count_the_No_of_Movement_Records</name>
+        <label>Count the No of Movement Records</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>noOfMovementRecords</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Any_Additional_Movements_for_this_Location</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Related_Location_Records_Allocation</targetReference>
+        </connector>
+    </assignments>
+    <description>[Animal Shelter] - Triggered on Movement Create or Update, Counts the number of Current Movement records for related Location and updates Allocation field</description>
+    <environments>Default</environments>
+    <interviewLabel>Movement - Location Allocations {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Movement - Location Allocations</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Looks for any other Movement records that are associated with the Location of this Movement record and are Current</description>
+        <name>Get_Any_Additional_Movements_for_this_Location</name>
+        <label>Get Any Additional Movements for this Location</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Count_the_No_of_Movement_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Location__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Current__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Movement__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updates the Location Record related to the Movement and sets the allocation</description>
+        <name>Update_Related_Location_Records_Allocation</name>
+        <label>Update Related Location Records Allocation</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Location__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Allocation__c</field>
+            <value>
+                <elementReference>noOfMovementRecords</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Locations__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Any_Additional_Movements_for_this_Location</targetReference>
+        </connector>
+        <object>Movement__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>noOfMovementRecords</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+</Flow>

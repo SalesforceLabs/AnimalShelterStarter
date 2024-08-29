@@ -4,7 +4,7 @@
     <decisions>
         <name>Has_Unit_been_marked_as_Unavailable</name>
         <label>Has Unit been marked as Unavailable?</label>
-        <locationX>314</locationX>
+        <locationX>176</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>Is_there_Availability</targetReference>
@@ -20,23 +20,20 @@
                     <stringValue>Unavailable</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Update_Allocation</targetReference>
-            </connector>
             <label>Yes - Unit Unavailable</label>
         </rules>
     </decisions>
     <decisions>
         <name>Is_there_Availability</name>
         <label>Is there Availability?</label>
-        <locationX>578</locationX>
+        <locationX>440</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Unit_Fully_Allocated</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>NoMoreCapacity</leftValueReference>
+                <leftValueReference>$Record.animalshelters__Unit_Full__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -51,7 +48,7 @@
             <name>Unit_Available</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>NoMoreCapacity</leftValueReference>
+                <leftValueReference>$Record.animalshelters__Unit_Full__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -63,13 +60,8 @@
             <label>Unit Available</label>
         </rules>
     </decisions>
-    <description>Autolaunched flow to update the Location Status based on availability</description>
+    <description>[Animal Shelter] Autolaunched flow to update the Location Status based on availability</description>
     <environments>Default</environments>
-    <formulas>
-        <name>NoMoreCapacity</name>
-        <dataType>Boolean</dataType>
-        <expression>{!$Record.animalshelters__Availability__c} = 0</expression>
-    </formulas>
     <interviewLabel>Animal - Update Location Unit Status</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Animal - Update Location Unit Status</label>
@@ -95,7 +87,7 @@
     <recordUpdates>
         <name>Set_Status_Allocated</name>
         <label>Set Status Allocated</label>
-        <locationX>314</locationX>
+        <locationX>176</locationX>
         <locationY>539</locationY>
         <inputAssignments>
             <field>Unit_Status__c</field>
@@ -108,14 +100,8 @@
     <recordUpdates>
         <name>Set_Status_to_Available</name>
         <label>Set Status to Available</label>
-        <locationX>578</locationX>
+        <locationX>440</locationX>
         <locationY>539</locationY>
-        <inputAssignments>
-            <field>Allocation__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
         <inputAssignments>
             <field>Unit_Status__c</field>
             <value>
@@ -124,26 +110,13 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Allocation</name>
-        <label>Update Allocation</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
-        <inputAssignments>
-            <field>Allocation__c</field>
-            <value>
-                <elementReference>$Record.Capacity__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
-        <locationX>188</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Has_Unit_been_marked_as_Unavailable</targetReference>
         </connector>
-        <filterFormula>AND(OR(ISPICKVAL({!$Record.Location_Capacity__c}, &apos;Single Animal&apos;),ISPICKVAL({!$Record.Location_Capacity__c}, &apos;Multiple Animals&apos;)), {!$Record.RecordType.Name}=&apos;Unit&apos;)</filterFormula>
+        <filterFormula>{!$Record.RecordType.Name}=&apos;Unit&apos;</filterFormula>
         <object>Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

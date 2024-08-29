@@ -13,6 +13,7 @@
     <columns>Capacity__c</columns>
     <columns>Allocation__c</columns>
     <columns>Availability__c</columns>
+    <columns>Unit_Full__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>

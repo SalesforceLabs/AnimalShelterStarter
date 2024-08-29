@@ -66,6 +66,10 @@
                 <behavior>Edit</behavior>
                 <field>Unavailability_Reason__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Unit_Full__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

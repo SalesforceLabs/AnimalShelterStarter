@@ -103,6 +103,11 @@
         <name>Site</name>
     </recordTypes>
     <recordTypes>
+        <description></description>
+        <label></label>
+        <name>SubBlock</name>
+    </recordTypes>
+    <recordTypes>
         <description>Un&apos;unità è una sottoposizione di un blocco, ad esempio gabbia, penna, ecc.</description>
         <label>Unità</label>
         <name>Unit</name>
@@ -111,5 +116,9 @@
     <validationRules>
         <errorMessage>Se Location Capacity è impostato su Multiple Animals (Capacità di localizzazione) è necessario immettere un valore in Capacità</errorMessage>
         <name>Check_Capacity_is_Completed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Parent_Lookup_Rule</name>
     </validationRules>
 </CustomObjectTranslation>

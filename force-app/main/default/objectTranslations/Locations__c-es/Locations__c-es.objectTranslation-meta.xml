@@ -2,13 +2,13 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value></value>
+        <value><!-- Location --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value></value>
+        <value><!-- Location --></value>
     </caseValues>
-    <gender></gender>
+    <gender><!-- Feminine --></gender>
     <layouts>
         <layout>Location Block Layout</layout>
         <sections>
@@ -76,7 +76,7 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel></nameFieldLabel>
+    <nameFieldLabel><!-- Location Reference --></nameFieldLabel>
     <quickActions>
         <aspect>Master</aspect>
         <label>Establecer fecha de evaluación</label>
@@ -103,6 +103,11 @@
         <name>Site</name>
     </recordTypes>
     <recordTypes>
+        <description><!-- A sub division of Block that can contain Units --></description>
+        <label><!-- SubBlock --></label>
+        <name>SubBlock</name>
+    </recordTypes>
+    <recordTypes>
         <description>Una unidad es una sububicación de un bloque, es decir, jaula, corral, etc.</description>
         <label>Unidad</label>
         <name>Unit</name>
@@ -110,5 +115,9 @@
     <validationRules>
         <errorMessage>Si Capacidad de ubicación se establece en Varios animales, se debe introducir un valor en Capacidad</errorMessage>
         <name>Check_Capacity_is_Completed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The selected Parent Block type is incorrect. For Unit, select a Block or SubBlock, for SubBlock select a Block, for Block select a Site --></errorMessage>
+        <name>Parent_Lookup_Rule</name>
     </validationRules>
 </CustomObjectTranslation>

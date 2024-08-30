@@ -41,132 +41,132 @@
         <value>Tiere</value>
     </caseValues>
     <fieldSets>
-        <label></label>
+        <label><!-- Animal Cage Card Field Set --></label>
         <name>Animal_Cage_Card_Field_Set</name>
     </fieldSets>
     <fieldSets>
-        <label></label>
+        <label><!-- Animal Details --></label>
         <name>Animal_Details</name>
     </fieldSets>
     <gender>Neuter</gender>
     <layouts>
         <layout>Animal Layout</layout>
         <sections>
-            <label></label>
+            <label><!-- Age --></label>
             <section>Age</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- Deceased Information --></label>
             <section>Deceased Information</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- Entry --></label>
             <section>Entry</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- Location Information --></label>
             <section>Location Information</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- Requirements --></label>
             <section>Requirements</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- Tracking --></label>
             <section>Tracking</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- Type Information --></label>
             <section>Type Information</section>
         </sections>
     </layouts>
     <nameFieldLabel>Tier-Referenz</nameFieldLabel>
     <quickActions>
-        <label></label>
+        <label><!-- New Condition --></label>
         <name>Add_Condition</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- New Exercise Action --></label>
         <name>Add_Exercise_Action</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Add Scheduled Actions --></label>
         <name>Add_Scheduled_Action</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Add Treatment --></label>
         <name>Add_Treatment_Action</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- (DEPRECATED) Cage Card --></label>
         <name>Cage_Card</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Complete Exercise Action --></label>
         <name>Complete_Exercise_Action</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Create New Assessment --></label>
         <name>Create_New_Assessment</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Find Adoption Matches --></label>
         <name>Find_Adoption_Matches</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Mark as Deceased --></label>
         <name>Mark_as_Deceased</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Multi Animal Clone --></label>
         <name>Multi_Animal_Clone</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- New Alert --></label>
         <name>New_Alert</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- New Assessment --></label>
         <name>New_Assessment</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- (DEPRECATED) Start Adoption --></label>
         <name>Start_Adoption</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Start Adoption Process --></label>
         <name>Start_Adoption_Process</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Update Animal --></label>
         <name>Update_Animal</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Update Animal Location --></label>
         <name>Update_Animal_Location</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Vaccination --></label>
         <name>Vaccination</name>
     </quickActions>
     <validationRules>
-        <errorMessage></errorMessage>
+        <errorMessage><!-- Animal has been noted as being neutered/spayed although no date/time has been added. Please add the Date/Time the animal was neutered/spayed as well. --></errorMessage>
         <name>Animal_Neutered_Spayed_Check</name>
     </validationRules>
     <validationRules>
-        <errorMessage></errorMessage>
+        <errorMessage><!-- You have indicated this animal is Deceased. Please provide a reason using the Deceased Reason field and enter a date using the deceased date field. --></errorMessage>
         <name>Deceased_Required_Fields</name>
     </validationRules>
     <validationRules>
-        <errorMessage></errorMessage>
+        <errorMessage><!-- You have indicated this animal has been PTS. Please provide a reason using the PTS Reason field and enter a date using the deceased date field. --></errorMessage>
         <name>PTS_Required_Fields</name>
     </validationRules>
     <webLinks>
-        <label></label>
+        <label><!-- Print_Cage_Card --></label>
         <name>Print_Cage_Card</name>
     </webLinks>
 </CustomObjectTranslation>

@@ -35,7 +35,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <subflows>
         <name>Call_Block_Calculations_SubFlow</name>
         <label>Call Block Calculations SubFlow</label>
@@ -43,7 +43,7 @@
         <locationY>323</locationY>
         <flowName>Animal_Block_Capacity_Calculations</flowName>
         <inputAssignments>
-            <name>varLocationId</name>
+            <name>locationId</name>
             <value>
                 <elementReference>$Record.Id</elementReference>
             </value>

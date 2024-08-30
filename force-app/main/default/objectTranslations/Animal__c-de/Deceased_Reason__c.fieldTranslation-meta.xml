@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label></label>
+    <label><!-- Deceased Reason --></label>
     <name>Deceased_Reason__c</name>
     <picklistValues>
         <masterLabel>Dead On Arrival</masterLabel>
-        <translation></translation>
+        <translation><!-- Dead On Arrival --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Death during Treatment</masterLabel>
-        <translation></translation>
+        <translation><!-- Death during Treatment --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Natural Causes</masterLabel>
-        <translation></translation>
+        <translation><!-- Natural Causes --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Put To Sleep (PTS)</masterLabel>
-        <translation></translation>
+        <translation><!-- Put To Sleep (PTS) --></translation>
     </picklistValues>
 </CustomFieldTranslation>

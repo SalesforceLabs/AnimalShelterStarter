@@ -5,7 +5,7 @@
     <name>Breathing__c</name>
     <picklistValues>
         <masterLabel>Normal</masterLabel>
-        <translation></translation>
+        <translation><!-- Normal --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Rapid</masterLabel>

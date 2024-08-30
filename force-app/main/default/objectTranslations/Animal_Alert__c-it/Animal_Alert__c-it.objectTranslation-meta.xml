@@ -2,13 +2,13 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value></value>
+        <value><!-- Animal Alert --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value></value>
+        <value><!-- Animal Alert --></value>
     </caseValues>
-    <gender></gender>
+    <gender><!-- Masculine --></gender>
     <layouts>
         <layout>Animal Alert Layout</layout>
         <sections>
@@ -20,8 +20,8 @@
             <section>Message</section>
         </sections>
     </layouts>
-    <nameFieldLabel></nameFieldLabel>
-    <startsWith></startsWith>
+    <nameFieldLabel><!-- Animal Alert ID --></nameFieldLabel>
+    <startsWith><!-- Consonant --></startsWith>
     <validationRules>
         <errorMessage>La data di fine non può essere inferiore alla data di inizio. Controlla le date inserite e riprova.</errorMessage>
         <name>Animal_Alert_Date_Check</name>

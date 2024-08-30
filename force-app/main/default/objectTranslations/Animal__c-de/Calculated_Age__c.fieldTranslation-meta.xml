@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help></help>
+    <help><!-- Calculated as the amount of time between today and the birthdate of the animal. If no birthdate is entered, then estimated date it used. --></help>
     <label>Berechnetes Alter</label>
     <name>Calculated_Age__c</name>
 </CustomFieldTranslation>

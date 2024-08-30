@@ -17,7 +17,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Gel</masterLabel>
-        <translation></translation>
+        <translation><!-- Gel --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Injected - Solution</masterLabel>
@@ -45,7 +45,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Spray</masterLabel>
-        <translation></translation>
+        <translation><!-- Spray --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Syrup</masterLabel>

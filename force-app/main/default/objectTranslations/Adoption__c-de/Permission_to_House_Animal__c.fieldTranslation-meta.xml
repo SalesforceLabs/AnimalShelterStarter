@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help></help>
-    <label></label>
+    <help><!-- If the adopter is cohabiting, renting, or does not own their accommodation, do they have permission to house an animal, ie from the Landlord? --></help>
+    <label><!-- Permission to House Animal? --></label>
     <name>Permission_to_House_Animal__c</name>
 </CustomFieldTranslation>

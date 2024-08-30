@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value></value>
+        <value><!-- Animal --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value></value>
+        <value><!-- Animal --></value>
     </caseValues>
     <fieldSets>
         <label>Set di campi per carte gabbia animale</label>
@@ -16,7 +16,7 @@
         <label>Dettagli dell&apos;animale</label>
         <name>Animal_Details</name>
     </fieldSets>
-    <gender></gender>
+    <gender><!-- Masculine --></gender>
     <layouts>
         <layout>Animal Layout</layout>
         <sections>
@@ -52,7 +52,7 @@
             <section>Type Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel></nameFieldLabel>
+    <nameFieldLabel><!-- Animal Reference --></nameFieldLabel>
     <quickActions>
         <aspect>Master</aspect>
         <label>Nuova condizione</label>
@@ -99,7 +99,7 @@
         <name>Mark_as_Deceased</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Multi Animal Clone --></label>
         <name>Multi_Animal_Clone</name>
     </quickActions>
     <quickActions>
@@ -113,7 +113,7 @@
         <name>New_Assessment</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- (DEPRECATED) Start Adoption --></label>
         <name>Start_Adoption</name>
     </quickActions>
     <quickActions>
@@ -122,7 +122,7 @@
         <name>Start_Adoption_Process</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Update Animal --></label>
         <name>Update_Animal</name>
     </quickActions>
     <quickActions>
@@ -131,10 +131,10 @@
         <name>Update_Animal_Location</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Vaccination --></label>
         <name>Vaccination</name>
     </quickActions>
-    <startsWith></startsWith>
+    <startsWith><!-- Consonant --></startsWith>
     <validationRules>
         <errorMessage>È stato notato che l&apos;animale è stato castrato / sterilizzato sebbene non sia stata aggiunta alcuna data / ora. Si prega di aggiungere anche la data / ora in cui l&apos;animale è stato castrato / sterilizzato.</errorMessage>
         <name>Animal_Neutered_Spayed_Check</name>
@@ -148,7 +148,7 @@
         <name>PTS_Required_Fields</name>
     </validationRules>
     <webLinks>
-        <label></label>
+        <label><!-- Print_Cage_Card --></label>
         <name>Print_Cage_Card</name>
     </webLinks>
 </CustomObjectTranslation>

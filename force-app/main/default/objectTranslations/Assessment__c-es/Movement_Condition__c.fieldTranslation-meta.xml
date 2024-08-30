@@ -5,7 +5,7 @@
     <name>Movement_Condition__c</name>
     <picklistValues>
         <masterLabel>Normal</masterLabel>
-        <translation></translation>
+        <translation><!-- Normal --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Unsteady</masterLabel>

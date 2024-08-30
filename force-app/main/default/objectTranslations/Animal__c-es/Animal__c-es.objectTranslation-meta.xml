@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value></value>
+        <value><!-- Animal --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value></value>
+        <value><!-- Animal --></value>
     </caseValues>
     <fieldSets>
         <label>Juego de campos de cartas de jaula de animales</label>
@@ -16,7 +16,7 @@
         <label>Detalles del animal</label>
         <name>Animal_Details</name>
     </fieldSets>
-    <gender></gender>
+    <gender><!-- Feminine --></gender>
     <layouts>
         <layout>Animal Layout</layout>
         <sections>
@@ -52,7 +52,7 @@
             <section>Type Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel></nameFieldLabel>
+    <nameFieldLabel><!-- Animal Reference --></nameFieldLabel>
     <quickActions>
         <aspect>Master</aspect>
         <label>Estado nuevo</label>
@@ -114,7 +114,7 @@
         <name>New_Assessment</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- (DEPRECATED) Start Adoption --></label>
         <name>Start_Adoption</name>
     </quickActions>
     <quickActions>
@@ -123,7 +123,7 @@
         <name>Start_Adoption_Process</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Update Animal --></label>
         <name>Update_Animal</name>
     </quickActions>
     <quickActions>
@@ -132,7 +132,7 @@
         <name>Update_Animal_Location</name>
     </quickActions>
     <quickActions>
-        <label></label>
+        <label><!-- Vaccination --></label>
         <name>Vaccination</name>
     </quickActions>
     <validationRules>
@@ -148,7 +148,7 @@
         <name>PTS_Required_Fields</name>
     </validationRules>
     <webLinks>
-        <label></label>
+        <label><!-- Print_Cage_Card --></label>
         <name>Print_Cage_Card</name>
     </webLinks>
 </CustomObjectTranslation>

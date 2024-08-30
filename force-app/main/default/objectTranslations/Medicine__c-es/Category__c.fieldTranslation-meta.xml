@@ -81,7 +81,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Cardio Vascular</masterLabel>
-        <translation></translation>
+        <translation><!-- Cardio Vascular --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Cardio Vascular ACE inhibitor</masterLabel>
@@ -129,7 +129,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Gastrointestinal</masterLabel>
-        <translation></translation>
+        <translation><!-- Gastrointestinal --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Gastrointestinal anti-emetic</masterLabel>
@@ -185,7 +185,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Lactoserum</masterLabel>
-        <translation></translation>
+        <translation><!-- Lactoserum --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Live Bacterial Vaccine</masterLabel>
@@ -225,7 +225,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Mineral</masterLabel>
-        <translation></translation>
+        <translation><!-- Mineral --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Mineral anti-toxic</masterLabel>

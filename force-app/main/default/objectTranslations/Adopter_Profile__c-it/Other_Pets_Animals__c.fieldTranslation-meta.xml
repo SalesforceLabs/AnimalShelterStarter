@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help></help>
-    <label></label>
+    <help><!-- Add details of any other pets that you have --></help>
+    <label><!-- Other Pets/Animals --></label>
     <name>Other_Pets_Animals__c</name>
 </CustomFieldTranslation>

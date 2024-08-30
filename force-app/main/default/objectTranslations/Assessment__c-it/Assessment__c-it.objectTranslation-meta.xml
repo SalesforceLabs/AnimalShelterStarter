@@ -2,13 +2,13 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value></value>
+        <value><!-- Assessment --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value></value>
+        <value><!-- Assessment --></value>
     </caseValues>
-    <gender></gender>
+    <gender><!-- Masculine --></gender>
     <layouts>
         <layout>Assessment Layout</layout>
         <sections>
@@ -32,11 +32,11 @@
             <section>Parasites/Disease</section>
         </sections>
     </layouts>
-    <nameFieldLabel></nameFieldLabel>
+    <nameFieldLabel><!-- Assessment Ref --></nameFieldLabel>
     <quickActions>
         <aspect>Master</aspect>
         <label>Nuova condizione</label>
         <name>New_Condition</name>
     </quickActions>
-    <startsWith></startsWith>
+    <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

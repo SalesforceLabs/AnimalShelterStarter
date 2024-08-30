@@ -4,30 +4,30 @@
     <name>Type_of_Accommodation__c</name>
     <picklistValues>
         <masterLabel>Farm</masterLabel>
-        <translation></translation>
+        <translation><!-- Farm --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Flat/Apartment</masterLabel>
-        <translation></translation>
+        <translation><!-- Flat/Apartment --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>House - Detached - Rural</masterLabel>
-        <translation></translation>
+        <translation><!-- House - Detached - Rural --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>House - Detached - Urban</masterLabel>
-        <translation></translation>
+        <translation><!-- House - Detached - Urban --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>House - Semi-Detached - Rural</masterLabel>
-        <translation></translation>
+        <translation><!-- House - Semi-Detached - Rural --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>House - Semi-Detached - Urban</masterLabel>
-        <translation></translation>
+        <translation><!-- House - Semi-Detached - Urban --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Temporary Accommodation</masterLabel>
-        <translation></translation>
+        <translation><!-- Temporary Accommodation --></translation>
     </picklistValues>
 </CustomFieldTranslation>

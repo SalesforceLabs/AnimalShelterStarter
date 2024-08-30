@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help></help>
-    <label></label>
+    <help><!-- What type of condition does the animal have? --></help>
+    <label><!-- Condition Type --></label>
     <name>Condition_Type__c</name>
     <picklistValues>
         <masterLabel>Allergy</masterLabel>
-        <translation></translation>
+        <translation><!-- Allergy --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Behavioural</masterLabel>
-        <translation></translation>
+        <translation><!-- Behavioural --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Medical</masterLabel>
-        <translation></translation>
+        <translation><!-- Medical --></translation>
     </picklistValues>
 </CustomFieldTranslation>

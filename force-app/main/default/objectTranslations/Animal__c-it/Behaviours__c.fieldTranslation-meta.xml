@@ -48,7 +48,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Reactive</masterLabel>
-        <translation></translation>
+        <translation><!-- Reactive --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Resource Guarding</masterLabel>

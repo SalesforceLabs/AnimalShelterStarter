@@ -2,13 +2,13 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value></value>
+        <value><!-- Breed --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value></value>
+        <value><!-- Breed --></value>
     </caseValues>
-    <gender></gender>
+    <gender><!-- Masculine --></gender>
     <layouts>
         <layout>Breed Layout</layout>
         <sections>
@@ -16,11 +16,11 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel></nameFieldLabel>
+    <nameFieldLabel><!-- Breed Name --></nameFieldLabel>
     <quickActions>
         <aspect>Master</aspect>
         <label>Razze migratorie</label>
         <name>Migrate_Breeds</name>
     </quickActions>
-    <startsWith></startsWith>
+    <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

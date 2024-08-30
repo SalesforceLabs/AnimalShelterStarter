@@ -500,6 +500,13 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Unit_Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Unavailable</stringValue>
+            </value>
+        </filters>
         <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>

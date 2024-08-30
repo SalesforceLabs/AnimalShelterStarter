@@ -255,6 +255,18 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Deceased_Date__c</field>
+            <value>
+                <elementReference>recordId.Deceased_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Deceased_Reason__c</field>
+            <value>
+                <elementReference>recordId.Deceased_Reason__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Location_Status__c</field>
             <value>
                 <stringValue></stringValue>

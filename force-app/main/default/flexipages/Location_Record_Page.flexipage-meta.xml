@@ -48,6 +48,10 @@
                 <identifier>Recordanimalshelters_Parent_Block_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-03fd539c-8e0f-4eb0-b151-8bee0ddb7e23</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -57,40 +61,6 @@
                 <fieldItem>Record.Unit_Status__c</fieldItem>
                 <identifier>Recordanimalshelters_Unit_Status_cField</identifier>
             </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Unit_Full__c</fieldItem>
-                <identifier>Recordanimalshelters__Unit_Full__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Parent_Location_Id__c</fieldItem>
-                <identifier>Recordanimalshelters__Parent_Location_Id__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Site_Record_Id__c</fieldItem>
-                <identifier>Recordanimalshelters__Site_Record_Id__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-03fd539c-8e0f-4eb0-b151-8bee0ddb7e23</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>flexipage:blankSpace</componentName>
-                <identifier>flexipage_blankSpace</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>flexipage:blankSpace</componentName>
-                <identifier>flexipage_blankSpace2</identifier>
-            </componentInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
@@ -138,6 +108,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Capacity__c</fieldItem>
                 <identifier>Recordanimalshelters_Capacity_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Unit_Full__c</fieldItem>
+                <identifier>Recordanimalshelters__Unit_Full__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a7620055-5786-4cc0-9883-518671d88af5</name>

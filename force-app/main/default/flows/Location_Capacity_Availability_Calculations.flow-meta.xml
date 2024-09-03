@@ -183,8 +183,10 @@
             <targetReference>Loop_Through_Units</targetReference>
         </connector>
     </collectionProcessors>
+    <description>[Animal Shelter] - Calculates Capacity and Availability for Blocks on Location Update</description>
     <environments>Default</environments>
     <interviewLabel>Location - Capacity &amp; Availability Calculations {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Location - Capacity &amp; Availability Calculations</label>
     <loops>
         <name>Loop_Through_Blocks</name>
@@ -346,7 +348,6 @@
         </inputAssignments>
         <object>Locations__c</object>
     </recordUpdates>
-    <sourceTemplate>Location_Capacity_and_Availability_Calculations</sourceTemplate>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>

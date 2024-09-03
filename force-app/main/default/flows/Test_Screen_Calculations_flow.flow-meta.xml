@@ -5,7 +5,7 @@
         <name>Build_All_Recotrds</name>
         <label>Build All Recotrds</label>
         <locationX>352</locationX>
-        <locationY>1946</locationY>
+        <locationY>2486</locationY>
         <assignmentItems>
             <assignToReference>recordsToWrite</assignToReference>
             <operator>Add</operator>
@@ -21,7 +21,7 @@
         <name>Build_Records_to_Write</name>
         <label>Build Records to Write</label>
         <locationX>352</locationX>
-        <locationY>1730</locationY>
+        <locationY>2054</locationY>
         <assignmentItems>
             <assignToReference>recordToWrite.Id</assignToReference>
             <operator>Assign</operator>
@@ -33,18 +33,41 @@
             <assignToReference>recordToWrite.Total_Capacity__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>totalCapacity</elementReference>
+                <elementReference>blockCapacity</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>recordToWrite.Available_Capacity__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>totalAllocation</elementReference>
+                <elementReference>blockAvailability</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Site_Calculations</targetReference>
+            <targetReference>rtw</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>clear_total</name>
+        <label>clear total</label>
+        <locationX>352</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>blockAvailability</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>blockCapacity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_All_Recotrds</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -53,17 +76,17 @@
         <locationX>440</locationX>
         <locationY>1430</locationY>
         <assignmentItems>
-            <assignToReference>capacity</assignToReference>
+            <assignToReference>unitCapacity</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>Loop_through_Units.Capacity__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>allocation</assignToReference>
+            <assignToReference>unitAvailability</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Loop_through_Units.Allocation__c</elementReference>
+                <elementReference>Loop_through_Units.Availability__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -71,49 +94,72 @@
         </connector>
     </assignments>
     <assignments>
+        <name>reset_cap</name>
+        <label>reset cap</label>
+        <locationX>352</locationX>
+        <locationY>1946</locationY>
+        <assignmentItems>
+            <assignToReference>unitAvailability</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>unitCapacity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_Records_to_Write</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Site_Calculations</name>
         <label>Site Calculations</label>
         <locationX>352</locationX>
-        <locationY>1838</locationY>
+        <locationY>2270</locationY>
         <assignmentItems>
             <assignToReference>siteCapacity</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>totalCapacity</elementReference>
+                <elementReference>blockCapacity</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>siteAvailability</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>totalAllocation</elementReference>
+                <elementReference>blockAvailability</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Build_All_Recotrds</targetReference>
+            <targetReference>clear_total</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Totals</name>
         <label>Totals</label>
         <locationX>352</locationX>
-        <locationY>1622</locationY>
+        <locationY>1730</locationY>
         <assignmentItems>
-            <assignToReference>totalCapacity</assignToReference>
-            <operator>Assign</operator>
+            <assignToReference>blockCapacity</assignToReference>
+            <operator>Add</operator>
             <value>
-                <elementReference>capacity</elementReference>
+                <elementReference>unitCapacity</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>totalAllocation</assignToReference>
-            <operator>Assign</operator>
+            <assignToReference>blockAvailability</assignToReference>
+            <operator>Add</operator>
             <value>
-                <elementReference>availabilityFormula</elementReference>
+                <elementReference>unitAvailability</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Build_Records_to_Write</targetReference>
+            <targetReference>sad</targetReference>
         </connector>
     </assignments>
     <collectionProcessors>
@@ -139,9 +185,15 @@
     </collectionProcessors>
     <environments>Default</environments>
     <formulas>
-        <name>availabilityFormula</name>
+        <name>blockAvailabilityFormula</name>
         <dataType>Number</dataType>
-        <expression>{!capacity} - {!allocation}</expression>
+        <expression>{!unitCapacity} - {!unitAvailability}</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>totalAvailabilityFormula</name>
+        <dataType>Number</dataType>
+        <expression>{!blockCapacity} - {!blockAvailability}</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Test Screen Calculations flow {!$Flow.CurrentDateTime}</interviewLabel>
@@ -171,7 +223,7 @@
             <targetReference>Count</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Totals</targetReference>
+            <targetReference>dfg</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -225,6 +277,7 @@
         <queriedFields>Site_Record_Id__c</queriedFields>
         <queriedFields>Name__c</queriedFields>
         <queriedFields>Parent_Block__c</queriedFields>
+        <queriedFields>Availability__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Non_Units_under_Site</name>
@@ -265,12 +318,13 @@
         <queriedFields>Site_Record_Id__c</queriedFields>
         <queriedFields>Name__c</queriedFields>
         <queriedFields>Parent_Block__c</queriedFields>
+        <queriedFields>Availability__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Blocks</name>
         <label>Update Blocks</label>
         <locationX>176</locationX>
-        <locationY>2246</locationY>
+        <locationY>2786</locationY>
         <connector>
             <targetReference>Update_Site</targetReference>
         </connector>
@@ -280,7 +334,7 @@
         <name>Update_Site</name>
         <label>Update Site</label>
         <locationX>176</locationX>
-        <locationY>2354</locationY>
+        <locationY>2894</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -383,7 +437,7 @@
         <name>Copy_1_of_Units_for_Block</name>
         <label>Copy 1 of Units for Block</label>
         <locationX>352</locationX>
-        <locationY>2054</locationY>
+        <locationY>2594</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -392,7 +446,64 @@
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_3_of_Screen_1_txt</name>
-            <fieldText>&lt;p&gt;Records to Write&lt;/p&gt;&lt;p&gt;{!recordsToWrite}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Records to Write&lt;/p&gt;&lt;p&gt;{!recordsToWrite}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>dfg</name>
+        <label>dfg</label>
+        <locationX>352</locationX>
+        <locationY>1622</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Totals</targetReference>
+        </connector>
+        <fields>
+            <name>sdfg</name>
+            <fieldText>&lt;p&gt;Unit Capacity: {!unitCapacity}&lt;/p&gt;&lt;p&gt;Unit Allocation: {!unitAvailability}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>rtw</name>
+        <label>rtw</label>
+        <locationX>352</locationX>
+        <locationY>2162</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Site_Calculations</targetReference>
+        </connector>
+        <fields>
+            <name>rtwText</name>
+            <fieldText>&lt;p&gt;Record To Write ID: {!recordToWrite.Id}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Record To Write Available Capacity:&lt;/span&gt;{!recordToWrite.Available_Capacity__c}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Record To Write Total Capacity:&lt;/span&gt;{!recordToWrite.Total_Capacity__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>sad</name>
+        <label>sad</label>
+        <locationX>352</locationX>
+        <locationY>1838</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>reset_cap</targetReference>
+        </connector>
+        <fields>
+            <name>sadf</name>
+            <fieldText>&lt;p&gt;Block Capacity: {!blockCapacity}&lt;/p&gt;&lt;p&gt;Block Availability: {!blockAvailability}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -487,17 +598,6 @@
         <objectType>Locations__c</objectType>
     </variables>
     <variables>
-        <name>allocation</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
-        <value>
-            <numberValue>0.0</numberValue>
-        </value>
-    </variables>
-    <variables>
         <name>allUnits</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
@@ -506,15 +606,22 @@
         <objectType>Locations__c</objectType>
     </variables>
     <variables>
-        <name>capacity</name>
+        <description>The Availability of the Block, the Capacity - the Allocation</description>
+        <name>blockAvailability</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <scale>0</scale>
-        <value>
-            <numberValue>0.0</numberValue>
-        </value>
+    </variables>
+    <variables>
+        <description>The Capacity of the Block, the sum of the Unit&apos;s Capacity</description>
+        <name>blockCapacity</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
     </variables>
     <variables>
         <name>currentItem_Filter_for_Units</name>
@@ -523,13 +630,6 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>nextParentId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>recordId</name>
@@ -579,20 +679,26 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>totalAllocation</name>
+        <name>unitAvailability</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
     <variables>
-        <name>totalCapacity</name>
+        <name>unitCapacity</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
     <variables>
         <name>unitRecordTypeId</name>

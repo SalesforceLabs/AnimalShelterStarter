@@ -1,59 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
-    <assignments>
-        <name>Get_Block_Figures</name>
-        <label>Get Block Figures</label>
-        <locationX>460</locationX>
-        <locationY>1571</locationY>
-        <assignmentItems>
-            <assignToReference>totalCapacity</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Block_Processing.capacity</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>totalAllocation</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Block_Processing.allocation</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_Blocks</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Get_Sublock_Figures</name>
-        <label>Get Sublock Figures</label>
-        <locationX>440</locationX>
-        <locationY>1187</locationY>
-        <assignmentItems>
-            <assignToReference>totalCapacity</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>SubBlock_Processing.capacity</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>totalAllocation</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>SubBlock_Processing.allocation</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_SubBlocks</targetReference>
-        </connector>
-    </assignments>
     <decisions>
         <name>Does_Block_Have_SubBlock</name>
         <label>Does Block Have SubBlock?</label>
-        <locationX>460</locationX>
+        <locationX>440</locationX>
         <locationY>863</locationY>
         <defaultConnector>
-            <targetReference>Block_Processing</targetReference>
+            <targetReference>Loop_Through_Blocks</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -93,9 +47,6 @@
         <nextValueConnector>
             <targetReference>Get_SubBlock_for_Each_Block</targetReference>
         </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Update_Site_Figures</targetReference>
-        </noMoreValuesConnector>
     </loops>
     <loops>
         <name>Loop_Through_SubBlocks</name>
@@ -104,11 +55,8 @@
         <locationY>971</locationY>
         <collectionReference>Get_SubBlock_for_Each_Block.childRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>SubBlock_Processing</targetReference>
-        </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Block_Processing</targetReference>
+            <targetReference>Loop_Through_Blocks</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -152,33 +100,6 @@
         <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>Update_Site_Figures</name>
-        <label>Update Site Figures</label>
-        <locationX>176</locationX>
-        <locationY>1763</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Id_of_the_Site_Location_Record.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Available_Capacity__c</field>
-            <value>
-                <elementReference>totalAvailabilityFormula</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Total_Capacity__c</field>
-            <value>
-                <elementReference>totalCapacity</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Locations__c</object>
-    </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
@@ -191,23 +112,6 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Draft</status>
-    <subflows>
-        <name>Block_Processing</name>
-        <label>Block Processing</label>
-        <locationX>460</locationX>
-        <locationY>1463</locationY>
-        <connector>
-            <targetReference>Get_Block_Figures</targetReference>
-        </connector>
-        <flowName>Location_Calculations_SubFlow</flowName>
-        <inputAssignments>
-            <name>locationRecord</name>
-            <value>
-                <elementReference>Loop_Through_Blocks</elementReference>
-            </value>
-        </inputAssignments>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </subflows>
     <subflows>
         <name>Get_Blocks_Related_to_Site</name>
         <label>Get Blocks Related to Site</label>
@@ -234,7 +138,7 @@
     <subflows>
         <name>Get_SubBlock_for_Each_Block</name>
         <label>Get SubBlock for Each Block</label>
-        <locationX>460</locationX>
+        <locationX>440</locationX>
         <locationY>755</locationY>
         <connector>
             <targetReference>Does_Block_Have_SubBlock</targetReference>
@@ -267,23 +171,6 @@
             <name>recordId</name>
             <value>
                 <elementReference>$Record</elementReference>
-            </value>
-        </inputAssignments>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </subflows>
-    <subflows>
-        <name>SubBlock_Processing</name>
-        <label>SubBlock Processing</label>
-        <locationX>440</locationX>
-        <locationY>1079</locationY>
-        <connector>
-            <targetReference>Get_Sublock_Figures</targetReference>
-        </connector>
-        <flowName>Location_Calculations_SubFlow</flowName>
-        <inputAssignments>
-            <name>locationRecord</name>
-            <value>
-                <elementReference>Loop_Through_SubBlocks</elementReference>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>

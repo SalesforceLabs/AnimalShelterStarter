@@ -12,6 +12,7 @@ public class LocationHierarchyUpdater {
             FROM animalshelters__Locations__c
             WHERE Id IN :locationIds
         ];
+        System.debug('Parent Location Id: ' + unitLocations);
 
         // Collect all unique parent location IDs
         for (animalshelters__Locations__c unit : unitLocations) {

@@ -52,13 +52,6 @@
         <locationX>336</locationX>
         <locationY>1166</locationY>
         <assignmentItems>
-            <assignToReference>updatedUnit.Allocation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>formulaAllocationAvailable</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>updatedUnit.Id</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -66,14 +59,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>updatedUnit.Unavailability_Reason__c</assignToReference>
+            <assignToReference>updatedUnit.animalshelters__Unavailability_Reason__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue></stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>updatedUnit.Unit_Status__c</assignToReference>
+            <assignToReference>updatedUnit.animalshelters__Unit_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>newStatus</elementReference>
@@ -89,13 +82,6 @@
         <locationX>600</locationX>
         <locationY>1166</locationY>
         <assignmentItems>
-            <assignToReference>updatedUnit.Allocation__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>formulaAllocationUnavailable</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>updatedUnit.Id</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -103,14 +89,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>updatedUnit.Unavailability_Reason__c</assignToReference>
+            <assignToReference>updatedUnit.animalshelters__Unavailability_Reason__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>newUnavailabilityReason</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>updatedUnit.Unit_Status__c</assignToReference>
+            <assignToReference>updatedUnit.animalshelters__Unit_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Unavailable</stringValue>
@@ -163,14 +149,14 @@
         <collectionReference>unitsForStatusChange</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Filter_Units_for_Allocated_Units.Allocation__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Units_for_Allocated_Units.animalshelters__Allocation__c</leftValueReference>
             <operator>GreaterThan</operator>
             <rightValue>
                 <numberValue>0.0</numberValue>
             </rightValue>
         </conditions>
         <conditions>
-            <leftValueReference>currentItem_Filter_Units_for_Allocated_Units.Unit_Status__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_Units_for_Allocated_Units.animalshelters__Unit_Status__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <stringValue>Allocated</stringValue>
@@ -255,22 +241,20 @@
             <label>Set to Available</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] - Subflow to change the status of units.  Inputs: Unit record collection, Ignore Allocated Units Flag, Outputs: Allocated Units</description>
     <environments>Default</environments>
     <formulas>
         <name>formulaAllocationAvailable</name>
         <dataType>Number</dataType>
-        <expression>IF({!ignoreAllocatedUnits} = TRUE, {!Loop_Through_All_Units.Allocation__c}, 0)</expression>
+        <expression>IF({!ignoreAllocatedUnits} = TRUE, {!Loop_Through_All_Units.animalshelters__Allocation__c}, 0)</expression>
         <scale>0</scale>
     </formulas>
     <formulas>
         <name>formulaAllocationUnavailable</name>
         <dataType>Number</dataType>
-        <expression>IF({!ignoreAllocatedUnits} = TRUE, {!Loop_Through_All_Units.Allocation__c}, {!Loop_Through_All_Units.Capacity__c})</expression>
+        <expression>IF({!ignoreAllocatedUnits} = TRUE, {!Loop_Through_All_Units.animalshelters__Allocation__c}, {!Loop_Through_All_Units.animalshelters__Capacity__c})</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Location - Change Unit Status SubFlow {!$Flow.CurrentDateTime}</interviewLabel>
-    <isTemplate>true</isTemplate>
     <label>Location - Change Unit Status SubFlow</label>
     <loops>
         <name>Loop_Through_All_Units</name>
@@ -312,6 +296,7 @@
         <locationY>1550</locationY>
         <inputReference>updatedUnits</inputReference>
     </recordUpdates>
+    <sourceTemplate>animalshelters__Location_Change_Unit_Status_SubFlow</sourceTemplate>
     <start>
         <locationX>122</locationX>
         <locationY>0</locationY>
@@ -334,7 +319,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <description>If True allocated units will be ignored and the status will still be set</description>
@@ -364,7 +349,7 @@
         <isCollection>true</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>unitsHaveAllocation</name>
@@ -379,7 +364,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>updatedUnits</name>
@@ -387,6 +372,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
 </Flow>

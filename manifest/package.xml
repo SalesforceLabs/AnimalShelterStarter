@@ -24,6 +24,8 @@
         <members>W3WInvocableCalloutTest</members>
         <members>What3Words</members>
         <members>What3WordsTest</members>
+        <members>ASCS_MovementTriggerHandler</members>
+        <members>ASCS_MovementTriggerHandlerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -555,6 +557,8 @@
         <members>Movement_Object_Handler</members>
         <members>Task_Close_associated_Animal_Action</members>
         <members>Task_Update_Future_Movement_Record_on_Task_Completion</members>
+        <members>Location_Change_Status_Flow</members>
+        <members>Location_Change_Unit_Status_SubFlow</members>
         <name>Flow</name>
     </types>
     <types>
@@ -604,6 +608,7 @@
         <members>microchipLookup</members>
         <members>recordAlerts</members>
         <members>recordImage</members>
+        <members>lightningLocationMap</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -761,6 +766,10 @@
         <members>Locations__c</members>
         <members>Movement__c</members>
         <name>Workflow</name>
+    </types>
+    <types>
+        <members>MovementTrigger</members>
+        <name>ApexTrigger</name>
     </types>
     <version>58.0</version>
 </Package>

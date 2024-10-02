@@ -36,14 +36,14 @@
         <locationX>50</locationX>
         <locationY>350</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Movement_Status__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Movement_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -66,28 +66,28 @@
         <locationX>182</locationX>
         <locationY>134</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Animal__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AnimalId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Start_Date__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Start_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>movementStartDate</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Type__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>movementType</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Location__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Location__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>LocationId</elementReference>
@@ -119,14 +119,14 @@
         <locationX>314</locationX>
         <locationY>350</locationY>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Current__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Current__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varNewMovementRecord.Movement_Status__c</assignToReference>
+            <assignToReference>varNewMovementRecord.animalshelters__Movement_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Completed</stringValue>
@@ -221,15 +221,15 @@
         <name>fmlLocationName</name>
         <dataType>String</dataType>
         <expression>IF(
-{!movementType} = &quot;Housed&quot;, 
-{!movementType} + &quot; - &quot; + {!Get_Newly_Created_Movement_Record.Location_Name__c},
+{!movementType} = &quot;Housed&quot;,
+{!movementType} + &quot; - &quot; + {!Get_Newly_Created_Movement_Record.animalshelters__Location_Name__c},
 {!movementType}
 )</expression>
     </formulas>
     <formulas>
         <name>IncrementAllocationBy1</name>
         <dataType>Number</dataType>
-        <expression>{!Get_Location_Record.Allocation__c} + 1</expression>
+        <expression>{!Get_Location_Record.animalshelters__Allocation__c} + 1</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Movement SubFlow</interviewLabel>
@@ -289,7 +289,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -314,7 +314,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Movement__c</object>
+        <object>animalshelters__Movement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -334,18 +334,18 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Location_Status__c</field>
+            <field>animalshelters__Location_Status__c</field>
             <value>
                 <elementReference>fmlLocationName</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Site__c</field>
+            <field>animalshelters__Site__c</field>
             <value>
-                <elementReference>Get_Newly_Created_Movement_Record.Sitename__c</elementReference>
+                <elementReference>Get_Newly_Created_Movement_Record.animalshelters__Sitename__c</elementReference>
             </value>
         </inputAssignments>
-        <object>Animal__c</object>
+        <object>animalshelters__Animal__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Location_Allocation</name>
@@ -364,12 +364,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Allocation__c</field>
+            <field>animalshelters__Allocation__c</field>
             <value>
                 <elementReference>IncrementAllocationBy1</elementReference>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
     </recordUpdates>
     <start>
         <locationX>56</locationX>
@@ -384,7 +384,7 @@
         <label>Create Movement Task</label>
         <locationX>50</locationX>
         <locationY>1490</locationY>
-        <flowName>Animal_Generate_Tasks_Subflow</flowName>
+        <flowName>animalshelters__Animal_Generate_Tasks_Subflow</flowName>
         <inputAssignments>
             <name>animalRecordId</name>
             <value>
@@ -464,6 +464,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Movement__c</objectType>
+        <objectType>animalshelters__Movement__c</objectType>
     </variables>
 </Flow>

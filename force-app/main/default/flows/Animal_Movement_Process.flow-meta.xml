@@ -553,6 +553,7 @@
         </filters>
         <object>Movement__c</object>
         <outputReference>varMovementRecords</outputReference>
+        <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Current_Movement_Record</name>
@@ -953,7 +954,7 @@
             <targetReference>Get_Unit_Record_Type</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>CreateMovementRecord</name>
         <label>CreateMovementRecord</label>

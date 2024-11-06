@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
-    <description>[Animal Shelter] - Subflow to return child Location records for a given Location Record</description>
+    <description>[Animal Shelter] - Subflow to return child Location records for a given Location
+        Record</description>
     <environments>Default</environments>
     <interviewLabel>Location - Get Location Child Records Subflow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -47,7 +48,7 @@
                 <elementReference>recordTypeId</elementReference>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
         <outputReference>childRecords</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Allocation__c</queriedFields>
@@ -98,7 +99,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>true</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>childRecordTypeName</name>
@@ -114,7 +115,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>recordTypeId</name>

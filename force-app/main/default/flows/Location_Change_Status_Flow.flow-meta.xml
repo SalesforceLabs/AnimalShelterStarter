@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
     <assignments>
         <name>Assign_Block_Units_to_Collection</name>
@@ -158,14 +159,15 @@
             <label>Block</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] - Flow to change the Status of a Unit, Sub Block or Block to make the associated Units Available or Unavailable</description>
+    <description>[Animal Shelter] - Flow to change the Status of a Unit, Sub Block or Block to make
+        the associated Units Available or Unavailable</description>
     <dynamicChoiceSets>
         <name>Reason_Unavailable_Picklist</name>
         <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
         <picklistField>Unavailability_Reason__c</picklistField>
-        <picklistObject>Locations__c</picklistObject>
+        <picklistObject>animalshelters__Locations__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Location - Change Status Flow {!$Flow.CurrentDateTime}</interviewLabel>
@@ -210,7 +212,10 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Completed_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Locations Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in {!recordId.Name__c} have been updated to {!Status_Options}. Click Finish to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Locations
+                Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in
+                {!recordId.Name__c} have been updated to {!Status_Options}. Click Finish to complete
+                the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -226,7 +231,13 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Has_Allocated_Units_Text</name>
-            <fieldText>&lt;p&gt;Block/Sub Block &lt;strong&gt;&lt;em&gt;{!recordId.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this Block/Sub Block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Block/Sub Block
+                &lt;strong&gt;&lt;em&gt;{!recordId.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1
+                unit that is housing an animal, and is allocated.
+                &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the
+                animals out of any units in this Block/Sub
+                Block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click
+                &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -245,7 +256,8 @@
         </connector>
         <fields>
             <name>Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;To change the status of the current Location and any child Locations, select an option below&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;To change the status of the current Location and any child
+                Locations, select an option below&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -296,7 +308,10 @@
                 </fields>
                 <fields>
                     <name>InitialScreenIgnoreAllocatedWarning</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(247, 69, 69);&quot;&gt;WARNING!&lt;/strong&gt;&lt;strong&gt; - &lt;/strong&gt;Setting the Ignore Allocated Units checkbox will update the status of the Units that may house animals&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(247, 69,
+                        69);&quot;&gt;WARNING!&lt;/strong&gt;&lt;strong&gt; - &lt;/strong&gt;Setting
+                        the Ignore Allocated Units checkbox will update the status of the Units that
+                        may house animals&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
@@ -322,7 +337,10 @@
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
-        <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if the block needs to be closed for maintenance, you can use this to update the whole block to unavailable.&lt;/p&gt;</helpText>
+        <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single
+            block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if
+            the block needs to be closed for maintenance, you can use this to update the whole block
+            to unavailable.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -447,7 +465,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -455,7 +473,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>Units</name>
@@ -463,6 +481,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
 </Flow>

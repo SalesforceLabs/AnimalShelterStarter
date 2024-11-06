@@ -105,7 +105,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Locations__c</stringValue>
+            <stringValue>animalshelters__Locations__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -135,7 +135,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -143,6 +143,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
 </Flow>

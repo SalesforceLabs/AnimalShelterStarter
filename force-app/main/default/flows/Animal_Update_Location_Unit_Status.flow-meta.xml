@@ -257,12 +257,14 @@
             <label>Is Available</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] Autolaunched flow to update the Location Status based on availability</description>
+    <description>[Animal Shelter] Autolaunched flow to update the Location Status based on
+        availability</description>
     <environments>Default</environments>
     <formulas>
         <name>frmAllocation</name>
         <dataType>Number</dataType>
-        <expression>IF({!$Record.animalshelters__Capacity__c} = 1, 0, {!$Record.animalshelters__Allocation__c})</expression>
+        <expression>IF({!$Record.animalshelters__Capacity__c} = 1, 0,
+            {!$Record.animalshelters__Allocation__c})</expression>
         <scale>0</scale>
     </formulas>
     <formulas>
@@ -273,7 +275,8 @@
     <formulas>
         <name>frmParentBlockAvailability</name>
         <dataType>String</dataType>
-        <expression>IF({!parentBlockUnavailable}, &apos;Unavailable&apos;, IF({!unitAvailableCount} &gt; 0, &apos;Available&apos;,&apos;Allocated&apos;))</expression>
+        <expression>IF({!parentBlockUnavailable}, &apos;Unavailable&apos;, IF({!unitAvailableCount}
+            &gt; 0, &apos;Available&apos;,&apos;Allocated&apos;))</expression>
     </formulas>
     <interviewLabel>Animal - Update Location Unit Status</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -329,7 +332,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -350,7 +353,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -378,7 +381,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -426,8 +429,10 @@
         <connector>
             <targetReference>Has_Unit_been_marked_as_Unavailable</targetReference>
         </connector>
-        <filterFormula>{!$Record.RecordType.Name}=&apos;Unit&apos; || {!$Record.RecordType.Name}=&apos;Foster&apos; || {!$Record.RecordType.Name}=&apos;Organisation&apos;</filterFormula>
-        <object>Locations__c</object>
+        <filterFormula>{!$Record.RecordType.Name}=&apos;Unit&apos; ||
+            {!$Record.RecordType.Name}=&apos;Foster&apos; ||
+            {!$Record.RecordType.Name}=&apos;Organisation&apos;</filterFormula>
+        <object>animalshelters__Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

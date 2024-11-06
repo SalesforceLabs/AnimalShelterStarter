@@ -2,7 +2,7 @@ public with sharing class ASCS_MovementTriggerHandler {
     // Method to handle logic after insert
 
     public static void handleInsert(Map<Id, animalshelters__Movement__c> newMap) {
-        
+
         // Check if the allocation toggle is set:
         // Return out if allocation enabled is false
         // ASCS_Allocation_Toggle__c toggle = ASCS_Allocation_Toggle__c.getOrgDefaults();
@@ -25,17 +25,17 @@ public with sharing class ASCS_MovementTriggerHandler {
 
     // Method to handle logic after update
     public static void handleUpdate(Map<Id, animalshelters__Movement__c> newMap, Map<Id, animalshelters__Movement__c> oldMap) {
-        
+
         // Return out if allocation enables is false
         // ASCS_Allocation_Toggle__c toggle = ASCS_Allocation_Toggle__c.getOrgDefaults();
         // Boolean toggleValue = Boolean.valueOf(toggle.get('ASCS_Allocation_Enabled__c'));
         // System.debug('Toggle' + toggleValue);
         // if(toggleValue == false) return;
-        
-        // Create List of Locations 
+
+        // Create List of Locations
         //Create Lost of Location Id Strings
         List<String> locationIdStringList = new List<String>();
-        
+
         // Loop incase of bulk movement creation
         for (Id movementId : newMap.keySet()) {
             animalshelters__Movement__c newMovement = newMap.get(movementId);
@@ -43,7 +43,7 @@ public with sharing class ASCS_MovementTriggerHandler {
             // Pull current value from new and onld map
             Boolean oldCurrentValue = Boolean.valueOf(oldMovement.get('animalshelters__Current__c'));
             Boolean newCurrentValue = Boolean.valueOf(newMovement.get('animalshelters__Current__c'));
-            
+
             // Check that the movement current value has been changed
             if(oldCurrentValue != newCurrentValue){
                 // Add to location string list
@@ -68,12 +68,12 @@ public with sharing class ASCS_MovementTriggerHandler {
             WHERE animalshelters__Location__c IN :locationIdStringList AND animalshelters__Current__c = true
             GROUP BY animalshelters__Location__c
         ];
-    
+
         // Loop through the results and populate the map
         for (AggregateResult result : results) {
             String locationId = (String)result.get('animalshelters__Location__c');
             Integer count = (Integer)result.get('expr0');
-            
+
             // Create temp location to update the allocation
             animalshelters__Locations__c tempLocation = new animalshelters__Locations__c();
             tempLocation.Id = locationId;

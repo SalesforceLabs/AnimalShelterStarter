@@ -257,7 +257,8 @@
             <label>Set to Available</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] - Subflow to change the status of units.  Inputs: Unit record collection, Ignore Allocated Units Flag, Outputs: Allocated Units</description>
+    <description>[Animal Shelter] - Subflow to change the status of units. Inputs: Unit record
+        collection, Ignore Allocated Units Flag, Outputs: Allocated Units</description>
     <environments>Default</environments>
     <interviewLabel>Location - Change Unit Status SubFlow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -327,7 +328,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -359,7 +360,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <description>If True allocated units will be ignored and the status will still be set</description>
@@ -396,7 +397,7 @@
         <isCollection>true</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>unitsHaveAllocation</name>
@@ -411,7 +412,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>updatedUnits</name>
@@ -419,6 +420,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
 </Flow>

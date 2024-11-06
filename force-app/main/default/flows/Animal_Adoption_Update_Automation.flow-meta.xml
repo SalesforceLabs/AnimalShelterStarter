@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
-    <description>[Animal Shelter] - When Adoption Status = Adopted: Update Contact Flag, Clear current and create new Movement record, update Animal status and details</description>
+    <description>[Animal Shelter] - When Adoption Status = Adopted: Update Contact Flag, Clear
+        current and create new Movement record, update Animal status and details</description>
     <environments>Default</environments>
     <formulas>
         <name>formulaAdoptionDate</name>
         <dataType>Date</dataType>
-        <expression>IF(ISBLANK({!$Record.animalshelters__Date_of_Adoption__c}) , {!$Flow.CurrentDate}, {!$Record.animalshelters__Date_of_Adoption__c})</expression>
+        <expression>IF(ISBLANK({!$Record.animalshelters__Date_of_Adoption__c}) ,
+            {!$Flow.CurrentDate}, {!$Record.animalshelters__Date_of_Adoption__c})</expression>
     </formulas>
     <formulas>
         <name>formulaCollectedDate</name>
         <dataType>Date</dataType>
-        <expression>IF(ISBLANK({!$Record.animalshelters__Date_Collected__c}) , {!$Flow.CurrentDate}, {!$Record.animalshelters__Date_Collected__c})</expression>
+        <expression>IF(ISBLANK({!$Record.animalshelters__Date_Collected__c}) , {!$Flow.CurrentDate},
+            {!$Record.animalshelters__Date_Collected__c})</expression>
     </formulas>
     <interviewLabel>Animal - Adoption Update Automation</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -36,7 +39,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <description>Creates a new Movement Record, of Type Adopted with the Start Date = to Date Collected</description>
+        <description>Creates a new Movement Record, of Type Adopted with the Start Date = to Date
+            Collected</description>
         <name>Create_New_Movement_Record</name>
         <label>Create New Movement Record</label>
         <locationX>176</locationX>
@@ -129,7 +133,7 @@
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Close Outstanding Animal Action Records</description>
@@ -220,7 +224,8 @@
         <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
-        <description>Sets the &quot;Is An Adopter&quot; Flag on the associated Contact to indicate they are an Adopter</description>
+        <description>Sets the &quot;Is An Adopter&quot; Flag on the associated Contact to indicate
+            they are an Adopter</description>
         <name>Set_Adopter_Flag_on_Contact_to_True</name>
         <label>Set Adopter Flag on Contact to True</label>
         <locationX>176</locationX>

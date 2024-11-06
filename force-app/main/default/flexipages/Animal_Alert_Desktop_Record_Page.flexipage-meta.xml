@@ -65,6 +65,12 @@
                 <identifier>RecordSeverity_Level_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e4493684-ec5a-4587-8870-1d5482cbb764</name>
         <type>Facet</type>
     </flexiPageRegions>

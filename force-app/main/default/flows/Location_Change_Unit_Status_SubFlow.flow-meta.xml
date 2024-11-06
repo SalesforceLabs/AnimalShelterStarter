@@ -344,7 +344,7 @@
             <targetReference>Is_the_Ignore_Allocated_Units_Flag_Set</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>allocationCount</name>
         <dataType>Number</dataType>

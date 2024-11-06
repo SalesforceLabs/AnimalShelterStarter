@@ -744,7 +744,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Movement_Records_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;&lt;em&gt;ERROR!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Name} appears to have been assigned multiple locations, and has  multiple movement records that are marked as current.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please check the movement records for &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!recordId.Name}&lt;/span&gt;, and resolve this issue.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;&lt;em&gt;ERROR!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt; {!recordId.Animal_Name__c} appears to have been assigned multiple locations, and has multiple movement records that are marked as current.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please check the movement records for &lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!recordId.Animal_Name__c}&lt;/span&gt;, and resolve this issue.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -954,7 +954,7 @@
             <targetReference>Get_Unit_Record_Type</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>CreateMovementRecord</name>
         <label>CreateMovementRecord</label>

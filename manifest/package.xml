@@ -771,5 +771,9 @@
         <members>MovementTrigger</members>
         <name>ApexTrigger</name>
     </types>
+    <types>
+        <members>Animals_and_their_locations</members>
+        <name>ReportType</name>
+    </types>
     <version>58.0</version>
 </Package>

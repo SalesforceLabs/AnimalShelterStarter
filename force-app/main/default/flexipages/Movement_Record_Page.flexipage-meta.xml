@@ -104,6 +104,12 @@
                 <identifier>RecordTotal_Time_Days__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-400ba8ed-d34a-4edc-9892-e306423d174c</name>
         <type>Facet</type>
     </flexiPageRegions>

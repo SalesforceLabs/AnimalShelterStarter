@@ -16,7 +16,7 @@ private class ASCS_MovementTriggerHandlerTest {
         );
 
         insert locationSite;
-        
+
         animalshelters__Locations__c locationBlock = new animalshelters__Locations__c(
             animalshelters__Name__c = 'Test Location Block',
             recordTypeId = blockRecordTypeId,
@@ -43,7 +43,7 @@ private class ASCS_MovementTriggerHandlerTest {
 
         locationList.add(location1);
         locationList.add(location2);
-        
+
         // Insert unit locations
         insert locationList;
 
@@ -96,7 +96,7 @@ private class ASCS_MovementTriggerHandlerTest {
 
         // Query both locations for allocation check
         List<animalshelters__Locations__c> updatedLocations = [SELECT Id, animalshelters__Allocation__c FROM animalshelters__Locations__c WHERE Id IN :new Set<Id>{location1.Id, location2.Id}];
-        
+
         // Verify allocations after the movements
         for (animalshelters__Locations__c loc : updatedLocations) {
             if (loc.Id == location1.Id) {

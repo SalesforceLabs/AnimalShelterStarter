@@ -87,7 +87,7 @@
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
-        <object>Locations__c</object>
+        <object>animalshelters__Locations__c</object>
         <outputReference>locationRecord</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -114,7 +114,11 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an error!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please take a note of the fault message below and send it to your Salesforce Administrator or Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;Oh no! There has been an
+                error!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please take a note
+                of the fault message below and send it to your Salesforce Administrator or
+                Salesforce Support.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fault
+                Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -130,7 +134,11 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Success_Screen_Text</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;&lt;i&gt;The Last Assessment and Assessment Due dates have been set!&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The next assessment date will be {!newAssessmentDate}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;b&gt;Finish&lt;/b&gt; to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;&lt;i&gt;The Last Assessment and Assessment Due dates have
+                been set!&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The
+                next assessment date will be
+                {!newAssessmentDate}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click
+                &lt;b&gt;Finish&lt;/b&gt; to complete the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -171,7 +179,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Locations__c</objectType>
+        <objectType>animalshelters__Locations__c</objectType>
     </variables>
     <variables>
         <name>newAssessmentDate</name>

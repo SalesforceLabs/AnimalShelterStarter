@@ -73,6 +73,12 @@
                 <identifier>RecordCategory_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-9cb348dd-c2b1-489e-8c93-93b664cc0fc9</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -63,6 +63,12 @@
                 <identifier>Recordanimalshelters_Age_Category_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-c9f85fdf-9f3e-459a-9111-1a24e639d1a0</name>
         <type>Facet</type>
     </flexiPageRegions>

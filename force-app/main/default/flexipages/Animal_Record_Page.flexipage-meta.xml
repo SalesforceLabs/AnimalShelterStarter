@@ -172,6 +172,12 @@
                 <identifier>RecordCalculated_Age__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4c49db03-428d-4fcb-a44e-6e9be7ede66a</name>
         <type>Facet</type>
     </flexiPageRegions>

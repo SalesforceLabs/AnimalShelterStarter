@@ -393,7 +393,10 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Completed_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Records Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in {!recordId.Name__c} have been updated to {!SelectedChoice}. Click Finish to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Records
+                Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in
+                {!recordId.Name__c} have been updated to {!SelectedChoice}. Click Finish to complete
+                the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -409,7 +412,13 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Screen_Text</name>
-            <fieldText>&lt;p&gt;There has been an error in the flow when it attempting to update records.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click the Previous button below to go back and try again.  If the problem persists, contact your &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Salesforce administrator with &lt;/span&gt;the fault message below.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Fault Message:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;There has been an error in the flow when it attempting to update
+                records.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click the Previous button
+                below to go back and try again. If the problem persists, contact your &lt;span
+                style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68,
+                68);&quot;&gt;Salesforce administrator with &lt;/span&gt;the fault message
+                below.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Fault
+                Message:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -425,7 +434,13 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Copy_1_of_Has_Allocated_Units_Text</name>
-            <fieldText>&lt;p&gt;Block/Sub Block &lt;strong&gt;&lt;em&gt;{!recordId.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this Block/Sub Block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Block/Sub Block
+                &lt;strong&gt;&lt;em&gt;{!recordId.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1
+                unit that is housing an animal, and is allocated.
+                &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the
+                animals out of any units in this Block/Sub
+                Block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click
+                &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -444,7 +459,8 @@
         </connector>
         <fields>
             <name>Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;To change the status of the current Block or Sub Block and all its units, select an option below&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;To change the status of the current Block or Sub Block and all its
+                units, select an option below&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -457,7 +473,10 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
-        <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if the block needs to be closed for maintenance, you can use this to update the whole block to unavailable.&lt;/p&gt;</helpText>
+        <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single
+            block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if
+            the block needs to be closed for maintenance, you can use this to update the whole block
+            to unavailable.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>

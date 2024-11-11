@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <inlineHelpText>The number of animals that can be housed in this location</inlineHelpText>
     <label>Capacity</label>
-    <precision>2</precision>
+    <precision>5</precision>
     <required>false</required>
     <scale>0</scale>
     <trackHistory>false</trackHistory>

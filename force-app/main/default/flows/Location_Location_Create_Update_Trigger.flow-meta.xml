@@ -35,7 +35,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <subflows>
         <name>Call_Block_Calculations_SubFlow</name>
         <label>Call Block Calculations SubFlow</label>

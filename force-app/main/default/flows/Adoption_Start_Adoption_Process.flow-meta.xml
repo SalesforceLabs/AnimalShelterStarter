@@ -744,7 +744,7 @@
             <name>AutoMatchEnabledScreenDataTable</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
-                <typeValue>animalshelters__Adoption_Match__c</typeValue>
+                <typeValue>Adoption_Match__c</typeValue>
             </dataTypeMappings>
             <extensionName>flowruntime:datatable</extensionName>
             <fieldType>ComponentInstance</fieldType>

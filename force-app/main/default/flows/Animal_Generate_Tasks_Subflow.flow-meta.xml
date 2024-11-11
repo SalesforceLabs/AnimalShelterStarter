@@ -225,7 +225,7 @@
             <name>Queue_Configured</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Task_Queue_Name__c</leftValueReference>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Task_Queue_Name__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -427,7 +427,7 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Task_Queue_Name__c</elementReference>
+                <elementReference>$Setup.Animal_Shelter_Settings__c.Task_Queue_Name__c</elementReference>
             </value>
         </filters>
         <filters>

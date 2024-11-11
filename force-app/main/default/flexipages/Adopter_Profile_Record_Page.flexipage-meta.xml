@@ -137,6 +137,12 @@
                 <identifier>RecordActive_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-92cdd80a-d30e-4517-98bf-a61936ed30e8</name>
         <type>Facet</type>
     </flexiPageRegions>

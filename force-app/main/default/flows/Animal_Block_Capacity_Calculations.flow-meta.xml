@@ -245,7 +245,7 @@
             <targetReference>Get_Locations_Child_Records</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>varAvailableCount</name>
         <dataType>Number</dataType>

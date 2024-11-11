@@ -2,7 +2,6 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
     <assignments>
-        <description>Assigns the output of Get Units Related to Block Subflow to the Units Collection</description>
         <name>Assign_Block_Units_to_Collection</name>
         <label>Assign Block Units to Collection</label>
         <locationX>380</locationX>
@@ -14,8 +13,15 @@
                 <elementReference>Get_Units_Related_to_Block.childRecords</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>localLocation.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
-            <targetReference>ASCS_Change_Block_Units_Status_and_Check_for_Allocated_Units</targetReference>
+            <targetReference>Change_Block_Units_Status_and_Check_for_Allocated_Units</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -24,11 +30,11 @@
         <locationX>578</locationX>
         <locationY>890</locationY>
         <assignmentItems>
-            <assignToReference>recordId.animalshelters__Unavailability_Reason__c</assignToReference>
+            <assignToReference>localLocation.Unavailability_Reason__c</assignToReference>
             <operator>Assign</operator>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Block_Status_Block</targetReference>
+            <targetReference>Update_Block_Status</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -37,21 +43,21 @@
         <locationX>314</locationX>
         <locationY>998</locationY>
         <assignmentItems>
-            <assignToReference>recordId.animalshelters__Block_Status__c</assignToReference>
+            <assignToReference>localLocation.Block_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Unavailable</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>recordId.animalshelters__Unavailability_Reason__c</assignToReference>
+            <assignToReference>localLocation.Unavailability_Reason__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Reason_Unavailable</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Block_Status_Block</targetReference>
+            <targetReference>Update_Block_Status</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -71,41 +77,16 @@
         </value>
     </choices>
     <decisions>
-        <name>Copy_2_of_Location_Set_Unavailable</name>
-        <label>Location Set Unavailable</label>
-        <locationX>380</locationX>
-        <locationY>782</locationY>
-        <defaultConnector>
-            <targetReference>Reset_Unavailability_Reason</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Copy_2_of_Unavailable</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Status_Options</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Unavailable_Choice</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Did_Block_Have_Allocated_Units</targetReference>
-            </connector>
-            <label>Unavailable</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Did_Block_Have_Allocated_Units</name>
+        <name>Did_Block_Have_Allocated_Units_or_Ignore_Allocations</name>
         <label>Did Block Have Allocated Units or Ignore Allocations</label>
         <locationX>182</locationX>
         <locationY>890</locationY>
         <defaultConnector>
             <targetReference>Set_Unavailability_Details</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No - Block hasn&apos;t</defaultConnectorLabel>
+        <defaultConnectorLabel>No - Block Hasn&apos;t</defaultConnectorLabel>
         <rules>
-            <name>Yes_Block_has</name>
+            <name>Yes_Block_Has</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>allocatedUnits</leftValueReference>
@@ -124,7 +105,32 @@
             <connector>
                 <targetReference>Has_Allocated_Units</targetReference>
             </connector>
-            <label>Yes - Block has</label>
+            <label>Yes Block Has</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Location_Set_Unavailable</name>
+        <label>Location Set Unavailable</label>
+        <locationX>380</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>Reset_Unavailability_Reason</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unavailable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Status_Options</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Unavailable_Choice</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Did_Block_Have_Allocated_Units_or_Ignore_Allocations</targetReference>
+            </connector>
+            <label>Unavailable</label>
         </rules>
     </decisions>
     <decisions>
@@ -152,34 +158,20 @@
             <label>Block</label>
         </rules>
     </decisions>
+    <description>[Animal Shelter] - Flow to change the Status of a Unit, Sub Block or Block to make
+        the associated Units Available or Unavailable</description>
     <dynamicChoiceSets>
         <name>Reason_Unavailable_Picklist</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>animalshelters__Unavailability_Reason__c</picklistField>
-        <picklistObject>animalshelters__Locations__c</picklistObject>
+        <picklistField>Unavailability_Reason__c</picklistField>
+        <picklistObject>Locations__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
-    <formulas>
-        <name>formulaUnitAvailableAllocation</name>
-        <dataType>Number</dataType>
-        <expression>IF({!Ignore_Allocated_Units} = TRUE, {!recordId.animalshelters__Allocation__c}, 0)</expression>
-        <scale>0</scale>
-    </formulas>
-    <formulas>
-        <name>formulaUnitUnavailableAllocation</name>
-        <dataType>Number</dataType>
-        <expression>IF({!Ignore_Allocated_Units} = TRUE, {!recordId.animalshelters__Allocation__c}, {!recordId.animalshelters__Capacity__c})</expression>
-        <scale>0</scale>
-    </formulas>
-    <formulas>
-        <name>resetUnavailableReason</name>
-        <dataType>String</dataType>
-        <expression>IF( ISPICKVAL({!recordId.animalshelters__Unavailability_Reason__c}, &apos;Unavailable&apos;), &apos;Available&apos;, TEXT({!recordId.animalshelters__Unavailability_Reason__c}))</expression>
-    </formulas>
-    <interviewLabel>ASCS Location - Change Status Flow {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>ASCS Location - Change Status Flow</label>
+    <interviewLabel>Location - Change Status Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Location - Change Status Flow</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -200,14 +192,14 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordUpdates>
-        <name>Update_Block_Status_Block</name>
-        <label>Update Block Status - (Block)</label>
+        <name>Update_Block_Status</name>
+        <label>Update Block Status</label>
         <locationX>380</locationX>
         <locationY>1382</locationY>
         <connector>
             <targetReference>Completed</targetReference>
         </connector>
-        <inputReference>recordId</inputReference>
+        <inputReference>localLocation</inputReference>
     </recordUpdates>
     <screens>
         <name>Completed</name>
@@ -219,7 +211,10 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Completed_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Locations Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in {!recordId.animalshelters__Name__c} have been updated to {!Status_Options}. Click Finish to complete the wizard.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Locations
+                Updated!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All units in
+                {!recordId.Name__c} have been updated to {!Status_Options}. Click Finish to complete
+                the wizard.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -234,8 +229,14 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>Copy_1_of_Has_Allocated_Units_Text</name>
-            <fieldText>&lt;p&gt;Block/Sub Block &lt;strong&gt;&lt;em&gt;{!recordId.animalshelters__Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1 unit that is housing an animal, and is allocated.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the animals out of any units in this Block/Sub Block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
+            <name>Has_Allocated_Units_Text</name>
+            <fieldText>&lt;p&gt;Block/Sub Block
+                &lt;strong&gt;&lt;em&gt;{!recordId.Name__c}&lt;/em&gt;&lt;/strong&gt; has at least 1
+                unit that is housing an animal, and is allocated.
+                &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please make arrangements to move the
+                animals out of any units in this Block/Sub
+                Block.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click
+                &lt;strong&gt;Finish&lt;/strong&gt; to Exit&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -254,7 +255,8 @@
         </connector>
         <fields>
             <name>Start_Screen_Text</name>
-            <fieldText>&lt;p&gt;To change the status of the current Location and any child Locations, select an option below&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;To change the status of the current Location and any child
+                Locations, select an option below&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -270,6 +272,7 @@
                     <dataType>String</dataType>
                     <fieldText>Status Options</fieldText>
                     <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -289,27 +292,8 @@
                     <dataType>String</dataType>
                     <fieldText>Reason Unavailable</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Status_Options</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <elementReference>Unavailable_Choice</elementReference>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>Ignore_Allocated_Units</name>
-                    <dataType>Boolean</dataType>
-                    <defaultValue>
-                        <booleanValue>false</booleanValue>
-                    </defaultValue>
-                    <fieldText>Update Status Regardless of Unit Occupancy</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -323,18 +307,23 @@
                 </fields>
                 <fields>
                     <name>InitialScreenIgnoreAllocatedWarning</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(247, 69, 69);&quot;&gt;WARNING!&lt;/strong&gt;&lt;strong&gt; - &lt;/strong&gt;Setting the above checkbox will update the status of the Units that may house animals&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(247, 69,
+                        69);&quot;&gt;WARNING!&lt;/strong&gt;&lt;strong&gt; - &lt;/strong&gt;Setting
+                        the Ignore Allocated Units checkbox will update the status of the Units that
+                        may house animals&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Ignore_Allocated_Units</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>Ignore_Allocated_Units</name>
+                    <dataType>Boolean</dataType>
+                    <defaultValue>
+                        <booleanValue>false</booleanValue>
+                    </defaultValue>
+                    <fieldText>Ignore Allocated Units</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Update Status Regardless of Unit Occupancy&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -347,7 +336,10 @@
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
-        <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if the block needs to be closed for maintenance, you can use this to update the whole block to unavailable.&lt;/p&gt;</helpText>
+        <helpText>&lt;p&gt;This wizard allows you to update the status for all units within a single
+            block at the same time. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For example if
+            the block needs to be closed for maintenance, you can use this to update the whole block
+            to unavailable.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -361,13 +353,12 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Location_RecordType_Error_Text</name>
-            <fieldText>&lt;p&gt;ERROR! - The Location {!recordId.animalshelters__Name__c} must be a Block&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;ERROR! - The Location {!recordId.Name__c} must be a Block&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <sourceTemplate>animalshelters__Location_Change_Status_Flow</sourceTemplate>
     <start>
         <locationX>485</locationX>
         <locationY>0</locationY>
@@ -377,12 +368,12 @@
     </start>
     <status>Active</status>
     <subflows>
-        <name>ASCS_Change_Block_Units_Status_and_Check_for_Allocated_Units</name>
+        <name>Change_Block_Units_Status_and_Check_for_Allocated_Units</name>
         <label>Change Block Units Status and Check for Allocated Units</label>
         <locationX>380</locationX>
         <locationY>674</locationY>
         <connector>
-            <targetReference>Copy_2_of_Location_Set_Unavailable</targetReference>
+            <targetReference>Location_Set_Unavailable</targetReference>
         </connector>
         <flowName>Location_Change_Unit_Status_SubFlow</flowName>
         <inputAssignments>
@@ -422,7 +413,7 @@
         <connector>
             <targetReference>What_is_the_Locations_RecordType</targetReference>
         </connector>
-        <flowName>animalshelters__Animal_RecordType_Subflow</flowName>
+        <flowName>Animal_RecordType_Subflow</flowName>
         <inputAssignments>
             <name>developerName</name>
             <value>
@@ -445,7 +436,7 @@
         <connector>
             <targetReference>Assign_Block_Units_to_Collection</targetReference>
         </connector>
-        <flowName>animalshelters__Location_Get_Location_Child_Records_Subflow</flowName>
+        <flowName>Location_Get_Location_Child_Records_Subflow</flowName>
         <inputAssignments>
             <name>childRecordTypeName</name>
             <value>
@@ -468,44 +459,12 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>currentItem_Filter_for_Allocated_Records</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>currentItem_Filter_for_MultiAnimal_Units</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>currentItem_Filter_for_Units_with_an_Allocation</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>currentItem_Filter_Units_for_Allocated_Units</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
         <name>localLocation</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -513,46 +472,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>SelectedChoice</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>subBlock_Block</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>subBlock_Blocks</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>subBlocks</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
-    </variables>
-    <variables>
-        <name>Unit_Assignment</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>Units</name>
@@ -560,6 +480,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
 </Flow>

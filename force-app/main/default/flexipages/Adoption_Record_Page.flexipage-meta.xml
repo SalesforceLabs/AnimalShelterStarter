@@ -72,6 +72,12 @@
                 <identifier>RecordDate_of_Adoption__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6e2c0e1b-75a5-4aa2-89e5-0a79927298c4</name>
         <type>Facet</type>
     </flexiPageRegions>

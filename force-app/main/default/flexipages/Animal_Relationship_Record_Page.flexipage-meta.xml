@@ -99,6 +99,12 @@
                 <identifier>RecordStatus__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e0a8926f-51de-44d3-b00c-5e840edb0236</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -87,7 +87,7 @@
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>locationRecord</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -179,7 +179,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>newAssessmentDate</name>

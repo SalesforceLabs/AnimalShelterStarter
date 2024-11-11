@@ -48,7 +48,7 @@
                 <elementReference>recordTypeId</elementReference>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>childRecords</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Allocation__c</queriedFields>
@@ -99,7 +99,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>true</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>childRecordTypeName</name>
@@ -115,7 +115,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>recordTypeId</name>

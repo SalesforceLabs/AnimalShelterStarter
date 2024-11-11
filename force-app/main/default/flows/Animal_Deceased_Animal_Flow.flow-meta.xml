@@ -123,7 +123,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -284,7 +284,7 @@
                 <stringValue>Unavailable</stringValue>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Animal_Record</name>

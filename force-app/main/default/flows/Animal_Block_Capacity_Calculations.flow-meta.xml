@@ -144,7 +144,7 @@
                 <stringValue>Available</stringValue>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>varLocationChildRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -166,7 +166,7 @@
                 <elementReference>varLocationId</elementReference>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>varLocationChildRecords</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
@@ -189,7 +189,7 @@
                 <elementReference>conZero</elementReference>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Update the Available Capacity value on the current Location</description>
@@ -211,7 +211,7 @@
                 <elementReference>varAvailableCount</elementReference>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Update the Total Capacity value on the current Location</description>
@@ -236,7 +236,7 @@
                 <elementReference>varTotalCount</elementReference>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <start>
         <locationX>100</locationX>
@@ -245,7 +245,7 @@
             <targetReference>Get_Locations_Child_Records</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>varAvailableCount</name>
         <dataType>Number</dataType>
@@ -260,7 +260,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>varLocationChildRecords</name>
@@ -268,7 +268,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>varLocationId</name>

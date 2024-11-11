@@ -409,7 +409,7 @@
                 <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
@@ -436,7 +436,7 @@
                 <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
@@ -463,7 +463,7 @@
                 <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
@@ -497,7 +497,7 @@
                 <stringValue>Unavailable</stringValue>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputAssignments>
             <assignToReference>LocationId</assignToReference>
             <field>Id</field>
@@ -649,7 +649,7 @@
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <screens>
         <name>Animal_Has_Existing_Location_Screen</name>

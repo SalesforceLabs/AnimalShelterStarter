@@ -153,7 +153,7 @@
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Movement_Tasks__c</leftValueReference>
+                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Movement_Tasks__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>

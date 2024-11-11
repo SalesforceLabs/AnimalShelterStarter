@@ -299,7 +299,7 @@
                 <elementReference>Get_Unit_RecordType_Id.returnedRecordTypeId</elementReference>
             </value>
         </filters>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <outputReference>AllRecords</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Allocation__c</queriedFields>
@@ -333,7 +333,7 @@
                 <elementReference>SelectedChoice</elementReference>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Unit_Status_to_Available</name>
@@ -368,7 +368,7 @@
                 <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Unit_Status_to_Unavailable</name>
@@ -525,7 +525,7 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_for_Allocated_Records</name>
@@ -533,7 +533,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_for_MultiAnimal_Units</name>
@@ -541,7 +541,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -549,7 +549,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>SelectedChoice</name>
@@ -564,7 +564,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>updatedLocationRecords</name>
@@ -572,6 +572,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
 </Flow>

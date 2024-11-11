@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
     <assignments>
         <name>Assign_Block_Units_to_Collection</name>
@@ -164,10 +163,10 @@
     <dynamicChoiceSets>
         <name>Reason_Unavailable_Picklist</name>
         <dataType>Picklist</dataType>
-        <displayField xsi:nil="true" />
-        <object xsi:nil="true" />
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
         <picklistField>Unavailability_Reason__c</picklistField>
-        <picklistObject>animalshelters__Locations__c</picklistObject>
+        <picklistObject>Locations__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Location - Change Status Flow {!$Flow.CurrentDateTime}</interviewLabel>
@@ -465,7 +464,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>
@@ -473,7 +472,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
     <variables>
         <name>Units</name>
@@ -481,6 +480,6 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>animalshelters__Locations__c</objectType>
+        <objectType>Locations__c</objectType>
     </variables>
 </Flow>

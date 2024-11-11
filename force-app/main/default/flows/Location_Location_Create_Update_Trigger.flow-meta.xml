@@ -31,11 +31,11 @@
         <connector>
             <targetReference>Call_Block_Calculations_SubFlow</targetReference>
         </connector>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <subflows>
         <name>Call_Block_Calculations_SubFlow</name>
         <label>Call Block Calculations SubFlow</label>

@@ -332,7 +332,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -353,7 +353,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -381,7 +381,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -432,11 +432,11 @@
         <filterFormula>{!$Record.RecordType.Name}=&apos;Unit&apos; ||
             {!$Record.RecordType.Name}=&apos;Foster&apos; ||
             {!$Record.RecordType.Name}=&apos;Organisation&apos;</filterFormula>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>parentBlockUnavailable</name>
         <dataType>Boolean</dataType>

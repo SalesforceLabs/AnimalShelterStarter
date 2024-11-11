@@ -133,7 +133,7 @@
                 <stringValue>Available</stringValue>
             </value>
         </inputAssignments>
-        <object>animalshelters__Locations__c</object>
+        <object>Locations__c</object>
     </recordUpdates>
     <recordUpdates>
         <description>Close Outstanding Animal Action Records</description>

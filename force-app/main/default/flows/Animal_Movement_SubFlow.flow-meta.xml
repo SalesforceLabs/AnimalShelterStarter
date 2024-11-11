@@ -323,7 +323,7 @@
             <targetReference>Movement_Record_Assignments</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Create_Movement_Task</name>
         <label>Create Movement Task</label>

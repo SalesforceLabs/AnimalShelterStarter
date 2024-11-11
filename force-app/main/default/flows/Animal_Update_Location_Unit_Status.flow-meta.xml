@@ -2,299 +2,24 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
     <assignments>
-        <name>Assign_Parent_Block_Fields</name>
-        <label>Assign Parent Block Fields</label>
-        <locationX>1821</locationX>
-        <locationY>1703</locationY>
+        <description>Dummy Assignment to all flow to be saved</description>
+        <name>Dummy_Assignment</name>
+        <label>Dummy Assignment</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
         <assignmentItems>
-            <assignToReference>Get_Parent_Block.Available_Capacity__c</assignToReference>
+            <assignToReference>tmpVariable</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>unitAvailableCount</elementReference>
+                <stringValue>Null</stringValue>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_Parent_Block.Block_Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>frmParentBlockAvailability</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_Parent_Block.Total_Capacity__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>unitTotalCount</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Parent_Block</targetReference>
-        </connector>
     </assignments>
-    <assignments>
-        <name>Assign_Unavailable_count</name>
-        <label>Assign Unavailable count</label>
-        <locationX>319</locationX>
-        <locationY>794</locationY>
-        <assignmentItems>
-            <assignToReference>unitsNotInUnavailableStatus</assignToReference>
-            <operator>AssignCount</operator>
-            <value>
-                <elementReference>Get_Units_not_in_Available_Status</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>All_Status_s_Unavailable</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_Parent_Block_Unavailable_Boolean</name>
-        <label>Set Parent Block Unavailable Boolean</label>
-        <locationX>601</locationX>
-        <locationY>1067</locationY>
-        <assignmentItems>
-            <assignToReference>parentBlockUnavailable</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Parent_Is_Block</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_Total_Count</name>
-        <label>Set Total Count</label>
-        <locationX>1290</locationX>
-        <locationY>1603</locationY>
-        <assignmentItems>
-            <assignToReference>unitTotalCount</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Count_Available_Spaces.Capacity__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Count_Available_Spaces</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_Unit_Count</name>
-        <label>Set Unit Count</label>
-        <locationX>1131</locationX>
-        <locationY>1598</locationY>
-        <assignmentItems>
-            <assignToReference>unitAvailableCount</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Count_Available_Spaces.Availability__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Set_Total_Count</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>All_Status_s_Unavailable</name>
-        <label>All Status&apos;s Unavailable</label>
-        <locationX>600</locationX>
-        <locationY>795</locationY>
-        <defaultConnector>
-            <targetReference>Parent_Is_Block</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>All_Unavailable</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>unitsNotInUnavailableStatus</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <numberValue>0.0</numberValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Parent_Block_Unavailable_Boolean</targetReference>
-            </connector>
-            <label>All Unavailable</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Has_Unit_been_marked_as_Unavailable</name>
-        <label>Has Unit been marked as Unavailable?</label>
-        <locationX>668</locationX>
-        <locationY>371</locationY>
-        <defaultConnector>
-            <targetReference>Is_there_Availability</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Unit_Unavailable</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Unit_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Unavailable</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Units_not_in_Available_Status</targetReference>
-            </connector>
-            <label>Yes - Unit Unavailable</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Is_there_Availability</name>
-        <label>Is there Availability?</label>
-        <locationX>990</locationX>
-        <locationY>568</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Unit_Fully_Allocated</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Availability__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <numberValue>0.0</numberValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Status_Allocated</targetReference>
-            </connector>
-            <label>Unit Fully Allocated</label>
-        </rules>
-        <rules>
-            <name>Unit_Available</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Unit_Full__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Status_to_Available</targetReference>
-            </connector>
-            <label>Unit Available</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Parent_Is_Block</name>
-        <label>Parent Is Block</label>
-        <locationX>1003</locationX>
-        <locationY>1063</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Is_Block</name>
-            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5)</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Parent_Block__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Parent_Block__r.RecordType.DeveloperName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Block</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Allocation__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>$Record__Prior.Allocation__c</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Capacity__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>$Record__Prior.Capacity__c</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.animalshelters__Unit_Status__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>$Record__Prior.Unit_Status__c</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Unit_Count_of_Available_Blocks</targetReference>
-            </connector>
-            <label>Is Block</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Unit_Status_Available</name>
-        <label>Unit Status Available</label>
-        <locationX>1198</locationX>
-        <locationY>1428</locationY>
-        <defaultConnector>
-            <targetReference>Set_Total_Count</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Is_Available</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Count_Available_Spaces.Unit_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Available</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Unit_Count</targetReference>
-            </connector>
-            <label>Is Available</label>
-        </rules>
-    </decisions>
-    <description>[Animal Shelter] Autolaunched flow to update the Location Status based on
+    <description>DEPRECATED [Animal Shelter] Autolaunched flow to update the Location Status based on
         availability</description>
     <environments>Default</environments>
-    <formulas>
-        <name>frmAllocation</name>
-        <dataType>Number</dataType>
-        <expression>IF({!$Record.animalshelters__Capacity__c} = 1, 0,
-            {!$Record.animalshelters__Allocation__c})</expression>
-        <scale>0</scale>
-    </formulas>
-    <formulas>
-        <name>frmNoMoreCapacity</name>
-        <dataType>Boolean</dataType>
-        <expression>{!$Record.animalshelters__Availability__c} = 0</expression>
-    </formulas>
-    <formulas>
-        <name>frmParentBlockAvailability</name>
-        <dataType>String</dataType>
-        <expression>IF({!parentBlockUnavailable}, &apos;Unavailable&apos;, IF({!unitAvailableCount}
-            &gt; 0, &apos;Available&apos;,&apos;Allocated&apos;))</expression>
-    </formulas>
     <interviewLabel>Animal - Update Location Unit Status</interviewLabel>
-    <isTemplate>true</isTemplate>
     <label>Animal - Update Location Unit Status</label>
-    <loops>
-        <name>Count_Available_Spaces</name>
-        <label>Count Available Spaces</label>
-        <locationX>1321</locationX>
-        <locationY>1278</locationY>
-        <collectionReference>Get_Unit_Count_of_Available_Blocks</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Unit_Status_Available</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Get_Parent_Block</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -304,7 +29,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -314,120 +39,11 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordLookups>
-        <name>Get_Parent_Block</name>
-        <label>Get Parent Block</label>
-        <locationX>1753</locationX>
-        <locationY>1294</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Parent_Block_Fields</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Parent_Block__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Locations__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Unit_Count_of_Available_Blocks</name>
-        <label>Get Unit Count of Available Blocks</label>
-        <locationX>1019</locationX>
-        <locationY>1278</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Count_Available_Spaces</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Parent_Block__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Parent_Block__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Locations__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Units_not_in_Available_Status</name>
-        <label>Get Units not in Available Status</label>
-        <locationX>319</locationX>
-        <locationY>590</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Unavailable_count</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Parent_Block__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Parent_Block__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Unit_Status__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Unavailable</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Locations__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordUpdates>
-        <name>Set_Status_Allocated</name>
-        <label>Set Status Allocated</label>
-        <locationX>1001</locationX>
-        <locationY>797</locationY>
-        <connector>
-            <targetReference>Parent_Is_Block</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Unit_Status__c</field>
-            <value>
-                <stringValue>Allocated</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Set_Status_to_Available</name>
-        <label>Set Status to Available</label>
-        <locationX>1153</locationX>
-        <locationY>798</locationY>
-        <connector>
-            <targetReference>Parent_Is_Block</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Unit_Status__c</field>
-            <value>
-                <stringValue>Available</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Parent_Block</name>
-        <label>Update Parent Block</label>
-        <locationX>949</locationX>
-        <locationY>1724</locationY>
-        <inputReference>Get_Parent_Block</inputReference>
-    </recordUpdates>
     <start>
-        <locationX>540</locationX>
-        <locationY>48</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Has_Unit_been_marked_as_Unavailable</targetReference>
+            <targetReference>Dummy_Assignment</targetReference>
         </connector>
         <filterFormula>{!$Record.RecordType.Name}=&apos;Unit&apos; ||
             {!$Record.RecordType.Name}=&apos;Foster&apos; ||
@@ -436,42 +52,12 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
-        <name>parentBlockUnavailable</name>
-        <dataType>Boolean</dataType>
+        <name>tmpVariable</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <value>
-            <booleanValue>false</booleanValue>
-        </value>
-    </variables>
-    <variables>
-        <name>unitAvailableCount</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
-        <value>
-            <numberValue>0.0</numberValue>
-        </value>
-    </variables>
-    <variables>
-        <name>unitsNotInUnavailableStatus</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
-    </variables>
-    <variables>
-        <name>unitTotalCount</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
     </variables>
 </Flow>

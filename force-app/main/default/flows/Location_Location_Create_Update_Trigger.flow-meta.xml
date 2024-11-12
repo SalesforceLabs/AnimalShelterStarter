@@ -18,7 +18,6 @@
     <description>DEPRECATED [Animal Shelter] Calls Block Calculations Subflow</description>
     <environments>Default</environments>
     <interviewLabel>Location - Location Create/Update Trigger {!$Flow.CurrentDateTime}</interviewLabel>
-    <isTemplate>true</isTemplate>
     <label>Location - Location Create/Update Trigger</label>
     <processMetadataValues>
         <name>BuilderType</name>

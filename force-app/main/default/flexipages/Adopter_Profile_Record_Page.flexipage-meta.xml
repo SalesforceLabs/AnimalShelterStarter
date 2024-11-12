@@ -137,12 +137,6 @@
                 <identifier>RecordActive_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.External_Id__c</fieldItem>
-                <identifier>Recordanimalshelters__External_Id__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-92cdd80a-d30e-4517-98bf-a61936ed30e8</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -704,6 +698,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.LastModifiedById</fieldItem>
                 <identifier>RecordLastModifiedByIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a418350-86ed-4a9a-8a58-f6712c733533</name>

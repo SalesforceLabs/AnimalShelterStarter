@@ -119,10 +119,21 @@
                 <fieldItem>Record.Parent_Block__c</fieldItem>
                 <identifier>Recordanimalshelters_Parent_Block_cField</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Foster, Organisation, Site</rightValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Block</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>SubBlock</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Unit</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -135,6 +146,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Unit_Status__c</fieldItem>
                 <identifier>Recordanimalshelters_Unit_Status_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Unit</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-03fd539c-8e0f-4eb0-b151-8bee0ddb7e23</name>
@@ -149,6 +167,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Foster_Contact__c</fieldItem>
                 <identifier>Recordanimalshelters_Foster_Contact_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Foster</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -159,6 +184,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Organisation__c</fieldItem>
                 <identifier>Recordanimalshelters_Organisation_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Organisation</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b253a442-2bd2-40cf-bdfd-9e1853719169</name>

@@ -2,26 +2,10 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
     <assignments>
-        <name>Add_Unit_Id_to_List</name>
-        <label>Add Unit Id to List</label>
-        <locationX>534</locationX>
-        <locationY>350</locationY>
-        <assignmentItems>
-            <assignToReference>UnitIdList</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_Units.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_Units</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Build_Units_to_Set_to_New_Status</name>
-        <label>Build Units to Set to New Status</label>
+        <name>Build_Units_to_Set_to_Available</name>
+        <label>Build Units to Set to Available</label>
         <locationX>468</locationX>
-        <locationY>1766</locationY>
+        <locationY>1358</locationY>
         <assignmentItems>
             <assignToReference>updatedUnits</assignToReference>
             <operator>Add</operator>
@@ -37,7 +21,7 @@
         <name>Count_No_of_Allocated_Units</name>
         <label>Count No of Allocated Units</label>
         <locationX>446</locationX>
-        <locationY>758</locationY>
+        <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>allocationCount</assignToReference>
             <operator>AssignCount</operator>
@@ -53,7 +37,7 @@
         <name>Set_Allocated_Units_Flag_to_True</name>
         <label>Set Allocated Units Flag to True</label>
         <locationX>314</locationX>
-        <locationY>974</locationY>
+        <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>unitsHaveAllocation</assignToReference>
             <operator>Assign</operator>
@@ -66,7 +50,7 @@
         <name>Set_Allocation_to_Available</name>
         <label>Set Allocation to Available</label>
         <locationX>336</locationX>
-        <locationY>1574</locationY>
+        <locationY>1166</locationY>
         <assignmentItems>
             <assignToReference>updatedUnit.Id</assignToReference>
             <operator>Assign</operator>
@@ -89,14 +73,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Build_Units_to_Set_to_New_Status</targetReference>
+            <targetReference>Build_Units_to_Set_to_Available</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Set_Allocation_to_Unavailable</name>
         <label>Set Allocation to Unavailable</label>
         <locationX>600</locationX>
-        <locationY>1574</locationY>
+        <locationY>1166</locationY>
         <assignmentItems>
             <assignToReference>updatedUnit.Id</assignToReference>
             <operator>Assign</operator>
@@ -119,14 +103,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Build_Units_to_Set_to_New_Status</targetReference>
+            <targetReference>Build_Units_to_Set_to_Available</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Set_Flag_Allocated_Units_to_False</name>
         <label>Set Flag Allocated Units to False</label>
         <locationX>578</locationX>
-        <locationY>974</locationY>
+        <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>unitsHaveAllocation</assignToReference>
             <operator>Assign</operator>
@@ -159,10 +143,10 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Units for Allocated Units</label>
         <locationX>446</locationX>
-        <locationY>650</locationY>
+        <locationY>242</locationY>
         <assignNextValueToReference>currentItem_Filter_Units_for_Allocated_Units</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
-        <collectionReference>Get_Units_From_Id_List</collectionReference>
+        <collectionReference>unitsForStatusChange</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
             <leftValueReference>currentItem_Filter_Units_for_Allocated_Units.Allocation__c</leftValueReference>
@@ -173,9 +157,9 @@
         </conditions>
         <conditions>
             <leftValueReference>currentItem_Filter_Units_for_Allocated_Units.Unit_Status__c</leftValueReference>
-            <operator>NotEqualTo</operator>
+            <operator>EqualTo</operator>
             <rightValue>
-                <stringValue>Unavailable</stringValue>
+                <stringValue>Allocated</stringValue>
             </rightValue>
         </conditions>
         <connector>
@@ -186,7 +170,7 @@
         <name>Are_any_of_the_Units_allocated</name>
         <label>Are any of the Units allocated?</label>
         <locationX>446</locationX>
-        <locationY>866</locationY>
+        <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Set_Flag_Allocated_Units_to_False</targetReference>
         </defaultConnector>
@@ -213,7 +197,7 @@
         <locationX>248</locationX>
         <locationY>134</locationY>
         <defaultConnector>
-            <targetReference>Get_Units</targetReference>
+            <targetReference>Filter_Units_for_Allocated_Units</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No - Honor Allocations</defaultConnectorLabel>
         <rules>
@@ -236,7 +220,7 @@
         <name>What_is_the_new_Status</name>
         <label>What is the new Status?</label>
         <locationX>468</locationX>
-        <locationY>1466</locationY>
+        <locationY>1058</locationY>
         <defaultConnector>
             <targetReference>Set_Allocation_to_Unavailable</targetReference>
         </defaultConnector>
@@ -257,38 +241,23 @@
             <label>Set to Available</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] - Subflow to change the status of units. Inputs: Unit record
-        collection, Ignore Allocated Units Flag, Outputs: Allocated Units</description>
+    <description>[Animal Shelter] - Subflow to change the status of units.  Inputs: Unit record collection, Ignore Allocated Units Flag, Outputs: Allocated Units</description>
     <environments>Default</environments>
     <interviewLabel>Location - Change Unit Status SubFlow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Location - Change Unit Status SubFlow</label>
     <loops>
-        <name>Get_Units</name>
-        <label>Get Units</label>
-        <locationX>446</locationX>
-        <locationY>242</locationY>
-        <collectionReference>unitsForStatusChange</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Add_Unit_Id_to_List</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Get_Units_From_Id_List</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
         <name>Loop_Through_All_Units</name>
         <label>Loop Through All Units</label>
         <locationX>248</locationX>
-        <locationY>1358</locationY>
+        <locationY>950</locationY>
         <collectionReference>unitsForStatusChange</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>What_is_the_new_Status</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_All_Units_to_New_Status</targetReference>
+            <targetReference>Update_All_Units_to_Available</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -310,32 +279,11 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordLookups>
-        <name>Get_Units_From_Id_List</name>
-        <label>Get Units From Id List</label>
-        <locationX>446</locationX>
-        <locationY>542</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Filter_Units_for_Allocated_Units</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>In</operator>
-            <value>
-                <elementReference>UnitIdList</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Locations__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordUpdates>
-        <name>Update_All_Units_to_New_Status</name>
-        <label>Update All Units to New Status</label>
+        <name>Update_All_Units_to_Available</name>
+        <label>Update All Units to Available</label>
         <locationX>248</locationX>
-        <locationY>1958</locationY>
+        <locationY>1550</locationY>
         <inputReference>updatedUnits</inputReference>
     </recordUpdates>
     <start>
@@ -382,13 +330,6 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>UnitIdList</name>
-        <dataType>String</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>

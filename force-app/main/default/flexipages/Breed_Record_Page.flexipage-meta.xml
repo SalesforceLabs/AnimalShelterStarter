@@ -97,12 +97,6 @@
                 <identifier>RecordLatin_Name_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.External_Id__c</fieldItem>
-                <identifier>Recordanimalshelters__External_Id__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-364e5636-e37f-406b-a65a-3fc58ea55842</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -196,6 +190,10 @@
                     <value>Facet-48fc255f-1a93-4686-94ba-27526c423105</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>Information</value>
                 </componentInstanceProperties>
@@ -215,6 +213,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
                 <identifier>RecordCreatedByIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e64b7f31-c680-496f-b8e3-34ae84cd4392</name>
@@ -274,6 +282,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-ae83c7a4-75e1-4600-821c-027f4bd9e7ce</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>

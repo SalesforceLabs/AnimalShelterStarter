@@ -165,6 +165,23 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Organisation__c</fieldItem>
+                <identifier>Recordanimalshelters_Organisation_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Organisation</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Foster_Contact__c</fieldItem>
                 <identifier>Recordanimalshelters_Foster_Contact_cField</identifier>
                 <visibilityRule>
@@ -182,13 +199,13 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Organisation__c</fieldItem>
-                <identifier>Recordanimalshelters_Organisation_cField</identifier>
+                <fieldItem>Record.Animal_Preference_Foster__c</fieldItem>
+                <identifier>Recordanimalshelters_Animal_Preference_Foster_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Organisation</rightValue>
+                        <rightValue>Foster</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -564,6 +581,24 @@
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
                 <identifier>lst_dynamicRelatedList</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Site</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>SubBlock</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Block</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -746,6 +781,9 @@
                     <value>Locations__c.Foster_Contact__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>titleFieldName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>updateQuickActionName</name>
                     <value>Contact._LightningRelatedContact</value>
                 </componentInstanceProperties>
@@ -771,6 +809,9 @@
                     <value>Locations__c.Organisation__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>titleFieldName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>updateQuickActionName</name>
                     <value>Account.animalshelters__Update_Organisation</value>
                 </componentInstanceProperties>
@@ -779,7 +820,7 @@
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
-                        <operator>EQUAL</operator>
+                        <operator>CONTAINS</operator>
                         <rightValue>Organisation</rightValue>
                     </criteria>
                 </visibilityRule>
@@ -802,16 +843,26 @@
                 <componentName>flowruntime:interview</componentName>
                 <identifier>flowruntime_interview</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Foster</rightValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Site</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Organisation</rightValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Block</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>SubBlock</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Unit</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

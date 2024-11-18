@@ -13,7 +13,7 @@
     <filters>
         <field>Animal_Status__c</field>
         <operation>equals</operation>
-        <value>MedicalTreatment,Training</value>
+        <value>Deceased</value>
     </filters>
     <label>Deceased Animals</label>
 </ListView>

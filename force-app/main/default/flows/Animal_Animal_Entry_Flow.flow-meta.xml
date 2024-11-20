@@ -4,8 +4,8 @@
     <assignments>
         <name>Additional_Assignment_Data</name>
         <label>Additional Assignment Data</label>
-        <locationX>204</locationX>
-        <locationY>2090</locationY>
+        <locationX>534</locationX>
+        <locationY>2138</locationY>
         <assignmentItems>
             <assignToReference>newAlert.Animal__c</assignToReference>
             <operator>Assign</operator>
@@ -20,18 +20,15 @@
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>newAlert</assignToReference>
-            <operator>Assign</operator>
-        </assignmentItems>
         <connector>
             <targetReference>Create_Alert</targetReference>
         </connector>
     </assignments>
     <assignments>
+        <description>Assigns additional and mandatory animal details</description>
         <name>Assign_Additional_Animal_Details</name>
         <label>Assign Additional Animal Details</label>
-        <locationX>336</locationX>
+        <locationX>798</locationX>
         <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>newAnimal.Date_of_Arrival__c</assignToReference>
@@ -61,8 +58,8 @@
     <decisions>
         <name>Assign_Location</name>
         <label>Assign Location?</label>
-        <locationX>336</locationX>
-        <locationY>1274</locationY>
+        <locationX>798</locationX>
+        <locationY>1322</locationY>
         <defaultConnector>
             <targetReference>Create_Assessment_Record</targetReference>
         </defaultConnector>
@@ -86,8 +83,8 @@
     <decisions>
         <name>Create_Alert_Record</name>
         <label>Create Alert Record?</label>
-        <locationX>336</locationX>
-        <locationY>1874</locationY>
+        <locationX>798</locationX>
+        <locationY>1922</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -100,7 +97,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Animal_Entry_Create_Alert</targetReference>
+                <targetReference>AnimalCreateAlert</targetReference>
             </connector>
             <label>Yes - Create Alert</label>
         </rules>
@@ -108,8 +105,8 @@
     <decisions>
         <name>Create_Assessment_Record</name>
         <label>Create Assessment Record?</label>
-        <locationX>336</locationX>
-        <locationY>1574</locationY>
+        <locationX>798</locationX>
+        <locationY>1622</locationY>
         <defaultConnector>
             <targetReference>Create_Alert_Record</targetReference>
         </defaultConnector>
@@ -133,7 +130,7 @@
     <decisions>
         <name>Create_Contact</name>
         <label>Create Contact</label>
-        <locationX>336</locationX>
+        <locationX>798</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Assign_Location</targetReference>
@@ -156,9 +153,10 @@
         </rules>
     </decisions>
     <decisions>
+        <description>Is the Contact that has been created the Owner of the Animal</description>
         <name>Is_Contact_Owner</name>
         <label>Is Contact Owner?</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>890</locationY>
         <defaultConnector>
             <targetReference>Assign_Location</targetReference>
@@ -185,7 +183,11 @@
     <formulas>
         <name>lostFoundFormula</name>
         <dataType>Boolean</dataType>
-        <expression>IF(ISPICKVAL({!newAnimal.Entry_Reason__c}, &apos;Stray&apos;), True, False)</expression>
+        <expression>IF(
+    OR(
+            ISPICKVAL({!newAnimal.Entry_Reason__c}, &apos;Stray&apos;),
+            ISPICKVAL({!newAnimal.Entry_Reason__c}, &apos;Abandoned&apos;))
+     , True, False)</expression>
     </formulas>
     <interviewLabel>Animal - Animal Entry Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -212,39 +214,55 @@
     <recordCreates>
         <name>Create_Alert</name>
         <label>Create Alert</label>
-        <locationX>204</locationX>
-        <locationY>2198</locationY>
+        <locationX>534</locationX>
+        <locationY>2246</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <inputReference>newAlert</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_New_Animal_Record</name>
         <label>Create New Animal Record</label>
-        <locationX>336</locationX>
+        <locationX>798</locationX>
         <locationY>350</locationY>
         <connector>
             <targetReference>Create_Contact</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <inputReference>newAnimal</inputReference>
     </recordCreates>
     <recordCreates>
+        <description>Create New Contact Record</description>
         <name>Create_New_Contact</name>
         <label>Create New Contact</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>782</locationY>
         <connector>
             <targetReference>Is_Contact_Owner</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <inputReference>newContact</inputReference>
     </recordCreates>
     <recordLookups>
         <name>Is_Person_Accounts_enabled</name>
         <label>Is Person Accounts enabled?</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Capture_Contact_Details_Screen</targetReference>
+            <targetReference>ContactDetailsScreen</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>EntityDefinitionId</field>
@@ -265,6 +283,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <description>Update animal record with the Contact just created</description>
         <name>Update_Animal_Record_with_Contact</name>
         <label>Update Animal Record with Contact</label>
         <locationX>50</locationX>
@@ -272,6 +291,10 @@
         <connector>
             <targetReference>Assign_Location</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -289,33 +312,33 @@
         <object>Animal__c</object>
     </recordUpdates>
     <screens>
-        <name>Animal_Entry_Create_Alert</name>
+        <name>AnimalCreateAlert</name>
         <label>Animal Entry - Create Alert</label>
-        <locationX>204</locationX>
-        <locationY>1982</locationY>
-        <allowBack>true</allowBack>
+        <locationX>534</locationX>
+        <locationY>2030</locationY>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Additional_Assignment_Data</targetReference>
         </connector>
         <fields>
-            <name>Animal_Entry_Create_Alert_Section1</name>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>newAlert.Alert_Message__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>AnimalCreateAlert_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Animal_Entry_Create_Alert_Section1_Column1</name>
+                <name>AnimalCreateAlert_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>newAlert.Type__c</objectFieldReference>
-                </fields>
-                <fields>
-                    <fieldType>ObjectProvided</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <objectFieldReference>newAlert.Severity_Level__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -326,13 +349,13 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Animal_Entry_Create_Alert_Section1_Column2</name>
+                <name>AnimalCreateAlert_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAlert.Alert_Message__c</objectFieldReference>
+                    <objectFieldReference>newAlert.Severity_Level__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -349,21 +372,21 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Capture_Contact_Details_Screen</name>
+        <name>ContactDetailsScreen</name>
         <label>Capture Contact Details Screen</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>674</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Create_New_Contact</targetReference>
         </connector>
         <fields>
-            <name>Capture_Contact_Details_Screen_Section1</name>
+            <name>ContactDetailsScreen_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Capture_Contact_Details_Screen_Section1_Column1</name>
+                <name>ContactDetailsScreen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -408,7 +431,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Capture_Contact_Details_Screen_Section1_Column2</name>
+                <name>ContactDetailsScreen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -440,10 +463,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>Capture_Contact_Details_Screen_Section2</name>
+            <name>ContactDetailsScreen_Section2</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Capture_Contact_Details_Screen_Section2_Column1</name>
+                <name>ContactDetailsScreen_Section2_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Is_the_Contact_the_Animal_Owner</name>
@@ -468,19 +491,35 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>startScreen</name>
-        <label>startScreen</label>
-        <locationX>336</locationX>
-        <locationY>134</locationY>
-        <allowBack>true</allowBack>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>1458</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorScreenText</name>
+            <fieldText>&lt;p&gt;There has been an error creating or updating a record:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.CurrentDateTime}&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;&lt;p&gt;{!$User.Username}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>startScreen</name>
+        <label>Start Screen</label>
+        <locationX>798</locationX>
+        <locationY>134</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_Additional_Animal_Details</targetReference>
         </connector>
         <fields>
             <name>startScreenTextInstructions</name>
-            <fieldText>&lt;p&gt;Select one or more of the option below to create a new animal&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Create a new animal for entry into the shelter, and if required select additional records to create.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -492,7 +531,7 @@
                 <fields>
                     <name>Assign_Animal_Location</name>
                     <dataType>Boolean</dataType>
-                    <fieldText>Assign Animal Location</fieldText>
+                    <fieldText>Assign the animal a Location</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
@@ -577,12 +616,6 @@
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>newAnimal.Estimated_Age__c</objectFieldReference>
-                </fields>
-                <fields>
-                    <fieldType>ObjectProvided</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
                     <objectFieldReference>newAnimal.Gender__c</objectFieldReference>
                 </fields>
                 <inputParameters>
@@ -601,12 +634,6 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>newAnimal.Microchip__c</objectFieldReference>
-                </fields>
-                <fields>
-                    <fieldType>ObjectProvided</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <objectFieldReference>newAnimal.Entry_Reason__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -636,6 +663,18 @@
                     <isRequired>false</isRequired>
                     <objectFieldReference>newAnimal.Size__c</objectFieldReference>
                 </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newAnimal.Estimated_Age__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newAnimal.Current_Weight__c</objectFieldReference>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -647,11 +686,34 @@
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
+        <fields>
+            <name>startScreen_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>startScreen_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newAnimal.Entry_Reason__c</objectFieldReference>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>210</locationX>
+        <locationX>672</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>startScreen</targetReference>
@@ -659,10 +721,11 @@
     </start>
     <status>Draft</status>
     <subflows>
+        <description>Call Create new Assessment Screen Flow and pass Record Id of new Animal</description>
         <name>Create_New_Assessment</name>
         <label>Create New Assessment</label>
-        <locationX>204</locationX>
-        <locationY>1682</locationY>
+        <locationX>666</locationX>
+        <locationY>1730</locationY>
         <connector>
             <targetReference>Create_Alert_Record</targetReference>
         </connector>
@@ -675,10 +738,11 @@
         </inputAssignments>
     </subflows>
     <subflows>
+        <description>Call Movement Process Screen Flow and pass Record Id of new Animal</description>
         <name>Movement_Process_Screen_Flow</name>
         <label>Movement Process Screen Flow</label>
-        <locationX>204</locationX>
-        <locationY>1382</locationY>
+        <locationX>666</locationX>
+        <locationY>1430</locationY>
         <connector>
             <targetReference>Create_Assessment_Record</targetReference>
         </connector>

@@ -55,6 +55,47 @@
             <targetReference>Create_New_Animal_Record</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Clear_Animal_Collection</name>
+        <label>Clear Animal Collection</label>
+        <locationX>710</locationX>
+        <locationY>2702</locationY>
+        <assignmentItems>
+            <assignToReference>newAnimal</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmptyAnimalCollection</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>start_Screen</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>DifferentAnimalType</name>
+        <choiceText>Yes - Different characteristics</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>DifferentType</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoAdditional</name>
+        <choiceText>No additional Animal</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>NoAdditional</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>SameAnimalType</name>
+        <choiceText>Yes - Same characteristics</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>SameType</stringValue>
+        </value>
+    </choices>
     <decisions>
         <name>Assign_Location</name>
         <label>Assign Location?</label>
@@ -85,6 +126,9 @@
         <label>Create Alert Record?</label>
         <locationX>798</locationX>
         <locationY>1922</locationY>
+        <defaultConnector>
+            <targetReference>Create_Additional_Animal_Screen</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -97,9 +141,60 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>AnimalCreateAlert</targetReference>
+                <targetReference>Animal_Create_Alert</targetReference>
             </connector>
             <label>Yes - Create Alert</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Does the User want to create another Animal entry</description>
+        <name>Create_another_Animal_entry_record</name>
+        <label>Create another Animal entry record?</label>
+        <locationX>798</locationX>
+        <locationY>2594</locationY>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Duplicate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_another_Animal</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SameType</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>start_Screen</targetReference>
+            </connector>
+            <label>Yes - Duplicate</label>
+        </rules>
+        <rules>
+            <name>Yes_Unique</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_another_Animal</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DifferentType</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_Animal_Collection</targetReference>
+            </connector>
+            <label>Yes - Unique</label>
+        </rules>
+        <rules>
+            <name>No_Finish</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_another_Animal</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>NoAdditional</stringValue>
+                </rightValue>
+            </conditions>
+            <label>No - Finish</label>
         </rules>
     </decisions>
     <decisions>
@@ -178,7 +273,7 @@
             <label>Yes Owner</label>
         </rules>
     </decisions>
-    <description>[Animal Shelters] - Screen flow providing an Animal Entry wizard</description>
+    <description>[Animal Shelters] - Screen flow providing an Animal Entry wizard.  Allows creation of Animal, Location assignment, Assessment, Contact and Alerts.</description>
     <environments>Default</environments>
     <formulas>
         <name>lostFoundFormula</name>
@@ -216,6 +311,9 @@
         <label>Create Alert</label>
         <locationX>534</locationX>
         <locationY>2246</locationY>
+        <connector>
+            <targetReference>Create_Additional_Animal_Screen</targetReference>
+        </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
@@ -223,6 +321,7 @@
         <inputReference>newAlert</inputReference>
     </recordCreates>
     <recordCreates>
+        <description>Create the new Animal Record</description>
         <name>Create_New_Animal_Record</name>
         <label>Create New Animal Record</label>
         <locationX>798</locationX>
@@ -257,7 +356,7 @@
         <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>ContactDetailsScreen</targetReference>
+            <targetReference>Contact_Details_Screen</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -312,7 +411,7 @@
         <object>Animal__c</object>
     </recordUpdates>
     <screens>
-        <name>AnimalCreateAlert</name>
+        <name>Animal_Create_Alert</name>
         <label>Animal Entry - Create Alert</label>
         <locationX>534</locationX>
         <locationY>2030</locationY>
@@ -329,10 +428,10 @@
             <objectFieldReference>newAlert.Alert_Message__c</objectFieldReference>
         </fields>
         <fields>
-            <name>AnimalCreateAlert_Section1</name>
+            <name>Animal_Create_Alert_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>AnimalCreateAlert_Section1_Column1</name>
+                <name>Animal_Create_Alert_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -349,7 +448,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>AnimalCreateAlert_Section1_Column2</name>
+                <name>Animal_Create_Alert_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -372,7 +471,7 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>ContactDetailsScreen</name>
+        <name>Contact_Details_Screen</name>
         <label>Capture Contact Details Screen</label>
         <locationX>314</locationX>
         <locationY>674</locationY>
@@ -383,10 +482,10 @@
             <targetReference>Create_New_Contact</targetReference>
         </connector>
         <fields>
-            <name>ContactDetailsScreen_Section1</name>
+            <name>Contact_Details_Screen_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>ContactDetailsScreen_Section1_Column1</name>
+                <name>Contact_Details_Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -431,7 +530,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>ContactDetailsScreen_Section1_Column2</name>
+                <name>Contact_Details_Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -463,10 +562,18 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>ContactDetailsScreen_Section2</name>
+            <name>Contact_Details_Screen_Line</name>
+            <extensionName>animalshelters:flowHLine</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Contact_Details_Screen_Section2</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>ContactDetailsScreen_Section2_Column1</name>
+                <name>Contact_Details_Screen_Section2_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Is_the_Contact_the_Animal_Owner</name>
@@ -491,6 +598,31 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Create_Additional_Animal_Screen</name>
+        <label>Create Additional Animal Screen</label>
+        <locationX>798</locationX>
+        <locationY>2486</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_another_Animal_entry_record</targetReference>
+        </connector>
+        <fields>
+            <name>Create_another_Animal</name>
+            <choiceReferences>SameAnimalType</choiceReferences>
+            <choiceReferences>DifferentAnimalType</choiceReferences>
+            <choiceReferences>NoAdditional</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Create another Animal</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>1458</locationX>
@@ -499,7 +631,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>ErrorScreenText</name>
+            <name>Error_Screen_Text</name>
             <fieldText>&lt;p&gt;There has been an error creating or updating a record:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.CurrentDateTime}&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;&lt;p&gt;{!$User.Username}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -507,7 +639,7 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>startScreen</name>
+        <name>start_Screen</name>
         <label>Start Screen</label>
         <locationX>798</locationX>
         <locationY>134</locationY>
@@ -518,15 +650,15 @@
             <targetReference>Assign_Additional_Animal_Details</targetReference>
         </connector>
         <fields>
-            <name>startScreenTextInstructions</name>
+            <name>start_Screen_Text_Instructions</name>
             <fieldText>&lt;p&gt;Create a new animal for entry into the shelter, and if required select additional records to create.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>startScreen_Section1</name>
+            <name>start_Screen_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>startScreen_Section1_Column1</name>
+                <name>start_Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Assign_Animal_Location</name>
@@ -553,7 +685,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>startScreen_Section1_Column2</name>
+                <name>start_Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Capture_Contact_Details</name>
@@ -583,10 +715,18 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>startScreen_Section2</name>
+            <name>start_Screen_Line</name>
+            <extensionName>animalshelters:flowHLine</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>start_Screen_Section2</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>startScreen_Section2_Column1</name>
+                <name>start_Screen_Section2_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -627,7 +767,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>startScreen_Section2_Column2</name>
+                <name>start_Screen_Section2_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -687,10 +827,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>startScreen_Section3</name>
+            <name>start_Screen_Section3</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>startScreen_Section3_Column1</name>
+                <name>start_Screen_Section3_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -716,10 +856,10 @@
         <locationX>672</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>startScreen</targetReference>
+            <targetReference>start_Screen</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <description>Call Create new Assessment Screen Flow and pass Record Id of new Animal</description>
         <name>Create_New_Assessment</name>
@@ -754,6 +894,14 @@
             </value>
         </inputAssignments>
     </subflows>
+    <variables>
+        <name>EmptyAnimalCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
+    </variables>
     <variables>
         <name>newAlert</name>
         <dataType>SObject</dataType>

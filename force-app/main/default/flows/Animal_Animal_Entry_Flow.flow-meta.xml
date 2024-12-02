@@ -58,7 +58,7 @@
     <assignments>
         <name>Clear_Animal_Collection</name>
         <label>Clear Animal Collection</label>
-        <locationX>710</locationX>
+        <locationX>666</locationX>
         <locationY>2702</locationY>
         <assignmentItems>
             <assignToReference>newAnimal</assignToReference>
@@ -422,6 +422,19 @@
             <targetReference>Additional_Assignment_Data</targetReference>
         </connector>
         <fields>
+            <name>Animal_Create_Alert_Header</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(1, 118, 211);&quot;&gt;Capture Alert&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Animal_Create_Alert_Line</name>
+            <extensionName>animalshelters:flowHLine</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
             <fieldType>ObjectProvided</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
@@ -481,6 +494,19 @@
         <connector>
             <targetReference>Create_New_Contact</targetReference>
         </connector>
+        <fields>
+            <name>Contact_Details_Screen_Header</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(1, 118, 211); font-size: 18px;&quot;&gt;Contact Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Contact_Details_Screen_HLine</name>
+            <extensionName>animalshelters:flowHLine</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
         <fields>
             <name>Contact_Details_Screen_Section1</name>
             <fieldType>RegionContainer</fieldType>

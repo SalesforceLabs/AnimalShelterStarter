@@ -8,6 +8,9 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
+                            <value>animalshelters__Animal__c.New_Animal_Wizard</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>animalshelters__Animal__c.Add_Scheduled_Action</value>
                         </valueListItems>
                         <valueListItems>

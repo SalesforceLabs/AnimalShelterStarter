@@ -6,6 +6,7 @@
 .sf/
 .forceignore
 .sf
+.codegenie
 
 # Python
 *.pyc

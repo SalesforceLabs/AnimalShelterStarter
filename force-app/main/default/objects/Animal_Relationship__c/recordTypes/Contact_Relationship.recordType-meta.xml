@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Relationship</fullName>
+    <active>true</active>
+    <description>Relationships between Contacts and Animals</description>
+    <label>Contact Relationship</label>
+    <picklistValues>
+        <picklist>Relationship_Types__c</picklist>
+        <values>
+            <fullName>Carer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trainer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Archived</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

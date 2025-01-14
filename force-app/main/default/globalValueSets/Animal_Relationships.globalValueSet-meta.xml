@@ -20,6 +20,22 @@
         <default>false</default>
         <label>Carer</label>
     </customValue>
-    <masterLabel>Animal Contact Relationships</masterLabel>
+    <customValue>
+        <fullName>Parent/Child</fullName>
+        <default>false</default>
+        <label>Parent/Child</label>
+    </customValue>
+    <customValue>
+        <fullName>Sibling</fullName>
+        <default>false</default>
+        <label>Sibling</label>
+    </customValue>
+    <customValue>
+        <fullName>Breeder</fullName>
+        <default>false</default>
+        <label>Breeder</label>
+    </customValue>
+    <description>[Animal Shelter] List of Relationships between Animal-to-Animal and Contact-to-Animal</description>
+    <masterLabel>Animal Relationships</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

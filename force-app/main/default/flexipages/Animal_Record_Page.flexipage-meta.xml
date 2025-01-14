@@ -2202,7 +2202,7 @@
                             <value>RECORDTYPE|EQUALS|[&quot;Animal_Relationship&quot;]</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Status__c|EQUALS|[&quot;Current&quot;]</value>
+                            <value>Active__c|EQUALS|true</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -2270,10 +2270,10 @@
                     <name>adminFilters</name>
                     <valueList>
                         <valueListItems>
-                            <value>RECORDTYPE|EQUALS|[&quot;Contact_Relationship&quot;]</value>
+                            <value>RECORDTYPE|EQUALS|[&quot;Human_Relationship&quot;]</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Status__c|EQUALS|[&quot;Current&quot;]</value>
+                            <value>Active__c|EQUALS|true</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -2297,10 +2297,13 @@
                     <name>relatedListFieldAliases</name>
                     <valueList>
                         <valueListItems>
-                            <value>Contact_Name__c</value>
+                            <value>Name__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Relationship_Types__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Start_Date__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>NAME</value>
@@ -2341,7 +2344,7 @@
                     <name>adminFilters</name>
                     <valueList>
                         <valueListItems>
-                            <value>Status__c|EQUALS|[&quot;Archived&quot;]</value>
+                            <value>Active__c|EQUALS|false</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -2368,10 +2371,16 @@
                             <value>Animal_Name__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Contact_Name__c</value>
+                            <value>Name__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Relationship_Types__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Start_Date__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>End_Date__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>NAME</value>

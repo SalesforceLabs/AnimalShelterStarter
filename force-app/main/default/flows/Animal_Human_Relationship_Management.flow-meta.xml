@@ -5,13 +5,13 @@
         <description>Assign additional values for New Relationship record</description>
         <name>Assign_additional_values</name>
         <label>Assign additional values</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>458</locationY>
         <assignmentItems>
-            <assignToReference>newRelationship.Status__c</assignToReference>
+            <assignToReference>newRelationship.Active__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Current</stringValue>
+                <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -26,6 +26,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_Record_Type_for_Animal_Relationship.returnedRecordTypeId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -54,10 +61,17 @@
         <locationX>50</locationX>
         <locationY>782</locationY>
         <assignmentItems>
-            <assignToReference>selectedRow.Status__c</assignToReference>
+            <assignToReference>selectedRow.Active__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Archived</stringValue>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>selectedRow.End_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -68,7 +82,7 @@
         <description>Decides whether a Row has been selected for Update</description>
         <name>Has_a_row_been_selected</name>
         <label>Has a row been selected?</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Create_New_Relationship</targetReference>
@@ -90,9 +104,11 @@
             <label>Row Selected</label>
         </rules>
     </decisions>
+    <description>[Animal Shelter] - Screen flow to manage the relationships between Contacts/Organisations (Accounts) and Animals</description>
     <environments>Default</environments>
-    <interviewLabel>Animal - New Relationship {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Animal - New Relationship</label>
+    <interviewLabel>Animal - Human Relationship Management {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Animal - Human Relationship Management</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -115,28 +131,28 @@
     <recordCreates>
         <name>Create_New_Relationship</name>
         <label>Create New Relationship</label>
-        <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationX>314</locationX>
+        <locationY>1130</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Flow_Error_Screen</targetReference>
+        </faultConnector>
         <inputReference>newRelationship</inputReference>
     </recordCreates>
     <recordLookups>
         <description>Get all current relationships with Contacts for the Animal</description>
         <name>Get_Current_Relationships_for_Animal</name>
         <label>Get Current Relationships for Animal</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Animal_Relationships_Screen</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Flow_Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
-        <filters>
-            <field>Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Current</stringValue>
-            </value>
-        </filters>
         <filters>
             <field>Animal__c</field>
             <operator>EqualTo</operator>
@@ -151,6 +167,13 @@
                 <elementReference>Get_Record_Type_for_Animal_Relationship.returnedRecordTypeId</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Animal_Relationship__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -163,12 +186,16 @@
         <connector>
             <targetReference>Create_New_Relationship</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Flow_Error_Screen</targetReference>
+        </faultConnector>
         <inputReference>selectedRow</inputReference>
     </recordUpdates>
     <screens>
         <name>Animal_Relationships_Screen</name>
         <label>Animal Relationships Screen</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -184,7 +211,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Animal_Relationships_Screen_Text</name>
-                    <fieldText>&lt;p&gt;Select a existing relationship to update, and choose the Contact and relationship.&lt;/p&gt;&lt;p&gt;Or create a new relationship&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Select a existing relationship to update, and choose the Contact or Organisation and relationship.&lt;/p&gt;&lt;p&gt;Or create a new relationship&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -245,7 +272,7 @@
                     <inputParameters>
                         <name>columns</name>
                         <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;animalshelters__Contact_Name__c&quot;,&quot;guid&quot;:&quot;column-0029&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Contact Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;animalshelters__Relationship_Types__c&quot;,&quot;guid&quot;:&quot;column-6c43&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Relationship Types&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                            <stringValue>[{&quot;apiName&quot;:&quot;animalshelters__Name__c&quot;,&quot;guid&quot;:&quot;column-23e3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;animalshelters__Relationship_Types__c&quot;,&quot;guid&quot;:&quot;column-6c43&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Relationship Types&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -270,10 +297,60 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <fieldType>ObjectProvided</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <name>Animal_Relationships_Screen_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Animal_Relationships_Screen_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newRelationship.Contact__c</objectFieldReference>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Animal_Relationships_Screen_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Animal_Relationships_Screen_Text_2</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 24px;&quot;&gt;Or&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Animal_Relationships_Screen_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>newRelationship.Organisation__c</objectFieldReference>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
-            <objectFieldReference>newRelationship.Contact__c</objectFieldReference>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
             <fieldType>ObjectProvided</fieldType>
@@ -284,19 +361,35 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>Flow_Error_Screen</name>
+        <label>Flow Error Screen</label>
+        <locationX>1018</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Flow_Error_Screen_Text</name>
+            <fieldText>&lt;p&gt;There has been a problem with the Flow.  Please contact your administrator with the following information:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.CurrentDateTime}&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;&lt;p&gt;{!$User.Username}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Record_Type_for_Animal_Relationship</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <description>Gets the RecordType ID for the Animal_Relationship RecordType on the Relationships object</description>
         <name>Get_Record_Type_for_Animal_Relationship</name>
         <label>Get Record Type for Animal Relationship</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>134</locationY>
         <connector>
             <targetReference>Get_Current_Relationships_for_Animal</targetReference>
@@ -305,7 +398,7 @@
         <inputAssignments>
             <name>developerName</name>
             <value>
-                <stringValue>Contact_Relationship</stringValue>
+                <stringValue>Human_Relationship</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

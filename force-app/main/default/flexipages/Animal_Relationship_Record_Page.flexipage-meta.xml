@@ -119,8 +119,32 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Contact_Name__c</fieldItem>
+                <fieldItem>Record.Name__c</fieldItem>
                 <identifier>Recordanimalshelters__Contact_Name__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Organisation__c</fieldItem>
+                <identifier>Recordanimalshelters__Organisation__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Active__c</fieldItem>
+                <identifier>Recordanimalshelters__Active__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Start_Date__c</fieldItem>
+                <identifier>Recordanimalshelters__Start_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.End_Date__c</fieldItem>
+                <identifier>Recordanimalshelters__End_Date__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e0a8926f-51de-44d3-b00c-5e840edb0236</name>

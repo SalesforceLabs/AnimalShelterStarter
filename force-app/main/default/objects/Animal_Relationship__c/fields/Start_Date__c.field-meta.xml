@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Relationship_Types__c</fullName>
+    <fullName>Start_Date__c</fullName>
+    <description>[Animal Shelter] The start date of the relationship</description>
     <externalId>false</externalId>
-    <label>Relationship Types</label>
+    <label>Start Date</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Picklist</type>
-    <valueSet>
-        <restricted>true</restricted>
-        <valueSetName>Animal_Relationships</valueSetName>
-    </valueSet>
+    <type>Date</type>
 </CustomField>

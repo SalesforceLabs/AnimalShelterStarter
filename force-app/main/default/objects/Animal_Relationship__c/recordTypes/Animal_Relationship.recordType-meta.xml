@@ -7,19 +7,11 @@
     <picklistValues>
         <picklist>Relationship_Types__c</picklist>
         <values>
-            <fullName>Carer</fullName>
-            <default>false</default>
+            <fullName>Parent%2FChild</fullName>
+            <default>true</default>
         </values>
         <values>
-            <fullName>Foster</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Owner</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Trainer</fullName>
+            <fullName>Sibling</fullName>
             <default>false</default>
         </values>
     </picklistValues>

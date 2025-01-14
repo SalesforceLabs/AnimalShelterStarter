@@ -4,6 +4,24 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;h3&gt;&lt;strong style=&quot;font-size: 12pt; font-family: &amp;quot;Salesforce Sans&amp;quot;, sans-serif; color: rgb(234, 8, 8); background-color: transparent;&quot;&gt;Quick Start Checklist&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: &amp;quot;Salesforce Sans&amp;quot;, sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;If this is the first time you have used the Animal Shelter Starter Pack, follow this checklist to confirm correct configuration.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Enable Path&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Update Page Layout assignments on the Animal Action Object&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Update Page Layout assignments on the Location Object&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Update Page Layout assignments on the Contact Object (optional)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 14.6667px;&quot;&gt;Update Page Layout assignments on the Account Object (optional)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Load Breeds Data&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Review and check Flows&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Review and check Custom Settings&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Create a Account record for your Shelter which will be used as the default Animal Owner for animals coming into the shelter&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Remove this Setup tab from your Home Page&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; background-color: transparent;&quot;&gt;Enjoy &lt;/span&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-0b2116d3-6f48-4255-b8e7-f5698a4e9e23</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentName>runtime_sales_activities:todayTaskContainer</componentName>
                 <identifier>runtime_sales_activities_todayTaskContainer</identifier>
             </componentInstance>
@@ -46,6 +64,24 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-0b2116d3-6f48-4255-b8e7-f5698a4e9e23</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Setup</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

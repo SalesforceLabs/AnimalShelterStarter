@@ -163,6 +163,21 @@
                             </lightning-layout-item>
                         </lightning-layout>
                     </lightning-tab>
+                    <lightning-tab label="Shelter">
+                        <lightning-layout multiple-rows="false">
+                            <lightning-layout-item padding="around-small" size="6">
+                                <p><b>Default Shelter Name</b></p>
+                                <p>Create an Account for your Shelter and enter the Account Name here.
+                                     By default incoming Animals will be given a Owner relationship with this Account.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <lightning-input label="Default Shelter Name" type="text"
+                                    value={settings_data.animalshelters__Default_Shelter_Name__c}
+                                    onchange={handleTextChange}
+                                    data-field="animalshelters__Default_Shelter_Name__c"></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-tab>
                     <lightning-tab label="Other">
                         <lightning-layout pull-to-boundary="medium">
                             <lightning-layout-item flexibility="auto" padding="around-small">

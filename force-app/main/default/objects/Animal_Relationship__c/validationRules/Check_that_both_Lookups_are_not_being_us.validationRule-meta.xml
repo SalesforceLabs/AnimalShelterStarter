@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_that_both_Lookups_are_not_being_us</fullName>
+    <active>true</active>
+    <description>Checks that the user has only selected an Account (Organisation) or Contact lookup</description>
+    <errorConditionFormula>NOT(
+    OR(
+       ISBLANK( Contact__c ),
+       ISBLANK( Organisation__c )
+    )
+)</errorConditionFormula>
+    <errorMessage>You cannot select both an Organisation and Contact at the same time in a Relationship!</errorMessage>
+</ValidationRule>

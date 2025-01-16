@@ -35,6 +35,11 @@
         <default>false</default>
         <label>Breeder</label>
     </customValue>
+    <customValue>
+        <fullName>Finder</fullName>
+        <default>false</default>
+        <label>Finder</label>
+    </customValue>
     <description>[Animal Shelter] List of Relationships between Animal-to-Animal and Contact-to-Animal</description>
     <masterLabel>Animal Relationships</masterLabel>
     <sorted>false</sorted>

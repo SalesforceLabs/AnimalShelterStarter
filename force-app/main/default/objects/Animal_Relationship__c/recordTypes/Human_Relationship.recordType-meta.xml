@@ -15,6 +15,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Finder</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Foster</fullName>
             <default>false</default>
         </values>

@@ -24,7 +24,7 @@
         </values>
         <values>
             <fullName>Owner</fullName>
-            <default>true</default>
+            <default>false</default>
         </values>
         <values>
             <fullName>Trainer</fullName>

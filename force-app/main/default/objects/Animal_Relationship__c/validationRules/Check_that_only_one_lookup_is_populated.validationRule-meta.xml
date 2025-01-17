@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_that_only_one_lookup_is_populated</fullName>
+    <active>true</active>
+    <description>Checks that the user has only selected either an Account (Organisation), a Contact or User lookup</description>
+    <errorConditionFormula>NOT(
+    OR(
+        ISBLANK(Organisation__c) &amp;&amp; ISBLANK(Contact__c) &amp;&amp; ISBLANK(Internal_User__c),  /* All fields are blank */
+        AND(ISBLANK(Contact__c), ISBLANK(Internal_User__c), NOT(ISBLANK(Organisation__c))), /* Only Account is populated */
+        AND(ISBLANK(Organisation__c), ISBLANK(Internal_User__c), NOT(ISBLANK(Contact__c))), /* Only Contact is populated */
+        AND(ISBLANK(Organisation__c), ISBLANK(Contact__c), NOT(ISBLANK(Internal_User__c))) /* Only User is populated */
+    )
+)</errorConditionFormula>
+    <errorMessage>You must populate only one of the following lookup fields: Organisation, Contact, or Internal User.&quot;</errorMessage>
+</ValidationRule>

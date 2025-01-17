@@ -78,6 +78,9 @@
                             <value>animalshelters__Animal__c.Multi_Animal_Clone</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>animalshelters__Animal__c.New_Human_Relationship</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Global.NewEvent</value>
                         </valueListItems>
                         <valueListItems>

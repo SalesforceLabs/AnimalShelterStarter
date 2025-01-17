@@ -32,6 +32,12 @@
         <locationX>176</locationX>
         <locationY>539</locationY>
         <inputAssignments>
+            <field>Active__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Animal__c</field>
             <value>
                 <elementReference>$Record.Related_Animal__r.Id</elementReference>
@@ -56,9 +62,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Status__c</field>
+            <field>Relationship_Types__c</field>
             <value>
-                <stringValue>Current</stringValue>
+                <elementReference>$Record.Relationship_Types__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Start_Date__c</field>
+            <value>
+                <elementReference>$Record.Start_Date__c</elementReference>
             </value>
         </inputAssignments>
         <object>Animal_Relationship__c</object>
@@ -100,6 +112,13 @@
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Animal Relationship</stringValue>
             </value>
         </filters>
         <object>Animal_Relationship__c</object>

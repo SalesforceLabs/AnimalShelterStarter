@@ -3,11 +3,17 @@
     <fullName>Name__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
-    NOT(ISBLANK( Contact__c )), Contact__r.FirstName &amp; &quot; &quot; &amp; Contact__r.LastName,
-
+    NOT(ISBLANK(Contact__c)), 
+    Contact__r.FirstName &amp; &quot; &quot; &amp; Contact__r.LastName,
     IF(
-        NOT(ISBLANK( Organisation__c )),  Organisation__r.Name, &quot; &quot; 
-      )
+        NOT(ISBLANK(Organisation__c)),
+        Organisation__r.Name,
+        IF(
+            NOT(ISBLANK( Internal_User__c )),
+             Internal_User__r.FirstName &amp; &quot; &quot; &amp;  Internal_User__r.LastName ,
+            &quot;&quot;
+        )
+    )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Name</label>

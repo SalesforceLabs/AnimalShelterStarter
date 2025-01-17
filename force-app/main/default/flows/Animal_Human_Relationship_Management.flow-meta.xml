@@ -18,7 +18,7 @@
             <assignToReference>newRelationship.Animal__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>animalRecord.Id</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -78,6 +78,30 @@
             <targetReference>Update_Current_Relationship</targetReference>
         </connector>
     </assignments>
+    <choices>
+        <name>Contact</name>
+        <choiceText>Contact</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Contact</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>InternalUser</name>
+        <choiceText>Internal User</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Internal User</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Organisation</name>
+        <choiceText>Organisation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Organisation</stringValue>
+        </value>
+    </choices>
     <decisions>
         <description>Decides whether a Row has been selected for Update</description>
         <name>Has_a_row_been_selected</name>
@@ -104,7 +128,7 @@
             <label>Row Selected</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] - Screen flow to manage the relationships between Contacts/Organisations (Accounts) and Animals</description>
+    <description>[Animal Shelter] - Screen flow to manage the relationships between Contacts/Organisations (Accounts)/Internal Users and Animals</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Human Relationship Management {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -157,7 +181,7 @@
             <field>Animal__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>animalRecord.Id</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <filters>
@@ -211,7 +235,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Animal_Relationships_Screen_Text</name>
-                    <fieldText>&lt;p&gt;Select a existing relationship to update, and choose the Contact or Organisation and relationship.&lt;/p&gt;&lt;p&gt;Or create a new relationship&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Select a existing relationship to update, and choose the Contact, Organisation or Internal User and relationship.&lt;/p&gt;&lt;p&gt;Or create a new relationship&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -297,60 +321,63 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>Animal_Relationships_Screen_Section3</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Animal_Relationships_Screen_Section3_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <fieldType>ObjectProvided</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <objectFieldReference>newRelationship.Contact__c</objectFieldReference>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Animal_Relationships_Screen_Section3_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Animal_Relationships_Screen_Text_2</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 24px;&quot;&gt;Or&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Animal_Relationships_Screen_Section3_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <fieldType>ObjectProvided</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <objectFieldReference>newRelationship.Organisation__c</objectFieldReference>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
+            <name>Connected_Human_Organisation</name>
+            <choiceReferences>Contact</choiceReferences>
+            <choiceReferences>Organisation</choiceReferences>
+            <choiceReferences>InternalUser</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Connected Human/Organisation</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <objectFieldReference>newRelationship.Contact__c</objectFieldReference>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Connected_Human_Organisation</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Contact</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>newRelationship.Organisation__c</objectFieldReference>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Connected_Human_Organisation</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Organisation</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>newRelationship.Internal_User__c</objectFieldReference>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Connected_Human_Organisation</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>InternalUser</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <fieldType>ObjectProvided</fieldType>
@@ -410,20 +437,20 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <variables>
-        <name>animalRecord</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Animal__c</objectType>
-    </variables>
-    <variables>
         <name>newRelationship</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Animal_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal__c</objectType>
     </variables>
     <variables>
         <name>selectedRow</name>

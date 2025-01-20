@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Images__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allow Images from ChipNDoodle</description>
+    <externalId>false</externalId>
+    <label>Allow Images</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

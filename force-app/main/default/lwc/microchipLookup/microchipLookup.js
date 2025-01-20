@@ -32,6 +32,7 @@ export default class MicrochipLookup extends LightningElement {
     @track resultObject;
     @api recordId;
     @track errorMessage;
+    @track showImages = false;
 
     @track mc_num;
 
@@ -118,13 +119,20 @@ export default class MicrochipLookup extends LightningElement {
         this.resultsFound = false;
         this.isLoading = true;
 
+        // Check if images are allowed
+        if (this.myCustomSettings.data.animalshelters__Allow_Images__c) {
+            console.log("IMAGES ALLOWED");
+            this.showImages = true;
+        } else {
+            this.showImages = false;
+        }
+
         // Ensure API Key has been set
         if (!this.myCustomSettings.data.animalshelters__microchip_api_Token__c) {
             this.errorMessage = "No API Token found. Please update your API token in Animal Shelter Settings > Integration.";
             this.handleErrorMessage(this.errorMessage);
             return;
         }
-
 
         // Ensure there is a MicroChip Number
         if (!this.mc_num || this.mc_num === "No MicroChip Number Found. Please Update the record.") {
@@ -145,8 +153,8 @@ export default class MicrochipLookup extends LightningElement {
             token: this.myCustomSettings.data.animalshelters__microchip_api_Token__c,
             uid: this.mc_num,
         };
-        console.log("Sending Request")
-        console.log(REC_BODY)
+        //console.log("Sending Request")
+        //console.log(REC_BODY)
 
         fetch(ENDPOINT, {
             method: POST_METHOD,
@@ -179,12 +187,14 @@ export default class MicrochipLookup extends LightningElement {
 
             // Check we actually have data
             if (!recDetails || recDetails.length === 0) {
-                this.errorMessage = "A response was received although there was no microchip information found."
+                this.errorMessage = "The response from ChipNDoodle was not in the expected format. Please check your API key and if correct, check with ChipNDoodle support."
                 this.handleErrorMessage(this.errorMessage);
                 return
             }
+
+            // Check Responses key is found is of greater length than 0
             if (!recDetails.responses || recDetails.responses.length === 0) {
-                this.errorMessage = "A response was received although the responses from the API was empty."
+                this.errorMessage = "No matches were found for this microchip ID."
                 this.handleErrorMessage(this.errorMessage);
                 return
             } else {

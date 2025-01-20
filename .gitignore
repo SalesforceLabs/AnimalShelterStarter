@@ -28,3 +28,12 @@ robot/animal_shelter_starter/results/
 
 test_results.*
 /IlluminatedCloud/
+
+# Added by Illuminated Cloud
+.localdev/
+/out/
+target/
+node_modules/
+/.illuminatedCloud/
+**/tsconfig*.json
+**/*.tsbuildinfo

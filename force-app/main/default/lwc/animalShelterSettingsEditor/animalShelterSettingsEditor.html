@@ -13,7 +13,6 @@
                 <p class="slds-text-body_regular slds-var-m-bottom_medium">Here you can make changes to the default
                     settings which Animal Shelter Starter uses. Note: Settings are saved when they are changed.</p>
 
-
                 <lightning-tabset variant="vertical">
                     <lightning-tab label="Setup">
                         <div style="display: flex; flex-direction: column;">
@@ -21,21 +20,22 @@
                                 <lightning-layout-item flexibility="auto" padding="around-small">
                                     <p><b>Animal Shelter Starter - Setup Checklist</b></p>
                                     <p>If this is the first time you have used the Animal Shelter Starter Pack,
-                                         follow this checklist to confirm correct configuration.</p>
-                                         <p></p>
-                                        <ol>
-                                            <li>Enable Path</li>
-                                            <li>Update Page Layout assignments on the Animal Action Object</li>
-                                            <li>Update Page Layout assignments on the Location Object</li>
-                                            <li>Update Page Layout assignments on the Contact Object (optional)</li>
-                                            <li>Update Page Layout assignments on the Account Object (optional)</li>
-                                            <li>Load Breeds Data</li>
-                                            <li>Setup your Locations</li>
-                                            <li>Review and check Flows</li>
-                                            <li>Create a Account record for your Shelter which will be used as the default Animal Owner for animals coming into
-                                                the shelter</li>
-                                            <li>Review and check Custom Settings</li>
-                                        </ol>
+                                        follow this checklist to confirm correct configuration.</p>
+                                    <p></p>
+                                    <ol class="slds-list_ordered">
+                                        <li>Enable Path</li>
+                                        <li>Update Page Layout assignments on the Animal Action Object</li>
+                                        <li>Update Page Layout assignments on the Location Object</li>
+                                        <li>Update Page Layout assignments on the Contact Object (optional)</li>
+                                        <li>Update Page Layout assignments on the Account Object (optional)</li>
+                                        <li>Load Breeds Data</li>
+                                        <li>Setup your Locations</li>
+                                        <li>Review and check Flows</li>
+                                        <li>Create a Account record for your Shelter which will be used as the default
+                                            Animal Owner for animals coming into
+                                            the shelter</li>
+                                        <li>Review and check Custom Settings</li>
+                                    </ol>
                                 </lightning-layout-item>
                             </lightning-layout>
                             <hr />
@@ -173,6 +173,22 @@
                                     data-field="animalshelters__microchip_api_Token__c"></lightning-input>
                             </lightning-layout-item>
                         </lightning-layout>
+                        <br />
+                        <lightning-layout multiple-rows="false">
+                            <lightning-layout-item padding="around-small" size="6">
+                                <p><b>Allow Images from ChipNDoodle</b></p>
+                                <p>When enabled, this will allow image URLs to be returned from the API integration with
+                                    ChipNDoodle. This means that images could be loaded from external sources.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <div class="slds-form-element__control slds-float_right">
+                                    <lightning-input type="toggle" label="Allow Images"
+                                        checked={settings_data.animalshelters__Allow_Images__c}
+                                        onchange={handleBooleanChange}
+                                        data-field="animalshelters__Allow_Images__c"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
                         <hr />
                         <lightning-layout multiple-rows="false">
                             <lightning-layout-item padding="around-small" size="6">
@@ -194,7 +210,8 @@
                             <lightning-layout-item padding="around-small" size="6">
                                 <p><b>Default Shelter Name</b></p>
                                 <p>Create an Account for your Shelter and enter the Account Name here.
-                                     By default incoming Animals will be given a Owner relationship with this Account.</p>
+                                    By default incoming Animals will be given a Owner relationship with this Account.
+                                </p>
                             </lightning-layout-item>
                             <lightning-layout-item padding="around-small" size="6">
                                 <lightning-input label="Default Shelter Name" type="text"

@@ -14,3 +14,9 @@ package.xml
 **/tsconfig.json
 
 **/*.ts
+
+# Added by Illuminated Cloud
+/.illuminatedCloud/
+**/tsconfig*.json
+**/*.tsbuildinfo
+**/eslint.config.mjs

@@ -15,6 +15,32 @@
 
 
                 <lightning-tabset variant="vertical">
+                    <lightning-tab label="Setup">
+                        <div style="display: flex; flex-direction: column;">
+                            <lightning-layout>
+                                <lightning-layout-item flexibility="auto" padding="around-small">
+                                    <p><b>Animal Shelter Starter - Setup Checklist</b></p>
+                                    <p>If this is the first time you have used the Animal Shelter Starter Pack,
+                                         follow this checklist to confirm correct configuration.</p>
+                                         <p></p>
+                                        <ol>
+                                            <li>Enable Path</li>
+                                            <li>Update Page Layout assignments on the Animal Action Object</li>
+                                            <li>Update Page Layout assignments on the Location Object</li>
+                                            <li>Update Page Layout assignments on the Contact Object (optional)</li>
+                                            <li>Update Page Layout assignments on the Account Object (optional)</li>
+                                            <li>Load Breeds Data</li>
+                                            <li>Setup your Locations</li>
+                                            <li>Review and check Flows</li>
+                                            <li>Create a Account record for your Shelter which will be used as the default Animal Owner for animals coming into
+                                                the shelter</li>
+                                            <li>Review and check Custom Settings</li>
+                                        </ol>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <hr />
+                        </div>
+                    </lightning-tab>
                     <lightning-tab label="Animal">
                         <div style="display: flex; flex-direction: column;">
                             <lightning-layout>
@@ -160,6 +186,21 @@
                                     value={settings_data.animalshelters__What3Words_API_Key__c}
                                     onchange={handleTextChange}
                                     data-field="animalshelters__What3Words_API_Key__c"></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-tab>
+                    <lightning-tab label="Shelter">
+                        <lightning-layout multiple-rows="false">
+                            <lightning-layout-item padding="around-small" size="6">
+                                <p><b>Default Shelter Name</b></p>
+                                <p>Create an Account for your Shelter and enter the Account Name here.
+                                     By default incoming Animals will be given a Owner relationship with this Account.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <lightning-input label="Default Shelter Name" type="text"
+                                    value={settings_data.animalshelters__Default_Shelter_Name__c}
+                                    onchange={handleTextChange}
+                                    data-field="animalshelters__Default_Shelter_Name__c"></lightning-input>
                             </lightning-layout-item>
                         </lightning-layout>
                     </lightning-tab>

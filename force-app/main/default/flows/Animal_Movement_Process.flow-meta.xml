@@ -594,7 +594,7 @@
         <locationX>490</locationX>
         <locationY>1730</locationY>
         <connector>
-            <targetReference>Reset_Location_Status</targetReference>
+            <targetReference>Clear_Foster_Relationship</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -626,7 +626,7 @@
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
         <locationX>490</locationX>
-        <locationY>1838</locationY>
+        <locationY>1946</locationY>
         <connector>
             <targetReference>CreateMovementRecord</targetReference>
         </connector>
@@ -880,7 +880,7 @@
         <name>Movement_Complete</name>
         <label>Movement Complete</label>
         <locationX>1502</locationX>
-        <locationY>2438</locationY>
+        <locationY>2546</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -957,10 +957,26 @@
     </start>
     <status>Active</status>
     <subflows>
+        <name>Clear_Foster_Relationship</name>
+        <label>Clear Foster Relationship</label>
+        <locationX>490</locationX>
+        <locationY>1838</locationY>
+        <connector>
+            <targetReference>Reset_Location_Status</targetReference>
+        </connector>
+        <flowName>Animal_Subflow_Clear_Foster_Relationship</flowName>
+        <inputAssignments>
+            <name>movementRecord</name>
+            <value>
+                <elementReference>Get_Current_Movement_Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
         <name>CreateMovementRecord</name>
         <label>CreateMovementRecord</label>
         <locationX>1502</locationX>
-        <locationY>2330</locationY>
+        <locationY>2438</locationY>
         <connector>
             <targetReference>Movement_Complete</targetReference>
         </connector>

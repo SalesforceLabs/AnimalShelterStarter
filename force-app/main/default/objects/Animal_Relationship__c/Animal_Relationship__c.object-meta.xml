@@ -168,6 +168,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Animal Relationships</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <startsWith>Vowel</startsWith>

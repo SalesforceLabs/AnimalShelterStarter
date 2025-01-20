@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Animal_Relationships</fullName>
+    <columns>NAME</columns>
+    <columns>Animal__c</columns>
+    <columns>Animal_Name__c</columns>
+    <columns>Related_Animal__c</columns>
+    <columns>Related_Animal_Name__c</columns>
+    <columns>Relationship_Types__c</columns>
+    <columns>Active__c</columns>
+    <columns>Start_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Animal_Relationship__c.Animal_Relationship</value>
+    </filters>
+    <label>Active Animal Relationships</label>
+</ListView>

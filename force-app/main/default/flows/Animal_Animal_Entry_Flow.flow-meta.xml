@@ -2,10 +2,58 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <assignments>
+        <name>Add_Contact_Finder_Relationship_to_Collection</name>
+        <label>Add Contact Finder Relationship to Collection</label>
+        <locationX>490</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>newRelationships</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>newRelationship</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Default_Shelter</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Contact_Relationship_to_Collection</name>
+        <label>Add Contact Relationship to Collection</label>
+        <locationX>138</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>newRelationships</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>newRelationship</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Relationship_records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Default_Shelter_Relationship_to_Collection</name>
+        <label>Add Default Shelter Relationship to Collection</label>
+        <locationX>578</locationX>
+        <locationY>1646</locationY>
+        <assignmentItems>
+            <assignToReference>newRelationships</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>newRelationship</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Relationship_records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Additional_Assignment_Data</name>
         <label>Additional Assignment Data</label>
-        <locationX>534</locationX>
-        <locationY>2138</locationY>
+        <locationX>50</locationX>
+        <locationY>2846</locationY>
         <assignmentItems>
             <assignToReference>newAlert.Animal__c</assignToReference>
             <operator>Assign</operator>
@@ -28,8 +76,8 @@
         <description>Assigns additional and mandatory animal details</description>
         <name>Assign_Additional_Animal_Details</name>
         <label>Assign Additional Animal Details</label>
-        <locationX>798</locationX>
-        <locationY>242</locationY>
+        <locationX>1040</locationX>
+        <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>newAnimal.Date_of_Arrival__c</assignToReference>
             <operator>Assign</operator>
@@ -58,8 +106,8 @@
     <assignments>
         <name>Clear_Animal_Collection</name>
         <label>Clear Animal Collection</label>
-        <locationX>666</locationX>
-        <locationY>2702</locationY>
+        <locationX>182</locationX>
+        <locationY>3410</locationY>
         <assignmentItems>
             <assignToReference>newAnimal</assignToReference>
             <operator>Assign</operator>
@@ -70,6 +118,169 @@
         <connector>
             <isGoTo>true</isGoTo>
             <targetReference>start_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Create a new Relationship record and set the created contact as the Finder</description>
+        <name>Create_Relationship_for_Contact_as_Finder</name>
+        <label>Create Relationship for Contact as Finder</label>
+        <locationX>490</locationX>
+        <locationY>1106</locationY>
+        <assignmentItems>
+            <assignToReference>newRelationship.Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAnimal.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newContact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Active__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Relationship_Types__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Finder</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Human_Relationship_RecordType_Id.returnedRecordTypeId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Contact_Finder_Relationship_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Create a new Relationship record with Contact as Owner</description>
+        <name>Create_Relationship_for_Contact_as_Owner</name>
+        <label>Create Relationship for Contact as Owner</label>
+        <locationX>138</locationX>
+        <locationY>1106</locationY>
+        <assignmentItems>
+            <assignToReference>newRelationship.Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAnimal.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newContact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Active__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Relationship_Types__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Owner</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Human_Relationship_RecordType_Id.returnedRecordTypeId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Contact_Relationship_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Create a relationship record and sets the Default Organisation as the Owner</description>
+        <name>Create_Relationship_for_Default_Shelter_as_Owner</name>
+        <label>Create Relationship for Default Shelter as Owner</label>
+        <locationX>578</locationX>
+        <locationY>1538</locationY>
+        <assignmentItems>
+            <assignToReference>newRelationship.Animal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>newAnimal.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Active__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Relationship_Types__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Owner</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Organisation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Default_Shelter.accountID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Human_Relationship_RecordType_Id.returnedRecordTypeId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>newRelationship.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Default_Shelter_Relationship_to_Collection</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -99,8 +310,8 @@
     <decisions>
         <name>Assign_Location</name>
         <label>Assign Location?</label>
-        <locationX>798</locationX>
-        <locationY>1322</locationY>
+        <locationX>314</locationX>
+        <locationY>2030</locationY>
         <defaultConnector>
             <targetReference>Create_Assessment_Record</targetReference>
         </defaultConnector>
@@ -124,8 +335,8 @@
     <decisions>
         <name>Create_Alert_Record</name>
         <label>Create Alert Record?</label>
-        <locationX>798</locationX>
-        <locationY>1922</locationY>
+        <locationX>314</locationX>
+        <locationY>2630</locationY>
         <defaultConnector>
             <targetReference>Create_Additional_Animal_Screen</targetReference>
         </defaultConnector>
@@ -150,8 +361,8 @@
         <description>Does the User want to create another Animal entry</description>
         <name>Create_another_Animal_entry_record</name>
         <label>Create another Animal entry record?</label>
-        <locationX>798</locationX>
-        <locationY>2594</locationY>
+        <locationX>314</locationX>
+        <locationY>3302</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Yes_Duplicate</name>
@@ -200,8 +411,8 @@
     <decisions>
         <name>Create_Assessment_Record</name>
         <label>Create Assessment Record?</label>
-        <locationX>798</locationX>
-        <locationY>1622</locationY>
+        <locationX>314</locationX>
+        <locationY>2330</locationY>
         <defaultConnector>
             <targetReference>Create_Alert_Record</targetReference>
         </defaultConnector>
@@ -225,10 +436,11 @@
     <decisions>
         <name>Create_Contact</name>
         <label>Create Contact</label>
-        <locationX>798</locationX>
-        <locationY>458</locationY>
+        <locationX>1040</locationX>
+        <locationY>566</locationY>
         <defaultConnector>
-            <targetReference>Assign_Location</targetReference>
+            <isGoTo>true</isGoTo>
+            <targetReference>Get_Default_Shelter</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -252,9 +464,9 @@
         <name>Is_Contact_Owner</name>
         <label>Is Contact Owner?</label>
         <locationX>314</locationX>
-        <locationY>890</locationY>
+        <locationY>998</locationY>
         <defaultConnector>
-            <targetReference>Assign_Location</targetReference>
+            <targetReference>Create_Relationship_for_Contact_as_Finder</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -268,9 +480,35 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Animal_Record_with_Contact</targetReference>
+                <targetReference>Create_Relationship_for_Contact_as_Owner</targetReference>
             </connector>
             <label>Yes Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If the Default Shelter Name is null then do not set</description>
+        <name>Is_Default_Shelter_Null</name>
+        <label>Is Default Shelter Null</label>
+        <locationX>490</locationX>
+        <locationY>1430</locationY>
+        <defaultConnector>
+            <targetReference>Create_Relationship_for_Default_Shelter_as_Owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Set</defaultConnectorLabel>
+        <rules>
+            <name>Yes_is_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Default_Shelter.accountID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Relationship_records</targetReference>
+            </connector>
+            <label>Yes is Null</label>
         </rules>
     </decisions>
     <description>[Animal Shelters] - Screen flow providing an Animal Entry wizard.  Allows creation of Animal, Location assignment, Assessment, Contact and Alerts.</description>
@@ -309,8 +547,8 @@
     <recordCreates>
         <name>Create_Alert</name>
         <label>Create Alert</label>
-        <locationX>534</locationX>
-        <locationY>2246</locationY>
+        <locationX>50</locationX>
+        <locationY>2954</locationY>
         <connector>
             <targetReference>Create_Additional_Animal_Screen</targetReference>
         </connector>
@@ -324,8 +562,8 @@
         <description>Create the new Animal Record</description>
         <name>Create_New_Animal_Record</name>
         <label>Create New Animal Record</label>
-        <locationX>798</locationX>
-        <locationY>350</locationY>
+        <locationX>1040</locationX>
+        <locationY>458</locationY>
         <connector>
             <targetReference>Create_Contact</targetReference>
         </connector>
@@ -339,7 +577,7 @@
         <name>Create_New_Contact</name>
         <label>Create New Contact</label>
         <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationY>890</locationY>
         <connector>
             <targetReference>Is_Contact_Owner</targetReference>
         </connector>
@@ -349,11 +587,25 @@
         </faultConnector>
         <inputReference>newContact</inputReference>
     </recordCreates>
+    <recordCreates>
+        <name>Create_Relationship_records</name>
+        <label>Create Relationship records</label>
+        <locationX>314</locationX>
+        <locationY>1922</locationY>
+        <connector>
+            <targetReference>Assign_Location</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <inputReference>newRelationships</inputReference>
+    </recordCreates>
     <recordLookups>
         <name>Is_Person_Accounts_enabled</name>
         <label>Is Person Accounts enabled?</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Contact_Details_Screen</targetReference>
@@ -381,40 +633,11 @@
         <object>FieldDefinition</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <description>Update animal record with the Contact just created</description>
-        <name>Update_Animal_Record_with_Contact</name>
-        <label>Update Animal Record with Contact</label>
-        <locationX>50</locationX>
-        <locationY>998</locationY>
-        <connector>
-            <targetReference>Assign_Location</targetReference>
-        </connector>
-        <faultConnector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>newAnimal.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Previous_Current_Owner__c</field>
-            <value>
-                <elementReference>newContact.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Animal__c</object>
-    </recordUpdates>
     <screens>
         <name>Animal_Create_Alert</name>
         <label>Animal Entry - Create Alert</label>
-        <locationX>534</locationX>
-        <locationY>2030</locationY>
+        <locationX>50</locationX>
+        <locationY>2738</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -487,7 +710,7 @@
         <name>Contact_Details_Screen</name>
         <label>Capture Contact Details Screen</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -626,8 +849,8 @@
     <screens>
         <name>Create_Additional_Animal_Screen</name>
         <label>Create Additional Animal Screen</label>
-        <locationX>798</locationX>
-        <locationY>2486</locationY>
+        <locationX>314</locationX>
+        <locationY>3194</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -651,8 +874,8 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1458</locationX>
-        <locationY>458</locationY>
+        <locationX>2030</locationX>
+        <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -667,8 +890,8 @@
     <screens>
         <name>start_Screen</name>
         <label>Start Screen</label>
-        <locationX>798</locationX>
-        <locationY>134</locationY>
+        <locationX>1040</locationX>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -879,10 +1102,10 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>672</locationX>
+        <locationX>914</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>start_Screen</targetReference>
+            <targetReference>Get_Human_Relationship_RecordType_Id</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -890,8 +1113,8 @@
         <description>Call Create new Assessment Screen Flow and pass Record Id of new Animal</description>
         <name>Create_New_Assessment</name>
         <label>Create New Assessment</label>
-        <locationX>666</locationX>
-        <locationY>1730</locationY>
+        <locationX>182</locationX>
+        <locationY>2438</locationY>
         <connector>
             <targetReference>Create_Alert_Record</targetReference>
         </connector>
@@ -904,11 +1127,45 @@
         </inputAssignments>
     </subflows>
     <subflows>
+        <name>Get_Default_Shelter</name>
+        <label>Get Default Shelter</label>
+        <locationX>490</locationX>
+        <locationY>1322</locationY>
+        <connector>
+            <targetReference>Is_Default_Shelter_Null</targetReference>
+        </connector>
+        <flowName>Animal_Default_Shelter_Name_Subflow</flowName>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Get_Human_Relationship_RecordType_Id</name>
+        <label>Get Human Relationship RecordType Id</label>
+        <locationX>1040</locationX>
+        <locationY>134</locationY>
+        <connector>
+            <targetReference>start_Screen</targetReference>
+        </connector>
+        <flowName>Animal_RecordType_Subflow</flowName>
+        <inputAssignments>
+            <name>developerName</name>
+            <value>
+                <stringValue>Human_Relationship</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>sObjectName</name>
+            <value>
+                <stringValue>animalshelters__Animal_Relationship__c</stringValue>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
         <description>Call Movement Process Screen Flow and pass Record Id of new Animal</description>
         <name>Movement_Process_Screen_Flow</name>
         <label>Movement Process Screen Flow</label>
-        <locationX>666</locationX>
-        <locationY>1430</locationY>
+        <locationX>182</locationX>
+        <locationY>2138</locationY>
         <connector>
             <targetReference>Create_Assessment_Record</targetReference>
         </connector>
@@ -951,5 +1208,21 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>newRelationship</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>newRelationships</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Animal_Relationship__c</objectType>
     </variables>
 </Flow>

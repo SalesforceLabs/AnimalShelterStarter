@@ -30,11 +30,23 @@
         <name>Create_Reciprocal_Relationship</name>
         <label>Create Reciprocal Relationship</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Active__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Animal__c</field>
             <value>
                 <elementReference>$Record.Related_Animal__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Animal_Relationship_Record_Type_ID.returnedRecordTypeId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -50,9 +62,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Status__c</field>
+            <field>Relationship_Types__c</field>
             <value>
-                <stringValue>Current</stringValue>
+                <elementReference>$Record.Relationship_Types__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Start_Date__c</field>
+            <value>
+                <elementReference>$Record.Start_Date__c</elementReference>
             </value>
         </inputAssignments>
         <object>Animal_Relationship__c</object>
@@ -62,7 +80,7 @@
         <name>Update_Origin</name>
         <label>Update Origin</label>
         <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Create_Reciprocal_Relationship</targetReference>
         </connector>
@@ -86,7 +104,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Origin</targetReference>
+            <targetReference>Get_Animal_Relationship_Record_Type_ID</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -96,9 +114,39 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Animal Relationship</stringValue>
+            </value>
+        </filters>
         <object>Animal_Relationship__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <subflows>
+        <name>Get_Animal_Relationship_Record_Type_ID</name>
+        <label>Get Animal Relationship Record Type ID</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Update_Origin</targetReference>
+        </connector>
+        <flowName>Animal_RecordType_Subflow</flowName>
+        <inputAssignments>
+            <name>developerName</name>
+            <value>
+                <stringValue>Animal_Relationship</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>sObjectName</name>
+            <value>
+                <stringValue>animalshelters__Animal_Relationship__c</stringValue>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
 </Flow>

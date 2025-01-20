@@ -4,7 +4,7 @@
         <name>Error_Email</name>
         <label>Error Email</label>
         <locationX>578</locationX>
-        <locationY>758</locationY>
+        <locationY>866</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -101,7 +101,7 @@
         <name>Set_Output_Variable</name>
         <label>Set Output Variable</label>
         <locationX>182</locationX>
-        <locationY>1058</locationY>
+        <locationY>1166</locationY>
         <assignmentItems>
             <assignToReference>newMovementRecordId</assignToReference>
             <operator>Assign</operator>
@@ -147,13 +147,13 @@
         <name>Generate_Movement_Task</name>
         <label>Generate Movement Task?</label>
         <locationX>182</locationX>
-        <locationY>1166</locationY>
+        <locationY>1274</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Setup.Animal_Shelter_Settings__c.Enable_Movement_Tasks__c</leftValueReference>
+                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Enable_Movement_Tasks__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -194,7 +194,7 @@
         <name>Update_Animal_Location_Fields</name>
         <label>Update Animal Location Fields</label>
         <locationX>182</locationX>
-        <locationY>758</locationY>
+        <locationY>866</locationY>
         <defaultConnector>
             <targetReference>Set_Output_Variable</targetReference>
         </defaultConnector>
@@ -254,7 +254,7 @@
         <locationX>182</locationX>
         <locationY>542</locationY>
         <connector>
-            <targetReference>Get_Newly_Created_Movement_Record</targetReference>
+            <targetReference>Create_Foster_Relationship_if_required</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -266,7 +266,7 @@
         <name>Get_Newly_Created_Movement_Record</name>
         <label>Get Newly Created Movement Record</label>
         <locationX>182</locationX>
-        <locationY>650</locationY>
+        <locationY>758</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Animal_Location_Fields</targetReference>
@@ -290,7 +290,7 @@
         <name>Update_Animal_Location_Status</name>
         <label>Update Animal Location Status</label>
         <locationX>50</locationX>
-        <locationY>866</locationY>
+        <locationY>974</locationY>
         <connector>
             <targetReference>Set_Output_Variable</targetReference>
         </connector>
@@ -325,10 +325,26 @@
     </start>
     <status>Active</status>
     <subflows>
+        <name>Create_Foster_Relationship_if_required</name>
+        <label>Create Foster Relationship if required</label>
+        <locationX>182</locationX>
+        <locationY>650</locationY>
+        <connector>
+            <targetReference>Get_Newly_Created_Movement_Record</targetReference>
+        </connector>
+        <flowName>Animal_Foster_Relationship_SubFlow</flowName>
+        <inputAssignments>
+            <name>movementRecord</name>
+            <value>
+                <elementReference>varNewMovementRecord</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
         <name>Create_Movement_Task</name>
         <label>Create Movement Task</label>
         <locationX>50</locationX>
-        <locationY>1274</locationY>
+        <locationY>1382</locationY>
         <flowName>Animal_Generate_Tasks_Subflow</flowName>
         <inputAssignments>
             <name>animalRecordId</name>

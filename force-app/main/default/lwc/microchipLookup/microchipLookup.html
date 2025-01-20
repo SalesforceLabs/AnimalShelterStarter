@@ -1,6 +1,7 @@
 <template>
   <lightning-card title="Microchip Lookup" icon-name="custom:custom39">
-    <lightning-button icon-name="utility:refresh" onclick={getResults} slot="actions" title="Refresh" label="Refresh"></lightning-button>
+    <lightning-button icon-name="utility:refresh" onclick={getResults} slot="actions" title="Refresh"
+      label="Refresh"></lightning-button>
     <lightning-spinner if:true={isLoading}></lightning-spinner>
     <template lwc:if={resultsFound}>
 
@@ -15,18 +16,26 @@
           <template for:each={resultObject.responses} for:item="response">
             <lightning-accordion-section name={response.uid} label={response.database.name} key={response.uid}>
               <div class="slds-media">
+
                 <div class="slds-media__figure">
-                  <span class="slds-avatar slds-avatar_large">
-                    <img alt="Person name" src={response.image} title="User avatar" height="100px"
-                      onclick={handleImgClick} data-imgsrc={response.image} />
-                  </span>
+                  <template lwc:if={showImages}>
+                    <span class="slds-avatar slds-avatar_large">
+                      <img alt="Animal Image" src={response.image} title="Animal Image" height="100px"
+                        onclick={handleImgClick} data-imgsrc={response.image} />
+                    </span>
+                  </template>
+                  <template lwc:else>
+                    <lightning-avatar src="/bad/image/url.jpg" initials=""
+                      fallback-icon-name="utility:animal_and_nature" alternative-text="Placeholder Image"
+                      class="slds-m-right_small"></lightning-avatar>
+                  </template>
                 </div>
+
                 <div class="slds-media__body">
                   <h3 class="slds-text-heading_small">Animal Information</h3>
                   <p>Name: {response.name}</p>
                   <p>Species: {response.species}</p>
                   <p>Breed: {response.breed}</p>
-                  <p>Description: {response.breed}</p>
                   <p>
                     Date of Birth: {response.dob}
                   </p>
@@ -34,6 +43,9 @@
                   <h3 class="slds-text-heading_small">Contact Information</h3>
                   <p>Phone: {response.tel}</p>
                   <p>Email: {response.email}</p>
+                  <br />
+                  <h3 class="slds-text-heading_small">Database</h3>
+                  <p>Result Database: {response.database.name}</p>
                 </div>
               </div>
               <div slot="footer">Results provided by <a href="https://www.ChipNDoodle.com">Chip-N-Doodle</a></div>
@@ -44,7 +56,8 @@
     </template>
     <template lwc:else>
       <div class="slds-var-p-around_medium">
-        <h3 class="slds-text-body_regular">Click <strong>Refresh</strong> button above to see the latest information.</h3>
+        <h3 class="slds-text-body_regular">Click <strong>Refresh</strong> button above to see the latest information.
+        </h3>
         <p>{errorMessage}</p>
       </div>
 

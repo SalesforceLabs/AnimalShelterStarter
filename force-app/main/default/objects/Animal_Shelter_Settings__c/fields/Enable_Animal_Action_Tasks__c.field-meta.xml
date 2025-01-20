@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Enable_Animal_Action_Tasks__c</fullName>
     <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
     <description>When enabled Tasks are created for each Animal Action record. Default enabled</description>
     <externalId>false</externalId>
     <label>Enable Animal Action Tasks</label>

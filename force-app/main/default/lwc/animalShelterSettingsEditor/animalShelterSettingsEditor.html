@@ -22,18 +22,34 @@
                                     <p>If this is the first time you have used the Animal Shelter Starter Pack,
                                         follow this checklist to confirm correct configuration.</p>
                                     <p></p>
+                                    <div class="slds-m-around_medium">
+                                        <lightning-button label="Check" onclick={handleCheck} variant="brand"></lightning-button>
+                                    </div>
+                                    <template if:true={hasBreedRecords}>
+                                        <p>PASS: Breed Records Exist</p>
+                                    </template>
+                                    <template if:true={noBreedRecords}>
+                                        <p> FAIL: No Breed Records Exist</p>
+                                    </template>
+                                    <template if:true={hasLocationRecords}>
+                                        <p>PASS: Location Records Exist</p>
+                                    </template>
+                                    <template if:true={noLocationRecords}>
+                                        <p> FAIL: No Location Records Exist</p>
+                                    </template>
+                                    <template if:true={shelterNameValid}>
+                                        <p>PASS: Shelter Name Account Exists</p>
+                                    </template>
+                                    <template if:true={shelterNameInvalid}>
+                                        <p> FAIL: Shelter Name is Null or Account does not exist</p>
+                                    </template>
                                     <ol class="slds-list_ordered">
                                         <li>Enable Path</li>
                                         <li>Update Page Layout assignments on the Animal Action Object</li>
                                         <li>Update Page Layout assignments on the Location Object</li>
                                         <li>Update Page Layout assignments on the Contact Object (optional)</li>
                                         <li>Update Page Layout assignments on the Account Object (optional)</li>
-                                        <li>Load Breeds Data</li>
-                                        <li>Setup your Locations</li>
                                         <li>Review and check Flows</li>
-                                        <li>Create a Account record for your Shelter which will be used as the default
-                                            Animal Owner for animals coming into
-                                            the shelter</li>
                                         <li>Review and check Custom Settings</li>
                                     </ol>
                                 </lightning-layout-item>

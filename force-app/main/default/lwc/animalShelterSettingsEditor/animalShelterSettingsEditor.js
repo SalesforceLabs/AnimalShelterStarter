@@ -3,9 +3,19 @@ import { updateRecord } from 'lightning/uiRecordApi';
 
 import getCustomSetting from '@salesforce/apex/AnimalShelterGetCustomSettings.getCustomSettings';
 import createDefaultSettings from '@salesforce/apex/AnimalShelterGetCustomSettings.createDefaultSettings';
+import hasBreedRecords from '@salesforce/apex/DataCheckController.hasBreedRecords';
+import hasLocationRecords from '@salesforce/apex/DataCheckController.hasLocationRecords';
+import isShelterNameValid from '@salesforce/apex/DataCheckController.isShelterNameValid';
 
 export default class AnimalShelterSettingsEditor extends LightningElement {
+
     @track settings_data;
+    @track hasBreedRecords = false;
+    @track noBreedRecords = false;
+    @track hasLocationRecords = false;
+    @track noLocationRecords = false;
+    @track shelterNameValid = false;
+    @track shelterNameInvalid = false;
 
     @wire(getCustomSetting)
     wiredSettings({ error, data }) {
@@ -42,5 +52,42 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
         }).catch(error => {
             console.error(error);
         });
+    }
+
+    handleCheck() {
+        hasBreedRecords()
+            .then(result => {
+                this.hasBreedRecords = result;
+                this.noBreedRecords = !result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                this.hasBreedRecords = false;
+                this.noBreedRecords = true;
+            });
+        
+        hasLocationRecords()
+           .then(result => {
+                this.hasLocationRecords = result;
+                this.noLocationRecords =!result;
+            })
+           .catch(error => {
+               console.error('Error:', error);
+               this.hasLocationRecords = false;
+               this.noLocationRecords = true;
+           });
+
+        isShelterNameValid()
+          .then(result => {
+                this.shelterNameValid = result;
+                this.shelterNameInvalid =!result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                this.shelterNameValid = false;
+                this.shelterNameInvalid = true;
+            });
+
+
     }
 }

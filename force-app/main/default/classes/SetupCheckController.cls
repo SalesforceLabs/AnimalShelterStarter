@@ -30,17 +30,12 @@ public with sharing class SetupCheckController {
             String accountName = animal_settings.Default_Shelter_Name__c;
 
             // Query to see if account exists
-            Account existingAccount = [
-                SELECT ID
-                FROM Account
-                WHERE Name = :accountName
-                LIMIT 1
-            ];
+            list<Account> existingAccount = [SELECT Id FROM Account WHERE Name = :accountName LIMIT 1];
 
-            if (existingAccount != null) {
-                return 'Pass: Matching Shelter (Account) record to Default Shelter Name found'; // Account Exists
+            if (!existingAccount.isEmpty()) {
+                return 'PASS: Matching Shelter (Account) record to Default Shelter Name found'; // Account Exists
             } else {
-                return 'Fail: No matching Shelter (Account) record found to Default Shelter Name'; // Account Does Not Exist
+                return 'FAIL: No matching Shelter (Account) record found to Default Shelter Name'; // Account Does Not Exist
             }
 
         }

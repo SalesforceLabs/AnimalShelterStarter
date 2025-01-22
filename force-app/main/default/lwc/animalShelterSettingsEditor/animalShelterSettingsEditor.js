@@ -7,7 +7,6 @@ import hasBreedRecords from '@salesforce/apex/SetupCheckController.hasBreedRecor
 import hasLocationRecords from '@salesforce/apex/SetupCheckController.hasLocationRecords';
 import shelterAccountCheck from '@salesforce/apex/SetupCheckController.shelterAccountCheck';
 
-
 export default class AnimalShelterSettingsEditor extends LightningElement {
 
     @track settings_data;

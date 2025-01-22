@@ -1,4 +1,4 @@
-public with sharing class DataCheckController {
+public with sharing class SetupCheckController {
 
     @AuraEnabled(cacheable=true)
     public static Boolean hasBreedRecords() {

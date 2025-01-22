@@ -19,7 +19,7 @@ public with sharing class SetupCheckController {
     @AuraEnabled(cacheable=true)
     public static String shelterAccountCheck() {
         if (Schema.SObjectType.animalshelters__Animal_Shelter_Settings__c.isAccessible()) {
-            animalshelters__Animal_Shelter_Settings__c animal_settings = animalshelters__Animal_Shelter_Settings__c.getOrgDefaults();
+            animalshelters__Animal_Shelter_Settings__c animal_settings = animalshelters__Animal_Shelter_Settings__c.getInstance();
 
             // If Default Shelter Name is Empty, return Advisory message
             if (String.isEmpty(animal_settings.Default_Shelter_Name__c)) {

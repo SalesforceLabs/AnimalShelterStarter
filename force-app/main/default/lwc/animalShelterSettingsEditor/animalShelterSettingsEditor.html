@@ -22,7 +22,7 @@
                                     <p>If this is the first time you have used the Animal Shelter Starter Pack,
                                         follow this checklist to confirm correct configuration.</p>
                                     <p></p>
-                                    <div class="slds-m-around_medium">
+                                    <div class="slds-var-m-around_medium">
                                         <lightning-button label="Check" onclick={handleCheck} variant="brand"></lightning-button>
                                     </div>
                                     <template if:true={hasBreedRecords}>
@@ -37,11 +37,8 @@
                                     <template if:true={noLocationRecords}>
                                         <p> FAIL: No Location Records Exist</p>
                                     </template>
-                                    <template if:true={shelterNameValid}>
-                                        <p>PASS: Shelter Name Account Exists</p>
-                                    </template>
-                                    <template if:true={shelterNameInvalid}>
-                                        <p> FAIL: Shelter Name is Null or Account does not exist</p>
+                                    <template if:true={shelterResultText}>
+                                        <p>{resultText}</p>
                                     </template>
                                     <ol class="slds-list_ordered">
                                         <li>Enable Path</li>

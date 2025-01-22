@@ -17,23 +17,32 @@ public with sharing class DataCheckController {
         }
 
     @AuraEnabled(cacheable=true)
-    public static Boolean isShelterNameValid() {
+    public static String shelterAccountCheck() {
         if (Schema.SObjectType.animalshelters__Animal_Shelter_Settings__c.isAccessible()) {
-            animalshelters__Animal_Shelter_Settings__c animal_settings = animalshelters__Animal_Shelter_Settings__c.getInstance();
+            animalshelters__Animal_Shelter_Settings__c animal_settings = animalshelters__Animal_Shelter_Settings__c.getOrgDefaults();
 
-            if (String.isBlank(animal_settings.Default_Shelter_Name__c)) {
-                return false;
+            // If Default Shelter Name is Empty, return Advisory message
+            if (String.isEmpty(animal_settings.Default_Shelter_Name__c)) {
+                return 'Advisory: Default Shelter Name not set';
             }
 
+            // Get Account Name
             String accountName = animal_settings.Default_Shelter_Name__c;
-            Account accountRecord = [
+
+            // Query to see if account exists
+            Account existingAccount = [
                 SELECT ID
                 FROM Account
                 WHERE Name = :accountName
                 LIMIT 1
             ];
 
-            return (accountRecord!= null);
+            if (existingAccount != null) {
+                return 'Pass: Matching Shelter (Account) record to Default Shelter Name found'; // Account Exists
+            } else {
+                return 'Fail: No matching Shelter (Account) record found to Default Shelter Name'; // Account Does Not Exist
+            }
+
         }
     
     return null;

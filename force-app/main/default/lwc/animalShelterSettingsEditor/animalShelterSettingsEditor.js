@@ -3,9 +3,10 @@ import { updateRecord } from 'lightning/uiRecordApi';
 
 import getCustomSetting from '@salesforce/apex/AnimalShelterGetCustomSettings.getCustomSettings';
 import createDefaultSettings from '@salesforce/apex/AnimalShelterGetCustomSettings.createDefaultSettings';
-import hasBreedRecords from '@salesforce/apex/DataCheckController.hasBreedRecords';
-import hasLocationRecords from '@salesforce/apex/DataCheckController.hasLocationRecords';
-import isShelterNameValid from '@salesforce/apex/DataCheckController.isShelterNameValid';
+import hasBreedRecords from '@salesforce/apex/SetupCheckController.hasBreedRecords';
+import hasLocationRecords from '@salesforce/apex/SetupCheckController.hasLocationRecords';
+import shelterAccountCheck from '@salesforce/apex/SetupCheckController.shelterAccountCheck';
+
 
 export default class AnimalShelterSettingsEditor extends LightningElement {
 
@@ -14,8 +15,7 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
     @track noBreedRecords = false;
     @track hasLocationRecords = false;
     @track noLocationRecords = false;
-    @track shelterNameValid = false;
-    @track shelterNameInvalid = false;
+    @track shelterResultTest;
 
     @wire(getCustomSetting)
     wiredSettings({ error, data }) {
@@ -77,17 +77,13 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
                this.noLocationRecords = true;
            });
 
-        isShelterNameValid()
-          .then(result => {
-                this.shelterNameValid = result;
-                this.shelterNameInvalid =!result;
+        shelterAccountCheck()
+            .then((result) => {
+                this.shelterResultTest = result;
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error('Error:', error);
-                this.shelterNameValid = false;
-                this.shelterNameInvalid = true;
-            });
-
-
+                this.shelterResultTest = 'Error performing the check. ';
+            });   
     }
 }

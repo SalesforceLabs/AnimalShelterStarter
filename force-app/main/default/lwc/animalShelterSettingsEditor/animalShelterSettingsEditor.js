@@ -14,7 +14,7 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
     @track noBreedRecords = false;
     @track hasLocationRecords = false;
     @track noLocationRecords = false;
-    @track shelterResultTest;
+    @track shelterResultText;
 
     @wire(getCustomSetting)
     wiredSettings({ error, data }) {
@@ -78,11 +78,11 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
 
         shelterAccountCheck()
             .then((result) => {
-                this.shelterResultTest = result;
+                this.shelterResultText = result;
             })
             .catch((error) => {
                 console.error('Error:', error);
-                this.shelterResultTest = 'Error performing the check. ';
+                this.shelterResultText = 'Error performing the check. ';
             });   
     }
 }

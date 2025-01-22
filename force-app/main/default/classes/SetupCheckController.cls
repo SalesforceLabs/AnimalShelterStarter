@@ -22,7 +22,7 @@ public with sharing class SetupCheckController {
             animalshelters__Animal_Shelter_Settings__c animal_settings = animalshelters__Animal_Shelter_Settings__c.getInstance();
 
             // If Default Shelter Name is Empty, return Advisory message
-            if (String.isEmpty(animal_settings.Default_Shelter_Name__c)) {
+            if (String.isBlank(animal_settings.Default_Shelter_Name__c)) {
                 return 'Advisory: Default Shelter Name not set';
             }
 

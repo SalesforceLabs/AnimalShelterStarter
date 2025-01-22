@@ -6,6 +6,7 @@ import createDefaultSettings from '@salesforce/apex/AnimalShelterGetCustomSettin
 import hasBreedRecords from '@salesforce/apex/SetupCheckController.hasBreedRecords';
 import hasLocationRecords from '@salesforce/apex/SetupCheckController.hasLocationRecords';
 import shelterAccountCheck from '@salesforce/apex/SetupCheckController.shelterAccountCheck';
+import checkPageLayouts from '@salesforce/apex/LocationPageLayoutCheckController.checkPageLayouts';
 
 export default class AnimalShelterSettingsEditor extends LightningElement {
 
@@ -15,6 +16,7 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
     @track hasLocationRecords = false;
     @track noLocationRecords = false;
     @track shelterResultText;
+    @track locationLayoutStatus;
 
     @wire(getCustomSetting)
     wiredSettings({ error, data }) {
@@ -83,6 +85,15 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
             .catch((error) => {
                 console.error('Error:', error);
                 this.shelterResultText = 'Error performing the check. ';
-            });   
+            });
+            
+        checkPageLayouts()
+            .then((result) => {
+                this.locationLayoutStatus = result;
+            })
+            .catch(error => {
+                console.error(error);
+                this.locationLayoutStatus = 'Error fetching Location Page Layout Data';
+        });
     }
 }

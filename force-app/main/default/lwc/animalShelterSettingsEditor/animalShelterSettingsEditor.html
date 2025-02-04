@@ -24,25 +24,35 @@
                                     <p></p>
                                     <div class="slds-var-m-around_medium">
                                         <lightning-button label="Check" onclick={handleCheck} variant="brand"></lightning-button>
-                                    </div>
-                                    <template if:true={hasBreedRecords}>
-                                        <p>PASS: Breed Records Exist</p>
-                                    </template>
-                                    <template if:true={noBreedRecords}>
-                                        <p> FAIL: No Breed Records Exist</p>
-                                    </template>
-                                    <template if:true={hasLocationRecords}>
-                                        <p>PASS: Location Records Exist</p>
-                                    </template>
-                                    <template if:true={noLocationRecords}>
-                                        <p> FAIL: No Location Records Exist</p>
-                                    </template>
-                                    <template if:true={shelterResultText}>
-                                        <p>{shelterResultText}</p>
-                                    </template>
-                                    <template if:true={locationLayoutStatus}>
-                                        <p>{locationLayoutStatus}</p>
-                                    </template>
+                                        </div>
+                                        <template if:true={isChecked}>
+                                            <template if:true={hasRecords}>
+                                                <p>PASS: Breed contains {breedRecordCount} record(s).</p>
+                                            </template>
+                                            <template if:false={hasRecords}>
+                                                <p> FAIL: No Breed Records Found </p>
+                                            </template>
+                                            <template if:true={hasLocationRecords}>
+                                                <p>PASS: Location Records Exist</p>
+                                            </template>
+                                            <template if:true={noLocationRecords}>
+                                                <p> FAIL: No Location Records Exist</p>
+                                            </template>
+                                            <template if:true={shelterResultText}>
+                                                p>{shelterResultText}</p>
+                                            </template>
+                                            <template if:true={locationLayoutStatus}>
+                                                <p>{locationLayoutStatus}</p>
+                                            </template>
+                                            <template if:true={results}>
+                                                <template for:each={results} for:item="result">
+                                                    <p key={result.key}>{result.key}: <strong>{result.value}</strong></p>
+                                                </template>
+                                            </template>
+                                            <template if:true={error}>
+                                                <p class="slds-text-color_error">{error}</p>
+                                            </template>
+                                        </template>
                                     <p></p>
                                     <ol class="slds-list_ordered">
                                         <li>Enable Path</li>

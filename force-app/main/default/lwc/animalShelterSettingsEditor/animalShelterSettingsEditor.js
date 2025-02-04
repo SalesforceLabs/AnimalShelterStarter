@@ -7,16 +7,23 @@ import hasBreedRecords from '@salesforce/apex/SetupCheckController.hasBreedRecor
 import hasLocationRecords from '@salesforce/apex/SetupCheckController.hasLocationRecords';
 import shelterAccountCheck from '@salesforce/apex/SetupCheckController.shelterAccountCheck';
 import checkPageLayouts from '@salesforce/apex/LocationPageLayoutCheckController.checkPageLayouts';
+import checkPathSettings from '@salesforce/apex/SetupCheckController.checkPathSettings';
+
 
 export default class AnimalShelterSettingsEditor extends LightningElement {
 
     @track settings_data;
-    @track hasBreedRecords = false;
-    @track noBreedRecords = false;
+    @track breedRecordCount = 0;
     @track hasLocationRecords = false;
     @track noLocationRecords = false;
     @track shelterResultText;
     @track locationLayoutStatus;
+    @track isChecked = false;
+    @track results;
+
+    get hasRecords() {
+        return this.breedRecordCount > 0;
+    }
 
     @wire(getCustomSetting)
     wiredSettings({ error, data }) {
@@ -57,14 +64,13 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
 
     handleCheck() {
         hasBreedRecords()
-            .then(result => {
-                this.hasBreedRecords = result;
-                this.noBreedRecords = !result;
+            .then((count) => {
+                this.breedRecordCount = count;
+                this.isChecked = true;
             })
             .catch(error => {
                 console.error('Error:', error);
-                this.hasBreedRecords = false;
-                this.noBreedRecords = true;
+                this.isChecked = false;
             });
         
         hasLocationRecords()
@@ -85,6 +91,17 @@ export default class AnimalShelterSettingsEditor extends LightningElement {
             .catch((error) => {
                 console.error('Error:', error);
                 this.shelterResultText = 'Error performing the check. ';
+            });
+
+        checkPathSettings()
+            .then((result) => {
+                this.results = Object.defineProperties(result).map(([Key, value]) => ({
+                    key,
+                    value,
+                }));
+            })
+            .catch((error) => {
+                this.error = 'Failed to check path settings: ' + error.body.message;
             });
             
         checkPageLayouts()

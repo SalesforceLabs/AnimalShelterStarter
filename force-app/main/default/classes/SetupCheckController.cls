@@ -1,9 +1,9 @@
 public with sharing class SetupCheckController {
 
     @AuraEnabled(cacheable=true)
-    public static Boolean hasBreedRecords() {
+    public static Integer hasBreedRecords() {
         if(Schema.SObjectType.animalshelters__Breed__c.isAccessible()){
-            return [SELECT COUNT() FROM animalshelters__Breed__c] > 0;
+            return [SELECT COUNT() FROM animalshelters__Breed__c];
             }
         return null;
     }
@@ -42,4 +42,44 @@ public with sharing class SetupCheckController {
     
     return null;
     }
+
+    @AuraEnabled(cacheable=true)
+    public static Map<String, String> checkPathSettings() {
+        Map<String, String> results = new Map<String, String>();
+        try {
+            MetadataService.MetadataPort service = createMetadataService();
+            
+            // Specify the object names to check
+            String[] objectNames = new String[] { 'Adoption_Profile__c', 'Adoption__c', 'Animal_Action__c' };
+            
+            // Retrieve metadata for the specified objects
+            MetadataService.ReadResult result = service.readMetadata('PathAssistant', objectNames);
+            
+            if (result != null && result.records != null) {
+                for (MetadataService.Metadata metadata : result.records) {
+                    MetadataService.PathAssistant path = (MetadataService.PathAssistant) metadata;
+
+                    if (path != null && path.active) {
+                        results.put(path.fullName, 'PASS');
+                    } else {
+                        results.put(path != null ? path.fullName : 'Unknown', 'FAIL');
+                    }
+                }
+            }
+        } catch (Exception e) {
+            results.put('Error', 'Failed to retrieve metadata: ' + e.getMessage());
+        }
+        return results;
+    }
+
+    private static MetadataService.MetadataPort createMetadataService() {
+        MetadataService.MetadataPort service = new MetadataService.MetadataPort();
+        service.SessionHeader = new MetadataService.SessionHeader_element();
+        service.SessionHeader.sessionId = UserInfo.getSessionId();
+        return service;
+    }
+
+
+
+
 }

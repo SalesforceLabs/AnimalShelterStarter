@@ -18,3 +18,8 @@
 .condition {
     --slds-c-badge-color-background: #fb5d2e;
 }
+
+.weight {
+    --slds-c-badge-text-color: white;
+    --slds-c-badge-color-background: #f27b0d;
+}

@@ -7,6 +7,7 @@
  * @Modification Log   :
  * Ver       Date            Author      		    Modification
  * 1.0    01/04/2024   Chris Rolfe (Salesforce)     Initial Version
+ * 1.1    05/02/2025   Chris Rolfe (Salesforce)     Added Over and Under Weight, Updated Vaccination to 30 days from Today
 **/
 public with sharing class AnimalBadgeController {
 

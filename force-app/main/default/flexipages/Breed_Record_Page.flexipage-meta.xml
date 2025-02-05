@@ -97,6 +97,18 @@
                 <identifier>RecordLatin_Name_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Ideal_Minimum_Weight_kgs__c</fieldItem>
+                <identifier>Recordanimalshelters__Ideal_Minimum_Weight__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Ideal_Maximum_Weight_kgs__c</fieldItem>
+                <identifier>Recordanimalshelters__Ideal_Maximum_Weight_kgs__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-364e5636-e37f-406b-a65a-3fc58ea55842</name>
         <type>Facet</type>
     </flexiPageRegions>

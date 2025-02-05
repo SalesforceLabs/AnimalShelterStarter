@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Is_Ideal_Target_Weight_field_Empty</name>
+        <label>Is Ideal/Target Weight field Empty</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>No Field Not Empty</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Field_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.animalshelters__Ideal_Target_Weight_kgs__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Ideal_Target_Weight</targetReference>
+            </connector>
+            <label>Yes Field Empty</label>
+        </rules>
+    </decisions>
+    <description>[Animal Shelter] If the Ideal/Target Weight field is empty, then update with Breeds data</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>calculateAverageWeight</name>
+        <dataType>Number</dataType>
+        <expression>({!$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Minimum_Weight_kgs__c} + {!$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Maximum_Weight_kgs__c}) / 2</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Animal - Ideal Weight Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Animal - Ideal Weight Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Uses data from Breeds object for Average Weight</description>
+        <name>Update_Ideal_Target_Weight</name>
+        <label>Update Ideal/Target Weight</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Ideal_Target_Weight_kgs__c</field>
+            <value>
+                <elementReference>calculateAverageWeight</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Ideal_Target_Weight_field_Empty</targetReference>
+        </connector>
+        <object>Animal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

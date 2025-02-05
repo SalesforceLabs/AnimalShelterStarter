@@ -36,6 +36,14 @@
                 <behavior>Readonly</behavior>
                 <field>Current_Weight_ibs__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Ideal_Target_Weight_kgs__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Ideal_Target_Weight_lbs__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

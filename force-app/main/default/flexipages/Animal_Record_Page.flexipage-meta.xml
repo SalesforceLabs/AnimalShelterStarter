@@ -270,7 +270,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Ideal_Target_Weight_kgs__c</fieldItem>
+                <fieldItem>Record.Average_Ideal_or_Target_Weight_kgs__c</fieldItem>
                 <identifier>Recordanimalshelters__Ideal_Target_Weight_kgs__cField</identifier>
             </fieldInstance>
         </itemInstances>
@@ -280,7 +280,17 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Ideal_Target_Weight_lbs__c</fieldItem>
+                <fieldItem>Record.Ideal_Weight_Range_kgs__c</fieldItem>
+                <identifier>Recordanimalshelters__Ideal_Weight_Range__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Average_Ideal_or_Target_Weight_lbs__c</fieldItem>
                 <identifier>Recordanimalshelters__Ideal_Target_Weight_lbs__cField</identifier>
             </fieldInstance>
         </itemInstances>
@@ -1430,7 +1440,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Ideal_Target_Weight_kgs__c</fieldItem>
+                <fieldItem>Record.Average_Ideal_or_Target_Weight_kgs__c</fieldItem>
                 <identifier>Recordanimalshelters_Ideal_Target_Weight_kgs_cField</identifier>
             </fieldInstance>
         </itemInstances>

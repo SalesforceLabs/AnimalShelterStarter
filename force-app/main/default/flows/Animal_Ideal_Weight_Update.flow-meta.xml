@@ -2,28 +2,36 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <decisions>
-        <name>Is_Ideal_Target_Weight_field_Empty</name>
-        <label>Is Ideal/Target Weight field Empty</label>
+        <description>Does the associated Breed record have Min and Max values</description>
+        <name>Does_Breed_have_Weight_Data</name>
+        <label>Does Breed have Weight Data</label>
         <locationX>182</locationX>
         <locationY>287</locationY>
-        <defaultConnectorLabel>No Field Not Empty</defaultConnectorLabel>
+        <defaultConnectorLabel>No Weight Data</defaultConnectorLabel>
         <rules>
-            <name>Yes_Field_Empty</name>
+            <name>Yes_Weight_Data_Available</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.animalshelters__Ideal_Target_Weight_kgs__c</leftValueReference>
+                <leftValueReference>$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Minimum_Weight_kgs__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Maximum_Weight_kgs__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Update_Ideal_Target_Weight</targetReference>
             </connector>
-            <label>Yes Field Empty</label>
+            <label>Yes Weight Data Available</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] If the Ideal/Target Weight field is empty, then update with Breeds data</description>
+    <description>[Animal Shelter] If the Average Ideal or Target Weight field is empty, and the associated Breed record has weight min and max data, then update with the average weight</description>
     <environments>Default</environments>
     <formulas>
         <name>calculateAverageWeight</name>
@@ -59,7 +67,7 @@
         <locationX>50</locationX>
         <locationY>395</locationY>
         <inputAssignments>
-            <field>Ideal_Target_Weight_kgs__c</field>
+            <field>Average_Ideal_or_Target_Weight_kgs__c</field>
             <value>
                 <elementReference>calculateAverageWeight</elementReference>
             </value>
@@ -70,8 +78,16 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Is_Ideal_Target_Weight_field_Empty</targetReference>
+            <targetReference>Does_Breed_have_Weight_Data</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Average_Ideal_or_Target_Weight_kgs__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>

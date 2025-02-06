@@ -72,12 +72,12 @@ public with sharing class AnimalBadgeController {
             //System.debug(badges);
         }
         if(Schema.sObjectType.animalshelters__Animal__c.isAccessible() && Schema.sObjectType.animalshelters__Breed__c.isAccessible() && Schema.sObjectType.animalshelters__Animal__c.fields.animalshelters__Current_Weight__c.isAccessible() && Schema.sObjectType.animalshelters__Breed__c.fields.animalshelters__Ideal_Minimum_Weight_kgs__c.isAccessible()) {
-        List<animalshelters__Animal__c> animal = [SELECT Id, animalshelters__Breed_Lookup__c, animalshelters__Current_Weight__c
+        List<animalshelters__Animal__c> animal = [SELECT Id, animalshelters__Breed_Lookup__c, animalshelters__Current_Weight__c, animalshelters__Average_Ideal_or_Target_Weight_kgs__c
                                                 FROM animalshelters__Animal__c
                                                 WHERE Id = :animalId
                                                 WITH SECURITY_ENFORCED
                                                 LIMIT 1];
-        System.debug(animal);
+        //System.debug(animal);
 
         
         List<animalshelters__Breed__c> breed = [SELECT Id, animalshelters__Ideal_Minimum_Weight_kgs__c, animalshelters__Ideal_Maximum_Weight_kgs__c
@@ -85,31 +85,24 @@ public with sharing class AnimalBadgeController {
                                                 WHERE Id = :animal[0].animalshelters__Breed_Lookup__c
                                                 WITH SECURITY_ENFORCED
                                                 LIMIT 1];
-        System.debug(breed);
+        //System.debug(breed);
         
         if(animal.size() > 0 && breed.size() > 0) {
             Decimal currentWeight = animal[0].animalshelters__Current_Weight__c;
             Decimal minWeight = breed[0].animalshelters__Ideal_Minimum_Weight_kgs__c;
             Decimal maxWeight= breed[0].animalshelters__Ideal_Maximum_Weight_kgs__c;
+            Decimal idealWeight = animal[0].animalshelters__Average_Ideal_or_Target_Weight_kgs__c;
 
-            if(currentWeight < minWeight) {
-                badges.put('UnderWeight', true);
-            } else if(currentWeight > maxWeight) {
-                badges.put('OverWeight', true);
+            if(currentWeight != null && minWeight != null && maxWeight!= null) {
+                if(currentWeight < minWeight) {
+                    badges.put('UnderWeight', true);
+                } else if(currentWeight > maxWeight) {
+                    badges.put('OverWeight', true);
+                }
             }
         }
-        
-        //Decimal currentWeight = animal.animalshelters__Current_Weight__c;
-        //Decimal minWeight = breed.animalshelters__Ideal_Minimum_Weight_kgs__c;
-        //Decimal maxWeight= breed.animalshelters__Ideal_Maximum_Weight_kgs__c;
-
-        //if(currentWeight < minWeight) {
-        //    badges.put('UnderWeight', true);
-        //} else if(currentWeight > maxWeight) {
-        //    badges.put('OverWeight', true);
-        //}
     }
-    System.debug(badges);
+    //System.debug(badges);
     return badges;
     }
 }

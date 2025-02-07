@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Average_Ideal_or_Target_Weight_kgs__c</fullName>
+    <description>The average ideal weight derived from the Min and Max values of the Breed, or target weight entered by the user</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The average ideal weight derived from the Min and Max values of the Breed, or target weight entered by the user</inlineHelpText>
+    <label>Average Ideal or Target Weight (kgs)</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

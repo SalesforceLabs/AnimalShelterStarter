@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ideal_Maximum_Weight_kgs__c</fullName>
+    <description>The ideal maximum weight in kgs for the Breed</description>
+    <externalId>false</externalId>
+    <label>Ideal Maximum Weight (kgs)</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

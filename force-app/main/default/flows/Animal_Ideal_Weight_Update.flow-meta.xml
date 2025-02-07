@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <description>Does the associated Breed record have Min and Max values</description>
+        <name>Does_Breed_have_Weight_Data</name>
+        <label>Does Breed have Weight Data</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>No Weight Data</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Weight_Data_Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Minimum_Weight_kgs__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Maximum_Weight_kgs__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Ideal_Target_Weight</targetReference>
+            </connector>
+            <label>Yes Weight Data Available</label>
+        </rules>
+    </decisions>
+    <description>[Animal Shelter] If the Average Ideal or Target Weight field is empty, and the associated Breed record has weight min and max data, then update with the average weight</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>calculateAverageWeight</name>
+        <dataType>Number</dataType>
+        <expression>({!$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Minimum_Weight_kgs__c} + {!$Record.animalshelters__Breed_Lookup__r.animalshelters__Ideal_Maximum_Weight_kgs__c}) / 2</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Animal - Ideal Weight Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Animal - Ideal Weight Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Uses data from Breeds object for Average Weight</description>
+        <name>Update_Ideal_Target_Weight</name>
+        <label>Update Ideal/Target Weight</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Average_Ideal_or_Target_Weight_kgs__c</field>
+            <value>
+                <elementReference>calculateAverageWeight</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_Breed_have_Weight_Data</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Average_Ideal_or_Target_Weight_kgs__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Animal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

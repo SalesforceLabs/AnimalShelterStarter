@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Average_Ideal_or_Target_Weight_lbs__c</fullName>
+    <description>Formula field to calculate the Average Ideal or Target Weight in lbs</description>
+    <externalId>false</externalId>
+    <formula>Average_Ideal_or_Target_Weight_kgs__c * 2.205</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculated from Average Ideal or Target Weight kgs</inlineHelpText>
+    <label>Average Ideal or Target Weight (lbs)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -745,6 +745,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Animal__c.Ideal_Target_Weight_kgs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Animal__c.Ideal_Target_Weight_lbs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Animal__c.IsCloned__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1016,6 +1026,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Breed__c.External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Breed__c.Ideal_Maximum_Weight_kgs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Breed__c.Ideal_Minimum_Weight_kgs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

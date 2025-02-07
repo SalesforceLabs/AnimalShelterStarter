@@ -7,6 +7,7 @@
  * @Modification Log   :
  * Ver       Date            Author      		    Modification
  * 1.0    01/04/2024   Chris Rolfe (Salesforce)     Initial Version
+ * 1.1    05/02/2025   Chris Rolfe (Salesforce)     Added Over and Under Weight, Updated Vaccination to 30 days from Today
 **/
 public with sharing class AnimalBadgeController {
 
@@ -18,7 +19,9 @@ public with sharing class AnimalBadgeController {
             'Nutrition' => false,
             'Exercise' => false,
             'Treatment' => false,
-            'Vaccination' => false
+            'Vaccination' => false,
+            'OverWeight' => false,
+            'UnderWeight' => false
         };
 
         // Check for Alerts with no end date
@@ -49,7 +52,7 @@ public with sharing class AnimalBadgeController {
 
         // Check for Action Records and RecordTypes
         if(Schema.sObjectType.animalshelters__Animal_Action__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Treatment_Type__c.isAccessible() && Schema.sObjectType.animalshelters__Animal_Action__c.fields.animalshelters__Action_Completed__c.isAccessible()) {
-        List<animalshelters__Animal_Action__c> actions = [SELECT Id, RecordType.Name, animalshelters__Treatment_Type__c
+        List<animalshelters__Animal_Action__c> actions = [SELECT Id, RecordType.Name, animalshelters__Treatment_Type__c, animalshelters__Date_Time_of_Action__c
                                                             FROM animalshelters__Animal_Action__c
                                                             WHERE animalshelters__Animal__c = :animalId
                                                             AND animalshelters__Action_Completed__c = false
@@ -60,7 +63,7 @@ public with sharing class AnimalBadgeController {
                     badges.put('Nutrition', true);
                 } else if(action.RecordType.Name == 'Exercise'){
                     badges.put('Exercise', true);
-                } else if(action.RecordType.Name == 'Treatment' && action.animalshelters__Treatment_Type__c == 'Vaccination'){
+                } else if(action.RecordType.Name == 'Treatment' && action.animalshelters__Treatment_Type__c == 'Vaccination' && action.animalshelters__Date_Time_of_Action__c >= System.today() && action.animalshelters__Date_Time_of_Action__c <= System.today().addDays(30) ){
                     badges.put('Vaccination', true);
                 } else if(action.RecordType.Name == 'Treatment' && action.animalshelters__Treatment_Type__c != 'Vaccination'){
                     badges.put('Treatment', true);
@@ -68,6 +71,38 @@ public with sharing class AnimalBadgeController {
             }
             //System.debug(badges);
         }
-        return badges;
+        if(Schema.sObjectType.animalshelters__Animal__c.isAccessible() && Schema.sObjectType.animalshelters__Breed__c.isAccessible() && Schema.sObjectType.animalshelters__Animal__c.fields.animalshelters__Current_Weight__c.isAccessible() && Schema.sObjectType.animalshelters__Breed__c.fields.animalshelters__Ideal_Minimum_Weight_kgs__c.isAccessible()) {
+        List<animalshelters__Animal__c> animal = [SELECT Id, animalshelters__Breed_Lookup__c, animalshelters__Current_Weight__c, animalshelters__Average_Ideal_or_Target_Weight_kgs__c
+                                                FROM animalshelters__Animal__c
+                                                WHERE Id = :animalId
+                                                WITH SECURITY_ENFORCED
+                                                LIMIT 1];
+        //System.debug(animal);
+
+        
+        List<animalshelters__Breed__c> breed = [SELECT Id, animalshelters__Ideal_Minimum_Weight_kgs__c, animalshelters__Ideal_Maximum_Weight_kgs__c
+                                                FROM animalshelters__Breed__c
+                                                WHERE Id = :animal[0].animalshelters__Breed_Lookup__c
+                                                WITH SECURITY_ENFORCED
+                                                LIMIT 1];
+        //System.debug(breed);
+        
+        if(animal.size() > 0 && breed.size() > 0) {
+            Decimal currentWeight = animal[0].animalshelters__Current_Weight__c;
+            Decimal minWeight = breed[0].animalshelters__Ideal_Minimum_Weight_kgs__c;
+            Decimal maxWeight= breed[0].animalshelters__Ideal_Maximum_Weight_kgs__c;
+            Decimal idealWeight = animal[0].animalshelters__Average_Ideal_or_Target_Weight_kgs__c;
+
+            if(currentWeight != null && minWeight != null && maxWeight!= null) {
+                if(currentWeight < minWeight) {
+                    badges.put('UnderWeight', true);
+                } else if(currentWeight > maxWeight) {
+                    badges.put('OverWeight', true);
+                }
+            }
+        }
+    }
+    //System.debug(badges);
+    return badges;
     }
 }

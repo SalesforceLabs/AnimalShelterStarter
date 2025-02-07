@@ -19,6 +19,12 @@
             <template if:true={badges.Vaccination}>
                 <lightning-badge label="Vaccination" class="vaccination"></lightning-badge>
             </template>
+            <template if:true={badges.OverWeight}>
+                <lightning-badge label="Over Weight" class="weight"></lightning-badge>
+            </template>
+            <template if:true={badges.UnderWeight}>
+                <lightning-badge label="Under Weight" class="weight"></lightning-badge>
+            </template>
         </div>
     </lightning-card>
 </template>

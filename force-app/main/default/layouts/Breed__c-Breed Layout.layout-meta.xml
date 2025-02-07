@@ -31,6 +31,14 @@
                 <behavior>Edit</behavior>
                 <field>Crossbreed__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Ideal_Minimum_Weight_kgs__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Ideal_Maximum_Weight_kgs__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

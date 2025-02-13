@@ -195,6 +195,10 @@
                 <behavior>Edit</behavior>
                 <field>Entry_Comments__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Adoption_Description__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>

@@ -1,7 +1,7 @@
 {
   "orgName": "Animal Shelter Starter - Dev Org",
   "edition": "Developer",
-  "features": ["Einstein1AIPlatform"],
+  "features": ["EINSTEIN1AIPLATFORM", "EINSTEINGPTPROMPTBUILDER", "STANDARDSALESFORCEPROMPTS"],
   "country": "GB",
   "settings": {
     "lightningExperienceSettings": {

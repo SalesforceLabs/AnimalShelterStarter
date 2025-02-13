@@ -1131,6 +1131,23 @@
                 <identifier>RecordRelated_Schemes__cField2</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Adoption_Description__c</fieldItem>
+                <identifier>Recordanimalshelters_Adoption_Description_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Animal_Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Available for Adoption</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-35319426-9181-44c2-bdc5-9f34034b066b</name>
         <type>Facet</type>
     </flexiPageRegions>

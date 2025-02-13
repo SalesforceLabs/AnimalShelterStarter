@@ -1,10 +1,10 @@
 public with sharing class GetAnimalsByDate {
 
     @InvocableMethod(label='Get Animals by Date' description='Returns a list of animals by date' Category='Animal')
-    public static List<animalshelters__Animals__c> getAnimalsByDateRange(List<Request> requests) {
+    public static List<animalshelters__Animal__c> getAnimalsByDateRange(List<Request> requests) {
 
         // Create a list to hold the results
-        List<animalshelters__Animals__c> results = new List<animalshelters__Animals__c>();
+        List<animalshelters__Animal__c> results = new List<animalshelters__Animal__c>();
 
         // Loop through each request to handle multiple inputs if needed
         for (Request request : requests) {

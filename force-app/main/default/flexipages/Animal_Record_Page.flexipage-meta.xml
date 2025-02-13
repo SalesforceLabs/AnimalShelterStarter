@@ -1134,6 +1134,10 @@
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
+                    <name>generativePromptTemplate</name>
+                    <value>Animal_Adoption_Description</value>
+                </fieldInstanceProperties>
+                <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>

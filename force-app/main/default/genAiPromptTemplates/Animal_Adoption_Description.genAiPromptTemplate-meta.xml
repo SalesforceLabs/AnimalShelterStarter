@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>1</activeVersion>
+    <description>Generates an adoption description for an animal based on the animals details</description>
+    <developerName>Animal_Adoption_Description</developerName>
+    <masterLabel>Animal Adoption Description</masterLabel>
+    <relatedEntity>animalshelters__Animal__c</relatedEntity>
+    <relatedField>animalshelters__Animal__c.Adoption_Description__c</relatedField>
+    <templateVersions>
+        <content>You are an Animal Adoption Manager for an animal welfare organisation
+
+Generate a summary to promote an animal that is available for adoption
+Start with the name of the Animal {!$Input:animalshelters__Animal__c.animalshelters__Animal_Name__c}.
+
+Add a paragraph providing the animals details which are {!$Input:animalshelters__Animal__c.animalshelters__TypeFromBreeds__c}, {!$Input:animalshelters__Animal__c.animalshelters__Species__c}, {!$Input:animalshelters__Animal__c.animalshelters__Age_Category__c}, {!$Input:animalshelters__Animal__c.animalshelters__Entry_Reason__c}, {!$Input:animalshelters__Animal__c.animalshelters__Gender__c}, {!$Input:animalshelters__Animal__c.animalshelters__Colour__c}, {!$Input:animalshelters__Animal__c.animalshelters__Secondary_Colour__c}
+
+Indicate the length of time the animal has been in the shelter, {!$Input:animalshelters__Animal__c.animalshelters__Total_Length_of_Stay_in_Shelter_Days__c}
+
+Add a sentence of any behaviours {!$Input:animalshelters__Animal__c.animalshelters__Behaviours__c} and rehoming requirements {!$Input:animalshelters__Animal__c.animalshelters__Rehoming_Requirements__c}
+
+
+&quot;&quot;&quot;Generate a summary in one paragraph no longer than 200 words.&quot;&quot;&quot;
+&quot;&quot;&quot;If the length of stay is &lt; 5 days then don&apos;t mention it&quot;&quot;&quot;
+&quot;&quot;&quot;If the length of stay is &gt; 30 days then suggest that there is more urgency to the adoption&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://animalshelters__Animal__c</definition>
+            <referenceName>Input:animalshelters__Animal__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

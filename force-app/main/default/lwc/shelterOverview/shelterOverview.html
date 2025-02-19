@@ -1,0 +1,74 @@
+<template>
+        <lightning-card title="Shelter Overview" icon-name="standard:dashboard_component">
+
+
+
+            <div class="slds-grid slds-gutters slds-var-m-bottom_medium">
+                <div class="slds-col">
+                    <lightning-combobox
+                        label="Filter by Site"
+                        options={sites}
+                        value={selectedSite}
+                        onchange={handleSiteChange}
+                        class="slds-var-m-bottom_small">
+                    </lightning-combobox>
+                </div>
+
+                <div class="slds-col">
+                    <lightning-combobox
+                        label="Filter by Block"
+                        options={blocks}
+                        value={selectedBlock}
+                        onchange={handleBlockChange}
+                        disabled={isBlockDisabled}
+                        class="slds-var-m-bottom_small">
+                    </lightning-combobox>
+                </div>
+            </div>
+
+
+        <!-- Hierarchy Display -->
+        <div class="slds-grid slds-wrap">
+            <template for:each={filteredLocations} for:item="site">
+                <div key={site.id} class="slds-box slds-theme_shade slds-var-m-around_small">
+                    <p class="slds-text-title_caps">{site.name} (Site)</p>
+
+                    <template if:true={site.children}>
+                        <template for:each={site.children} for:item="block">
+                            <div key={block.id} class="slds-box slds-theme_info slds-var-m-left_large">
+                                <p class="slds-text-title_caps">{block.name} (Block)</p>
+
+                                <template if:true={block.children}>
+                                    <template for:each={block.children} for:item="sub">
+                                        <div key={sub.id} class="slds-box slds-theme_warning slds-var-m-left_large">
+                                            <p class="slds-text-title_caps">{sub.name} ({sub.recordType})</p>
+
+                                            <template if:true={sub.children}>
+                                                <template for:each={sub.children} for:item="unit">
+                                                    <div key={unit.id} class="slds-box slds-theme_success slds-var-m-left_large">
+                                                        <p class="slds-text-title_caps">{unit.name} (Unit)</p>
+
+                                                        <template if:true={unit.animals}>
+                                                            <div class="slds-var-m-top_small">
+                                                                <template for:each={unit.animals} for:item="animal">
+                                                                    <span key={animal.Id} class="slds-badge slds-theme_inverse">
+                                                                        {animal.animalshelters__Animal_Name__c}
+                                                                    </span>
+                                                                </template>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </template>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</lightning-card>
+</template>

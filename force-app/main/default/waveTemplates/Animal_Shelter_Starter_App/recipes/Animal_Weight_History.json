@@ -1,0 +1,284 @@
+{
+  "name" : "Animal_Weight_History",
+  "label" : "Animal Weight History",
+  "scheduleExpression" : null,
+  "publishingTarget" : "DATASET",
+  "format" : "R3",
+  "scheduleType" : null,
+  "recipeDefinition" : {
+    "version" : "63.0",
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "ParentId",
+            "CreatedDate",
+            "Field",
+            "NewValue"
+          ],
+          "dataset" : {
+            "type" : "connectedDataset",
+            "label" : "animalshelters__Animal__History",
+            "connectionName" : "SFDC_LOCAL",
+            "sourceObjectName" : "animalshelters__Animal__History"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET1" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "Id",
+            "animalshelters__Animal_Name__c",
+            "Target_Weight_kgs__c"
+          ],
+          "dataset" : {
+            "type" : "connectedDataset",
+            "label" : "animalshelters__Animal__c",
+            "connectionName" : "SFDC_LOCAL",
+            "sourceObjectName" : "animalshelters__Animal__c"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "FILTER0" : {
+        "action" : "filter",
+        "sources" : [
+          "LOAD_DATASET0"
+        ],
+        "parameters" : {
+          "filterExpressions" : [
+            {
+              "type" : "TEXT",
+              "field" : "Field",
+              "operator" : "EQUAL",
+              "operands" : [
+                "animalshelters__Current_Weight__c"
+              ]
+            }
+          ]
+        }
+      },
+      "TO_MEASURE0" : {
+        "action" : "typeCast",
+        "sources" : [
+          "FILTER0"
+        ],
+        "schema" : {
+          "fields" : [
+            {
+              "name" : "NewValue_to_measure",
+              "newProperties" : {
+                "name" : "NewValue"
+              }
+            }
+          ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "NewValue"
+            ]
+          }
+        },
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "NewValue",
+              "newProperties" : {
+                "label" : "New Value",
+                "name" : "NewValue_to_measure",
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 2,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS0" : {
+        "action" : "schema",
+        "sources" : [
+          "EDIT_ATTRIBUTES0"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "SELECT",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "ParentId",
+              "CreatedDate",
+              "NewValue"
+            ]
+          }
+        }
+      },
+      "EDIT_ATTRIBUTES0" : {
+        "action" : "schema",
+        "sources" : [
+          "TO_MEASURE0"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "CreatedDate",
+              "newProperties" : {
+                "label" : "Created Date",
+                "name" : "CreatedDate",
+                "typeProperties" : {
+                  "type" : "DATETIME",
+                  "format" : "dd/MM/yyyy HH:mm:ss"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "JOIN0" : {
+        "action" : "join",
+        "sources" : [
+          "DROP_FIELDS0",
+          "LOAD_DATASET1"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [ ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "ParentId"
+          ],
+          "rightQualifier" : "animalshel",
+          "rightKeys" : [
+            "Id"
+          ]
+        }
+      },
+      "OUTPUT0" : {
+        "action" : "save",
+        "sources" : [
+          "JOIN0"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "Animal Weight History",
+            "name" : "${App.Datasets.Animal_Weight_History_tp.Name}"
+          },
+          "measuresToCurrencies" : [ ]
+        }
+      }
+    },
+    "ui" : {
+      "nodes" : {
+        "LOAD_DATASET0" : {
+          "label" : "animalshelters__Animal__History",
+          "type" : "LOAD_DATASET",
+          "top" : 112,
+          "left" : 112,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET1" : {
+          "label" : "animalshelters__Animal__c",
+          "type" : "LOAD_DATASET",
+          "top" : 252,
+          "left" : 112,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "FILTER0" : {
+          "label" : "Filter 0",
+          "type" : "FILTER",
+          "top" : 112,
+          "left" : 252
+        },
+        "TRANSFORM0" : {
+          "label" : "Transform 0",
+          "type" : "TRANSFORM",
+          "top" : 112,
+          "left" : 392,
+          "graph" : {
+            "TO_MEASURE0" : {
+              "label" : "To Number"
+            },
+            "DROP_FIELDS0" : {
+              "label" : "Drop Columns"
+            },
+            "EDIT_ATTRIBUTES0" : {
+              "label" : "Edit Attributes"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "EDIT_ATTRIBUTES0",
+              "target" : "DROP_FIELDS0"
+            },
+            {
+              "source" : "TO_MEASURE0",
+              "target" : "EDIT_ATTRIBUTES0"
+            }
+          ]
+        },
+        "JOIN0" : {
+          "label" : "Join 0",
+          "type" : "JOIN",
+          "top" : 112,
+          "left" : 532
+        },
+        "OUTPUT0" : {
+          "label" : "Output 0",
+          "type" : "OUTPUT",
+          "top" : 112,
+          "left" : 672
+        }
+      },
+      "connectors" : [
+        {
+          "source" : "LOAD_DATASET0",
+          "target" : "FILTER0"
+        },
+        {
+          "source" : "FILTER0",
+          "target" : "TRANSFORM0"
+        },
+        {
+          "source" : "TRANSFORM0",
+          "target" : "JOIN0"
+        },
+        {
+          "source" : "LOAD_DATASET1",
+          "target" : "JOIN0"
+        },
+        {
+          "source" : "JOIN0",
+          "target" : "OUTPUT0"
+        }
+      ],
+      "hiddenColumns" : [ ]
+    },
+    "runMode" : "full"
+  },
+  "lastTime" : null
+}

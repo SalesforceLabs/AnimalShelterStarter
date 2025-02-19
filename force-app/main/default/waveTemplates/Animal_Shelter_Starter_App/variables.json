@@ -1,0 +1,110 @@
+{
+  "Overrides" : {
+    "label" : "Overrides",
+    "description" : "Internal configuration to allow asset creation overrides, not to be displayed in UI.",
+    "defaultValue" : {
+      "createAllDashboards" : true,
+      "createAllComponents" : true,
+      "createAllLenses" : true,
+      "createAllExternalFiles" : true,
+      "createDataflow" : true,
+      "createAllDatasetFiles" : true,
+      "createAllImages" : true,
+      "createAllRecipes" : true,
+      "createAllDataTransforms" : true
+    },
+    "initialValue" : null,
+    "required" : true,
+    "excludeSelected" : false,
+    "excludes" : [ ],
+    "variableType" : {
+      "required" : [
+        "createAllDashboards",
+        "createAllComponents",
+        "createAllLenses",
+        "createAllExternalFiles",
+        "createDataflow",
+        "createAllDatasetFiles",
+        "createAllImages",
+        "createAllRecipes",
+        "createAllDataTransforms"
+      ],
+      "type" : "ObjectType",
+      "properties" : {
+        "createAllDashboards" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createAllComponents" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createAllLenses" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createAllExternalFiles" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createDataflow" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createAllDatasetFiles" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createAllImages" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createAllRecipes" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        },
+        "createAllDataTransforms" : {
+          "type" : "BooleanType",
+          "enums" : [
+            true,
+            false
+          ],
+          "enumsLabels" : null
+        }
+      },
+      "strictValidation" : true
+    }
+  }
+}

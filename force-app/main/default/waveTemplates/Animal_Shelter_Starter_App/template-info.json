@@ -1,0 +1,70 @@
+{
+  "templateType" : "app",
+  "label" : "Animal Shelter Starter App",
+  "name" : "Animal_Shelter_Starter_App",
+  "description" : "",
+  "assetVersion" : 63.0,
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "template-to-app-rules.json"
+    },
+    {
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
+    }
+  ],
+  "releaseInfo" : {
+    "templateVersion" : "1.0",
+    "notesFile" : "releaseNotes.html"
+  },
+  "folderDefinition" : "folder.json",
+  "externalFiles" : [ ],
+  "lenses" : [ ],
+  "dashboards" : [
+    {
+      "label" : "Animal Weight",
+      "name" : "Animal_Weight_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Animal_Weight.json"
+    }
+  ],
+  "components" : [ ],
+  "dataTransforms" : [ ],
+  "eltDataflows" : [ ],
+  "recipes" : [
+    {
+      "label" : "Animal Weight History",
+      "name" : "Animal_Weight_History",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/Animal_Weight_History.json",
+      "executeCondition" : "CreateSyncExecute"
+    }
+  ],
+  "datasetFiles" : [
+    {
+      "label" : "Animal Weight History",
+      "name" : "Animal_Weight_History_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/Animal_Weight_History_XMD.json"
+    }
+  ],
+  "dataModelObjects" : [ ],
+  "storedQueries" : [ ],
+  "mlSetups" : [ ],
+  "mlSetupGroups" : [ ],
+  "imageFiles" : [ ],
+  "extendedTypes" : { },
+  "templateDependencies" : [ ],
+  "icons" : {
+    "appBadge" : {
+      "name" : "16.png"
+    },
+    "templateBadge" : {
+      "name" : "default.png"
+    },
+    "templatePreviews" : [ ]
+  }
+}

@@ -14,7 +14,6 @@ Please note that you must have access to the managed package namespace before yo
 
 - VSCode > https://code.visualstudio.com/download
 - Salesforce Extension Pack > https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode
-- CumulusCI > https://cumulusci.readthedocs.io/en/latest/get-started.html
 - Salesforce DX > https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm
 - GitHub Desktop > https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop
 
@@ -37,19 +36,3 @@ Before you start development of a new fix or feature, ensure you have created a 
 5. Switch to GitHub Desktop and provide details for the changes and then push the changes back to GitHub.
 6. Once you are happy with your changes, re-open the GitHub page and create a Pull Request for your feature branch back to the master branch.
 7. Done
-
-Note: If you don't use CumulusCI then you will need to assign the Animal Shelter Starter permission set to the user when you first login to the org.
-
-### Using SalesforceDX and CumulusCI
-
-It can be useful to have access to the suite of tools within CumulusCI. To make use of these you need to import the SalesforceDX org to CumulusCI by running this command in the terminal:
-
-`cci org import sfdx_alias_here dev`
-
-In the example command above, replace sfdx_alias_here with the alias for the org. This often defaults AnimalShelterStarter and then the second argument (dev in the example) can be set to whatever you want to use as the alias for cci, dev is often the default but you can change it anything.
-
-Once the command has run, you can then launch tasks and flows via CumulusCI. One useful which has been added is the post_config flow which can be run using:
-
-`cci flow run post_config --org cci_org_alias_here`
-
-Replace the cci_org_alias_here with the alias you chose above when importing the SalesforceDX org to CumulusCI. This flow will assign the Animal Shelter Starter permission set and load in some sample data.

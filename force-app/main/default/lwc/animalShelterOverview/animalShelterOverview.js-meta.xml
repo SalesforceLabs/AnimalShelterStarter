@@ -2,6 +2,8 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
     <isExposed>true</isExposed>
+    <masterLabel>Animal Shelter Overview</masterLabel>
+    <description>Displays all Units filtered by Site and/or Block, along the Animals basic details</description>
     <targets>
         <target>lightning__AppPage</target>
     </targets>

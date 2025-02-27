@@ -35,7 +35,7 @@ export default class AnimalShelterOverview extends LightningElement {
             .catch(error => console.log('Error fetching blocks', error));
     }
 
-    
+
     handleBlockChange(event) {
         this.selectedBlock = event.detail.value;
         this.units = [];
@@ -46,17 +46,24 @@ export default class AnimalShelterOverview extends LightningElement {
 
                 getAnimalsByUnit({ unitIds })
                     .then(animalMap => {
-                        this.units = units.map(unit => ({
-                            ...unit,
-                            animals: (animalMap[unit.Id] || []).map((animal, index, arr) => ({
+                        this.units = units.map(unit => {
+                            const animals = animalMap[unit.Id] || [];
+                            return {
+                                ...unit,
+                                animals: animals.map((animal, index, arr) => ({
                                 ...animal,
                                 hasNext: index < arr.length - 1,
                                 dividerKey: `${animal.Id}_divider`
-                            }))
-                        }));
-                    })
+                            })),
+                            boxClass: animals.length ===0
+                                ? 'slds-box slds-theme_shade slds-var-p-around_medium slds-var-m-bottom_medium'
+                                : 'slds-box slds-theme_default slds-var-p-around_medium slds-var-m-bottom_medium'
+                        };
+                    });
+                })
                     .catch(error => console.log('Error fetching animals', error));
             })
             .catch(error => console.log('Error fetching units', error));
     }
+
 }

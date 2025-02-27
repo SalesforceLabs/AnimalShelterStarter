@@ -1,7 +1,7 @@
 import { LightningElement, wire, track } from 'lwc';
 import getSites from '@salesforce/apex/AnimalShelterOverviewController.getSites';
 import getBlocks from '@salesforce/apex/AnimalShelterOverviewController.getBlocks';
-import getUnits from '@salesforce/apex/AnimalShelterOverviewController.getUnits';
+import getUnitsAndSubBlockUnits from '@salesforce/apex/AnimalShelterOverviewController.getUnitsAndSubBlockUnits';
 import getAnimalsByUnit from '@salesforce/apex/AnimalShelterOverviewController.getAnimalsByUnit';
 
 export default class AnimalShelterOverview extends LightningElement {
@@ -20,6 +20,8 @@ export default class AnimalShelterOverview extends LightningElement {
 
         }
     }
+
+
     handleSiteChange(event) {
         this.selectedSite = event.detail.value;
         this.selectedBlock = null;
@@ -31,13 +33,14 @@ export default class AnimalShelterOverview extends LightningElement {
                 this.blockOptions = blocks.map(block => ({ label: block.animalshelters__Name__c, value: block.Id}));
             })
             .catch(error => console.log('Error fetching blocks', error));
-        }
+    }
 
+    
     handleBlockChange(event) {
         this.selectedBlock = event.detail.value;
         this.units = [];
 
-        getUnits({ blockId: this.selectedBlock })
+        getUnitsAndSubBlockUnits({ blockId: this.selectedBlock })
             .then(units => {
                 const unitIds = units.map(unit => unit.Id);
 

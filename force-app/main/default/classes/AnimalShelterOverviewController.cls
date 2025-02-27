@@ -13,10 +13,18 @@ public with sharing class AnimalShelterOverviewController {
     }
 
     @AuraEnabled(cacheable=true)
-    public static List<animalshelters__Locations__c> getUnits(String blockId) {
+    public static List<animalshelters__Locations__c> getUnitsAndSubBlockUnits (String blockId) {
+        Set<Id> unitParentIds = new Set<Id>{blockId};  //Include the selected block as well
+
+
+        for (animalshelters__Locations__c subBlock : [SELECT Id FROM animalshelters__Locations__c WHERE animalshelters__Parent_Block__c = :blockId AND RecordType.DeveloperName = 'SubBlock']){
+            unitParentIds.add(subBlock.Id);
+        }
+
+        //Get all Units under the selected Block and SubBlocks
         return [SELECT Id, animalshelters__Name__c FROM animalshelters__Locations__c 
-                WHERE animalshelters__Parent_Block__c = :blockId AND RecordType.DeveloperName = 'Unit'
-                ORDER BY animalshelters__Name__c];
+                    WHERE animalshelters__Parent_Block__c IN :unitParentIds AND RecordType.DeveloperName = 'Unit'
+                    ORDER BY animalshelters__Name__c];
     }
 
     @AuraEnabled(cacheable=true)
@@ -30,7 +38,8 @@ public with sharing class AnimalShelterOverviewController {
         List<animalshelters__Movement__c> movements = [SELECT Id, animalshelters__Animal__c, animalshelters__Location__c, 
         animalshelters__Animal__r.animalshelters__Animal_Name__c, animalshelters__Animal__r.animalshelters__Animal_Status__c
                                         FROM animalshelters__Movement__c 
-                                        WHERE animalshelters__Location__c IN :unitIds];
+                                        WHERE animalshelters__Location__c IN :unitIds
+                                        ORDER BY animalshelters__Animal__r.animalshelters__Animal_Name__c];  // Sort by animal name
 
         for (animalshelters__Movement__c movement : movements) {
             if (!unitAnimalMap.containsKey(movement.animalshelters__Location__c)) {

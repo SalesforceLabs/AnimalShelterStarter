@@ -5,7 +5,8 @@
   "features": ["Einstein1AIPlatform"],
   "settings": {
     "lightningExperienceSettings": {
-      "enableS1DesktopEnabled": true
+      "enableS1DesktopEnabled": true,
+      "enableLightningPreviewPref": true
     },
     "chatterSettings": {
       "enableChatter": true

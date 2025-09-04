@@ -2,7 +2,7 @@
   "orgName": "Animal Shelter Starter - Dev Org",
   "edition": "Developer",
   "country": "GB",
-  "features": ["EnableSetPasswordInApi","EINSTEIN1AIPLATFORM", "EINSTEINGPTPROMPTBUILDER", "STANDARDSALESFORCEPROMPTS", "DevelopmentWave"],
+  "features": ["Einstein1AIPlatform"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true,

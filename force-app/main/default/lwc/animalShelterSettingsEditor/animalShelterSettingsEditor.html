@@ -2,8 +2,9 @@
   @description       :
   @author            : Stewart Anderson
   @group             :
-  @last modified on  : 01-15-2024
-  @last modified by  : Stewart Anderson
+  @last modified on  : 08-15-2025
+  @last modified by  : Chris Rolfe
+  @Change Log        : Added Movement Trigger Enabled setting in other section
 -->
 <template>
     <template if:true={settings_data}>
@@ -249,7 +250,7 @@
                         </lightning-layout>
                     </lightning-tab>
                     <lightning-tab label="Other">
-                        <lightning-layout pull-to-boundary="medium">
+                        <lightning-layout multiple-rows="false">
                             <lightning-layout-item flexibility="auto" padding="around-small">
                                 <p><b>Breeds Migration Complete Setting</b></p>
                                 <p>In 2022 we moved away from the previous picklist options for Breeds. This checkbox
@@ -262,6 +263,20 @@
                                         checked={settings_data.animalshelters__Breeds_Migration_Complete__c}
                                         onchange={handleBooleanChange}
                                         data-field="animalshelters__Breeds_Migration_Complete__c"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows="false">
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <p><b>Movements Trigger Enabled</b></p>
+                                <p>When checked the trigger on the Movements object is enabled.</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" padding="around-small">
+                                <div class="slds-form-element__control slds-float_right">
+                                    <lightning-input type="toggle" label="Enable Movement Trigger"
+                                        checked={settings_data.animalshelters__Movement_Trigger_Enabled__c}
+                                        onchange={handleBooleanChange}
+                                        data-field="animalshelters__Movement_Trigger_Enabled__c"></lightning-input>
                                 </div>
                             </lightning-layout-item>
                         </lightning-layout>

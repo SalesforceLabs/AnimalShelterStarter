@@ -1,0 +1,86 @@
+<template>
+    <lightning-card title="Image Gallery" icon-name="utility:image">
+        <div if:true={hasImages} class="slds-p-around_medium carousel-container">
+            <lightning-carousel 
+                class="carousel" 
+                disable-auto-scroll="true"
+                disable-auto-refresh="true">
+                <template for:each={imageData} for:item="image" for:index="index">
+                    <lightning-carousel-image
+                        key={image.contentVersionId}
+                        src={image.downloadUrl}
+                        header={image.title}
+                        description={image.description}
+                        alternative-text={image.title}
+                        onclick={handleImageClick}
+                        data-image-id={image.contentVersionId}>
+                    </lightning-carousel-image>
+                </template>
+            </lightning-carousel>
+        </div>
+        
+        <div if:false={hasImages} class="slds-p-around_medium slds-text-align_center">
+            <lightning-icon icon-name="utility:image" size="large" class="slds-m-bottom_small"></lightning-icon>
+            <p class="slds-text-color_weak">No images found for this record</p>
+        </div>
+        
+        <div class="slds-p-around_small slds-text-align_center">
+            <lightning-file-upload
+                label="Upload Image"
+                multiple="false"
+                name="imageUploader"
+                accept={acceptedFormats}
+                record-id={recordId}
+                onuploadfinished={handleUploadFinished}
+                disabled={isLoading}>
+            </lightning-file-upload>
+        </div>
+        
+        <div if:true={isLoading} class="slds-p-around_medium slds-text-align_center">
+            <lightning-spinner alternative-text="Loading images..." size="medium"></lightning-spinner>
+        </div>
+    </lightning-card>
+
+    <!-- Modal for expanded image view -->
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open large-modal" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        onclick={closeModal}
+                        alternative-text="Close"
+                        variant="bare-inverse"
+                        class="slds-modal__close">
+                    </lightning-button-icon>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                        {selectedImage.title}
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="modal-image-container">
+                        <img 
+                            src={selectedImage.downloadUrl} 
+                            alt={selectedImage.title}
+                            class="modal-image" />
+                    </div>
+                    <div class="slds-m-top_medium slds-text-align_center">
+                        <lightning-button
+                            variant="brand"
+                            label="Download"
+                            icon-name="utility:download"
+                            onclick={handleModalDownload}
+                            class="slds-m-right_small">
+                        </lightning-button>
+                        <lightning-button
+                            variant="neutral"
+                            label="Close"
+                            onclick={closeModal}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -2,6 +2,7 @@
   "orgName": "Animal Shelter Starter - Dev Org",
   "edition": "Developer",
   "country": "GB",
+  "features": ["Einstein1AIPlatform"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true,
@@ -24,6 +25,9 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
+    },
+    "einsteinGptSettings" : {
+      "enableEinsteinGptPlatform" : true
     }
   }
 }

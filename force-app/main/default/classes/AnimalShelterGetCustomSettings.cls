@@ -37,6 +37,7 @@ public with sharing class AnimalShelterGetCustomSettings {
         animal_settings.animalshelters__Default_Animal_Name_Prefix__c = '';
         animal_settings.animalshelters__What3Words_API_Key__c = '';
         animal_settings.animalshelters__microchip_api_Token__c = '';
+        animal_settings.animalshelters__Movement_Trigger_Enabled__c = true;
 
         Database.SaveResult sr = Database.insert(animal_settings, false, AccessLevel.USER_MODE);
         if (sr.isSuccess()) {

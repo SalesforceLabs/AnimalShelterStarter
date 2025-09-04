@@ -2,6 +2,7 @@ public with sharing class ASCS_MovementTriggerHandler {
     // Method to handle logic after insert
 
     public static void handleInsert(Map<Id, animalshelters__Movement__c> newMap) {
+        System.debug('ASCS_MovementTriggerHandler.handleInsert called with ' + newMap.size() + ' movements');
 
         // Check if the allocation toggle is set:
         // Return out if allocation enabled is false
@@ -20,6 +21,7 @@ public with sharing class ASCS_MovementTriggerHandler {
             locationList.add(movement.animalshelters__Location__c);
             }
         }
+        System.debug('Calling updateMovementCount with ' + locationList.size() + ' locations: ' + locationList);
         updateMovementCount(locationList);
     }
 
@@ -58,6 +60,7 @@ public with sharing class ASCS_MovementTriggerHandler {
 
     // Method to pass in locationId List that updates the allocation based on movement count
     public static void updateMovementCount(List<String> locationIdStringList) {
+        System.debug('updateMovementCount called with locations: ' + locationIdStringList);
         Map<String, Integer> movementCount = new Map<String, Integer>();
         List<animalshelters__Locations__c> locationList = new List<animalshelters__Locations__c>();
 

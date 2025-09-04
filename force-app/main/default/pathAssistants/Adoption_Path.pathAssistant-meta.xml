@@ -29,5 +29,9 @@
         <fieldNames>Trial_End_Date_Time__c</fieldNames>
         <picklistValueName>Trial Period</picklistValueName>
     </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Check for Upcoming Vaccinations&lt;/li&gt;&lt;li&gt;Review Conditions&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Veterinary Check</picklistValueName>
+    </pathAssistantSteps>
     <recordTypeName>__MASTER__</recordTypeName>
 </PathAssistant>

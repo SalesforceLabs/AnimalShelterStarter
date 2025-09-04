@@ -81,6 +81,21 @@
                 <default>false</default>
                 <label>Happy being handled</label>
             </value>
+            <value>
+                <fullName>Timid</fullName>
+                <default>false</default>
+                <label>Timid</label>
+            </value>
+            <value>
+                <fullName>Curious</fullName>
+                <default>false</default>
+                <label>Curious</label>
+            </value>
+            <value>
+                <fullName>Playful</fullName>
+                <default>false</default>
+                <label>Playful</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
     <visibleLines>4</visibleLines>

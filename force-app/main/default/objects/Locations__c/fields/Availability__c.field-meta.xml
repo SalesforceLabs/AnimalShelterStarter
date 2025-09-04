@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>If(  Capacity__c !=0, Capacity__c - Allocation__c, 0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Availability</label>
+    <label>Available Spaces</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

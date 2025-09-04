@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Default_Animal_Name_Prefix__c</fullName>
+    <deprecated>false</deprecated>
     <description>[Animal Shelter] Set a prefix for the Animal Name if using the default animal name creation, i.e. Site name</description>
     <externalId>false</externalId>
     <inlineHelpText>Set a prefix for the Animal Name if using the default animal name creation, i.e. Site name</inlineHelpText>

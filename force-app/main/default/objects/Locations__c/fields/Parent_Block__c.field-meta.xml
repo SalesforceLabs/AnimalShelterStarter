@@ -10,7 +10,7 @@
         <filterItems>
             <field>Locations__c.RecordTypeId</field>
             <operation>equals</operation>
-            <value>Block, Site</value>
+            <value>Block, Site, SubBlock</value>
         </filterItems>
         <isOptional>true</isOptional>
     </lookupFilter>

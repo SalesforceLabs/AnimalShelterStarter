@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Owner</fullName>
+        <default>false</default>
+        <label>Owner</label>
+    </customValue>
+    <customValue>
+        <fullName>Trainer</fullName>
+        <default>false</default>
+        <label>Trainer</label>
+    </customValue>
+    <customValue>
+        <fullName>Foster</fullName>
+        <default>false</default>
+        <label>Foster</label>
+    </customValue>
+    <customValue>
+        <fullName>Carer</fullName>
+        <default>false</default>
+        <label>Carer</label>
+    </customValue>
+    <customValue>
+        <fullName>Parent/Child</fullName>
+        <default>false</default>
+        <label>Parent/Child</label>
+    </customValue>
+    <customValue>
+        <fullName>Sibling</fullName>
+        <default>false</default>
+        <label>Sibling</label>
+    </customValue>
+    <customValue>
+        <fullName>Breeder</fullName>
+        <default>false</default>
+        <label>Breeder</label>
+    </customValue>
+    <customValue>
+        <fullName>Finder</fullName>
+        <default>false</default>
+        <label>Finder</label>
+    </customValue>
+    <description>[Animal Shelter] List of Relationships between Animal-to-Animal and Contact-to-Animal</description>
+    <masterLabel>Animal Relationships</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

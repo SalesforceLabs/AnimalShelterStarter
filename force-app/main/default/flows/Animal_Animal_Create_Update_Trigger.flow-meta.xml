@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
-    <description>[Animal Shelter] Trigger on Animal record to replace Process Builder</description>
+    <description>[Animal Shelter] Trigger on Animal record to replace Process Builder, and trigger Platform Event</description>
     <environments>Default</environments>
     <interviewLabel>Animal - Animal Create/Update Trigger {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -25,11 +25,34 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Platfrom_Event</name>
+        <label>Create Platfrom Event</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Call_Length_of_Stay_Subflow</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Record_ID__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Update_Type__c</field>
+            <value>
+                <stringValue>Animal</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Animal_Update_Event__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Call_Length_of_Stay_Subflow</targetReference>
+            <targetReference>Create_Platfrom_Event</targetReference>
         </connector>
         <object>Animal__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
@@ -40,7 +63,7 @@
         <name>Call_Length_of_Stay_Subflow</name>
         <label>Call Length of Stay Subflow</label>
         <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationY>431</locationY>
         <flowName>Animal_Length_of_Stay_Calculation</flowName>
         <inputAssignments>
             <name>varAnimalId</name>

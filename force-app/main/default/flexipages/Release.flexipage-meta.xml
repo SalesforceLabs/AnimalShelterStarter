@@ -46,8 +46,8 @@
                     <name>obj</name>
                     <value>animalshelters__Movement__c</value>
                 </componentInstanceProperties>
-                <componentName>LocationMap</componentName>
-                <identifier>LocationMap</identifier>
+                <componentName>lightningLocationMap</componentName>
+                <identifier>animalshelters_lightningLocationMap</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

@@ -10,7 +10,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>descTextField</name>
-                    <value>animalshelters__Type__c</value>
+                    <value>animalshelters__TypeFromBreeds__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>latField</name>
@@ -22,7 +22,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>mapTitle</name>
-                    <value>Animal Locations</value>
+                    <value>Animal Locations Found At</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>nameField</name>
@@ -32,8 +32,8 @@
                     <name>obj</name>
                     <value>animalshelters__Animal__c</value>
                 </componentInstanceProperties>
-                <componentName>LocationMap</componentName>
-                <identifier>LocationMap</identifier>
+                <componentName>lightningLocationMap</componentName>
+                <identifier>animalshelters_lightningLocationMap</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

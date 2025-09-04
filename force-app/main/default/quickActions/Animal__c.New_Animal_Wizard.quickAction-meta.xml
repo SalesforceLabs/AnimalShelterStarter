@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>[Animal Shelter Starter Pack] New Animal Wizard</description>
+    <flowDefinition>Animal_Animal_Entry_Flow</flowDefinition>
+    <label>New Animal Wizard</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

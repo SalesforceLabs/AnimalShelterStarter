@@ -1,0 +1,21 @@
+<template>
+    <lightning-card icon-name="action:map" title={mapTitle}>
+        <lightning-input
+            type="toggle"
+            label="Enable/Disable List view"
+            name="lvToggle"
+            checked={checked}
+            onchange={handleToggleChange}>
+        </lightning-input>
+
+        <template if:true={mapMarkers.length}>
+            <lightning-map
+                map-markers={mapMarkers}
+                zoom-level={zoomLevel}
+                markers-title={markersTitle}
+                show-footer={showFooter}
+                list-view={listView}>
+            </lightning-map>
+        </template>
+    </lightning-card>
+</template>

@@ -77,6 +77,21 @@
                 <default>false</default>
                 <label>Owner passed or moved out of home address</label>
             </value>
+            <value>
+                <fullName>Born in Shelter</fullName>
+                <default>false</default>
+                <label>Born in Shelter</label>
+            </value>
+            <value>
+                <fullName>Cruelty</fullName>
+                <default>false</default>
+                <label>Cruelty</label>
+            </value>
+            <value>
+                <fullName>Owner Surrender</fullName>
+                <default>false</default>
+                <label>Owner Surrender</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

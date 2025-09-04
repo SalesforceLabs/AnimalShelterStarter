@@ -8,7 +8,7 @@
     <enableEmailsimpleSecureProfiles>false</enableEmailsimpleSecureProfiles>
     <enableFlowBREncodedFixEnabled>true</enableFlowBREncodedFixEnabled>
     <enableFlowCustomPropertyEditor>false</enableFlowCustomPropertyEditor>
-    <enableFlowDeployAsActiveEnabled>true</enableFlowDeployAsActiveEnabled>
+    <enableFlowDeployAsActiveEnabled>false</enableFlowDeployAsActiveEnabled>
     <enableFlowFieldFilterEnabled>true</enableFlowFieldFilterEnabled>
     <enableFlowFormulasFixEnabled>true</enableFlowFormulasFixEnabled>
     <enableFlowInterviewSharingEnabled>true</enableFlowInterviewSharingEnabled>

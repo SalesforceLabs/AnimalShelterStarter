@@ -52,6 +52,29 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Unavailability_Reason__c</picklist>
+        <values>
+            <fullName>Biohazard%2FOutbreak</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleaning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reserved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff Shortages</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Unit_Status__c</picklist>
         <values>
             <fullName>Allocated</fullName>

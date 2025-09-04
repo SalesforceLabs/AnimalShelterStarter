@@ -8,6 +8,9 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
+                            <value>animalshelters__Animal__c.New_Animal_Wizard</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>animalshelters__Animal__c.Add_Scheduled_Action</value>
                         </valueListItems>
                         <valueListItems>
@@ -73,6 +76,9 @@
                         </valueListItems>
                         <valueListItems>
                             <value>animalshelters__Animal__c.Multi_Animal_Clone</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>animalshelters__Animal__c.New_Human_Relationship</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Global.NewEvent</value>
@@ -192,26 +198,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Current_Weight__c</fieldItem>
-                <identifier>RecordCurrent_Weight__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Current_Weight_ibs__c</fieldItem>
-                <identifier>Recordanimalshelters_Current_Weight_ibs_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Date_of_Birth__c</fieldItem>
                 <identifier>RecordDate_of_Birth__cField</identifier>
             </fieldInstance>
@@ -251,6 +237,88 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-5b095fe8-6d10-4c1b-9df1-ab9ffa498148</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Current_Weight__c</fieldItem>
+                <identifier>RecordCurrent_Weight__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Current_Weight_ibs__c</fieldItem>
+                <identifier>Recordanimalshelters_Current_Weight_ibs_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-67639064-e2c6-45d4-a3de-a07e71cc02d3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Average_Ideal_or_Target_Weight_kgs__c</fieldItem>
+                <identifier>Recordanimalshelters__Ideal_Target_Weight_kgs__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Ideal_Weight_Range_kgs__c</fieldItem>
+                <identifier>Recordanimalshelters__Ideal_Weight_Range__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Average_Ideal_or_Target_Weight_lbs__c</fieldItem>
+                <identifier>Recordanimalshelters__Ideal_Target_Weight_lbs__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-12a77275-2f31-43ed-8039-aff73d9babcd</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-67639064-e2c6-45d4-a3de-a07e71cc02d3</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column21</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-12a77275-2f31-43ed-8039-aff73d9babcd</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column22</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-fdbbfdb5-8812-43a5-9a99-6cedb4a7c9c3</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -424,6 +492,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-fdbbfdb5-8812-43a5-9a99-6cedb4a7c9c3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Weight</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection12</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -927,6 +1013,16 @@
                 <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>Recordanimalshelters__External_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-aac6ddaa-54f0-4332-9a4f-98d918ba8eaf</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -1336,6 +1432,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Current_Weight__c</fieldItem>
                 <identifier>RecordCurrent_Weight__cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Average_Ideal_or_Target_Weight_kgs__c</fieldItem>
+                <identifier>Recordanimalshelters_Ideal_Target_Weight_kgs_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b68cd158-ae86-4b3a-8c46-6e81d18147c1</name>
@@ -2175,10 +2281,18 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>MassChangeOwner</value>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>RECORDTYPE|EQUALS|[&quot;Animal_Relationship&quot;]</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>New</value>
+                            <value>Active__c|EQUALS|true</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -2202,22 +2316,19 @@
                     <name>relatedListFieldAliases</name>
                     <valueList>
                         <valueListItems>
-                            <value>NAME</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Related_Animal__c</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Related_Animal_Name__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Status__c</value>
+                            <value>Relationship_Types__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>NAME</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Animal Relationships</value>
+                    <value>Active Animal Relationships</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
@@ -2233,6 +2344,157 @@
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
                 <identifier>lst_dynamicRelatedList9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>RECORDTYPE|EQUALS|[&quot;Human_Relationship&quot;]</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Active__c|EQUALS|true</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Animal__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Animal_Relationships__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Name__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Relationship_Types__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Start_Date__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Active Animal/Contact Relationships</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Active__c|EQUALS|false</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Animal__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Animal_Relationships__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Animal_Name__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Name__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Relationship_Types__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Start_Date__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>End_Date__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Archived Relationships</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList12</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-d29ddff1-4c2b-41b7-8464-4022c20ebe8b</name>

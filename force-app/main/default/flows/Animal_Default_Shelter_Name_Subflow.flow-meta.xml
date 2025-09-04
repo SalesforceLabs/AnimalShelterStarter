@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Assign_Account_ID_to_Output_Variable</name>
+        <label>Assign Account ID to Output Variable</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>accountID</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Account_Based_on_Account_Name.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Check Custom Setting to see if Default Shelter Name is Set</description>
+        <name>Is_Default_Shelter_Name_Set</name>
+        <label>Is Default Shelter Name Set</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>No Name Set</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Name_Set</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Default_Shelter_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Account_Based_on_Account_Name</targetReference>
+            </connector>
+            <label>Yes Name Set</label>
+        </rules>
+    </decisions>
+    <description>[Animal Shelter] - Subflow to check and get the Account based on the Default Shelter Name setting.  Returns Account Id</description>
+    <environments>Default</environments>
+    <interviewLabel>Animal - Default Shelter Name - Subflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Animal - Default Shelter Name - Subflow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Account_Based_on_Account_Name</name>
+        <label>Get Account Based on Account Name</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Account_ID_to_Output_Variable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Default_Shelter_Name__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Default_Shelter_Name_Set</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>accountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

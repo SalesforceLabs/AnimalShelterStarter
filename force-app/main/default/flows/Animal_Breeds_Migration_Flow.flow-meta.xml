@@ -250,7 +250,7 @@
         <description>Matched to Custom Setting</description>
         <name>BreedsMigrationComplete</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Setup.animalshelters__Animal_Shelter_Settings__c.animalshelters__Breeds_Migration_Complete__c}</expression>
+        <expression>{!$Setup.Animal_Shelter_Settings__c.Breeds_Migration_Complete__c}</expression>
     </formulas>
     <interviewLabel>Animal - Breeds Migration Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>

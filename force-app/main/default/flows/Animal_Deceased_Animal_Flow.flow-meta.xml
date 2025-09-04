@@ -74,13 +74,13 @@
             <label>Yes - Movement record Exists</label>
         </rules>
     </decisions>
-    <description>[Animal Shelter] Mark Animal as Deceased and tidy up associated records.  Called from quick action</description>
+    <description>[Animal Shelter] Mark Animal as Deceased and tidy up associated records. Called
+        from quick action</description>
     <environments>Default</environments>
     <formulas>
         <name>DecrementAllocationBy1</name>
         <dataType>Number</dataType>
-        <expression>IF(
-            ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Single Animal&quot;) = True || ISPICKVAL({!Get_Current_Location_Record.Location_Capacity__c}, &quot;Multiple Animals&quot;) = True, {!Get_Current_Location_Record.Allocation__c} - 1, 0)</expression>
+        <expression>{!Get_Current_Location_Record.Allocation__c} - 1</expression>
         <scale>0</scale>
     </formulas>
     <interviewLabel>Animal - Deceased Animal Flow</interviewLabel>
@@ -194,6 +194,59 @@
         <object>Movement__c</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Close_Down_Outstanding_Animal_Action_Records</name>
+        <label>Close Down Outstanding Animal Action Records</label>
+        <locationX>710</locationX>
+        <locationY>1238</locationY>
+        <connector>
+            <targetReference>Completion_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Animal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Date_Time_Action_Completed__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Action_Completed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Action_Status__c</field>
+            <value>
+                <stringValue>Not Given</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comments__c</field>
+            <value>
+                <stringValue>Animal Deceased</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Time_Action_Completed__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Animal_Action__c</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Reset_Location_Status</name>
         <label>Reset Location Status</label>
         <locationX>314</locationX>
@@ -216,13 +269,19 @@
         <inputAssignments>
             <field>Allocation__c</field>
             <value>
-                <elementReference>DecrementAllocationBy1</elementReference>
+                <elementReference>Get_Current_Location_Record.Capacity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unavailability_Reason__c</field>
+            <value>
+                <stringValue>Cleaning</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Unit_Status__c</field>
             <value>
-                <stringValue>Available</stringValue>
+                <stringValue>Unavailable</stringValue>
             </value>
         </inputAssignments>
         <object>Locations__c</object>
@@ -233,7 +292,7 @@
         <locationX>710</locationX>
         <locationY>1130</locationY>
         <connector>
-            <targetReference>Completion_Screen</targetReference>
+            <targetReference>Close_Down_Outstanding_Animal_Action_Records</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
@@ -250,7 +309,12 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Animal_Already_Deceased_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Animal_Name__c} is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If this is an error, please review the animal record information and update it accordingly.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color:
+                rgb(62, 62,
+                60);&quot;&gt;&lt;em&gt;OOPS!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!recordId.Animal_Name__c}
+                is already marked as deceased.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If
+                this is an error, please review the animal record information and update it
+                accordingly.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -260,7 +324,7 @@
         <name>Completion_Screen</name>
         <label>Completion Screen</label>
         <locationX>710</locationX>
-        <locationY>1238</locationY>
+        <locationY>1346</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -275,14 +339,19 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1282</locationX>
+        <locationX>1546</locationX>
         <locationY>1238</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Error_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Oh no! There has been an error!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and use the previous button below to go back a step and try again. If the problem persists please take a note of the fault message below and send it to your Salesforce Administrator&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Fault Message:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Oh no! There has been an
+                error!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Try and use the
+                previous button below to go back a step and try again. If the problem persists
+                please take a note of the fault message below and send it to your Salesforce
+                Administrator&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Fault
+                Message:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -301,7 +370,8 @@
         </connector>
         <fields>
             <name>Initial_Screen_Text_Header</name>
-            <fieldText>&lt;p&gt;You are marking this animal as deceased, please complete the following information.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;You are marking this animal as deceased, please complete the
+                following information.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>

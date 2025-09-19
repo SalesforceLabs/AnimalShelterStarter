@@ -21,23 +21,23 @@ export default class RecordImageCarousel extends LightningElement {
     wiredImagesResult;
     refreshInterval;
     lastImageCount = 0;
-    
+
     connectedCallback() {
         // Set up auto-refresh every 30 seconds to detect external file uploads
         this.refreshInterval = setInterval(() => {
             this.checkForNewImages();
         }, 30000);
     }
-    
+
     disconnectedCallback() {
         if (this.refreshInterval) {
             clearInterval(this.refreshInterval);
         }
     }
-    
+
     renderedCallback() {
         // Set the custom height CSS property
-        if (this.template.host) {
+        if (this.template.host && this.template.host.style) {
             this.template.host.style.setProperty('--carousel-height', `${this.carouselHeight}px`);
         }
     }
@@ -60,7 +60,7 @@ export default class RecordImageCarousel extends LightningElement {
 
     // Process the images for the carousel
     processImages(images) {
-        
+
         if (images && images.length > 0) {
             // Store images with formatted descriptions directly
             this.imageData = images.map(image => ({
@@ -71,7 +71,7 @@ export default class RecordImageCarousel extends LightningElement {
                 fileExtension: image.fileExtension,
                 contentSize: image.contentSize
             }));
-            
+
             // Update last image count for auto-refresh detection
             this.lastImageCount = this.imageData.length;
         } else {
@@ -112,7 +112,7 @@ export default class RecordImageCarousel extends LightningElement {
     get hasImages() {
         return this.imageData && this.imageData.length > 0;
     }
-    
+
     get imageDataLength() {
         return this.imageData ? this.imageData.length : 0;
     }
@@ -120,7 +120,7 @@ export default class RecordImageCarousel extends LightningElement {
     // Event handlers
     handleImageClick(event) {
         const imageId = event.target.dataset.imageId;
-        
+
         // Find the clicked image
         const clickedImage = this.imageData.find(img => img.contentVersionId === imageId);
         if (clickedImage) {
@@ -145,7 +145,7 @@ export default class RecordImageCarousel extends LightningElement {
                     variant: 'success',
                 })
             );
-            
+
             // Refresh the component to show the new image
             this.refreshImages();
         }
@@ -165,10 +165,10 @@ export default class RecordImageCarousel extends LightningElement {
         try {
             // Only check if we have a record ID and aren't currently loading
             if (!this.recordId || this.isLoading) return;
-            
+
             // Refresh to get latest count
             await refreshApex(this.wiredImagesResult);
-            
+
             // If image count increased, show notification
             if (this.imageData.length > this.lastImageCount) {
                 this.dispatchEvent(
@@ -179,7 +179,7 @@ export default class RecordImageCarousel extends LightningElement {
                     })
                 );
             }
-            
+
             this.lastImageCount = this.imageData.length;
         } catch (error) {
             // Silently handle errors in background refresh
@@ -203,12 +203,12 @@ export default class RecordImageCarousel extends LightningElement {
             link.href = url;
             link.download = filename || 'image';
             link.target = '_blank';
-            
+
             // Append to body, click, and remove
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
+
             // Show success message
             this.dispatchEvent(
                 new ShowToastEvent({
